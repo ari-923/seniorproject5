@@ -28,32 +28,51 @@ function openChat(open) {
 chatFab.addEventListener('click', () => openChat(true));
 chatClose.addEventListener('click', () => openChat(false));
 
-addMsg('assistant', 'Hi! I can help explain your saved selections, total sq ft, and simple flooring estimates.');
+const isGitHubPages = location.hostname.endsWith('github.io');
 
-function getBlueprintContext() {
+addMsg('assistant',
+  isGitHubPages
+    ? "Hi! The chat UI works on GitHub Pages, but AI replies require a server (Vercel/Netlify) to run /api/chat.\n\nDeploy this repo on Vercel to enable AI."
+    : "Hi! Ask me about your total sq ft, adding waste %, or cost estimates."
+);
+
+function getEstimatorSnapshot() {
+  // Uses the safe snapshot you now expose from app.js
+  if (typeof window.getEstimatorSnapshot === 'function') {
+    return window.getEstimatorSnapshot();
+  }
+
+  // fallback
   const total = (document.getElementById('totalOut')?.textContent || '0.00').trim();
   const count = (document.getElementById('countOut')?.textContent || '0').trim();
-  const listText = (document.getElementById('list')?.innerText || '').trim();
-
   return {
-    totalSqFt: total,
-    selectionsCount: count,
-    selectionsSummary: listText.slice(0, 1400)
+    totalSqFt: Number(total),
+    selectionsCount: Number(count),
+    selections: []
   };
 }
 
-async function sendToAI(userText) {
-  const ctx = getBlueprintContext();
+// IMPORTANT:
+// Use RELATIVE path so it works under subpaths too (GitHub/Vercel).
+// On Vercel it resolves to https://yourapp.vercel.app/api/chat
+// On GitHub Pages it resolves to https://user.github.io/repo/api/chat (but GH Pages won’t execute it)
+const API_URL = 'api/chat';
 
-  const res = await fetch('/api/chat', {
+async function sendToAI(userText) {
+  const snapshot = getEstimatorSnapshot();
+
+  const res = await fetch(API_URL, {
     method: 'POST',
     headers: { 'Content-Type': 'application/json' },
-    body: JSON.stringify({ message: userText, context: ctx })
+    body: JSON.stringify({
+      message: userText,
+      snapshot
+    })
   });
 
   if (!res.ok) {
     const errText = await res.text().catch(() => '');
-    throw new Error(`Server error ${res.status}. ${errText}`);
+    throw new Error(`API error ${res.status}. ${errText}`);
   }
 
   const data = await res.json();
@@ -67,6 +86,15 @@ chatForm.addEventListener('submit', async (e) => {
 
   chatInput.value = '';
   addMsg('user', text);
+
+  // If on GitHub Pages, don’t even try to call the API
+  if (isGitHubPages) {
+    addMsg(
+      'assistant',
+      "AI replies are disabled on GitHub Pages.\n\nTo enable AI:\n1) Deploy this repo on Vercel\n2) Add OPENAI_API_KEY in Vercel Environment Variables\n3) Use your Vercel link"
+    );
+    return;
+  }
 
   chatSend.disabled = true;
   chatInput.disabled = true;

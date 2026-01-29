@@ -33,29 +33,39 @@ if (!fileInput || !canvas || !statusEl || !btnUndo || !btnClear || !shapeModeEl 
 const ctx = canvas.getContext("2d");
 if (!ctx) throw new Error("Canvas 2D context not available.");
 
-/** @type {HTMLImageElement} */
 let img = new Image();
-/** @type {boolean} */
 let imgLoaded = false;
 
-/** @type {ShapeType} */
 let mode = "rect";
 
 // Drag state for rect & circle
-/** @type {boolean} */
 let isDragging = false;
-/** @type {Point|null} */
 let dragStart = null;
-/** @type {Point|null} */
 let dragEnd = null;
 
 // Triangle state (3 clicks)
-/** @type {Point[]} */
 let triPoints = [];
 
 // Saved measurements
-/** @type {SavedItem[]} */
 let saved = [];
+
+/**
+ * Expose a SAFE snapshot for the chatbot/AI (read-only copy).
+ * This helps the AI answer accurately about labels + areas.
+ */
+window.getEstimatorSnapshot = function () {
+  const total = saved.reduce((sum, item) => sum + item.areaFt2, 0);
+  return {
+    totalSqFt: Number(total.toFixed(2)),
+    selectionsCount: saved.length,
+    selections: saved.map(s => ({
+      type: s.type,
+      label: s.label,
+      areaFt2: Number(s.areaFt2.toFixed(2)),
+      details: s.details
+    }))
+  };
+};
 
 function setStatus(msg) {
   statusEl.textContent = "Status: " + msg;
@@ -65,7 +75,6 @@ function clearCanvas() {
   ctx.clearRect(0, 0, canvas.width, canvas.height);
 }
 
-/** @param {Point} a @param {Point} b @returns {Rect} */
 function rectFromPoints(a, b) {
   const x = Math.min(a.x, b.x);
   const y = Math.min(a.y, b.y);
@@ -74,7 +83,6 @@ function rectFromPoints(a, b) {
   return { x, y, w, h };
 }
 
-/** @param {MouseEvent} e @returns {Point} */
 function canvasPointFromMouse(e) {
   const rect = canvas.getBoundingClientRect();
   const x = (e.clientX - rect.left) * (canvas.width / rect.width);
@@ -98,26 +106,18 @@ function getFitRect(imgW, imgH, boxW, boxH) {
   return { x, y, w, h };
 }
 
-/** @param {Point} a @param {Point} b @returns {number} */
 function dist(a, b) {
   const dx = a.x - b.x;
   const dy = a.y - b.y;
   return Math.sqrt(dx * dx + dy * dy);
 }
 
-/** @param {Point} p @param {number} radius */
 function drawPoint(p, radius) {
   ctx.beginPath();
   ctx.arc(p.x, p.y, radius, 0, Math.PI * 2);
   ctx.fill();
 }
 
-/**
- * Prompts for a positive number.
- * @param {string} message
- * @param {string} defaultVal
- * @returns {number|null} null if cancelled, NaN if invalid
- */
 function promptNumber(message, defaultVal) {
   const raw = prompt(message, defaultVal);
   if (raw === null) return null;
@@ -126,11 +126,6 @@ function promptNumber(message, defaultVal) {
   return num;
 }
 
-/**
- * Prompts user for a label (Kitchen, Living Room, etc.)
- * @param {string} defaultLabel
- * @returns {string}
- */
 function promptLabel(defaultLabel) {
   const raw = prompt("Enter area label (e.g., Kitchen, Living Room):", defaultLabel);
   if (!raw || !raw.trim()) return defaultLabel;
@@ -183,7 +178,6 @@ function drawLabelText(text, x, y) {
   ctx.fillStyle = "green";
   ctx.strokeStyle = "white";
   ctx.lineWidth = 3;
-  // White outline improves readability on busy blueprints
   ctx.strokeText(text, x, y);
   ctx.fillText(text, x, y);
   ctx.restore();
@@ -197,7 +191,7 @@ function draw() {
     ctx.drawImage(img, fit.x, fit.y, fit.w, fit.h);
   }
 
-  // Draw saved shapes (green) + labels
+  // Saved shapes
   ctx.save();
   ctx.lineWidth = 2;
   ctx.strokeStyle = "green";
@@ -205,19 +199,16 @@ function draw() {
 
   for (const item of saved) {
     if (item.type === "rect") {
-      /** @type {Rect} */
       const r = item.draw.rect;
       ctx.strokeRect(r.x, r.y, r.w, r.h);
       drawLabelText(item.label, r.x + 6, r.y + 16);
     } else if (item.type === "circle") {
-      /** @type {{center:Point, radiusPx:number}} */
       const c = item.draw;
       ctx.beginPath();
       ctx.arc(c.center.x, c.center.y, c.radiusPx, 0, Math.PI * 2);
       ctx.stroke();
       drawLabelText(item.label, c.center.x + 6, c.center.y + 16);
     } else if (item.type === "tri") {
-      /** @type {{points:Point[]}} */
       const t = item.draw;
       const p = t.points;
       if (p.length === 3) {
@@ -231,10 +222,9 @@ function draw() {
       }
     }
   }
-
   ctx.restore();
 
-  // Draw current selection (blue dashed)
+  // Current selection (blue dashed)
   ctx.save();
   ctx.lineWidth = 2;
   ctx.strokeStyle = "blue";
@@ -251,8 +241,6 @@ function draw() {
     ctx.beginPath();
     ctx.arc(dragStart.x, dragStart.y, radiusPx, 0, Math.PI * 2);
     ctx.stroke();
-
-    // center point
     ctx.setLineDash([]);
     drawPoint(dragStart, 3);
   }
@@ -277,7 +265,6 @@ function draw() {
       }
     }
   }
-
   ctx.restore();
 }
 
@@ -302,7 +289,7 @@ fileInput.addEventListener("change", () => {
 
 // Mode switch
 shapeModeEl.addEventListener("change", () => {
-  mode = /** @type {ShapeType} */ (shapeModeEl.value);
+  mode = shapeModeEl.value;
   resetInProgressSelection();
   if (imgLoaded) setStatus(modeHelpText());
   draw();

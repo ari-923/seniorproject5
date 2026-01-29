@@ -4,6 +4,7 @@
   <meta charset="utf-8" />
   <meta name="viewport" content="width=device-width,initial-scale=1" />
   <title>Blueprint Flooring Estimator</title>
+
   <style>
     body { font-family: Arial, sans-serif; margin: 0; padding: 16px; }
     h1 { margin: 0 0 8px; }
@@ -30,8 +31,94 @@
     .list-item:last-child { border-bottom: none; }
     .list-item b { display: block; margin-bottom: 4px; }
     .small { color: #666; font-size: 0.92rem; }
+
+    /* ---------------- Chat widget styles ---------------- */
+    #chatFab{
+      position: fixed;
+      right: 18px;
+      bottom: 18px;
+      width: 54px;
+      height: 54px;
+      border-radius: 999px;
+      border: 1px solid #ddd;
+      background: #fff;
+      box-shadow: 0 12px 30px rgba(0,0,0,.15);
+      cursor: pointer;
+      font-size: 22px;
+      z-index: 999999; /* important so it doesn’t hide */
+    }
+
+    .chat-panel {
+      position: fixed;
+      right: 18px;
+      bottom: 84px;
+      width: 360px;
+      max-width: calc(100vw - 36px);
+      height: 460px;
+      max-height: calc(100vh - 120px);
+      background: #fff;
+      border: 1px solid #ddd;
+      border-radius: 14px;
+      box-shadow: 0 18px 50px rgba(0,0,0,.16);
+      display: none;
+      overflow: hidden;
+      z-index: 999999;
+    }
+    .chat-panel.open { display: flex; flex-direction: column; }
+
+    .chat-header{
+      display:flex;
+      align-items:center;
+      justify-content:space-between;
+      gap: 10px;
+      padding: 10px 12px;
+      border-bottom:1px solid #eee;
+      background:#fafafa;
+    }
+    .chat-sub{ font-size:12px; color:#666; margin-top:2px; }
+
+    .chat-log{
+      padding:12px;
+      overflow:auto;
+      flex:1;
+      background:#fff;
+    }
+
+    .msg{ margin: 8px 0; display:flex; }
+    .msg.user{ justify-content:flex-end; }
+    .bubble{
+      max-width: 82%;
+      padding: 10px 12px;
+      border-radius: 12px;
+      border: 1px solid #eee;
+      background: #f7f7f7;
+      line-height: 1.35;
+      white-space: pre-wrap;
+    }
+    .msg.user .bubble{ background:#e9f3ff; border-color:#d7e9ff; }
+
+    .chat-form{
+      display:flex;
+      gap:8px;
+      padding:10px;
+      border-top:1px solid #eee;
+      background:#fafafa;
+    }
+    #chatInput{
+      flex:1;
+      padding:10px;
+      border-radius:10px;
+      border:1px solid #ddd;
+    }
+    #chatSend{
+      padding:10px 12px;
+      border-radius:10px;
+      border:1px solid #ddd;
+      background:#fff;
+    }
   </style>
 </head>
+
 <body>
   <h1>Blueprint Flooring Estimator (Rect / Circle / Triangle)</h1>
   <div class="hint">
@@ -86,6 +173,28 @@
     </div>
   </div>
 
+  <!-- Chat UI (shows on GitHub Pages too) -->
+  <button id="chatFab" aria-label="Open chat">💬</button>
+
+  <div id="chatPanel" class="chat-panel" aria-hidden="true">
+    <div class="chat-header">
+      <div>
+        <b>AI Helper</b>
+        <div class="chat-sub">Totals • Waste % • Cost estimates</div>
+      </div>
+      <button id="chatClose" aria-label="Close chat">✕</button>
+    </div>
+
+    <div id="chatLog" class="chat-log"></div>
+
+    <form id="chatForm" class="chat-form">
+      <input id="chatInput" placeholder='Try: "Add 10% waste to my total"' autocomplete="off" />
+      <button id="chatSend" type="submit">Send</button>
+    </form>
+  </div>
+
+  <!-- IMPORTANT: chatbot.js must load before app.js is fine -->
+  <script src="./chatbot.js"></script>
   <script src="./app.js"></script>
 </body>
 </html>

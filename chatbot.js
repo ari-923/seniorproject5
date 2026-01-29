@@ -30,19 +30,18 @@ chatClose.addEventListener('click', () => openChat(false));
 
 const isGitHubPages = location.hostname.endsWith('github.io');
 
-addMsg('assistant',
+addMsg(
+  'assistant',
   isGitHubPages
     ? "Hi! The chat UI works on GitHub Pages, but AI replies require a server (Vercel/Netlify) to run /api/chat.\n\nDeploy this repo on Vercel to enable AI."
     : "Hi! Ask me about your total sq ft, adding waste %, or cost estimates."
 );
 
 function getEstimatorSnapshot() {
-  // Uses the safe snapshot you now expose from app.js
   if (typeof window.getEstimatorSnapshot === 'function') {
     return window.getEstimatorSnapshot();
   }
 
-  // fallback
   const total = (document.getElementById('totalOut')?.textContent || '0.00').trim();
   const count = (document.getElementById('countOut')?.textContent || '0').trim();
   return {
@@ -52,11 +51,9 @@ function getEstimatorSnapshot() {
   };
 }
 
-// IMPORTANT:
-// Use RELATIVE path so it works under subpaths too (GitHub/Vercel).
-// On Vercel it resolves to https://yourapp.vercel.app/api/chat
-// On GitHub Pages it resolves to https://user.github.io/repo/api/chat (but GH Pages won’t execute it)
-const API_URL = 'api/chat';
+// ✅ IMPORTANT: leading slash so it always hits the root domain
+// Vercel: https://seniorproject5.vercel.app/api/chat
+const API_URL = '/api/chat';
 
 async function sendToAI(userText) {
   const snapshot = getEstimatorSnapshot();
@@ -64,10 +61,7 @@ async function sendToAI(userText) {
   const res = await fetch(API_URL, {
     method: 'POST',
     headers: { 'Content-Type': 'application/json' },
-    body: JSON.stringify({
-      message: userText,
-      snapshot
-    })
+    body: JSON.stringify({ message: userText, snapshot })
   });
 
   if (!res.ok) {
@@ -87,7 +81,6 @@ chatForm.addEventListener('submit', async (e) => {
   chatInput.value = '';
   addMsg('user', text);
 
-  // If on GitHub Pages, don’t even try to call the API
   if (isGitHubPages) {
     addMsg(
       'assistant',

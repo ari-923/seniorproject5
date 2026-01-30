@@ -25,15 +25,15 @@ function openChat(open) {
   if (open) chatInput.focus();
 }
 
-chatFab.addEventListener('click', () => openChat(true));
-chatClose.addEventListener('click', () => openChat(false));
+chatFab?.addEventListener('click', () => openChat(true));
+chatClose?.addEventListener('click', () => openChat(false));
 
 const isGitHubPages = location.hostname.endsWith('github.io');
 
 addMsg(
   'assistant',
   isGitHubPages
-    ? "Hi! The chat UI works on GitHub Pages, but AI replies require a server (Vercel/Netlify) to run /api/chat.\n\nUse your Vercel link to enable AI."
+    ? "Hi! The chat UI works on GitHub Pages, but AI replies require a server (Vercel) to run /api/chat.\n\nUse your Vercel link to enable AI replies."
     : "Hi! Ask me about your total sq ft, adding waste %, or cost estimates."
 );
 
@@ -51,7 +51,7 @@ function getEstimatorSnapshot() {
   };
 }
 
-// ✅ Use leading slash so it always hits your domain root
+// Vercel endpoint (root-based)
 const API_URL = '/api/chat';
 
 async function sendToAI(userText) {
@@ -72,7 +72,7 @@ async function sendToAI(userText) {
   return data.reply || 'No reply returned.';
 }
 
-chatForm.addEventListener('submit', async (e) => {
+chatForm?.addEventListener('submit', async (e) => {
   e.preventDefault();
   const text = (chatInput.value || '').trim();
   if (!text) return;
@@ -81,10 +81,7 @@ chatForm.addEventListener('submit', async (e) => {
   addMsg('user', text);
 
   if (isGitHubPages) {
-    addMsg(
-      'assistant',
-      "AI replies are disabled on GitHub Pages.\n\nTo enable AI:\n1) Deploy this repo on Vercel\n2) Add OPENAI_API_KEY in Vercel Environment Variables\n3) Use your Vercel link"
-    );
+    addMsg('assistant', "AI replies are disabled on GitHub Pages. Use your Vercel link for AI.");
     return;
   }
 

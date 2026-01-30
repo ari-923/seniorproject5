@@ -1,8 +1,5 @@
 'use strict';
 
-/* ===============================
-   DOM ELEMENTS
-================================ */
 const chatFab = document.getElementById('chatFab');
 const chatPanel = document.getElementById('chatPanel');
 const chatClose = document.getElementById('chatClose');
@@ -11,17 +8,12 @@ const chatForm = document.getElementById('chatForm');
 const chatInput = document.getElementById('chatInput');
 const chatSend = document.getElementById('chatSend');
 
-/* ===============================
-   UI HELPERS
-================================ */
 function addMsg(role, text) {
   const row = document.createElement('div');
   row.className = `msg ${role}`;
-
   const bubble = document.createElement('div');
   bubble.className = 'bubble';
   bubble.textContent = text;
-
   row.appendChild(bubble);
   chatLog.appendChild(row);
   chatLog.scrollTop = chatLog.scrollHeight;
@@ -36,27 +28,22 @@ function openChat(open) {
 chatFab.addEventListener('click', () => openChat(true));
 chatClose.addEventListener('click', () => openChat(false));
 
-/* ===============================
-   INITIAL MESSAGE
-================================ */
+const isGitHubPages = location.hostname.endsWith('github.io');
+
 addMsg(
   'assistant',
-  'Hi! Ask me about your total sq ft, adding waste %, or cost estimates.'
+  isGitHubPages
+    ? "Hi! The chat UI works on GitHub Pages, but AI replies require a server (Vercel/Netlify) to run /api/chat.\n\nDeploy this repo on Vercel to enable AI."
+    : "Hi! Ask me about your total sq ft, adding waste %, or cost estimates."
 );
 
-/* ===============================
-   ESTIMATOR SNAPSHOT
-================================ */
 function getEstimatorSnapshot() {
-  // Preferred: safe snapshot exposed by app.js
   if (typeof window.getEstimatorSnapshot === 'function') {
     return window.getEstimatorSnapshot();
   }
 
-  // Fallback (never crashes)
-  const total = (document.getElementById('totalOut')?.textContent || '0').trim();
+  const total = (document.getElementById('totalOut')?.textContent || '0.00').trim();
   const count = (document.getElementById('countOut')?.textContent || '0').trim();
-
   return {
     totalSqFt: Number(total),
     selectionsCount: Number(count),
@@ -64,47 +51,45 @@ function getEstimatorSnapshot() {
   };
 }
 
-/* ===============================
-   API CONFIG
-================================ */
-// Leading slash ensures correct routing on Vercel
+// ✅ MUST be leading slash on Vercel
+// This guarantees it calls: https://YOURDOMAIN.vercel.app/api/chat
 const API_URL = '/api/chat';
 
-/* ===============================
-   SEND MESSAGE TO AI
-================================ */
 async function sendToAI(userText) {
   const snapshot = getEstimatorSnapshot();
 
   const res = await fetch(API_URL, {
     method: 'POST',
     headers: { 'Content-Type': 'application/json' },
-    body: JSON.stringify({
-      message: userText,
-      snapshot
-    })
+    body: JSON.stringify({ message: userText, snapshot })
   });
 
+  const text = await res.text(); // read once
   if (!res.ok) {
-    const errText = await res.text().catch(() => '');
-    throw new Error(`API error ${res.status}: ${errText}`);
+    throw new Error(`API error ${res.status}. ${text}`);
   }
 
-  const data = await res.json();
+  // try parse JSON safely
+  let data = {};
+  try { data = JSON.parse(text); } catch {}
   return data.reply || 'No reply returned.';
 }
 
-/* ===============================
-   FORM SUBMIT HANDLER
-================================ */
 chatForm.addEventListener('submit', async (e) => {
   e.preventDefault();
-
   const text = (chatInput.value || '').trim();
   if (!text) return;
 
   chatInput.value = '';
   addMsg('user', text);
+
+  if (isGitHubPages) {
+    addMsg(
+      'assistant',
+      "AI replies are disabled on GitHub Pages.\n\nTo enable AI:\n1) Deploy this repo on Vercel\n2) Add OPENAI_API_KEY in Vercel Environment Variables\n3) Use your Vercel link"
+    );
+    return;
+  }
 
   chatSend.disabled = true;
   chatInput.disabled = true;
@@ -113,10 +98,7 @@ chatForm.addEventListener('submit', async (e) => {
     const reply = await sendToAI(text);
     addMsg('assistant', reply);
   } catch (err) {
-    addMsg(
-      'assistant',
-      `Sorry — I couldn't reach the AI.\n${String(err.message || err)}`
-    );
+    addMsg('assistant', `Sorry — I couldn't reach the AI.\n${String(err.message || err)}`);
   } finally {
     chatSend.disabled = false;
     chatInput.disabled = false;

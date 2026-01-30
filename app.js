@@ -1,109 +1,87 @@
-/* app.js - Plain JavaScript (with JSDoc + labels) */
-
-/**
- * @typedef {{x:number, y:number}} Point
- * @typedef {{x:number, y:number, w:number, h:number}} Rect
- * @typedef {'rect'|'circle'|'tri'} ShapeType
- *
- * @typedef {{
- *   type: ShapeType,
- *   label: string,
- *   areaFt2: number,
- *   details: string,
- *   draw: any
- * }} SavedItem
- */
-
 'use strict';
 
-const fileInput = /** @type {HTMLInputElement|null} */ (document.getElementById("fileInput"));
-const canvas = /** @type {HTMLCanvasElement|null} */ (document.getElementById("canvas"));
-const statusEl = /** @type {HTMLElement|null} */ (document.getElementById("status"));
-const btnUndo = /** @type {HTMLButtonElement|null} */ (document.getElementById("btnUndo"));
-const btnClear = /** @type {HTMLButtonElement|null} */ (document.getElementById("btnClear"));
-const shapeModeEl = /** @type {HTMLSelectElement|null} */ (document.getElementById("shapeMode"));
-const totalOut = /** @type {HTMLElement|null} */ (document.getElementById("totalOut"));
-const countOut = /** @type {HTMLElement|null} */ (document.getElementById("countOut"));
-const listEl = /** @type {HTMLElement|null} */ (document.getElementById("list"));
+/**
+ * Blueprint Flooring Estimator (Rect / Circle / Triangle)
+ * - Upload PNG/JPG blueprint
+ * - Draw shapes on canvas
+ * - Enter REAL dimensions in feet + label
+ * - Saves selections and totals
+ *
+ * Required HTML element IDs:
+ *  blueprintInput, shapeMode, undoBtn, clearBtn,
+ *  statusOut, canvas, totalOut, countOut, listOut
+ */
 
-if (!fileInput || !canvas || !statusEl || !btnUndo || !btnClear || !shapeModeEl || !totalOut || !countOut || !listEl) {
-  throw new Error("Missing required DOM elements. Check your index.html ids.");
-}
+// ----- Grab DOM -----
+const blueprintInput = document.getElementById('blueprintInput');
+const shapeModeEl = document.getElementById('shapeMode');
+const undoBtn = document.getElementById('undoBtn');
+const clearBtn = document.getElementById('clearBtn');
 
-const ctx = canvas.getContext("2d");
-if (!ctx) throw new Error("Canvas 2D context not available.");
+const statusOut = document.getElementById('statusOut');
+const canvas = document.getElementById('canvas');
+const totalOut = document.getElementById('totalOut');
+const countOut = document.getElementById('countOut');
+const listOut = document.getElementById('listOut');
 
-let img = new Image();
-let imgLoaded = false;
+if (!canvas) throw new Error('Missing #canvas in HTML.');
+const ctx = canvas.getContext('2d');
 
-let mode = "rect";
+// ----- State -----
+let blueprintImg = null;
 
-// Drag state for rect & circle
+// saved selections (normalized geometry + real measurements + computed area)
+let selections = [];
+
+// drawing interaction state
+let mode = (shapeModeEl?.value || 'rect'); // 'rect' | 'circle' | 'tri'
 let isDragging = false;
-let dragStart = null;
+
+// for rect
+let dragStart = null; // {x, y} in CSS px
 let dragEnd = null;
 
-// Triangle state (3 clicks)
-let triPoints = [];
+// for circle
+let circleCenter = null; // {x,y}
+let circleEdge = null;   // {x,y}
 
-// Saved measurements
-let saved = [];
+// for triangle
+let triPoints = []; // [{x,y},{x,y},{x,y}] in CSS px
 
-/**
- * Expose a SAFE snapshot for the chatbot/AI (read-only copy).
- * This helps the AI answer accurately about labels + areas.
- */
-window.getEstimatorSnapshot = function () {
-  const total = saved.reduce((sum, item) => sum + item.areaFt2, 0);
-  return {
-    totalSqFt: Number(total.toFixed(2)),
-    selectionsCount: saved.length,
-    selections: saved.map(s => ({
-      type: s.type,
-      label: s.label,
-      areaFt2: Number(s.areaFt2.toFixed(2)),
-      details: s.details
-    }))
-  };
-};
-
+// ----- Helpers -----
 function setStatus(msg) {
-  statusEl.textContent = "Status: " + msg;
+  if (statusOut) statusOut.textContent = msg;
 }
 
-function clearCanvas() {
-  ctx.clearRect(0, 0, canvas.width, canvas.height);
+function clamp01(n) {
+  return Math.max(0, Math.min(1, n));
 }
 
-function rectFromPoints(a, b) {
-  const x = Math.min(a.x, b.x);
-  const y = Math.min(a.y, b.y);
-  const w = Math.abs(a.x - b.x);
-  const h = Math.abs(a.y - b.y);
-  return { x, y, w, h };
+function fmt2(n) {
+  const x = Number(n);
+  if (!Number.isFinite(x)) return '0.00';
+  return x.toFixed(2);
 }
 
-function canvasPointFromMouse(e) {
-  const rect = canvas.getBoundingClientRect();
-  const x = (e.clientX - rect.left) * (canvas.width / rect.width);
-  const y = (e.clientY - rect.top) * (canvas.height / rect.height);
+function getCanvasCssPointFromEvent(e) {
+  const r = canvas.getBoundingClientRect();
+  const x = e.clientX - r.left;
+  const y = e.clientY - r.top;
   return { x, y };
 }
 
-function getFitRect(imgW, imgH, boxW, boxH) {
-  const imgRatio = imgW / imgH;
-  const boxRatio = boxW / boxH;
-  let w, h;
-  if (imgRatio > boxRatio) {
-    w = boxW;
-    h = w / imgRatio;
-  } else {
-    h = boxH;
-    w = h * imgRatio;
-  }
-  const x = (boxW - w) / 2;
-  const y = (boxH - h) / 2;
-  return { x, y, w, h };
+function cssToNorm(pt) {
+  const r = canvas.getBoundingClientRect();
+  const w = Math.max(1, r.width);
+  const h = Math.max(1, r.height);
+  return { x: clamp01(pt.x / w), y: clamp01(pt.y / h) };
+}
+
+function normToCss(ptN) {
+  const r = canvas.getBoundingClientRect();
+  const w = Math.max(1, r.width);
+  const h = Math.max(1, r.height);
+  return { x: ptN.x * w, y: ptN.y * h };
 }
 
 function dist(a, b) {
@@ -112,339 +90,486 @@ function dist(a, b) {
   return Math.sqrt(dx * dx + dy * dy);
 }
 
-function drawPoint(p, radius) {
-  ctx.beginPath();
-  ctx.arc(p.x, p.y, radius, 0, Math.PI * 2);
-  ctx.fill();
+// --- Canvas resize helper (prevents tiny 300x150 canvas) ---
+function fitCanvasToWrap() {
+  const wrap = canvas.parentElement;
+  const rect = (wrap ? wrap.getBoundingClientRect() : canvas.getBoundingClientRect());
+  const dpr = window.devicePixelRatio || 1;
+
+  const w = Math.max(1, Math.floor(rect.width));
+  const h = Math.max(1, Math.floor(rect.height));
+
+  canvas.width = Math.floor(w * dpr);
+  canvas.height = Math.floor(h * dpr);
+
+  // normalize drawing so we can draw in CSS pixels
+  ctx.setTransform(dpr, 0, 0, dpr, 0, 0);
+
+  render();
 }
 
-function promptNumber(message, defaultVal) {
-  const raw = prompt(message, defaultVal);
-  if (raw === null) return null;
-  const num = Number(String(raw).trim());
-  if (!Number.isFinite(num) || num <= 0) return NaN;
-  return num;
+window.addEventListener('resize', fitCanvasToWrap);
+
+// ----- Rendering -----
+function clearCanvas() {
+  const r = canvas.getBoundingClientRect();
+  ctx.clearRect(0, 0, r.width, r.height);
 }
 
-function promptLabel(defaultLabel) {
-  const raw = prompt("Enter area label (e.g., Kitchen, Living Room):", defaultLabel);
-  if (!raw || !raw.trim()) return defaultLabel;
-  return raw.trim();
-}
+function drawBlueprint() {
+  const r = canvas.getBoundingClientRect();
+  const w = r.width;
+  const h = r.height;
 
-function resetInProgressSelection() {
-  isDragging = false;
-  dragStart = null;
-  dragEnd = null;
-  triPoints = [];
-}
-
-function modeHelpText() {
-  if (mode === "rect") return "Rectangle mode: drag to select.";
-  if (mode === "circle") return "Circle mode: drag from center to radius.";
-  return "Triangle mode: click 3 corners.";
-}
-
-function updateUI() {
-  const total = saved.reduce((sum, item) => sum + item.areaFt2, 0);
-  totalOut.textContent = total.toFixed(2);
-  countOut.textContent = String(saved.length);
-
-  btnUndo.disabled = saved.length === 0;
-  btnClear.disabled = saved.length === 0;
-
-  if (saved.length === 0) {
-    listEl.innerHTML = `<div class="list-item small">No saved selections yet.</div>`;
+  if (!blueprintImg) {
+    // empty background
+    ctx.fillStyle = '#fafafa';
+    ctx.fillRect(0, 0, w, h);
+    ctx.strokeStyle = '#ddd';
+    ctx.strokeRect(0.5, 0.5, w - 1, h - 1);
     return;
   }
 
-  const typeLabel = (t) => (t === "rect" ? "Rectangle" : t === "circle" ? "Circle" : "Triangle");
+  // Fit image into canvas while preserving aspect ratio
+  const iw = blueprintImg.naturalWidth || blueprintImg.width;
+  const ih = blueprintImg.naturalHeight || blueprintImg.height;
 
-  listEl.innerHTML = saved
-    .map((item) => {
-      return `
-        <div class="list-item">
-          <b>${item.label} (${typeLabel(item.type)}): ${item.areaFt2.toFixed(2)} sq ft</b>
-          <div class="small">${item.details}</div>
-        </div>
-      `;
-    })
-    .join("");
+  const scale = Math.min(w / iw, h / ih);
+  const dw = iw * scale;
+  const dh = ih * scale;
+  const dx = (w - dw) / 2;
+  const dy = (h - dh) / 2;
+
+  // background
+  ctx.fillStyle = '#fafafa';
+  ctx.fillRect(0, 0, w, h);
+
+  ctx.drawImage(blueprintImg, dx, dy, dw, dh);
+
+  // thin border
+  ctx.strokeStyle = '#ddd';
+  ctx.strokeRect(0.5, 0.5, w - 1, h - 1);
 }
 
-function drawLabelText(text, x, y) {
-  ctx.save();
-  ctx.font = "14px Arial";
-  ctx.fillStyle = "green";
-  ctx.strokeStyle = "white";
-  ctx.lineWidth = 3;
-  ctx.strokeText(text, x, y);
-  ctx.fillText(text, x, y);
-  ctx.restore();
-}
+function drawSelections() {
+  const r = canvas.getBoundingClientRect();
+  const w = r.width;
+  const h = r.height;
 
-function draw() {
-  clearCanvas();
+  // saved shapes
+  for (const s of selections) {
+    ctx.lineWidth = 2;
+    ctx.strokeStyle = '#16a34a'; // green-ish
+    ctx.fillStyle = 'rgba(22,163,74,0.10)';
 
-  if (imgLoaded) {
-    const fit = getFitRect(img.width, img.height, canvas.width, canvas.height);
-    ctx.drawImage(img, fit.x, fit.y, fit.w, fit.h);
-  }
+    if (s.type === 'rect') {
+      const p1 = normToCss(s.geo.p1);
+      const p2 = normToCss(s.geo.p2);
 
-  // Saved shapes
-  ctx.save();
-  ctx.lineWidth = 2;
-  ctx.strokeStyle = "green";
-  ctx.fillStyle = "green";
+      const x = Math.min(p1.x, p2.x);
+      const y = Math.min(p1.y, p2.y);
+      const rw = Math.abs(p2.x - p1.x);
+      const rh = Math.abs(p2.y - p1.y);
 
-  for (const item of saved) {
-    if (item.type === "rect") {
-      const r = item.draw.rect;
-      ctx.strokeRect(r.x, r.y, r.w, r.h);
-      drawLabelText(item.label, r.x + 6, r.y + 16);
-    } else if (item.type === "circle") {
-      const c = item.draw;
+      ctx.fillRect(x, y, rw, rh);
+      ctx.strokeRect(x, y, rw, rh);
+
+      // label
+      ctx.fillStyle = '#0f172a';
+      ctx.font = '12px system-ui';
+      ctx.fillText(s.label || '', x + 6, y + 14);
+    }
+
+    if (s.type === 'circle') {
+      const c = normToCss(s.geo.c);
+      const rr = s.geo.r * Math.min(w, h);
+
       ctx.beginPath();
-      ctx.arc(c.center.x, c.center.y, c.radiusPx, 0, Math.PI * 2);
+      ctx.arc(c.x, c.y, rr, 0, Math.PI * 2);
+      ctx.closePath();
+      ctx.fill();
       ctx.stroke();
-      drawLabelText(item.label, c.center.x + 6, c.center.y + 16);
-    } else if (item.type === "tri") {
-      const t = item.draw;
-      const p = t.points;
-      if (p.length === 3) {
-        ctx.beginPath();
-        ctx.moveTo(p[0].x, p[0].y);
-        ctx.lineTo(p[1].x, p[1].y);
-        ctx.lineTo(p[2].x, p[2].y);
-        ctx.closePath();
-        ctx.stroke();
-        drawLabelText(item.label, p[0].x + 6, p[0].y + 16);
-      }
+
+      ctx.fillStyle = '#0f172a';
+      ctx.font = '12px system-ui';
+      ctx.fillText(s.label || '', c.x + 6, c.y - 6);
+    }
+
+    if (s.type === 'tri') {
+      const a = normToCss(s.geo.a);
+      const b = normToCss(s.geo.b);
+      const c = normToCss(s.geo.c);
+
+      ctx.beginPath();
+      ctx.moveTo(a.x, a.y);
+      ctx.lineTo(b.x, b.y);
+      ctx.lineTo(c.x, c.y);
+      ctx.closePath();
+      ctx.fill();
+      ctx.stroke();
+
+      ctx.fillStyle = '#0f172a';
+      ctx.font = '12px system-ui';
+      ctx.fillText(s.label || '', a.x + 6, a.y + 14);
     }
   }
-  ctx.restore();
 
-  // Current selection (blue dashed)
-  ctx.save();
+  // active preview shape while drawing
   ctx.lineWidth = 2;
-  ctx.strokeStyle = "blue";
-  ctx.fillStyle = "blue";
-  ctx.setLineDash([6, 4]);
+  ctx.strokeStyle = '#2563eb'; // blue-ish
+  ctx.fillStyle = 'rgba(37,99,235,0.08)';
 
-  if (mode === "rect" && dragStart && dragEnd) {
-    const r = rectFromPoints(dragStart, dragEnd);
-    ctx.strokeRect(r.x, r.y, r.w, r.h);
+  if (mode === 'rect' && isDragging && dragStart && dragEnd) {
+    const x = Math.min(dragStart.x, dragEnd.x);
+    const y = Math.min(dragStart.y, dragEnd.y);
+    const rw = Math.abs(dragEnd.x - dragStart.x);
+    const rh = Math.abs(dragEnd.y - dragStart.y);
+    ctx.fillRect(x, y, rw, rh);
+    ctx.strokeRect(x, y, rw, rh);
   }
 
-  if (mode === "circle" && dragStart && dragEnd) {
-    const radiusPx = dist(dragStart, dragEnd);
+  if (mode === 'circle' && isDragging && circleCenter && circleEdge) {
+    const rr = dist(circleCenter, circleEdge);
     ctx.beginPath();
-    ctx.arc(dragStart.x, dragStart.y, radiusPx, 0, Math.PI * 2);
+    ctx.arc(circleCenter.x, circleCenter.y, rr, 0, Math.PI * 2);
+    ctx.closePath();
+    ctx.fill();
     ctx.stroke();
-    ctx.setLineDash([]);
-    drawPoint(dragStart, 3);
   }
 
-  if (mode === "tri") {
-    ctx.setLineDash([]);
-    if (triPoints.length > 0) {
-      for (const p of triPoints) drawPoint(p, 4);
-      if (triPoints.length >= 2) {
-        ctx.beginPath();
-        ctx.moveTo(triPoints[0].x, triPoints[0].y);
-        ctx.lineTo(triPoints[1].x, triPoints[1].y);
-        ctx.stroke();
-      }
+  if (mode === 'tri' && triPoints.length) {
+    // draw points
+    ctx.fillStyle = '#2563eb';
+    for (const p of triPoints) {
+      ctx.beginPath();
+      ctx.arc(p.x, p.y, 4, 0, Math.PI * 2);
+      ctx.fill();
+    }
+    // draw lines if 2+ points
+    if (triPoints.length >= 2) {
+      ctx.strokeStyle = '#2563eb';
+      ctx.beginPath();
+      ctx.moveTo(triPoints[0].x, triPoints[0].y);
+      ctx.lineTo(triPoints[1].x, triPoints[1].y);
       if (triPoints.length === 3) {
-        ctx.beginPath();
-        ctx.moveTo(triPoints[0].x, triPoints[0].y);
-        ctx.lineTo(triPoints[1].x, triPoints[1].y);
         ctx.lineTo(triPoints[2].x, triPoints[2].y);
         ctx.closePath();
-        ctx.stroke();
       }
+      ctx.stroke();
     }
   }
-  ctx.restore();
 }
 
-// Load image
-fileInput.addEventListener("change", () => {
-  const files = fileInput.files;
-  const file = files && files[0] ? files[0] : null;
-  if (!file) return;
+function render() {
+  clearCanvas();
+  drawBlueprint();
+  drawSelections();
+}
 
-  const url = URL.createObjectURL(file);
-  img = new Image();
-  img.onload = () => {
-    imgLoaded = true;
-    saved = [];
-    resetInProgressSelection();
-    setStatus("Image loaded. " + modeHelpText());
-    updateUI();
-    draw();
+// ----- Totals UI -----
+function recomputeTotals() {
+  const total = selections.reduce((sum, s) => sum + (Number(s.areaSqFt) || 0), 0);
+  if (totalOut) totalOut.textContent = fmt2(total);
+  if (countOut) countOut.textContent = String(selections.length);
+
+  if (!listOut) return;
+
+  listOut.innerHTML = '';
+  selections.forEach((s, i) => {
+    const card = document.createElement('div');
+    card.className = 'selCard';
+
+    const title = document.createElement('div');
+    title.style.fontWeight = '700';
+    title.textContent = `${s.label || `Area ${i + 1}`} (${s.type}) — ${fmt2(s.areaSqFt)} sq ft`;
+
+    const meta = document.createElement('div');
+    meta.style.opacity = '0.8';
+    meta.style.fontSize = '13px';
+
+    if (s.type === 'rect') {
+      meta.textContent = `Width: ${fmt2(s.real.widthFt)} ft • Height: ${fmt2(s.real.heightFt)} ft`;
+    } else if (s.type === 'circle') {
+      meta.textContent = `Radius: ${fmt2(s.real.radiusFt)} ft`;
+    } else if (s.type === 'tri') {
+      meta.textContent = `Base: ${fmt2(s.real.baseFt)} ft • Height: ${fmt2(s.real.heightFt)} ft`;
+    }
+
+    card.appendChild(title);
+    card.appendChild(meta);
+
+    // tiny delete button (optional)
+    const del = document.createElement('button');
+    del.textContent = 'Remove';
+    del.style.marginTop = '8px';
+    del.addEventListener('click', () => {
+      selections.splice(i, 1);
+      recomputeTotals();
+      render();
+      setStatus('Removed selection.');
+    });
+
+    card.appendChild(del);
+
+    // light styling without relying on extra CSS
+    card.style.border = '1px solid #e5e5e5';
+    card.style.borderRadius = '10px';
+    card.style.padding = '10px';
+
+    listOut.appendChild(card);
+  });
+}
+
+// expose snapshot for chatbot.js
+window.getEstimatorSnapshot = function getEstimatorSnapshot() {
+  const total = selections.reduce((sum, s) => sum + (Number(s.areaSqFt) || 0), 0);
+  return {
+    totalSqFt: Number(fmt2(total)),
+    selectionsCount: selections.length,
+    selections: selections.map((s) => ({
+      label: s.label,
+      type: s.type,
+      areaSqFt: Number(fmt2(s.areaSqFt)),
+      real: s.real
+    }))
   };
-  img.src = url;
+};
+
+// ----- Save selection after user inputs real dimensions -----
+function promptLabel(defaultLabel) {
+  const label = (window.prompt('Label this area (ex: Kitchen):', defaultLabel || '') || '').trim();
+  return label || defaultLabel || 'Area';
+}
+
+function promptNumber(msg, defaultVal) {
+  const raw = (window.prompt(msg, String(defaultVal ?? '')) || '').trim();
+  const n = Number(raw);
+  if (!Number.isFinite(n) || n <= 0) return null;
+  return n;
+}
+
+function saveRect(p1, p2) {
+  // ask for real measurements in feet
+  const label = promptLabel(`Area ${selections.length + 1}`);
+
+  const widthFt = promptNumber('Rectangle REAL width (ft):', 10);
+  if (widthFt == null) return;
+
+  const heightFt = promptNumber('Rectangle REAL height (ft):', 12);
+  if (heightFt == null) return;
+
+  const areaSqFt = widthFt * heightFt;
+
+  selections.push({
+    type: 'rect',
+    label,
+    geo: { p1: cssToNorm(p1), p2: cssToNorm(p2) },
+    real: { widthFt, heightFt },
+    areaSqFt
+  });
+
+  setStatus(`Saved "${label}" (${fmt2(areaSqFt)} sq ft). Rectangle mode: drag to select.`);
+  recomputeTotals();
+  render();
+}
+
+function saveCircle(center, edge) {
+  const label = promptLabel(`Area ${selections.length + 1}`);
+
+  const radiusFt = promptNumber('Circle REAL radius (ft):', 6);
+  if (radiusFt == null) return;
+
+  const areaSqFt = Math.PI * radiusFt * radiusFt;
+
+  // radius normalized relative to min(canvasW, canvasH)
+  const rCss = dist(center, edge);
+  const rNorm = (() => {
+    const rect = canvas.getBoundingClientRect();
+    const minDim = Math.max(1, Math.min(rect.width, rect.height));
+    return rCss / minDim;
+  })();
+
+  selections.push({
+    type: 'circle',
+    label,
+    geo: { c: cssToNorm(center), r: rNorm },
+    real: { radiusFt },
+    areaSqFt
+  });
+
+  setStatus(`Saved "${label}" (${fmt2(areaSqFt)} sq ft). Circle mode: drag radius.`);
+  recomputeTotals();
+  render();
+}
+
+function saveTriangle(a, b, c) {
+  const label = promptLabel(`Area ${selections.length + 1}`);
+
+  const baseFt = promptNumber('Triangle REAL base (ft):', 10);
+  if (baseFt == null) return;
+
+  const heightFt = promptNumber('Triangle REAL height (ft):', 8);
+  if (heightFt == null) return;
+
+  const areaSqFt = 0.5 * baseFt * heightFt;
+
+  selections.push({
+    type: 'tri',
+    label,
+    geo: { a: cssToNorm(a), b: cssToNorm(b), c: cssToNorm(c) },
+    real: { baseFt, heightFt },
+    areaSqFt
+  });
+
+  setStatus(`Saved "${label}" (${fmt2(areaSqFt)} sq ft). Triangle mode: click 3 points.`);
+  recomputeTotals();
+  render();
+}
+
+// ----- Events -----
+if (shapeModeEl) {
+  shapeModeEl.addEventListener('change', () => {
+    mode = shapeModeEl.value;
+    isDragging = false;
+    dragStart = dragEnd = null;
+    circleCenter = circleEdge = null;
+    triPoints = [];
+    setStatus(
+      mode === 'rect'
+        ? 'Rectangle mode: drag to select.'
+        : mode === 'circle'
+          ? 'Circle mode: click+drag to set radius.'
+          : 'Triangle mode: click 3 corners.'
+    );
+    render();
+  });
+}
+
+if (undoBtn) {
+  undoBtn.addEventListener('click', () => {
+    if (!selections.length) return;
+    selections.pop();
+    recomputeTotals();
+    render();
+    setStatus('Undid last selection.');
+  });
+}
+
+if (clearBtn) {
+  clearBtn.addEventListener('click', () => {
+    selections = [];
+    recomputeTotals();
+    render();
+    setStatus('Cleared all selections.');
+  });
+}
+
+if (blueprintInput) {
+  blueprintInput.addEventListener('change', () => {
+    const file = blueprintInput.files && blueprintInput.files[0];
+    if (!file) return;
+
+    if (!/^image\/(png|jpeg|jpg)$/i.test(file.type)) {
+      alert('Please upload a PNG or JPG image.');
+      blueprintInput.value = '';
+      return;
+    }
+
+    const url = URL.createObjectURL(file);
+    const img = new Image();
+    img.onload = () => {
+      blueprintImg = img;
+      setStatus('Image loaded. Start selecting an area.');
+      fitCanvasToWrap();
+      render();
+    };
+    img.onerror = () => {
+      alert('Could not load that image.');
+    };
+    img.src = url;
+  });
+}
+
+// Canvas pointer events
+canvas.addEventListener('mousedown', (e) => {
+  const p = getCanvasCssPointFromEvent(e);
+
+  if (mode === 'rect') {
+    isDragging = true;
+    dragStart = p;
+    dragEnd = p;
+    render();
+  }
+
+  if (mode === 'circle') {
+    isDragging = true;
+    circleCenter = p;
+    circleEdge = p;
+    render();
+  }
 });
 
-// Mode switch
-shapeModeEl.addEventListener("change", () => {
-  mode = shapeModeEl.value;
-  resetInProgressSelection();
-  if (imgLoaded) setStatus(modeHelpText());
-  draw();
-});
-
-// Mouse drag for rect/circle
-canvas.addEventListener("mousedown", (e) => {
-  if (!imgLoaded) return;
-  if (mode === "tri") return;
-
-  isDragging = true;
-  dragStart = canvasPointFromMouse(e);
-  dragEnd = dragStart;
-  setStatus("Dragging... release to finish selection.");
-  draw();
-});
-
-canvas.addEventListener("mousemove", (e) => {
+canvas.addEventListener('mousemove', (e) => {
   if (!isDragging) return;
-  dragEnd = canvasPointFromMouse(e);
-  draw();
+  const p = getCanvasCssPointFromEvent(e);
+
+  if (mode === 'rect' && dragStart) {
+    dragEnd = p;
+    render();
+  }
+
+  if (mode === 'circle' && circleCenter) {
+    circleEdge = p;
+    render();
+  }
 });
 
-canvas.addEventListener("mouseup", () => {
+canvas.addEventListener('mouseup', () => {
   if (!isDragging) return;
   isDragging = false;
 
-  if (!dragStart || !dragEnd) return;
-
-  // Rectangle
-  if (mode === "rect") {
-    const r = rectFromPoints(dragStart, dragEnd);
-    if (r.w < 12 || r.h < 12) {
-      setStatus("Selection too small. Drag a bigger rectangle.");
-      resetInProgressSelection();
-      draw();
-      return;
+  if (mode === 'rect' && dragStart && dragEnd) {
+    // ignore tiny drags
+    if (dist(dragStart, dragEnd) < 6) {
+      setStatus('Drag a bigger rectangle.');
+    } else {
+      saveRect(dragStart, dragEnd);
     }
-
-    const widthFt = promptNumber("Enter REAL width (feet):", "10");
-    if (widthFt === null) { setStatus("Cancelled. Not saved."); resetInProgressSelection(); draw(); return; }
-    if (Number.isNaN(widthFt)) { setStatus("Invalid width. Not saved."); resetInProgressSelection(); draw(); return; }
-
-    const heightFt = promptNumber("Enter REAL height (feet):", "12");
-    if (heightFt === null) { setStatus("Cancelled. Not saved."); resetInProgressSelection(); draw(); return; }
-    if (Number.isNaN(heightFt)) { setStatus("Invalid height. Not saved."); resetInProgressSelection(); draw(); return; }
-
-    const areaFt2 = widthFt * heightFt;
-    const label = promptLabel(`Area ${saved.length + 1}`);
-
-    saved.push({
-      type: "rect",
-      label,
-      areaFt2,
-      details: `Width: ${widthFt} ft · Height: ${heightFt} ft`,
-      draw: { rect: r }
-    });
-
-    setStatus(`Saved "${label}" (${areaFt2.toFixed(2)} sq ft). ${modeHelpText()}`);
-    resetInProgressSelection();
-    updateUI();
-    draw();
-    return;
   }
 
-  // Circle
-  if (mode === "circle") {
-    const radiusPx = dist(dragStart, dragEnd);
-    if (radiusPx < 10) {
-      setStatus("Circle too small. Drag a bigger radius.");
-      resetInProgressSelection();
-      draw();
-      return;
+  if (mode === 'circle' && circleCenter && circleEdge) {
+    if (dist(circleCenter, circleEdge) < 6) {
+      setStatus('Drag a bigger circle radius.');
+    } else {
+      saveCircle(circleCenter, circleEdge);
     }
-
-    const radiusFt = promptNumber("Enter REAL radius (feet):", "6");
-    if (radiusFt === null) { setStatus("Cancelled. Not saved."); resetInProgressSelection(); draw(); return; }
-    if (Number.isNaN(radiusFt)) { setStatus("Invalid radius. Not saved."); resetInProgressSelection(); draw(); return; }
-
-    const areaFt2 = Math.PI * radiusFt * radiusFt;
-    const label = promptLabel(`Area ${saved.length + 1}`);
-
-    saved.push({
-      type: "circle",
-      label,
-      areaFt2,
-      details: `Radius: ${radiusFt} ft · Area = πr²`,
-      draw: { center: { x: dragStart.x, y: dragStart.y }, radiusPx }
-    });
-
-    setStatus(`Saved "${label}" (${areaFt2.toFixed(2)} sq ft). ${modeHelpText()}`);
-    resetInProgressSelection();
-    updateUI();
-    draw();
   }
+
+  dragStart = dragEnd = null;
+  circleCenter = circleEdge = null;
+  render();
 });
 
-// Triangle click logic
-canvas.addEventListener("click", (e) => {
-  if (!imgLoaded) return;
-  if (mode !== "tri") return;
+// Triangle: click 3 points (no dragging)
+canvas.addEventListener('click', (e) => {
+  if (mode !== 'tri') return;
+  const p = getCanvasCssPointFromEvent(e);
 
-  const p = canvasPointFromMouse(e);
   triPoints.push(p);
-
   if (triPoints.length < 3) {
-    setStatus(`Triangle mode: ${triPoints.length}/3 points set. Click next corner.`);
-    draw();
+    setStatus(`Triangle: click ${3 - triPoints.length} more point(s).`);
+    render();
     return;
   }
 
-  draw();
-
-  const baseFt = promptNumber("Enter REAL base (feet):", "10");
-  if (baseFt === null) { setStatus("Cancelled. Triangle not saved."); triPoints = []; draw(); return; }
-  if (Number.isNaN(baseFt)) { setStatus("Invalid base. Triangle not saved."); triPoints = []; draw(); return; }
-
-  const heightFt = promptNumber("Enter REAL height (feet):", "8");
-  if (heightFt === null) { setStatus("Cancelled. Triangle not saved."); triPoints = []; draw(); return; }
-  if (Number.isNaN(heightFt)) { setStatus("Invalid height. Triangle not saved."); triPoints = []; draw(); return; }
-
-  const areaFt2 = 0.5 * baseFt * heightFt;
-  const label = promptLabel(`Area ${saved.length + 1}`);
-
-  saved.push({
-    type: "tri",
-    label,
-    areaFt2,
-    details: `Base: ${baseFt} ft · Height: ${heightFt} ft · Area = ½bh`,
-    draw: { points: [triPoints[0], triPoints[1], triPoints[2]] }
-  });
-
-  setStatus(`Saved "${label}" (${areaFt2.toFixed(2)} sq ft). ${modeHelpText()}`);
+  // got 3 points
+  const [a, b, c] = triPoints;
   triPoints = [];
-  updateUI();
-  draw();
-});
-
-// Undo / Clear
-btnUndo.addEventListener("click", () => {
-  if (saved.length === 0) return;
-  const removed = saved.pop();
-  setStatus(`Undid "${removed ? removed.label : "Area"}". ${modeHelpText()}`);
-  updateUI();
-  draw();
-});
-
-btnClear.addEventListener("click", () => {
-  if (saved.length === 0) return;
-  saved = [];
-  setStatus(`Cleared all saved selections. ${modeHelpText()}`);
-  updateUI();
-  draw();
+  saveTriangle(a, b, c);
 });
 
 // Initial UI
-updateUI();
-draw();
+setStatus('Upload an image to begin.');
+recomputeTotals();
+fitCanvasToWrap();
+render();

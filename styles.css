@@ -1,69 +1,165 @@
+/* Basic page spacing */
 body {
-  font-family: system-ui, -apple-system, BlinkMacSystemFont, sans-serif;
+  font-family: system-ui, -apple-system, Segoe UI, Roboto, Arial, sans-serif;
   margin: 24px;
-  background: #fff;
-  color: #111;
 }
 
-canvas {
-  max-width: 100%;
+h1 { margin: 0 0 10px; }
+ol { margin-top: 0; }
+
+/* Layout */
+.layout {
+  display: grid;
+  grid-template-columns: 1fr 420px;
+  gap: 18px;
+  align-items: start;
+}
+
+@media (max-width: 1000px) {
+  .layout { grid-template-columns: 1fr; }
+}
+
+/* Left side */
+.toolbar {
+  display: flex;
+  gap: 10px;
+  align-items: center;
+  flex-wrap: wrap;
+  margin: 8px 0;
+}
+
+.status {
   border: 1px solid #ddd;
+  padding: 10px;
+  border-radius: 8px;
+  margin-bottom: 10px;
 }
 
-button {
+.canvasWrap {
+  border: 1px solid #ddd;
+  border-radius: 10px;
+  overflow: hidden;
+  background: #fafafa;
+  /* IMPORTANT: give the canvas area a real height */
+  height: 520px;
+}
+
+/* IMPORTANT: make canvas fill the wrap */
+#canvas {
+  width: 100%;
+  height: 100%;
+  display: block;
+}
+
+/* Right side */
+.card {
+  border: 1px solid #ddd;
+  border-radius: 10px;
+  padding: 14px;
+  background: #fff;
+}
+
+.totalLine {
+  display: flex;
+  justify-content: space-between;
+  gap: 12px;
+  margin-bottom: 10px;
+}
+
+.selectionsList { display: grid; gap: 10px; }
+
+/* Chat UI */
+.chatFab {
+  position: fixed;
+  right: 22px;
+  bottom: 22px;
+  width: 60px;
+  height: 60px;
+  border-radius: 999px;
+  border: none;
+  font-size: 22px;
   cursor: pointer;
 }
 
-#chatPanel {
+.chatPanel {
   position: fixed;
-  bottom: 90px;
-  right: 20px;
-  width: 320px;
-  max-height: 420px;
-  background: #fff;
+  right: 22px;
+  bottom: 95px;
+  width: 360px;
+  height: 420px;
+  background: white;
   border: 1px solid #ddd;
-  border-radius: 12px;
+  border-radius: 14px;
+  box-shadow: 0 10px 30px rgba(0,0,0,0.12);
   display: none;
-  flex-direction: column;
-  box-shadow: 0 10px 30px rgba(0,0,0,0.15);
+  overflow: hidden;
 }
 
-#chatPanel.open {
+.chatPanel.open { display: flex; flex-direction: column; }
+
+.chatHeader {
   display: flex;
+  justify-content: space-between;
+  gap: 10px;
+  align-items: center;
+  padding: 10px 12px;
+  border-bottom: 1px solid #eee;
 }
 
-#chatLog {
-  padding: 12px;
-  overflow-y: auto;
+.chatTitle { font-weight: 700; }
+.chatSubtitle { font-size: 12px; opacity: 0.7; }
+
+.chatClose {
+  border: 1px solid #ddd;
+  background: white;
+  border-radius: 10px;
+  padding: 4px 10px;
+  cursor: pointer;
+}
+
+.chatLog {
+  padding: 10px;
+  overflow: auto;
   flex: 1;
+  background: #fafafa;
+}
+
+.msg { display: flex; margin: 8px 0; }
+.msg.user { justify-content: flex-end; }
+.msg.assistant { justify-content: flex-start; }
+
+.bubble {
+  max-width: 80%;
+  padding: 10px 12px;
+  border-radius: 14px;
+  border: 1px solid #e5e5e5;
+  background: white;
+  white-space: pre-wrap;
 }
 
 .msg.user .bubble {
-  background: #e6f0ff;
-  margin-left: auto;
+  background: #e9f2ff;
 }
 
-.msg.assistant .bubble {
-  background: #f2f2f2;
-  margin-right: auto;
+.chatForm {
+  display: flex;
+  gap: 8px;
+  padding: 10px;
+  border-top: 1px solid #eee;
+  background: white;
 }
 
-.bubble {
-  padding: 8px 10px;
-  border-radius: 10px;
-  margin-bottom: 8px;
-  max-width: 85%;
+#chatInput {
+  flex: 1;
+  padding: 10px 12px;
+  border-radius: 12px;
+  border: 1px solid #ddd;
 }
 
-#chatFab {
-  position: fixed;
-  bottom: 20px;
-  right: 20px;
-  width: 56px;
-  height: 56px;
-  border-radius: 50%;
-  border: none;
-  background: #2563eb;
-  color: white;
-  font-size: 22px;
+#chatSend {
+  padding: 10px 12px;
+  border-radius: 12px;
+  border: 1px solid #ddd;
+  background: white;
+  cursor: pointer;
 }

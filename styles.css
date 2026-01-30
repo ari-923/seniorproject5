@@ -1,0 +1,69 @@
+body {
+  font-family: system-ui, -apple-system, BlinkMacSystemFont, sans-serif;
+  margin: 24px;
+  background: #fff;
+  color: #111;
+}
+
+canvas {
+  max-width: 100%;
+  border: 1px solid #ddd;
+}
+
+button {
+  cursor: pointer;
+}
+
+#chatPanel {
+  position: fixed;
+  bottom: 90px;
+  right: 20px;
+  width: 320px;
+  max-height: 420px;
+  background: #fff;
+  border: 1px solid #ddd;
+  border-radius: 12px;
+  display: none;
+  flex-direction: column;
+  box-shadow: 0 10px 30px rgba(0,0,0,0.15);
+}
+
+#chatPanel.open {
+  display: flex;
+}
+
+#chatLog {
+  padding: 12px;
+  overflow-y: auto;
+  flex: 1;
+}
+
+.msg.user .bubble {
+  background: #e6f0ff;
+  margin-left: auto;
+}
+
+.msg.assistant .bubble {
+  background: #f2f2f2;
+  margin-right: auto;
+}
+
+.bubble {
+  padding: 8px 10px;
+  border-radius: 10px;
+  margin-bottom: 8px;
+  max-width: 85%;
+}
+
+#chatFab {
+  position: fixed;
+  bottom: 20px;
+  right: 20px;
+  width: 56px;
+  height: 56px;
+  border-radius: 50%;
+  border: none;
+  background: #2563eb;
+  color: white;
+  font-size: 22px;
+}

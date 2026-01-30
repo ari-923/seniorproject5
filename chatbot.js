@@ -1,5 +1,6 @@
 'use strict';
 
+// === Elements ===
 const chatFab = document.getElementById('chatFab');
 const chatPanel = document.getElementById('chatPanel');
 const chatClose = document.getElementById('chatClose');
@@ -8,6 +9,7 @@ const chatForm = document.getElementById('chatForm');
 const chatInput = document.getElementById('chatInput');
 const chatSend = document.getElementById('chatSend');
 
+// === Helpers ===
 function addMsg(role, text) {
   const row = document.createElement('div');
   row.className = `msg ${role}`;
@@ -25,25 +27,30 @@ function openChat(open) {
   if (open) chatInput.focus();
 }
 
+// === UI Events ===
 chatFab.addEventListener('click', () => openChat(true));
 chatClose.addEventListener('click', () => openChat(false));
 
+// Detect GitHub Pages
 const isGitHubPages = location.hostname.endsWith('github.io');
 
+// Initial message
 addMsg(
   'assistant',
   isGitHubPages
-    ? "Hi! The chat UI works on GitHub Pages, but AI replies require a server (Vercel/Netlify) to run /api/chat.\n\nDeploy this repo on Vercel to enable AI."
-    : "Hi! Ask me about your total sq ft, adding waste %, or cost estimates."
+    ? "Hi! The chat UI works here, but AI replies require a server.\n\nDeploy this site on Vercel to enable AI."
+    : "Hi! Ask me about totals, adding waste %, or cost estimates."
 );
 
+// === Estimator Snapshot ===
 function getEstimatorSnapshot() {
   if (typeof window.getEstimatorSnapshot === 'function') {
     return window.getEstimatorSnapshot();
   }
 
-  const total = (document.getElementById('totalOut')?.textContent || '0.00').trim();
+  const total = (document.getElementById('totalOut')?.textContent || '0').trim();
   const count = (document.getElementById('countOut')?.textContent || '0').trim();
+
   return {
     totalSqFt: Number(total),
     selectionsCount: Number(count),
@@ -51,10 +58,10 @@ function getEstimatorSnapshot() {
   };
 }
 
-// ✅ MUST be leading slash on Vercel
-// This guarantees it calls: https://YOURDOMAIN.vercel.app/api/chat
+// ✅ MUST BE ROOT PATH
 const API_URL = '/api/chat';
 
+// === API Call ===
 async function sendToAI(userText) {
   const snapshot = getEstimatorSnapshot();
 
@@ -64,20 +71,19 @@ async function sendToAI(userText) {
     body: JSON.stringify({ message: userText, snapshot })
   });
 
-  const text = await res.text(); // read once
   if (!res.ok) {
-    throw new Error(`API error ${res.status}. ${text}`);
+    const errText = await res.text();
+    throw new Error(`API error ${res.status}: ${errText}`);
   }
 
-  // try parse JSON safely
-  let data = {};
-  try { data = JSON.parse(text); } catch {}
+  const data = await res.json();
   return data.reply || 'No reply returned.';
 }
 
+// === Form Submit ===
 chatForm.addEventListener('submit', async (e) => {
   e.preventDefault();
-  const text = (chatInput.value || '').trim();
+  const text = chatInput.value.trim();
   if (!text) return;
 
   chatInput.value = '';
@@ -86,7 +92,7 @@ chatForm.addEventListener('submit', async (e) => {
   if (isGitHubPages) {
     addMsg(
       'assistant',
-      "AI replies are disabled on GitHub Pages.\n\nTo enable AI:\n1) Deploy this repo on Vercel\n2) Add OPENAI_API_KEY in Vercel Environment Variables\n3) Use your Vercel link"
+      "AI is disabled on GitHub Pages.\n\nUse your Vercel deployment to enable it."
     );
     return;
   }
@@ -98,7 +104,7 @@ chatForm.addEventListener('submit', async (e) => {
     const reply = await sendToAI(text);
     addMsg('assistant', reply);
   } catch (err) {
-    addMsg('assistant', `Sorry — I couldn't reach the AI.\n${String(err.message || err)}`);
+    addMsg('assistant', `❌ ${err.message}`);
   } finally {
     chatSend.disabled = false;
     chatInput.disabled = false;

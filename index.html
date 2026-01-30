@@ -1,105 +1,82 @@
-<!DOCTYPE html>
+<!doctype html>
 <html lang="en">
 <head>
-  <meta charset="UTF-8" />
-  <title>Blueprint Flooring Estimator (Rect / Circle / Triangle)</title>
-  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-
-  <!-- Inline CSS so you DON'T need styles.css (prevents 404 issues) -->
-  <style>
-    body { font-family: Arial, sans-serif; margin: 20px; }
-    h1 { margin: 0 0 8px; }
-    p { margin-top: 0; line-height: 1.4; }
-    #canvas { border: 1px solid #ccc; background: #fff; }
-    #status { padding: 10px; border: 1px solid #eee; margin: 10px 0; border-radius: 6px; }
-    .layout { display: flex; gap: 20px; align-items: flex-start; }
-    .panel { border: 1px solid #eee; padding: 14px; border-radius: 10px; min-width: 280px; }
-    #areasList .areaCard { border: 1px solid #eee; padding: 10px; border-radius: 8px; margin-top: 10px; }
-    #chatFab { position: fixed; right: 22px; bottom: 22px; width: 56px; height: 56px; border-radius: 50%; border: none; cursor: pointer; font-size: 20px; }
-    #chatPanel { position: fixed; right: 22px; bottom: 90px; width: 320px; height: 420px; background: #fff; border: 1px solid #e6e6e6; border-radius: 12px; box-shadow: 0 10px 35px rgba(0,0,0,.12); display: none; overflow: hidden; }
-    #chatPanel.open { display: flex; flex-direction: column; }
-    #chatLog { flex: 1; overflow: auto; padding: 10px; background: #fafafa; }
-    .msg { display: flex; margin: 8px 0; }
-    .msg.user { justify-content: flex-end; }
-    .bubble { max-width: 80%; padding: 10px 12px; border-radius: 12px; white-space: pre-wrap; }
-    .msg.user .bubble { background: #dbeafe; }
-    .msg.assistant .bubble { background: #ffffff; border: 1px solid #eee; }
-    #chatForm { display: flex; gap: 8px; padding: 10px; border-top: 1px solid #eee; }
-    #chatInput { flex: 1; padding: 10px; border-radius: 10px; border: 1px solid #ddd; }
-    #chatSend { padding: 10px 12px; border-radius: 10px; border: 1px solid #ddd; cursor: pointer; }
-    #chatHeader { display:flex; align-items:center; justify-content:space-between; padding:10px; border-bottom:1px solid #eee; }
-    #chatClose { border: 1px solid #ddd; background: #fff; border-radius: 8px; padding: 6px 10px; cursor: pointer; }
-  </style>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width,initial-scale=1" />
+  <title>Blueprint Flooring Estimator</title>
+  <link rel="stylesheet" href="./styles.css" />
 </head>
 
 <body>
   <h1>Blueprint Flooring Estimator (Rect / Circle / Triangle)</h1>
 
-  <p>
-    1) Upload a blueprint image (PNG/JPG).<br>
-    2) Choose a shape mode: <b>Rectangle</b> (drag), <b>Circle</b> (drag radius), <b>Triangle</b> (click 3 points).<br>
-    3) Enter the real measurements in <b>feet</b> and add a label like <b>Kitchen</b>.<br>
-    Each measurement saves to the list + total.
-  </p>
-
-  <div>
-    <input type="file" id="fileInput" accept="image/png,image/jpeg" />
-    <label style="margin-left: 12px;">
-      Shape:
-      <select id="shapeSelect">
-        <option value="rect">Rectangle (drag)</option>
-        <option value="circle">Circle (drag radius)</option>
-        <option value="triangle">Triangle (3 clicks)</option>
-      </select>
-    </label>
-    <button id="undoBtn">Undo Last</button>
-    <button id="clearBtn">Clear All</button>
-  </div>
-
-  <div id="status">Status: Upload an image to begin.</div>
+  <ol>
+    <li>Upload a blueprint image (PNG/JPG).</li>
+    <li>Choose a shape mode: <b>Rectangle</b> (drag), <b>Circle</b> (drag radius), <b>Triangle</b> (click 3 points).</li>
+    <li>Enter real measurements in <b>feet</b> and add a label like <b>Kitchen</b>.</li>
+  </ol>
 
   <div class="layout">
-    <div>
-      <canvas id="canvas" width="900" height="600"></canvas>
-      <div style="margin-top:8px; font-size:12px;">
-        Triangle tip: click 3 corners, then you’ll be asked for real base + height (ft).
+    <div class="left">
+      <div class="toolbar">
+        <input id="fileInput" type="file" accept="image/png,image/jpeg" />
+        <label for="shapeSelect"><b>Shape:</b></label>
+        <select id="shapeSelect">
+          <option value="rect">Rectangle (drag)</option>
+          <option value="circle">Circle (drag radius)</option>
+          <option value="tri">Triangle (click 3 points)</option>
+        </select>
+
+        <button id="undoBtn" type="button">Undo Last</button>
+        <button id="clearBtn" type="button">Clear All</button>
       </div>
+
+      <div id="status" class="status">Status: Upload an image to begin.</div>
+
+      <div class="canvasWrap">
+        <!-- IMPORTANT: keep this ID exactly -->
+        <canvas id="canvas"></canvas>
+      </div>
+
+      <div class="tip">Triangle tip: click 3 corners, then you’ll be asked for real base + height (ft).</div>
     </div>
 
-    <div class="panel">
-      <h2 style="margin-top:0;">Total</h2>
-      <div style="font-size:18px;">
-        <b id="totalOut">0.00</b> sq ft
+    <div class="right">
+      <div class="card">
+        <h2>Total</h2>
+        <div class="totalLine">
+          <div><b id="totalOut">0.00</b> sq ft</div>
+          <div>Selections saved: <b id="countOut">0</b></div>
+        </div>
+
+        <!-- IMPORTANT: keep this ID exactly -->
+        <div id="selectionsList" class="selectionsList"></div>
       </div>
-      <div style="margin-top:6px;">
-        Selections saved: <b id="countOut">0</b>
-      </div>
-      <div id="areasList"></div>
+
+      <!-- Chat UI -->
+      <button id="chatFab" class="chatFab" aria-label="Open AI Helper">💬</button>
+
+      <section id="chatPanel" class="chatPanel" aria-hidden="true">
+        <header class="chatHeader">
+          <div>
+            <div class="chatTitle">AI Helper</div>
+            <div class="chatSubtitle">Totals • Waste % • Cost estimates</div>
+          </div>
+          <button id="chatClose" class="chatClose" aria-label="Close">✕</button>
+        </header>
+
+        <div id="chatLog" class="chatLog"></div>
+
+        <form id="chatForm" class="chatForm">
+          <input id="chatInput" type="text" placeholder='Try: "Add 10% waste to my total"' autocomplete="off" />
+          <button id="chatSend" type="submit">Send</button>
+        </form>
+      </section>
     </div>
   </div>
 
-  <!-- Chat UI -->
-  <button id="chatFab" aria-label="Open AI Helper">💬</button>
-
-  <div id="chatPanel" aria-hidden="true">
-    <div id="chatHeader">
-      <div>
-        <b>AI Helper</b><br/>
-        <small>Totals • Waste % • Cost estimates</small>
-      </div>
-      <button id="chatClose" aria-label="Close chat">✕</button>
-    </div>
-
-    <div id="chatLog"></div>
-
-    <form id="chatForm">
-      <input id="chatInput" type="text" placeholder='Try: "Add 10% waste to my total"' autocomplete="off" />
-      <button id="chatSend" type="submit">Send</button>
-    </form>
-  </div>
-
-  <!-- IMPORTANT: scripts at the bottom so IDs exist before JS runs -->
-  <script src="./app.js"></script>
-  <script src="./chatbot.js"></script>
+  <!-- Scripts: app.js FIRST, then chatbot.js -->
+  <script src="./app.js" defer></script>
+  <script src="./chatbot.js" defer></script>
 </body>
 </html>

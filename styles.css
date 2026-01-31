@@ -1,23 +1,69 @@
+/* ===== Global ===== */
+:root {
+  --bg: #f8fafc;
+  --card: #ffffff;
+  --border: #e5e7eb;
+  --text: #0f172a;
+  --muted: #64748b;
+
+  --primary: #2563eb;   /* blue */
+  --primary-soft: rgba(37, 99, 235, 0.12);
+
+  --success: #16a34a;   /* green */
+  --success-soft: rgba(22, 163, 74, 0.12);
+}
+
 body {
   font-family: system-ui, -apple-system, sans-serif;
   margin: 20px;
+  background: var(--bg);
+  color: var(--text);
 }
 
+/* ===== Controls ===== */
 .controls {
-  margin-bottom: 10px;
+  display: flex;
+  gap: 10px;
+  flex-wrap: wrap;
+  margin-bottom: 12px;
 }
 
+.controls select,
+.controls button,
+.controls input[type="file"] {
+  padding: 8px 12px;
+  border-radius: 10px;
+  border: 1px solid var(--border);
+  background: var(--card);
+  cursor: pointer;
+}
+
+.controls button {
+  background: var(--primary);
+  color: white;
+  border-color: var(--primary);
+}
+
+.controls button:hover {
+  filter: brightness(0.95);
+}
+
+/* ===== Layout ===== */
 .layout {
   display: grid;
-  grid-template-columns: 1fr 320px;
+  grid-template-columns: 1fr 340px;
   gap: 20px;
   align-items: start;
 }
 
+/* ===== Canvas ===== */
 .canvasWrap {
-  border: 1px solid #ddd;
-  height: 500px;
+  background: var(--card);
+  border: 1px solid var(--border);
+  border-radius: 14px;
+  height: 520px;
   position: relative;
+  overflow: hidden;
 }
 
 canvas {
@@ -27,143 +73,163 @@ canvas {
 }
 
 .tip {
+  position: absolute;
+  bottom: 10px;
+  right: 12px;
   font-size: 12px;
-  opacity: 0.7;
-  margin-top: 6px;
+  color: var(--muted);
 }
 
+/* ===== Status ===== */
+#statusOut {
+  margin-bottom: 10px;
+  color: var(--muted);
+  font-size: 14px;
+}
+
+/* ===== Summary ===== */
 .summary {
-  border: 1px solid #ddd;
-  padding: 10px;
-  border-radius: 8px;
+  background: var(--card);
+  border: 1px solid var(--border);
+  border-radius: 14px;
+  padding: 14px;
+}
+
+.summary h3 {
+  margin-top: 0;
 }
 
 #listOut > div {
-  margin-top: 8px;
-  border: 1px solid #eee;
-  padding: 6px;
-  border-radius: 6px;
+  margin-top: 10px;
+  border: 1px solid var(--border);
+  border-radius: 12px;
+  padding: 10px;
+  background: var(--success-soft);
 }
 
-/* Chat */
+/* ===== Chat Widget ===== */
 #chatWidget {
   position: fixed;
   bottom: 20px;
   right: 20px;
-  width: 300px;
-  border: 1px solid #ddd;
-  background: white;
-  border-radius: 10px;
+  width: 320px;
+  border-radius: 16px;
+  background: var(--card);
+  border: 1px solid var(--border);
+  box-shadow: 0 20px 60px rgba(0,0,0,.15);
   overflow: hidden;
 }
 
 #chatLog {
-  max-height: 200px;
+  max-height: 220px;
   overflow-y: auto;
-  padding: 10px;
+  padding: 12px;
   font-size: 14px;
 }
 
 .chatInput {
   display: flex;
-  border-top: 1px solid #ddd;
+  border-top: 1px solid var(--border);
 }
 
 .chatInput input {
   flex: 1;
-  padding: 8px;
+  padding: 10px;
   border: none;
+  outline: none;
 }
 
 .chatInput button {
-  padding: 8px 12px;
+  padding: 10px 14px;
+  background: var(--primary);
+  color: white;
+  border: none;
+  cursor: pointer;
 }
 
-/* Modal */
+/* ===== Modal (Feet / Inches) ===== */
 .modalOverlay {
   position: fixed;
   inset: 0;
-  background: rgba(0, 0, 0, .45);
+  background: rgba(15, 23, 42, 0.45);
   display: grid;
   place-items: center;
   z-index: 999;
-  padding: 16px;
 }
 
 .modalCard {
-  width: 320px;
-  background: #fff;
-  border-radius: 14px;
-  border: 1px solid #e5e7eb;
-  box-shadow: 0 18px 50px rgba(0,0,0,.18);
-  padding: 14px;
+  width: 340px;
+  background: var(--card);
+  border-radius: 18px;
+  border: 1px solid var(--border);
+  box-shadow: 0 30px 80px rgba(0,0,0,.25);
+  padding: 18px;
 }
 
 .modalHeader h3 {
   margin: 0;
-  font-size: 16px;
+  font-size: 17px;
 }
 
 .modalHint {
   margin-top: 6px;
-  font-size: 12px;
-  opacity: .75;
+  font-size: 13px;
+  color: var(--muted);
 }
 
 .modalGrid {
   display: grid;
   grid-template-columns: 1fr 1fr;
-  gap: 10px;
-  margin-top: 12px;
+  gap: 12px;
+  margin-top: 14px;
 }
 
 .modalField label {
-  display: block;
   font-size: 12px;
-  opacity: .8;
-  margin-bottom: 4px;
+  color: var(--muted);
 }
 
 .modalField input {
   width: 100%;
   padding: 10px;
-  border-radius: 10px;
-  border: 1px solid #d1d5db;
+  border-radius: 12px;
+  border: 1px solid var(--border);
   outline: none;
+  font-size: 15px;
 }
 
 .modalField input:focus {
-  border-color: #93c5fd;
-  box-shadow: 0 0 0 3px rgba(59,130,246,.18);
+  border-color: var(--primary);
+  box-shadow: 0 0 0 3px var(--primary-soft);
 }
 
 .modalActions {
   display: flex;
   justify-content: flex-end;
   gap: 10px;
-  margin-top: 12px;
-}
-
-.btnPrimary, .btnSecondary {
-  padding: 9px 12px;
-  border-radius: 10px;
-  border: 1px solid #d1d5db;
-  cursor: pointer;
+  margin-top: 16px;
 }
 
 .btnPrimary {
-  background: #111827;
-  color: #fff;
-  border-color: #111827;
+  background: var(--primary);
+  color: white;
+  border: none;
+  padding: 10px 14px;
+  border-radius: 12px;
+  cursor: pointer;
 }
 
 .btnSecondary {
-  background: #fff;
+  background: #f1f5f9;
+  border: none;
+  padding: 10px 14px;
+  border-radius: 12px;
+  cursor: pointer;
 }
 
 .modalError {
   margin-top: 8px;
-  font-size: 12px;
-  color: #b91c1c;
+  font-size: 13px;
+  color: #dc2626;
   min-height: 16px;
 }

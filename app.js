@@ -11,9 +11,9 @@
  *    - Press ENTER -> prompts for closing side feet and saves
  * - ESC cancels current polygon draft
  *
- * POLY AREA RULES (IMPORTANT):
+ * POLY AREA RULES:
  * - 3 sides: triangle area from 3 sides (Heron's formula)
- * - 4 sides: user chooses Rectangle/Square OR Trapezoid OR Irregular (manual area)
+ * - 4 sides: user chooses (single letter) Rectangle/Square OR Trapezoid OR Irregular
  * - 5+ sides: manual area (sq ft)
  */
 
@@ -151,25 +151,22 @@ function computePolyAreaFromUser(sideFeet) {
 
   // ---- QUAD: 4 sides ----
   if (nSides === 4) {
-    // Ask user what the 4-sided shape should be treated as
-    // (Avoid A/B/C style; user types a word.)
+    // Single-letter choice to reduce user mistakes
     const choiceRaw = (window.prompt(
-      'This shape has 4 sides.\nType what it is: rectangle, trapezoid, or irregular.\n\n- rectangle: area = length × width\n- trapezoid: will ask for top base, bottom base, height\n- irregular: will ask for total area (sq ft)\n',
-      'rectangle'
+      'This shape has 4 sides.\nChoose one:\n\nR = rectangle/square (area = length × width)\nT = trapezoid (asks top base, bottom base, height)\nI = irregular (enter total area)\n\nType: R, T, or I',
+      'R'
     ) || '').trim().toLowerCase();
 
-    // Normalize choice
     const choice =
-      choiceRaw.startsWith('rect') ? 'rectangle' :
-      choiceRaw.startsWith('trap') ? 'trapezoid' :
-      choiceRaw.startsWith('irr') || choiceRaw.startsWith('man') ? 'irregular' :
+      choiceRaw.startsWith('r') ? 'rectangle' :
+      choiceRaw.startsWith('t') ? 'trapezoid' :
+      choiceRaw.startsWith('i') ? 'irregular' :
       null;
 
     if (!choice) return null;
 
     if (choice === 'rectangle') {
-      // IMPORTANT: A rectangle's area needs adjacent sides (L and W).
-      // Since the user entered sides in click order, sideFeet[0] and sideFeet[1] are adjacent.
+      // Adjacent sides are sideFeet[0] and sideFeet[1] (click order)
       const length = sideFeet[0];
       const width = sideFeet[1];
       return {
@@ -180,14 +177,12 @@ function computePolyAreaFromUser(sideFeet) {
     }
 
     if (choice === 'trapezoid') {
-      // For trapezoid, side lengths alone aren't enough; ask for bases & height.
-      // Provide smart defaults from the 4 sides:
-      // - base defaults: min and max
-      // - height default: second smallest (often the "leg" or height-ish value)
+      // Side lengths alone aren't enough; ask for bases & height.
+      // Use smart defaults from the 4 sides.
       const sorted = sideFeet.slice().sort((a, b) => a - b);
-      const defTop = sorted[0];      // guess
-      const defBottom = sorted[3];   // guess
-      const defHeight = sorted[1];   // guess
+      const defTop = sorted[0];
+      const defBottom = sorted[3];
+      const defHeight = sorted[1];
 
       const topBase = promptNumber('Trapezoid: enter TOP base (ft):', defTop);
       if (topBase == null) return null;
@@ -195,7 +190,10 @@ function computePolyAreaFromUser(sideFeet) {
       const bottomBase = promptNumber('Trapezoid: enter BOTTOM base (ft):', defBottom);
       if (bottomBase == null) return null;
 
-      const height = promptNumber('Trapezoid: enter HEIGHT (ft) (perpendicular distance between bases):', defHeight);
+      const height = promptNumber(
+        'Trapezoid: enter HEIGHT (ft) (perpendicular distance between bases):',
+        defHeight
+      );
       if (height == null) return null;
 
       return {

@@ -3,27 +3,22 @@
 /**
  * Blueprint Flooring Estimator (Rect / Circle / Triangle / Polygon)
  *
+ * LENGTH INPUT:
+ * - Uses a modal with Feet + Inches (inches default to 0)
+ * - Internally converts to decimal feet: feet + inches/12
+ *
  * Custom Shape (pins) behavior:
  * - Click to add pins (visual only)
- * - After EACH new pin (starting at pin #2), prompt for feet/inches of the side just created
+ * - After EACH new pin (starting at pin #2), user enters the side length via modal
  * - Finish polygon:
- *    - Click FIRST pin again (recommended) -> prompts for closing side length and saves
- *    - Press ENTER -> prompts for closing side length and saves
- * - ESC cancels current polygon draft
+ *    - Click FIRST pin again -> enter closing side length -> saves
+ *    - Press ENTER -> enter closing side length -> saves
+ * - ESC cancels polygon draft
  *
  * POLY AREA RULES:
  * - 3 sides: triangle area from 3 sides (Heron's formula)
- * - 4 sides: user chooses (single letter) Rectangle/Square OR Trapezoid OR Irregular
+ * - 4 sides: user chooses (single letter) R / T / I
  * - 5+ sides: manual area (sq ft)
- *
- * LENGTH INPUTS (feet/inches):
- * Users may type:
- *  - 10' 6"   (recommended)
- *  - 10 6
- *  - 10-6
- *  - 10ft 6in
- *  - 10.5     (decimal feet)
- *  - 6"       (inches only)
  */
 
 // ----- Grab DOM -----
@@ -40,6 +35,16 @@ const listOut = document.getElementById('listOut');
 
 if (!canvas) throw new Error('Missing #canvas in HTML.');
 const ctx = canvas.getContext('2d');
+
+// Modal DOM
+const lengthModal = document.getElementById('lengthModal');
+const lengthModalTitle = document.getElementById('lengthModalTitle');
+const lengthModalHint = document.getElementById('lengthModalHint');
+const lengthModalError = document.getElementById('lengthModalError');
+const feetInput = document.getElementById('feetInput');
+const inchInput = document.getElementById('inchInput');
+const lengthOk = document.getElementById('lengthOk');
+const lengthCancel = document.getElementById('lengthCancel');
 
 // ----- State -----
 let blueprintImg = null;
@@ -63,6 +68,8 @@ let triPoints = [];
 let polyPoints = [];     // [{x,y}, ...] CSS px
 let polySideFeet = [];   // feet for each side between consecutive points (closing added at finish)
 let polyHover = null;
+
+let modalBusy = false;   // prevents double-open
 
 // ----- Helpers -----
 function setStatus(msg) {
@@ -113,74 +120,11 @@ function promptLabel(defaultLabel) {
   return label || defaultLabel || 'Area';
 }
 
-/**
- * Converts user input like:
- *  - 10.5
- *  - 10'6"
- *  - 10' 6
- *  - 10 6
- *  - 10ft 6in
- *  - 10-6
- *  - 6"
- * into decimal FEET.
- */
-function parseFeetInchesToFeet(input) {
-  let s = String(input).trim().toLowerCase();
-  if (!s) return NaN;
-
-  // Plain decimal feet (ex: 10.5)
-  if (/^[0-9]+(\.[0-9]+)?$/.test(s)) return Number(s);
-
-  // Normalize common words/symbols
-  s = s
-    .replace(/feet|foot|ft/g, "'")
-    .replace(/inches|inch|in/g, '"')
-    .replace(/”/g, '"')
-    .replace(/“/g, '"')
-    .replace(/\s+/g, ' ')
-    .trim();
-
-  // Inches only: 6"
-  // (Must contain " and NOT contain ')
-  if (s.includes('"') && !s.includes("'")) {
-    const mi = s.match(/^(\d+(?:\.\d+)?)\s*"?$/);
-    if (mi) return Number(mi[1]) / 12;
-  }
-
-  // Feet'inches: 10'6" OR 10' 6" OR 10'6
-  const m1 = s.match(/^(\d+(?:\.\d+)?)\s*'\s*(\d+(?:\.\d+)?)?\s*"?$/);
-  if (m1) {
-    const f = Number(m1[1]);
-    const inches = m1[2] != null ? Number(m1[2]) : 0;
-    return f + (inches / 12);
-  }
-
-  // Feet inches: "10 6" OR "10-6"
-  const m2 = s.match(/^(\d+(?:\.\d+)?)\s*[- ]\s*(\d+(?:\.\d+)?)$/);
-  if (m2) {
-    const f = Number(m2[1]);
-    const inches = Number(m2[2]);
-    return f + (inches / 12);
-  }
-
-  return NaN;
-}
-
-/**
- * Prompt for a length in FEET (supports feet/inches formats).
- * Returns decimal feet or null if cancelled/invalid.
- */
-function promptNumber(msg, defaultVal) {
-  const raw = (window.prompt(
-    `${msg}\nExamples: 10' 6", 10 6, 10.5`,
-    String(defaultVal ?? '')
-  ) || '').trim();
-
-  if (!raw) return null;
-
-  const feet = parseFeetInchesToFeet(raw);
-  if (!Number.isFinite(feet) || feet <= 0) return null;
-  return feet;
+function promptAreaSqFt(msg, defaultVal) {
+  const raw = (window.prompt(msg, String(defaultVal ?? '')) || '').trim();
+  const n = Number(raw);
+  if (!Number.isFinite(n) || n <= 0) return null;
+  return n;
 }
 
 function resetPolygonDraft(msg) {
@@ -191,11 +135,97 @@ function resetPolygonDraft(msg) {
   render();
 }
 
+/**
+ * Open the Feet/Inches modal and return decimal FEET.
+ * Inches default to 0.
+ * Returns: number (decimal feet) or null if cancelled.
+ */
+function askLengthFeetInches({ title, hint, defaultFeet = 0, defaultInches = 0, allowZero = false }) {
+  return new Promise((resolve) => {
+    if (modalBusy) return resolve(null);
+    modalBusy = true;
+
+    if (!lengthModal || !feetInput || !inchInput || !lengthOk || !lengthCancel) {
+      modalBusy = false;
+      alert('Length modal is missing in index.html.');
+      return resolve(null);
+    }
+
+    lengthModalTitle.textContent = title || 'Enter Length';
+    lengthModalHint.textContent = hint || 'Inches default to 0. Press Enter to OK.';
+    lengthModalError.textContent = '';
+
+    // Set defaults
+    feetInput.value = String(Math.max(0, Math.floor(defaultFeet || 0)));
+    inchInput.value = String(Math.max(0, Math.floor(defaultInches || 0)));
+
+    // Show
+    lengthModal.style.display = 'grid';
+
+    // Focus
+    setTimeout(() => feetInput.focus(), 0);
+
+    const close = (val) => {
+      lengthModal.style.display = 'none';
+      lengthModalError.textContent = '';
+      cleanupListeners();
+      modalBusy = false;
+      resolve(val);
+    };
+
+    const onOk = () => {
+      const feet = Number(feetInput.value);
+      const inches = Number(inchInput.value);
+
+      if (!Number.isFinite(feet) || feet < 0) {
+        lengthModalError.textContent = 'Feet must be 0 or more.';
+        return;
+      }
+      if (!Number.isFinite(inches) || inches < 0 || inches > 11) {
+        lengthModalError.textContent = 'Inches must be between 0 and 11.';
+        return;
+      }
+
+      const totalFeet = feet + (inches / 12);
+
+      if (!allowZero && totalFeet <= 0) {
+        lengthModalError.textContent = 'Length must be greater than 0.';
+        return;
+      }
+
+      close(totalFeet);
+    };
+
+    const onCancel = () => close(null);
+
+    const onKey = (e) => {
+      if (e.key === 'Enter') {
+        e.preventDefault();
+        onOk();
+      }
+      if (e.key === 'Escape') {
+        e.preventDefault();
+        onCancel();
+      }
+    };
+
+    function cleanupListeners() {
+      lengthOk.removeEventListener('click', onOk);
+      lengthCancel.removeEventListener('click', onCancel);
+      document.removeEventListener('keydown', onKey);
+    }
+
+    lengthOk.addEventListener('click', onOk);
+    lengthCancel.addEventListener('click', onCancel);
+    document.addEventListener('keydown', onKey);
+  });
+}
+
 // ---- Math helpers ----
 function heronArea(a, b, c) {
   const s = (a + b + c) / 2;
   const inside = s * (s - a) * (s - b) * (s - c);
-  if (inside <= 0) return null; // invalid triangle / degenerate
+  if (inside <= 0) return null;
   return Math.sqrt(inside);
 }
 
@@ -207,7 +237,7 @@ function trapezoidArea(b1, b2, h) {
  * Decide polygon area based on user-provided info.
  * Returns: { areaSqFt, method, details } or null if cancelled/invalid.
  */
-function computePolyAreaFromUser(sideFeet) {
+async function computePolyAreaFromUser(sideFeet) {
   const nSides = sideFeet.length;
 
   // ---- TRIANGLE: 3 sides ----
@@ -223,7 +253,6 @@ function computePolyAreaFromUser(sideFeet) {
 
   // ---- QUAD: 4 sides ----
   if (nSides === 4) {
-    // Single-letter choice to reduce user mistakes
     const choiceRaw = (window.prompt(
       'This shape has 4 sides.\nChoose one:\n\nR = rectangle/square (area = length × width)\nT = trapezoid (asks top base, bottom base, height)\nI = irregular (enter total area)\n\nType: R, T, or I',
       'R'
@@ -238,7 +267,6 @@ function computePolyAreaFromUser(sideFeet) {
     if (!choice) return null;
 
     if (choice === 'rectangle') {
-      // Adjacent sides are sideFeet[0] and sideFeet[1] (click order)
       const length = sideFeet[0];
       const width = sideFeet[1];
       return {
@@ -249,23 +277,31 @@ function computePolyAreaFromUser(sideFeet) {
     }
 
     if (choice === 'trapezoid') {
-      // Side lengths alone aren't enough; ask for bases & height.
-      // Use smart defaults from the 4 sides.
+      // Smart defaults from the 4 sides
       const sorted = sideFeet.slice().sort((a, b) => a - b);
       const defTop = sorted[0];
       const defBottom = sorted[3];
       const defHeight = sorted[1];
 
-      const topBase = promptNumber('Trapezoid: enter TOP base (ft):', defTop);
+      const topBase = await askLengthFeetInches({
+        title: 'Trapezoid: TOP base',
+        hint: 'Enter top base length.',
+        defaultFeet: defTop
+      });
       if (topBase == null) return null;
 
-      const bottomBase = promptNumber('Trapezoid: enter BOTTOM base (ft):', defBottom);
+      const bottomBase = await askLengthFeetInches({
+        title: 'Trapezoid: BOTTOM base',
+        hint: 'Enter bottom base length.',
+        defaultFeet: defBottom
+      });
       if (bottomBase == null) return null;
 
-      const height = promptNumber(
-        'Trapezoid: enter HEIGHT (ft) (perpendicular distance between bases):',
-        defHeight
-      );
+      const height = await askLengthFeetInches({
+        title: 'Trapezoid: HEIGHT',
+        hint: 'Enter perpendicular height (distance between bases).',
+        defaultFeet: defHeight
+      });
       if (height == null) return null;
 
       return {
@@ -276,7 +312,7 @@ function computePolyAreaFromUser(sideFeet) {
     }
 
     // irregular (manual area)
-    const manualArea = promptNumber('Irregular 4-sided shape: enter TOTAL area (sq ft):', 100);
+    const manualArea = promptAreaSqFt('Irregular 4-sided shape: enter TOTAL area (sq ft):', 100);
     if (manualArea == null) return null;
 
     return {
@@ -287,7 +323,7 @@ function computePolyAreaFromUser(sideFeet) {
   }
 
   // ---- 5+ sides: manual area ----
-  const manualArea = promptNumber(
+  const manualArea = promptAreaSqFt(
     `This shape has ${nSides} sides.\nArea can’t be uniquely computed from side lengths alone.\n\nEnter TOTAL area (sq ft):`,
     100
   );
@@ -354,7 +390,6 @@ function drawBlueprint() {
 }
 
 function drawSelections() {
-  // saved shapes
   for (const s of selections) {
     ctx.lineWidth = 2;
     ctx.strokeStyle = '#16a34a';
@@ -473,7 +508,6 @@ function drawSelections() {
     }
   }
 
-  // polygon preview
   if (mode === 'poly' && polyPoints.length) {
     ctx.fillStyle = '#2563eb';
     for (const p of polyPoints) {
@@ -561,11 +595,21 @@ window.getEstimatorSnapshot = function getEstimatorSnapshot() {
 };
 
 // ----- Save functions (rect/circle/tri) -----
-function saveRect(p1, p2) {
+async function saveRect(p1, p2) {
   const label = promptLabel(`Area ${selections.length + 1}`);
-  const widthFt = promptNumber('Rectangle REAL width (ft):', 10);
+
+  const widthFt = await askLengthFeetInches({
+    title: 'Rectangle: WIDTH',
+    hint: 'Enter real width.',
+    defaultFeet: 10
+  });
   if (widthFt == null) return;
-  const heightFt = promptNumber('Rectangle REAL height (ft):', 12);
+
+  const heightFt = await askLengthFeetInches({
+    title: 'Rectangle: HEIGHT',
+    hint: 'Enter real height.',
+    defaultFeet: 12
+  });
   if (heightFt == null) return;
 
   const areaSqFt = widthFt * heightFt;
@@ -583,9 +627,14 @@ function saveRect(p1, p2) {
   render();
 }
 
-function saveCircle(center, edge) {
+async function saveCircle(center, edge) {
   const label = promptLabel(`Area ${selections.length + 1}`);
-  const radiusFt = promptNumber('Circle REAL radius (ft):', 6);
+
+  const radiusFt = await askLengthFeetInches({
+    title: 'Circle: RADIUS',
+    hint: 'Enter real radius.',
+    defaultFeet: 6
+  });
   if (radiusFt == null) return;
 
   const areaSqFt = Math.PI * radiusFt * radiusFt;
@@ -611,11 +660,21 @@ function saveCircle(center, edge) {
   render();
 }
 
-function saveTriangle(a, b, c) {
+async function saveTriangle(a, b, c) {
   const label = promptLabel(`Area ${selections.length + 1}`);
-  const baseFt = promptNumber('Triangle REAL base (ft):', 10);
+
+  const baseFt = await askLengthFeetInches({
+    title: 'Triangle: BASE',
+    hint: 'Enter real base length.',
+    defaultFeet: 10
+  });
   if (baseFt == null) return;
-  const heightFt = promptNumber('Triangle REAL height (ft):', 8);
+
+  const heightFt = await askLengthFeetInches({
+    title: 'Triangle: HEIGHT',
+    hint: 'Enter real height.',
+    defaultFeet: 8
+  });
   if (heightFt == null) return;
 
   const areaSqFt = 0.5 * baseFt * heightFt;
@@ -634,7 +693,7 @@ function saveTriangle(a, b, c) {
 }
 
 // ----- Polygon: save using user-entered info + correct trapezoid handling -----
-function finishPolygonAndSave(pointsCss, sideFeet) {
+async function finishPolygonAndSave(pointsCss, sideFeet) {
   if (pointsCss.length < 3) {
     setStatus('Custom shape needs at least 3 points.');
     return;
@@ -644,7 +703,7 @@ function finishPolygonAndSave(pointsCss, sideFeet) {
     return;
   }
 
-  const computed = computePolyAreaFromUser(sideFeet);
+  const computed = await computePolyAreaFromUser(sideFeet);
   if (!computed) {
     setStatus('Cancelled (or invalid triangle). Shape not saved.');
     return;
@@ -669,7 +728,7 @@ function finishPolygonAndSave(pointsCss, sideFeet) {
   render();
 }
 
-function finishPolygonAskClosingAndSave() {
+async function finishPolygonAskClosingAndSave() {
   if (mode !== 'poly') return;
 
   if (polyPoints.length < 3) {
@@ -677,11 +736,12 @@ function finishPolygonAskClosingAndSave() {
     return;
   }
 
-  const closingIndex = polyPoints.length; // side number
-  const closingFt = promptNumber(
-    `Side ${closingIndex} REAL length (ft) (closing line back to first):`,
-    10
-  );
+  const closingIndex = polyPoints.length;
+  const closingFt = await askLengthFeetInches({
+    title: `Side ${closingIndex}: Closing side`,
+    hint: 'Enter the length of the closing line back to the first point.',
+    defaultFeet: 10
+  });
   if (closingFt == null) {
     setStatus('Finish cancelled.');
     return;
@@ -691,19 +751,17 @@ function finishPolygonAskClosingAndSave() {
   const sideFeet = polySideFeet.slice();
   sideFeet.push(closingFt);
 
-  // reset draft
   polyPoints = [];
   polySideFeet = [];
   polyHover = null;
 
-  finishPolygonAndSave(pts, sideFeet);
+  await finishPolygonAndSave(pts, sideFeet);
 }
 
 // Keyboard shortcuts for polygon
-window.addEventListener('keydown', (e) => {
+window.addEventListener('keydown', async (e) => {
   if (mode !== 'poly') return;
 
-  // Don’t steal Enter if typing in chat input
   const active = document.activeElement;
   const typingInInput =
     active && (active.tagName === 'INPUT' || active.tagName === 'TEXTAREA');
@@ -711,7 +769,7 @@ window.addEventListener('keydown', (e) => {
 
   if (e.key === 'Enter') {
     e.preventDefault();
-    finishPolygonAskClosingAndSave();
+    await finishPolygonAskClosingAndSave();
   }
 
   if (e.key === 'Escape') {
@@ -741,7 +799,7 @@ if (shapeModeEl) {
           ? 'Circle mode: click+drag to set radius.'
           : mode === 'tri'
             ? 'Triangle mode: click 3 corners.'
-            : 'Custom shape: click pins. Enter lengths (ex: 10\' 6"). Click FIRST pin to close or press ENTER. ESC cancels.'
+            : 'Custom shape: click pins. After each line, enter Feet/Inches. Click FIRST pin (or press Enter) to close. ESC cancels.'
     );
 
     render();
@@ -834,18 +892,18 @@ canvas.addEventListener('mousemove', (e) => {
   }
 });
 
-canvas.addEventListener('mouseup', () => {
+canvas.addEventListener('mouseup', async () => {
   if (!isDragging) return;
   isDragging = false;
 
   if (mode === 'rect' && dragStart && dragEnd) {
     if (dist(dragStart, dragEnd) < 6) setStatus('Drag a bigger rectangle.');
-    else saveRect(dragStart, dragEnd);
+    else await saveRect(dragStart, dragEnd);
   }
 
   if (mode === 'circle' && circleCenter && circleEdge) {
     if (dist(circleCenter, circleEdge) < 6) setStatus('Drag a bigger circle radius.');
-    else saveCircle(circleCenter, circleEdge);
+    else await saveCircle(circleCenter, circleEdge);
   }
 
   dragStart = dragEnd = null;
@@ -854,7 +912,7 @@ canvas.addEventListener('mouseup', () => {
 });
 
 // tri + poly clicks
-canvas.addEventListener('click', (e) => {
+canvas.addEventListener('click', async (e) => {
   const p = getCanvasCssPointFromEvent(e);
 
   // TRIANGLE
@@ -867,7 +925,7 @@ canvas.addEventListener('click', (e) => {
     }
     const [a, b, c] = triPoints;
     triPoints = [];
-    saveTriangle(a, b, c);
+    await saveTriangle(a, b, c);
     return;
   }
 
@@ -875,17 +933,22 @@ canvas.addEventListener('click', (e) => {
   if (mode === 'poly') {
     // close if click near first point
     if (polyPoints.length >= 3 && isNearFirstPoint(p, polyPoints[0])) {
-      finishPolygonAskClosingAndSave();
+      await finishPolygonAskClosingAndSave();
       return;
     }
 
     // add new point
     polyPoints.push(p);
 
-    // ask length after each new line
+    // ask length after each new line (starting at second point)
     if (polyPoints.length >= 2) {
       const sideIndex = polyPoints.length - 1;
-      const ft = promptNumber(`Side ${sideIndex} length (ft or feet-inches):`, 10);
+
+      const ft = await askLengthFeetInches({
+        title: `Side ${sideIndex}: Length`,
+        hint: 'Enter the length of the line you just drew.',
+        defaultFeet: 10
+      });
 
       if (ft == null) {
         polyPoints.pop();
@@ -895,7 +958,7 @@ canvas.addEventListener('click', (e) => {
       }
 
       polySideFeet.push(ft);
-      setStatus('Keep clicking pins. Click FIRST pin to close or press ENTER. ESC cancels.');
+      setStatus('Keep clicking pins. Click FIRST pin (or press Enter) to close. ESC cancels.');
     } else {
       setStatus('Click next point to create your first line.');
     }
@@ -905,10 +968,10 @@ canvas.addEventListener('click', (e) => {
 });
 
 // double click also finishes
-canvas.addEventListener('dblclick', (e) => {
+canvas.addEventListener('dblclick', async (e) => {
   if (mode !== 'poly') return;
   e.preventDefault();
-  finishPolygonAskClosingAndSave();
+  await finishPolygonAskClosingAndSave();
 });
 
 // Initial UI

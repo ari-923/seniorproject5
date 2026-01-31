@@ -3,19 +3,18 @@
 /**
  * Blueprint Flooring Estimator (Rect / Circle / Triangle / Polygon)
  *
- * Polygon (pins) mode (UPDATED MATH):
+ * Custom Shape (pins) behavior:
  * - Click to add pins (visual only)
- * - After EACH new pin (starting at pin #2), prompt for feet of the side you just created
+ * - After EACH new pin (starting at pin #2), prompt for feet of the side just created
  * - Finish polygon:
  *    - Click FIRST pin again (recommended) -> prompts for closing side feet and saves
  *    - Press ENTER -> prompts for closing side feet and saves
- * - ESC cancels current draft
+ * - ESC cancels current polygon draft
  *
- * IMPORTANT CHANGE:
- * - Polygon area is computed ONLY from what the user enters (NO pixel lengths, NO ft/px)
- *   - 3 sides: Heron's formula (triangle)
- *   - 4 sides: assume rectangle (area = side1 * side2)
- *   - 5+ sides: ask user for total area (sq ft)
+ * POLY AREA RULES (IMPORTANT):
+ * - 3 sides: triangle area from 3 sides (Heron's formula)
+ * - 4 sides: user chooses Rectangle/Square OR Trapezoid OR Irregular (manual area)
+ * - 5+ sides: manual area (sq ft)
  */
 
 // ----- Grab DOM -----
@@ -120,39 +119,115 @@ function resetPolygonDraft(msg) {
   render();
 }
 
-// ---- Math (based only on user-entered numbers) ----
+// ---- Math helpers ----
 function heronArea(a, b, c) {
-  // Heron's formula for triangle area from 3 sides
   const s = (a + b + c) / 2;
   const inside = s * (s - a) * (s - b) * (s - c);
-  if (inside <= 0) return null; // invalid triangle (or degenerate)
+  if (inside <= 0) return null; // invalid triangle / degenerate
   return Math.sqrt(inside);
 }
 
-function polygonAreaFromUserOnly(sideFeet) {
-  // sideFeet includes closing side already
+function trapezoidArea(b1, b2, h) {
+  return ((b1 + b2) / 2) * h;
+}
+
+/**
+ * Decide polygon area based on user-provided info.
+ * Returns: { areaSqFt, method, details } or null if cancelled/invalid.
+ */
+function computePolyAreaFromUser(sideFeet) {
   const nSides = sideFeet.length;
 
-  // Triangle: area from 3 sides
+  // ---- TRIANGLE: 3 sides ----
   if (nSides === 3) {
     const area = heronArea(sideFeet[0], sideFeet[1], sideFeet[2]);
-    return area; // can be null if invalid triangle
+    if (area == null) return null;
+    return {
+      areaSqFt: area,
+      method: 'triangle (3 sides)',
+      details: { sides: sideFeet.slice() }
+    };
   }
 
-  // Rectangle/Square assumption: 4 sides
-  // We assume sides alternate: a,b,a,b (common room outline)
+  // ---- QUAD: 4 sides ----
   if (nSides === 4) {
-    // Use the first two sides as length & width
-    return sideFeet[0] * sideFeet[1];
+    // Ask user what the 4-sided shape should be treated as
+    // (Avoid A/B/C style; user types a word.)
+    const choiceRaw = (window.prompt(
+      'This shape has 4 sides.\nType what it is: rectangle, trapezoid, or irregular.\n\n- rectangle: area = length × width\n- trapezoid: will ask for top base, bottom base, height\n- irregular: will ask for total area (sq ft)\n',
+      'rectangle'
+    ) || '').trim().toLowerCase();
+
+    // Normalize choice
+    const choice =
+      choiceRaw.startsWith('rect') ? 'rectangle' :
+      choiceRaw.startsWith('trap') ? 'trapezoid' :
+      choiceRaw.startsWith('irr') || choiceRaw.startsWith('man') ? 'irregular' :
+      null;
+
+    if (!choice) return null;
+
+    if (choice === 'rectangle') {
+      // IMPORTANT: A rectangle's area needs adjacent sides (L and W).
+      // Since the user entered sides in click order, sideFeet[0] and sideFeet[1] are adjacent.
+      const length = sideFeet[0];
+      const width = sideFeet[1];
+      return {
+        areaSqFt: length * width,
+        method: 'rectangle/square (adjacent sides)',
+        details: { length, width, sides: sideFeet.slice() }
+      };
+    }
+
+    if (choice === 'trapezoid') {
+      // For trapezoid, side lengths alone aren't enough; ask for bases & height.
+      // Provide smart defaults from the 4 sides:
+      // - base defaults: min and max
+      // - height default: second smallest (often the "leg" or height-ish value)
+      const sorted = sideFeet.slice().sort((a, b) => a - b);
+      const defTop = sorted[0];      // guess
+      const defBottom = sorted[3];   // guess
+      const defHeight = sorted[1];   // guess
+
+      const topBase = promptNumber('Trapezoid: enter TOP base (ft):', defTop);
+      if (topBase == null) return null;
+
+      const bottomBase = promptNumber('Trapezoid: enter BOTTOM base (ft):', defBottom);
+      if (bottomBase == null) return null;
+
+      const height = promptNumber('Trapezoid: enter HEIGHT (ft) (perpendicular distance between bases):', defHeight);
+      if (height == null) return null;
+
+      return {
+        areaSqFt: trapezoidArea(topBase, bottomBase, height),
+        method: 'trapezoid (bases + height)',
+        details: { topBase, bottomBase, height, sides: sideFeet.slice() }
+      };
+    }
+
+    // irregular (manual area)
+    const manualArea = promptNumber('Irregular 4-sided shape: enter TOTAL area (sq ft):', 100);
+    if (manualArea == null) return null;
+
+    return {
+      areaSqFt: manualArea,
+      method: 'manual area (irregular quad)',
+      details: { areaSqFt: manualArea, sides: sideFeet.slice() }
+    };
   }
 
-  // 5+ sides: cannot uniquely determine area from sides alone
-  // Ask user to enter total area directly
-  const area = promptNumber(
-    `This shape has ${nSides} sides. Area can't be uniquely computed from side lengths alone.\n\nEnter TOTAL area for this shape (sq ft):`,
+  // ---- 5+ sides: manual area ----
+  const manualArea = promptNumber(
+    `This shape has ${nSides} sides.\nArea can’t be uniquely computed from side lengths alone.\n\nEnter TOTAL area (sq ft):`,
     100
   );
-  return area; // may be null if canceled
+  if (manualArea == null) return null;
+
+  return {
+    areaSqFt: manualArea,
+    method: 'manual area (5+ sides)',
+    details: { areaSqFt: manualArea, sides: sideFeet.slice() }
+  };
 }
 
 // --- Canvas resize helper (pointer-aligned) ---
@@ -209,10 +284,6 @@ function drawBlueprint() {
 }
 
 function drawSelections() {
-  const r = canvas.getBoundingClientRect();
-  const w = r.width;
-  const h = r.height;
-
   // saved shapes
   for (const s of selections) {
     ctx.lineWidth = 2;
@@ -237,6 +308,10 @@ function drawSelections() {
     }
 
     if (s.type === 'circle') {
+      const r = canvas.getBoundingClientRect();
+      const w = r.width;
+      const h = r.height;
+
       const c = normToCss(s.geo.c);
       const rr = s.geo.r * Math.min(w, h);
 
@@ -376,7 +451,7 @@ function recomputeTotals() {
     if (s.type === 'rect') meta.textContent = `Width: ${fmt2(s.real.widthFt)} ft • Height: ${fmt2(s.real.heightFt)} ft`;
     if (s.type === 'circle') meta.textContent = `Radius: ${fmt2(s.real.radiusFt)} ft`;
     if (s.type === 'tri') meta.textContent = `Base: ${fmt2(s.real.baseFt)} ft • Height: ${fmt2(s.real.heightFt)} ft`;
-    if (s.type === 'poly') meta.textContent = `Sides entered: ${s.real.sideFeet.length}`;
+    if (s.type === 'poly') meta.textContent = `Method: ${s.real.method} • Sides: ${s.real.sideFeet.length}`;
 
     card.appendChild(title);
     card.appendChild(meta);
@@ -415,7 +490,7 @@ window.getEstimatorSnapshot = function getEstimatorSnapshot() {
   };
 };
 
-// ----- Save functions -----
+// ----- Save functions (rect/circle/tri) -----
 function saveRect(p1, p2) {
   const label = promptLabel(`Area ${selections.length + 1}`);
   const widthFt = promptNumber('Rectangle REAL width (ft):', 10);
@@ -445,6 +520,7 @@ function saveCircle(center, edge) {
 
   const areaSqFt = Math.PI * radiusFt * radiusFt;
 
+  // keep circle geometry normalized for redraw only
   const rCss = dist(center, edge);
   const rNorm = (() => {
     const rect = canvas.getBoundingClientRect();
@@ -487,7 +563,7 @@ function saveTriangle(a, b, c) {
   render();
 }
 
-// ----- Polygon: save using ONLY user-entered side lengths -----
+// ----- Polygon: save using user-entered info + correct trapezoid handling -----
 function finishPolygonAndSave(pointsCss, sideFeet) {
   if (pointsCss.length < 3) {
     setStatus('Custom shape needs at least 3 points.');
@@ -498,9 +574,9 @@ function finishPolygonAndSave(pointsCss, sideFeet) {
     return;
   }
 
-  const areaSqFt = polygonAreaFromUserOnly(sideFeet);
-  if (areaSqFt == null) {
-    setStatus('Could not compute area (invalid triangle or cancelled).');
+  const computed = computePolyAreaFromUser(sideFeet);
+  if (!computed) {
+    setStatus('Cancelled (or invalid triangle). Shape not saved.');
     return;
   }
 
@@ -510,11 +586,15 @@ function finishPolygonAndSave(pointsCss, sideFeet) {
     type: 'poly',
     label,
     geo: { points: pointsCss.map(cssToNorm) }, // visual only
-    real: { sideFeet: sideFeet.slice() },
-    areaSqFt
+    real: {
+      sideFeet: sideFeet.slice(),
+      method: computed.method,
+      details: computed.details
+    },
+    areaSqFt: computed.areaSqFt
   });
 
-  setStatus(`Saved "${label}" (${fmt2(areaSqFt)} sq ft).`);
+  setStatus(`Saved "${label}" (${fmt2(computed.areaSqFt)} sq ft).`);
   recomputeTotals();
   render();
 }
@@ -541,6 +621,7 @@ function finishPolygonAskClosingAndSave() {
   const sideFeet = polySideFeet.slice();
   sideFeet.push(closingFt);
 
+  // reset draft
   polyPoints = [];
   polySideFeet = [];
   polyHover = null;

@@ -9,7 +9,8 @@ function addMsg(text, from = 'bot') {
   chatLog.scrollTop = chatLog.scrollHeight;
 }
 
-chatSend.onclick = async () => {
+// Core send logic (shared by click + Enter)
+async function sendMessage() {
   const msg = chatInput.value.trim();
   if (!msg) return;
 
@@ -30,4 +31,15 @@ chatSend.onclick = async () => {
   } catch {
     addMsg('AI unavailable. Are you on Vercel?');
   }
-};
+}
+
+// Click Send
+chatSend.addEventListener('click', sendMessage);
+
+// Press Enter to send (Shift+Enter = newline)
+chatInput.addEventListener('keydown', (e) => {
+  if (e.key === 'Enter' && !e.shiftKey) {
+    e.preventDefault(); // prevent newline
+    sendMessage();
+  }
+});

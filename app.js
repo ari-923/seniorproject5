@@ -64,6 +64,7 @@ function fmt2(n) {
 }
 
 function getCanvasCssPointFromEvent(e) {
+  // IMPORTANT: compute mouse position relative to the CANVAS itself (not wrapper)
   const r = canvas.getBoundingClientRect();
   const x = e.clientX - r.left;
   const y = e.clientY - r.top;
@@ -90,19 +91,20 @@ function dist(a, b) {
   return Math.sqrt(dx * dx + dy * dy);
 }
 
-// --- Canvas resize helper (prevents tiny 300x150 canvas) ---
+// --- Canvas resize helper (FIXED to avoid padding offset issues) ---
 function fitCanvasToWrap() {
-  const wrap = canvas.parentElement;
-  const rect = (wrap ? wrap.getBoundingClientRect() : canvas.getBoundingClientRect());
+  // Use the CANVAS rendered size (not parent wrapper) so padding doesn't break coordinates
+  const rect = canvas.getBoundingClientRect();
   const dpr = window.devicePixelRatio || 1;
 
   const w = Math.max(1, Math.floor(rect.width));
   const h = Math.max(1, Math.floor(rect.height));
 
+  // Resize the internal drawing buffer to match the CSS size
   canvas.width = Math.floor(w * dpr);
   canvas.height = Math.floor(h * dpr);
 
-  // normalize drawing so we can draw in CSS pixels
+  // Normalize drawing so we can draw in CSS pixels
   ctx.setTransform(dpr, 0, 0, dpr, 0, 0);
 
   render();
@@ -298,7 +300,7 @@ function recomputeTotals() {
     card.appendChild(title);
     card.appendChild(meta);
 
-    // tiny delete button (optional)
+    // delete button
     const del = document.createElement('button');
     del.textContent = 'Remove';
     del.style.marginTop = '8px';
@@ -349,7 +351,6 @@ function promptNumber(msg, defaultVal) {
 }
 
 function saveRect(p1, p2) {
-  // ask for real measurements in feet
   const label = promptLabel(`Area ${selections.length + 1}`);
 
   const widthFt = promptNumber('Rectangle REAL width (ft):', 10);
@@ -381,7 +382,6 @@ function saveCircle(center, edge) {
 
   const areaSqFt = Math.PI * radiusFt * radiusFt;
 
-  // radius normalized relative to min(canvasW, canvasH)
   const rCss = dist(center, edge);
   const rNorm = (() => {
     const rect = canvas.getBoundingClientRect();
@@ -480,8 +480,12 @@ if (blueprintInput) {
     img.onload = () => {
       blueprintImg = img;
       setStatus('Image loaded. Start selecting an area.');
-      fitCanvasToWrap();
-      render();
+
+      // Wait one frame so CSS layout is final before measuring canvas size
+      requestAnimationFrame(() => {
+        fitCanvasToWrap();
+        render();
+      });
     };
     img.onerror = () => {
       alert('Could not load that image.');
@@ -529,7 +533,6 @@ canvas.addEventListener('mouseup', () => {
   isDragging = false;
 
   if (mode === 'rect' && dragStart && dragEnd) {
-    // ignore tiny drags
     if (dist(dragStart, dragEnd) < 6) {
       setStatus('Drag a bigger rectangle.');
     } else {
@@ -562,7 +565,6 @@ canvas.addEventListener('click', (e) => {
     return;
   }
 
-  // got 3 points
   const [a, b, c] = triPoints;
   triPoints = [];
   saveTriangle(a, b, c);
@@ -571,5 +573,9 @@ canvas.addEventListener('click', (e) => {
 // Initial UI
 setStatus('Upload an image to begin.');
 recomputeTotals();
-fitCanvasToWrap();
-render();
+
+// Wait a frame so the canvas has real CSS size before we set internal buffer size
+requestAnimationFrame(() => {
+  fitCanvasToWrap();
+  render();
+});

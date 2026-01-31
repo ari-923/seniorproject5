@@ -9,23 +9,26 @@
 
 <body>
   <h1>Blueprint Flooring Estimator</h1>
-  <p class="subtitle">
-    Upload a blueprint, outline areas, and enter real dimensions to calculate square footage.
+
+  <p>
+    Upload a blueprint image, outline the areas to be floored, and enter real-world
+    dimensions to calculate total square footage. Use the AI assistant for waste
+    percentages and cost estimates.
   </p>
 
   <div class="controls">
     <input type="file" id="blueprintInput" accept="image/png,image/jpeg" />
     <select id="shapeMode">
-      <option value="rect">Rectangle</option>
-      <option value="circle">Circle</option>
-      <option value="tri">Triangle</option>
-      <option value="poly">Custom Shape (pins)</option>
+      <option value="rect">Rectangle (drag)</option>
+      <option value="circle">Circle (drag radius)</option>
+      <option value="tri">Triangle (click 3 points)</option>
     </select>
+
     <button id="undoBtn">Undo Last</button>
     <button id="clearBtn">Clear All</button>
   </div>
 
-  <div id="statusOut"></div>
+  <div id="statusOut">Upload an image to begin.</div>
 
   <div class="layout">
     <div class="canvasWrap">
@@ -35,48 +38,22 @@
 
     <div class="summary">
       <h3>Total</h3>
-
-      <div class="totalRow">
-        <div class="totalValue" id="totalOut">0.00</div>
-        <div class="totalUnit">sq ft</div>
-      </div>
-
-      <div class="totalMeta">
-        Selections saved: <span id="countOut">0</span>
-      </div>
-
+      <div><strong><span id="totalOut">0.00</span></strong> sq ft</div>
+      <div>Selections saved: <span id="countOut">0</span></div>
       <div id="listOut"></div>
     </div>
   </div>
 
-  <!-- Feet / Inches Modal -->
-  <div id="lengthModal" class="modalOverlay" style="display:none;">
-    <div class="modalCard">
-      <div class="modalHeader">
-        <h3 id="lengthModalTitle">Enter Length</h3>
-        <div class="modalHint">Feet & inches (inches default to 0)</div>
-      </div>
-
-      <div class="modalGrid">
-        <div class="modalField">
-          <label>Feet</label>
-          <input id="feetInput" type="number" min="0" value="0" />
-        </div>
-        <div class="modalField">
-          <label>Inches</label>
-          <input id="inchInput" type="number" min="0" max="11" value="0" />
-        </div>
-      </div>
-
-      <div class="modalActions">
-        <button id="lengthCancel" class="btnSecondary">Cancel</button>
-        <button id="lengthOk" class="btnPrimary">OK</button>
-      </div>
-
-      <div id="lengthModalError" class="modalError"></div>
+  <!-- Floating AI chat -->
+  <div id="chatWidget">
+    <div id="chatLog"></div>
+    <div class="chatInput">
+      <input id="chatInput" placeholder="Ask about waste %, totals, cost..." />
+      <button id="chatSend">Send</button>
     </div>
   </div>
 
   <script src="./app.js"></script>
+  <script src="./chatbot.js"></script>
 </body>
 </html>

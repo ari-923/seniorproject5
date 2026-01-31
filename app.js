@@ -2,17 +2,13 @@
 
 /**
  * Blueprint Flooring Estimator (Rect / Circle / Triangle / Polygon)
- * - Upload PNG/JPG blueprint
- * - Draw shapes on canvas
- * - Enter REAL dimensions in feet + label
- * - Saves selections and totals
  *
- * Polygon (pins) mode:
+ * Polygon (pins) mode (UPDATED):
  * - Click to add points
- * - Double-click to finish
- * - Prompts for real feet for each side
- * - Estimates ft-per-pixel from side lengths
- * - Computes polygon area via shoelace formula
+ * - After EACH new point (starting at point #2), prompt for the feet of the line you just created
+ * - Double-click to finish polygon, then prompt for closing side (last -> first)
+ * - Estimate ft-per-pixel from all entered side lengths
+ * - Compute polygon area via shoelace formula
  */
 
 // ----- Grab DOM -----
@@ -49,7 +45,8 @@ let circleEdge = null;
 let triPoints = [];
 
 // poly
-let polyPoints = []; // [{x,y},...]
+let polyPoints = [];    // [{x,y}, ...] CSS px
+let polySideFeet = [];  // [ft for side between point i-1 -> i] (same order)
 let polyHover = null;
 
 // ----- Helpers -----
@@ -287,8 +284,11 @@ function drawSelections() {
     }
   }
 
-  // polygon preview
-  if (mode === 'poly' && polyPoints.length) {
+  // polygon preview (pins + hover line)
+  if (mode === 'poly') {
+    if (!polyPoints.length) return;
+
+    // pins
     ctx.fillStyle = '#2563eb';
     for (const p of polyPoints) {
       ctx.beginPath();
@@ -296,6 +296,7 @@ function drawSelections() {
       ctx.fill();
     }
 
+    // lines
     ctx.strokeStyle = '#2563eb';
     ctx.beginPath();
     ctx.moveTo(polyPoints[0].x, polyPoints[0].y);
@@ -339,7 +340,7 @@ function recomputeTotals() {
     } else if (s.type === 'tri') {
       meta.textContent = `Base: ${fmt2(s.real.baseFt)} ft • Height: ${fmt2(s.real.heightFt)} ft`;
     } else if (s.type === 'poly') {
-      meta.textContent = `Sides: ${s.real.sideFeet.length} • Scale: ${fmt2(s.real.ftPerPx)} ft/px (estimated)`;
+      meta.textContent = `Sides: ${s.real.sideFeet.length} • Scale: ${fmt2(s.real.ftPerPx)} ft/px`;
     }
 
     card.appendChild(title);
@@ -354,7 +355,6 @@ function recomputeTotals() {
       render();
       setStatus('Removed selection.');
     });
-
     card.appendChild(del);
 
     card.style.border = '1px solid #e5e5e5';
@@ -380,13 +380,11 @@ window.getEstimatorSnapshot = function getEstimatorSnapshot() {
   };
 };
 
-// ----- Save selection functions -----
+// ----- Save functions -----
 function saveRect(p1, p2) {
   const label = promptLabel(`Area ${selections.length + 1}`);
-
   const widthFt = promptNumber('Rectangle REAL width (ft):', 10);
   if (widthFt == null) return;
-
   const heightFt = promptNumber('Rectangle REAL height (ft):', 12);
   if (heightFt == null) return;
 
@@ -407,7 +405,6 @@ function saveRect(p1, p2) {
 
 function saveCircle(center, edge) {
   const label = promptLabel(`Area ${selections.length + 1}`);
-
   const radiusFt = promptNumber('Circle REAL radius (ft):', 6);
   if (radiusFt == null) return;
 
@@ -435,10 +432,8 @@ function saveCircle(center, edge) {
 
 function saveTriangle(a, b, c) {
   const label = promptLabel(`Area ${selections.length + 1}`);
-
   const baseFt = promptNumber('Triangle REAL base (ft):', 10);
   if (baseFt == null) return;
-
   const heightFt = promptNumber('Triangle REAL height (ft):', 8);
   if (heightFt == null) return;
 
@@ -457,28 +452,25 @@ function saveTriangle(a, b, c) {
   render();
 }
 
-function savePolygon(pointsCss) {
+function finishPolygonAndSave(pointsCss, sideFeet) {
   if (pointsCss.length < 3) {
     setStatus('Custom shape needs at least 3 points.');
     return;
   }
 
+  // Must have sides for each segment + closing segment
+  if (sideFeet.length !== pointsCss.length) {
+    setStatus('Polygon sides missing — could not save.');
+    return;
+  }
+
   const label = promptLabel(`Area ${selections.length + 1}`);
 
-  const sideFeet = [];
+  // Calculate pixel lengths for each side (including closing side)
   const sidePx = [];
-
   for (let i = 0; i < pointsCss.length; i++) {
     const j = (i + 1) % pointsCss.length;
-    const pxLen = dist(pointsCss[i], pointsCss[j]);
-    sidePx.push(pxLen);
-
-    const ft = promptNumber(`Side ${i + 1} REAL length (ft):`, 10);
-    if (ft == null) {
-      setStatus('Cancelled polygon save.');
-      return;
-    }
-    sideFeet.push(ft);
+    sidePx.push(dist(pointsCss[i], pointsCss[j]));
   }
 
   const totalFt = sideFeet.reduce((a, b) => a + b, 0);
@@ -492,7 +484,7 @@ function savePolygon(pointsCss) {
     type: 'poly',
     label,
     geo: { points: pointsCss.map(cssToNorm) },
-    real: { sideFeet, ftPerPx },
+    real: { sideFeet: sideFeet.slice(), ftPerPx },
     areaSqFt
   });
 
@@ -506,11 +498,14 @@ if (shapeModeEl) {
   shapeModeEl.addEventListener('change', () => {
     mode = shapeModeEl.value;
 
+    // reset drawing states
     isDragging = false;
     dragStart = dragEnd = null;
     circleCenter = circleEdge = null;
     triPoints = [];
+
     polyPoints = [];
+    polySideFeet = [];
     polyHover = null;
 
     setStatus(
@@ -520,7 +515,7 @@ if (shapeModeEl) {
           ? 'Circle mode: click+drag to set radius.'
           : mode === 'tri'
             ? 'Triangle mode: click 3 corners.'
-            : 'Custom shape: click to add pins. Double-click to finish.'
+            : 'Custom shape: click pins. After each line, enter feet. Double-click to finish.'
     );
 
     render();
@@ -650,13 +645,33 @@ canvas.addEventListener('click', (e) => {
   }
 
   if (mode === 'poly') {
+    // Add point
     polyPoints.push(p);
-    setStatus('Custom shape: click to add pins. Double-click to finish.');
+
+    // If this created a new line (point #2+), ask feet for that line immediately
+    if (polyPoints.length >= 2) {
+      const i = polyPoints.length - 1; // new point index
+      const ft = promptNumber(`Side ${i} REAL length (ft) for the line you just drew:`, 10);
+
+      if (ft == null) {
+        // If user cancels, remove the last point and do not keep the side
+        polyPoints.pop();
+        setStatus('Cancelled that side. Point not added.');
+        render();
+        return;
+      }
+
+      polySideFeet.push(ft);
+      setStatus('Custom shape: keep clicking pins. Double-click to finish.');
+    } else {
+      setStatus('Custom shape: click next point to create your first line.');
+    }
+
     render();
   }
 });
 
-// double click to finish polygon
+// double-click to finish polygon
 canvas.addEventListener('dblclick', (e) => {
   if (mode !== 'poly') return;
   e.preventDefault();
@@ -666,11 +681,31 @@ canvas.addEventListener('dblclick', (e) => {
     return;
   }
 
+  // Ask for closing side feet (last point back to first)
+  const closingFt = promptNumber(
+    `Closing side REAL length (ft) (last point back to the first):`,
+    10
+  );
+
+  if (closingFt == null) {
+    setStatus('Cancelled finishing polygon.');
+    return;
+  }
+
+  // sideFeet must have one entry for each side:
+  // existing polySideFeet is for sides between consecutive points (1->2, 2->3, ...)
+  // closingFt is for last->first
+  const sideFeet = polySideFeet.slice();
+  sideFeet.push(closingFt);
+
   const pts = polyPoints.slice();
+
+  // reset drawing state before saving
   polyPoints = [];
+  polySideFeet = [];
   polyHover = null;
 
-  savePolygon(pts);
+  finishPolygonAndSave(pts, sideFeet);
 });
 
 // Initial UI

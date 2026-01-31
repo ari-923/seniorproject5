@@ -3,14 +3,19 @@
 /**
  * Blueprint Flooring Estimator (Rect / Circle / Triangle / Polygon)
  *
- * Polygon (pins) mode (FINAL UX):
- * - Click to add pins
- * - After EACH new pin (starting at pin #2), prompt for the feet of the line just created
- * - To close the polygon:
- *    - Click the FIRST pin again (recommended) → prompts for the FINAL closing side (last -> first) and saves
- *    - OR press ENTER → prompts for closing side and saves
- * - ESC cancels current polygon draft
- * - Uses side feet to estimate ft/px and compute area (shoelace formula)
+ * Polygon (pins) mode (UPDATED MATH):
+ * - Click to add pins (visual only)
+ * - After EACH new pin (starting at pin #2), prompt for feet of the side you just created
+ * - Finish polygon:
+ *    - Click FIRST pin again (recommended) -> prompts for closing side feet and saves
+ *    - Press ENTER -> prompts for closing side feet and saves
+ * - ESC cancels current draft
+ *
+ * IMPORTANT CHANGE:
+ * - Polygon area is computed ONLY from what the user enters (NO pixel lengths, NO ft/px)
+ *   - 3 sides: Heron's formula (triangle)
+ *   - 4 sides: assume rectangle (area = side1 * side2)
+ *   - 5+ sides: ask user for total area (sq ft)
  */
 
 // ----- Grab DOM -----
@@ -46,9 +51,9 @@ let circleEdge = null;
 // tri
 let triPoints = [];
 
-// poly
-let polyPoints = [];    // [{x,y}, ...] CSS px
-let polySideFeet = [];  // feet for each segment between consecutive points PLUS closing (added at finish)
+// poly draft (visual points only)
+let polyPoints = [];     // [{x,y}, ...] CSS px
+let polySideFeet = [];   // feet for each side between consecutive points (closing added at finish)
 let polyHover = null;
 
 // ----- Helpers -----
@@ -95,16 +100,6 @@ function isNearFirstPoint(p, first, tolerance = 10) {
   return dist(p, first) <= tolerance;
 }
 
-function polygonAreaPx(points) {
-  if (!points || points.length < 3) return 0;
-  let sum = 0;
-  for (let i = 0; i < points.length; i++) {
-    const j = (i + 1) % points.length;
-    sum += points[i].x * points[j].y - points[j].x * points[i].y;
-  }
-  return Math.abs(sum) / 2;
-}
-
 function promptLabel(defaultLabel) {
   const label = (window.prompt('Label this area (ex: Kitchen):', defaultLabel || '') || '').trim();
   return label || defaultLabel || 'Area';
@@ -123,6 +118,41 @@ function resetPolygonDraft(msg) {
   polyHover = null;
   setStatus(msg || 'Polygon cancelled.');
   render();
+}
+
+// ---- Math (based only on user-entered numbers) ----
+function heronArea(a, b, c) {
+  // Heron's formula for triangle area from 3 sides
+  const s = (a + b + c) / 2;
+  const inside = s * (s - a) * (s - b) * (s - c);
+  if (inside <= 0) return null; // invalid triangle (or degenerate)
+  return Math.sqrt(inside);
+}
+
+function polygonAreaFromUserOnly(sideFeet) {
+  // sideFeet includes closing side already
+  const nSides = sideFeet.length;
+
+  // Triangle: area from 3 sides
+  if (nSides === 3) {
+    const area = heronArea(sideFeet[0], sideFeet[1], sideFeet[2]);
+    return area; // can be null if invalid triangle
+  }
+
+  // Rectangle/Square assumption: 4 sides
+  // We assume sides alternate: a,b,a,b (common room outline)
+  if (nSides === 4) {
+    // Use the first two sides as length & width
+    return sideFeet[0] * sideFeet[1];
+  }
+
+  // 5+ sides: cannot uniquely determine area from sides alone
+  // Ask user to enter total area directly
+  const area = promptNumber(
+    `This shape has ${nSides} sides. Area can't be uniquely computed from side lengths alone.\n\nEnter TOTAL area for this shape (sq ft):`,
+    100
+  );
+  return area; // may be null if canceled
 }
 
 // --- Canvas resize helper (pointer-aligned) ---
@@ -300,7 +330,6 @@ function drawSelections() {
 
   // polygon preview
   if (mode === 'poly' && polyPoints.length) {
-    // pins
     ctx.fillStyle = '#2563eb';
     for (const p of polyPoints) {
       ctx.beginPath();
@@ -308,7 +337,6 @@ function drawSelections() {
       ctx.fill();
     }
 
-    // lines
     ctx.strokeStyle = '#2563eb';
     ctx.beginPath();
     ctx.moveTo(polyPoints[0].x, polyPoints[0].y);
@@ -345,15 +373,10 @@ function recomputeTotals() {
     meta.style.opacity = '0.8';
     meta.style.fontSize = '13px';
 
-    if (s.type === 'rect') {
-      meta.textContent = `Width: ${fmt2(s.real.widthFt)} ft • Height: ${fmt2(s.real.heightFt)} ft`;
-    } else if (s.type === 'circle') {
-      meta.textContent = `Radius: ${fmt2(s.real.radiusFt)} ft`;
-    } else if (s.type === 'tri') {
-      meta.textContent = `Base: ${fmt2(s.real.baseFt)} ft • Height: ${fmt2(s.real.heightFt)} ft`;
-    } else if (s.type === 'poly') {
-      meta.textContent = `Sides: ${s.real.sideFeet.length} • Scale: ${fmt2(s.real.ftPerPx)} ft/px`;
-    }
+    if (s.type === 'rect') meta.textContent = `Width: ${fmt2(s.real.widthFt)} ft • Height: ${fmt2(s.real.heightFt)} ft`;
+    if (s.type === 'circle') meta.textContent = `Radius: ${fmt2(s.real.radiusFt)} ft`;
+    if (s.type === 'tri') meta.textContent = `Base: ${fmt2(s.real.baseFt)} ft • Height: ${fmt2(s.real.heightFt)} ft`;
+    if (s.type === 'poly') meta.textContent = `Sides entered: ${s.real.sideFeet.length}`;
 
     card.appendChild(title);
     card.appendChild(meta);
@@ -392,7 +415,7 @@ window.getEstimatorSnapshot = function getEstimatorSnapshot() {
   };
 };
 
-// ----- Save functions (rect/circle/tri) -----
+// ----- Save functions -----
 function saveRect(p1, p2) {
   const label = promptLabel(`Area ${selections.length + 1}`);
   const widthFt = promptNumber('Rectangle REAL width (ft):', 10);
@@ -464,40 +487,30 @@ function saveTriangle(a, b, c) {
   render();
 }
 
-// ----- Polygon save + finish -----
+// ----- Polygon: save using ONLY user-entered side lengths -----
 function finishPolygonAndSave(pointsCss, sideFeet) {
   if (pointsCss.length < 3) {
     setStatus('Custom shape needs at least 3 points.');
     return;
   }
-
-  // sideFeet must include closing side, so must equal number of points
   if (sideFeet.length !== pointsCss.length) {
     setStatus('Polygon sides missing — could not save.');
     return;
   }
 
-  const label = promptLabel(`Area ${selections.length + 1}`);
-
-  // pixel lengths (including closing)
-  const sidePx = [];
-  for (let i = 0; i < pointsCss.length; i++) {
-    const j = (i + 1) % pointsCss.length;
-    sidePx.push(dist(pointsCss[i], pointsCss[j]));
+  const areaSqFt = polygonAreaFromUserOnly(sideFeet);
+  if (areaSqFt == null) {
+    setStatus('Could not compute area (invalid triangle or cancelled).');
+    return;
   }
 
-  const totalFt = sideFeet.reduce((a, b) => a + b, 0);
-  const totalPx = sidePx.reduce((a, b) => a + b, 0);
-  const ftPerPx = totalPx > 0 ? (totalFt / totalPx) : 0;
-
-  const areaPx2 = polygonAreaPx(pointsCss);
-  const areaSqFt = areaPx2 * (ftPerPx * ftPerPx);
+  const label = promptLabel(`Area ${selections.length + 1}`);
 
   selections.push({
     type: 'poly',
     label,
-    geo: { points: pointsCss.map(cssToNorm) },
-    real: { sideFeet: sideFeet.slice(), ftPerPx },
+    geo: { points: pointsCss.map(cssToNorm) }, // visual only
+    real: { sideFeet: sideFeet.slice() },
     areaSqFt
   });
 
@@ -506,7 +519,7 @@ function finishPolygonAndSave(pointsCss, sideFeet) {
   render();
 }
 
-function tryFinishPolygonViaEnter() {
+function finishPolygonAskClosingAndSave() {
   if (mode !== 'poly') return;
 
   if (polyPoints.length < 3) {
@@ -514,9 +527,9 @@ function tryFinishPolygonViaEnter() {
     return;
   }
 
-  // Enter finish requires closing side if not already collected
+  const closingIndex = polyPoints.length; // side number
   const closingFt = promptNumber(
-    'Closing side REAL length (ft) (last point back to the first):',
+    `Side ${closingIndex} REAL length (ft) (closing line back to first):`,
     10
   );
   if (closingFt == null) {
@@ -528,7 +541,6 @@ function tryFinishPolygonViaEnter() {
   const sideFeet = polySideFeet.slice();
   sideFeet.push(closingFt);
 
-  // reset draft
   polyPoints = [];
   polySideFeet = [];
   polyHover = null;
@@ -536,22 +548,19 @@ function tryFinishPolygonViaEnter() {
   finishPolygonAndSave(pts, sideFeet);
 }
 
-// Keyboard shortcuts:
-// Enter = finish polygon, Esc = cancel polygon
+// Keyboard shortcuts for polygon
 window.addEventListener('keydown', (e) => {
   if (mode !== 'poly') return;
 
-  // Don’t steal Enter if user is typing in chat input
+  // Don’t steal Enter if typing in chat input
   const active = document.activeElement;
   const typingInInput =
-    active &&
-    (active.tagName === 'INPUT' || active.tagName === 'TEXTAREA');
-
+    active && (active.tagName === 'INPUT' || active.tagName === 'TEXTAREA');
   if (typingInInput) return;
 
   if (e.key === 'Enter') {
     e.preventDefault();
-    tryFinishPolygonViaEnter();
+    finishPolygonAskClosingAndSave();
   }
 
   if (e.key === 'Escape') {
@@ -565,13 +574,11 @@ if (shapeModeEl) {
   shapeModeEl.addEventListener('change', () => {
     mode = shapeModeEl.value;
 
-    // reset drawing states
     isDragging = false;
     dragStart = dragEnd = null;
     circleCenter = circleEdge = null;
     triPoints = [];
 
-    // reset polygon draft
     polyPoints = [];
     polySideFeet = [];
     polyHover = null;
@@ -583,7 +590,7 @@ if (shapeModeEl) {
           ? 'Circle mode: click+drag to set radius.'
           : mode === 'tri'
             ? 'Triangle mode: click 3 corners.'
-            : 'Custom shape: click pins. Feet after each line. Click FIRST pin to close (or press ENTER). ESC cancels.'
+            : 'Custom shape: click pins. Enter feet per side. Click FIRST pin to close or press ENTER. ESC cancels.'
     );
 
     render();
@@ -713,39 +720,20 @@ canvas.addEventListener('click', (e) => {
     return;
   }
 
-  // POLYGON (PINS)
+  // POLYGON
   if (mode === 'poly') {
-    // If user clicks near the first point and we have enough points, treat as "close shape"
+    // close if click near first point
     if (polyPoints.length >= 3 && isNearFirstPoint(p, polyPoints[0])) {
-      // This click is the FINAL CLOSING LINE (last -> first)
-      const closingIndex = polyPoints.length; // side number = number of points
-      const closingFt = promptNumber(`Side ${closingIndex} REAL length (ft) (closing line back to first):`, 10);
-
-      if (closingFt == null) {
-        setStatus('Closing side cancelled. Shape not finished.');
-        render();
-        return;
-      }
-
-      const pts = polyPoints.slice();
-      const sideFeet = polySideFeet.slice();
-      sideFeet.push(closingFt);
-
-      // reset draft first
-      polyPoints = [];
-      polySideFeet = [];
-      polyHover = null;
-
-      finishPolygonAndSave(pts, sideFeet);
+      finishPolygonAskClosingAndSave();
       return;
     }
 
-    // Otherwise add a new point normally
+    // add new point
     polyPoints.push(p);
 
-    // If this created a new side (point #2+), ask for that side feet immediately
+    // ask feet after each new line
     if (polyPoints.length >= 2) {
-      const sideIndex = polyPoints.length - 1; // Side 1 is point1->point2
+      const sideIndex = polyPoints.length - 1;
       const ft = promptNumber(`Side ${sideIndex} REAL length (ft) (line you just drew):`, 10);
 
       if (ft == null) {
@@ -756,7 +744,7 @@ canvas.addEventListener('click', (e) => {
       }
 
       polySideFeet.push(ft);
-      setStatus('Keep clicking pins. Click FIRST pin to close (or press ENTER). ESC cancels.');
+      setStatus('Keep clicking pins. Click FIRST pin to close or press ENTER. ESC cancels.');
     } else {
       setStatus('Click next point to create your first line.');
     }
@@ -765,11 +753,11 @@ canvas.addEventListener('click', (e) => {
   }
 });
 
-// Optional: double-click to finish (still works, will ask closing side)
+// double click also finishes
 canvas.addEventListener('dblclick', (e) => {
   if (mode !== 'poly') return;
   e.preventDefault();
-  tryFinishPolygonViaEnter();
+  finishPolygonAskClosingAndSave();
 });
 
 // Initial UI

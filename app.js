@@ -1,15 +1,18 @@
 'use strict';
 
 /**
- * Blueprint Flooring Estimator (Rect / Circle / Triangle)
+ * Blueprint Flooring Estimator (Rect / Circle / Triangle / Polygon)
  * - Upload PNG/JPG blueprint
  * - Draw shapes on canvas
  * - Enter REAL dimensions in feet + label
  * - Saves selections and totals
  *
- * Required HTML element IDs:
- *  blueprintInput, shapeMode, undoBtn, clearBtn,
- *  statusOut, canvas, totalOut, countOut, listOut
+ * Polygon (pins) mode:
+ * - Click to add points
+ * - Double-click to finish
+ * - Prompts for real feet for each side
+ * - Estimates ft-per-pixel from side lengths
+ * - Computes polygon area via shoelace formula
  */
 
 // ----- Grab DOM -----
@@ -29,24 +32,25 @@ const ctx = canvas.getContext('2d');
 
 // ----- State -----
 let blueprintImg = null;
-
-// saved selections (normalized geometry + real measurements + computed area)
 let selections = [];
 
-// drawing interaction state
-let mode = (shapeModeEl?.value || 'rect'); // 'rect' | 'circle' | 'tri'
+let mode = (shapeModeEl?.value || 'rect'); // 'rect' | 'circle' | 'tri' | 'poly'
 let isDragging = false;
 
-// for rect
-let dragStart = null; // {x, y} in CSS px
+// rect
+let dragStart = null;
 let dragEnd = null;
 
-// for circle
-let circleCenter = null; // {x,y}
-let circleEdge = null;   // {x,y}
+// circle
+let circleCenter = null;
+let circleEdge = null;
 
-// for triangle
-let triPoints = []; // [{x,y},{x,y},{x,y}] in CSS px
+// tri
+let triPoints = [];
+
+// poly
+let polyPoints = []; // [{x,y},...]
+let polyHover = null;
 
 // ----- Helpers -----
 function setStatus(msg) {
@@ -64,11 +68,8 @@ function fmt2(n) {
 }
 
 function getCanvasCssPointFromEvent(e) {
-  // IMPORTANT: compute mouse position relative to the CANVAS itself (not wrapper)
   const r = canvas.getBoundingClientRect();
-  const x = e.clientX - r.left;
-  const y = e.clientY - r.top;
-  return { x, y };
+  return { x: e.clientX - r.left, y: e.clientY - r.top };
 }
 
 function cssToNorm(pt) {
@@ -91,22 +92,40 @@ function dist(a, b) {
   return Math.sqrt(dx * dx + dy * dy);
 }
 
-// --- Canvas resize helper (FIXED to avoid padding offset issues) ---
+function polygonAreaPx(points) {
+  if (!points || points.length < 3) return 0;
+  let sum = 0;
+  for (let i = 0; i < points.length; i++) {
+    const j = (i + 1) % points.length;
+    sum += points[i].x * points[j].y - points[j].x * points[i].y;
+  }
+  return Math.abs(sum) / 2;
+}
+
+function promptLabel(defaultLabel) {
+  const label = (window.prompt('Label this area (ex: Kitchen):', defaultLabel || '') || '').trim();
+  return label || defaultLabel || 'Area';
+}
+
+function promptNumber(msg, defaultVal) {
+  const raw = (window.prompt(msg, String(defaultVal ?? '')) || '').trim();
+  const n = Number(raw);
+  if (!Number.isFinite(n) || n <= 0) return null;
+  return n;
+}
+
+// --- Canvas resize helper (pointer-aligned) ---
 function fitCanvasToWrap() {
-  // Use the CANVAS rendered size (not parent wrapper) so padding doesn't break coordinates
   const rect = canvas.getBoundingClientRect();
   const dpr = window.devicePixelRatio || 1;
 
   const w = Math.max(1, Math.floor(rect.width));
   const h = Math.max(1, Math.floor(rect.height));
 
-  // Resize the internal drawing buffer to match the CSS size
   canvas.width = Math.floor(w * dpr);
   canvas.height = Math.floor(h * dpr);
 
-  // Normalize drawing so we can draw in CSS pixels
   ctx.setTransform(dpr, 0, 0, dpr, 0, 0);
-
   render();
 }
 
@@ -124,7 +143,6 @@ function drawBlueprint() {
   const h = r.height;
 
   if (!blueprintImg) {
-    // empty background
     ctx.fillStyle = '#fafafa';
     ctx.fillRect(0, 0, w, h);
     ctx.strokeStyle = '#ddd';
@@ -132,7 +150,6 @@ function drawBlueprint() {
     return;
   }
 
-  // Fit image into canvas while preserving aspect ratio
   const iw = blueprintImg.naturalWidth || blueprintImg.width;
   const ih = blueprintImg.naturalHeight || blueprintImg.height;
 
@@ -142,13 +159,10 @@ function drawBlueprint() {
   const dx = (w - dw) / 2;
   const dy = (h - dh) / 2;
 
-  // background
   ctx.fillStyle = '#fafafa';
   ctx.fillRect(0, 0, w, h);
-
   ctx.drawImage(blueprintImg, dx, dy, dw, dh);
 
-  // thin border
   ctx.strokeStyle = '#ddd';
   ctx.strokeRect(0.5, 0.5, w - 1, h - 1);
 }
@@ -161,7 +175,7 @@ function drawSelections() {
   // saved shapes
   for (const s of selections) {
     ctx.lineWidth = 2;
-    ctx.strokeStyle = '#16a34a'; // green-ish
+    ctx.strokeStyle = '#16a34a';
     ctx.fillStyle = 'rgba(22,163,74,0.10)';
 
     if (s.type === 'rect') {
@@ -176,7 +190,6 @@ function drawSelections() {
       ctx.fillRect(x, y, rw, rh);
       ctx.strokeRect(x, y, rw, rh);
 
-      // label
       ctx.fillStyle = '#0f172a';
       ctx.font = '12px system-ui';
       ctx.fillText(s.label || '', x + 6, y + 14);
@@ -214,11 +227,26 @@ function drawSelections() {
       ctx.font = '12px system-ui';
       ctx.fillText(s.label || '', a.x + 6, a.y + 14);
     }
+
+    if (s.type === 'poly') {
+      const pts = s.geo.points.map(normToCss);
+
+      ctx.beginPath();
+      ctx.moveTo(pts[0].x, pts[0].y);
+      for (let i = 1; i < pts.length; i++) ctx.lineTo(pts[i].x, pts[i].y);
+      ctx.closePath();
+      ctx.fill();
+      ctx.stroke();
+
+      ctx.fillStyle = '#0f172a';
+      ctx.font = '12px system-ui';
+      ctx.fillText(s.label || '', pts[0].x + 6, pts[0].y + 14);
+    }
   }
 
-  // active preview shape while drawing
+  // preview drawing
   ctx.lineWidth = 2;
-  ctx.strokeStyle = '#2563eb'; // blue-ish
+  ctx.strokeStyle = '#2563eb';
   ctx.fillStyle = 'rgba(37,99,235,0.08)';
 
   if (mode === 'rect' && isDragging && dragStart && dragEnd) {
@@ -240,14 +268,12 @@ function drawSelections() {
   }
 
   if (mode === 'tri' && triPoints.length) {
-    // draw points
     ctx.fillStyle = '#2563eb';
     for (const p of triPoints) {
       ctx.beginPath();
       ctx.arc(p.x, p.y, 4, 0, Math.PI * 2);
       ctx.fill();
     }
-    // draw lines if 2+ points
     if (triPoints.length >= 2) {
       ctx.strokeStyle = '#2563eb';
       ctx.beginPath();
@@ -259,6 +285,23 @@ function drawSelections() {
       }
       ctx.stroke();
     }
+  }
+
+  // polygon preview
+  if (mode === 'poly' && polyPoints.length) {
+    ctx.fillStyle = '#2563eb';
+    for (const p of polyPoints) {
+      ctx.beginPath();
+      ctx.arc(p.x, p.y, 4, 0, Math.PI * 2);
+      ctx.fill();
+    }
+
+    ctx.strokeStyle = '#2563eb';
+    ctx.beginPath();
+    ctx.moveTo(polyPoints[0].x, polyPoints[0].y);
+    for (let i = 1; i < polyPoints.length; i++) ctx.lineTo(polyPoints[i].x, polyPoints[i].y);
+    if (polyHover) ctx.lineTo(polyHover.x, polyHover.y);
+    ctx.stroke();
   }
 }
 
@@ -275,8 +318,8 @@ function recomputeTotals() {
   if (countOut) countOut.textContent = String(selections.length);
 
   if (!listOut) return;
-
   listOut.innerHTML = '';
+
   selections.forEach((s, i) => {
     const card = document.createElement('div');
     card.className = 'selCard';
@@ -295,12 +338,13 @@ function recomputeTotals() {
       meta.textContent = `Radius: ${fmt2(s.real.radiusFt)} ft`;
     } else if (s.type === 'tri') {
       meta.textContent = `Base: ${fmt2(s.real.baseFt)} ft • Height: ${fmt2(s.real.heightFt)} ft`;
+    } else if (s.type === 'poly') {
+      meta.textContent = `Sides: ${s.real.sideFeet.length} • Scale: ${fmt2(s.real.ftPerPx)} ft/px (estimated)`;
     }
 
     card.appendChild(title);
     card.appendChild(meta);
 
-    // delete button
     const del = document.createElement('button');
     del.textContent = 'Remove';
     del.style.marginTop = '8px';
@@ -313,7 +357,6 @@ function recomputeTotals() {
 
     card.appendChild(del);
 
-    // light styling without relying on extra CSS
     card.style.border = '1px solid #e5e5e5';
     card.style.borderRadius = '10px';
     card.style.padding = '10px';
@@ -337,19 +380,7 @@ window.getEstimatorSnapshot = function getEstimatorSnapshot() {
   };
 };
 
-// ----- Save selection after user inputs real dimensions -----
-function promptLabel(defaultLabel) {
-  const label = (window.prompt('Label this area (ex: Kitchen):', defaultLabel || '') || '').trim();
-  return label || defaultLabel || 'Area';
-}
-
-function promptNumber(msg, defaultVal) {
-  const raw = (window.prompt(msg, String(defaultVal ?? '')) || '').trim();
-  const n = Number(raw);
-  if (!Number.isFinite(n) || n <= 0) return null;
-  return n;
-}
-
+// ----- Save selection functions -----
 function saveRect(p1, p2) {
   const label = promptLabel(`Area ${selections.length + 1}`);
 
@@ -369,7 +400,7 @@ function saveRect(p1, p2) {
     areaSqFt
   });
 
-  setStatus(`Saved "${label}" (${fmt2(areaSqFt)} sq ft). Rectangle mode: drag to select.`);
+  setStatus(`Saved "${label}" (${fmt2(areaSqFt)} sq ft).`);
   recomputeTotals();
   render();
 }
@@ -397,7 +428,7 @@ function saveCircle(center, edge) {
     areaSqFt
   });
 
-  setStatus(`Saved "${label}" (${fmt2(areaSqFt)} sq ft). Circle mode: drag radius.`);
+  setStatus(`Saved "${label}" (${fmt2(areaSqFt)} sq ft).`);
   recomputeTotals();
   render();
 }
@@ -421,7 +452,51 @@ function saveTriangle(a, b, c) {
     areaSqFt
   });
 
-  setStatus(`Saved "${label}" (${fmt2(areaSqFt)} sq ft). Triangle mode: click 3 points.`);
+  setStatus(`Saved "${label}" (${fmt2(areaSqFt)} sq ft).`);
+  recomputeTotals();
+  render();
+}
+
+function savePolygon(pointsCss) {
+  if (pointsCss.length < 3) {
+    setStatus('Custom shape needs at least 3 points.');
+    return;
+  }
+
+  const label = promptLabel(`Area ${selections.length + 1}`);
+
+  const sideFeet = [];
+  const sidePx = [];
+
+  for (let i = 0; i < pointsCss.length; i++) {
+    const j = (i + 1) % pointsCss.length;
+    const pxLen = dist(pointsCss[i], pointsCss[j]);
+    sidePx.push(pxLen);
+
+    const ft = promptNumber(`Side ${i + 1} REAL length (ft):`, 10);
+    if (ft == null) {
+      setStatus('Cancelled polygon save.');
+      return;
+    }
+    sideFeet.push(ft);
+  }
+
+  const totalFt = sideFeet.reduce((a, b) => a + b, 0);
+  const totalPx = sidePx.reduce((a, b) => a + b, 0);
+  const ftPerPx = totalPx > 0 ? (totalFt / totalPx) : 0;
+
+  const areaPx2 = polygonAreaPx(pointsCss);
+  const areaSqFt = areaPx2 * (ftPerPx * ftPerPx);
+
+  selections.push({
+    type: 'poly',
+    label,
+    geo: { points: pointsCss.map(cssToNorm) },
+    real: { sideFeet, ftPerPx },
+    areaSqFt
+  });
+
+  setStatus(`Saved "${label}" (${fmt2(areaSqFt)} sq ft).`);
   recomputeTotals();
   render();
 }
@@ -430,17 +505,24 @@ function saveTriangle(a, b, c) {
 if (shapeModeEl) {
   shapeModeEl.addEventListener('change', () => {
     mode = shapeModeEl.value;
+
     isDragging = false;
     dragStart = dragEnd = null;
     circleCenter = circleEdge = null;
     triPoints = [];
+    polyPoints = [];
+    polyHover = null;
+
     setStatus(
       mode === 'rect'
         ? 'Rectangle mode: drag to select.'
         : mode === 'circle'
           ? 'Circle mode: click+drag to set radius.'
-          : 'Triangle mode: click 3 corners.'
+          : mode === 'tri'
+            ? 'Triangle mode: click 3 corners.'
+            : 'Custom shape: click to add pins. Double-click to finish.'
     );
+
     render();
   });
 }
@@ -480,21 +562,17 @@ if (blueprintInput) {
     img.onload = () => {
       blueprintImg = img;
       setStatus('Image loaded. Start selecting an area.');
-
-      // Wait one frame so CSS layout is final before measuring canvas size
       requestAnimationFrame(() => {
         fitCanvasToWrap();
         render();
       });
     };
-    img.onerror = () => {
-      alert('Could not load that image.');
-    };
+    img.onerror = () => alert('Could not load that image.');
     img.src = url;
   });
 }
 
-// Canvas pointer events
+// rect/circle dragging
 canvas.addEventListener('mousedown', (e) => {
   const p = getCanvasCssPointFromEvent(e);
 
@@ -514,8 +592,15 @@ canvas.addEventListener('mousedown', (e) => {
 });
 
 canvas.addEventListener('mousemove', (e) => {
-  if (!isDragging) return;
   const p = getCanvasCssPointFromEvent(e);
+
+  if (mode === 'poly') {
+    polyHover = p;
+    render();
+    return;
+  }
+
+  if (!isDragging) return;
 
   if (mode === 'rect' && dragStart) {
     dragEnd = p;
@@ -533,19 +618,13 @@ canvas.addEventListener('mouseup', () => {
   isDragging = false;
 
   if (mode === 'rect' && dragStart && dragEnd) {
-    if (dist(dragStart, dragEnd) < 6) {
-      setStatus('Drag a bigger rectangle.');
-    } else {
-      saveRect(dragStart, dragEnd);
-    }
+    if (dist(dragStart, dragEnd) < 6) setStatus('Drag a bigger rectangle.');
+    else saveRect(dragStart, dragEnd);
   }
 
   if (mode === 'circle' && circleCenter && circleEdge) {
-    if (dist(circleCenter, circleEdge) < 6) {
-      setStatus('Drag a bigger circle radius.');
-    } else {
-      saveCircle(circleCenter, circleEdge);
-    }
+    if (dist(circleCenter, circleEdge) < 6) setStatus('Drag a bigger circle radius.');
+    else saveCircle(circleCenter, circleEdge);
   }
 
   dragStart = dragEnd = null;
@@ -553,28 +632,50 @@ canvas.addEventListener('mouseup', () => {
   render();
 });
 
-// Triangle: click 3 points (no dragging)
+// tri + poly clicks
 canvas.addEventListener('click', (e) => {
-  if (mode !== 'tri') return;
   const p = getCanvasCssPointFromEvent(e);
 
-  triPoints.push(p);
-  if (triPoints.length < 3) {
-    setStatus(`Triangle: click ${3 - triPoints.length} more point(s).`);
-    render();
+  if (mode === 'tri') {
+    triPoints.push(p);
+    if (triPoints.length < 3) {
+      setStatus(`Triangle: click ${3 - triPoints.length} more point(s).`);
+      render();
+      return;
+    }
+    const [a, b, c] = triPoints;
+    triPoints = [];
+    saveTriangle(a, b, c);
     return;
   }
 
-  const [a, b, c] = triPoints;
-  triPoints = [];
-  saveTriangle(a, b, c);
+  if (mode === 'poly') {
+    polyPoints.push(p);
+    setStatus('Custom shape: click to add pins. Double-click to finish.');
+    render();
+  }
+});
+
+// double click to finish polygon
+canvas.addEventListener('dblclick', (e) => {
+  if (mode !== 'poly') return;
+  e.preventDefault();
+
+  if (polyPoints.length < 3) {
+    setStatus('Need at least 3 points to finish a custom shape.');
+    return;
+  }
+
+  const pts = polyPoints.slice();
+  polyPoints = [];
+  polyHover = null;
+
+  savePolygon(pts);
 });
 
 // Initial UI
 setStatus('Upload an image to begin.');
 recomputeTotals();
-
-// Wait a frame so the canvas has real CSS size before we set internal buffer size
 requestAnimationFrame(() => {
   fitCanvasToWrap();
   render();

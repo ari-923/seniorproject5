@@ -11,9 +11,7 @@
   --radius: 14px;
 }
 
-* {
-  box-sizing: border-box;
-}
+* { box-sizing: border-box; }
 
 body {
   margin: 0;
@@ -33,6 +31,7 @@ p {
   margin-top: 0;
   color: var(--muted);
   line-height: 1.5;
+  max-width: 900px;
 }
 
 /* ---------- Controls ---------- */
@@ -53,18 +52,14 @@ p {
   font-size: 14px;
 }
 
-.controls select {
-  min-width: 200px;
-}
+.controls select { min-width: 200px; }
 
 .controls button {
   cursor: pointer;
   font-weight: 600;
 }
 
-.controls button:hover {
-  background: var(--primary-soft);
-}
+.controls button:hover { background: var(--primary-soft); }
 
 /* ---------- Status ---------- */
 #statusOut {
@@ -81,7 +76,7 @@ p {
   align-items: start;
 }
 
-/* ---------- Canvas ---------- */
+/* ---------- Canvas Card ---------- */
 .canvasWrap {
   background: var(--card);
   border-radius: var(--radius);
@@ -97,6 +92,8 @@ canvas {
   height: 100%;
   border-radius: 10px;
   background: #fafafa;
+  display: block;
+  cursor: crosshair;
 }
 
 .tip {
@@ -106,7 +103,7 @@ canvas {
   margin-top: 6px;
 }
 
-/* ---------- Summary ---------- */
+/* ---------- Summary Card ---------- */
 .summary {
   background: var(--card);
   border: 1px solid var(--border);
@@ -167,9 +164,7 @@ canvas {
   font-size: 14px;
 }
 
-#chatLog div {
-  margin-bottom: 8px;
-}
+#chatLog div { margin-bottom: 8px; }
 
 .chatInput {
   display: flex;
@@ -183,9 +178,7 @@ canvas {
   font-size: 14px;
 }
 
-.chatInput input:focus {
-  outline: none;
-}
+.chatInput input:focus { outline: none; }
 
 .chatInput button {
   padding: 10px 14px;
@@ -196,18 +189,10 @@ canvas {
   cursor: pointer;
 }
 
-.chatInput button:hover {
-  opacity: 0.9;
-}
+.chatInput button:hover { opacity: 0.9; }
 
 /* ---------- Responsive ---------- */
 @media (max-width: 900px) {
-  .layout {
-    grid-template-columns: 1fr;
-  }
-
-  #chatWidget {
-    width: calc(100% - 40px);
-    right: 20px;
-  }
+  .layout { grid-template-columns: 1fr; }
+  #chatWidget { width: calc(100% - 40px); right: 20px; }
 }

@@ -1,204 +1,213 @@
+/* ---------- Base ---------- */
 :root {
   --bg: #f8fafc;
   --card: #ffffff;
   --border: #e5e7eb;
   --text: #0f172a;
   --muted: #64748b;
-
   --primary: #2563eb;
+  --primary-soft: rgba(37,99,235,0.08);
   --success: #16a34a;
+  --radius: 14px;
+}
+
+* {
+  box-sizing: border-box;
 }
 
 body {
-  font-family: system-ui, -apple-system, sans-serif;
-  margin: 20px;
+  margin: 0;
+  padding: 24px;
+  font-family: system-ui, -apple-system, BlinkMacSystemFont, sans-serif;
   background: var(--bg);
   color: var(--text);
 }
 
+/* ---------- Header ---------- */
 h1 {
-  margin-bottom: 4px;
+  font-size: 28px;
+  margin-bottom: 6px;
 }
 
-.subtitle {
-  margin-bottom: 12px;
+p {
+  margin-top: 0;
+  color: var(--muted);
+  line-height: 1.5;
+}
+
+/* ---------- Controls ---------- */
+.controls {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 10px;
+  margin: 18px 0;
+}
+
+.controls input[type="file"],
+.controls select,
+.controls button {
+  padding: 10px 12px;
+  border-radius: 10px;
+  border: 1px solid var(--border);
+  background: var(--card);
+  font-size: 14px;
+}
+
+.controls select {
+  min-width: 200px;
+}
+
+.controls button {
+  cursor: pointer;
+  font-weight: 600;
+}
+
+.controls button:hover {
+  background: var(--primary-soft);
+}
+
+/* ---------- Status ---------- */
+#statusOut {
+  margin-bottom: 14px;
+  font-size: 14px;
   color: var(--muted);
 }
 
-/* Controls */
-.controls {
-  display: flex;
-  gap: 10px;
-  flex-wrap: wrap;
-  margin-bottom: 12px;
-}
-
-.controls input,
-.controls select,
-.controls button {
-  padding: 8px 12px;
-  border-radius: 10px;
-  border: 1px solid var(--border);
-  background: white;
-}
-
-.controls button {
-  background: var(--primary);
-  color: white;
-  border-color: var(--primary);
-  cursor: pointer;
-}
-
-/* Layout */
+/* ---------- Layout ---------- */
 .layout {
   display: grid;
-  grid-template-columns: 1fr 360px;
-  gap: 20px;
+  grid-template-columns: 1fr 340px;
+  gap: 24px;
+  align-items: start;
 }
 
-/* Canvas */
+/* ---------- Canvas ---------- */
 .canvasWrap {
-  background: white;
-  border-radius: 18px;
+  background: var(--card);
+  border-radius: var(--radius);
   border: 1px solid var(--border);
-  height: 520px;
-  position: relative;
+  padding: 14px;
+  height: 560px;
+  display: flex;
+  flex-direction: column;
 }
 
 canvas {
   width: 100%;
   height: 100%;
+  border-radius: 10px;
+  background: #fafafa;
 }
 
 .tip {
-  position: absolute;
-  bottom: 10px;
-  right: 14px;
   font-size: 12px;
   color: var(--muted);
+  text-align: right;
+  margin-top: 6px;
 }
 
-/* Status */
-#statusOut {
-  margin-bottom: 10px;
-  color: var(--muted);
-}
-
-/* Summary */
+/* ---------- Summary ---------- */
 .summary {
-  background: white;
-  border-radius: 18px;
+  background: var(--card);
   border: 1px solid var(--border);
-  padding: 18px;
+  border-radius: var(--radius);
+  padding: 16px;
 }
 
 .summary h3 {
-  margin: 0 0 10px;
-  font-size: 22px;
-  font-weight: 800;
+  margin-top: 0;
+  margin-bottom: 8px;
 }
 
-.totalRow {
-  display: flex;
-  align-items: baseline;
-  gap: 8px;
-}
-
-.totalValue {
-  font-size: 52px;
-  font-weight: 900;
+#totalOut {
+  font-size: 26px;
   color: var(--primary);
-  line-height: 1;
-}
-
-.totalUnit {
-  font-size: 18px;
-  font-weight: 700;
-}
-
-.totalMeta {
-  margin-top: 6px;
-  margin-bottom: 14px;
-  font-size: 16px;
 }
 
 #listOut > div {
-  background: #f1f5f9;
-  border-radius: 16px;
-  padding: 14px;
-  margin-top: 12px;
-  border: 1px solid var(--border);
+  margin-top: 10px;
+  background: #f9fafb;
+  border-radius: 10px;
+  padding: 10px;
 }
 
-#listOut button {
-  margin-top: 10px;
-  padding: 8px 12px;
-  border-radius: 10px;
+/* ---------- Selection Cards ---------- */
+.selCard button {
+  background: transparent;
   border: 1px solid var(--border);
-  background: white;
+  padding: 6px 10px;
+  border-radius: 8px;
   cursor: pointer;
 }
 
-/* Modal */
-.modalOverlay {
+.selCard button:hover {
+  background: #fee2e2;
+  border-color: #fecaca;
+}
+
+/* ---------- Chat Widget ---------- */
+#chatWidget {
   position: fixed;
-  inset: 0;
-  background: rgba(15,23,42,.45);
-  display: grid;
-  place-items: center;
-  z-index: 1000;
-}
-
-.modalCard {
-  background: white;
-  border-radius: 18px;
-  padding: 18px;
-  width: 340px;
-}
-
-.modalHint {
-  font-size: 13px;
-  color: var(--muted);
-}
-
-.modalGrid {
-  display: grid;
-  grid-template-columns: 1fr 1fr;
-  gap: 12px;
-  margin-top: 14px;
-}
-
-.modalField input {
-  width: 100%;
-  padding: 10px;
-  border-radius: 12px;
+  bottom: 20px;
+  right: 20px;
+  width: 320px;
+  border-radius: 16px;
   border: 1px solid var(--border);
-}
-
-.modalActions {
+  background: var(--card);
+  box-shadow: 0 12px 30px rgba(0,0,0,0.08);
   display: flex;
-  justify-content: flex-end;
-  gap: 10px;
-  margin-top: 14px;
+  flex-direction: column;
+  overflow: hidden;
 }
 
-.btnPrimary {
+#chatLog {
+  padding: 12px;
+  max-height: 220px;
+  overflow-y: auto;
+  font-size: 14px;
+}
+
+#chatLog div {
+  margin-bottom: 8px;
+}
+
+.chatInput {
+  display: flex;
+  border-top: 1px solid var(--border);
+}
+
+.chatInput input {
+  flex: 1;
+  padding: 10px;
+  border: none;
+  font-size: 14px;
+}
+
+.chatInput input:focus {
+  outline: none;
+}
+
+.chatInput button {
+  padding: 10px 14px;
+  border: none;
   background: var(--primary);
   color: white;
-  border: none;
-  border-radius: 12px;
-  padding: 10px 14px;
+  font-weight: 600;
+  cursor: pointer;
 }
 
-.btnSecondary {
-  background: #e2e8f0;
-  border: none;
-  border-radius: 12px;
-  padding: 10px 14px;
+.chatInput button:hover {
+  opacity: 0.9;
 }
 
-.modalError {
-  margin-top: 8px;
-  color: #dc2626;
-  font-size: 13px;
+/* ---------- Responsive ---------- */
+@media (max-width: 900px) {
+  .layout {
+    grid-template-columns: 1fr;
+  }
+
+  #chatWidget {
+    width: calc(100% - 40px);
+    right: 20px;
+  }
 }

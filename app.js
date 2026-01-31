@@ -5,16 +5,25 @@
  *
  * Custom Shape (pins) behavior:
  * - Click to add pins (visual only)
- * - After EACH new pin (starting at pin #2), prompt for feet of the side just created
+ * - After EACH new pin (starting at pin #2), prompt for feet/inches of the side just created
  * - Finish polygon:
- *    - Click FIRST pin again (recommended) -> prompts for closing side feet and saves
- *    - Press ENTER -> prompts for closing side feet and saves
+ *    - Click FIRST pin again (recommended) -> prompts for closing side length and saves
+ *    - Press ENTER -> prompts for closing side length and saves
  * - ESC cancels current polygon draft
  *
  * POLY AREA RULES:
  * - 3 sides: triangle area from 3 sides (Heron's formula)
  * - 4 sides: user chooses (single letter) Rectangle/Square OR Trapezoid OR Irregular
  * - 5+ sides: manual area (sq ft)
+ *
+ * LENGTH INPUTS (feet/inches):
+ * Users may type:
+ *  - 10' 6"   (recommended)
+ *  - 10 6
+ *  - 10-6
+ *  - 10ft 6in
+ *  - 10.5     (decimal feet)
+ *  - 6"       (inches only)
  */
 
 // ----- Grab DOM -----
@@ -104,11 +113,74 @@ function promptLabel(defaultLabel) {
   return label || defaultLabel || 'Area';
 }
 
+/**
+ * Converts user input like:
+ *  - 10.5
+ *  - 10'6"
+ *  - 10' 6
+ *  - 10 6
+ *  - 10ft 6in
+ *  - 10-6
+ *  - 6"
+ * into decimal FEET.
+ */
+function parseFeetInchesToFeet(input) {
+  let s = String(input).trim().toLowerCase();
+  if (!s) return NaN;
+
+  // Plain decimal feet (ex: 10.5)
+  if (/^[0-9]+(\.[0-9]+)?$/.test(s)) return Number(s);
+
+  // Normalize common words/symbols
+  s = s
+    .replace(/feet|foot|ft/g, "'")
+    .replace(/inches|inch|in/g, '"')
+    .replace(/”/g, '"')
+    .replace(/“/g, '"')
+    .replace(/\s+/g, ' ')
+    .trim();
+
+  // Inches only: 6"
+  // (Must contain " and NOT contain ')
+  if (s.includes('"') && !s.includes("'")) {
+    const mi = s.match(/^(\d+(?:\.\d+)?)\s*"?$/);
+    if (mi) return Number(mi[1]) / 12;
+  }
+
+  // Feet'inches: 10'6" OR 10' 6" OR 10'6
+  const m1 = s.match(/^(\d+(?:\.\d+)?)\s*'\s*(\d+(?:\.\d+)?)?\s*"?$/);
+  if (m1) {
+    const f = Number(m1[1]);
+    const inches = m1[2] != null ? Number(m1[2]) : 0;
+    return f + (inches / 12);
+  }
+
+  // Feet inches: "10 6" OR "10-6"
+  const m2 = s.match(/^(\d+(?:\.\d+)?)\s*[- ]\s*(\d+(?:\.\d+)?)$/);
+  if (m2) {
+    const f = Number(m2[1]);
+    const inches = Number(m2[2]);
+    return f + (inches / 12);
+  }
+
+  return NaN;
+}
+
+/**
+ * Prompt for a length in FEET (supports feet/inches formats).
+ * Returns decimal feet or null if cancelled/invalid.
+ */
 function promptNumber(msg, defaultVal) {
-  const raw = (window.prompt(msg, String(defaultVal ?? '')) || '').trim();
-  const n = Number(raw);
-  if (!Number.isFinite(n) || n <= 0) return null;
-  return n;
+  const raw = (window.prompt(
+    `${msg}\nExamples: 10' 6", 10 6, 10.5`,
+    String(defaultVal ?? '')
+  ) || '').trim();
+
+  if (!raw) return null;
+
+  const feet = parseFeetInchesToFeet(raw);
+  if (!Number.isFinite(feet) || feet <= 0) return null;
+  return feet;
 }
 
 function resetPolygonDraft(msg) {
@@ -669,7 +741,7 @@ if (shapeModeEl) {
           ? 'Circle mode: click+drag to set radius.'
           : mode === 'tri'
             ? 'Triangle mode: click 3 corners.'
-            : 'Custom shape: click pins. Enter feet per side. Click FIRST pin to close or press ENTER. ESC cancels.'
+            : 'Custom shape: click pins. Enter lengths (ex: 10\' 6"). Click FIRST pin to close or press ENTER. ESC cancels.'
     );
 
     render();
@@ -810,10 +882,10 @@ canvas.addEventListener('click', (e) => {
     // add new point
     polyPoints.push(p);
 
-    // ask feet after each new line
+    // ask length after each new line
     if (polyPoints.length >= 2) {
       const sideIndex = polyPoints.length - 1;
-      const ft = promptNumber(`Side ${sideIndex} REAL length (ft) (line you just drew):`, 10);
+      const ft = promptNumber(`Side ${sideIndex} length (ft or feet-inches):`, 10);
 
       if (ft == null) {
         polyPoints.pop();

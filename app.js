@@ -3,10 +3,15 @@
 /**
  * Blueprint Flooring Estimator (Rect / Circle / Triangle / Polygon)
  *
- * Polygon (pins) mode (UPDATED):
+ * Polygon (pins) mode:
  * - Click to add points
  * - After EACH new point (starting at point #2), prompt for the feet of the line you just created
- * - Double-click to finish polygon, then prompt for closing side (last -> first)
+ * - Finish polygon:
+ *    - Press ENTER  ✅ (recommended)
+ *    - Double-click ✅
+ * - Cancel polygon:
+ *    - Press ESC ✅
+ * - When finishing, prompt for closing side (last -> first)
  * - Estimate ft-per-pixel from all entered side lengths
  * - Compute polygon area via shoelace formula
  */
@@ -46,7 +51,7 @@ let triPoints = [];
 
 // poly
 let polyPoints = [];    // [{x,y}, ...] CSS px
-let polySideFeet = [];  // [ft for side between point i-1 -> i] (same order)
+let polySideFeet = [];  // feet for each segment between consecutive points
 let polyHover = null;
 
 // ----- Helpers -----
@@ -109,6 +114,14 @@ function promptNumber(msg, defaultVal) {
   const n = Number(raw);
   if (!Number.isFinite(n) || n <= 0) return null;
   return n;
+}
+
+function resetPolygonDraft(msg) {
+  polyPoints = [];
+  polySideFeet = [];
+  polyHover = null;
+  setStatus(msg || 'Polygon cancelled.');
+  render();
 }
 
 // --- Canvas resize helper (pointer-aligned) ---
@@ -284,10 +297,8 @@ function drawSelections() {
     }
   }
 
-  // polygon preview (pins + hover line)
-  if (mode === 'poly') {
-    if (!polyPoints.length) return;
-
+  // polygon preview
+  if (mode === 'poly' && polyPoints.length) {
     // pins
     ctx.fillStyle = '#2563eb';
     for (const p of polyPoints) {
@@ -458,7 +469,7 @@ function finishPolygonAndSave(pointsCss, sideFeet) {
     return;
   }
 
-  // Must have sides for each segment + closing segment
+  // sideFeet should include closing side, so length should equal points length
   if (sideFeet.length !== pointsCss.length) {
     setStatus('Polygon sides missing — could not save.');
     return;
@@ -466,7 +477,7 @@ function finishPolygonAndSave(pointsCss, sideFeet) {
 
   const label = promptLabel(`Area ${selections.length + 1}`);
 
-  // Calculate pixel lengths for each side (including closing side)
+  // pixel lengths (including closing)
   const sidePx = [];
   for (let i = 0; i < pointsCss.length; i++) {
     const j = (i + 1) % pointsCss.length;
@@ -493,7 +504,67 @@ function finishPolygonAndSave(pointsCss, sideFeet) {
   render();
 }
 
-// ----- Events -----
+// ----- Finish / Cancel polygon actions -----
+function tryFinishPolygon() {
+  if (mode !== 'poly') return;
+
+  if (polyPoints.length < 3) {
+    setStatus('Need at least 3 points to finish a custom shape.');
+    return;
+  }
+
+  const closingFt = promptNumber(
+    'Closing side REAL length (ft) (last point back to the first):',
+    10
+  );
+  if (closingFt == null) {
+    setStatus('Finish cancelled.');
+    return;
+  }
+
+  const pts = polyPoints.slice();
+  const sideFeet = polySideFeet.slice();
+  sideFeet.push(closingFt);
+
+  // reset draft
+  polyPoints = [];
+  polySideFeet = [];
+  polyHover = null;
+
+  finishPolygonAndSave(pts, sideFeet);
+}
+
+function cancelPolygon() {
+  if (mode !== 'poly') return;
+  if (!polyPoints.length) return;
+  resetPolygonDraft('Polygon cancelled (draft cleared).');
+}
+
+// Keyboard shortcuts:
+// Enter = finish polygon, Esc = cancel polygon
+window.addEventListener('keydown', (e) => {
+  if (mode !== 'poly') return;
+
+  // Don't steal Enter if user is typing in the chat input
+  const active = document.activeElement;
+  const typingInInput =
+    active &&
+    (active.tagName === 'INPUT' || active.tagName === 'TEXTAREA');
+
+  if (typingInInput) return;
+
+  if (e.key === 'Enter') {
+    e.preventDefault();
+    tryFinishPolygon();
+  }
+
+  if (e.key === 'Escape') {
+    e.preventDefault();
+    cancelPolygon();
+  }
+});
+
+// ----- Mode + UI events -----
 if (shapeModeEl) {
   shapeModeEl.addEventListener('change', () => {
     mode = shapeModeEl.value;
@@ -504,6 +575,7 @@ if (shapeModeEl) {
     circleCenter = circleEdge = null;
     triPoints = [];
 
+    // reset polygon draft too
     polyPoints = [];
     polySideFeet = [];
     polyHover = null;
@@ -515,7 +587,7 @@ if (shapeModeEl) {
           ? 'Circle mode: click+drag to set radius.'
           : mode === 'tri'
             ? 'Triangle mode: click 3 corners.'
-            : 'Custom shape: click pins. After each line, enter feet. Double-click to finish.'
+            : 'Custom shape: click pins. Feet after each line. Press ENTER to finish, ESC to cancel.'
     );
 
     render();
@@ -645,16 +717,14 @@ canvas.addEventListener('click', (e) => {
   }
 
   if (mode === 'poly') {
-    // Add point
     polyPoints.push(p);
 
-    // If this created a new line (point #2+), ask feet for that line immediately
+    // if this created a new side (point #2+), ask feet immediately
     if (polyPoints.length >= 2) {
-      const i = polyPoints.length - 1; // new point index
-      const ft = promptNumber(`Side ${i} REAL length (ft) for the line you just drew:`, 10);
+      const sideIndex = polyPoints.length - 1; // Side 1 is between point1->point2
+      const ft = promptNumber(`Side ${sideIndex} REAL length (ft) (line you just drew):`, 10);
 
       if (ft == null) {
-        // If user cancels, remove the last point and do not keep the side
         polyPoints.pop();
         setStatus('Cancelled that side. Point not added.');
         render();
@@ -662,7 +732,7 @@ canvas.addEventListener('click', (e) => {
       }
 
       polySideFeet.push(ft);
-      setStatus('Custom shape: keep clicking pins. Double-click to finish.');
+      setStatus('Custom shape: keep clicking pins. Press ENTER to finish, ESC to cancel.');
     } else {
       setStatus('Custom shape: click next point to create your first line.');
     }
@@ -671,41 +741,11 @@ canvas.addEventListener('click', (e) => {
   }
 });
 
-// double-click to finish polygon
+// double click still works to finish polygon
 canvas.addEventListener('dblclick', (e) => {
   if (mode !== 'poly') return;
   e.preventDefault();
-
-  if (polyPoints.length < 3) {
-    setStatus('Need at least 3 points to finish a custom shape.');
-    return;
-  }
-
-  // Ask for closing side feet (last point back to first)
-  const closingFt = promptNumber(
-    `Closing side REAL length (ft) (last point back to the first):`,
-    10
-  );
-
-  if (closingFt == null) {
-    setStatus('Cancelled finishing polygon.');
-    return;
-  }
-
-  // sideFeet must have one entry for each side:
-  // existing polySideFeet is for sides between consecutive points (1->2, 2->3, ...)
-  // closingFt is for last->first
-  const sideFeet = polySideFeet.slice();
-  sideFeet.push(closingFt);
-
-  const pts = polyPoints.slice();
-
-  // reset drawing state before saving
-  polyPoints = [];
-  polySideFeet = [];
-  polyHover = null;
-
-  finishPolygonAndSave(pts, sideFeet);
+  tryFinishPolygon();
 });
 
 // Initial UI

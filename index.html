@@ -11,9 +11,9 @@
   <h1>Blueprint Flooring Estimator</h1>
 
   <p>
-    Upload a blueprint image, outline the areas to be floored, and enter real-world
-    dimensions to calculate total square footage. Use the AI assistant for waste
-    percentages and cost estimates.
+    1) Upload a blueprint image (PNG/JPG).<br>
+    2) Choose a shape mode.<br>
+    3) Enter real measurements using the Feet/Inches box (inches default to 0).
   </p>
 
   <div class="controls">
@@ -22,7 +22,7 @@
       <option value="rect">Rectangle (drag)</option>
       <option value="circle">Circle (drag radius)</option>
       <option value="tri">Triangle (click 3 points)</option>
-      <option value="poly">Custom Shape (pins)</option>
+      <option value="poly">Custom Shape (pin points)</option>
     </select>
 
     <button id="undoBtn">Undo Last</button>
@@ -42,6 +42,35 @@
       <div><strong><span id="totalOut">0.00</span></strong> sq ft</div>
       <div>Selections saved: <span id="countOut">0</span></div>
       <div id="listOut"></div>
+    </div>
+  </div>
+
+  <!-- Length Input Modal (Feet/Inches) -->
+  <div id="lengthModal" class="modalOverlay" style="display:none;">
+    <div class="modalCard" role="dialog" aria-modal="true" aria-labelledby="lengthModalTitle">
+      <div class="modalHeader">
+        <h3 id="lengthModalTitle">Enter Length</h3>
+        <div id="lengthModalHint" class="modalHint">Inches default to 0. Press Enter to OK.</div>
+      </div>
+
+      <div class="modalGrid">
+        <div class="modalField">
+          <label for="feetInput">Feet</label>
+          <input id="feetInput" type="number" min="0" step="1" value="0" />
+        </div>
+
+        <div class="modalField">
+          <label for="inchInput">Inches</label>
+          <input id="inchInput" type="number" min="0" max="11" step="1" value="0" />
+        </div>
+      </div>
+
+      <div class="modalActions">
+        <button id="lengthCancel" class="btnSecondary" type="button">Cancel</button>
+        <button id="lengthOk" class="btnPrimary" type="button">OK</button>
+      </div>
+
+      <div id="lengthModalError" class="modalError" aria-live="polite"></div>
     </div>
   </div>
 

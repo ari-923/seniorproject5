@@ -1,4 +1,4 @@
-module.exports = async function handler(req, res) {
+export default async function handler(req, res) {
   // Only allow POST
   if (req.method !== 'POST') {
     return res.status(405).json({ error: 'Use POST' });
@@ -63,8 +63,9 @@ ${JSON.stringify(snapshot || {}, null, 2)}
 
     const data = await openaiRes.json();
 
-    // Extract assistant text from Responses API
+    // SAFELY extract assistant text from Responses API
     let reply = 'No reply generated.';
+
     if (Array.isArray(data.output)) {
       for (const item of data.output) {
         if (item.content) {
@@ -79,10 +80,11 @@ ${JSON.stringify(snapshot || {}, null, 2)}
     }
 
     return res.status(200).json({ reply });
+
   } catch (err) {
     return res.status(500).json({
       error: 'Server error',
       details: String(err)
     });
   }
-};
+}

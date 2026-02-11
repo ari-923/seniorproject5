@@ -1,33 +1,88 @@
-const chatLog = document.getElementById('chatLog');
-const chatInput = document.getElementById('chatInput');
-const chatSend = document.getElementById('chatSend');
-
-function addMsg(text, from = 'bot') {
-  const div = document.createElement('div');
-  div.textContent = (from === 'user' ? 'You: ' : 'AI: ') + text;
-  chatLog.appendChild(div);
-  chatLog.scrollTop = chatLog.scrollHeight;
-}
-
-chatSend.onclick = async () => {
-  const msg = chatInput.value.trim();
-  if (!msg) return;
-
-  chatInput.value = '';
-  addMsg(msg, 'user');
+module.exports = async function handler(req, res) {
+  // Only allow POST
+  if (req.method !== 'POST') {
+    return res.status(405).json({ error: 'Use POST' });
+  }
 
   try {
-    const snapshot = window.getEstimatorSnapshot?.() || {};
+    const { message, snapshot } = req.body || {};
 
-    const res = await fetch('/api/chat', {
+    if (!message || typeof message !== 'string') {
+      return res.status(400).json({ error: 'Missing message' });
+    }
+
+    if (!process.env.OPENAI_API_KEY) {
+      return res.status(500).json({
+        error: 'Missing OPENAI_API_KEY environment variable'
+      });
+    }
+
+    const systemPrompt = `
+You are an assistant for a Blueprint Flooring Estimator web app.
+
+You ONLY help with:
+- total square footage
+- adding waste percentage (e.g. +10%)
+- estimating cost if price per sq ft is provided
+- explaining flooring math clearly
+
+Be concise, professional, and practical.
+If the question is unrelated, politely redirect to flooring topics.
+`.trim();
+
+    const userPrompt = `
+User question:
+${message}
+
+Estimator snapshot (read-only):
+${JSON.stringify(snapshot || {}, null, 2)}
+`.trim();
+
+    const openaiRes = await fetch('https://api.openai.com/v1/responses', {
       method: 'POST',
-      headers: { 'Content-Type': 'application/json' },
-      body: JSON.stringify({ message: msg, snapshot })
+      headers: {
+        Authorization: `Bearer ${process.env.OPENAI_API_KEY}`,
+        'Content-Type': 'application/json'
+      },
+      body: JSON.stringify({
+        model: 'gpt-4.1-mini',
+        input: [
+          { role: 'system', content: systemPrompt },
+          { role: 'user', content: userPrompt }
+        ]
+      })
     });
 
-    const data = await res.json();
-    addMsg(data.reply || 'No response.');
-  } catch {
-    addMsg('AI unavailable. Are you on Vercel?');
+    if (!openaiRes.ok) {
+      const errText = await openaiRes.text();
+      return res.status(500).json({
+        error: 'OpenAI request failed',
+        details: errText
+      });
+    }
+
+    const data = await openaiRes.json();
+
+    // Extract assistant text from Responses API
+    let reply = 'No reply generated.';
+    if (Array.isArray(data.output)) {
+      for (const item of data.output) {
+        if (item.content) {
+          for (const c of item.content) {
+            if (c.type === 'output_text' && c.text) {
+              reply = c.text;
+              break;
+            }
+          }
+        }
+      }
+    }
+
+    return res.status(200).json({ reply });
+  } catch (err) {
+    return res.status(500).json({
+      error: 'Server error',
+      details: String(err)
+    });
   }
 };

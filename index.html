@@ -11,9 +11,9 @@
   <h1>Blueprint Flooring Estimator</h1>
 
   <p>
-    Upload a blueprint image, outline the areas to be floored, and enter real-world
-    dimensions to calculate total square footage. Use the AI assistant for waste
-    percentages and cost estimates.
+    1) Upload a blueprint image (PNG/JPG).<br>
+    2) Choose a shape mode.<br>
+    3) Enter real measurements in feet. 
   </p>
 
   <div class="controls">
@@ -41,53 +41,6 @@
       <div><strong><span id="totalOut">0.00</span></strong> sq ft</div>
       <div>Selections saved: <span id="countOut">0</span></div>
       <div id="listOut"></div>
-
-      <hr class="divider" />
-
-      <!-- ✅ Account + Saved Projects -->
-      <div class="accountBox">
-        <h3>Account</h3>
-
-        <div id="authLoggedOut">
-          <div class="field">
-            <label>Username</label>
-            <input id="authUsername" placeholder="ex: ariana" />
-          </div>
-
-          <div class="field">
-            <label>Password</label>
-            <input id="authPassword" type="password" placeholder="Create or enter password" />
-          </div>
-
-          <div class="row">
-            <button id="btnRegister">Create Account</button>
-            <button id="btnLogin">Log In</button>
-          </div>
-
-          <div class="muted small">
-            Stored on this device (localStorage). For real cross-device accounts, you’d use a database.
-          </div>
-        </div>
-
-        <div id="authLoggedIn" style="display:none;">
-          <div class="row space">
-            <div class="muted">Signed in as <strong id="authUserLabel"></strong></div>
-            <button id="btnLogout" class="dangerBtn">Log out</button>
-          </div>
-
-          <div class="field">
-            <label>Project name</label>
-            <input id="projectNameInput" placeholder="ex: Johnson Kitchen" />
-          </div>
-
-          <div class="row">
-            <button id="btnSaveProject">Save Current Measurements</button>
-          </div>
-
-          <div class="muted small">Saved Projects</div>
-          <div id="savedProjectsList"></div>
-        </div>
-      </div>
     </div>
   </div>
 
@@ -101,7 +54,6 @@
   </div>
 
   <script src="./app.js"></script>
-  <script src="./auth.js"></script>
   <script src="./chatbot.js"></script>
 </body>
 </html>

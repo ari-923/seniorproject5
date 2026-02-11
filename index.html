@@ -16,70 +16,6 @@
     percentages and cost estimates.
   </p>
 
-  <!-- ✅ Top-right Account button -->
-  <button id="acctBtn" class="acctBtn">Account</button>
-  <div id="acctBackdrop" class="acctBackdrop"></div>
-
-  <!-- ✅ Top-right Account panel -->
-  <div id="acctPanel" class="acctPanel">
-    <div class="acctHeader">
-      <div class="acctTitle">Account</div>
-      <button id="acctClose" class="acctClose" type="button">✕</button>
-    </div>
-
-    <div id="authLoggedOut">
-      <div class="field">
-        <label>Username</label>
-        <input id="authUsername" placeholder="ex: ariana" />
-      </div>
-
-      <div class="field">
-        <label>Password</label>
-        <input id="authPassword" type="password" placeholder="Create or enter password" />
-      </div>
-
-      <div class="row">
-        <button id="btnRegister" type="button">Create Account</button>
-        <button id="btnLogin" type="button">Log In</button>
-      </div>
-
-      <div class="muted small">
-        Stored on this device (localStorage). Real cross-device accounts need a database.
-      </div>
-    </div>
-
-    <div id="authLoggedIn" style="display:none;">
-      <div class="row space">
-        <div class="muted">Signed in as <strong id="authUserLabel"></strong></div>
-        <button id="btnLogout" type="button" class="dangerBtn">Log out</button>
-      </div>
-
-      <button id="btnSaveProject" type="button" class="fullBtn">Save Current Measurements</button>
-
-      <div class="field">
-        <label>Search projects</label>
-        <input id="projectSearch" placeholder="type to filter..." />
-      </div>
-
-      <div id="savedProjectsList" class="savedList"></div>
-    </div>
-  </div>
-
-  <!-- ✅ Save Project Modal -->
-  <div id="saveModal" class="modalBackdrop">
-    <div class="modalCard">
-      <div class="modalTitle">Save Project</div>
-      <div class="field">
-        <label>Project name</label>
-        <input id="saveNameInput" placeholder="ex: Johnson Kitchen" />
-      </div>
-      <div class="row">
-        <button id="saveConfirm" type="button">Save</button>
-        <button id="saveCancel" type="button" class="dangerBtn">Cancel</button>
-      </div>
-    </div>
-  </div>
-
   <div class="controls">
     <input type="file" id="blueprintInput" accept="image/png,image/jpeg" />
     <select id="shapeMode">
@@ -105,6 +41,53 @@
       <div><strong><span id="totalOut">0.00</span></strong> sq ft</div>
       <div>Selections saved: <span id="countOut">0</span></div>
       <div id="listOut"></div>
+
+      <hr class="divider" />
+
+      <!-- ✅ Account + Saved Projects -->
+      <div class="accountBox">
+        <h3>Account</h3>
+
+        <div id="authLoggedOut">
+          <div class="field">
+            <label>Username</label>
+            <input id="authUsername" placeholder="ex: ariana" />
+          </div>
+
+          <div class="field">
+            <label>Password</label>
+            <input id="authPassword" type="password" placeholder="Create or enter password" />
+          </div>
+
+          <div class="row">
+            <button id="btnRegister">Create Account</button>
+            <button id="btnLogin">Log In</button>
+          </div>
+
+          <div class="muted small">
+            Stored on this device (localStorage). For real cross-device accounts, you’d use a database.
+          </div>
+        </div>
+
+        <div id="authLoggedIn" style="display:none;">
+          <div class="row space">
+            <div class="muted">Signed in as <strong id="authUserLabel"></strong></div>
+            <button id="btnLogout" class="dangerBtn">Log out</button>
+          </div>
+
+          <div class="field">
+            <label>Project name</label>
+            <input id="projectNameInput" placeholder="ex: Johnson Kitchen" />
+          </div>
+
+          <div class="row">
+            <button id="btnSaveProject">Save Current Measurements</button>
+          </div>
+
+          <div class="muted small">Saved Projects</div>
+          <div id="savedProjectsList"></div>
+        </div>
+      </div>
     </div>
   </div>
 

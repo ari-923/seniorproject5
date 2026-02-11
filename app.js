@@ -110,7 +110,7 @@ function fitCanvasToWrap() {
   render();
 }
 
-window.addEventListener('resize', fitCanvasToWrap);
+window.addEventListener('xresize', fitCanvasToWrap);
 
 // ----- Rendering -----
 function clearCanvas() {
@@ -322,20 +322,25 @@ function recomputeTotals() {
   });
 }
 
-// expose snapshot for chatbot.js
-window.getEstimatorSnapshot = function getEstimatorSnapshot() {
-  const total = selections.reduce((sum, s) => sum + (Number(s.areaSqFt) || 0), 0);
+// ✅ Export full state for saving projects
+window.exportFullEstimatorState = function exportFullEstimatorState() {
   return {
-    totalSqFt: Number(fmt2(total)),
-    selectionsCount: selections.length,
-    selections: selections.map((s) => ({
-      label: s.label,
-      type: s.type,
-      areaSqFt: Number(fmt2(s.areaSqFt)),
-      real: s.real
-    }))
+    version: 1,
+    selections: selections, // includes geometry + real measurements + areaSqFt
+    snapshot: window.getEstimatorSnapshot?.() || {}
   };
 };
+
+// ✅ Import saved state (restore selections + redraw)
+window.importFullEstimatorState = function importFullEstimatorState(state) {
+  if (!state || typeof state !== 'object') throw new Error('Invalid saved project data.');
+  const incoming = Array.isArray(state.selections) ? state.selections : [];
+  selections = incoming;
+
+  recomputeTotals();
+  render();
+};
+
 
 // ----- Save selection after user inputs real dimensions -----
 function promptLabel(defaultLabel) {

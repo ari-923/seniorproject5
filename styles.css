@@ -1,67 +1,50 @@
-/* --- Account widget (top-right) --- */
-.acctBtn{
-  position: fixed;
-  top: 18px;
-  right: 18px;
-  z-index: 1001;
-  padding: 10px 12px;
-  border-radius: 12px;
-  border: 1px solid var(--border);
-  background: var(--card);
-  font-weight: 700;
-  cursor: pointer;
+/* ---------- Base ---------- */
+:root {
+  --bg: #f8fafc;
+  --card: #ffffff;
+  --border: #e5e7eb;
+  --text: #0f172a;
+  --muted: #64748b;
+  --primary: #2563eb;
+  --primary-soft: rgba(37,99,235,0.08);
+  --success: #16a34a;
+  --radius: 14px;
 }
-.acctBtn:hover{ background: var(--primary-soft); }
 
-.acctBackdrop{
-  position: fixed;
-  inset: 0;
-  background: rgba(15, 23, 42, 0.25);
-  z-index: 1000;
-  display: none;
+* { box-sizing: border-box; }
+
+body {
+  margin: 0;
+  padding: 24px;
+  font-family: system-ui, -apple-system, BlinkMacSystemFont, sans-serif;
+  background: var(--bg);
+  color: var(--text);
 }
-.acctBackdrop.open{ display: block; }
 
-.acctPanel{
-  position: fixed;
-  top: 14px;
-  right: 14px;
-  width: 340px;
-  max-height: calc(100vh - 28px);
-  overflow: auto;
-  z-index: 1002;
-  background: var(--card);
-  border: 1px solid var(--border);
-  border-radius: 16px;
-  box-shadow: 0 18px 40px rgba(0,0,0,0.12);
-  padding: 14px;
-  display: none;
+/* ---------- Header ---------- */
+h1 {
+  font-size: 28px;
+  margin-bottom: 6px;
 }
-.acctPanel.open{ display: block; }
 
-.acctHeader{
+p {
+  margin-top: 0;
+  color: var(--muted);
+  line-height: 1.5;
+  max-width: 900px;
+}
+
+/* ---------- Controls ---------- */
+.controls {
   display: flex;
-  justify-content: space-between;
-  align-items: center;
-  margin-bottom: 10px;
-}
-.acctTitle{ font-weight: 900; }
-.acctClose{
-  border: 1px solid var(--border);
-  background: var(--card);
-  border-radius: 10px;
-  padding: 6px 10px;
-  cursor: pointer;
+  flex-wrap: wrap;
+  gap: 10px;
+  margin: 18px 0;
 }
 
-.field{
-  display: flex;
-  flex-direction: column;
-  gap: 6px;
-  margin-bottom: 10px;
-}
-.field label{ font-size: 12px; color: var(--muted); }
-.field input{
+.controls input[type="file"],
+.controls select,
+.controls button {
   padding: 10px 12px;
   border-radius: 10px;
   border: 1px solid var(--border);
@@ -69,72 +52,209 @@
   font-size: 14px;
 }
 
-.row{
+.controls select { min-width: 200px; }
+
+.controls button {
+  cursor: pointer;
+  font-weight: 600;
+}
+
+.controls button:hover { background: var(--primary-soft); }
+
+/* ---------- Status ---------- */
+#statusOut {
+  margin-bottom: 14px;
+  font-size: 14px;
+  color: var(--muted);
+}
+
+/* ---------- Layout ---------- */
+.layout {
+  display: grid;
+  grid-template-columns: 1fr 340px;
+  gap: 24px;
+  align-items: start;
+}
+
+/* ---------- Canvas Card ---------- */
+.canvasWrap {
+  background: var(--card);
+  border-radius: var(--radius);
+  border: 1px solid var(--border);
+  padding: 14px;
+  height: 560px;
+  display: flex;
+  flex-direction: column;
+}
+
+canvas {
+  width: 100%;
+  height: 100%;
+  border-radius: 10px;
+  background: #fafafa;
+  display: block;
+  cursor: crosshair;
+}
+
+.tip {
+  font-size: 12px;
+  color: var(--muted);
+  text-align: right;
+  margin-top: 6px;
+}
+
+/* ---------- Summary Card ---------- */
+.summary {
+  background: var(--card);
+  border: 1px solid var(--border);
+  border-radius: var(--radius);
+  padding: 16px;
+}
+
+.summary h3 {
+  margin-top: 0;
+  margin-bottom: 8px;
+}
+
+#totalOut {
+  font-size: 26px;
+  color: var(--primary);
+}
+
+#listOut > div {
+  margin-top: 10px;
+  background: #f9fafb;
+  border-radius: 10px;
+  padding: 10px;
+}
+
+/* ---------- Selection Cards ---------- */
+.selCard button {
+  background: transparent;
+  border: 1px solid var(--border);
+  padding: 6px 10px;
+  border-radius: 8px;
+  cursor: pointer;
+}
+
+.selCard button:hover {
+  background: #fee2e2;
+  border-color: #fecaca;
+}
+
+/* ---------- Chat Widget ---------- */
+#chatWidget {
+  position: fixed;
+  bottom: 20px;
+  right: 20px;
+  width: 320px;
+  border-radius: 16px;
+  border: 1px solid var(--border);
+  background: var(--card);
+  box-shadow: 0 12px 30px rgba(0,0,0,0.08);
+  display: flex;
+  flex-direction: column;
+  overflow: hidden;
+}
+
+#chatLog {
+  padding: 12px;
+  max-height: 220px;
+  overflow-y: auto;
+  font-size: 14px;
+}
+
+#chatLog div { margin-bottom: 8px; }
+
+.chatInput {
+  display: flex;
+  border-top: 1px solid var(--border);
+}
+
+.chatInput input {
+  flex: 1;
+  padding: 10px;
+  border: none;
+  font-size: 14px;
+}
+
+.chatInput input:focus { outline: none; }
+
+.chatInput button {
+  padding: 10px 14px;
+  border: none;
+  background: var(--primary);
+  color: white;
+  font-weight: 600;
+  cursor: pointer;
+}
+
+.chatInput button:hover { opacity: 0.9; }
+
+/* ---------- Responsive ---------- */
+@media (max-width: 900px) {
+  .layout { grid-template-columns: 1fr; }
+  #chatWidget { width: calc(100% - 40px); right: 20px; }
+}
+
+.divider {
+  border: none;
+  border-top: 1px solid var(--border);
+  margin: 16px 0;
+}
+
+.accountBox .field {
+  display: flex;
+  flex-direction: column;
+  gap: 6px;
+  margin-bottom: 10px;
+}
+
+.accountBox label {
+  font-size: 12px;
+  color: var(--muted);
+}
+
+.accountBox input {
+  padding: 10px 12px;
+  border-radius: 10px;
+  border: 1px solid var(--border);
+  background: var(--card);
+  font-size: 14px;
+}
+
+.row {
   display: flex;
   gap: 10px;
   align-items: center;
   margin-top: 10px;
 }
-.row.space{ justify-content: space-between; }
 
-.muted{ color: var(--muted); }
-.small{ font-size: 12px; }
-
-.fullBtn{
-  width: 100%;
-  margin-top: 8px;
-  padding: 10px 12px;
-  border-radius: 12px;
-  border: 1px solid var(--border);
-  background: var(--primary);
-  color: white;
-  font-weight: 800;
-  cursor: pointer;
-}
-.fullBtn:hover{ opacity: 0.95; }
-
-.savedList{
-  max-height: 320px;
-  overflow: auto;
-  padding-right: 4px;
+.row.space {
+  justify-content: space-between;
 }
 
-.projectCard{
+.muted { color: var(--muted); }
+.small { font-size: 12px; }
+
+.projectCard {
   border: 1px solid var(--border);
   border-radius: 12px;
   padding: 10px;
   margin-top: 10px;
   background: #f9fafb;
 }
-.projectTitle{ font-weight: 900; margin-bottom: 4px; }
 
-.dangerBtn{
+.projectTitle {
+  font-weight: 800;
+  margin-bottom: 4px;
+}
+
+.dangerBtn {
   border: 1px solid #fecaca !important;
 }
-.dangerBtn:hover{
+
+.dangerBtn:hover {
   background: #fee2e2 !important;
   border-color: #fecaca !important;
 }
-
-/* --- Save modal --- */
-.modalBackdrop{
-  position: fixed;
-  inset: 0;
-  background: rgba(15, 23, 42, 0.35);
-  z-index: 2000;
-  display: none;
-  align-items: center;
-  justify-content: center;
-  padding: 18px;
-}
-.modalBackdrop.open{ display: flex; }
-
-.modalCard{
-  width: min(420px, 100%);
-  background: var(--card);
-  border: 1px solid var(--border);
-  border-radius: 18px;
-  box-shadow: 0 18px 45px rgba(0,0,0,0.16);
-  padding: 16px;
-}
-.modalTitle{ font-weight: 900; margin-bottom: 10px; }

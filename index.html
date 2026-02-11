@@ -1,107 +1,319 @@
-<!DOCTYPE html>
-<html lang="en">
-<head>
-  <meta charset="UTF-8" />
-  <title>Blueprint Flooring Estimator</title>
-  <meta name="viewport" content="width=device-width, initial-scale=1" />
-  <link rel="stylesheet" href="./styles.css" />
-</head>
+'use strict';
 
-<body>
-  <h1>Blueprint Flooring Estimator</h1>
+/**
+ * Simple localStorage auth + per-user saved projects.
+ * - Register/Login with username+password
+ * - Passwords are hashed with PBKDF2 (Web Crypto)
+ * - Save/Load/Delete measurement projects per user
+ *
+ * NOTE: This is "client-side accounts" (same browser/device).
+ * For real accounts across devices, use a backend + database.
+ */
 
-  <p>
-    Upload a blueprint image, outline the areas to be floored, and enter real-world
-    dimensions to calculate total square footage. Use the AI assistant for waste
-    percentages and cost estimates.
-  </p>
+const LS_USERS = 'bfe_users_v1';
+const LS_SESSION = 'bfe_session_v1';
 
-  <div class="controls">
-    <input type="file" id="blueprintInput" accept="image/png,image/jpeg" />
-    <select id="shapeMode">
-      <option value="rect">Rectangle (drag)</option>
-      <option value="circle">Circle (drag radius)</option>
-      <option value="tri">Triangle (click 3 points)</option>
-    </select>
+function $(id) { return document.getElementById(id); }
 
-    <button id="undoBtn">Undo Last</button>
-    <button id="clearBtn">Clear All</button>
-  </div>
+const authLoggedOut = $('authLoggedOut');
+const authLoggedIn = $('authLoggedIn');
+const authUsername = $('authUsername');
+const authPassword = $('authPassword');
+const btnRegister = $('btnRegister');
+const btnLogin = $('btnLogin');
+const btnLogout = $('btnLogout');
+const authUserLabel = $('authUserLabel');
+const projectNameInput = $('projectNameInput');
 
-  <div id="statusOut">Upload an image to begin.</div>
+const btnSaveProject = $('btnSaveProject');
+const savedProjectsList = $('savedProjectsList');
 
-  <div class="layout">
-    <div class="canvasWrap">
-      <canvas id="canvas"></canvas>
-      <div class="tip">Senior Project</div>
-    </div>
+function setStatus(msg) {
+  // uses your existing status UI if present
+  const out = document.getElementById('statusOut');
+  if (out) out.textContent = msg;
+}
 
-    <div class="summary">
-      <h3>Total</h3>
-      <div><strong><span id="totalOut">0.00</span></strong> sq ft</div>
-      <div>Selections saved: <span id="countOut">0</span></div>
-      <div id="listOut"></div>
+function normalizeUsername(u) {
+  return (u || '').trim().toLowerCase();
+}
 
-      <hr class="divider" />
+function loadUsers() {
+  try {
+    return JSON.parse(localStorage.getItem(LS_USERS) || '{}');
+  } catch {
+    return {};
+  }
+}
 
-      <!-- ✅ Account + Saved Projects -->
-      <div class="accountBox">
-        <h3>Account</h3>
+function saveUsers(users) {
+  localStorage.setItem(LS_USERS, JSON.stringify(users));
+}
 
-        <div id="authLoggedOut">
-          <div class="field">
-            <label>Username</label>
-            <input id="authUsername" placeholder="ex: ariana" />
-          </div>
+function setSession(username) {
+  localStorage.setItem(LS_SESSION, JSON.stringify({ username, at: Date.now() }));
+}
 
-          <div class="field">
-            <label>Password</label>
-            <input id="authPassword" type="password" placeholder="Create or enter password" />
-          </div>
+function clearSession() {
+  localStorage.removeItem(LS_SESSION);
+}
 
-          <div class="row">
-            <button id="btnRegister">Create Account</button>
-            <button id="btnLogin">Log In</button>
-          </div>
+function getSession() {
+  try {
+    const s = JSON.parse(localStorage.getItem(LS_SESSION) || 'null');
+    return s && s.username ? s : null;
+  } catch {
+    return null;
+  }
+}
 
-          <div class="muted small">
-            Stored on this device (localStorage). For real cross-device accounts, you’d use a database.
-          </div>
-        </div>
+function userProjectsKey(username) {
+  return `bfe_projects_v1__${username}`;
+}
 
-        <div id="authLoggedIn" style="display:none;">
-          <div class="row space">
-            <div class="muted">Signed in as <strong id="authUserLabel"></strong></div>
-            <button id="btnLogout" class="dangerBtn">Log out</button>
-          </div>
+function loadProjects(username) {
+  try {
+    return JSON.parse(localStorage.getItem(userProjectsKey(username)) || '[]');
+  } catch {
+    return [];
+  }
+}
 
-          <div class="field">
-            <label>Project name</label>
-            <input id="projectNameInput" placeholder="ex: Johnson Kitchen" />
-          </div>
+function saveProjects(username, projects) {
+  localStorage.setItem(userProjectsKey(username), JSON.stringify(projects));
+}
 
-          <div class="row">
-            <button id="btnSaveProject">Save Current Measurements</button>
-          </div>
+function arrayBufferToBase64(buf) {
+  const bytes = new Uint8Array(buf);
+  let binary = '';
+  for (let i = 0; i < bytes.length; i++) binary += String.fromCharCode(bytes[i]);
+  return btoa(binary);
+}
 
-          <div class="muted small">Saved Projects</div>
-          <div id="savedProjectsList"></div>
-        </div>
-      </div>
-    </div>
-  </div>
+async function pbkdf2Hash(password, saltB64) {
+  const enc = new TextEncoder();
+  const salt = Uint8Array.from(atob(saltB64), c => c.charCodeAt(0));
 
-  <!-- Floating AI chat -->
-  <div id="chatWidget">
-    <div id="chatLog"></div>
-    <div class="chatInput">
-      <input id="chatInput" placeholder="Ask about waste %, totals, cost..." />
-      <button id="chatSend">Send</button>
-    </div>
-  </div>
+  const keyMaterial = await crypto.subtle.importKey(
+    'raw',
+    enc.encode(password),
+    { name: 'PBKDF2' },
+    false,
+    ['deriveBits']
+  );
 
-  <script src="./app.js"></script>
-  <script src="./auth.js"></script>
-  <script src="./chatbot.js"></script>
-</body>
-</html>
+  const bits = await crypto.subtle.deriveBits(
+    {
+      name: 'PBKDF2',
+      salt,
+      iterations: 120000,
+      hash: 'SHA-256'
+    },
+    keyMaterial,
+    256
+  );
+
+  return arrayBufferToBase64(bits);
+}
+
+function randomSaltB64() {
+  const salt = crypto.getRandomValues(new Uint8Array(16));
+  return arrayBufferToBase64(salt.buffer);
+}
+
+function requireEstimatorExports() {
+  if (typeof window.exportFullEstimatorState !== 'function' ||
+      typeof window.importFullEstimatorState !== 'function') {
+    throw new Error('Missing estimator export/import helpers. Update app.js (step 3).');
+  }
+}
+
+function renderAuthUI(usernameOrNull) {
+  if (!authLoggedOut || !authLoggedIn) return;
+
+  if (!usernameOrNull) {
+    authLoggedOut.style.display = '';
+    authLoggedIn.style.display = 'none';
+    if (authUserLabel) authUserLabel.textContent = '';
+    if (savedProjectsList) savedProjectsList.innerHTML = '';
+    return;
+  }
+
+  authLoggedOut.style.display = 'none';
+  authLoggedIn.style.display = '';
+  if (authUserLabel) authUserLabel.textContent = usernameOrNull;
+
+  renderProjects(usernameOrNull);
+}
+
+function renderProjects(username) {
+  if (!savedProjectsList) return;
+
+  const projects = loadProjects(username);
+  savedProjectsList.innerHTML = '';
+
+  if (!projects.length) {
+    const empty = document.createElement('div');
+    empty.className = 'muted small';
+    empty.textContent = 'No saved projects yet. Save one!';
+    savedProjectsList.appendChild(empty);
+    return;
+  }
+
+  projects
+    .slice()
+    .sort((a, b) => (b.updatedAt || 0) - (a.updatedAt || 0))
+    .forEach((p) => {
+      const card = document.createElement('div');
+      card.className = 'projectCard';
+
+      const title = document.createElement('div');
+      title.className = 'projectTitle';
+      title.textContent = p.name || 'Untitled';
+
+      const meta = document.createElement('div');
+      meta.className = 'muted small';
+      const date = p.updatedAt ? new Date(p.updatedAt) : null;
+      meta.textContent =
+        `${p.totalSqFt ?? 0} sq ft • ${p.count ?? 0} areas` +
+        (date ? ` • ${date.toLocaleString()}` : '');
+
+      const row = document.createElement('div');
+      row.className = 'row';
+
+      const btnLoad = document.createElement('button');
+      btnLoad.textContent = 'Load';
+      btnLoad.onclick = () => {
+        try {
+          requireEstimatorExports();
+          window.importFullEstimatorState(p.state);
+          setStatus(`Loaded project "${p.name}".`);
+        } catch (e) {
+          alert(String(e));
+        }
+      };
+
+      const btnDelete = document.createElement('button');
+      btnDelete.textContent = 'Delete';
+      btnDelete.className = 'dangerBtn';
+      btnDelete.onclick = () => {
+        const ok = confirm(`Delete "${p.name}"? This can't be undone.`);
+        if (!ok) return;
+        const next = loadProjects(username).filter(x => x.id !== p.id);
+        saveProjects(username, next);
+        renderProjects(username);
+        setStatus(`Deleted project "${p.name}".`);
+      };
+
+      row.appendChild(btnLoad);
+      row.appendChild(btnDelete);
+
+      card.appendChild(title);
+      card.appendChild(meta);
+      card.appendChild(row);
+
+      savedProjectsList.appendChild(card);
+    });
+}
+
+async function register(username, password) {
+  const users = loadUsers();
+  if (users[username]) throw new Error('That username already exists on this device.');
+
+  const salt = randomSaltB64();
+  const hash = await pbkdf2Hash(password, salt);
+
+  users[username] = { salt, hash, createdAt: Date.now() };
+  saveUsers(users);
+
+  setSession(username);
+  renderAuthUI(username);
+  setStatus('Account created and signed in.');
+}
+
+async function login(username, password) {
+  const users = loadUsers();
+  const rec = users[username];
+  if (!rec) throw new Error('No account found for that username on this device.');
+
+  const hash = await pbkdf2Hash(password, rec.salt);
+  if (hash !== rec.hash) throw new Error('Incorrect password.');
+
+  setSession(username);
+  renderAuthUI(username);
+  setStatus('Logged in.');
+}
+
+function logout() {
+  clearSession();
+  renderAuthUI(null);
+  setStatus('Logged out.');
+}
+
+function saveCurrentProject(username) {
+  requireEstimatorExports();
+
+  const name = (projectNameInput?.value || '').trim();
+  if (!name) {
+    alert('Please enter a project name.');
+    projectNameInput?.focus();
+    return;
+  }
+
+  const state = window.exportFullEstimatorState(); // includes selections
+  const totalSqFt = state?.snapshot?.totalSqFt ?? 0;
+  const count = state?.snapshot?.selectionsCount ?? 0;
+
+  const projects = loadProjects(username);
+  const now = Date.now();
+
+  projects.push({
+    id: crypto.randomUUID(),
+    name,
+    updatedAt: now,
+    totalSqFt,
+    count,
+    state
+  });
+
+  saveProjects(username, projects);
+  renderProjects(username);
+  setStatus(`Saved project "${name}".`);
+  if (projectNameInput) projectNameInput.value = '';
+}
+
+/* ---------- Wire up events ---------- */
+
+btnRegister?.addEventListener('click', async () => {
+  try {
+    const u = normalizeUsername(authUsername?.value);
+    const p = (authPassword?.value || '').trim();
+    if (!u || !p) return alert('Enter a username and password.');
+    await register(u, p);
+  } catch (e) {
+    alert(String(e));
+  }
+});
+
+btnLogin?.addEventListener('click', async () => {
+  try {
+    const u = normalizeUsername(authUsername?.value);
+    const p = (authPassword?.value || '').trim();
+    if (!u || !p) return alert('Enter a username and password.');
+    await login(u, p);
+  } catch (e) {
+    alert(String(e));
+  }
+});
+
+btnLogout?.addEventListener('click', () => logout());
+
+btnSaveProject?.addEventListener('click', () => {
+  const s = getSession();
+  if (!s?.username) return alert('Please log in first.');
+  saveCurrentProject(s.username);
+});
+
+// Auto-load session on refresh
+const session = getSession();
+renderAuthUI(session?.username || null);

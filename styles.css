@@ -129,6 +129,99 @@ canvas {
   padding: 10px;
 }
 
+.divider {
+  border: none;
+  border-top: 1px solid var(--border);
+  margin: 16px 0;
+}
+
+.field {
+  display: flex;
+  flex-direction: column;
+  gap: 6px;
+  margin-top: 10px;
+}
+
+.field label {
+  font-size: 12px;
+  color: var(--muted);
+}
+
+.field input {
+  padding: 10px 12px;
+  border-radius: 10px;
+  border: 1px solid var(--border);
+  background: var(--card);
+  font-size: 14px;
+}
+
+.row {
+  display: flex;
+  gap: 10px;
+  align-items: center;
+  margin-top: 10px;
+}
+
+.accountBox .row {
+  flex-wrap: wrap;
+}
+
+.accountBox button,
+.projectBox button {
+  background: transparent;
+  border: 1px solid var(--border);
+  padding: 8px 10px;
+  border-radius: 8px;
+  cursor: pointer;
+}
+
+.accountBox button:hover,
+.projectBox button:hover {
+  background: var(--primary-soft);
+}
+
+button:disabled {
+  opacity: 0.6;
+  cursor: not-allowed;
+}
+
+.projectCard {
+  border: 1px solid var(--border);
+  border-radius: 12px;
+  padding: 10px;
+  margin-top: 10px;
+  background: #f9fafb;
+}
+
+.projectTitle {
+  font-weight: 700;
+  margin-bottom: 4px;
+}
+
+.projectCard button {
+  background: transparent;
+  border: 1px solid var(--border);
+  padding: 6px 10px;
+  border-radius: 8px;
+  cursor: pointer;
+}
+
+.projectCard button:hover {
+  background: var(--primary-soft);
+}
+
+.dangerBtn {
+  border: 1px solid #fecaca !important;
+}
+
+.dangerBtn:hover {
+  background: #fee2e2 !important;
+  border-color: #fecaca !important;
+}
+
+.muted { color: var(--muted); }
+.small { font-size: 12px; }
+
 /* ---------- Selection Cards ---------- */
 .selCard button {
   background: transparent;

@@ -1,368 +1,276 @@
-/* ---------- Base ---------- */
-:root {
-  --bg: #f6f7fb;
-  --card: #ffffff;
-  --border: rgba(15, 23, 42, 0.10);
-  --text: #0f172a;
-  --muted: #64748b;
-
-  --primary: #2563eb;
-  --primary-2: #1d4ed8;
-  --primary-soft: rgba(37, 99, 235, 0.10);
-
-  --success: #16a34a;
-
-  --danger: #ef4444;
-  --danger-soft: rgba(239, 68, 68, 0.12);
-
-  --radius: 16px;
-  --shadow: 0 18px 40px rgba(2, 6, 23, 0.08);
-  --shadow-soft: 0 10px 24px rgba(2, 6, 23, 0.06);
-
-  --ring: 0 0 0 4px rgba(37, 99, 235, 0.18);
+:root{
+  --bg:#f5f7fb;
+  --card:#ffffff;
+  --text:#0f172a;
+  --muted:#64748b;
+  --border:rgba(15,23,42,.10);
+  --shadow:0 10px 26px rgba(2,6,23,.08);
+  --shadow2:0 6px 18px rgba(2,6,23,.06);
+  --primary:#2563eb;
+  --primarySoft:rgba(37,99,235,.10);
+  --radius:16px;
 }
 
-* { box-sizing: border-box; }
+*{ box-sizing:border-box; }
+html,body{ height:100%; }
 
-html, body { height: 100%; }
-
-body {
-  margin: 0;
-  padding: 28px;
+body{
+  margin:0;
+  padding:22px;
   font-family: ui-sans-serif, system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Arial, sans-serif;
-  background:
-    radial-gradient(1200px 500px at 20% -10%, rgba(37,99,235,0.10), transparent 55%),
-    radial-gradient(900px 400px at 95% 0%, rgba(22,163,74,0.08), transparent 55%),
-    var(--bg);
-  color: var(--text);
+  color:var(--text);
+  background:var(--bg);
 }
 
-/* Optional: nicer maximum width so it doesn't feel stretched */
-body > * {
-  max-width: 1200px;
-  margin-left: auto;
-  margin-right: auto;
+h1{
+  margin:0 0 4px;
+  font-size:26px;
+  letter-spacing:-.02em;
 }
 
-h1 {
-  font-size: 30px;
-  letter-spacing: -0.02em;
-  margin: 0 0 6px;
+p{
+  margin:0 0 14px;
+  color:var(--muted);
+  line-height:1.5;
+  max-width:980px;
 }
 
-p {
-  margin: 0 0 16px;
-  color: var(--muted);
-  line-height: 1.55;
-  max-width: 900px;
+/* keep everything centered like a real app */
+body > *{
+  max-width:1200px;
+  margin-left:auto;
+  margin-right:auto;
 }
 
-/* ---------- Controls ---------- */
-.controls {
-  display: flex;
-  flex-wrap: wrap;
-  gap: 10px;
-  margin: 14px 0 16px;
+/* top controls row */
+.controls{
+  display:flex;
+  flex-wrap:wrap;
+  gap:10px;
+  margin:14px 0 10px;
 }
 
 .controls input[type="file"],
 .controls select,
-.controls button {
-  padding: 10px 12px;
-  border-radius: 12px;
-  border: 1px solid var(--border);
-  background: rgba(255,255,255,0.85);
-  backdrop-filter: blur(8px);
-  -webkit-backdrop-filter: blur(8px);
-  font-size: 14px;
-  color: var(--text);
+.controls button{
+  height:42px;
+  padding:0 14px;
+  border-radius:12px;
+  border:1px solid var(--border);
+  background:var(--card);
+  box-shadow:var(--shadow2);
+  font-size:14px;
+  color:var(--text);
 }
 
-.controls select { min-width: 220px; }
+.controls select{ min-width:220px; }
 
-.controls button {
-  cursor: pointer;
-  font-weight: 700;
-  transition: transform 0.06s ease, background 0.15s ease, border-color 0.15s ease, box-shadow 0.15s ease;
+.controls button{
+  font-weight:700;
+  cursor:pointer;
+  transition:transform .06s ease, box-shadow .16s ease, background .16s ease;
 }
 
-.controls button:hover {
-  background: rgba(255,255,255,1);
-  box-shadow: var(--shadow-soft);
-  border-color: rgba(37,99,235,0.25);
+.controls button:hover{
+  box-shadow:var(--shadow);
+  background:rgba(255,255,255,.98);
 }
 
-.controls button:active {
-  transform: translateY(1px);
+.controls button:active{ transform:translateY(1px); }
+
+/* status line (small + muted like screenshot 2) */
+#statusOut{
+  margin:6px 0 16px;
+  color:var(--muted);
+  font-size:13px;
 }
 
-.controls input[type="file"]:focus,
-.controls select:focus,
-.controls button:focus {
-  outline: none;
-  box-shadow: var(--ring);
+/* main grid like screenshot 2: big canvas, small card on right */
+.layout{
+  display:grid;
+  grid-template-columns: 1fr 320px;
+  gap:20px;
+  align-items:start;
 }
 
-/* ---------- Status ---------- */
-#statusOut {
-  margin: 0 0 14px;
-  padding: 10px 12px;
-  border: 1px dashed rgba(15, 23, 42, 0.18);
-  border-radius: 12px;
-  background: rgba(255,255,255,0.65);
-  color: var(--muted);
-  font-size: 14px;
+/* canvas card */
+.canvasWrap{
+  background:var(--card);
+  border:1px solid var(--border);
+  border-radius:var(--radius);
+  box-shadow:var(--shadow);
+  padding:14px;
+  height:540px;
+  display:flex;
+  flex-direction:column;
 }
 
-/* ---------- Layout ---------- */
-.layout {
-  display: grid;
-  grid-template-columns: 1fr 360px;
-  gap: 22px;
-  align-items: start;
+canvas{
+  width:100%;
+  height:100%;
+  border-radius:14px;
+  border:1px solid rgba(15,23,42,.08);
+  background:#fff;
+  display:block;
 }
 
-/* ---------- Cards ---------- */
-.canvasWrap,
-.summary {
-  background: rgba(255,255,255,0.85);
-  backdrop-filter: blur(10px);
-  -webkit-backdrop-filter: blur(10px);
-  border-radius: var(--radius);
-  border: 1px solid var(--border);
-  box-shadow: var(--shadow-soft);
+.tip{
+  margin-top:8px;
+  font-size:12px;
+  color:var(--muted);
+  text-align:right;
 }
 
-.canvasWrap {
-  padding: 14px;
-  height: 580px;
-  display: flex;
-  flex-direction: column;
+/* right side card */
+.summary{
+  background:var(--card);
+  border:1px solid var(--border);
+  border-radius:var(--radius);
+  box-shadow:var(--shadow);
+  padding:16px;
 }
 
-canvas {
-  width: 100%;
-  height: 100%;
-  border-radius: 14px;
-  background: linear-gradient(180deg, #ffffff, #fafafa);
-  border: 1px solid rgba(15,23,42,0.10);
-  display: block;
-  cursor: crosshair;
+.summary h3{
+  margin:0 0 10px;
+  font-size:16px;
+  letter-spacing:-.01em;
 }
 
-.tip {
-  font-size: 12px;
-  color: var(--muted);
-  text-align: right;
-  margin-top: 8px;
+/* big blue number like screenshot 2 */
+#totalOut{
+  font-size:32px;
+  font-weight:900;
+  color:var(--primary);
+  letter-spacing:-.02em;
 }
 
-/* ---------- Summary ---------- */
-.summary {
-  padding: 16px;
+.divider{
+  border:none;
+  border-top:1px solid var(--border);
+  margin:14px 0;
 }
 
-.summary h3 {
-  margin: 0 0 10px;
-  font-size: 16px;
-  letter-spacing: -0.01em;
+/* forms */
+.field{
+  display:flex;
+  flex-direction:column;
+  gap:6px;
+  margin-top:10px;
+}
+.field label{
+  font-size:12px;
+  color:var(--muted);
+}
+.field input{
+  height:42px;
+  padding:0 12px;
+  border-radius:12px;
+  border:1px solid var(--border);
+  background:var(--card);
+  box-shadow:var(--shadow2);
+  font-size:14px;
 }
 
-#totalOut {
-  font-size: 32px;
-  font-weight: 800;
-  color: var(--primary);
-  letter-spacing: -0.02em;
-}
-
-#listOut > div {
-  margin-top: 10px;
-  background: rgba(248, 250, 252, 0.85);
-  border-radius: 14px;
-  padding: 12px;
-  border: 1px solid rgba(15, 23, 42, 0.08);
-}
-
-.divider {
-  border: none;
-  border-top: 1px solid rgba(15,23,42,0.10);
-  margin: 16px 0;
-}
-
-.field {
-  display: flex;
-  flex-direction: column;
-  gap: 6px;
-  margin-top: 10px;
-}
-
-.field label {
-  font-size: 12px;
-  color: var(--muted);
-}
-
-.field input {
-  padding: 10px 12px;
-  border-radius: 12px;
-  border: 1px solid rgba(15,23,42,0.12);
-  background: rgba(255,255,255,0.9);
-  font-size: 14px;
-  color: var(--text);
-  transition: box-shadow 0.15s ease, border-color 0.15s ease;
-}
-
-.field input:focus {
-  outline: none;
-  box-shadow: var(--ring);
-  border-color: rgba(37,99,235,0.35);
-}
-
-.row {
-  display: flex;
-  gap: 10px;
-  align-items: center;
-  margin-top: 10px;
-  flex-wrap: wrap;
+.row{
+  display:flex;
+  gap:10px;
+  flex-wrap:wrap;
+  margin-top:10px;
 }
 
 .accountBox button,
 .projectBox button,
 .projectCard button,
-.selCard button {
-  border-radius: 12px;
-  border: 1px solid rgba(15,23,42,0.12);
-  background: rgba(255,255,255,0.85);
-  padding: 9px 12px;
-  font-weight: 700;
-  cursor: pointer;
-  transition: transform 0.06s ease, box-shadow 0.15s ease, border-color 0.15s ease, background 0.15s ease;
+.selCard button{
+  height:40px;
+  padding:0 12px;
+  border-radius:12px;
+  border:1px solid var(--border);
+  background:var(--card);
+  box-shadow:var(--shadow2);
+  font-weight:800;
+  cursor:pointer;
 }
 
 .accountBox button:hover,
 .projectBox button:hover,
 .projectCard button:hover,
-.selCard button:hover {
-  box-shadow: var(--shadow-soft);
-  border-color: rgba(37,99,235,0.25);
+.selCard button:hover{
+  box-shadow:var(--shadow);
 }
 
-.accountBox button:active,
-.projectBox button:active,
-.projectCard button:active,
-.selCard button:active {
-  transform: translateY(1px);
+button:disabled{ opacity:.6; cursor:not-allowed; box-shadow:none; }
+
+.projectCard{
+  border:1px solid var(--border);
+  border-radius:14px;
+  padding:12px;
+  margin-top:10px;
+  background:rgba(245,247,251,.65);
 }
 
-button:disabled {
-  opacity: 0.55;
-  cursor: not-allowed;
-  box-shadow: none !important;
+.projectTitle{
+  font-weight:900;
+  margin-bottom:4px;
 }
 
-/* Projects */
-.projectCard {
-  border: 1px solid rgba(15, 23, 42, 0.10);
-  border-radius: 14px;
-  padding: 12px;
-  margin-top: 10px;
-  background: rgba(248,250,252,0.85);
+.muted{ color:var(--muted); }
+.small{ font-size:12px; }
+
+/* chat widget stays modern */
+#chatWidget{
+  position:fixed;
+  right:22px;
+  bottom:22px;
+  width:320px;
+  border-radius:16px;
+  border:1px solid var(--border);
+  background:var(--card);
+  box-shadow:var(--shadow);
+  overflow:hidden;
+  display:flex;
+  flex-direction:column;
 }
 
-.projectTitle {
-  font-weight: 800;
-  margin-bottom: 4px;
-  letter-spacing: -0.01em;
+#chatLog{
+  padding:12px;
+  max-height:230px;
+  overflow:auto;
+  font-size:14px;
 }
 
-.dangerBtn {
-  border-color: rgba(239,68,68,0.35) !important;
-  background: rgba(255,255,255,0.85) !important;
+#chatLog div{
+  padding:10px 10px;
+  border-radius:12px;
+  background:rgba(245,247,251,.70);
+  border:1px solid rgba(15,23,42,.07);
+  margin-bottom:10px;
 }
 
-.dangerBtn:hover {
-  border-color: rgba(239,68,68,0.60) !important;
-  box-shadow: 0 10px 24px rgba(239,68,68,0.14);
+.chatInput{
+  display:flex;
+  border-top:1px solid var(--border);
 }
-
-/* Helpers */
-.muted { color: var(--muted); }
-.small { font-size: 12px; }
-
-/* Selection cards: make remove button look “danger-ish” without being loud */
-.selCard button:hover {
-  border-color: rgba(239,68,68,0.45);
-  box-shadow: 0 10px 20px rgba(239,68,68,0.12);
+.chatInput input{
+  flex:1;
+  border:none;
+  padding:12px;
+  font-size:14px;
 }
-
-/* ---------- Chat Widget ---------- */
-#chatWidget {
-  position: fixed;
-  bottom: 20px;
-  right: 20px;
-  width: 340px;
-  border-radius: 18px;
-  border: 1px solid rgba(15,23,42,0.12);
-  background: rgba(255,255,255,0.90);
-  backdrop-filter: blur(10px);
-  -webkit-backdrop-filter: blur(10px);
-  box-shadow: var(--shadow);
-  display: flex;
-  flex-direction: column;
-  overflow: hidden;
+.chatInput input:focus{ outline:none; }
+.chatInput button{
+  border:none;
+  background:var(--primary);
+  color:white;
+  font-weight:900;
+  padding:0 16px;
+  cursor:pointer;
 }
+.chatInput button:hover{ filter:brightness(1.03); }
 
-#chatLog {
-  padding: 12px;
-  max-height: 240px;
-  overflow-y: auto;
-  font-size: 14px;
-  line-height: 1.4;
-}
-
-#chatLog div {
-  margin-bottom: 10px;
-  padding: 10px 10px;
-  border-radius: 12px;
-  background: rgba(248,250,252,0.9);
-  border: 1px solid rgba(15,23,42,0.08);
-}
-
-/* Make "You:" and "AI:" feel less plain */
-#chatLog div::first-letter { /* harmless micro-style */
-  font-weight: 800;
-}
-
-.chatInput {
-  display: flex;
-  border-top: 1px solid rgba(15,23,42,0.10);
-  background: rgba(255,255,255,0.85);
-}
-
-.chatInput input {
-  flex: 1;
-  padding: 12px;
-  border: none;
-  font-size: 14px;
-  background: transparent;
-}
-
-.chatInput input:focus { outline: none; }
-
-.chatInput button {
-  padding: 12px 16px;
-  border: none;
-  background: linear-gradient(180deg, var(--primary), var(--primary-2));
-  color: white;
-  font-weight: 800;
-  cursor: pointer;
-}
-
-.chatInput button:hover { filter: brightness(1.03); }
-
-/* ---------- Responsive ---------- */
-@media (max-width: 980px) {
-  body { padding: 20px; }
-  .layout { grid-template-columns: 1fr; }
-  #chatWidget { width: calc(100% - 40px); right: 20px; }
-  .canvasWrap { height: 520px; }
+/* responsive */
+@media (max-width: 980px){
+  .layout{ grid-template-columns: 1fr; }
+  #chatWidget{ width:calc(100% - 44px); right:22px; }
+  .canvasWrap{ height:480px; }
 }

@@ -3,12 +3,17 @@
   --card:#ffffff;
   --text:#0f172a;
   --muted:#64748b;
+
   --border:rgba(15,23,42,.10);
-  --shadow:0 10px 26px rgba(2,6,23,.08);
-  --shadow2:0 6px 18px rgba(2,6,23,.06);
+  --shadow:0 12px 30px rgba(2,6,23,.08);
+  --shadowSoft:0 8px 18px rgba(2,6,23,.06);
+
   --primary:#2563eb;
+  --primary2:#1d4ed8;
   --primarySoft:rgba(37,99,235,.10);
+
   --radius:16px;
+  --radius2:14px;
 }
 
 *{ box-sizing:border-box; }
@@ -19,7 +24,18 @@ body{
   padding:22px;
   font-family: ui-sans-serif, system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Arial, sans-serif;
   color:var(--text);
-  background:var(--bg);
+  background: var(--bg);
+}
+
+/* Keep page centered like a real app */
+body > *{
+  max-width: 1220px;
+  margin-left:auto;
+  margin-right:auto;
+}
+
+.pageHeader{
+  margin-bottom: 12px;
 }
 
 h1{
@@ -29,36 +45,29 @@ h1{
 }
 
 p{
-  margin:0 0 14px;
+  margin:0;
   color:var(--muted);
   line-height:1.5;
-  max-width:980px;
+  max-width: 980px;
 }
 
-/* keep everything centered like a real app */
-body > *{
-  max-width:1200px;
-  margin-left:auto;
-  margin-right:auto;
-}
-
-/* top controls row */
+/* Controls bar */
 .controls{
   display:flex;
   flex-wrap:wrap;
   gap:10px;
-  margin:14px 0 10px;
+  margin:14px 0 12px;
 }
 
 .controls input[type="file"],
 .controls select,
 .controls button{
-  height:42px;
+  height:44px;
   padding:0 14px;
   border-radius:12px;
   border:1px solid var(--border);
   background:var(--card);
-  box-shadow:var(--shadow2);
+  box-shadow: var(--shadowSoft);
   font-size:14px;
   color:var(--text);
 }
@@ -66,41 +75,43 @@ body > *{
 .controls select{ min-width:220px; }
 
 .controls button{
-  font-weight:700;
+  font-weight:800;
   cursor:pointer;
-  transition:transform .06s ease, box-shadow .16s ease, background .16s ease;
+  transition: transform .06s ease, box-shadow .16s ease, background .16s ease, border-color .16s ease;
 }
 
 .controls button:hover{
-  box-shadow:var(--shadow);
-  background:rgba(255,255,255,.98);
+  box-shadow: var(--shadow);
+  border-color: rgba(37,99,235,.22);
 }
 
-.controls button:active{ transform:translateY(1px); }
+.controls button:active{
+  transform: translateY(1px);
+}
 
-/* status line (small + muted like screenshot 2) */
+/* Status */
 #statusOut{
-  margin:6px 0 16px;
-  color:var(--muted);
-  font-size:13px;
+  margin: 2px 0 16px;
+  color: var(--muted);
+  font-size: 13px;
 }
 
-/* main grid like screenshot 2: big canvas, small card on right */
+/* Layout: big canvas + right card column */
 .layout{
   display:grid;
-  grid-template-columns: 1fr 320px;
+  grid-template-columns: 1fr 340px;
   gap:20px;
   align-items:start;
 }
 
-/* canvas card */
+/* Canvas card */
 .canvasWrap{
-  background:var(--card);
+  background: var(--card);
   border:1px solid var(--border);
-  border-radius:var(--radius);
-  box-shadow:var(--shadow);
-  padding:14px;
-  height:540px;
+  border-radius: var(--radius);
+  box-shadow: var(--shadow);
+  padding: 14px;
+  height: 560px;
   display:flex;
   flex-direction:column;
 }
@@ -108,26 +119,26 @@ body > *{
 canvas{
   width:100%;
   height:100%;
-  border-radius:14px;
+  border-radius: var(--radius2);
   border:1px solid rgba(15,23,42,.08);
   background:#fff;
   display:block;
 }
 
 .tip{
-  margin-top:8px;
-  font-size:12px;
-  color:var(--muted);
-  text-align:right;
+  margin-top: 8px;
+  font-size: 12px;
+  color: var(--muted);
+  text-align: right;
 }
 
-/* right side card */
+/* Right side */
 .summary{
-  background:var(--card);
-  border:1px solid var(--border);
-  border-radius:var(--radius);
-  box-shadow:var(--shadow);
-  padding:16px;
+  background: var(--card);
+  border: 1px solid var(--border);
+  border-radius: var(--radius);
+  box-shadow: var(--shadow);
+  padding: 16px;
 }
 
 .summary h3{
@@ -136,39 +147,67 @@ canvas{
   letter-spacing:-.01em;
 }
 
-/* big blue number like screenshot 2 */
+.totalCard{
+  border:1px solid rgba(15,23,42,.08);
+  border-radius: var(--radius2);
+  padding: 12px;
+  background: rgba(245,247,251,.55);
+}
+
+.totalLine{
+  display:flex;
+  align-items:baseline;
+  gap:8px;
+  margin-bottom: 6px;
+}
+
 #totalOut{
-  font-size:32px;
-  font-weight:900;
-  color:var(--primary);
+  font-size: 34px;
+  font-weight: 900;
+  color: var(--primary);
   letter-spacing:-.02em;
+}
+
+.unit{
+  color: var(--text);
+  font-weight: 700;
+}
+
+#listOut > div{
+  margin-top: 10px;
+  background: rgba(245,247,251,.55);
+  border: 1px solid rgba(15,23,42,.08);
+  border-radius: var(--radius2);
+  padding: 12px;
 }
 
 .divider{
   border:none;
   border-top:1px solid var(--border);
-  margin:14px 0;
+  margin: 14px 0;
 }
 
-/* forms */
 .field{
   display:flex;
   flex-direction:column;
   gap:6px;
   margin-top:10px;
 }
+
 .field label{
   font-size:12px;
   color:var(--muted);
 }
+
 .field input{
-  height:42px;
+  height:44px;
   padding:0 12px;
   border-radius:12px;
   border:1px solid var(--border);
   background:var(--card);
-  box-shadow:var(--shadow2);
+  box-shadow: var(--shadowSoft);
   font-size:14px;
+  color:var(--text);
 }
 
 .row{
@@ -182,95 +221,136 @@ canvas{
 .projectBox button,
 .projectCard button,
 .selCard button{
-  height:40px;
+  height:42px;
   padding:0 12px;
   border-radius:12px;
   border:1px solid var(--border);
-  background:var(--card);
-  box-shadow:var(--shadow2);
-  font-weight:800;
+  background: var(--card);
+  box-shadow: var(--shadowSoft);
+  font-weight: 900;
   cursor:pointer;
+  transition: transform .06s ease, box-shadow .16s ease, border-color .16s ease;
 }
 
 .accountBox button:hover,
 .projectBox button:hover,
 .projectCard button:hover,
 .selCard button:hover{
-  box-shadow:var(--shadow);
+  box-shadow: var(--shadow);
+  border-color: rgba(37,99,235,.22);
 }
 
-button:disabled{ opacity:.6; cursor:not-allowed; box-shadow:none; }
+.accountBox button:active,
+.projectBox button:active,
+.projectCard button:active,
+.selCard button:active{
+  transform: translateY(1px);
+}
+
+button:disabled{
+  opacity:.6;
+  cursor:not-allowed;
+  box-shadow:none;
+}
 
 .projectCard{
-  border:1px solid var(--border);
-  border-radius:14px;
-  padding:12px;
-  margin-top:10px;
-  background:rgba(245,247,251,.65);
+  border: 1px solid rgba(15,23,42,.10);
+  border-radius: var(--radius2);
+  padding: 12px;
+  margin-top: 10px;
+  background: rgba(245,247,251,.55);
 }
 
 .projectTitle{
-  font-weight:900;
-  margin-bottom:4px;
+  font-weight: 900;
+  margin-bottom: 4px;
 }
 
-.muted{ color:var(--muted); }
-.small{ font-size:12px; }
+.muted{ color: var(--muted); }
+.small{ font-size: 12px; }
 
-/* chat widget stays modern */
+/* Chat widget: modern card */
 #chatWidget{
-  position:fixed;
-  right:22px;
-  bottom:22px;
-  width:320px;
-  border-radius:16px;
-  border:1px solid var(--border);
-  background:var(--card);
-  box-shadow:var(--shadow);
-  overflow:hidden;
-  display:flex;
-  flex-direction:column;
+  position: fixed;
+  right: 22px;
+  bottom: 22px;
+  width: 330px;
+  border-radius: 18px;
+  border: 1px solid var(--border);
+  background: var(--card);
+  box-shadow: var(--shadow);
+  overflow: hidden;
+  display: flex;
+  flex-direction: column;
+}
+
+.chatHeader{
+  padding: 12px 12px 10px;
+  border-bottom: 1px solid rgba(15,23,42,.08);
+  background: rgba(245,247,251,.60);
+}
+
+.chatTitle{
+  font-weight: 900;
+  letter-spacing: -.01em;
+}
+
+.chatSubtitle{
+  font-size: 12px;
+  color: var(--muted);
+  margin-top: 2px;
 }
 
 #chatLog{
-  padding:12px;
-  max-height:230px;
-  overflow:auto;
-  font-size:14px;
+  padding: 12px;
+  max-height: 240px;
+  overflow: auto;
+  font-size: 14px;
 }
 
 #chatLog div{
-  padding:10px 10px;
-  border-radius:12px;
-  background:rgba(245,247,251,.70);
-  border:1px solid rgba(15,23,42,.07);
-  margin-bottom:10px;
+  padding: 10px 10px;
+  border-radius: 12px;
+  background: rgba(245,247,251,.60);
+  border: 1px solid rgba(15,23,42,.07);
+  margin-bottom: 10px;
 }
 
 .chatInput{
   display:flex;
-  border-top:1px solid var(--border);
+  border-top: 1px solid rgba(15,23,42,.08);
 }
+
 .chatInput input{
   flex:1;
   border:none;
-  padding:12px;
-  font-size:14px;
+  padding: 12px;
+  font-size: 14px;
+  background: transparent;
 }
+
 .chatInput input:focus{ outline:none; }
+
 .chatInput button{
   border:none;
-  background:var(--primary);
-  color:white;
-  font-weight:900;
-  padding:0 16px;
-  cursor:pointer;
+  padding: 0 16px;
+  font-weight: 900;
+  color: white;
+  cursor: pointer;
+  background: linear-gradient(180deg, var(--primary), var(--primary2));
 }
-.chatInput button:hover{ filter:brightness(1.03); }
 
-/* responsive */
+.chatInput button:hover{
+  filter: brightness(1.03);
+}
+
+/* Responsive */
 @media (max-width: 980px){
+  body{ padding: 18px; }
   .layout{ grid-template-columns: 1fr; }
-  #chatWidget{ width:calc(100% - 44px); right:22px; }
-  .canvasWrap{ height:480px; }
+  .canvasWrap{ height: 480px; }
+  #chatWidget{
+    width: calc(100% - 36px);
+    right: 18px;
+  }
 }

@@ -4,7 +4,7 @@
   <meta charset="UTF-8" />
   <title>Blueprint Flooring Estimator</title>
   <meta name="viewport" content="width=device-width, initial-scale=1" />
-  <link rel="stylesheet" href="./styles.css" />
+  <link rel="stylesheet" href="./style.css" />
 </head>
 
 <body>
@@ -41,6 +41,43 @@
       <div><strong><span id="totalOut">0.00</span></strong> sq ft</div>
       <div>Selections saved: <span id="countOut">0</span></div>
       <div id="listOut"></div>
+
+      <hr class="divider" />
+
+      <div class="accountBox">
+        <h3>Account</h3>
+        <div class="field">
+          <label>Email</label>
+          <input id="authEmailInput" type="email" placeholder="you@email.com" autocomplete="email" />
+        </div>
+        <div class="field">
+          <label>Password</label>
+          <input id="authPasswordInput" type="password" placeholder="At least 6 characters" autocomplete="current-password" />
+        </div>
+        <div class="row">
+          <button id="btnSignUp">Create Account</button>
+          <button id="btnSignIn">Sign In</button>
+        </div>
+        <div class="row">
+          <button id="btnSignOut">Sign Out</button>
+        </div>
+        <div id="authStateOut" class="muted small">Not signed in.</div>
+      </div>
+
+      <hr class="divider" />
+
+      <div class="projectBox">
+        <h3>Saved Measurements</h3>
+        <div class="field">
+          <label>Project name</label>
+          <input id="projectNameInput" placeholder="ex: Johnson Kitchen" />
+        </div>
+        <div class="row">
+          <button id="btnSaveProject">Save Project</button>
+        </div>
+        <div class="muted small">Saved to your signed-in account (or guest) on this device.</div>
+        <div id="projectsList"></div>
+      </div>
     </div>
   </div>
 

@@ -1,15 +1,18 @@
 
 /* ---------- Base ---------- */
 :root {
-  --bg: #f8fafc;
+  --bg: #f5f9ff;
   --card: #ffffff;
-  --border: #e5e7eb;
-  --text: #0f172a;
-  --muted: #64748b;
-  --primary: #2563eb;
-  --primary-soft: rgba(37,99,235,0.08);
+  --border: #d7e4f4;
+  --text: #0b1b2b;
+  --muted: #50657d;
+  --primary: #1457d1;
+  --primary-strong: #0f4ab6;
+  --primary-soft: rgba(20,87,209,0.12);
   --success: #16a34a;
-  --radius: 14px;
+  --radius: 16px;
+  --shadow-md: 0 8px 24px rgba(12, 38, 75, 0.08);
+  --shadow-lg: 0 18px 40px rgba(12, 38, 75, 0.12);
 }
 
 * { box-sizing: border-box; }
@@ -17,22 +20,26 @@
 body {
   margin: 0;
   padding: 24px;
-  font-family: system-ui, -apple-system, BlinkMacSystemFont, sans-serif;
-  background: var(--bg);
+  font-family: "Avenir Next", "Segoe UI", "Trebuchet MS", sans-serif;
+  background:
+    radial-gradient(circle at 8% 2%, rgba(168, 220, 255, 0.5) 0, rgba(168, 220, 255, 0) 36%),
+    radial-gradient(circle at 92% 10%, rgba(190, 242, 223, 0.45) 0, rgba(190, 242, 223, 0) 34%),
+    linear-gradient(180deg, #edf5ff 0%, var(--bg) 50%, #f7f9fc 100%);
   color: var(--text);
 }
 
 /* ---------- Header ---------- */
 h1 {
-  font-size: 28px;
-  margin-bottom: 6px;
+  font-size: 30px;
+  margin-bottom: 8px;
+  letter-spacing: 0.2px;
 }
 
 p {
   margin-top: 0;
   color: var(--muted);
   line-height: 1.5;
-  max-width: 900px;
+  max-width: 960px;
 }
 
 /* ---------- Controls ---------- */
@@ -40,7 +47,7 @@ p {
   display: flex;
   flex-wrap: wrap;
   gap: 10px;
-  margin: 18px 0;
+  margin: 18px 0 14px;
 }
 
 .controls input[type="file"],
@@ -49,7 +56,7 @@ p {
   padding: 10px 12px;
   border-radius: 10px;
   border: 1px solid var(--border);
-  background: var(--card);
+  background: rgba(255, 255, 255, 0.92);
   font-size: 14px;
 }
 
@@ -57,44 +64,59 @@ p {
 
 .controls button {
   cursor: pointer;
-  font-weight: 600;
+  font-weight: 700;
+  color: #ffffff;
+  background: linear-gradient(135deg, var(--primary), var(--primary-strong));
+  border-color: transparent;
+  box-shadow: 0 8px 18px rgba(20, 87, 209, 0.25);
+  transition: transform 120ms ease, filter 120ms ease, box-shadow 120ms ease;
 }
 
-.controls button:hover { background: var(--primary-soft); }
+.controls button:hover {
+  transform: translateY(-1px);
+  filter: brightness(1.05);
+  box-shadow: 0 10px 24px rgba(20, 87, 209, 0.3);
+}
 
 /* ---------- Status ---------- */
 #statusOut {
   margin-bottom: 14px;
   font-size: 14px;
   color: var(--muted);
+  border: 1px solid var(--border);
+  background: rgba(255, 255, 255, 0.72);
+  border-radius: 10px;
+  padding: 10px 12px;
 }
 
 /* ---------- Layout ---------- */
 .layout {
   display: grid;
-  grid-template-columns: 1fr 340px;
+  grid-template-columns: 1fr 360px;
   gap: 24px;
   align-items: start;
 }
 
 /* ---------- Canvas Card ---------- */
 .canvasWrap {
-  background: var(--card);
+  background: linear-gradient(180deg, #ffffff 0%, #f6fbff 100%);
   border-radius: var(--radius);
   border: 1px solid var(--border);
   padding: 14px;
   height: 560px;
   display: flex;
   flex-direction: column;
+  box-shadow: var(--shadow-md);
 }
 
 canvas {
   width: 100%;
   height: 100%;
   border-radius: 10px;
-  background: #fafafa;
+  border: 1px solid #e3edf9;
+  background: #f8fbff;
   display: block;
-  cursor: crosshair;
+  cursor: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='24' height='24' viewBox='0 0 24 24'%3E%3Ccircle cx='12' cy='12' r='9' fill='white' fill-opacity='0.85' stroke='%230f172a' stroke-width='1.2'/%3E%3Cpath d='M12 6.5v11M6.5 12h11' stroke='%230f172a' stroke-width='1.5' stroke-linecap='round'/%3E%3C/svg%3E") 12 12, crosshair;
 }
 
 .tip {
@@ -102,14 +124,16 @@ canvas {
   color: var(--muted);
   text-align: right;
   margin-top: 6px;
+  font-weight: 600;
 }
 
 /* ---------- Summary Card ---------- */
 .summary {
-  background: var(--card);
+  background: linear-gradient(180deg, #ffffff 0%, #f6fbff 100%);
   border: 1px solid var(--border);
   border-radius: var(--radius);
   padding: 16px;
+  box-shadow: var(--shadow-md);
 }
 
 .summary h3 {
@@ -118,13 +142,14 @@ canvas {
 }
 
 #totalOut {
-  font-size: 26px;
+  font-size: 28px;
   color: var(--primary);
 }
 
 #listOut > div {
   margin-top: 10px;
-  background: #f9fafb;
+  background: #ffffff;
+  border: 1px solid #e5edf8;
   border-radius: 10px;
   padding: 10px;
 }
@@ -153,6 +178,13 @@ canvas {
   border: 1px solid var(--border);
   background: var(--card);
   font-size: 14px;
+  transition: border-color 120ms ease, box-shadow 120ms ease;
+}
+
+.field input:focus {
+  outline: none;
+  border-color: #8ab5ff;
+  box-shadow: 0 0 0 3px rgba(20, 87, 209, 0.15);
 }
 
 .row {
@@ -166,18 +198,29 @@ canvas {
   flex-wrap: wrap;
 }
 
+.accountBox,
+.projectBox {
+  border: 1px solid var(--border);
+  border-radius: 12px;
+  padding: 12px;
+  background: rgba(255, 255, 255, 0.72);
+}
+
 .accountBox button,
 .projectBox button {
-  background: transparent;
+  background: #ffffff;
   border: 1px solid var(--border);
   padding: 8px 10px;
   border-radius: 8px;
   cursor: pointer;
+  font-weight: 600;
+  transition: transform 120ms ease, background-color 120ms ease;
 }
 
 .accountBox button:hover,
 .projectBox button:hover {
   background: var(--primary-soft);
+  transform: translateY(-1px);
 }
 
 button:disabled {
@@ -190,7 +233,8 @@ button:disabled {
   border-radius: 12px;
   padding: 10px;
   margin-top: 10px;
-  background: #f9fafb;
+  background: #ffffff;
+  box-shadow: 0 6px 14px rgba(12, 38, 75, 0.06);
 }
 
 .projectTitle {
@@ -245,7 +289,7 @@ button:disabled {
   border-radius: 16px;
   border: 1px solid var(--border);
   background: var(--card);
-  box-shadow: 0 12px 30px rgba(0,0,0,0.08);
+  box-shadow: var(--shadow-lg);
   display: flex;
   flex-direction: column;
   overflow: hidden;
@@ -277,13 +321,13 @@ button:disabled {
 .chatInput button {
   padding: 10px 14px;
   border: none;
-  background: var(--primary);
+  background: linear-gradient(135deg, var(--primary), var(--primary-strong));
   color: white;
   font-weight: 600;
   cursor: pointer;
 }
 
-.chatInput button:hover { opacity: 0.9; }
+.chatInput button:hover { filter: brightness(1.06); }
 
 /* ---------- Responsive ---------- */
 @media (max-width: 900px) {

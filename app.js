@@ -24,18 +24,12 @@ const canvas = document.getElementById('canvas');
 const totalOut = document.getElementById('totalOut');
 const countOut = document.getElementById('countOut');
 const listOut = document.getElementById('listOut');
-const projectNameInput = document.getElementById('projectNameInput');
-const btnSaveProject = document.getElementById('btnSaveProject');
-const projectsList = document.getElementById('projectsList');
 
 if (!canvas) throw new Error('Missing #canvas in HTML.');
 const ctx = canvas.getContext('2d');
 
 // ----- State -----
 let blueprintImg = null;
-let blueprintDataUrl = null;
-const MAX_BLUEPRINT_BYTES = 2 * 1024 * 1024;
-const LS_PROJECTS = 'bfe_projects_v1';
 
 // saved selections (normalized geometry + real measurements + computed area)
 let selections = [];
@@ -344,179 +338,6 @@ window.getEstimatorSnapshot = function getEstimatorSnapshot() {
   };
 };
 
-// Full export/import for saving projects
-window.exportFullEstimatorState = function exportFullEstimatorState() {
-  return {
-    version: 1,
-    mode,
-    selections: JSON.parse(JSON.stringify(selections)),
-    blueprint: blueprintDataUrl ? { dataUrl: blueprintDataUrl } : null,
-    snapshot: window.getEstimatorSnapshot()
-  };
-};
-
-window.importFullEstimatorState = function importFullEstimatorState(state) {
-  if (!state || !Array.isArray(state.selections)) {
-    throw new Error('Invalid project data.');
-  }
-
-  selections = state.selections.map((s) => ({
-    type: s.type,
-    label: s.label || '',
-    geo: s.geo,
-    real: s.real,
-    areaSqFt: Number(s.areaSqFt) || 0
-  }));
-
-  if (state.mode === 'rect' || state.mode === 'circle' || state.mode === 'tri') {
-    mode = state.mode;
-    if (shapeModeEl) shapeModeEl.value = mode;
-  }
-
-  isDragging = false;
-  dragStart = dragEnd = null;
-  circleCenter = circleEdge = null;
-  triPoints = [];
-
-  blueprintDataUrl = state.blueprint?.dataUrl || null;
-  if (blueprintDataUrl) {
-    const img = new Image();
-    img.onload = () => {
-      blueprintImg = img;
-      fitCanvasToWrap();
-      render();
-    };
-    img.onerror = () => {
-      blueprintImg = null;
-      fitCanvasToWrap();
-      render();
-    };
-    img.src = blueprintDataUrl;
-  } else {
-    blueprintImg = null;
-    fitCanvasToWrap();
-    render();
-  }
-
-  recomputeTotals();
-  render();
-};
-
-function loadProjects() {
-  try {
-    return JSON.parse(localStorage.getItem(LS_PROJECTS) || '[]');
-  } catch {
-    return [];
-  }
-}
-
-function saveProjects(projects) {
-  localStorage.setItem(LS_PROJECTS, JSON.stringify(projects));
-}
-
-function renderProjects() {
-  if (!projectsList) return;
-
-  const projects = loadProjects()
-    .slice()
-    .sort((a, b) => (b.savedAt || 0) - (a.savedAt || 0));
-
-  projectsList.innerHTML = '';
-
-  if (!projects.length) {
-    const empty = document.createElement('div');
-    empty.className = 'muted small';
-    empty.textContent = 'No saved projects yet.';
-    projectsList.appendChild(empty);
-    return;
-  }
-
-  projects.forEach((p) => {
-    const card = document.createElement('div');
-    card.className = 'projectCard';
-
-    const title = document.createElement('div');
-    title.className = 'projectTitle';
-    title.textContent = p.name || 'Untitled';
-
-    const meta = document.createElement('div');
-    meta.className = 'muted small';
-    const date = p.savedAt ? new Date(p.savedAt) : null;
-    meta.textContent =
-      `${p.totalSqFt ?? 0} sq ft • ${p.count ?? 0} areas` +
-      (date ? ` • ${date.toLocaleString()}` : '');
-
-    const row = document.createElement('div');
-    row.className = 'row';
-
-    const btnLoad = document.createElement('button');
-    btnLoad.textContent = 'Load';
-    btnLoad.addEventListener('click', () => {
-      try {
-        window.importFullEstimatorState(p.state);
-        setStatus(`Loaded project "${p.name}".`);
-      } catch (e) {
-        alert(String(e));
-      }
-    });
-
-    const btnDelete = document.createElement('button');
-    btnDelete.textContent = 'Delete';
-    btnDelete.className = 'dangerBtn';
-    btnDelete.addEventListener('click', () => {
-      const ok = confirm(`Delete "${p.name}"? This can't be undone.`);
-      if (!ok) return;
-      const next = loadProjects().filter(x => x.id !== p.id);
-      saveProjects(next);
-      renderProjects();
-      setStatus(`Deleted project "${p.name}".`);
-    });
-
-    row.appendChild(btnLoad);
-    row.appendChild(btnDelete);
-
-    card.appendChild(title);
-    card.appendChild(meta);
-    card.appendChild(row);
-
-    projectsList.appendChild(card);
-  });
-}
-
-function saveCurrentProject() {
-  const name = (projectNameInput?.value || '').trim();
-  if (!name) {
-    alert('Please enter a project name.');
-    projectNameInput?.focus();
-    return;
-  }
-
-  const state = window.exportFullEstimatorState();
-  const totalSqFt = state?.snapshot?.totalSqFt ?? 0;
-  const count = state?.snapshot?.selectionsCount ?? 0;
-
-  const projects = loadProjects();
-  projects.push({
-    id: crypto.randomUUID(),
-    name,
-    savedAt: Date.now(),
-    totalSqFt,
-    count,
-    state
-  });
-
-  try {
-    saveProjects(projects);
-  } catch {
-    alert('Save failed. Storage is full.');
-    return;
-  }
-
-  if (projectNameInput) projectNameInput.value = '';
-  renderProjects();
-  setStatus(`Saved project "${name}".`);
-}
-
 // ----- Save selection after user inputs real dimensions -----
 function promptLabel(defaultLabel) {
   const label = (window.prompt('Label this area (ex: Kitchen):', defaultLabel || '') || '').trim();
@@ -644,16 +465,6 @@ if (clearBtn) {
   });
 }
 
-if (btnSaveProject) {
-  btnSaveProject.addEventListener('click', () => saveCurrentProject());
-}
-
-if (projectNameInput) {
-  projectNameInput.addEventListener('keydown', (e) => {
-    if (e.key === 'Enter') saveCurrentProject();
-  });
-}
-
 if (blueprintInput) {
   blueprintInput.addEventListener('change', () => {
     const file = blueprintInput.files && blueprintInput.files[0];
@@ -665,32 +476,17 @@ if (blueprintInput) {
       return;
     }
 
-    const canPersist = file.size <= MAX_BLUEPRINT_BYTES;
-    blueprintDataUrl = null;
-    if (canPersist) {
-      const reader = new FileReader();
-      reader.onload = () => {
-        blueprintDataUrl = typeof reader.result === 'string' ? reader.result : null;
-      };
-      reader.readAsDataURL(file);
-    }
-
     const url = URL.createObjectURL(file);
     const img = new Image();
     img.onload = () => {
       blueprintImg = img;
-      setStatus(
-        canPersist
-          ? 'Image loaded. Start selecting an area.'
-          : 'Image loaded. Note: image too large to save with projects.'
-      );
+      setStatus('Image loaded. Start selecting an area.');
 
       // Wait one frame so CSS layout is final before measuring canvas size
       requestAnimationFrame(() => {
         fitCanvasToWrap();
         render();
       });
-      URL.revokeObjectURL(url);
     };
     img.onerror = () => {
       alert('Could not load that image.');
@@ -778,7 +574,6 @@ canvas.addEventListener('click', (e) => {
 // Initial UI
 setStatus('Upload an image to begin.');
 recomputeTotals();
-renderProjects();
 
 // Wait a frame so the canvas has real CSS size before we set internal buffer size
 requestAnimationFrame(() => {

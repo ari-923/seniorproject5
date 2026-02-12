@@ -125,7 +125,13 @@ function setCurrentUser(user) {
 }
 
 function restoreSessionUser() {
-  const sessionUserId = localStorage.getItem(LS_SESSION);
+  let sessionUserId = null;
+  try {
+    sessionUserId = localStorage.getItem(LS_SESSION);
+  } catch {
+    setCurrentUser(null);
+    return;
+  }
   if (!sessionUserId) {
     setCurrentUser(null);
     return;
@@ -150,11 +156,6 @@ async function hashPassword(password, salt) {
 }
 
 function getCanvasCssPointFromEvent(e) {
-  // offsetX/offsetY stays aligned with the canvas content box and avoids layout drift.
-  if (typeof e.offsetX === 'number' && typeof e.offsetY === 'number') {
-    return { x: e.offsetX, y: e.offsetY };
-  }
-
   const r = canvas.getBoundingClientRect();
   return { x: e.clientX - r.left, y: e.clientY - r.top };
 }
@@ -179,17 +180,6 @@ function dist(a, b) {
   return Math.sqrt(dx * dx + dy * dy);
 }
 
-let fitCanvasRafId = 0;
-let canvasResizeObserver = null;
-
-function queueFitCanvasToWrap() {
-  if (fitCanvasRafId) return;
-  fitCanvasRafId = requestAnimationFrame(() => {
-    fitCanvasRafId = 0;
-    fitCanvasToWrap();
-  });
-}
-
 // --- Canvas resize helper ---
 function fitCanvasToWrap() {
   const rect = canvas.getBoundingClientRect();
@@ -197,27 +187,14 @@ function fitCanvasToWrap() {
 
   const w = Math.max(1, Math.floor(rect.width));
   const h = Math.max(1, Math.floor(rect.height));
-  const nextWidth = Math.floor(w * dpr);
-  const nextHeight = Math.floor(h * dpr);
-
-  // Keep the internal drawing buffer in sync with CSS size for accurate pointer mapping.
-  if (canvas.width !== nextWidth || canvas.height !== nextHeight) {
-    canvas.width = nextWidth;
-    canvas.height = nextHeight;
-  }
+  canvas.width = Math.floor(w * dpr);
+  canvas.height = Math.floor(h * dpr);
 
   ctx.setTransform(dpr, 0, 0, dpr, 0, 0);
   render();
 }
 
-window.addEventListener('resize', queueFitCanvasToWrap);
-
-if (typeof ResizeObserver === 'function') {
-  canvasResizeObserver = new ResizeObserver(() => {
-    queueFitCanvasToWrap();
-  });
-  canvasResizeObserver.observe(canvas);
-}
+window.addEventListener('resize', fitCanvasToWrap);
 
 // ----- Rendering -----
 function clearCanvas() {
@@ -943,7 +920,11 @@ if (blueprintInput) {
           : 'Image loaded. Note: image too large to save with projects.'
       );
 
-      queueFitCanvasToWrap();
+      // Wait one frame so CSS layout is final before measuring canvas size
+      requestAnimationFrame(() => {
+        fitCanvasToWrap();
+        render();
+      });
       URL.revokeObjectURL(url);
     };
     img.onerror = () => {
@@ -955,6 +936,7 @@ if (blueprintInput) {
 
 // Canvas pointer events
 canvas.addEventListener('mousedown', (e) => {
+  fitCanvasToWrap();
   const p = getCanvasCssPointFromEvent(e);
 
   if (mode === 'rect') {
@@ -1041,5 +1023,6 @@ renderProjects();
 
 // Wait a frame so the canvas has real CSS size before we set internal buffer size
 requestAnimationFrame(() => {
-  queueFitCanvasToWrap();
+  fitCanvasToWrap();
+  render();
 });

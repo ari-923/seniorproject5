@@ -1,3 +1,4 @@
+
 'use strict';
 
 /**
@@ -23,11 +24,9 @@ const canvas = document.getElementById('canvas');
 const totalOut = document.getElementById('totalOut');
 const countOut = document.getElementById('countOut');
 const listOut = document.getElementById('listOut');
-
 const projectNameInput = document.getElementById('projectNameInput');
 const btnSaveProject = document.getElementById('btnSaveProject');
 const projectsList = document.getElementById('projectsList');
-
 const authEmailInput = document.getElementById('authEmailInput');
 const authPasswordInput = document.getElementById('authPasswordInput');
 const btnSignUp = document.getElementById('btnSignUp');
@@ -42,7 +41,6 @@ const ctx = canvas.getContext('2d');
 let blueprintImg = null;
 let blueprintDataUrl = null;
 const MAX_BLUEPRINT_BYTES = 2 * 1024 * 1024;
-
 const LS_PROJECTS = 'bfe_projects_v1';
 const LS_PROJECTS_BY_USER = 'bfe_projects_by_user_v1';
 const LS_USERS = 'bfe_users_v1';
@@ -167,14 +165,16 @@ function getCanvasCssPointFromEvent(e) {
 }
 
 function cssToNorm(pt) {
-  const w = Math.max(1, canvas.clientWidth);
-  const h = Math.max(1, canvas.clientHeight);
+  const r = canvas.getBoundingClientRect();
+  const w = Math.max(1, r.width);
+  const h = Math.max(1, r.height);
   return { x: clamp01(pt.x / w), y: clamp01(pt.y / h) };
 }
 
 function normToCss(ptN) {
-  const w = Math.max(1, canvas.clientWidth);
-  const h = Math.max(1, canvas.clientHeight);
+  const r = canvas.getBoundingClientRect();
+  const w = Math.max(1, r.width);
+  const h = Math.max(1, r.height);
   return { x: ptN.x * w, y: ptN.y * h };
 }
 
@@ -185,42 +185,31 @@ function dist(a, b) {
 }
 
 // --- Canvas resize helper ---
-// IMPORTANT FIX: use clientWidth/clientHeight so the internal buffer matches CSS size.
 function fitCanvasToWrap() {
+  const rect = canvas.getBoundingClientRect();
   const dpr = window.devicePixelRatio || 1;
 
-  const w = Math.max(1, canvas.clientWidth);
-  const h = Math.max(1, canvas.clientHeight);
-
+  const w = Math.max(1, Math.floor(rect.width));
+  const h = Math.max(1, Math.floor(rect.height));
   canvas.width = Math.floor(w * dpr);
   canvas.height = Math.floor(h * dpr);
 
-  // Draw in CSS pixels
   ctx.setTransform(dpr, 0, 0, dpr, 0, 0);
-
   render();
 }
 
-// Keep resize behavior
-window.addEventListener('resize', () => {
-  // double RAF so layout settles before measuring
-  requestAnimationFrame(() => {
-    requestAnimationFrame(() => {
-      fitCanvasToWrap();
-    });
-  });
-});
+window.addEventListener('resize', fitCanvasToWrap);
 
 // ----- Rendering -----
 function clearCanvas() {
-  const w = Math.max(1, canvas.clientWidth);
-  const h = Math.max(1, canvas.clientHeight);
-  ctx.clearRect(0, 0, w, h);
+  const r = canvas.getBoundingClientRect();
+  ctx.clearRect(0, 0, r.width, r.height);
 }
 
 function drawBlueprint() {
-  const w = Math.max(1, canvas.clientWidth);
-  const h = Math.max(1, canvas.clientHeight);
+  const r = canvas.getBoundingClientRect();
+  const w = r.width;
+  const h = r.height;
 
   if (!blueprintImg) {
     // empty background
@@ -253,8 +242,9 @@ function drawBlueprint() {
 }
 
 function drawSelections() {
-  const w = Math.max(1, canvas.clientWidth);
-  const h = Math.max(1, canvas.clientHeight);
+  const r = canvas.getBoundingClientRect();
+  const w = r.width;
+  const h = r.height;
 
   // saved shapes
   for (const s of selections) {
@@ -474,32 +464,19 @@ window.importFullEstimatorState = function importFullEstimatorState(state) {
     const img = new Image();
     img.onload = () => {
       blueprintImg = img;
-      // double RAF to ensure layout + sizing are stable before drawing
-      requestAnimationFrame(() => {
-        requestAnimationFrame(() => {
-          fitCanvasToWrap();
-          render();
-        });
-      });
+      fitCanvasToWrap();
+      render();
     };
     img.onerror = () => {
       blueprintImg = null;
-      requestAnimationFrame(() => {
-        requestAnimationFrame(() => {
-          fitCanvasToWrap();
-          render();
-        });
-      });
+      fitCanvasToWrap();
+      render();
     };
     img.src = blueprintDataUrl;
   } else {
     blueprintImg = null;
-    requestAnimationFrame(() => {
-      requestAnimationFrame(() => {
-        fitCanvasToWrap();
-        render();
-      });
-    });
+    fitCanvasToWrap();
+    render();
   }
 
   recomputeTotals();
@@ -788,7 +765,8 @@ function saveCircle(center, edge) {
 
   const rCss = dist(center, edge);
   const rNorm = (() => {
-    const minDim = Math.max(1, Math.min(canvas.clientWidth, canvas.clientHeight));
+    const rect = canvas.getBoundingClientRect();
+    const minDim = Math.max(1, Math.min(rect.width, rect.height));
     return rCss / minDim;
   })();
 
@@ -916,7 +894,6 @@ if (blueprintInput) {
 
     const canPersist = file.size <= MAX_BLUEPRINT_BYTES;
     blueprintDataUrl = null;
-
     if (canPersist) {
       const reader = new FileReader();
       reader.onload = () => {
@@ -927,7 +904,6 @@ if (blueprintInput) {
 
     const url = URL.createObjectURL(file);
     const img = new Image();
-
     img.onload = () => {
       blueprintImg = img;
       setStatus(
@@ -936,21 +912,16 @@ if (blueprintInput) {
           : 'Image loaded. Note: image too large to save with projects.'
       );
 
-      // IMPORTANT FIX: double RAF so the grid layout + canvas CSS size settle
+      // Wait one frame so CSS layout is final before measuring canvas size
       requestAnimationFrame(() => {
-        requestAnimationFrame(() => {
-          fitCanvasToWrap();
-          render();
-        });
+        fitCanvasToWrap();
+        render();
       });
-
       URL.revokeObjectURL(url);
     };
-
     img.onerror = () => {
       alert('Could not load that image.');
     };
-
     img.src = url;
   });
 }
@@ -1038,10 +1009,8 @@ setStatus('Upload an image to begin.');
 recomputeTotals();
 renderProjects();
 
-// IMPORTANT FIX: double RAF so canvas CSS size is real before setting buffer
+// Wait a frame so the canvas has real CSS size before we set internal buffer size
 requestAnimationFrame(() => {
-  requestAnimationFrame(() => {
-    fitCanvasToWrap();
-    render();
-  });
+  fitCanvasToWrap();
+  render();
 });

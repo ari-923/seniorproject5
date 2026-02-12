@@ -23,18 +23,8 @@ body {
   margin-right: auto;
 }
 
-h1 {
-  margin: 0 0 6px;
-  font-size: 26px;
-  letter-spacing: -0.02em;
-}
-
-p {
-  margin: 0 0 14px;
-  color: var(--muted);
-  line-height: 1.5;
-  max-width: 920px;
-}
+h1 { margin: 0 0 6px; font-size: 26px; letter-spacing: -0.02em; }
+p { margin: 0 0 14px; color: var(--muted); line-height: 1.5; max-width: 920px; }
 
 .controls {
   display: flex;
@@ -66,11 +56,7 @@ p {
 .controls button:hover { box-shadow: var(--shadow); border-color: rgba(37,99,235,.25); }
 .controls button:active { transform: translateY(1px); }
 
-#statusOut {
-  margin: 2px 0 16px;
-  color: var(--muted);
-  font-size: 13px;
-}
+#statusOut { margin: 2px 0 16px; color: var(--muted); font-size: 13px; }
 
 .layout {
   display: grid;
@@ -87,30 +73,30 @@ p {
   box-shadow: var(--shadow);
   padding: 14px;
   height: 560px;
-
   display: flex;
   flex-direction: column;
 }
 
-/* IMPORTANT: Fix offset + cropping */
-canvas {
+.canvasStage {
+  /* this is the area the canvas must fill */
   flex: 1;
-  width: 100%;
-  height: auto;
+  min-height: 0;
   border-radius: 14px;
+  overflow: hidden;
   border: 1px solid rgba(15,23,42,0.08);
   background: #fff;
+}
+
+canvas {
+  width: 100%;
+  height: 100%;
   display: block;
   cursor: crosshair;
 }
 
-.tip {
-  margin-top: 8px;
-  font-size: 12px;
-  color: var(--muted);
-  text-align: right;
-}
+.tip { margin-top: 8px; font-size: 12px; color: var(--muted); text-align: right; }
 
+/* Right side */
 .summary {
   background: var(--card);
   border: 1px solid var(--border);
@@ -119,33 +105,10 @@ canvas {
   padding: 16px;
 }
 
-.summary h3 {
-  margin: 0 0 10px;
-  font-size: 16px;
-  letter-spacing: -0.01em;
-}
+.summary h3 { margin: 0 0 10px; font-size: 16px; letter-spacing: -0.01em; }
+#totalOut { font-size: 34px; font-weight: 900; color: var(--primary); letter-spacing: -0.02em; }
 
-.totalRow {
-  display: flex;
-  align-items: baseline;
-  gap: 8px;
-  margin-bottom: 6px;
-}
-
-#totalOut {
-  font-size: 34px;
-  font-weight: 900;
-  color: var(--primary);
-  letter-spacing: -0.02em;
-}
-
-.unit { font-weight: 700; }
-
-.divider {
-  border: none;
-  border-top: 1px solid var(--border);
-  margin: 14px 0;
-}
+.divider { border: none; border-top: 1px solid var(--border); margin: 14px 0; }
 
 #listOut > div {
   margin-top: 10px;
@@ -155,18 +118,8 @@ canvas {
   padding: 12px;
 }
 
-.field {
-  display: flex;
-  flex-direction: column;
-  gap: 6px;
-  margin-top: 10px;
-}
-
-.field label {
-  font-size: 12px;
-  color: var(--muted);
-}
-
+.field { display: flex; flex-direction: column; gap: 6px; margin-top: 10px; }
+.field label { font-size: 12px; color: var(--muted); }
 .field input {
   height: 44px;
   padding: 0 12px;
@@ -177,12 +130,7 @@ canvas {
   font-size: 14px;
 }
 
-.row {
-  display: flex;
-  gap: 10px;
-  flex-wrap: wrap;
-  margin-top: 10px;
-}
+.row { display: flex; gap: 10px; flex-wrap: wrap; margin-top: 10px; }
 
 .accountBox button,
 .projectBox button,
@@ -196,28 +144,7 @@ canvas {
   box-shadow: var(--shadow-soft);
   font-weight: 900;
   cursor: pointer;
-  transition: transform .06s ease, box-shadow .16s ease, border-color .16s ease;
 }
-
-.accountBox button:hover,
-.projectBox button:hover,
-.projectCard button:hover,
-.selCard button:hover {
-  box-shadow: var(--shadow);
-  border-color: rgba(37,99,235,.25);
-}
-
-button:disabled { opacity: .6; cursor: not-allowed; box-shadow: none; }
-
-.projectCard {
-  border: 1px solid rgba(15,23,42,.10);
-  border-radius: 14px;
-  padding: 12px;
-  margin-top: 10px;
-  background: rgba(245,247,251,.65);
-}
-
-.projectTitle { font-weight: 900; margin-bottom: 4px; }
 
 .muted { color: var(--muted); }
 .small { font-size: 12px; }
@@ -243,31 +170,11 @@ button:disabled { opacity: .6; cursor: not-allowed; box-shadow: none; }
   overflow-y: auto;
   font-size: 14px;
 }
-
 #chatLog div { margin-bottom: 8px; }
 
-.chatInput {
-  display: flex;
-  border-top: 1px solid var(--border);
-}
-
-.chatInput input {
-  flex: 1;
-  padding: 10px;
-  border: none;
-  font-size: 14px;
-}
-
-.chatInput input:focus { outline: none; }
-
-.chatInput button {
-  padding: 10px 14px;
-  border: none;
-  background: var(--primary);
-  color: white;
-  font-weight: 800;
-  cursor: pointer;
-}
+.chatInput { display: flex; border-top: 1px solid var(--border); }
+.chatInput input { flex: 1; padding: 10px; border: none; font-size: 14px; }
+.chatInput button { padding: 10px 14px; border: none; background: var(--primary); color: white; font-weight: 800; cursor: pointer; }
 
 @media (max-width: 900px) {
   .layout { grid-template-columns: 1fr; }

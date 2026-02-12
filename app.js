@@ -24,15 +24,31 @@ const canvas = document.getElementById('canvas');
 const totalOut = document.getElementById('totalOut');
 const countOut = document.getElementById('countOut');
 const listOut = document.getElementById('listOut');
+const projectNameInput = document.getElementById('projectNameInput');
+const btnSaveProject = document.getElementById('btnSaveProject');
+const projectsList = document.getElementById('projectsList');
+const authEmailInput = document.getElementById('authEmailInput');
+const authPasswordInput = document.getElementById('authPasswordInput');
+const btnSignUp = document.getElementById('btnSignUp');
+const btnSignIn = document.getElementById('btnSignIn');
+const btnSignOut = document.getElementById('btnSignOut');
+const authStateOut = document.getElementById('authStateOut');
 
 if (!canvas) throw new Error('Missing #canvas in HTML.');
 const ctx = canvas.getContext('2d');
 
 // ----- State -----
 let blueprintImg = null;
+let blueprintDataUrl = null;
+const MAX_BLUEPRINT_BYTES = 2 * 1024 * 1024;
+const LS_PROJECTS = 'bfe_projects_v1';
+const LS_PROJECTS_BY_USER = 'bfe_projects_by_user_v1';
+const LS_USERS = 'bfe_users_v1';
+const LS_SESSION = 'bfe_session_v1';
 
 // saved selections (normalized geometry + real measurements + computed area)
 let selections = [];
+let currentUser = null;
 
 // drawing interaction state
 let mode = (shapeModeEl?.value || 'rect'); // 'rect' | 'circle' | 'tri'
@@ -62,6 +78,75 @@ function fmt2(n) {
   const x = Number(n);
   if (!Number.isFinite(x)) return '0.00';
   return x.toFixed(2);
+}
+
+function normalizeEmail(email) {
+  return String(email || '').trim().toLowerCase();
+}
+
+function isValidEmail(email) {
+  return /^[^\s@]+@[^\s@]+\.[^\s@]+$/.test(email);
+}
+
+function loadUsers() {
+  try {
+    const users = JSON.parse(localStorage.getItem(LS_USERS) || '[]');
+    return Array.isArray(users) ? users : [];
+  } catch {
+    return [];
+  }
+}
+
+function saveUsers(users) {
+  localStorage.setItem(LS_USERS, JSON.stringify(users));
+}
+
+function loadProjectsStore() {
+  try {
+    const store = JSON.parse(localStorage.getItem(LS_PROJECTS_BY_USER) || '{}');
+    if (store && typeof store === 'object' && !Array.isArray(store)) return store;
+    return {};
+  } catch {
+    return {};
+  }
+}
+
+function saveProjectsStore(store) {
+  localStorage.setItem(LS_PROJECTS_BY_USER, JSON.stringify(store));
+}
+
+function setCurrentUser(user) {
+  currentUser = user || null;
+  if (currentUser?.id) {
+    localStorage.setItem(LS_SESSION, currentUser.id);
+  } else {
+    localStorage.removeItem(LS_SESSION);
+  }
+}
+
+function restoreSessionUser() {
+  const sessionUserId = localStorage.getItem(LS_SESSION);
+  if (!sessionUserId) {
+    setCurrentUser(null);
+    return;
+  }
+
+  const user = loadUsers().find((u) => u.id === sessionUserId) || null;
+  setCurrentUser(user);
+}
+
+function bytesToHex(bytes) {
+  return Array.from(bytes).map((b) => b.toString(16).padStart(2, '0')).join('');
+}
+
+async function hashPassword(password, salt) {
+  if (!crypto?.subtle) {
+    return btoa(unescape(encodeURIComponent(`${salt}:${password}`)));
+  }
+
+  const data = new TextEncoder().encode(`${salt}:${password}`);
+  const digest = await crypto.subtle.digest('SHA-256', data);
+  return bytesToHex(new Uint8Array(digest));
 }
 
 function getCanvasCssPointFromEvent(e) {
@@ -338,6 +423,311 @@ window.getEstimatorSnapshot = function getEstimatorSnapshot() {
   };
 };
 
+// Full export/import for saving projects
+window.exportFullEstimatorState = function exportFullEstimatorState() {
+  return {
+    version: 1,
+    mode,
+    selections: JSON.parse(JSON.stringify(selections)),
+    blueprint: blueprintDataUrl ? { dataUrl: blueprintDataUrl } : null,
+    snapshot: window.getEstimatorSnapshot()
+  };
+};
+
+window.importFullEstimatorState = function importFullEstimatorState(state) {
+  if (!state || !Array.isArray(state.selections)) {
+    throw new Error('Invalid project data.');
+  }
+
+  selections = state.selections.map((s) => ({
+    type: s.type,
+    label: s.label || '',
+    geo: s.geo,
+    real: s.real,
+    areaSqFt: Number(s.areaSqFt) || 0
+  }));
+
+  if (state.mode === 'rect' || state.mode === 'circle' || state.mode === 'tri') {
+    mode = state.mode;
+    if (shapeModeEl) shapeModeEl.value = mode;
+  }
+
+  isDragging = false;
+  dragStart = dragEnd = null;
+  circleCenter = circleEdge = null;
+  triPoints = [];
+
+  blueprintDataUrl = state.blueprint?.dataUrl || null;
+  if (blueprintDataUrl) {
+    const img = new Image();
+    img.onload = () => {
+      blueprintImg = img;
+      fitCanvasToWrap();
+      render();
+    };
+    img.onerror = () => {
+      blueprintImg = null;
+      fitCanvasToWrap();
+      render();
+    };
+    img.src = blueprintDataUrl;
+  } else {
+    blueprintImg = null;
+    fitCanvasToWrap();
+    render();
+  }
+
+  recomputeTotals();
+  render();
+};
+
+function loadProjects() {
+  if (!currentUser) {
+    try {
+      return JSON.parse(localStorage.getItem(LS_PROJECTS) || '[]');
+    } catch {
+      return [];
+    }
+  }
+
+  const store = loadProjectsStore();
+  const userProjects = store[currentUser.id];
+  return Array.isArray(userProjects) ? userProjects : [];
+}
+
+function saveProjects(projects) {
+  if (!currentUser) {
+    localStorage.setItem(LS_PROJECTS, JSON.stringify(projects));
+    return;
+  }
+
+  const store = loadProjectsStore();
+  store[currentUser.id] = projects;
+  saveProjectsStore(store);
+}
+
+function updateAuthUI() {
+  const signedIn = Boolean(currentUser);
+
+  if (authStateOut) {
+    authStateOut.textContent = signedIn
+      ? `Signed in as ${currentUser.email}`
+      : 'Not signed in. Guest saves stay on this device only.';
+  }
+
+  if (btnSignOut) btnSignOut.disabled = !signedIn;
+  if (btnSignIn) btnSignIn.disabled = signedIn;
+  if (btnSignUp) btnSignUp.disabled = signedIn;
+  if (btnSaveProject) btnSaveProject.textContent = signedIn ? 'Save Project' : 'Save Project (Guest)';
+}
+
+function renderProjects() {
+  if (!projectsList) return;
+
+  const projects = loadProjects()
+    .slice()
+    .sort((a, b) => (b.savedAt || 0) - (a.savedAt || 0));
+
+  projectsList.innerHTML = '';
+
+  if (!currentUser) {
+    const guestNote = document.createElement('div');
+    guestNote.className = 'muted small';
+    guestNote.textContent = 'Viewing guest measurements. Sign in to keep a separate account history.';
+    projectsList.appendChild(guestNote);
+  }
+
+  if (!projects.length) {
+    const empty = document.createElement('div');
+    empty.className = 'muted small';
+    empty.textContent = currentUser ? 'No saved projects yet.' : 'No saved guest projects yet.';
+    projectsList.appendChild(empty);
+    return;
+  }
+
+  projects.forEach((p) => {
+    const card = document.createElement('div');
+    card.className = 'projectCard';
+
+    const title = document.createElement('div');
+    title.className = 'projectTitle';
+    title.textContent = p.name || 'Untitled';
+
+    const meta = document.createElement('div');
+    meta.className = 'muted small';
+    const date = p.savedAt ? new Date(p.savedAt) : null;
+    meta.textContent =
+      `${p.totalSqFt ?? 0} sq ft • ${p.count ?? 0} areas` +
+      (date ? ` • ${date.toLocaleString()}` : '');
+
+    const row = document.createElement('div');
+    row.className = 'row';
+
+    const btnLoad = document.createElement('button');
+    btnLoad.textContent = 'Load';
+    btnLoad.addEventListener('click', () => {
+      try {
+        window.importFullEstimatorState(p.state);
+        setStatus(`Loaded project "${p.name}".`);
+      } catch (e) {
+        alert(String(e));
+      }
+    });
+
+    const btnDelete = document.createElement('button');
+    btnDelete.textContent = 'Delete';
+    btnDelete.className = 'dangerBtn';
+    btnDelete.addEventListener('click', () => {
+      const ok = confirm(`Delete "${p.name}"? This can't be undone.`);
+      if (!ok) return;
+      const next = loadProjects().filter(x => x.id !== p.id);
+      saveProjects(next);
+      renderProjects();
+      setStatus(`Deleted project "${p.name}".`);
+    });
+
+    row.appendChild(btnLoad);
+    row.appendChild(btnDelete);
+
+    card.appendChild(title);
+    card.appendChild(meta);
+    card.appendChild(row);
+
+    projectsList.appendChild(card);
+  });
+}
+
+function clearAuthInputs() {
+  if (authPasswordInput) authPasswordInput.value = '';
+}
+
+async function signUpAccount() {
+  const email = normalizeEmail(authEmailInput?.value || '');
+  const password = String(authPasswordInput?.value || '');
+
+  if (!isValidEmail(email)) {
+    alert('Please enter a valid email address.');
+    authEmailInput?.focus();
+    return;
+  }
+
+  if (password.length < 6) {
+    alert('Password must be at least 6 characters.');
+    authPasswordInput?.focus();
+    return;
+  }
+
+  const users = loadUsers();
+  const exists = users.some((u) => normalizeEmail(u.email) === email);
+  if (exists) {
+    alert('An account with that email already exists.');
+    return;
+  }
+
+  const salt = crypto.randomUUID();
+  const passwordHash = await hashPassword(password, salt);
+
+  const user = {
+    id: crypto.randomUUID(),
+    email,
+    salt,
+    passwordHash,
+    createdAt: Date.now()
+  };
+
+  users.push(user);
+  saveUsers(users);
+  setCurrentUser(user);
+  clearAuthInputs();
+  updateAuthUI();
+  renderProjects();
+  setStatus(`Account created. Signed in as ${email}.`);
+}
+
+async function signInAccount() {
+  const email = normalizeEmail(authEmailInput?.value || '');
+  const password = String(authPasswordInput?.value || '');
+
+  if (!isValidEmail(email)) {
+    alert('Please enter a valid email address.');
+    authEmailInput?.focus();
+    return;
+  }
+
+  if (!password) {
+    alert('Please enter your password.');
+    authPasswordInput?.focus();
+    return;
+  }
+
+  const users = loadUsers();
+  const user = users.find((u) => normalizeEmail(u.email) === email);
+  if (!user) {
+    alert('No account found for that email.');
+    return;
+  }
+
+  const passwordHash = await hashPassword(password, user.salt);
+  if (passwordHash !== user.passwordHash) {
+    alert('Incorrect password.');
+    return;
+  }
+
+  setCurrentUser(user);
+  clearAuthInputs();
+  updateAuthUI();
+  renderProjects();
+  setStatus(`Signed in as ${email}.`);
+}
+
+function signOutAccount() {
+  if (!currentUser) return;
+  const email = currentUser.email;
+  setCurrentUser(null);
+  clearAuthInputs();
+  updateAuthUI();
+  renderProjects();
+  setStatus(`Signed out of ${email}.`);
+}
+
+function saveCurrentProject() {
+  const name = (projectNameInput?.value || '').trim();
+  if (!name) {
+    alert('Please enter a project name.');
+    projectNameInput?.focus();
+    return;
+  }
+
+  const state = window.exportFullEstimatorState();
+  const totalSqFt = state?.snapshot?.totalSqFt ?? 0;
+  const count = state?.snapshot?.selectionsCount ?? 0;
+
+  const projects = loadProjects();
+  projects.push({
+    id: crypto.randomUUID(),
+    name,
+    savedAt: Date.now(),
+    totalSqFt,
+    count,
+    state
+  });
+
+  try {
+    saveProjects(projects);
+  } catch {
+    alert('Save failed. Storage is full.');
+    return;
+  }
+
+  if (projectNameInput) projectNameInput.value = '';
+  renderProjects();
+  setStatus(
+    currentUser
+      ? `Saved project "${name}" to ${currentUser.email}.`
+      : `Saved project "${name}" to guest storage.`
+  );
+}
+
 // ----- Save selection after user inputs real dimensions -----
 function promptLabel(defaultLabel) {
   const label = (window.prompt('Label this area (ex: Kitchen):', defaultLabel || '') || '').trim();
@@ -465,6 +855,42 @@ if (clearBtn) {
   });
 }
 
+if (btnSignUp) {
+  btnSignUp.addEventListener('click', () => {
+    void signUpAccount();
+  });
+}
+
+if (btnSignIn) {
+  btnSignIn.addEventListener('click', () => {
+    void signInAccount();
+  });
+}
+
+if (btnSignOut) {
+  btnSignOut.addEventListener('click', () => {
+    signOutAccount();
+  });
+}
+
+if (authPasswordInput) {
+  authPasswordInput.addEventListener('keydown', (e) => {
+    if (e.key !== 'Enter') return;
+    if (currentUser) return;
+    void signInAccount();
+  });
+}
+
+if (btnSaveProject) {
+  btnSaveProject.addEventListener('click', () => saveCurrentProject());
+}
+
+if (projectNameInput) {
+  projectNameInput.addEventListener('keydown', (e) => {
+    if (e.key === 'Enter') saveCurrentProject();
+  });
+}
+
 if (blueprintInput) {
   blueprintInput.addEventListener('change', () => {
     const file = blueprintInput.files && blueprintInput.files[0];
@@ -476,17 +902,32 @@ if (blueprintInput) {
       return;
     }
 
+    const canPersist = file.size <= MAX_BLUEPRINT_BYTES;
+    blueprintDataUrl = null;
+    if (canPersist) {
+      const reader = new FileReader();
+      reader.onload = () => {
+        blueprintDataUrl = typeof reader.result === 'string' ? reader.result : null;
+      };
+      reader.readAsDataURL(file);
+    }
+
     const url = URL.createObjectURL(file);
     const img = new Image();
     img.onload = () => {
       blueprintImg = img;
-      setStatus('Image loaded. Start selecting an area.');
+      setStatus(
+        canPersist
+          ? 'Image loaded. Start selecting an area.'
+          : 'Image loaded. Note: image too large to save with projects.'
+      );
 
       // Wait one frame so CSS layout is final before measuring canvas size
       requestAnimationFrame(() => {
         fitCanvasToWrap();
         render();
       });
+      URL.revokeObjectURL(url);
     };
     img.onerror = () => {
       alert('Could not load that image.');
@@ -572,8 +1013,11 @@ canvas.addEventListener('click', (e) => {
 });
 
 // Initial UI
+restoreSessionUser();
+updateAuthUI();
 setStatus('Upload an image to begin.');
 recomputeTotals();
+renderProjects();
 
 // Wait a frame so the canvas has real CSS size before we set internal buffer size
 requestAnimationFrame(() => {

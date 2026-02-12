@@ -79,17 +79,19 @@ function dist(a, b) {
 function fitCanvasToWrap() {
   const dpr = window.devicePixelRatio || 1;
 
+  // Use the actual visible size of the canvas element
   const w = Math.max(1, Math.floor(canvas.clientWidth));
   const h = Math.max(1, Math.floor(canvas.clientHeight));
 
   canvas.width = Math.floor(w * dpr);
   canvas.height = Math.floor(h * dpr);
 
-  // Draw in CSS pixels
+  // Draw using CSS pixels
   ctx.setTransform(dpr, 0, 0, dpr, 0, 0);
 
   render();
 }
+
 
 window.addEventListener('resize', fitCanvasToWrap);
 

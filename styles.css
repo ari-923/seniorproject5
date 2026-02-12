@@ -1,139 +1,127 @@
-:root{
-  --bg:#f5f7fb;
-  --card:#ffffff;
-  --text:#0f172a;
-  --muted:#64748b;
-
-  --border:rgba(15,23,42,.10);
-  --shadow:0 12px 30px rgba(2,6,23,.08);
-  --shadowSoft:0 8px 18px rgba(2,6,23,.06);
-
-  --primary:#2563eb;
-  --primary2:#1d4ed8;
-  --primarySoft:rgba(37,99,235,.10);
-
-  --radius:16px;
-  --radius2:14px;
+/* ---------- Base ---------- */
+:root {
+  --bg: #f6f7fb;
+  --card: #ffffff;
+  --border: rgba(15,23,42,0.10);
+  --text: #0f172a;
+  --muted: #64748b;
+  --primary: #2563eb;
+  --primary-soft: rgba(37,99,235,0.08);
+  --radius: 16px;
+  --shadow: 0 12px 28px rgba(2,6,23,0.08);
+  --shadow-soft: 0 8px 18px rgba(2,6,23,0.06);
 }
 
-*{ box-sizing:border-box; }
-html,body{ height:100%; }
+* { box-sizing: border-box; }
 
-body{
-  margin:0;
-  padding:22px;
-  font-family: ui-sans-serif, system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Arial, sans-serif;
-  color:var(--text);
+body {
+  margin: 0;
+  padding: 24px;
+  font-family: system-ui, -apple-system, BlinkMacSystemFont, sans-serif;
   background: var(--bg);
+  color: var(--text);
+  max-width: 1200px;
+  margin-left: auto;
+  margin-right: auto;
 }
 
-/* Keep page centered like a real app */
-body > *{
-  max-width: 1220px;
-  margin-left:auto;
-  margin-right:auto;
+/* ---------- Header ---------- */
+h1 {
+  font-size: 28px;
+  margin: 0 0 6px;
+  letter-spacing: -0.02em;
 }
 
-.pageHeader{
-  margin-bottom: 12px;
+p {
+  margin: 0 0 16px;
+  color: var(--muted);
+  line-height: 1.5;
+  max-width: 900px;
 }
 
-h1{
-  margin:0 0 4px;
-  font-size:26px;
-  letter-spacing:-.02em;
-}
-
-p{
-  margin:0;
-  color:var(--muted);
-  line-height:1.5;
-  max-width: 980px;
-}
-
-/* Controls bar */
-.controls{
-  display:flex;
-  flex-wrap:wrap;
-  gap:10px;
-  margin:14px 0 12px;
+/* ---------- Controls ---------- */
+.controls {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 10px;
+  margin: 14px 0 12px;
 }
 
 .controls input[type="file"],
 .controls select,
-.controls button{
-  height:44px;
-  padding:0 14px;
-  border-radius:12px;
-  border:1px solid var(--border);
-  background:var(--card);
-  box-shadow: var(--shadowSoft);
-  font-size:14px;
-  color:var(--text);
-}
-
-.controls select{ min-width:220px; }
-
-.controls button{
-  font-weight:800;
-  cursor:pointer;
-  transition: transform .06s ease, box-shadow .16s ease, background .16s ease, border-color .16s ease;
-}
-
-.controls button:hover{
-  box-shadow: var(--shadow);
-  border-color: rgba(37,99,235,.22);
-}
-
-.controls button:active{
-  transform: translateY(1px);
-}
-
-/* Status */
-#statusOut{
-  margin: 2px 0 16px;
-  color: var(--muted);
-  font-size: 13px;
-}
-
-/* Layout: big canvas + right card column */
-.layout{
-  display:grid;
-  grid-template-columns: 1fr 340px;
-  gap:20px;
-  align-items:start;
-}
-
-/* Canvas card */
-.canvasWrap{
+.controls button {
+  height: 44px;
+  padding: 0 12px;
+  border-radius: 12px;
+  border: 1px solid var(--border);
   background: var(--card);
-  border:1px solid var(--border);
+  font-size: 14px;
+  box-shadow: var(--shadow-soft);
+}
+
+.controls select { min-width: 220px; }
+
+.controls button {
+  cursor: pointer;
+  font-weight: 700;
+  transition: transform .06s ease, box-shadow .16s ease;
+}
+.controls button:hover { box-shadow: var(--shadow); }
+.controls button:active { transform: translateY(1px); }
+
+/* ---------- Status ---------- */
+#statusOut {
+  margin-bottom: 14px;
+  font-size: 13px;
+  color: var(--muted);
+}
+
+/* ---------- Layout ---------- */
+.layout {
+  display: grid;
+  grid-template-columns: 1fr 340px;
+  gap: 22px;
+  align-items: start;
+}
+
+/* ---------- Canvas Card ---------- */
+.canvasWrap {
+  background: var(--card);
   border-radius: var(--radius);
+  border: 1px solid var(--border);
   box-shadow: var(--shadow);
   padding: 14px;
   height: 560px;
-  display:flex;
-  flex-direction:column;
+
+  /* IMPORTANT: makes canvas fill remaining space correctly */
+  display: flex;
+  flex-direction: column;
 }
 
-canvas{
-  width:100%;
-  height:100%;
-  border-radius: var(--radius2);
-  border:1px solid rgba(15,23,42,.08);
-  background:#fff;
-  display:block;
+/* IMPORTANT FIX:
+   Do NOT use height:100% on canvas inside a padded container.
+   Use flex:1 so the canvas matches the real visible area.
+*/
+canvas {
+  flex: 1;
+  width: 100%;
+  height: auto;
+  border-radius: 12px;
+  background: #fff;
+  display: block;
+  cursor: crosshair;
+  border: 1px solid rgba(15,23,42,0.08);
 }
 
-.tip{
-  margin-top: 8px;
+.tip {
   font-size: 12px;
   color: var(--muted);
   text-align: right;
+  margin-top: 8px;
 }
 
-/* Right side */
-.summary{
+/* ---------- Summary Card ---------- */
+.summary {
   background: var(--card);
   border: 1px solid var(--border);
   border-radius: var(--radius);
@@ -141,216 +129,90 @@ canvas{
   padding: 16px;
 }
 
-.summary h3{
-  margin:0 0 10px;
-  font-size:16px;
-  letter-spacing:-.01em;
+.summary h3 {
+  margin: 0 0 8px;
 }
 
-.totalCard{
-  border:1px solid rgba(15,23,42,.08);
-  border-radius: var(--radius2);
-  padding: 12px;
-  background: rgba(245,247,251,.55);
-}
-
-.totalLine{
-  display:flex;
-  align-items:baseline;
-  gap:8px;
-  margin-bottom: 6px;
-}
-
-#totalOut{
-  font-size: 34px;
-  font-weight: 900;
+#totalOut {
+  font-size: 28px;
+  font-weight: 800;
   color: var(--primary);
-  letter-spacing:-.02em;
 }
 
-.unit{
-  color: var(--text);
-  font-weight: 700;
-}
-
-#listOut > div{
+#listOut > div {
   margin-top: 10px;
-  background: rgba(245,247,251,.55);
-  border: 1px solid rgba(15,23,42,.08);
-  border-radius: var(--radius2);
+  background: rgba(246,247,251,0.75);
+  border-radius: 12px;
   padding: 12px;
+  border: 1px solid rgba(15,23,42,0.08);
 }
 
-.divider{
-  border:none;
-  border-top:1px solid var(--border);
-  margin: 14px 0;
+/* ---------- Selection Cards ---------- */
+.selCard button {
+  background: transparent;
+  border: 1px solid var(--border);
+  padding: 6px 10px;
+  border-radius: 10px;
+  cursor: pointer;
 }
 
-.field{
-  display:flex;
-  flex-direction:column;
-  gap:6px;
-  margin-top:10px;
+.selCard button:hover {
+  background: #fee2e2;
+  border-color: #fecaca;
 }
 
-.field label{
-  font-size:12px;
-  color:var(--muted);
-}
-
-.field input{
-  height:44px;
-  padding:0 12px;
-  border-radius:12px;
-  border:1px solid var(--border);
-  background:var(--card);
-  box-shadow: var(--shadowSoft);
-  font-size:14px;
-  color:var(--text);
-}
-
-.row{
-  display:flex;
-  gap:10px;
-  flex-wrap:wrap;
-  margin-top:10px;
-}
-
-.accountBox button,
-.projectBox button,
-.projectCard button,
-.selCard button{
-  height:42px;
-  padding:0 12px;
-  border-radius:12px;
-  border:1px solid var(--border);
-  background: var(--card);
-  box-shadow: var(--shadowSoft);
-  font-weight: 900;
-  cursor:pointer;
-  transition: transform .06s ease, box-shadow .16s ease, border-color .16s ease;
-}
-
-.accountBox button:hover,
-.projectBox button:hover,
-.projectCard button:hover,
-.selCard button:hover{
-  box-shadow: var(--shadow);
-  border-color: rgba(37,99,235,.22);
-}
-
-.accountBox button:active,
-.projectBox button:active,
-.projectCard button:active,
-.selCard button:active{
-  transform: translateY(1px);
-}
-
-button:disabled{
-  opacity:.6;
-  cursor:not-allowed;
-  box-shadow:none;
-}
-
-.projectCard{
-  border: 1px solid rgba(15,23,42,.10);
-  border-radius: var(--radius2);
-  padding: 12px;
-  margin-top: 10px;
-  background: rgba(245,247,251,.55);
-}
-
-.projectTitle{
-  font-weight: 900;
-  margin-bottom: 4px;
-}
-
-.muted{ color: var(--muted); }
-.small{ font-size: 12px; }
-
-/* Chat widget: modern card */
-#chatWidget{
+/* ---------- Chat Widget ---------- */
+#chatWidget {
   position: fixed;
-  right: 22px;
-  bottom: 22px;
-  width: 330px;
-  border-radius: 18px;
+  bottom: 20px;
+  right: 20px;
+  width: 320px;
+  border-radius: 16px;
   border: 1px solid var(--border);
   background: var(--card);
   box-shadow: var(--shadow);
-  overflow: hidden;
   display: flex;
   flex-direction: column;
+  overflow: hidden;
 }
 
-.chatHeader{
-  padding: 12px 12px 10px;
-  border-bottom: 1px solid rgba(15,23,42,.08);
-  background: rgba(245,247,251,.60);
-}
-
-.chatTitle{
-  font-weight: 900;
-  letter-spacing: -.01em;
-}
-
-.chatSubtitle{
-  font-size: 12px;
-  color: var(--muted);
-  margin-top: 2px;
-}
-
-#chatLog{
+#chatLog {
   padding: 12px;
-  max-height: 240px;
-  overflow: auto;
+  max-height: 220px;
+  overflow-y: auto;
   font-size: 14px;
 }
 
-#chatLog div{
-  padding: 10px 10px;
-  border-radius: 12px;
-  background: rgba(245,247,251,.60);
-  border: 1px solid rgba(15,23,42,.07);
-  margin-bottom: 10px;
+#chatLog div { margin-bottom: 8px; }
+
+.chatInput {
+  display: flex;
+  border-top: 1px solid var(--border);
 }
 
-.chatInput{
-  display:flex;
-  border-top: 1px solid rgba(15,23,42,.08);
-}
-
-.chatInput input{
-  flex:1;
-  border:none;
-  padding: 12px;
+.chatInput input {
+  flex: 1;
+  padding: 10px;
+  border: none;
   font-size: 14px;
-  background: transparent;
 }
 
-.chatInput input:focus{ outline:none; }
+.chatInput input:focus { outline: none; }
 
-.chatInput button{
-  border:none;
-  padding: 0 16px;
-  font-weight: 900;
+.chatInput button {
+  padding: 10px 14px;
+  border: none;
+  background: var(--primary);
   color: white;
+  font-weight: 700;
   cursor: pointer;
-  background: linear-gradient(180deg, var(--primary), var(--primary2));
 }
 
-.chatInput button:hover{
-  filter: brightness(1.03);
-}
+.chatInput button:hover { opacity: 0.92; }
 
-/* Responsive */
-@media (max-width: 980px){
-  body{ padding: 18px; }
-  .layout{ grid-template-columns: 1fr; }
-  .canvasWrap{ height: 480px; }
-  #chatWidget{
-    width: calc(100% - 36px);
-    right: 18px;
-  }
+/* ---------- Responsive ---------- */
+@media (max-width: 900px) {
+  .layout { grid-template-columns: 1fr; }
+  #chatWidget { width: calc(100% - 40px); right: 20px; }
+  .canvasWrap { height: 480px; }
 }

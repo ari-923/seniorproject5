@@ -4,17 +4,20 @@
   <meta charset="UTF-8" />
   <title>Blueprint Flooring Estimator</title>
   <meta name="viewport" content="width=device-width, initial-scale=1" />
-  <link rel="stylesheet" href="./style.css" />
+
+  <!-- IMPORTANT: use absolute path so it loads on every route -->
+  <link rel="stylesheet" href="/style.css" />
 </head>
 
 <body>
-  <h1>Blueprint Flooring Estimator</h1>
-
-  <p>
-    Upload a blueprint image, outline the areas to be floored, and enter real-world
-    dimensions to calculate total square footage. Use the AI assistant for waste
-    percentages and cost estimates.
-  </p>
+  <header class="pageHeader">
+    <h1>Blueprint Flooring Estimator</h1>
+    <p>
+      Upload a blueprint image, outline the areas to be floored, and enter real-world
+      dimensions to calculate total square footage. Use the AI assistant for waste
+      percentages and cost estimates.
+    </p>
+  </header>
 
   <div class="controls">
     <input type="file" id="blueprintInput" accept="image/png,image/jpeg" />
@@ -37,9 +40,15 @@
     </div>
 
     <div class="summary">
-      <h3>Total</h3>
-      <div><strong><span id="totalOut">0.00</span></strong> sq ft</div>
-      <div>Selections saved: <span id="countOut">0</span></div>
+      <section class="totalCard">
+        <h3>Total</h3>
+        <div class="totalLine">
+          <strong><span id="totalOut">0.00</span></strong>
+          <span class="unit">sq ft</span>
+        </div>
+        <div class="muted">Selections saved: <span id="countOut">0</span></div>
+      </section>
+
       <div id="listOut"></div>
 
       <hr class="divider" />
@@ -83,14 +92,21 @@
 
   <!-- Floating AI chat -->
   <div id="chatWidget">
+    <div class="chatHeader">
+      <div class="chatTitle">AI Assistant</div>
+      <div class="chatSubtitle">Waste %, totals, cost</div>
+    </div>
+
     <div id="chatLog"></div>
+
     <div class="chatInput">
       <input id="chatInput" placeholder="Ask about waste %, totals, cost..." />
       <button id="chatSend">Send</button>
     </div>
   </div>
 
-  <script src="./app.js"></script>
-  <script src="./chatbot.js"></script>
+  <!-- IMPORTANT: use absolute paths so scripts load on every route -->
+  <script src="/app.js"></script>
+  <script src="/chatbot.js"></script>
 </body>
 </html>

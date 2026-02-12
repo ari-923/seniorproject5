@@ -1,45 +1,41 @@
-/* ---------- Base ---------- */
 :root {
-  --bg: #f6f7fb;
+  --bg: #f5f7fb;
   --card: #ffffff;
-  --border: rgba(15,23,42,0.10);
+  --border: rgba(15, 23, 42, 0.10);
   --text: #0f172a;
   --muted: #64748b;
   --primary: #2563eb;
-  --primary-soft: rgba(37,99,235,0.08);
+  --shadow: 0 12px 28px rgba(2, 6, 23, 0.08);
+  --shadow-soft: 0 8px 18px rgba(2, 6, 23, 0.06);
   --radius: 16px;
-  --shadow: 0 12px 28px rgba(2,6,23,0.08);
-  --shadow-soft: 0 8px 18px rgba(2,6,23,0.06);
 }
 
 * { box-sizing: border-box; }
 
 body {
   margin: 0;
-  padding: 24px;
-  font-family: system-ui, -apple-system, BlinkMacSystemFont, sans-serif;
-  background: var(--bg);
+  padding: 22px;
+  font-family: ui-sans-serif, system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Arial, sans-serif;
   color: var(--text);
+  background: var(--bg);
   max-width: 1200px;
   margin-left: auto;
   margin-right: auto;
 }
 
-/* ---------- Header ---------- */
 h1 {
-  font-size: 28px;
   margin: 0 0 6px;
+  font-size: 26px;
   letter-spacing: -0.02em;
 }
 
 p {
-  margin: 0 0 16px;
+  margin: 0 0 14px;
   color: var(--muted);
   line-height: 1.5;
-  max-width: 900px;
+  max-width: 920px;
 }
 
-/* ---------- Controls ---------- */
 .controls {
   display: flex;
   flex-wrap: wrap;
@@ -51,76 +47,70 @@ p {
 .controls select,
 .controls button {
   height: 44px;
-  padding: 0 12px;
+  padding: 0 14px;
   border-radius: 12px;
   border: 1px solid var(--border);
   background: var(--card);
-  font-size: 14px;
   box-shadow: var(--shadow-soft);
+  font-size: 14px;
+  color: var(--text);
 }
 
 .controls select { min-width: 220px; }
 
 .controls button {
+  font-weight: 800;
   cursor: pointer;
-  font-weight: 700;
-  transition: transform .06s ease, box-shadow .16s ease;
+  transition: transform .06s ease, box-shadow .16s ease, border-color .16s ease;
 }
-.controls button:hover { box-shadow: var(--shadow); }
+.controls button:hover { box-shadow: var(--shadow); border-color: rgba(37,99,235,.25); }
 .controls button:active { transform: translateY(1px); }
 
-/* ---------- Status ---------- */
 #statusOut {
-  margin-bottom: 14px;
-  font-size: 13px;
+  margin: 2px 0 16px;
   color: var(--muted);
+  font-size: 13px;
 }
 
-/* ---------- Layout ---------- */
 .layout {
   display: grid;
   grid-template-columns: 1fr 340px;
-  gap: 22px;
+  gap: 20px;
   align-items: start;
 }
 
-/* ---------- Canvas Card ---------- */
+/* Canvas card */
 .canvasWrap {
   background: var(--card);
-  border-radius: var(--radius);
   border: 1px solid var(--border);
+  border-radius: var(--radius);
   box-shadow: var(--shadow);
   padding: 14px;
   height: 560px;
 
-  /* IMPORTANT: makes canvas fill remaining space correctly */
   display: flex;
   flex-direction: column;
 }
 
-/* IMPORTANT FIX:
-   Do NOT use height:100% on canvas inside a padded container.
-   Use flex:1 so the canvas matches the real visible area.
-*/
+/* IMPORTANT: Fix offset + cropping */
 canvas {
   flex: 1;
   width: 100%;
   height: auto;
-  border-radius: 12px;
+  border-radius: 14px;
+  border: 1px solid rgba(15,23,42,0.08);
   background: #fff;
   display: block;
   cursor: crosshair;
-  border: 1px solid rgba(15,23,42,0.08);
 }
 
 .tip {
+  margin-top: 8px;
   font-size: 12px;
   color: var(--muted);
   text-align: right;
-  margin-top: 8px;
 }
 
-/* ---------- Summary Card ---------- */
 .summary {
   background: var(--card);
   border: 1px solid var(--border);
@@ -130,50 +120,121 @@ canvas {
 }
 
 .summary h3 {
-  margin: 0 0 8px;
+  margin: 0 0 10px;
+  font-size: 16px;
+  letter-spacing: -0.01em;
+}
+
+.totalRow {
+  display: flex;
+  align-items: baseline;
+  gap: 8px;
+  margin-bottom: 6px;
 }
 
 #totalOut {
-  font-size: 28px;
-  font-weight: 800;
+  font-size: 34px;
+  font-weight: 900;
   color: var(--primary);
+  letter-spacing: -0.02em;
+}
+
+.unit { font-weight: 700; }
+
+.divider {
+  border: none;
+  border-top: 1px solid var(--border);
+  margin: 14px 0;
 }
 
 #listOut > div {
   margin-top: 10px;
-  background: rgba(246,247,251,0.75);
-  border-radius: 12px;
+  background: rgba(245,247,251,.65);
+  border: 1px solid rgba(15,23,42,.08);
+  border-radius: 14px;
   padding: 12px;
-  border: 1px solid rgba(15,23,42,0.08);
 }
 
-/* ---------- Selection Cards ---------- */
-.selCard button {
-  background: transparent;
+.field {
+  display: flex;
+  flex-direction: column;
+  gap: 6px;
+  margin-top: 10px;
+}
+
+.field label {
+  font-size: 12px;
+  color: var(--muted);
+}
+
+.field input {
+  height: 44px;
+  padding: 0 12px;
+  border-radius: 12px;
   border: 1px solid var(--border);
-  padding: 6px 10px;
-  border-radius: 10px;
+  background: var(--card);
+  box-shadow: var(--shadow-soft);
+  font-size: 14px;
+}
+
+.row {
+  display: flex;
+  gap: 10px;
+  flex-wrap: wrap;
+  margin-top: 10px;
+}
+
+.accountBox button,
+.projectBox button,
+.projectCard button,
+.selCard button {
+  height: 42px;
+  padding: 0 12px;
+  border-radius: 12px;
+  border: 1px solid var(--border);
+  background: var(--card);
+  box-shadow: var(--shadow-soft);
+  font-weight: 900;
   cursor: pointer;
+  transition: transform .06s ease, box-shadow .16s ease, border-color .16s ease;
 }
 
+.accountBox button:hover,
+.projectBox button:hover,
+.projectCard button:hover,
 .selCard button:hover {
-  background: #fee2e2;
-  border-color: #fecaca;
+  box-shadow: var(--shadow);
+  border-color: rgba(37,99,235,.25);
 }
 
-/* ---------- Chat Widget ---------- */
+button:disabled { opacity: .6; cursor: not-allowed; box-shadow: none; }
+
+.projectCard {
+  border: 1px solid rgba(15,23,42,.10);
+  border-radius: 14px;
+  padding: 12px;
+  margin-top: 10px;
+  background: rgba(245,247,251,.65);
+}
+
+.projectTitle { font-weight: 900; margin-bottom: 4px; }
+
+.muted { color: var(--muted); }
+.small { font-size: 12px; }
+
+/* Chat widget */
 #chatWidget {
   position: fixed;
-  bottom: 20px;
   right: 20px;
+  bottom: 20px;
   width: 320px;
   border-radius: 16px;
   border: 1px solid var(--border);
   background: var(--card);
   box-shadow: var(--shadow);
+  overflow: hidden;
   display: flex;
   flex-direction: column;
-  overflow: hidden;
 }
 
 #chatLog {
@@ -204,15 +265,12 @@ canvas {
   border: none;
   background: var(--primary);
   color: white;
-  font-weight: 700;
+  font-weight: 800;
   cursor: pointer;
 }
 
-.chatInput button:hover { opacity: 0.92; }
-
-/* ---------- Responsive ---------- */
 @media (max-width: 900px) {
   .layout { grid-template-columns: 1fr; }
-  #chatWidget { width: calc(100% - 40px); right: 20px; }
   .canvasWrap { height: 480px; }
+  #chatWidget { width: calc(100% - 40px); right: 20px; }
 }

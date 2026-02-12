@@ -117,10 +117,14 @@ function saveProjectsStore(store) {
 
 function setCurrentUser(user) {
   currentUser = user || null;
-  if (currentUser?.id) {
-    localStorage.setItem(LS_SESSION, currentUser.id);
-  } else {
-    localStorage.removeItem(LS_SESSION);
+  try {
+    if (currentUser?.id) {
+      localStorage.setItem(LS_SESSION, currentUser.id);
+    } else {
+      localStorage.removeItem(LS_SESSION);
+    }
+  } catch {
+    // Ignore storage failures so the estimator still works.
   }
 }
 
@@ -516,7 +520,6 @@ function updateAuthUI() {
   if (btnSignOut) btnSignOut.disabled = !signedIn;
   if (btnSignIn) btnSignIn.disabled = signedIn;
   if (btnSignUp) btnSignUp.disabled = signedIn;
-  if (btnSaveProject) btnSaveProject.textContent = signedIn ? 'Save Project' : 'Save Project (Guest)';
 }
 
 function renderProjects() {
@@ -528,17 +531,10 @@ function renderProjects() {
 
   projectsList.innerHTML = '';
 
-  if (!currentUser) {
-    const guestNote = document.createElement('div');
-    guestNote.className = 'muted small';
-    guestNote.textContent = 'Viewing guest measurements. Sign in to keep a separate account history.';
-    projectsList.appendChild(guestNote);
-  }
-
   if (!projects.length) {
     const empty = document.createElement('div');
     empty.className = 'muted small';
-    empty.textContent = currentUser ? 'No saved projects yet.' : 'No saved guest projects yet.';
+    empty.textContent = 'No saved projects yet.';
     projectsList.appendChild(empty);
     return;
   }
@@ -719,11 +715,7 @@ function saveCurrentProject() {
 
   if (projectNameInput) projectNameInput.value = '';
   renderProjects();
-  setStatus(
-    currentUser
-      ? `Saved project "${name}" to ${currentUser.email}.`
-      : `Saved project "${name}" to guest storage.`
-  );
+  setStatus(`Saved project "${name}".`);
 }
 
 // ----- Save selection after user inputs real dimensions -----
@@ -936,7 +928,6 @@ if (blueprintInput) {
 
 // Canvas pointer events
 canvas.addEventListener('mousedown', (e) => {
-  fitCanvasToWrap();
   const p = getCanvasCssPointFromEvent(e);
 
   if (mode === 'rect') {
@@ -969,7 +960,7 @@ canvas.addEventListener('mousemove', (e) => {
   }
 });
 
-function finishDragSelection() {
+canvas.addEventListener('mouseup', () => {
   if (!isDragging) return;
   isDragging = false;
 
@@ -992,10 +983,7 @@ function finishDragSelection() {
   dragStart = dragEnd = null;
   circleCenter = circleEdge = null;
   render();
-}
-
-canvas.addEventListener('mouseup', finishDragSelection);
-window.addEventListener('mouseup', finishDragSelection);
+});
 
 // Triangle: click 3 points (no dragging)
 canvas.addEventListener('click', (e) => {

@@ -5,7 +5,7 @@
   <title>Blueprint Flooring Estimator</title>
   <meta name="viewport" content="width=device-width, initial-scale=1" />
 
-  <!-- FIX: your file is style.css, not styles.css -->
+  <!-- MUST match your actual filename: style.css -->
   <link rel="stylesheet" href="./style.css" />
 </head>
 
@@ -20,6 +20,7 @@
 
   <div class="controls">
     <input type="file" id="blueprintInput" accept="image/png,image/jpeg" />
+
     <select id="shapeMode">
       <option value="rect">Rectangle (drag)</option>
       <option value="circle">Circle (drag radius)</option>
@@ -40,9 +41,60 @@
 
     <div class="summary">
       <h3>Total</h3>
-      <div><strong><span id="totalOut">0.00</span></strong> sq ft</div>
-      <div>Selections saved: <span id="countOut">0</span></div>
+      <div class="totalRow">
+        <strong><span id="totalOut">0.00</span></strong>
+        <span class="unit">sq ft</span>
+      </div>
+      <div class="muted">Selections saved: <span id="countOut">0</span></div>
+
       <div id="listOut"></div>
+
+      <hr class="divider" />
+
+      <!-- ✅ ACCOUNT (restore it) -->
+      <div class="accountBox">
+        <h3>Account</h3>
+
+        <div class="field">
+          <label>Email</label>
+          <input id="authEmailInput" type="email" placeholder="you@email.com" autocomplete="email" />
+        </div>
+
+        <div class="field">
+          <label>Password</label>
+          <input id="authPasswordInput" type="password" placeholder="At least 6 characters" autocomplete="current-password" />
+        </div>
+
+        <div class="row">
+          <button id="btnSignUp">Create Account</button>
+          <button id="btnSignIn">Sign In</button>
+        </div>
+
+        <div class="row">
+          <button id="btnSignOut">Sign Out</button>
+        </div>
+
+        <div id="authStateOut" class="muted small">Not signed in.</div>
+      </div>
+
+      <hr class="divider" />
+
+      <!-- ✅ PROJECTS (restore it) -->
+      <div class="projectBox">
+        <h3>Projects</h3>
+
+        <div class="field">
+          <label>Project name</label>
+          <input id="projectNameInput" placeholder="ex: Johnson Kitchen" />
+        </div>
+
+        <div class="row">
+          <button id="btnSaveProject">Save Project</button>
+        </div>
+
+        <div class="muted small">Saved on this device (localStorage).</div>
+        <div id="projectsList"></div>
+      </div>
     </div>
   </div>
 

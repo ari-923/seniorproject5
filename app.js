@@ -150,11 +150,13 @@ async function hashPassword(password, salt) {
 }
 
 function getCanvasCssPointFromEvent(e) {
-  // IMPORTANT: compute mouse position relative to the CANVAS itself (not wrapper)
+  // offsetX/offsetY stays aligned with the canvas content box and avoids layout drift.
+  if (typeof e.offsetX === 'number' && typeof e.offsetY === 'number') {
+    return { x: e.offsetX, y: e.offsetY };
+  }
+
   const r = canvas.getBoundingClientRect();
-  const x = e.clientX - r.left;
-  const y = e.clientY - r.top;
-  return { x, y };
+  return { x: e.clientX - r.left, y: e.clientY - r.top };
 }
 
 function cssToNorm(pt) {
@@ -177,26 +179,45 @@ function dist(a, b) {
   return Math.sqrt(dx * dx + dy * dy);
 }
 
-// --- Canvas resize helper (FIXED to avoid padding offset issues) ---
+let fitCanvasRafId = 0;
+let canvasResizeObserver = null;
+
+function queueFitCanvasToWrap() {
+  if (fitCanvasRafId) return;
+  fitCanvasRafId = requestAnimationFrame(() => {
+    fitCanvasRafId = 0;
+    fitCanvasToWrap();
+  });
+}
+
+// --- Canvas resize helper ---
 function fitCanvasToWrap() {
-  // Use the CANVAS rendered size (not parent wrapper) so padding doesn't break coordinates
   const rect = canvas.getBoundingClientRect();
   const dpr = window.devicePixelRatio || 1;
 
   const w = Math.max(1, Math.floor(rect.width));
   const h = Math.max(1, Math.floor(rect.height));
+  const nextWidth = Math.floor(w * dpr);
+  const nextHeight = Math.floor(h * dpr);
 
-  // Resize the internal drawing buffer to match the CSS size
-  canvas.width = Math.floor(w * dpr);
-  canvas.height = Math.floor(h * dpr);
+  // Keep the internal drawing buffer in sync with CSS size for accurate pointer mapping.
+  if (canvas.width !== nextWidth || canvas.height !== nextHeight) {
+    canvas.width = nextWidth;
+    canvas.height = nextHeight;
+  }
 
-  // Normalize drawing so we can draw in CSS pixels
   ctx.setTransform(dpr, 0, 0, dpr, 0, 0);
-
   render();
 }
 
-window.addEventListener('resize', fitCanvasToWrap);
+window.addEventListener('resize', queueFitCanvasToWrap);
+
+if (typeof ResizeObserver === 'function') {
+  canvasResizeObserver = new ResizeObserver(() => {
+    queueFitCanvasToWrap();
+  });
+  canvasResizeObserver.observe(canvas);
+}
 
 // ----- Rendering -----
 function clearCanvas() {
@@ -922,11 +943,7 @@ if (blueprintInput) {
           : 'Image loaded. Note: image too large to save with projects.'
       );
 
-      // Wait one frame so CSS layout is final before measuring canvas size
-      requestAnimationFrame(() => {
-        fitCanvasToWrap();
-        render();
-      });
+      queueFitCanvasToWrap();
       URL.revokeObjectURL(url);
     };
     img.onerror = () => {
@@ -970,7 +987,7 @@ canvas.addEventListener('mousemove', (e) => {
   }
 });
 
-canvas.addEventListener('mouseup', () => {
+function finishDragSelection() {
   if (!isDragging) return;
   isDragging = false;
 
@@ -993,7 +1010,10 @@ canvas.addEventListener('mouseup', () => {
   dragStart = dragEnd = null;
   circleCenter = circleEdge = null;
   render();
-});
+}
+
+canvas.addEventListener('mouseup', finishDragSelection);
+window.addEventListener('mouseup', finishDragSelection);
 
 // Triangle: click 3 points (no dragging)
 canvas.addEventListener('click', (e) => {
@@ -1021,6 +1041,5 @@ renderProjects();
 
 // Wait a frame so the canvas has real CSS size before we set internal buffer size
 requestAnimationFrame(() => {
-  fitCanvasToWrap();
-  render();
+  queueFitCanvasToWrap();
 });

@@ -1,0 +1,383 @@
+{
+  "id": "02.04",
+  "chapter": 2,
+  "sub": 4,
+  "title": "Gap analysis",
+  "chapter_name": "Fundamental Security Concepts",
+  "slides": [
+    {
+      "n": 1,
+      "title": "Gap Analysis",
+      "points": [],
+      "raw": "Gap Analysis",
+      "instructional": false,
+      "teach": "Read the source points, then explain the slide without looking. On Security+, recognition is not enough—you should be able to apply the concept to a scenario.",
+      "defs": []
+    },
+    {
+      "n": 2,
+      "title": "Gap Analysis",
+      "points": [
+        "• Systematic Evaluation",
+        "• On-going Process"
+      ],
+      "raw": "Gap Analysis\n• Systematic Evaluation\n• On-going Process",
+      "instructional": true,
+      "teach": "Read the source points, then explain the slide without looking. On Security+, recognition is not enough—you should be able to apply the concept to a scenario.",
+      "defs": [],
+      "course": {
+        "learn": "Gap analysis compares the current security state with a desired target such as a standard, policy, architecture, or maturity level. The “gap” is what must change to reach the target.",
+        "why": "It turns broad goals into concrete improvement work and helps prioritize resources.",
+        "example": "A company requires MFA for all privileged accounts, discovers that 30% of admin systems still use passwords only, and creates a remediation plan.",
+        "exam": "Current state versus desired state is the strongest clue for gap analysis.",
+        "breakdown": [
+          {
+            "term": "Systematic Evaluation",
+            "explanation": "Within Gap Analysis, this is a specific factor you should be able to recognize and explain. Connect it to the purpose of Gap analysis rather than memorizing the phrase by itself."
+          },
+          {
+            "term": "On-going Process",
+            "explanation": "Within Gap Analysis, this is a specific factor you should be able to recognize and explain. Connect it to the purpose of Gap analysis rather than memorizing the phrase by itself."
+          }
+        ],
+        "defs": [],
+        "check_q": "Without looking back, explain Gap Analysis and describe at least two key ideas from this section.",
+        "check_a": "Gap analysis compares the current security state with a desired target such as a standard, policy, architecture, or maturity level. The “gap” is what must change to reach the target. Key ideas include: Systematic Evaluation; On-going Process.",
+        "points": [
+          "Systematic Evaluation",
+          "On-going Process"
+        ]
+      }
+    },
+    {
+      "n": 3,
+      "title": "The Need",
+      "points": [
+        "Identify",
+        "Identify vulnerabilities",
+        "Prioritize",
+        "Prioritize resources",
+        "Track",
+        "Track progress",
+        "Demonstrate Demonstrate compliance"
+      ],
+      "raw": "The Need\nIdentify\nIdentify vulnerabilities\nPrioritize\nPrioritize resources\nTrack\nTrack progress\nDemonstrate Demonstrate compliance",
+      "instructional": true,
+      "teach": "Read the source points, then explain the slide without looking. On Security+, recognition is not enough—you should be able to apply the concept to a scenario.",
+      "defs": [],
+      "course": {
+        "learn": "This section focuses on **The Need** within **Gap analysis**. Gap analysis compares the current security state with a desired target such as a standard, policy, architecture, or maturity level. The “gap” is what must change to reach the target.",
+        "why": "It turns broad goals into concrete improvement work and helps prioritize resources.",
+        "example": "A company requires MFA for all privileged accounts, discovers that 30% of admin systems still use passwords only, and creates a remediation plan.",
+        "exam": "Current state versus desired state is the strongest clue for gap analysis.",
+        "breakdown": [
+          {
+            "term": "Identify vulnerabilities",
+            "explanation": "The goal is to discover and clearly document the condition so the organization can decide what action to take next."
+          },
+          {
+            "term": "Prioritize resources",
+            "explanation": "Within The Need, this is a specific factor you should be able to recognize and explain. Connect it to the purpose of Gap analysis rather than memorizing the phrase by itself."
+          },
+          {
+            "term": "Track progress",
+            "explanation": "Within The Need, this is a specific factor you should be able to recognize and explain. Connect it to the purpose of Gap analysis rather than memorizing the phrase by itself."
+          },
+          {
+            "term": "Demonstrate Demonstrate compliance",
+            "explanation": "This relates to meeting and demonstrating required legal, regulatory, contractual, or policy obligations."
+          }
+        ],
+        "defs": [],
+        "check_q": "Without looking back, explain The Need and describe at least two key ideas from this section.",
+        "check_a": "This section focuses on **The Need** within **Gap analysis**. Gap analysis compares the current security state with a desired target such as a standard, policy, architecture, or maturity level. The “gap” is what must change to reach the target. Key ideas include: Identify vulnerabilities; Prioritize resources; Track progress; Demonstrate Demonstrate compliance.",
+        "points": [
+          "Identify vulnerabilities",
+          "Prioritize resources",
+          "Track progress",
+          "Demonstrate Demonstrate compliance"
+        ]
+      }
+    },
+    {
+      "n": 4,
+      "title": "Advantages",
+      "points": [
+        "Enhanced security",
+        "Reduced risk",
+        "Improved decision-making",
+        "Increased ROI",
+        "Compliance readiness"
+      ],
+      "raw": "Advantages\nEnhanced security\nReduced risk\nImproved decision-making\nIncreased ROI\nCompliance readiness",
+      "instructional": true,
+      "teach": "Read the source points, then explain the slide without looking. On Security+, recognition is not enough—you should be able to apply the concept to a scenario.",
+      "defs": [],
+      "course": {
+        "learn": "This section focuses on **Advantages** within **Gap analysis**. Gap analysis compares the current security state with a desired target such as a standard, policy, architecture, or maturity level. The “gap” is what must change to reach the target.",
+        "why": "It turns broad goals into concrete improvement work and helps prioritize resources.",
+        "example": "A company requires MFA for all privileged accounts, discovers that 30% of admin systems still use passwords only, and creates a remediation plan.",
+        "exam": "Current state versus desired state is the strongest clue for gap analysis.",
+        "breakdown": [
+          {
+            "term": "Enhanced security",
+            "explanation": "This is a practical benefit of Gap analysis: it describes an outcome the organization can gain when the concept is implemented effectively."
+          },
+          {
+            "term": "Reduced risk",
+            "explanation": "This is a practical benefit of Gap analysis: it describes an outcome the organization can gain when the concept is implemented effectively."
+          },
+          {
+            "term": "Improved decision-making",
+            "explanation": "This is a practical benefit of Gap analysis: it describes an outcome the organization can gain when the concept is implemented effectively."
+          },
+          {
+            "term": "Increased ROI",
+            "explanation": "This is a practical benefit of Gap analysis: it describes an outcome the organization can gain when the concept is implemented effectively."
+          },
+          {
+            "term": "Compliance readiness",
+            "explanation": "This is a practical benefit of Gap analysis: it describes an outcome the organization can gain when the concept is implemented effectively."
+          }
+        ],
+        "defs": [],
+        "check_q": "Without looking back, explain Advantages and describe at least two key ideas from this section.",
+        "check_a": "This section focuses on **Advantages** within **Gap analysis**. Gap analysis compares the current security state with a desired target such as a standard, policy, architecture, or maturity level. The “gap” is what must change to reach the target. Key ideas include: Enhanced security; Reduced risk; Improved decision-making; Increased ROI; Compliance readiness.",
+        "points": [
+          "Enhanced security",
+          "Reduced risk",
+          "Improved decision-making",
+          "Increased ROI",
+          "Compliance readiness"
+        ]
+      }
+    },
+    {
+      "n": 5,
+      "title": "Types",
+      "points": [
+        "Technical",
+        "Gap Analysis",
+        "Operational",
+        "Gap Analysis",
+        "Managerial",
+        "Gap Analysis"
+      ],
+      "raw": "Types\nTechnical\nGap Analysis\nOperational\nGap Analysis\nManagerial\nGap Analysis",
+      "instructional": true,
+      "teach": "Focus on the differences between the listed types and the clue words that distinguish them in exam questions.",
+      "defs": [],
+      "course": {
+        "learn": "This section focuses on **Types** within **Gap analysis**. Gap analysis compares the current security state with a desired target such as a standard, policy, architecture, or maturity level. The “gap” is what must change to reach the target.",
+        "why": "It turns broad goals into concrete improvement work and helps prioritize resources.",
+        "example": "A company requires MFA for all privileged accounts, discovers that 30% of admin systems still use passwords only, and creates a remediation plan.",
+        "exam": "Current state versus desired state is the strongest clue for gap analysis.",
+        "breakdown": [
+          {
+            "term": "Technical",
+            "explanation": "Within Types, this is a specific factor you should be able to recognize and explain. Connect it to the purpose of Gap analysis rather than memorizing the phrase by itself."
+          },
+          {
+            "term": "Gap Analysis",
+            "explanation": "Gap analysis compares the current security state with a desired target such as a standard, policy, architecture, or maturity level. The “gap” is what must change to reach the target."
+          },
+          {
+            "term": "Operational",
+            "explanation": "Within Types, this is a specific factor you should be able to recognize and explain. Connect it to the purpose of Gap analysis rather than memorizing the phrase by itself."
+          },
+          {
+            "term": "Gap Analysis",
+            "explanation": "Gap analysis compares the current security state with a desired target such as a standard, policy, architecture, or maturity level. The “gap” is what must change to reach the target."
+          },
+          {
+            "term": "Managerial",
+            "explanation": "Within Types, this is a specific factor you should be able to recognize and explain. Connect it to the purpose of Gap analysis rather than memorizing the phrase by itself."
+          },
+          {
+            "term": "Gap Analysis",
+            "explanation": "Gap analysis compares the current security state with a desired target such as a standard, policy, architecture, or maturity level. The “gap” is what must change to reach the target."
+          }
+        ],
+        "defs": [],
+        "check_q": "Without looking back, explain Types and describe at least two key ideas from this section.",
+        "check_a": "This section focuses on **Types** within **Gap analysis**. Gap analysis compares the current security state with a desired target such as a standard, policy, architecture, or maturity level. The “gap” is what must change to reach the target. Key ideas include: Technical; Gap Analysis; Operational; Gap Analysis; Managerial.",
+        "points": [
+          "Technical",
+          "Gap Analysis",
+          "Operational",
+          "Gap Analysis",
+          "Managerial",
+          "Gap Analysis"
+        ]
+      }
+    },
+    {
+      "n": 6,
+      "title": "Steps in Gap Analysis",
+      "points": [
+        "Define",
+        "Scope",
+        "Gather Data",
+        "Benchmark",
+        "and Analyze",
+        "Monitor and",
+        "Report",
+        "Develop",
+        "Action Plan",
+        "Identify",
+        "Gaps"
+      ],
+      "raw": "Steps in Gap Analysis\nDefine\nScope\nGather Data\nBenchmark\nand Analyze\nMonitor and\nReport\nDevelop\nAction Plan\nIdentify\nGaps",
+      "instructional": true,
+      "teach": "Read the source points, then explain the slide without looking. On Security+, recognition is not enough—you should be able to apply the concept to a scenario.",
+      "defs": [],
+      "course": {
+        "learn": "Gap analysis compares the current security state with a desired target such as a standard, policy, architecture, or maturity level. The “gap” is what must change to reach the target.",
+        "why": "It turns broad goals into concrete improvement work and helps prioritize resources.",
+        "example": "A company requires MFA for all privileged accounts, discovers that 30% of admin systems still use passwords only, and creates a remediation plan.",
+        "exam": "Current state versus desired state is the strongest clue for gap analysis.",
+        "breakdown": [
+          {
+            "term": "Define",
+            "explanation": "Within Steps in Gap Analysis, this is a specific factor you should be able to recognize and explain. Connect it to the purpose of Gap analysis rather than memorizing the phrase by itself."
+          },
+          {
+            "term": "Scope",
+            "explanation": "Within Steps in Gap Analysis, this is a specific factor you should be able to recognize and explain. Connect it to the purpose of Gap analysis rather than memorizing the phrase by itself."
+          },
+          {
+            "term": "Gather Data",
+            "explanation": "Within Steps in Gap Analysis, this is a specific factor you should be able to recognize and explain. Connect it to the purpose of Gap analysis rather than memorizing the phrase by itself."
+          },
+          {
+            "term": "Benchmark and Analyze",
+            "explanation": "Within Steps in Gap Analysis, this is a specific factor you should be able to recognize and explain. Connect it to the purpose of Gap analysis rather than memorizing the phrase by itself."
+          },
+          {
+            "term": "Monitor and Report",
+            "explanation": "Continuously observe activity or state so abnormal behavior, drift, or failure can be detected early."
+          },
+          {
+            "term": "Develop",
+            "explanation": "Within Steps in Gap Analysis, this is a specific factor you should be able to recognize and explain. Connect it to the purpose of Gap analysis rather than memorizing the phrase by itself."
+          },
+          {
+            "term": "Action Plan",
+            "explanation": "Within Steps in Gap Analysis, this is a specific factor you should be able to recognize and explain. Connect it to the purpose of Gap analysis rather than memorizing the phrase by itself."
+          },
+          {
+            "term": "Identify",
+            "explanation": "The goal is to discover and clearly document the condition so the organization can decide what action to take next."
+          },
+          {
+            "term": "Gaps",
+            "explanation": "Gap analysis compares the current security state with a desired target such as a standard, policy, architecture, or maturity level. The “gap” is what must change to reach the target."
+          }
+        ],
+        "defs": [],
+        "check_q": "Without looking back, explain Steps in Gap Analysis and describe at least two key ideas from this section.",
+        "check_a": "Gap analysis compares the current security state with a desired target such as a standard, policy, architecture, or maturity level. The “gap” is what must change to reach the target. Key ideas include: Define; Scope; Gather Data; Benchmark and Analyze; Monitor and Report.",
+        "points": [
+          "Define",
+          "Scope",
+          "Gather Data",
+          "Benchmark and Analyze",
+          "Monitor and Report",
+          "Develop",
+          "Action Plan",
+          "Identify",
+          "Gaps"
+        ]
+      }
+    },
+    {
+      "n": 7,
+      "title": "Tools and Resources",
+      "points": [
+        "Security Assessment",
+        "Tools",
+        "Compliance",
+        "Frameworks",
+        "Gap Analysis Templates",
+        "Security Consulting",
+        "Services"
+      ],
+      "raw": "Tools and Resources\nSecurity Assessment\nTools\nCompliance\nFrameworks\nGap Analysis Templates\nSecurity Consulting\nServices",
+      "instructional": true,
+      "teach": "Read the source points, then explain the slide without looking. On Security+, recognition is not enough—you should be able to apply the concept to a scenario.",
+      "defs": [],
+      "course": {
+        "learn": "Security monitoring and automation tools include SIEM for event correlation, SCAP for standardized security-content automation, DLP for controlling sensitive data movement, and SNMP for device monitoring and traps.",
+        "why": "Different tools answer different questions; knowing the purpose prevents choosing a tool that cannot observe the required layer.",
+        "example": "A network switch sends an SNMP trap for a failed interface while the SIEM correlates that event with other security logs.",
+        "exam": "SCAP = standardized security automation/content, SIEM = log/event correlation, DLP = sensitive-data movement, SNMP trap = device-generated management alert.",
+        "breakdown": [
+          {
+            "term": "Security Assessment",
+            "explanation": "This is one of the mechanisms used to implement or support Gap analysis. On the exam, focus on what problem it solves and where it fits."
+          },
+          {
+            "term": "Tools",
+            "explanation": "Security monitoring and automation tools include SIEM for event correlation, SCAP for standardized security-content automation, DLP for controlling sensitive data movement, and SNMP for device monitoring and traps."
+          },
+          {
+            "term": "Compliance",
+            "explanation": "Evaluate risk and verify whether controls meet organizational, legal, or regulatory requirements."
+          },
+          {
+            "term": "Frameworks",
+            "explanation": "This is one of the mechanisms used to implement or support Gap analysis. On the exam, focus on what problem it solves and where it fits."
+          },
+          {
+            "term": "Gap Analysis Templates",
+            "explanation": "Gap analysis compares the current security state with a desired target such as a standard, policy, architecture, or maturity level. The “gap” is what must change to reach the target."
+          },
+          {
+            "term": "Security Consulting",
+            "explanation": "This is one of the mechanisms used to implement or support Gap analysis. On the exam, focus on what problem it solves and where it fits."
+          },
+          {
+            "term": "Services",
+            "explanation": "This is one of the mechanisms used to implement or support Gap analysis. On the exam, focus on what problem it solves and where it fits."
+          }
+        ],
+        "defs": [],
+        "check_q": "Without looking back, explain Tools and Resources and describe at least two key ideas from this section.",
+        "check_a": "Security monitoring and automation tools include SIEM for event correlation, SCAP for standardized security-content automation, DLP for controlling sensitive data movement, and SNMP for device monitoring and traps. Key ideas include: Security Assessment; Tools; Compliance; Frameworks; Gap Analysis Templates.",
+        "points": [
+          "Security Assessment",
+          "Tools",
+          "Compliance",
+          "Frameworks",
+          "Gap Analysis Templates",
+          "Security Consulting",
+          "Services"
+        ]
+      }
+    },
+    {
+      "n": 8,
+      "title": "Zero Trust",
+      "points": [],
+      "raw": "Zero Trust",
+      "instructional": false,
+      "teach": "Read the source points, then explain the slide without looking. On Security+, recognition is not enough—you should be able to apply the concept to a scenario.",
+      "defs": [
+        [
+          "Zero Trust",
+          "Security model that assumes no implicit trust and continuously verifies identities, devices, context, and access requests."
+        ]
+      ]
+    }
+  ],
+  "slide_count": 8,
+  "instructional_count": 6,
+  "concepts": [
+    "The Need",
+    "Advantages",
+    "Types",
+    "Steps in Gap Analysis",
+    "Tools and Resources"
+  ],
+  "source_filename": "02.04_Gap_analysis.pdf"
+}

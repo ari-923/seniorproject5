@@ -1,0 +1,164 @@
+{
+  "id": "10.02",
+  "chapter": 10,
+  "sub": 2,
+  "title": "Hybrid considerations",
+  "chapter_name": "Security Architecture & Cloud",
+  "slides": [
+    {
+      "n": 1,
+      "title": "Hybrid Cloud Considerations",
+      "points": [],
+      "raw": "Hybrid Cloud Considerations",
+      "instructional": false,
+      "teach": "These are design tradeoffs. Learn why each factor matters rather than memorizing the words alone.",
+      "defs": [
+        [
+          "Cloud",
+          "Computing resources delivered on demand from a provider rather than entirely owned and operated locally."
+        ]
+      ]
+    },
+    {
+      "n": 2,
+      "title": "Hybrid Cloud Considerations",
+      "points": [
+        "Integration of Environments",
+        "Data Security and Compliance",
+        "Interoperability and Compatibility",
+        "Scalability and Flexibility",
+        "Cost Management"
+      ],
+      "raw": "Hybrid Cloud Considerations\nIntegration of Environments\nData Security and Compliance\nInteroperability and Compatibility\nScalability and Flexibility\nCost Management",
+      "instructional": true,
+      "teach": "These are design tradeoffs. Learn why each factor matters rather than memorizing the words alone.",
+      "defs": [
+        [
+          "Cloud",
+          "Computing resources delivered on demand from a provider rather than entirely owned and operated locally."
+        ]
+      ],
+      "course": {
+        "learn": "A hybrid environment combines on-premises resources with cloud services. Security must cover identity, networking, logging, data movement, and policy consistently across both sides.",
+        "why": "Different control planes and trust boundaries can create gaps if teams manage each environment separately.",
+        "example": "An organization keeps a database on-premises while application servers run in the cloud and connect through a private link.",
+        "exam": "Hybrid clues: on-prem + cloud together. Pay attention to connectivity, consistent IAM, data location, and monitoring.",
+        "breakdown": [
+          {
+            "term": "Integration of Environments",
+            "explanation": "This is a factor that must be evaluated when using Hybrid considerations; ignoring it can create operational, security, cost, or compatibility risk."
+          },
+          {
+            "term": "Data Security and Compliance",
+            "explanation": "This is a factor that must be evaluated when using Hybrid considerations; ignoring it can create operational, security, cost, or compatibility risk."
+          },
+          {
+            "term": "Interoperability and Compatibility",
+            "explanation": "This is a factor that must be evaluated when using Hybrid considerations; ignoring it can create operational, security, cost, or compatibility risk."
+          },
+          {
+            "term": "Scalability and Flexibility",
+            "explanation": "This is a factor that must be evaluated when using Hybrid considerations; ignoring it can create operational, security, cost, or compatibility risk."
+          },
+          {
+            "term": "Cost Management",
+            "explanation": "This is a factor that must be evaluated when using Hybrid considerations; ignoring it can create operational, security, cost, or compatibility risk."
+          }
+        ],
+        "defs": [
+          {
+            "term": "Cloud",
+            "definition": "Computing resources delivered on demand from a provider rather than entirely owned and operated locally."
+          }
+        ],
+        "check_q": "Without looking back, explain Hybrid Cloud Considerations and describe at least two key ideas from this section.",
+        "check_a": "A hybrid environment combines on-premises resources with cloud services. Security must cover identity, networking, logging, data movement, and policy consistently across both sides. Key ideas include: Integration of Environments; Data Security and Compliance; Interoperability and Compatibility; Scalability and Flexibility; Cost Management.",
+        "points": [
+          "Integration of Environments",
+          "Data Security and Compliance",
+          "Interoperability and Compatibility",
+          "Scalability and Flexibility",
+          "Cost Management"
+        ]
+      }
+    },
+    {
+      "n": 3,
+      "title": "Hybrid Cloud Considerations",
+      "points": [
+        "Network Connectivity",
+        "Data Transfer and Latency",
+        "Resource Orchestration and Management",
+        "Disaster Recovery and Redundancy",
+        "Vendor Selection and Collaboration"
+      ],
+      "raw": "Hybrid Cloud Considerations\nNetwork Connectivity\nData Transfer and Latency\nResource Orchestration and Management\nDisaster Recovery and Redundancy\nVendor Selection and Collaboration",
+      "instructional": true,
+      "teach": "These are design tradeoffs. Learn why each factor matters rather than memorizing the words alone.",
+      "defs": [
+        [
+          "Cloud",
+          "Computing resources delivered on demand from a provider rather than entirely owned and operated locally."
+        ]
+      ],
+      "course": {
+        "learn": "A hybrid environment combines on-premises resources with cloud services. Security must cover identity, networking, logging, data movement, and policy consistently across both sides.",
+        "why": "Different control planes and trust boundaries can create gaps if teams manage each environment separately.",
+        "example": "An organization keeps a database on-premises while application servers run in the cloud and connect through a private link.",
+        "exam": "Hybrid clues: on-prem + cloud together. Pay attention to connectivity, consistent IAM, data location, and monitoring.",
+        "breakdown": [
+          {
+            "term": "Network Connectivity",
+            "explanation": "Secure architecture depends on where devices are placed, which trust zones they belong to, how they connect, what attack surface they expose, and what happens when a component fails."
+          },
+          {
+            "term": "Data Transfer and Latency",
+            "explanation": "This is a factor that must be evaluated when using Hybrid considerations; ignoring it can create operational, security, cost, or compatibility risk."
+          },
+          {
+            "term": "Resource Orchestration and Management",
+            "explanation": "This is a factor that must be evaluated when using Hybrid considerations; ignoring it can create operational, security, cost, or compatibility risk."
+          },
+          {
+            "term": "Disaster Recovery and Redundancy",
+            "explanation": "Restore technology and data after a major disruption."
+          },
+          {
+            "term": "Vendor Selection and Collaboration",
+            "explanation": "This is a factor that must be evaluated when using Hybrid considerations; ignoring it can create operational, security, cost, or compatibility risk."
+          }
+        ],
+        "defs": [
+          {
+            "term": "Cloud",
+            "definition": "Computing resources delivered on demand from a provider rather than entirely owned and operated locally."
+          }
+        ],
+        "check_q": "Without looking back, explain Hybrid Cloud Considerations and describe at least two key ideas from this section.",
+        "check_a": "A hybrid environment combines on-premises resources with cloud services. Security must cover identity, networking, logging, data movement, and policy consistently across both sides. Key ideas include: Network Connectivity; Data Transfer and Latency; Resource Orchestration and Management; Disaster Recovery and Redundancy; Vendor Selection and Collaboration.",
+        "points": [
+          "Network Connectivity",
+          "Data Transfer and Latency",
+          "Resource Orchestration and Management",
+          "Disaster Recovery and Redundancy",
+          "Vendor Selection and Collaboration"
+        ]
+      }
+    },
+    {
+      "n": 4,
+      "title": "Third-Party Vendors",
+      "points": [],
+      "raw": "Third-Party Vendors",
+      "instructional": false,
+      "teach": "Read the source points, then explain the slide without looking. On Security+, recognition is not enough—you should be able to apply the concept to a scenario.",
+      "defs": []
+    }
+  ],
+  "slide_count": 4,
+  "instructional_count": 2,
+  "concepts": [
+    "Hybrid Cloud Considerations"
+  ],
+  "source_filename": "10.02_Hybrid_considerations.pdf"
+}

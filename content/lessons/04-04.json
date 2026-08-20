@@ -1,0 +1,173 @@
+{
+  "id": "04.04",
+  "chapter": 4,
+  "sub": 4,
+  "title": "Obfuscation",
+  "chapter_name": "Cryptography & PKI",
+  "slides": [
+    {
+      "n": 1,
+      "title": "Obfuscation",
+      "points": [],
+      "raw": "Obfuscation",
+      "instructional": false,
+      "teach": "Read the source points, then explain the slide without looking. On Security+, recognition is not enough—you should be able to apply the concept to a scenario.",
+      "defs": []
+    },
+    {
+      "n": 2,
+      "title": "Steganography",
+      "points": [
+        "Audio",
+        "Video",
+        "Image"
+      ],
+      "raw": "Steganography\nAudio\nVideo\nImage",
+      "instructional": true,
+      "teach": "Read the source points, then explain the slide without looking. On Security+, recognition is not enough—you should be able to apply the concept to a scenario.",
+      "defs": [],
+      "course": {
+        "learn": "Steganography hides the existence of information by embedding it inside another medium such as an image, audio file, or document. It is different from encryption, which hides meaning but not the existence of ciphertext.",
+        "why": "Attackers can use steganography to conceal data exfiltration or malicious payloads; defenders may also use it for specialized legitimate purposes.",
+        "example": "Secret text is embedded in the least-significant bits of image pixels so the picture looks unchanged to a viewer.",
+        "exam": "Steganography = hide that a message exists. Encryption = make a visible message unreadable without a key.",
+        "breakdown": [
+          {
+            "term": "Audio",
+            "explanation": "Within Steganography, this is a specific factor you should be able to recognize and explain. Connect it to the purpose of Obfuscation rather than memorizing the phrase by itself."
+          },
+          {
+            "term": "Video",
+            "explanation": "Records or monitors physical areas to deter activity and provide evidence."
+          },
+          {
+            "term": "Image",
+            "explanation": "Within Steganography, this is a specific factor you should be able to recognize and explain. Connect it to the purpose of Obfuscation rather than memorizing the phrase by itself."
+          }
+        ],
+        "defs": [],
+        "check_q": "Without looking back, explain Steganography and describe at least two key ideas from this section.",
+        "check_a": "Steganography hides the existence of information by embedding it inside another medium such as an image, audio file, or document. It is different from encryption, which hides meaning but not the existence of ciphertext. Key ideas include: Audio; Video; Image.",
+        "points": [
+          "Audio",
+          "Video",
+          "Image"
+        ]
+      }
+    },
+    {
+      "n": 3,
+      "title": "Tokenization",
+      "points": [
+        "Is a data protection measure",
+        "Does not transmit the actual data",
+        "Sends a token over the network"
+      ],
+      "raw": "Tokenization\nIs a data protection measure\nDoes not transmit the actual data\nSends a token over the network",
+      "instructional": true,
+      "teach": "Read the source points, then explain the slide without looking. On Security+, recognition is not enough—you should be able to apply the concept to a scenario.",
+      "defs": [
+        [
+          "Tokenization",
+          "Replacing sensitive data with a non-sensitive token while the original value is stored separately."
+        ]
+      ],
+      "course": {
+        "learn": "Tokenization replaces a sensitive value with a non-sensitive stand-in token. The original value is stored separately in a protected token vault or mapping system.",
+        "why": "Applications can work with tokens without repeatedly exposing the underlying sensitive data.",
+        "example": "A payment system stores a token such as TKN-83A9 instead of the real card number in the application database.",
+        "exam": "Tokenization is not hashing: authorized systems may map the token back to the original value through the token service.",
+        "breakdown": [
+          {
+            "term": "Is a data protection measure",
+            "explanation": "Within Tokenization, this is a specific factor you should be able to recognize and explain. Connect it to the purpose of Obfuscation rather than memorizing the phrase by itself."
+          },
+          {
+            "term": "Does not transmit the actual data",
+            "explanation": "Within Tokenization, this is a specific factor you should be able to recognize and explain. Connect it to the purpose of Obfuscation rather than memorizing the phrase by itself."
+          },
+          {
+            "term": "Sends a token over the network",
+            "explanation": "Within Tokenization, this is a specific factor you should be able to recognize and explain. Connect it to the purpose of Obfuscation rather than memorizing the phrase by itself."
+          }
+        ],
+        "defs": [
+          {
+            "term": "Tokenization",
+            "definition": "Replacing sensitive data with a non-sensitive token while the original value is stored separately."
+          }
+        ],
+        "check_q": "Without looking back, explain Tokenization and describe at least two key ideas from this section.",
+        "check_a": "Tokenization replaces a sensitive value with a non-sensitive stand-in token. The original value is stored separately in a protected token vault or mapping system. Key ideas include: Is a data protection measure; Does not transmit the actual data; Sends a token over the network.",
+        "points": [
+          "Is a data protection measure",
+          "Does not transmit the actual data",
+          "Sends a token over the network"
+        ]
+      }
+    },
+    {
+      "n": 4,
+      "title": "Data Masking",
+      "points": [
+        "Is also known as data obfuscation or data anonymization",
+        "Protects the sensitive information",
+        "Prevents the exposure of sensitive information"
+      ],
+      "raw": "Data Masking\nIs also known as data obfuscation or data anonymization\nProtects the sensitive information\nPrevents the exposure of sensitive information",
+      "instructional": true,
+      "teach": "Read the source points, then explain the slide without looking. On Security+, recognition is not enough—you should be able to apply the concept to a scenario.",
+      "defs": [],
+      "course": {
+        "learn": "Data masking hides part or all of a sensitive value while preserving enough structure for a user or application to perform a task.",
+        "why": "It reduces unnecessary exposure when full data is not required.",
+        "example": "A support agent sees **** **** **** 1234 instead of the complete card number.",
+        "exam": "Masked display with only part of the real value visible = masking. Replacing the value with an unrelated token = tokenization.",
+        "breakdown": [
+          {
+            "term": "Is also known as data obfuscation or data anonymization",
+            "explanation": "Within Data Masking, this is a specific factor you should be able to recognize and explain. Connect it to the purpose of Obfuscation rather than memorizing the phrase by itself."
+          },
+          {
+            "term": "Protects the sensitive information",
+            "explanation": "Within Data Masking, this is a specific factor you should be able to recognize and explain. Connect it to the purpose of Obfuscation rather than memorizing the phrase by itself."
+          },
+          {
+            "term": "Prevents the exposure of sensitive information",
+            "explanation": "Within Data Masking, this is a specific factor you should be able to recognize and explain. Connect it to the purpose of Obfuscation rather than memorizing the phrase by itself."
+          }
+        ],
+        "defs": [],
+        "check_q": "Without looking back, explain Data Masking and describe at least two key ideas from this section.",
+        "check_a": "Data masking hides part or all of a sensitive value while preserving enough structure for a user or application to perform a task. Key ideas include: Is also known as data obfuscation or data anonymization; Protects the sensitive information; Prevents the exposure of sensitive information.",
+        "points": [
+          "Is also known as data obfuscation or data anonymization",
+          "Protects the sensitive information",
+          "Prevents the exposure of sensitive information"
+        ]
+      }
+    },
+    {
+      "n": 5,
+      "title": "Hashing and Salting",
+      "points": [],
+      "raw": "Hashing and Salting",
+      "instructional": false,
+      "teach": "Read the source points, then explain the slide without looking. On Security+, recognition is not enough—you should be able to apply the concept to a scenario.",
+      "defs": [
+        [
+          "Hashing",
+          "A one-way function that maps data to a fixed-size digest; commonly used for integrity verification and password storage."
+        ]
+      ]
+    }
+  ],
+  "slide_count": 5,
+  "instructional_count": 3,
+  "concepts": [
+    "Steganography",
+    "Tokenization",
+    "Data Masking"
+  ],
+  "source_filename": "04.04_Obfuscation.pdf"
+}

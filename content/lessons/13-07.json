@@ -1,0 +1,195 @@
+{
+  "id": "13.07",
+  "chapter": 13,
+  "sub": 7,
+  "title": "Power",
+  "chapter_name": "Resilience & Recovery",
+  "slides": [
+    {
+      "n": 1,
+      "title": "Power",
+      "points": [],
+      "raw": "Power",
+      "instructional": false,
+      "teach": "Read the source points, then explain the slide without looking. On Security+, recognition is not enough—you should be able to apply the concept to a scenario.",
+      "defs": []
+    },
+    {
+      "n": 2,
+      "title": "Significance",
+      "points": [
+        "Mitigation of powerrelated risks",
+        "Data protection",
+        "Reduced downtime",
+        "Adherence to",
+        "Service Level",
+        "Agreements (SLAs)",
+        "Protection against",
+        "external factors",
+        "Operational",
+        "flexibility"
+      ],
+      "raw": "Significance\nMitigation of powerrelated risks\nData protection\nReduced downtime\nAdherence to\nService Level\nAgreements (SLAs)\nProtection against\nexternal factors\nOperational\nflexibility",
+      "instructional": true,
+      "teach": "Read the source points, then explain the slide without looking. On Security+, recognition is not enough—you should be able to apply the concept to a scenario.",
+      "defs": [],
+      "course": {
+        "learn": "This section focuses on **Significance** within **Power**. Power resilience is significant because electricity failures can cause downtime, data corruption, hardware damage, and violations of availability commitments. Power planning is therefore part of cybersecurity resilience.",
+        "why": "Critical services depend on stable power before any software security control can function.",
+        "example": "A UPS prevents abrupt shutdown during a short outage, while generators support longer operation so an SLA can still be met.",
+        "exam": "Power questions usually connect to availability, UPS, generators, graceful shutdown, redundancy, and environmental risk.",
+        "breakdown": [
+          {
+            "term": "Mitigation of powerrelated risks",
+            "explanation": "This affects the likelihood or impact of harm and therefore changes how the organization should prioritize controls."
+          },
+          {
+            "term": "Data protection",
+            "explanation": "Within Significance, this is a specific factor you should be able to recognize and explain. Connect it to the purpose of Power rather than memorizing the phrase by itself."
+          },
+          {
+            "term": "Reduced downtime",
+            "explanation": "Within Significance, this is a specific factor you should be able to recognize and explain. Connect it to the purpose of Power rather than memorizing the phrase by itself."
+          },
+          {
+            "term": "Adherence to Service Level",
+            "explanation": "Encryption can be applied at different levels of granularity: full disk, partition, volume, file, database, or individual record/field. The best level depends on what threats and workflows must be protected."
+          },
+          {
+            "term": "Agreements (SLAs)",
+            "explanation": "Within Significance, this is a specific factor you should be able to recognize and explain. Connect it to the purpose of Power rather than memorizing the phrase by itself."
+          },
+          {
+            "term": "Protection against external factors",
+            "explanation": "Within Significance, this is a specific factor you should be able to recognize and explain. Connect it to the purpose of Power rather than memorizing the phrase by itself."
+          },
+          {
+            "term": "Operational flexibility",
+            "explanation": "Within Significance, this is a specific factor you should be able to recognize and explain. Connect it to the purpose of Power rather than memorizing the phrase by itself."
+          }
+        ],
+        "defs": [],
+        "check_q": "Without looking back, explain Significance and describe at least two key ideas from this section.",
+        "check_a": "This section focuses on **Significance** within **Power**. Power resilience is significant because electricity failures can cause downtime, data corruption, hardware damage, and violations of availability commitments. Power planning is therefore part of cybersecurity resilience. Key ideas include: Mitigation of powerrelated risks; Data protection; Reduced downtime; Adherence to Service Level; Agreements (SLAs).",
+        "points": [
+          "Mitigation of powerrelated risks",
+          "Data protection",
+          "Reduced downtime",
+          "Adherence to Service Level",
+          "Agreements (SLAs)",
+          "Protection against external factors",
+          "Operational flexibility"
+        ]
+      }
+    },
+    {
+      "n": 3,
+      "title": "Generators",
+      "points": [
+        "Continuous operation",
+        "Business continuity",
+        "Data center support"
+      ],
+      "raw": "Generators\nContinuous operation\nBusiness continuity\nData center support",
+      "instructional": true,
+      "teach": "Read the source points, then explain the slide without looking. On Security+, recognition is not enough—you should be able to apply the concept to a scenario.",
+      "defs": [],
+      "course": {
+        "learn": "A generator provides longer-duration backup electricity when utility power fails, typically after a short startup delay.",
+        "why": "Critical facilities may need to operate through extended outages that batteries alone cannot cover.",
+        "example": "A data center UPS carries the load for a few seconds while diesel generators start and take over.",
+        "exam": "Generator = sustained backup power. UPS = immediate short-term power/conditioning.",
+        "breakdown": [
+          {
+            "term": "Continuous operation",
+            "explanation": "Within Generators, this is a specific factor you should be able to recognize and explain. Connect it to the purpose of Power rather than memorizing the phrase by itself."
+          },
+          {
+            "term": "Business continuity",
+            "explanation": "Within Generators, this is a specific factor you should be able to recognize and explain. Connect it to the purpose of Power rather than memorizing the phrase by itself."
+          },
+          {
+            "term": "Data center support",
+            "explanation": "Within Generators, this is a specific factor you should be able to recognize and explain. Connect it to the purpose of Power rather than memorizing the phrase by itself."
+          }
+        ],
+        "defs": [],
+        "check_q": "Without looking back, explain Generators and describe at least two key ideas from this section.",
+        "check_a": "A generator provides longer-duration backup electricity when utility power fails, typically after a short startup delay. Key ideas include: Continuous operation; Business continuity; Data center support.",
+        "points": [
+          "Continuous operation",
+          "Business continuity",
+          "Data center support"
+        ]
+      }
+    },
+    {
+      "n": 4,
+      "title": "Uninterrupted Power Supply (UPS)",
+      "points": [
+        "Power stability",
+        "Protecting against voltage fluctuations",
+        "Graceful shutdown"
+      ],
+      "raw": "Uninterrupted Power Supply (UPS)\nPower stability\nProtecting against voltage fluctuations\nGraceful shutdown",
+      "instructional": true,
+      "teach": "Read the source points, then explain the slide without looking. On Security+, recognition is not enough—you should be able to apply the concept to a scenario.",
+      "defs": [
+        [
+          "UPS",
+          "Uninterruptible Power Supply: provides immediate short-term power during an outage or power-quality event."
+        ]
+      ],
+      "course": {
+        "learn": "An Uninterruptible Power Supply (UPS) provides immediate battery-backed power and often power conditioning during short outages or while a generator starts.",
+        "why": "It prevents sudden shutdowns, gives systems time to fail over, or allows a graceful shutdown.",
+        "example": "When utility power drops, servers continue running on UPS batteries until the generator reaches stable output.",
+        "exam": "UPS = immediate/short term. Generator = longer duration.",
+        "breakdown": [
+          {
+            "term": "Power stability",
+            "explanation": "Within Uninterrupted Power Supply (UPS), this is a specific factor you should be able to recognize and explain. Connect it to the purpose of Power rather than memorizing the phrase by itself."
+          },
+          {
+            "term": "Protecting against voltage fluctuations",
+            "explanation": "Within Uninterrupted Power Supply (UPS), this is a specific factor you should be able to recognize and explain. Connect it to the purpose of Power rather than memorizing the phrase by itself."
+          },
+          {
+            "term": "Graceful shutdown",
+            "explanation": "Within Uninterrupted Power Supply (UPS), this is a specific factor you should be able to recognize and explain. Connect it to the purpose of Power rather than memorizing the phrase by itself."
+          }
+        ],
+        "defs": [
+          {
+            "term": "UPS",
+            "definition": "Uninterruptible Power Supply: provides immediate short-term power during an outage or power-quality event."
+          }
+        ],
+        "check_q": "Without looking back, explain Uninterrupted Power Supply (UPS) and describe at least two key ideas from this section.",
+        "check_a": "An Uninterruptible Power Supply (UPS) provides immediate battery-backed power and often power conditioning during short outages or while a generator starts. Key ideas include: Power stability; Protecting against voltage fluctuations; Graceful shutdown.",
+        "points": [
+          "Power stability",
+          "Protecting against voltage fluctuations",
+          "Graceful shutdown"
+        ]
+      }
+    },
+    {
+      "n": 5,
+      "title": "Secure Baselines",
+      "points": [],
+      "raw": "Secure Baselines",
+      "instructional": false,
+      "teach": "Read the source points, then explain the slide without looking. On Security+, recognition is not enough—you should be able to apply the concept to a scenario.",
+      "defs": []
+    }
+  ],
+  "slide_count": 5,
+  "instructional_count": 3,
+  "concepts": [
+    "Significance",
+    "Generators",
+    "Uninterrupted Power Supply (UPS)"
+  ],
+  "source_filename": "13.07_Power.pdf"
+}

@@ -1,0 +1,442 @@
+[
+  {
+    "q": "A company wants a control that will automatically block malicious network traffic after detecting it. What is the BEST choice?",
+    "choices": [
+      "IDS",
+      "IPS",
+      "SIEM",
+      "Packet analyzer"
+    ],
+    "answer": 1,
+    "why": "An IPS both detects and actively blocks malicious traffic. An IDS primarily detects and alerts."
+  },
+  {
+    "q": "Which security principle is primarily protected by hashing a downloaded file and comparing the result with the publisher's hash?",
+    "choices": [
+      "Confidentiality",
+      "Integrity",
+      "Availability",
+      "Authorization"
+    ],
+    "answer": 1,
+    "why": "Hash comparison verifies that the file was not improperly changed, which protects integrity."
+  },
+  {
+    "q": "An attacker tries 'Summer2026!' against hundreds of different usernames. What attack is this?",
+    "choices": [
+      "Credential stuffing",
+      "Brute force",
+      "Password spraying",
+      "Dictionary attack"
+    ],
+    "answer": 2,
+    "why": "Password spraying uses one or a few common passwords against many accounts."
+  },
+  {
+    "q": "A scanner is given administrator credentials so it can inspect installed software and configuration settings. What type of scan is being performed?",
+    "choices": [
+      "Non-credentialed",
+      "Credentialed",
+      "Passive",
+      "Black-box"
+    ],
+    "answer": 1,
+    "why": "A credentialed scan uses legitimate authentication to gain deeper visibility."
+  },
+  {
+    "q": "Which term is the identifier assigned to a known vulnerability?",
+    "choices": [
+      "CVSS",
+      "CVE",
+      "SCAP",
+      "SIEM"
+    ],
+    "answer": 1,
+    "why": "CVE is the catalog identifier/name. CVSS is a scoring system for severity."
+  },
+  {
+    "q": "A security tool reports a vulnerability that is later confirmed not to exist. What is this?",
+    "choices": [
+      "False negative",
+      "True positive",
+      "False positive",
+      "True negative"
+    ],
+    "answer": 2,
+    "why": "A false positive is a false alarm: the tool reports a problem, but reality shows none."
+  },
+  {
+    "q": "Which recovery site is fully equipped and intended to provide the fastest recovery?",
+    "choices": [
+      "Cold site",
+      "Warm site",
+      "Hot site",
+      "Mobile site"
+    ],
+    "answer": 2,
+    "why": "A hot site is fully equipped and ready, making it the fastest and typically most expensive option."
+  },
+  {
+    "q": "A company cannot add MFA to a legacy application, so it requires users to connect through a secured jump server with stronger authentication. The jump server is acting as what type of control?",
+    "choices": [
+      "Directive",
+      "Corrective",
+      "Compensating",
+      "Detective"
+    ],
+    "answer": 2,
+    "why": "A compensating control is an alternative used when the preferred control cannot be implemented."
+  },
+  {
+    "q": "Which technology is specifically designed to protect web applications from malicious HTTP requests?",
+    "choices": [
+      "WAF",
+      "NAC",
+      "VPN concentrator",
+      "Load balancer"
+    ],
+    "answer": 0,
+    "why": "A Web Application Firewall (WAF) protects web application traffic."
+  },
+  {
+    "q": "A user changes account?id=100 to account?id=101 and can now see another customer's data. What vulnerability is MOST likely present?",
+    "choices": [
+      "XSS",
+      "IDOR",
+      "CSRF",
+      "Race condition"
+    ],
+    "answer": 1,
+    "why": "IDOR is broken authorization involving direct object identifiers."
+  },
+  {
+    "q": "Which testing method examines source code without running the application?",
+    "choices": [
+      "DAST",
+      "SAST",
+      "Fuzzing",
+      "Penetration testing"
+    ],
+    "answer": 1,
+    "why": "SAST is static application security testing and analyzes source/static code."
+  },
+  {
+    "q": "A digital signature is MOST directly associated with which combination?",
+    "choices": [
+      "Confidentiality, availability, authorization",
+      "Integrity, authentication, non-repudiation",
+      "Availability, accounting, confidentiality",
+      "Encryption, masking, tokenization"
+    ],
+    "answer": 1,
+    "why": "Digital signatures provide integrity, authentication, and non-repudiation."
+  },
+  {
+    "q": "Which certificate mechanism performs an online status check rather than downloading a revocation list?",
+    "choices": [
+      "CRL",
+      "OCSP",
+      "CSR",
+      "RA"
+    ],
+    "answer": 1,
+    "why": "OCSP queries certificate status online; CRL is the list."
+  },
+  {
+    "q": "A security architect separates guest Wi-Fi from internal servers using VLANs and firewall rules. What is the primary security goal?",
+    "choices": [
+      "Key stretching",
+      "Segmentation",
+      "Data masking",
+      "Non-repudiation"
+    ],
+    "answer": 1,
+    "why": "Segmentation limits lateral movement and helps contain compromise."
+  },
+  {
+    "q": "Which option BEST describes a false negative?",
+    "choices": [
+      "A tool alerts on safe activity",
+      "A real vulnerability is missed",
+      "A vulnerability is correctly identified",
+      "Safe activity is correctly ignored"
+    ],
+    "answer": 1,
+    "why": "A false negative means the system says there is no issue when a real issue exists."
+  },
+  {
+    "q": "Which mechanism is one-way and is commonly used for integrity verification?",
+    "choices": [
+      "Encryption",
+      "Encoding",
+      "Hashing",
+      "Tokenization"
+    ],
+    "answer": 2,
+    "why": "Hashing is one-way and is commonly used for integrity verification."
+  },
+  {
+    "q": "A firewall is configured so that when it fails, traffic is denied rather than allowed through. What behavior is this?",
+    "choices": [
+      "Fail-open",
+      "Fail-closed",
+      "Load balancing",
+      "Failover"
+    ],
+    "answer": 1,
+    "why": "Fail-closed denies access when the control fails, prioritizing security."
+  },
+  {
+    "q": "Which cloud-related weakness is MOST directly illustrated by a storage bucket accidentally configured for public access?",
+    "choices": [
+      "Side-channel attack",
+      "Misconfiguration",
+      "Race condition",
+      "Key stretching"
+    ],
+    "answer": 1,
+    "why": "Publicly exposing a resource through incorrect settings is a classic cloud misconfiguration."
+  },
+  {
+    "q": "An organization restores systems from a point-in-time backup after ransomware. Which CIA objective is MOST directly being restored?",
+    "choices": [
+      "Confidentiality",
+      "Availability",
+      "Non-repudiation",
+      "Authorization"
+    ],
+    "answer": 1,
+    "why": "Restoring systems allows authorized users to regain access, restoring availability."
+  },
+  {
+    "q": "Which power technology provides immediate short-term power while a generator starts?",
+    "choices": [
+      "UPS",
+      "PDU",
+      "Load balancer",
+      "Hot site"
+    ],
+    "answer": 0,
+    "why": "A UPS supplies immediate short-term power and can bridge the gap until a generator is available."
+  },
+  {
+    "q": "Which attack uses previously stolen username/password pairs on a different service?",
+    "choices": [
+      "Password spraying",
+      "Credential stuffing",
+      "Brute force",
+      "Pass-the-hash"
+    ],
+    "answer": 1,
+    "why": "Credential stuffing reuses stolen credential pairs on other services."
+  },
+  {
+    "q": "Which statement about replication is MOST accurate?",
+    "choices": [
+      "Replication always replaces backups",
+      "Replication guarantees corrupted data is removed",
+      "Replication can improve availability but may also copy corruption",
+      "Replication is identical to hashing"
+    ],
+    "answer": 2,
+    "why": "Replication improves availability, but bad changes can replicate too, so independent backups remain necessary."
+  },
+  {
+    "q": "Which actor is MOST likely to be well-funded, patient, and motivated by espionage or geopolitical advantage?",
+    "choices": [
+      "Script kiddie",
+      "Nation-state",
+      "Hacktivist",
+      "Casual insider"
+    ],
+    "answer": 1,
+    "why": "Nation-state actors commonly have significant resources and espionage/geopolitical motivations."
+  },
+  {
+    "q": "What is the BEST mitigation for SQL injection in application code?",
+    "choices": [
+      "Prepared/parameterized queries",
+      "Disabling TLS",
+      "Increasing entropy",
+      "Using a hot site"
+    ],
+    "answer": 0,
+    "why": "Prepared or parameterized queries prevent user input from changing the structure of database commands."
+  },
+  {
+    "q": "Which device or service gives administrators a controlled, logged access point into sensitive systems?",
+    "choices": [
+      "Honeytoken",
+      "Jump server",
+      "Warm site",
+      "Load balancer"
+    ],
+    "answer": 1,
+    "why": "A jump server centralizes and controls administrative access to sensitive systems."
+  },
+  {
+    "q": "Which technology primarily centralizes and correlates logs from many security systems?",
+    "choices": [
+      "SIEM",
+      "IPS",
+      "RA",
+      "DLP"
+    ],
+    "answer": 0,
+    "why": "A SIEM aggregates and correlates events/logs for search, alerting, and investigation."
+  },
+  {
+    "q": "Which item is an example of a deterrent control?",
+    "choices": [
+      "Visible security camera",
+      "Restore from backup",
+      "Hash comparison",
+      "Database encryption"
+    ],
+    "answer": 0,
+    "why": "A visible camera can discourage unwanted behavior and therefore functions as a deterrent."
+  },
+  {
+    "q": "Which phrase BEST captures Zero Trust?",
+    "choices": [
+      "Trust internal devices automatically",
+      "Never trust, continuously verify",
+      "Encrypt only external traffic",
+      "Administrators should have unrestricted access"
+    ],
+    "answer": 1,
+    "why": "Zero Trust assumes no implicit trust and requires continuous verification."
+  },
+  {
+    "q": "Which statement BEST distinguishes a worm from a virus?",
+    "choices": [
+      "A worm self-replicates across networks",
+      "A virus is always ransomware",
+      "A worm requires a host file",
+      "A virus cannot spread"
+    ],
+    "answer": 0,
+    "why": "A worm self-replicates across networks; a virus typically attaches to a host file."
+  },
+  {
+    "q": "A team discusses how they would respond to a ransomware incident without actually taking production systems offline. What type of exercise is this?",
+    "choices": [
+      "Full interruption",
+      "Tabletop",
+      "Credentialed scan",
+      "Dynamic test"
+    ],
+    "answer": 1,
+    "why": "A tabletop exercise is a discussion-based walkthrough of an incident scenario."
+  },
+  {
+    "q": "Which mechanism adds random data before a password is hashed?",
+    "choices": [
+      "Salting",
+      "Masking",
+      "Encoding",
+      "Replication"
+    ],
+    "answer": 0,
+    "why": "Salting adds random data before hashing to defeat precomputed password-hash attacks."
+  },
+  {
+    "q": "What is the primary benefit of key stretching?",
+    "choices": [
+      "Makes password guesses slower and more expensive",
+      "Provides network redundancy",
+      "Creates certificate revocation lists",
+      "Hides the last four digits of data"
+    ],
+    "answer": 0,
+    "why": "Key stretching deliberately increases the computational cost of password guessing."
+  },
+  {
+    "q": "Which data protection technique displays **** **** **** 1234 instead of the full card number?",
+    "choices": [
+      "Tokenization",
+      "Masking",
+      "Hashing",
+      "Replication"
+    ],
+    "answer": 1,
+    "why": "Masking hides part of a value while leaving enough visible for legitimate use."
+  },
+  {
+    "q": "Which statement BEST describes NetFlow?",
+    "choices": [
+      "It always stores complete packet payloads",
+      "It summarizes network flow metadata",
+      "It issues digital certificates",
+      "It performs static source-code analysis"
+    ],
+    "answer": 1,
+    "why": "NetFlow summarizes traffic flows such as endpoints, volume, and timing rather than necessarily capturing full payloads."
+  },
+  {
+    "q": "A device automatically notifies the network management platform that an interface went down. What is this notification commonly called?",
+    "choices": [
+      "SNMP trap",
+      "OCSP response",
+      "CVE",
+      "SAST finding"
+    ],
+    "answer": 0,
+    "why": "An SNMP trap is a device-generated notification sent to an SNMP manager."
+  },
+  {
+    "q": "What is the primary purpose of DLP?",
+    "choices": [
+      "Prevent unauthorized movement of sensitive data",
+      "Distribute web traffic",
+      "Generate cryptographic keys",
+      "Authenticate switch ports"
+    ],
+    "answer": 0,
+    "why": "Data Loss Prevention monitors and blocks unauthorized movement or disclosure of sensitive data."
+  },
+  {
+    "q": "Which technology is commonly used for port-based network access control?",
+    "choices": [
+      "802.1X",
+      "NAT",
+      "OCSP",
+      "SCAP"
+    ],
+    "answer": 0,
+    "why": "802.1X provides port-based network access control and commonly works with EAP."
+  },
+  {
+    "q": "A vulnerability management team applies a patch. What should it do NEXT to confirm the issue is resolved?",
+    "choices": [
+      "Assume success",
+      "Rescan or otherwise validate remediation",
+      "Delete all logs",
+      "Disable monitoring"
+    ],
+    "answer": 1,
+    "why": "Remediation should be validated, often by rescanning, rather than assumed successful."
+  },
+  {
+    "q": "Which technique replaces sensitive data with a non-sensitive stand-in while the real value is stored elsewhere?",
+    "choices": [
+      "Masking",
+      "Tokenization",
+      "Hashing",
+      "Encoding"
+    ],
+    "answer": 1,
+    "why": "Tokenization replaces the sensitive value with a token while the original is retained securely elsewhere."
+  },
+  {
+    "q": "A malicious script is injected into a website and runs in other users' browsers. What attack is this?",
+    "choices": [
+      "SQL injection",
+      "XSS",
+      "CSRF",
+      "XXE"
+    ],
+    "answer": 1,
+    "why": "Cross-site scripting (XSS) executes malicious client-side script in users' browsers."
+  }
+]

@@ -1,0 +1,228 @@
+{
+  "id": "08.06",
+  "chapter": 8,
+  "sub": 6,
+  "title": "Password attacks",
+  "chapter_name": "Attack Indicators",
+  "slides": [
+    {
+      "n": 1,
+      "title": "Password Attack Indicators",
+      "points": [],
+      "raw": "Password Attack Indicators",
+      "instructional": false,
+      "teach": "Treat these as observable clues. On the exam, be ready to infer the most likely attack from the pattern of indicators.",
+      "defs": []
+    },
+    {
+      "n": 2,
+      "title": "Spraying",
+      "points": [
+        "Unusual access patterns",
+        "Simultaneous login attempts"
+      ],
+      "raw": "Spraying\nUnusual access patterns\nSimultaneous login attempts",
+      "instructional": true,
+      "teach": "Read the source points, then explain the slide without looking. On Security+, recognition is not enough—you should be able to apply the concept to a scenario.",
+      "defs": [],
+      "course": {
+        "learn": "Password spraying tries one or a small number of common passwords against many accounts. It is designed to avoid lockout thresholds that would trigger if many guesses hit one account.",
+        "why": "Large organizations often have some users with weak/common passwords.",
+        "example": "An attacker tries “Welcome2026!” against 2,000 usernames, then waits before trying another password.",
+        "exam": "One/few passwords → many users = spraying. Stolen username/password pairs reused elsewhere = credential stuffing.",
+        "breakdown": [
+          {
+            "term": "Unusual access patterns",
+            "explanation": "This concerns who or what can reach a resource and what actions are permitted once access is granted."
+          },
+          {
+            "term": "Simultaneous login attempts",
+            "explanation": "Within Spraying, this is a specific factor you should be able to recognize and explain. Connect it to the purpose of Password attacks rather than memorizing the phrase by itself."
+          }
+        ],
+        "defs": [],
+        "check_q": "Without looking back, explain Spraying and describe at least two key ideas from this section.",
+        "check_a": "Password spraying tries one or a small number of common passwords against many accounts. It is designed to avoid lockout thresholds that would trigger if many guesses hit one account. Key ideas include: Unusual access patterns; Simultaneous login attempts.",
+        "points": [
+          "Unusual access patterns",
+          "Simultaneous login attempts"
+        ]
+      }
+    },
+    {
+      "n": 3,
+      "title": "Brute-force",
+      "points": [
+        "Multiple failed",
+        "login attempts",
+        "Unusual",
+        "access times"
+      ],
+      "raw": "Brute-force\nMultiple failed\nlogin attempts\nUnusual\naccess times",
+      "instructional": true,
+      "teach": "Read the source points, then explain the slide without looking. On Security+, recognition is not enough—you should be able to apply the concept to a scenario.",
+      "defs": [],
+      "course": {
+        "learn": "A brute-force attack systematically tries many possible credentials, keys, or values until one works. It trades time and computing power for certainty.",
+        "why": "Weak or short secrets make exhaustive guessing practical.",
+        "example": "An attacker tries every four-digit PIN from 0000 through 9999.",
+        "exam": "Brute force = exhaustive guessing. Password spraying uses a small number of common passwords across many accounts; dictionary attacks use likely words/passwords.",
+        "breakdown": [
+          {
+            "term": "Multiple failed login attempts",
+            "explanation": "Within Brute-force, this is a specific factor you should be able to recognize and explain. Connect it to the purpose of Password attacks rather than memorizing the phrase by itself."
+          },
+          {
+            "term": "Unusual access times",
+            "explanation": "This concerns who or what can reach a resource and what actions are permitted once access is granted."
+          }
+        ],
+        "defs": [],
+        "check_q": "Without looking back, explain Brute-force and describe at least two key ideas from this section.",
+        "check_a": "A brute-force attack systematically tries many possible credentials, keys, or values until one works. It trades time and computing power for certainty. Key ideas include: Multiple failed login attempts; Unusual access times.",
+        "points": [
+          "Multiple failed login attempts",
+          "Unusual access times"
+        ]
+      }
+    },
+    {
+      "n": 4,
+      "title": "Dictionary",
+      "points": [
+        "Repeated login",
+        "attempts with",
+        "common words",
+        "Sudden increase",
+        "in failed login",
+        "attempts"
+      ],
+      "raw": "Dictionary\nRepeated login\nattempts with\ncommon words\nSudden increase\nin failed login\nattempts",
+      "instructional": true,
+      "teach": "Read the source points, then explain the slide without looking. On Security+, recognition is not enough—you should be able to apply the concept to a scenario.",
+      "defs": [],
+      "course": {
+        "learn": "A dictionary attack tries a curated list of likely passwords, words, patterns, and common variations instead of every mathematically possible value.",
+        "why": "Human-chosen passwords are predictable, so likely guesses can be far more efficient than pure brute force.",
+        "example": "A cracking tool tries common passwords, names, seasons, and substitutions from a wordlist against stolen hashes.",
+        "exam": "Wordlist/likely passwords = dictionary attack; exhaustive all combinations = brute force.",
+        "breakdown": [
+          {
+            "term": "Repeated login attempts with",
+            "explanation": "Within Dictionary, this is a specific factor you should be able to recognize and explain. Connect it to the purpose of Password attacks rather than memorizing the phrase by itself."
+          },
+          {
+            "term": "common words",
+            "explanation": "Within Dictionary, this is a specific factor you should be able to recognize and explain. Connect it to the purpose of Password attacks rather than memorizing the phrase by itself."
+          },
+          {
+            "term": "Sudden increase in failed login",
+            "explanation": "Within Dictionary, this is a specific factor you should be able to recognize and explain. Connect it to the purpose of Password attacks rather than memorizing the phrase by itself."
+          },
+          {
+            "term": "attempts",
+            "explanation": "Within Dictionary, this is a specific factor you should be able to recognize and explain. Connect it to the purpose of Password attacks rather than memorizing the phrase by itself."
+          }
+        ],
+        "defs": [],
+        "check_q": "Without looking back, explain Dictionary and describe at least two key ideas from this section.",
+        "check_a": "A dictionary attack tries a curated list of likely passwords, words, patterns, and common variations instead of every mathematically possible value. Key ideas include: Repeated login attempts with; common words; Sudden increase in failed login; attempts.",
+        "points": [
+          "Repeated login attempts with",
+          "common words",
+          "Sudden increase in failed login",
+          "attempts"
+        ]
+      }
+    },
+    {
+      "n": 5,
+      "title": "General Password Attack Mitigation Methods",
+      "points": [
+        "Strong Password Policies",
+        "Account Lockout Policies",
+        "Rate Limiting",
+        "Multi-Factor Authentication (MFA)",
+        "Monitoring and Alerts"
+      ],
+      "raw": "General Password Attack Mitigation\nMethods\nStrong Password Policies\nAccount Lockout Policies\nRate Limiting\nMulti-Factor Authentication (MFA)\nMonitoring and Alerts",
+      "instructional": true,
+      "teach": "These are defensive actions. Learn what each one reduces and when it is the best response to a scenario.",
+      "defs": [
+        [
+          "Authentication",
+          "Proving an identity—answering “who are you?”"
+        ],
+        [
+          "MFA",
+          "Multi-Factor Authentication: requires factors from more than one authentication category."
+        ]
+      ],
+      "course": {
+        "learn": "Password-attack defenses combine strong password policy with rate limiting, lockout/throttling, MFA, secure password hashing, monitoring, and detection of breached credentials.",
+        "why": "No single password rule stops every online and offline attack path.",
+        "example": "A login system limits attempts per account and IP, requires MFA, and alerts on password spraying patterns.",
+        "exam": "Rate limiting/lockout address online guessing; salting/key stretching protect stored hashes; MFA reduces the value of a stolen password.",
+        "breakdown": [
+          {
+            "term": "Strong Password Policies",
+            "explanation": "This is one of the mechanisms used to implement or support Password attacks. On the exam, focus on what problem it solves and where it fits."
+          },
+          {
+            "term": "Account Lockout Policies",
+            "explanation": "This is one of the mechanisms used to implement or support Password attacks. On the exam, focus on what problem it solves and where it fits."
+          },
+          {
+            "term": "Rate Limiting",
+            "explanation": "This is one of the mechanisms used to implement or support Password attacks. On the exam, focus on what problem it solves and where it fits."
+          },
+          {
+            "term": "Multi-Factor Authentication (MFA)",
+            "explanation": "Require authentication factors from more than one factor category, reducing dependence on one stolen secret."
+          },
+          {
+            "term": "Monitoring and Alerts",
+            "explanation": "Security monitoring continuously observes systems, networks, applications, and logs for suspicious activity, failures, policy violations, and indicators of compromise."
+          }
+        ],
+        "defs": [
+          {
+            "term": "Authentication",
+            "definition": "Proving an identity—answering “who are you?”"
+          },
+          {
+            "term": "MFA",
+            "definition": "Multi-Factor Authentication: requires factors from more than one authentication category."
+          }
+        ],
+        "check_q": "Without looking back, explain General Password Attack Mitigation Methods and describe at least two key ideas from this section.",
+        "check_a": "Password-attack defenses combine strong password policy with rate limiting, lockout/throttling, MFA, secure password hashing, monitoring, and detection of breached credentials. Key ideas include: Strong Password Policies; Account Lockout Policies; Rate Limiting; Multi-Factor Authentication (MFA); Monitoring and Alerts.",
+        "points": [
+          "Strong Password Policies",
+          "Account Lockout Policies",
+          "Rate Limiting",
+          "Multi-Factor Authentication (MFA)",
+          "Monitoring and Alerts"
+        ]
+      }
+    },
+    {
+      "n": 6,
+      "title": "Indicators",
+      "points": [],
+      "raw": "Indicators",
+      "instructional": false,
+      "teach": "Treat these as observable clues. On the exam, be ready to infer the most likely attack from the pattern of indicators.",
+      "defs": []
+    }
+  ],
+  "slide_count": 6,
+  "instructional_count": 4,
+  "concepts": [
+    "Spraying",
+    "Brute-force",
+    "Dictionary",
+    "General Password Attack Mitigation Methods"
+  ],
+  "source_filename": "08.06_Password_attacks.pdf"
+}

@@ -1,0 +1,146 @@
+{
+  "id": "12.03",
+  "chapter": 12,
+  "sub": 3,
+  "title": "General data considerations",
+  "chapter_name": "Data Security",
+  "slides": [
+    {
+      "n": 1,
+      "title": "General Data Considerations",
+      "points": [],
+      "raw": "General Data Considerations",
+      "instructional": false,
+      "teach": "These are design tradeoffs. Learn why each factor matters rather than memorizing the words alone.",
+      "defs": []
+    },
+    {
+      "n": 2,
+      "title": "Data States",
+      "points": [
+        "Data at Rest",
+        "Data in Transit",
+        "Data in Use"
+      ],
+      "raw": "Data States\nData at Rest\nData in Transit\nData in Use",
+      "instructional": true,
+      "teach": "Read the source points, then explain the slide without looking. On Security+, recognition is not enough—you should be able to apply the concept to a scenario.",
+      "defs": [],
+      "course": {
+        "learn": "Data has different security needs depending on whether it is at rest, in transit, or in use. At rest means stored, in transit means moving across networks, and in use means actively processed in memory/CPU.",
+        "why": "A control that protects one state may not protect the others.",
+        "example": "Disk encryption protects a database file at rest; TLS protects records in transit; access controls and protected execution help while data is in use.",
+        "exam": "CompTIA often asks which control fits the data state. TLS/VPN = transit; disk/database encryption = rest.",
+        "breakdown": [
+          {
+            "term": "Data at Rest",
+            "explanation": "Within Data States, this is a specific factor you should be able to recognize and explain. Connect it to the purpose of General data considerations rather than memorizing the phrase by itself."
+          },
+          {
+            "term": "Data in Transit",
+            "explanation": "Within Data States, this is a specific factor you should be able to recognize and explain. Connect it to the purpose of General data considerations rather than memorizing the phrase by itself."
+          },
+          {
+            "term": "Data in Use",
+            "explanation": "Within Data States, this is a specific factor you should be able to recognize and explain. Connect it to the purpose of General data considerations rather than memorizing the phrase by itself."
+          }
+        ],
+        "defs": [],
+        "check_q": "Without looking back, explain Data States and describe at least two key ideas from this section.",
+        "check_a": "Data has different security needs depending on whether it is at rest, in transit, or in use. At rest means stored, in transit means moving across networks, and in use means actively processed in memory/CPU. Key ideas include: Data at Rest; Data in Transit; Data in Use.",
+        "points": [
+          "Data at Rest",
+          "Data in Transit",
+          "Data in Use"
+        ]
+      }
+    },
+    {
+      "n": 3,
+      "title": "Data Sovereignty",
+      "points": [
+        "Where data is stored",
+        "Where data is processed"
+      ],
+      "raw": "Data Sovereignty\nWhere data is stored\nWhere data is processed",
+      "instructional": true,
+      "teach": "Read the source points, then explain the slide without looking. On Security+, recognition is not enough—you should be able to apply the concept to a scenario.",
+      "defs": [],
+      "course": {
+        "learn": "Data sovereignty means data is subject to the laws and jurisdiction of the location where it is stored or processed. Cloud replication can move data across borders without users realizing it.",
+        "why": "Legal and contractual obligations may restrict where specific data can reside.",
+        "example": "A company configures a cloud service so EU customer data remains in approved European regions.",
+        "exam": "Location/jurisdiction restrictions = data sovereignty/residency. Geolocation can help identify or enforce location.",
+        "breakdown": [
+          {
+            "term": "Where data is stored",
+            "explanation": "Within Data Sovereignty, this is a specific factor you should be able to recognize and explain. Connect it to the purpose of General data considerations rather than memorizing the phrase by itself."
+          },
+          {
+            "term": "Where data is processed",
+            "explanation": "Within Data Sovereignty, this is a specific factor you should be able to recognize and explain. Connect it to the purpose of General data considerations rather than memorizing the phrase by itself."
+          }
+        ],
+        "defs": [],
+        "check_q": "Without looking back, explain Data Sovereignty and describe at least two key ideas from this section.",
+        "check_a": "Data sovereignty means data is subject to the laws and jurisdiction of the location where it is stored or processed. Cloud replication can move data across borders without users realizing it. Key ideas include: Where data is stored; Where data is processed.",
+        "points": [
+          "Where data is stored",
+          "Where data is processed"
+        ]
+      }
+    },
+    {
+      "n": 4,
+      "title": "Geolocation",
+      "points": [
+        "Device Geolocation",
+        "User Geolocation"
+      ],
+      "raw": "Geolocation\nDevice Geolocation\nUser Geolocation",
+      "instructional": true,
+      "teach": "Read the source points, then explain the slide without looking. On Security+, recognition is not enough—you should be able to apply the concept to a scenario.",
+      "defs": [],
+      "course": {
+        "learn": "Geolocation identifies or uses the physical location of a user, device, or resource. It can support access policy, fraud detection, data-residency enforcement, and incident investigation.",
+        "why": "Location is useful context but can be inaccurate or spoofed, so it should not be the only authentication factor.",
+        "example": "A login from a country where the employee has never traveled triggers an additional authentication challenge.",
+        "exam": "Impossible travel and unusual location are indicators; geographic restrictions can also enforce data or access policy.",
+        "breakdown": [
+          {
+            "term": "Device Geolocation",
+            "explanation": "Determine or use the physical/geographic location of a device, user, or data resource."
+          },
+          {
+            "term": "User Geolocation",
+            "explanation": "Determine or use the physical/geographic location of a device, user, or data resource."
+          }
+        ],
+        "defs": [],
+        "check_q": "Without looking back, explain Geolocation and describe at least two key ideas from this section.",
+        "check_a": "Geolocation identifies or uses the physical location of a user, device, or resource. It can support access policy, fraud detection, data-residency enforcement, and incident investigation. Key ideas include: Device Geolocation; User Geolocation.",
+        "points": [
+          "Device Geolocation",
+          "User Geolocation"
+        ]
+      }
+    },
+    {
+      "n": 5,
+      "title": "Methods to Secure Data",
+      "points": [],
+      "raw": "Methods to Secure Data",
+      "instructional": false,
+      "teach": "Read the source points, then explain the slide without looking. On Security+, recognition is not enough—you should be able to apply the concept to a scenario.",
+      "defs": []
+    }
+  ],
+  "slide_count": 5,
+  "instructional_count": 3,
+  "concepts": [
+    "Data States",
+    "Data Sovereignty",
+    "Geolocation"
+  ],
+  "source_filename": "12.03_General_data_considerations.pdf"
+}

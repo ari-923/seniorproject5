@@ -1,0 +1,180 @@
+{
+  "id": "09.04",
+  "chapter": 9,
+  "sub": 4,
+  "title": "Hardening techniques",
+  "chapter_name": "Mitigation & Hardening",
+  "slides": [
+    {
+      "n": 1,
+      "title": "Hardening Techniques",
+      "points": [],
+      "raw": "Hardening Techniques",
+      "instructional": false,
+      "teach": "These are defensive actions. Learn what each one reduces and when it is the best response to a scenario.",
+      "defs": []
+    },
+    {
+      "n": 2,
+      "title": "Hardening Techniques",
+      "points": [
+        "Encryption",
+        "Installation of Endpoint",
+        "Protection",
+        "Host-Based Firewall",
+        "Host-Based Intrusion",
+        "Prevention System",
+        "(HIPS)"
+      ],
+      "raw": "Hardening Techniques\nEncryption\nInstallation of Endpoint\nProtection\nHost-Based Firewall\nHost-Based Intrusion\nPrevention System\n(HIPS)",
+      "instructional": true,
+      "teach": "These are defensive actions. Learn what each one reduces and when it is the best response to a scenario.",
+      "defs": [
+        [
+          "Encryption",
+          "Transforms readable plaintext into ciphertext using an algorithm and key so unauthorized parties cannot understand it."
+        ],
+        [
+          "Firewall",
+          "A control that permits or blocks network traffic according to configured rules."
+        ]
+      ],
+      "course": {
+        "learn": "Hardening reduces attack surface by disabling unnecessary services, closing unused ports, removing unused software/accounts, changing defaults, enforcing secure configuration, patching, and enabling appropriate protections.",
+        "why": "Every unnecessary feature is another component that can fail or be attacked.",
+        "example": "A new server is built from a secure baseline: unused packages removed, SSH restricted, default accounts disabled, logging enabled, and patches applied.",
+        "exam": "Hardening = reduce exposure and insecure defaults. Baselines help keep hardening consistent.",
+        "breakdown": [
+          {
+            "term": "Encryption",
+            "explanation": "Protect readable data by converting it to ciphertext that requires an authorized key to recover."
+          },
+          {
+            "term": "Installation of Endpoint",
+            "explanation": "Within Hardening Techniques, this is a specific factor you should be able to recognize and explain. Connect it to the purpose of Hardening techniques rather than memorizing the phrase by itself."
+          },
+          {
+            "term": "Protection",
+            "explanation": "Within Hardening Techniques, this is a specific factor you should be able to recognize and explain. Connect it to the purpose of Hardening techniques rather than memorizing the phrase by itself."
+          },
+          {
+            "term": "Host-Based Firewall",
+            "explanation": "Within Hardening Techniques, this is a specific factor you should be able to recognize and explain. Connect it to the purpose of Hardening techniques rather than memorizing the phrase by itself."
+          },
+          {
+            "term": "Host-Based Intrusion",
+            "explanation": "Within Hardening Techniques, this is a specific factor you should be able to recognize and explain. Connect it to the purpose of Hardening techniques rather than memorizing the phrase by itself."
+          },
+          {
+            "term": "Prevention System",
+            "explanation": "Within Hardening Techniques, this is a specific factor you should be able to recognize and explain. Connect it to the purpose of Hardening techniques rather than memorizing the phrase by itself."
+          },
+          {
+            "term": "(HIPS)",
+            "explanation": "Within Hardening Techniques, this is a specific factor you should be able to recognize and explain. Connect it to the purpose of Hardening techniques rather than memorizing the phrase by itself."
+          }
+        ],
+        "defs": [
+          {
+            "term": "Encryption",
+            "definition": "Transforms readable plaintext into ciphertext using an algorithm and key so unauthorized parties cannot understand it."
+          },
+          {
+            "term": "Firewall",
+            "definition": "A control that permits or blocks network traffic according to configured rules."
+          }
+        ],
+        "check_q": "Without looking back, explain Hardening Techniques and describe at least two key ideas from this section.",
+        "check_a": "Hardening reduces attack surface by disabling unnecessary services, closing unused ports, removing unused software/accounts, changing defaults, enforcing secure configuration, patching, and enabling appropriate protections. Key ideas include: Encryption; Installation of Endpoint; Protection; Host-Based Firewall; Host-Based Intrusion.",
+        "points": [
+          "Encryption",
+          "Installation of Endpoint",
+          "Protection",
+          "Host-Based Firewall",
+          "Host-Based Intrusion",
+          "Prevention System",
+          "(HIPS)"
+        ]
+      }
+    },
+    {
+      "n": 3,
+      "title": "Hardening Techniques",
+      "points": [
+        "Disabling",
+        "Ports/Protocols",
+        "Default",
+        "Password",
+        "Changes",
+        "Removal of",
+        "Unnecessary",
+        "Software"
+      ],
+      "raw": "Hardening Techniques\nDisabling\nPorts/Protocols\nDefault\nPassword\nChanges\nRemoval of\nUnnecessary\nSoftware",
+      "instructional": true,
+      "teach": "These are defensive actions. Learn what each one reduces and when it is the best response to a scenario.",
+      "defs": [],
+      "course": {
+        "learn": "Hardening reduces attack surface by disabling unnecessary services, closing unused ports, removing unused software/accounts, changing defaults, enforcing secure configuration, patching, and enabling appropriate protections.",
+        "why": "Every unnecessary feature is another component that can fail or be attacked.",
+        "example": "A new server is built from a secure baseline: unused packages removed, SSH restricted, default accounts disabled, logging enabled, and patches applied.",
+        "exam": "Hardening = reduce exposure and insecure defaults. Baselines help keep hardening consistent.",
+        "breakdown": [
+          {
+            "term": "Disabling",
+            "explanation": "Within Hardening Techniques, this is a specific factor you should be able to recognize and explain. Connect it to the purpose of Hardening techniques rather than memorizing the phrase by itself."
+          },
+          {
+            "term": "Ports/Protocols",
+            "explanation": "Within Hardening Techniques, this is a specific factor you should be able to recognize and explain. Connect it to the purpose of Hardening techniques rather than memorizing the phrase by itself."
+          },
+          {
+            "term": "Default",
+            "explanation": "Vendor-supplied usernames/passwords that attackers commonly know and that should be changed before production use."
+          },
+          {
+            "term": "Password",
+            "explanation": "Use hard-to-guess credentials and limit what authenticated users can reach."
+          },
+          {
+            "term": "Changes",
+            "explanation": "Within Hardening Techniques, this is a specific factor you should be able to recognize and explain. Connect it to the purpose of Hardening techniques rather than memorizing the phrase by itself."
+          },
+          {
+            "term": "Removal of Unnecessary",
+            "explanation": "Within Hardening Techniques, this is a specific factor you should be able to recognize and explain. Connect it to the purpose of Hardening techniques rather than memorizing the phrase by itself."
+          },
+          {
+            "term": "Software",
+            "explanation": "Detect, block, quarantine, or remove malicious software on endpoints."
+          }
+        ],
+        "defs": [],
+        "check_q": "Without looking back, explain Hardening Techniques and describe at least two key ideas from this section.",
+        "check_a": "Hardening reduces attack surface by disabling unnecessary services, closing unused ports, removing unused software/accounts, changing defaults, enforcing secure configuration, patching, and enabling appropriate protections. Key ideas include: Disabling; Ports/Protocols; Default; Password; Changes.",
+        "points": [
+          "Disabling",
+          "Ports/Protocols",
+          "Default",
+          "Password",
+          "Changes",
+          "Removal of Unnecessary",
+          "Software"
+        ]
+      }
+    },
+    {
+      "n": 4,
+      "title": "Shared Responsibility Matrix",
+      "points": [],
+      "raw": "Shared Responsibility Matrix",
+      "instructional": false,
+      "teach": "Read the source points, then explain the slide without looking. On Security+, recognition is not enough—you should be able to apply the concept to a scenario.",
+      "defs": []
+    }
+  ],
+  "slide_count": 4,
+  "instructional_count": 2,
+  "concepts": [],
+  "source_filename": "09.04_Hardening_techniques.pdf"
+}

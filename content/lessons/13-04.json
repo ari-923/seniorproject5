@@ -1,0 +1,214 @@
+{
+  "id": "13.04",
+  "chapter": 13,
+  "sub": 4,
+  "title": "Capacity planning",
+  "chapter_name": "Resilience & Recovery",
+  "slides": [
+    {
+      "n": 1,
+      "title": "Capacity Planning",
+      "points": [],
+      "raw": "Capacity Planning",
+      "instructional": false,
+      "teach": "Read the source points, then explain the slide without looking. On Security+, recognition is not enough—you should be able to apply the concept to a scenario.",
+      "defs": []
+    },
+    {
+      "n": 2,
+      "title": "People",
+      "points": [
+        "Training and",
+        "Awareness",
+        "Programs",
+        "Role-Based",
+        "Access Control",
+        "(RBAC)",
+        "Incident",
+        "Response",
+        "Training"
+      ],
+      "raw": "People\nTraining and\nAwareness\nPrograms\nRole-Based\nAccess Control\n(RBAC)\nIncident\nResponse\nTraining",
+      "instructional": true,
+      "teach": "Read the source points, then explain the slide without looking. On Security+, recognition is not enough—you should be able to apply the concept to a scenario.",
+      "defs": [],
+      "course": {
+        "learn": "This section focuses on **People** within **Capacity planning**. Capacity planning ensures people, technology, and infrastructure can handle expected workload, security tooling, growth, and failure conditions. Security controls themselves consume compute, storage, bandwidth, and staff time.",
+        "why": "Insufficient capacity can become an availability problem or force teams to disable security controls under load.",
+        "example": "A SIEM deployment estimates log volume and retention storage before onboarding thousands of new endpoints.",
+        "exam": "Consider staffing, training, automation, compute, storage, network capacity, redundancy, and growth—not just server CPU.",
+        "breakdown": [
+          {
+            "term": "Training and Awareness",
+            "explanation": "Within People, this is a specific factor you should be able to recognize and explain. Connect it to the purpose of Capacity planning rather than memorizing the phrase by itself."
+          },
+          {
+            "term": "Programs",
+            "explanation": "Within People, this is a specific factor you should be able to recognize and explain. Connect it to the purpose of Capacity planning rather than memorizing the phrase by itself."
+          },
+          {
+            "term": "Role-Based",
+            "explanation": "Within People, this is a specific factor you should be able to recognize and explain. Connect it to the purpose of Capacity planning rather than memorizing the phrase by itself."
+          },
+          {
+            "term": "Access Control",
+            "explanation": "Use hard-to-guess credentials and limit what authenticated users can reach."
+          },
+          {
+            "term": "(RBAC)",
+            "explanation": "Within People, this is a specific factor you should be able to recognize and explain. Connect it to the purpose of Capacity planning rather than memorizing the phrase by itself."
+          },
+          {
+            "term": "Incident",
+            "explanation": "Define how an organization prepares for, detects, contains, eradicates, and recovers from security incidents."
+          },
+          {
+            "term": "Response",
+            "explanation": "Define how an organization prepares for, detects, contains, eradicates, and recovers from security incidents."
+          },
+          {
+            "term": "Training",
+            "explanation": "Teach users how to recognize threats and follow secure behavior so human mistakes are less likely."
+          }
+        ],
+        "defs": [],
+        "check_q": "Without looking back, explain People and describe at least two key ideas from this section.",
+        "check_a": "This section focuses on **People** within **Capacity planning**. Capacity planning ensures people, technology, and infrastructure can handle expected workload, security tooling, growth, and failure conditions. Security controls themselves consume compute, storage, bandwidth, and staff time. Key ideas include: Training and Awareness; Programs; Role-Based; Access Control; (RBAC).",
+        "points": [
+          "Training and Awareness",
+          "Programs",
+          "Role-Based",
+          "Access Control",
+          "(RBAC)",
+          "Incident",
+          "Response",
+          "Training"
+        ]
+      }
+    },
+    {
+      "n": 3,
+      "title": "Technology",
+      "points": [
+        "Regular Vulnerability",
+        "Assessments",
+        "Patch Management",
+        "Security Automation"
+      ],
+      "raw": "Technology\nRegular Vulnerability\nAssessments\nPatch Management\nSecurity Automation",
+      "instructional": true,
+      "teach": "Read the source points, then explain the slide without looking. On Security+, recognition is not enough—you should be able to apply the concept to a scenario.",
+      "defs": [],
+      "course": {
+        "learn": "This section focuses on **Technology** within **Capacity planning**. Capacity planning ensures people, technology, and infrastructure can handle expected workload, security tooling, growth, and failure conditions. Security controls themselves consume compute, storage, bandwidth, and staff time.",
+        "why": "Insufficient capacity can become an availability problem or force teams to disable security controls under load.",
+        "example": "A SIEM deployment estimates log volume and retention storage before onboarding thousands of new endpoints.",
+        "exam": "Consider staffing, training, automation, compute, storage, network capacity, redundancy, and growth—not just server CPU.",
+        "breakdown": [
+          {
+            "term": "Regular Vulnerability",
+            "explanation": "Within Technology, this is a specific factor you should be able to recognize and explain. Connect it to the purpose of Capacity planning rather than memorizing the phrase by itself."
+          },
+          {
+            "term": "Assessments",
+            "explanation": "Evaluate risk and verify whether controls meet organizational, legal, or regulatory requirements."
+          },
+          {
+            "term": "Patch Management",
+            "explanation": "Within Technology, this is a specific factor you should be able to recognize and explain. Connect it to the purpose of Capacity planning rather than memorizing the phrase by itself."
+          },
+          {
+            "term": "Security Automation",
+            "explanation": "This contributes to reducing risk in the broader Capacity planning design and should be evaluated as part of defense in depth."
+          }
+        ],
+        "defs": [],
+        "check_q": "Without looking back, explain Technology and describe at least two key ideas from this section.",
+        "check_a": "This section focuses on **Technology** within **Capacity planning**. Capacity planning ensures people, technology, and infrastructure can handle expected workload, security tooling, growth, and failure conditions. Security controls themselves consume compute, storage, bandwidth, and staff time. Key ideas include: Regular Vulnerability; Assessments; Patch Management; Security Automation.",
+        "points": [
+          "Regular Vulnerability",
+          "Assessments",
+          "Patch Management",
+          "Security Automation"
+        ]
+      }
+    },
+    {
+      "n": 4,
+      "title": "Infrastructure",
+      "points": [
+        "Redundancy and",
+        "Failover",
+        "Encryption",
+        "Scalability"
+      ],
+      "raw": "Infrastructure\nRedundancy and\nFailover\nEncryption\nScalability",
+      "instructional": true,
+      "teach": "Read the source points, then explain the slide without looking. On Security+, recognition is not enough—you should be able to apply the concept to a scenario.",
+      "defs": [
+        [
+          "Encryption",
+          "Transforms readable plaintext into ciphertext using an algorithm and key so unauthorized parties cannot understand it."
+        ],
+        [
+          "Failover",
+          "Switching service from a failed primary system to a secondary system."
+        ]
+      ],
+      "course": {
+        "learn": "This section focuses on **Infrastructure** within **Capacity planning**. Infrastructure monitoring observes networks, cloud configuration, appliances, links, and supporting resources. NSM analyzes network behavior, while CSPM evaluates cloud security posture and misconfiguration.",
+        "why": "Infrastructure telemetry helps detect both attacks and unsafe configuration drift.",
+        "example": "CSPM flags a public storage bucket while NSM detects unusual outbound traffic from a server subnet.",
+        "exam": "NSM = network activity. CSPM = cloud configuration/posture.",
+        "breakdown": [
+          {
+            "term": "Redundancy and Failover",
+            "explanation": "Use duplicate components or paths so one failure does not stop the service."
+          },
+          {
+            "term": "Encryption",
+            "explanation": "Protect readable data by converting it to ciphertext that requires an authorized key to recover."
+          },
+          {
+            "term": "Scalability",
+            "explanation": "Within Infrastructure, this is a specific factor you should be able to recognize and explain. Connect it to the purpose of Capacity planning rather than memorizing the phrase by itself."
+          }
+        ],
+        "defs": [
+          {
+            "term": "Encryption",
+            "definition": "Transforms readable plaintext into ciphertext using an algorithm and key so unauthorized parties cannot understand it."
+          },
+          {
+            "term": "Failover",
+            "definition": "Switching service from a failed primary system to a secondary system."
+          }
+        ],
+        "check_q": "Without looking back, explain Infrastructure and describe at least two key ideas from this section.",
+        "check_a": "This section focuses on **Infrastructure** within **Capacity planning**. Infrastructure monitoring observes networks, cloud configuration, appliances, links, and supporting resources. NSM analyzes network behavior, while CSPM evaluates cloud security posture and misconfiguration. Key ideas include: Redundancy and Failover; Encryption; Scalability.",
+        "points": [
+          "Redundancy and Failover",
+          "Encryption",
+          "Scalability"
+        ]
+      }
+    },
+    {
+      "n": 5,
+      "title": "Testing",
+      "points": [],
+      "raw": "Testing",
+      "instructional": false,
+      "teach": "Read the source points, then explain the slide without looking. On Security+, recognition is not enough—you should be able to apply the concept to a scenario.",
+      "defs": []
+    }
+  ],
+  "slide_count": 5,
+  "instructional_count": 3,
+  "concepts": [
+    "People",
+    "Technology",
+    "Infrastructure"
+  ],
+  "source_filename": "13.04_Capacity_planning.pdf"
+}

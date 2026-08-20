@@ -1,0 +1,136 @@
+{
+  "id": "08.07",
+  "chapter": 8,
+  "sub": 7,
+  "title": "Indicators",
+  "chapter_name": "Attack Indicators",
+  "slides": [
+    {
+      "n": 1,
+      "title": "Indicators",
+      "points": [],
+      "raw": "Indicators",
+      "instructional": false,
+      "teach": "Treat these as observable clues. On the exam, be ready to infer the most likely attack from the pattern of indicators.",
+      "defs": []
+    },
+    {
+      "n": 2,
+      "title": "Indicators",
+      "points": [
+        "Account Lockout",
+        "Concurrent Session Usage",
+        "Blocked Content",
+        "Impossible Travel"
+      ],
+      "raw": "Indicators\nAccount Lockout\nConcurrent Session Usage\nBlocked Content\nImpossible Travel",
+      "instructional": true,
+      "teach": "Treat these as observable clues. On the exam, be ready to infer the most likely attack from the pattern of indicators.",
+      "defs": [],
+      "course": {
+        "learn": "This section focuses on **Indicators** within **Indicators**. Security indicators are observable signs that may reveal compromise, misuse, or abnormal conditions. Examples include account lockouts, concurrent sessions, impossible travel, blocked content, missing logs, unusual resource consumption, and resources becoming inaccessible.",
+        "why": "One indicator rarely proves an incident by itself. Analysts correlate multiple signals with normal baselines and context before deciding how to respond.",
+        "example": "A user account signs in from two distant countries within minutes, generates repeated lockouts, and accesses resources at an unusual time. Together, the indicators justify investigation.",
+        "exam": "CompTIA may present symptoms rather than name the attack. Identify what the indicator suggests, correlate evidence, and choose the next defensive action.",
+        "breakdown": [
+          {
+            "term": "Account Lockout",
+            "explanation": "This can be an observable clue during monitoring or investigation. It should be correlated with other evidence before concluding that an attack occurred."
+          },
+          {
+            "term": "Concurrent Session Usage",
+            "explanation": "This can be an observable clue during monitoring or investigation. It should be correlated with other evidence before concluding that an attack occurred."
+          },
+          {
+            "term": "Blocked Content",
+            "explanation": "This can be an observable clue during monitoring or investigation. It should be correlated with other evidence before concluding that an attack occurred."
+          },
+          {
+            "term": "Impossible Travel",
+            "explanation": "This can be an observable clue during monitoring or investigation. It should be correlated with other evidence before concluding that an attack occurred."
+          }
+        ],
+        "defs": [],
+        "check_q": "Without looking back, explain Indicators and describe at least two key ideas from this section.",
+        "check_a": "This section focuses on **Indicators** within **Indicators**. Security indicators are observable signs that may reveal compromise, misuse, or abnormal conditions. Examples include account lockouts, concurrent sessions, impossible travel, blocked content, missing logs, unusual resource consumption, and resources becoming inaccessible. Key ideas include: Account Lockout; Concurrent Session Usage; Blocked Content; Impossible Travel.",
+        "points": [
+          "Account Lockout",
+          "Concurrent Session Usage",
+          "Blocked Content",
+          "Impossible Travel"
+        ]
+      }
+    },
+    {
+      "n": 3,
+      "title": "Indicators",
+      "points": [
+        "Resource Consumption",
+        "Resource Inaccessibility",
+        "Out-of-Cycle Logging",
+        "Published/Documented",
+        "Missing Logs"
+      ],
+      "raw": "Indicators\nResource Consumption\nResource Inaccessibility\nOut-of-Cycle Logging\nPublished/Documented\nMissing Logs",
+      "instructional": true,
+      "teach": "Treat these as observable clues. On the exam, be ready to infer the most likely attack from the pattern of indicators.",
+      "defs": [],
+      "course": {
+        "learn": "This section focuses on **Indicators** within **Indicators**. Security indicators are observable signs that may reveal compromise, misuse, or abnormal conditions. Examples include account lockouts, concurrent sessions, impossible travel, blocked content, missing logs, unusual resource consumption, and resources becoming inaccessible.",
+        "why": "One indicator rarely proves an incident by itself. Analysts correlate multiple signals with normal baselines and context before deciding how to respond.",
+        "example": "A user account signs in from two distant countries within minutes, generates repeated lockouts, and accesses resources at an unusual time. Together, the indicators justify investigation.",
+        "exam": "CompTIA may present symptoms rather than name the attack. Identify what the indicator suggests, correlate evidence, and choose the next defensive action.",
+        "breakdown": [
+          {
+            "term": "Resource Consumption",
+            "explanation": "This can be an observable clue during monitoring or investigation. It should be correlated with other evidence before concluding that an attack occurred."
+          },
+          {
+            "term": "Resource Inaccessibility",
+            "explanation": "This can be an observable clue during monitoring or investigation. It should be correlated with other evidence before concluding that an attack occurred."
+          },
+          {
+            "term": "Out-of-Cycle Logging",
+            "explanation": "This can be an observable clue during monitoring or investigation. It should be correlated with other evidence before concluding that an attack occurred."
+          },
+          {
+            "term": "Published/Documented",
+            "explanation": "This can be an observable clue during monitoring or investigation. It should be correlated with other evidence before concluding that an attack occurred."
+          },
+          {
+            "term": "Missing Logs",
+            "explanation": "This can be an observable clue during monitoring or investigation. It should be correlated with other evidence before concluding that an attack occurred."
+          }
+        ],
+        "defs": [],
+        "check_q": "Without looking back, explain Indicators and describe at least two key ideas from this section.",
+        "check_a": "This section focuses on **Indicators** within **Indicators**. Security indicators are observable signs that may reveal compromise, misuse, or abnormal conditions. Examples include account lockouts, concurrent sessions, impossible travel, blocked content, missing logs, unusual resource consumption, and resources becoming inaccessible. Key ideas include: Resource Consumption; Resource Inaccessibility; Out-of-Cycle Logging; Published/Documented; Missing Logs.",
+        "points": [
+          "Resource Consumption",
+          "Resource Inaccessibility",
+          "Out-of-Cycle Logging",
+          "Published/Documented",
+          "Missing Logs"
+        ]
+      }
+    },
+    {
+      "n": 4,
+      "title": "Segmentation",
+      "points": [],
+      "raw": "Segmentation",
+      "instructional": false,
+      "teach": "Read the source points, then explain the slide without looking. On Security+, recognition is not enough—you should be able to apply the concept to a scenario.",
+      "defs": [
+        [
+          "Segmentation",
+          "Dividing a network into controlled zones to limit access and lateral movement."
+        ]
+      ]
+    }
+  ],
+  "slide_count": 4,
+  "instructional_count": 2,
+  "concepts": [],
+  "source_filename": "08.07_Indicators.pdf"
+}

@@ -1,0 +1,362 @@
+{
+  "id": "13.06",
+  "chapter": 13,
+  "sub": 6,
+  "title": "Backups",
+  "chapter_name": "Resilience & Recovery",
+  "slides": [
+    {
+      "n": 1,
+      "title": "Backups",
+      "points": [],
+      "raw": "Backups",
+      "instructional": false,
+      "teach": "Read the source points, then explain the slide without looking. On Security+, recognition is not enough—you should be able to apply the concept to a scenario.",
+      "defs": []
+    },
+    {
+      "n": 2,
+      "title": "Onsite/Offsite",
+      "points": [
+        "Data redundancy",
+        "Mitigating localized risks"
+      ],
+      "raw": "Onsite/Offsite\nData redundancy\nMitigating localized risks",
+      "instructional": true,
+      "teach": "Read the source points, then explain the slide without looking. On Security+, recognition is not enough—you should be able to apply the concept to a scenario.",
+      "defs": [],
+      "course": {
+        "learn": "Backups create recoverable copies of data or systems so organizations can restore after deletion, corruption, ransomware, or disaster. Good backup strategy considers location, frequency, retention, immutability, encryption, and restore testing.",
+        "why": "A backup is valuable only if it survives the incident and can actually be restored within business requirements.",
+        "example": "An organization keeps frequent local backups for speed plus protected offsite/immutable copies so ransomware cannot destroy every recovery point.",
+        "exam": "Know onsite vs offsite, snapshots vs true backups, restore testing, and the fact that replication does not replace historical backup copies.",
+        "breakdown": [
+          {
+            "term": "Data redundancy",
+            "explanation": "Use duplicate components or paths so one failure does not stop the service."
+          },
+          {
+            "term": "Mitigating localized risks",
+            "explanation": "This affects the likelihood or impact of harm and therefore changes how the organization should prioritize controls."
+          }
+        ],
+        "defs": [],
+        "check_q": "Without looking back, explain Onsite/Offsite and describe at least two key ideas from this section.",
+        "check_a": "Backups create recoverable copies of data or systems so organizations can restore after deletion, corruption, ransomware, or disaster. Good backup strategy considers location, frequency, retention, immutability, encryption, and restore testing. Key ideas include: Data redundancy; Mitigating localized risks.",
+        "points": [
+          "Data redundancy",
+          "Mitigating localized risks"
+        ]
+      }
+    },
+    {
+      "n": 3,
+      "title": "Frequency",
+      "points": [
+        "Minimizing data loss",
+        "Reducing recovery time"
+      ],
+      "raw": "Frequency\nMinimizing data loss\nReducing recovery time",
+      "instructional": true,
+      "teach": "Read the source points, then explain the slide without looking. On Security+, recognition is not enough—you should be able to apply the concept to a scenario.",
+      "defs": [],
+      "course": {
+        "learn": "Backups create recoverable copies of data or systems so organizations can restore after deletion, corruption, ransomware, or disaster. Good backup strategy considers location, frequency, retention, immutability, encryption, and restore testing.",
+        "why": "A backup is valuable only if it survives the incident and can actually be restored within business requirements.",
+        "example": "An organization keeps frequent local backups for speed plus protected offsite/immutable copies so ransomware cannot destroy every recovery point.",
+        "exam": "Know onsite vs offsite, snapshots vs true backups, restore testing, and the fact that replication does not replace historical backup copies.",
+        "breakdown": [
+          {
+            "term": "Minimizing data loss",
+            "explanation": "Within Frequency, this is a specific factor you should be able to recognize and explain. Connect it to the purpose of Backups rather than memorizing the phrase by itself."
+          },
+          {
+            "term": "Reducing recovery time",
+            "explanation": "Backups create recoverable copies of data or systems so organizations can restore after deletion, corruption, ransomware, or disaster. Good backup strategy considers location, frequency, retention, immutability, encryption, and restore testing."
+          }
+        ],
+        "defs": [],
+        "check_q": "Without looking back, explain Frequency and describe at least two key ideas from this section.",
+        "check_a": "Backups create recoverable copies of data or systems so organizations can restore after deletion, corruption, ransomware, or disaster. Good backup strategy considers location, frequency, retention, immutability, encryption, and restore testing. Key ideas include: Minimizing data loss; Reducing recovery time.",
+        "points": [
+          "Minimizing data loss",
+          "Reducing recovery time"
+        ]
+      }
+    },
+    {
+      "n": 4,
+      "title": "Encryption",
+      "points": [
+        "Confidentiality",
+        "Compliance"
+      ],
+      "raw": "Encryption\nConfidentiality\nCompliance",
+      "instructional": true,
+      "teach": "Read the source points, then explain the slide without looking. On Security+, recognition is not enough—you should be able to apply the concept to a scenario.",
+      "defs": [
+        [
+          "Encryption",
+          "Transforms readable plaintext into ciphertext using an algorithm and key so unauthorized parties cannot understand it."
+        ]
+      ],
+      "course": {
+        "learn": "Encryption converts plaintext into ciphertext using an algorithm and key so unauthorized parties cannot understand the data. Symmetric encryption uses a shared secret; asymmetric encryption uses a public/private key pair.",
+        "why": "Encryption is one of the primary ways to protect confidentiality for data at rest and in transit.",
+        "example": "A laptop uses full-disk encryption, while a TLS session protects web traffic crossing an untrusted network.",
+        "exam": "Encryption = confidentiality and reversible with the correct key. Hashing is one-way and primarily supports integrity.",
+        "breakdown": [
+          {
+            "term": "Confidentiality",
+            "explanation": "Within Encryption, this is a specific factor you should be able to recognize and explain. Connect it to the purpose of Backups rather than memorizing the phrase by itself."
+          },
+          {
+            "term": "Compliance",
+            "explanation": "Evaluate risk and verify whether controls meet organizational, legal, or regulatory requirements."
+          }
+        ],
+        "defs": [
+          {
+            "term": "Encryption",
+            "definition": "Transforms readable plaintext into ciphertext using an algorithm and key so unauthorized parties cannot understand it."
+          }
+        ],
+        "check_q": "Without looking back, explain Encryption and describe at least two key ideas from this section.",
+        "check_a": "Encryption converts plaintext into ciphertext using an algorithm and key so unauthorized parties cannot understand the data. Symmetric encryption uses a shared secret; asymmetric encryption uses a public/private key pair. Key ideas include: Confidentiality; Compliance.",
+        "points": [
+          "Confidentiality",
+          "Compliance"
+        ]
+      }
+    },
+    {
+      "n": 5,
+      "title": "Snapshots",
+      "points": [
+        "Point-in-time copies",
+        "Rapid recovery"
+      ],
+      "raw": "Snapshots\nPoint-in-time copies\nRapid recovery",
+      "instructional": true,
+      "teach": "Read the source points, then explain the slide without looking. On Security+, recognition is not enough—you should be able to apply the concept to a scenario.",
+      "defs": [],
+      "course": {
+        "learn": "A snapshot captures the state of a system, volume, or virtual machine at a point in time so changes can be rolled back or compared later.",
+        "why": "Snapshots can make short-term recovery fast, but they may depend on the same storage and therefore are not automatically independent backups.",
+        "example": "Before a risky software upgrade, an administrator takes a VM snapshot and reverts when the upgrade fails.",
+        "exam": "Snapshot ≠ guaranteed backup. Ask whether it is independent, protected, and retained appropriately.",
+        "breakdown": [
+          {
+            "term": "Point-in-time copies",
+            "explanation": "Within Snapshots, this is a specific factor you should be able to recognize and explain. Connect it to the purpose of Backups rather than memorizing the phrase by itself."
+          },
+          {
+            "term": "Rapid recovery",
+            "explanation": "Backups create recoverable copies of data or systems so organizations can restore after deletion, corruption, ransomware, or disaster. Good backup strategy considers location, frequency, retention, immutability, encryption, and restore testing."
+          }
+        ],
+        "defs": [],
+        "check_q": "Without looking back, explain Snapshots and describe at least two key ideas from this section.",
+        "check_a": "A snapshot captures the state of a system, volume, or virtual machine at a point in time so changes can be rolled back or compared later. Key ideas include: Point-in-time copies; Rapid recovery.",
+        "points": [
+          "Point-in-time copies",
+          "Rapid recovery"
+        ]
+      }
+    },
+    {
+      "n": 6,
+      "title": "Recovery",
+      "points": [
+        "High availability",
+        "Disaster recovery"
+      ],
+      "raw": "Recovery\nHigh availability\nDisaster recovery",
+      "instructional": true,
+      "teach": "Read the source points, then explain the slide without looking. On Security+, recognition is not enough—you should be able to apply the concept to a scenario.",
+      "defs": [
+        [
+          "Availability",
+          "Ensuring authorized users can access systems and data when needed."
+        ]
+      ],
+      "course": {
+        "learn": "Backups create recoverable copies of data or systems so organizations can restore after deletion, corruption, ransomware, or disaster. Good backup strategy considers location, frequency, retention, immutability, encryption, and restore testing.",
+        "why": "A backup is valuable only if it survives the incident and can actually be restored within business requirements.",
+        "example": "An organization keeps frequent local backups for speed plus protected offsite/immutable copies so ransomware cannot destroy every recovery point.",
+        "exam": "Know onsite vs offsite, snapshots vs true backups, restore testing, and the fact that replication does not replace historical backup copies.",
+        "breakdown": [
+          {
+            "term": "High availability",
+            "explanation": "High availability designs services to remain accessible despite failures. It uses redundancy, failover, load balancing, clustering, replication, resilient power, and removal of single points of failure."
+          },
+          {
+            "term": "Disaster recovery",
+            "explanation": "Keep recoverable copies and documented recovery procedures so operations can be restored after disruption."
+          }
+        ],
+        "defs": [
+          {
+            "term": "Availability",
+            "definition": "Ensuring authorized users can access systems and data when needed."
+          }
+        ],
+        "check_q": "Without looking back, explain Recovery and describe at least two key ideas from this section.",
+        "check_a": "Backups create recoverable copies of data or systems so organizations can restore after deletion, corruption, ransomware, or disaster. Good backup strategy considers location, frequency, retention, immutability, encryption, and restore testing. Key ideas include: High availability; Disaster recovery.",
+        "points": [
+          "High availability",
+          "Disaster recovery"
+        ]
+      }
+    },
+    {
+      "n": 7,
+      "title": "Replication",
+      "points": [
+        "High availability",
+        "Disaster recovery"
+      ],
+      "raw": "Replication\nHigh availability\nDisaster recovery",
+      "instructional": true,
+      "teach": "Read the source points, then explain the slide without looking. On Security+, recognition is not enough—you should be able to apply the concept to a scenario.",
+      "defs": [
+        [
+          "Availability",
+          "Ensuring authorized users can access systems and data when needed."
+        ]
+      ],
+      "course": {
+        "learn": "Replication copies data or system state to another location, often continuously or frequently, to improve availability and recovery speed.",
+        "why": "Replication can also copy corruption, deletion, or ransomware changes, so historical backups are still necessary.",
+        "example": "A database streams changes to a secondary region that can become active after a regional outage.",
+        "exam": "Replication = availability/current copy. Backup = recoverable historical copy.",
+        "breakdown": [
+          {
+            "term": "High availability",
+            "explanation": "High availability designs services to remain accessible despite failures. It uses redundancy, failover, load balancing, clustering, replication, resilient power, and removal of single points of failure."
+          },
+          {
+            "term": "Disaster recovery",
+            "explanation": "Keep recoverable copies and documented recovery procedures so operations can be restored after disruption."
+          }
+        ],
+        "defs": [
+          {
+            "term": "Availability",
+            "definition": "Ensuring authorized users can access systems and data when needed."
+          }
+        ],
+        "check_q": "Without looking back, explain Replication and describe at least two key ideas from this section.",
+        "check_a": "Replication copies data or system state to another location, often continuously or frequently, to improve availability and recovery speed. Key ideas include: High availability; Disaster recovery.",
+        "points": [
+          "High availability",
+          "Disaster recovery"
+        ]
+      }
+    },
+    {
+      "n": 8,
+      "title": "Journaling",
+      "points": [
+        "Audit trail",
+        "Timeline identification"
+      ],
+      "raw": "Journaling\nAudit trail\nTimeline identification",
+      "instructional": true,
+      "teach": "Read the source points, then explain the slide without looking. On Security+, recognition is not enough—you should be able to apply the concept to a scenario.",
+      "defs": [],
+      "course": {
+        "learn": "Journaling records changes or transactions in a log before or alongside applying them to the main data structure. It can help reconstruct a consistent state after interruption.",
+        "why": "A journal provides a history of recent operations that supports recovery and investigation.",
+        "example": "A file system replays its journal after an unexpected shutdown to complete or roll back incomplete operations.",
+        "exam": "Journal = record of changes/transactions; it complements backups and replication.",
+        "breakdown": [
+          {
+            "term": "Audit trail",
+            "explanation": "Within Journaling, this is a specific factor you should be able to recognize and explain. Connect it to the purpose of Backups rather than memorizing the phrase by itself."
+          },
+          {
+            "term": "Timeline identification",
+            "explanation": "Within Journaling, this is a specific factor you should be able to recognize and explain. Connect it to the purpose of Backups rather than memorizing the phrase by itself."
+          }
+        ],
+        "defs": [],
+        "check_q": "Without looking back, explain Journaling and describe at least two key ideas from this section.",
+        "check_a": "Journaling records changes or transactions in a log before or alongside applying them to the main data structure. It can help reconstruct a consistent state after interruption. Key ideas include: Audit trail; Timeline identification.",
+        "points": [
+          "Audit trail",
+          "Timeline identification"
+        ]
+      }
+    },
+    {
+      "n": 9,
+      "title": "Importance of Backups",
+      "points": [
+        "Mitigation of data loss",
+        "Adherence to compliance standards",
+        "Enhanced cybersecurity posture",
+        "Business continuity and rapid response"
+      ],
+      "raw": "Importance of Backups\nMitigation of data loss\nAdherence to compliance standards\nEnhanced cybersecurity posture\nBusiness continuity and rapid response",
+      "instructional": true,
+      "teach": "Read the source points, then explain the slide without looking. On Security+, recognition is not enough—you should be able to apply the concept to a scenario.",
+      "defs": [],
+      "course": {
+        "learn": "Backups create recoverable copies of data or systems so organizations can restore after deletion, corruption, ransomware, or disaster. Good backup strategy considers location, frequency, retention, immutability, encryption, and restore testing.",
+        "why": "A backup is valuable only if it survives the incident and can actually be restored within business requirements.",
+        "example": "An organization keeps frequent local backups for speed plus protected offsite/immutable copies so ransomware cannot destroy every recovery point.",
+        "exam": "Know onsite vs offsite, snapshots vs true backups, restore testing, and the fact that replication does not replace historical backup copies.",
+        "breakdown": [
+          {
+            "term": "Mitigation of data loss",
+            "explanation": "Within Importance of Backups, this is a specific factor you should be able to recognize and explain. Connect it to the purpose of Backups rather than memorizing the phrase by itself."
+          },
+          {
+            "term": "Adherence to compliance standards",
+            "explanation": "This relates to meeting and demonstrating required legal, regulatory, contractual, or policy obligations."
+          },
+          {
+            "term": "Enhanced cybersecurity posture",
+            "explanation": "This contributes to reducing risk in the broader Backups design and should be evaluated as part of defense in depth."
+          },
+          {
+            "term": "Business continuity and rapid response",
+            "explanation": "Within Importance of Backups, this is a specific factor you should be able to recognize and explain. Connect it to the purpose of Backups rather than memorizing the phrase by itself."
+          }
+        ],
+        "defs": [],
+        "check_q": "Without looking back, explain Importance of Backups and describe at least two key ideas from this section.",
+        "check_a": "Backups create recoverable copies of data or systems so organizations can restore after deletion, corruption, ransomware, or disaster. Good backup strategy considers location, frequency, retention, immutability, encryption, and restore testing. Key ideas include: Mitigation of data loss; Adherence to compliance standards; Enhanced cybersecurity posture; Business continuity and rapid response.",
+        "points": [
+          "Mitigation of data loss",
+          "Adherence to compliance standards",
+          "Enhanced cybersecurity posture",
+          "Business continuity and rapid response"
+        ]
+      }
+    },
+    {
+      "n": 10,
+      "title": "Power",
+      "points": [],
+      "raw": "Power",
+      "instructional": false,
+      "teach": "Read the source points, then explain the slide without looking. On Security+, recognition is not enough—you should be able to apply the concept to a scenario.",
+      "defs": []
+    }
+  ],
+  "slide_count": 10,
+  "instructional_count": 8,
+  "concepts": [
+    "Onsite/Offsite",
+    "Frequency",
+    "Encryption",
+    "Snapshots",
+    "Recovery",
+    "Replication",
+    "Journaling",
+    "Importance of Backups"
+  ],
+  "source_filename": "13.06_Backups.pdf"
+}

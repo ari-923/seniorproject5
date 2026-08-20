@@ -1,0 +1,517 @@
+{
+  "id": "08.01",
+  "chapter": 8,
+  "sub": 1,
+  "title": "Malware attacks",
+  "chapter_name": "Attack Indicators",
+  "slides": [
+    {
+      "n": 1,
+      "title": "Malware Attack Indicators",
+      "points": [],
+      "raw": "Malware Attack Indicators",
+      "instructional": false,
+      "teach": "Treat these as observable clues. On the exam, be ready to infer the most likely attack from the pattern of indicators.",
+      "defs": []
+    },
+    {
+      "n": 2,
+      "title": "Ransomware",
+      "points": [
+        "Encrypted Files",
+        "Ransom Notes",
+        "Changed File",
+        "Extensions"
+      ],
+      "raw": "Ransomware\nEncrypted Files\nRansom Notes\nChanged File\nExtensions",
+      "instructional": true,
+      "teach": "Read the source points, then explain the slide without looking. On Security+, recognition is not enough—you should be able to apply the concept to a scenario.",
+      "defs": [
+        [
+          "Ransomware",
+          "Malware that encrypts/locks data or systems and demands payment or another concession."
+        ]
+      ],
+      "course": {
+        "learn": "Ransomware is malware that denies access to data or systems—commonly by encryption—and demands payment. Modern ransomware operations may also steal data for double extortion.",
+        "why": "Ransomware can affect confidentiality, integrity, and availability and can stop business operations.",
+        "example": "Malware encrypts shared drives, deletes shadow copies, and leaves a payment demand.",
+        "exam": "Indicators include mass file changes, encryption, ransom notes, disabled backups, and unusual outbound exfiltration. Backups help recovery but do not replace prevention and containment.",
+        "breakdown": [
+          {
+            "term": "Encrypted Files",
+            "explanation": "Within Ransomware, this is a specific factor you should be able to recognize and explain. Connect it to the purpose of Malware attacks rather than memorizing the phrase by itself."
+          },
+          {
+            "term": "Ransom Notes",
+            "explanation": "Within Ransomware, this is a specific factor you should be able to recognize and explain. Connect it to the purpose of Malware attacks rather than memorizing the phrase by itself."
+          },
+          {
+            "term": "Changed File",
+            "explanation": "Within Ransomware, this is a specific factor you should be able to recognize and explain. Connect it to the purpose of Malware attacks rather than memorizing the phrase by itself."
+          },
+          {
+            "term": "Extensions",
+            "explanation": "Within Ransomware, this is a specific factor you should be able to recognize and explain. Connect it to the purpose of Malware attacks rather than memorizing the phrase by itself."
+          }
+        ],
+        "defs": [
+          {
+            "term": "Ransomware",
+            "definition": "Malware that encrypts/locks data or systems and demands payment or another concession."
+          }
+        ],
+        "check_q": "Without looking back, explain Ransomware and describe at least two key ideas from this section.",
+        "check_a": "Ransomware is malware that denies access to data or systems—commonly by encryption—and demands payment. Modern ransomware operations may also steal data for double extortion. Key ideas include: Encrypted Files; Ransom Notes; Changed File; Extensions.",
+        "points": [
+          "Encrypted Files",
+          "Ransom Notes",
+          "Changed File",
+          "Extensions"
+        ]
+      }
+    },
+    {
+      "n": 3,
+      "title": "Trojan",
+      "points": [
+        "Unexpected",
+        "System",
+        "Behavior",
+        "Unauthorized",
+        "Access",
+        "Payload",
+        "Execution"
+      ],
+      "raw": "Trojan\nUnexpected\nSystem\nBehavior\nUnauthorized\nAccess\nPayload\nExecution",
+      "instructional": true,
+      "teach": "Read the source points, then explain the slide without looking. On Security+, recognition is not enough—you should be able to apply the concept to a scenario.",
+      "defs": [],
+      "course": {
+        "learn": "A Trojan disguises malicious software as something legitimate or desirable. Unlike a worm, it does not rely on self-replication as its defining behavior.",
+        "why": "Social trust can cause users to install malware voluntarily.",
+        "example": "A “free PDF converter” installs a remote-access backdoor along with the expected program.",
+        "exam": "Legitimate-looking program that carries malware = Trojan.",
+        "breakdown": [
+          {
+            "term": "Unexpected",
+            "explanation": "Within Trojan, this is a specific factor you should be able to recognize and explain. Connect it to the purpose of Malware attacks rather than memorizing the phrase by itself."
+          },
+          {
+            "term": "System",
+            "explanation": "Products no longer receiving security updates or vendor support, leaving new vulnerabilities harder to fix."
+          },
+          {
+            "term": "Behavior",
+            "explanation": "Within Trojan, this is a specific factor you should be able to recognize and explain. Connect it to the purpose of Malware attacks rather than memorizing the phrase by itself."
+          },
+          {
+            "term": "Unauthorized",
+            "explanation": "Within Trojan, this is a specific factor you should be able to recognize and explain. Connect it to the purpose of Malware attacks rather than memorizing the phrase by itself."
+          },
+          {
+            "term": "Access",
+            "explanation": "Use hard-to-guess credentials and limit what authenticated users can reach."
+          },
+          {
+            "term": "Payload",
+            "explanation": "Within Trojan, this is a specific factor you should be able to recognize and explain. Connect it to the purpose of Malware attacks rather than memorizing the phrase by itself."
+          },
+          {
+            "term": "Execution",
+            "explanation": "Within Trojan, this is a specific factor you should be able to recognize and explain. Connect it to the purpose of Malware attacks rather than memorizing the phrase by itself."
+          }
+        ],
+        "defs": [],
+        "check_q": "Without looking back, explain Trojan and describe at least two key ideas from this section.",
+        "check_a": "A Trojan disguises malicious software as something legitimate or desirable. Unlike a worm, it does not rely on self-replication as its defining behavior. Key ideas include: Unexpected; System; Behavior; Unauthorized; Access.",
+        "points": [
+          "Unexpected",
+          "System",
+          "Behavior",
+          "Unauthorized",
+          "Access",
+          "Payload",
+          "Execution"
+        ]
+      }
+    },
+    {
+      "n": 4,
+      "title": "Worm",
+      "points": [
+        "Rapid Replication",
+        "Network Scans",
+        "Increased System",
+        "Load"
+      ],
+      "raw": "Worm\nRapid Replication\nNetwork Scans\nIncreased System\nLoad",
+      "instructional": true,
+      "teach": "Read the source points, then explain the slide without looking. On Security+, recognition is not enough—you should be able to apply the concept to a scenario.",
+      "defs": [],
+      "course": {
+        "learn": "A worm is self-replicating malware that spreads between systems, often by exploiting network services or weak credentials without needing a user to copy an infected file manually.",
+        "why": "Rapid autonomous spread can overwhelm networks and infect many hosts quickly.",
+        "example": "A worm scans the local network for a vulnerable service and copies itself to each vulnerable host.",
+        "exam": "Self-replicating network spread = worm. A virus typically attaches to a host file.",
+        "breakdown": [
+          {
+            "term": "Rapid Replication",
+            "explanation": "Copy data/state to another system or location to improve availability."
+          },
+          {
+            "term": "Network Scans",
+            "explanation": "Within Worm, this is a specific factor you should be able to recognize and explain. Connect it to the purpose of Malware attacks rather than memorizing the phrase by itself."
+          },
+          {
+            "term": "Increased System",
+            "explanation": "Within Worm, this is a specific factor you should be able to recognize and explain. Connect it to the purpose of Malware attacks rather than memorizing the phrase by itself."
+          },
+          {
+            "term": "Load",
+            "explanation": "Distribute work across multiple systems to improve performance and availability."
+          }
+        ],
+        "defs": [],
+        "check_q": "Without looking back, explain Worm and describe at least two key ideas from this section.",
+        "check_a": "A worm is self-replicating malware that spreads between systems, often by exploiting network services or weak credentials without needing a user to copy an infected file manually. Key ideas include: Rapid Replication; Network Scans; Increased System; Load.",
+        "points": [
+          "Rapid Replication",
+          "Network Scans",
+          "Increased System",
+          "Load"
+        ]
+      }
+    },
+    {
+      "n": 5,
+      "title": "Spyware",
+      "points": [
+        "Unusual",
+        "Network",
+        "Traffic",
+        "Unauthorized",
+        "Access to",
+        "Information",
+        "Changed",
+        "Browser",
+        "Settings"
+      ],
+      "raw": "Spyware\nUnusual\nNetwork\nTraffic\nUnauthorized\nAccess to\nInformation\nChanged\nBrowser\nSettings",
+      "instructional": true,
+      "teach": "Read the source points, then explain the slide without looking. On Security+, recognition is not enough—you should be able to apply the concept to a scenario.",
+      "defs": [],
+      "course": {
+        "learn": "Spyware secretly collects information about a user or system, such as browsing activity, credentials, screenshots, or other sensitive data.",
+        "why": "Its goal is surveillance or data theft while avoiding detection.",
+        "example": "Malware silently records browser activity and sends collected information to a remote server.",
+        "exam": "Secret monitoring/data collection = spyware; recording keystrokes specifically = keylogger.",
+        "breakdown": [
+          {
+            "term": "Unusual",
+            "explanation": "Within Spyware, this is a specific factor you should be able to recognize and explain. Connect it to the purpose of Malware attacks rather than memorizing the phrase by itself."
+          },
+          {
+            "term": "Network",
+            "explanation": "Networks that lack trustworthy encryption, authentication, segmentation, or monitoring."
+          },
+          {
+            "term": "Traffic",
+            "explanation": "Within Spyware, this is a specific factor you should be able to recognize and explain. Connect it to the purpose of Malware attacks rather than memorizing the phrase by itself."
+          },
+          {
+            "term": "Unauthorized",
+            "explanation": "Within Spyware, this is a specific factor you should be able to recognize and explain. Connect it to the purpose of Malware attacks rather than memorizing the phrase by itself."
+          },
+          {
+            "term": "Access to Information",
+            "explanation": "This concerns who or what can reach a resource and what actions are permitted once access is granted."
+          },
+          {
+            "term": "Changed",
+            "explanation": "Within Spyware, this is a specific factor you should be able to recognize and explain. Connect it to the purpose of Malware attacks rather than memorizing the phrase by itself."
+          },
+          {
+            "term": "Browser",
+            "explanation": "Within Spyware, this is a specific factor you should be able to recognize and explain. Connect it to the purpose of Malware attacks rather than memorizing the phrase by itself."
+          },
+          {
+            "term": "Settings",
+            "explanation": "Within Spyware, this is a specific factor you should be able to recognize and explain. Connect it to the purpose of Malware attacks rather than memorizing the phrase by itself."
+          }
+        ],
+        "defs": [],
+        "check_q": "Without looking back, explain Spyware and describe at least two key ideas from this section.",
+        "check_a": "Spyware secretly collects information about a user or system, such as browsing activity, credentials, screenshots, or other sensitive data. Key ideas include: Unusual; Network; Traffic; Unauthorized; Access to Information.",
+        "points": [
+          "Unusual",
+          "Network",
+          "Traffic",
+          "Unauthorized",
+          "Access to Information",
+          "Changed",
+          "Browser",
+          "Settings"
+        ]
+      }
+    },
+    {
+      "n": 6,
+      "title": "Bloatware",
+      "points": [
+        "Excessive Resource",
+        "Usage",
+        "Pre-installed",
+        "Unwanted Apps",
+        "Ad Displays"
+      ],
+      "raw": "Bloatware\nExcessive Resource\nUsage\nPre-installed\nUnwanted Apps\nAd Displays",
+      "instructional": true,
+      "teach": "Read the source points, then explain the slide without looking. On Security+, recognition is not enough—you should be able to apply the concept to a scenario.",
+      "defs": [],
+      "course": {
+        "learn": "Bloatware is unnecessary or unwanted software preinstalled or added to a system. It may not be malicious, but it increases attack surface, resource use, and maintenance burden.",
+        "why": "Every unnecessary application can introduce vulnerabilities or background services that must be updated.",
+        "example": "A new laptop ships with several unused trial applications that install services and browser extensions.",
+        "exam": "The security response is usually remove unnecessary software as part of hardening.",
+        "breakdown": [
+          {
+            "term": "Excessive Resource",
+            "explanation": "Within Bloatware, this is a specific factor you should be able to recognize and explain. Connect it to the purpose of Malware attacks rather than memorizing the phrase by itself."
+          },
+          {
+            "term": "Usage",
+            "explanation": "Within Bloatware, this is a specific factor you should be able to recognize and explain. Connect it to the purpose of Malware attacks rather than memorizing the phrase by itself."
+          },
+          {
+            "term": "Pre-installed",
+            "explanation": "Within Bloatware, this is a specific factor you should be able to recognize and explain. Connect it to the purpose of Malware attacks rather than memorizing the phrase by itself."
+          },
+          {
+            "term": "Unwanted Apps",
+            "explanation": "Within Bloatware, this is a specific factor you should be able to recognize and explain. Connect it to the purpose of Malware attacks rather than memorizing the phrase by itself."
+          },
+          {
+            "term": "Ad Displays",
+            "explanation": "Within Bloatware, this is a specific factor you should be able to recognize and explain. Connect it to the purpose of Malware attacks rather than memorizing the phrase by itself."
+          }
+        ],
+        "defs": [],
+        "check_q": "Without looking back, explain Bloatware and describe at least two key ideas from this section.",
+        "check_a": "Bloatware is unnecessary or unwanted software preinstalled or added to a system. It may not be malicious, but it increases attack surface, resource use, and maintenance burden. Key ideas include: Excessive Resource; Usage; Pre-installed; Unwanted Apps; Ad Displays.",
+        "points": [
+          "Excessive Resource",
+          "Usage",
+          "Pre-installed",
+          "Unwanted Apps",
+          "Ad Displays"
+        ]
+      }
+    },
+    {
+      "n": 7,
+      "title": "Virus",
+      "points": [
+        "Infected Files",
+        "Unusual File",
+        "Behavior",
+        "Email Spoofing"
+      ],
+      "raw": "Virus\nInfected Files\nUnusual File\nBehavior\nEmail Spoofing",
+      "instructional": true,
+      "teach": "Read the source points, then explain the slide without looking. On Security+, recognition is not enough—you should be able to apply the concept to a scenario.",
+      "defs": [],
+      "course": {
+        "learn": "A computer virus attaches to or modifies a host file or program and replicates when that infected host executes or is shared.",
+        "why": "Viruses can damage data and spread through user actions or file transfer.",
+        "example": "An infected executable modifies other executables when launched.",
+        "exam": "Virus = host file/program; worm = standalone self-spreading malware.",
+        "breakdown": [
+          {
+            "term": "Infected Files",
+            "explanation": "Within Virus, this is a specific factor you should be able to recognize and explain. Connect it to the purpose of Malware attacks rather than memorizing the phrase by itself."
+          },
+          {
+            "term": "Unusual File",
+            "explanation": "Within Virus, this is a specific factor you should be able to recognize and explain. Connect it to the purpose of Malware attacks rather than memorizing the phrase by itself."
+          },
+          {
+            "term": "Behavior",
+            "explanation": "Within Virus, this is a specific factor you should be able to recognize and explain. Connect it to the purpose of Malware attacks rather than memorizing the phrase by itself."
+          },
+          {
+            "term": "Email Spoofing",
+            "explanation": "Within Virus, this is a specific factor you should be able to recognize and explain. Connect it to the purpose of Malware attacks rather than memorizing the phrase by itself."
+          }
+        ],
+        "defs": [],
+        "check_q": "Without looking back, explain Virus and describe at least two key ideas from this section.",
+        "check_a": "A computer virus attaches to or modifies a host file or program and replicates when that infected host executes or is shared. Key ideas include: Infected Files; Unusual File; Behavior; Email Spoofing.",
+        "points": [
+          "Infected Files",
+          "Unusual File",
+          "Behavior",
+          "Email Spoofing"
+        ]
+      }
+    },
+    {
+      "n": 8,
+      "title": "Keylogger",
+      "points": [
+        "Recorded Keystrokes",
+        "Captured",
+        "Screenshots",
+        "Stolen Credentials"
+      ],
+      "raw": "Keylogger\nRecorded Keystrokes\nCaptured\nScreenshots\nStolen Credentials",
+      "instructional": true,
+      "teach": "Read the source points, then explain the slide without looking. On Security+, recognition is not enough—you should be able to apply the concept to a scenario.",
+      "defs": [],
+      "course": {
+        "learn": "A keylogger records keystrokes to capture information such as passwords, messages, or financial data. It can be software or hardware based.",
+        "why": "It can steal secrets even when the application itself uses encryption after the user types them.",
+        "example": "Malware records a user's credentials as they type them into a banking site.",
+        "exam": "Keystroke capture = keylogger.",
+        "breakdown": [
+          {
+            "term": "Recorded Keystrokes",
+            "explanation": "Within Keylogger, this is a specific factor you should be able to recognize and explain. Connect it to the purpose of Malware attacks rather than memorizing the phrase by itself."
+          },
+          {
+            "term": "Captured",
+            "explanation": "Within Keylogger, this is a specific factor you should be able to recognize and explain. Connect it to the purpose of Malware attacks rather than memorizing the phrase by itself."
+          },
+          {
+            "term": "Screenshots",
+            "explanation": "Within Keylogger, this is a specific factor you should be able to recognize and explain. Connect it to the purpose of Malware attacks rather than memorizing the phrase by itself."
+          },
+          {
+            "term": "Stolen Credentials",
+            "explanation": "Within Keylogger, this is a specific factor you should be able to recognize and explain. Connect it to the purpose of Malware attacks rather than memorizing the phrase by itself."
+          }
+        ],
+        "defs": [],
+        "check_q": "Without looking back, explain Keylogger and describe at least two key ideas from this section.",
+        "check_a": "A keylogger records keystrokes to capture information such as passwords, messages, or financial data. It can be software or hardware based. Key ideas include: Recorded Keystrokes; Captured; Screenshots; Stolen Credentials.",
+        "points": [
+          "Recorded Keystrokes",
+          "Captured",
+          "Screenshots",
+          "Stolen Credentials"
+        ]
+      }
+    },
+    {
+      "n": 9,
+      "title": "Logic Bomb",
+      "points": [
+        "Delayed",
+        "Activation",
+        "Sudden System",
+        "Changes"
+      ],
+      "raw": "Logic Bomb\nDelayed\nActivation\nSudden System\nChanges",
+      "instructional": true,
+      "teach": "Read the source points, then explain the slide without looking. On Security+, recognition is not enough—you should be able to apply the concept to a scenario.",
+      "defs": [],
+      "course": {
+        "learn": "A logic bomb is malicious code that remains dormant until a specified condition or time triggers it.",
+        "why": "The delayed trigger can hide the attacker's intent and make attribution harder.",
+        "example": "A disgruntled administrator plants code that deletes files if their employee account is removed.",
+        "exam": "Condition/time-triggered malicious action = logic bomb.",
+        "breakdown": [
+          {
+            "term": "Delayed",
+            "explanation": "Within Logic Bomb, this is a specific factor you should be able to recognize and explain. Connect it to the purpose of Malware attacks rather than memorizing the phrase by itself."
+          },
+          {
+            "term": "Activation",
+            "explanation": "Within Logic Bomb, this is a specific factor you should be able to recognize and explain. Connect it to the purpose of Malware attacks rather than memorizing the phrase by itself."
+          },
+          {
+            "term": "Sudden System",
+            "explanation": "Within Logic Bomb, this is a specific factor you should be able to recognize and explain. Connect it to the purpose of Malware attacks rather than memorizing the phrase by itself."
+          },
+          {
+            "term": "Changes",
+            "explanation": "Within Logic Bomb, this is a specific factor you should be able to recognize and explain. Connect it to the purpose of Malware attacks rather than memorizing the phrase by itself."
+          }
+        ],
+        "defs": [],
+        "check_q": "Without looking back, explain Logic Bomb and describe at least two key ideas from this section.",
+        "check_a": "A logic bomb is malicious code that remains dormant until a specified condition or time triggers it. Key ideas include: Delayed; Activation; Sudden System; Changes.",
+        "points": [
+          "Delayed",
+          "Activation",
+          "Sudden System",
+          "Changes"
+        ]
+      }
+    },
+    {
+      "n": 10,
+      "title": "Rootkit",
+      "points": [
+        "Unauthorized Access",
+        "Altered System Files",
+        "Anti-Detection Measures"
+      ],
+      "raw": "Rootkit\nUnauthorized Access\nAltered System Files\nAnti-Detection Measures",
+      "instructional": true,
+      "teach": "Read the source points, then explain the slide without looking. On Security+, recognition is not enough—you should be able to apply the concept to a scenario.",
+      "defs": [],
+      "course": {
+        "learn": "A rootkit is designed to maintain privileged access while hiding itself or other malicious activity from normal system tools.",
+        "why": "Stealth and deep privilege can make rootkits difficult to detect and remove.",
+        "example": "A kernel-level rootkit hides malicious processes and files from standard operating-system utilities.",
+        "exam": "Stealth + privileged persistence = rootkit.",
+        "breakdown": [
+          {
+            "term": "Unauthorized Access",
+            "explanation": "This concerns who or what can reach a resource and what actions are permitted once access is granted."
+          },
+          {
+            "term": "Altered System Files",
+            "explanation": "Within Rootkit, this is a specific factor you should be able to recognize and explain. Connect it to the purpose of Malware attacks rather than memorizing the phrase by itself."
+          },
+          {
+            "term": "Anti-Detection Measures",
+            "explanation": "Within Rootkit, this is a specific factor you should be able to recognize and explain. Connect it to the purpose of Malware attacks rather than memorizing the phrase by itself."
+          }
+        ],
+        "defs": [],
+        "check_q": "Without looking back, explain Rootkit and describe at least two key ideas from this section.",
+        "check_a": "A rootkit is designed to maintain privileged access while hiding itself or other malicious activity from normal system tools. Key ideas include: Unauthorized Access; Altered System Files; Anti-Detection Measures.",
+        "points": [
+          "Unauthorized Access",
+          "Altered System Files",
+          "Anti-Detection Measures"
+        ]
+      }
+    },
+    {
+      "n": 11,
+      "title": "Physical Attacks Indicators",
+      "points": [],
+      "raw": "Physical Attacks Indicators",
+      "instructional": false,
+      "teach": "Treat these as observable clues. On the exam, be ready to infer the most likely attack from the pattern of indicators.",
+      "defs": []
+    }
+  ],
+  "slide_count": 11,
+  "instructional_count": 9,
+  "concepts": [
+    "Ransomware",
+    "Trojan",
+    "Worm",
+    "Spyware",
+    "Bloatware",
+    "Virus",
+    "Keylogger",
+    "Logic Bomb",
+    "Rootkit"
+  ],
+  "source_filename": "08.01_Malware_attacks.pdf"
+}

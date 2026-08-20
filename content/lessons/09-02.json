@@ -1,0 +1,223 @@
+{
+  "id": "09.02",
+  "chapter": 9,
+  "sub": 2,
+  "title": "Access control",
+  "chapter_name": "Mitigation & Hardening",
+  "slides": [
+    {
+      "n": 1,
+      "title": "Access Control",
+      "points": [],
+      "raw": "Access Control",
+      "instructional": false,
+      "teach": "Read the source points, then explain the slide without looking. On Security+, recognition is not enough—you should be able to apply the concept to a scenario.",
+      "defs": []
+    },
+    {
+      "n": 2,
+      "title": "Purpose of Access Control",
+      "points": [
+        "User Accountability",
+        "Resource",
+        "Segmentation",
+        "Network Security",
+        "Enhancement",
+        "Prevention of",
+        "Privilege Escalation"
+      ],
+      "raw": "Purpose of Access Control\nUser Accountability\nResource\nSegmentation\nNetwork Security\nEnhancement\nPrevention of\nPrivilege Escalation",
+      "instructional": true,
+      "teach": "Know the reason this control exists and the security objective it supports.",
+      "defs": [
+        [
+          "Segmentation",
+          "Dividing a network into controlled zones to limit access and lateral movement."
+        ]
+      ],
+      "course": {
+        "learn": "Access control restricts which subjects can access which resources and what actions they may perform. ACLs express allow/deny rules on objects, interfaces, or network traffic.",
+        "why": "Access control enforces least privilege and prevents an authenticated user from automatically reaching every resource.",
+        "example": "A router ACL allows HTTPS from the public Internet to a web server but denies administrative ports.",
+        "exam": "Authentication proves identity; access control/authorization limits actions. ACLs are rule lists that enforce those decisions.",
+        "breakdown": [
+          {
+            "term": "User Accountability",
+            "explanation": "Within Purpose of Access Control, this is a specific factor you should be able to recognize and explain. Connect it to the purpose of Access control rather than memorizing the phrase by itself."
+          },
+          {
+            "term": "Resource",
+            "explanation": "Within Purpose of Access Control, this is a specific factor you should be able to recognize and explain. Connect it to the purpose of Access control rather than memorizing the phrase by itself."
+          },
+          {
+            "term": "Segmentation",
+            "explanation": "Network segmentation separates systems into different trust zones so traffic must cross controlled boundaries. VLANs, subnets, ACLs, and firewalls are common mechanisms."
+          },
+          {
+            "term": "Network Security",
+            "explanation": "This contributes to reducing risk in the broader Access control design and should be evaluated as part of defense in depth."
+          },
+          {
+            "term": "Enhancement",
+            "explanation": "Within Purpose of Access Control, this is a specific factor you should be able to recognize and explain. Connect it to the purpose of Access control rather than memorizing the phrase by itself."
+          },
+          {
+            "term": "Prevention of Privilege Escalation",
+            "explanation": "Privilege escalation occurs when an attacker moves from lower privileges to higher privileges, such as from a normal user to administrator/root."
+          }
+        ],
+        "defs": [
+          {
+            "term": "Segmentation",
+            "definition": "Dividing a network into controlled zones to limit access and lateral movement."
+          }
+        ],
+        "check_q": "Without looking back, explain Purpose of Access Control and describe at least two key ideas from this section.",
+        "check_a": "Access control restricts which subjects can access which resources and what actions they may perform. ACLs express allow/deny rules on objects, interfaces, or network traffic. Key ideas include: User Accountability; Resource; Segmentation; Network Security; Enhancement.",
+        "points": [
+          "User Accountability",
+          "Resource",
+          "Segmentation",
+          "Network Security",
+          "Enhancement",
+          "Prevention of Privilege Escalation"
+        ]
+      }
+    },
+    {
+      "n": 3,
+      "title": "Access Control Lists",
+      "points": [
+        "Fine-Grained Control",
+        "Resource-Specific",
+        "Permissions",
+        "Dynamic Access",
+        "Control"
+      ],
+      "raw": "Access Control Lists\nFine-Grained Control\nResource-Specific\nPermissions\nDynamic Access\nControl",
+      "instructional": true,
+      "teach": "Read the source points, then explain the slide without looking. On Security+, recognition is not enough—you should be able to apply the concept to a scenario.",
+      "defs": [],
+      "course": {
+        "learn": "Access control restricts which subjects can access which resources and what actions they may perform. ACLs express allow/deny rules on objects, interfaces, or network traffic.",
+        "why": "Access control enforces least privilege and prevents an authenticated user from automatically reaching every resource.",
+        "example": "A router ACL allows HTTPS from the public Internet to a web server but denies administrative ports.",
+        "exam": "Authentication proves identity; access control/authorization limits actions. ACLs are rule lists that enforce those decisions.",
+        "breakdown": [
+          {
+            "term": "Fine-Grained Control",
+            "explanation": "Within Access Control Lists, this is a specific factor you should be able to recognize and explain. Connect it to the purpose of Access control rather than memorizing the phrase by itself."
+          },
+          {
+            "term": "Resource-Specific",
+            "explanation": "Within Access Control Lists, this is a specific factor you should be able to recognize and explain. Connect it to the purpose of Access control rather than memorizing the phrase by itself."
+          },
+          {
+            "term": "Permissions",
+            "explanation": "Permissions define the actions a subject may perform on a resource, such as read, write, execute, modify, or administer. They are one mechanism used to implement authorization."
+          },
+          {
+            "term": "Dynamic Access",
+            "explanation": "This concerns who or what can reach a resource and what actions are permitted once access is granted."
+          },
+          {
+            "term": "Control",
+            "explanation": "Use hard-to-guess credentials and limit what authenticated users can reach."
+          }
+        ],
+        "defs": [],
+        "check_q": "Without looking back, explain Access Control Lists and describe at least two key ideas from this section.",
+        "check_a": "Access control restricts which subjects can access which resources and what actions they may perform. ACLs express allow/deny rules on objects, interfaces, or network traffic. Key ideas include: Fine-Grained Control; Resource-Specific; Permissions; Dynamic Access; Control.",
+        "points": [
+          "Fine-Grained Control",
+          "Resource-Specific",
+          "Permissions",
+          "Dynamic Access",
+          "Control"
+        ]
+      }
+    },
+    {
+      "n": 4,
+      "title": "Permissions",
+      "points": [
+        "Access Restriction",
+        "Data Integrity",
+        "Least Privilege Principle",
+        "User Accountability"
+      ],
+      "raw": "Permissions\nAccess Restriction\nData Integrity\nLeast Privilege Principle\nUser Accountability",
+      "instructional": true,
+      "teach": "Read the source points, then explain the slide without looking. On Security+, recognition is not enough—you should be able to apply the concept to a scenario.",
+      "defs": [
+        [
+          "Least privilege",
+          "Granting only the minimum permissions required to perform a task."
+        ],
+        [
+          "Integrity",
+          "Ensuring data stays accurate, complete, and protected from unauthorized modification."
+        ]
+      ],
+      "course": {
+        "learn": "Permissions define the actions a subject may perform on a resource, such as read, write, execute, modify, or administer. They are one mechanism used to implement authorization.",
+        "why": "Correct permissions enforce least privilege and protect both confidentiality and integrity.",
+        "example": "A finance analyst can read reports but cannot change the application binaries or security configuration.",
+        "exam": "Do not give broad administrator/full-control rights when a narrower permission set satisfies the task.",
+        "breakdown": [
+          {
+            "term": "Access Restriction",
+            "explanation": "This concerns who or what can reach a resource and what actions are permitted once access is granted."
+          },
+          {
+            "term": "Data Integrity",
+            "explanation": "Within Permissions, this is a specific factor you should be able to recognize and explain. Connect it to the purpose of Access control rather than memorizing the phrase by itself."
+          },
+          {
+            "term": "Least Privilege Principle",
+            "explanation": "Grant only the permissions required for a legitimate task."
+          },
+          {
+            "term": "User Accountability",
+            "explanation": "Within Permissions, this is a specific factor you should be able to recognize and explain. Connect it to the purpose of Access control rather than memorizing the phrase by itself."
+          }
+        ],
+        "defs": [
+          {
+            "term": "Least privilege",
+            "definition": "Granting only the minimum permissions required to perform a task."
+          },
+          {
+            "term": "Integrity",
+            "definition": "Ensuring data stays accurate, complete, and protected from unauthorized modification."
+          }
+        ],
+        "check_q": "Without looking back, explain Permissions and describe at least two key ideas from this section.",
+        "check_a": "Permissions define the actions a subject may perform on a resource, such as read, write, execute, modify, or administer. They are one mechanism used to implement authorization. Key ideas include: Access Restriction; Data Integrity; Least Privilege Principle; User Accountability.",
+        "points": [
+          "Access Restriction",
+          "Data Integrity",
+          "Least Privilege Principle",
+          "User Accountability"
+        ]
+      }
+    },
+    {
+      "n": 5,
+      "title": "Mitigation Methods",
+      "points": [],
+      "raw": "Mitigation Methods",
+      "instructional": false,
+      "teach": "These are defensive actions. Learn what each one reduces and when it is the best response to a scenario.",
+      "defs": []
+    }
+  ],
+  "slide_count": 5,
+  "instructional_count": 3,
+  "concepts": [
+    "Purpose of Access Control",
+    "Access Control Lists",
+    "Permissions"
+  ],
+  "source_filename": "09.02_Access_control.pdf"
+}

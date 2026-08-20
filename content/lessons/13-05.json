@@ -1,0 +1,242 @@
+{
+  "id": "13.05",
+  "chapter": 13,
+  "sub": 5,
+  "title": "Testing",
+  "chapter_name": "Resilience & Recovery",
+  "slides": [
+    {
+      "n": 1,
+      "title": "Testing",
+      "points": [],
+      "raw": "Testing",
+      "instructional": false,
+      "teach": "Read the source points, then explain the slide without looking. On Security+, recognition is not enough—you should be able to apply the concept to a scenario.",
+      "defs": []
+    },
+    {
+      "n": 2,
+      "title": "Tabletop Exercise",
+      "points": [
+        "Decisionmaking",
+        "practice",
+        "Identifying",
+        "weaknesses",
+        "Collaboration",
+        "and",
+        "coordination"
+      ],
+      "raw": "Tabletop Exercise\nDecisionmaking\npractice\nIdentifying\nweaknesses\nCollaboration\nand\ncoordination",
+      "instructional": true,
+      "teach": "Read the source points, then explain the slide without looking. On Security+, recognition is not enough—you should be able to apply the concept to a scenario.",
+      "defs": [],
+      "course": {
+        "learn": "A tabletop exercise is a discussion-based test in which participants walk through a hypothetical incident or disaster and explain what they would do.",
+        "why": "It reveals unclear roles, missing contacts, and plan gaps without risking production systems.",
+        "example": "Leaders are told ransomware has disabled payroll and discuss notification, containment, recovery, and communications step by step.",
+        "exam": "Talk through the scenario = tabletop. Actually performing simulated actions is a more hands-on simulation.",
+        "breakdown": [
+          {
+            "term": "Decisionmaking practice",
+            "explanation": "Within Tabletop Exercise, this is a specific factor you should be able to recognize and explain. Connect it to the purpose of Testing rather than memorizing the phrase by itself."
+          },
+          {
+            "term": "Identifying weaknesses",
+            "explanation": "The goal is to discover and clearly document the condition so the organization can decide what action to take next."
+          },
+          {
+            "term": "Collaboration and",
+            "explanation": "Within Tabletop Exercise, this is a specific factor you should be able to recognize and explain. Connect it to the purpose of Testing rather than memorizing the phrase by itself."
+          },
+          {
+            "term": "coordination",
+            "explanation": "Within Tabletop Exercise, this is a specific factor you should be able to recognize and explain. Connect it to the purpose of Testing rather than memorizing the phrase by itself."
+          }
+        ],
+        "defs": [],
+        "check_q": "Without looking back, explain Tabletop Exercise and describe at least two key ideas from this section.",
+        "check_a": "A tabletop exercise is a discussion-based test in which participants walk through a hypothetical incident or disaster and explain what they would do. Key ideas include: Decisionmaking practice; Identifying weaknesses; Collaboration and; coordination.",
+        "points": [
+          "Decisionmaking practice",
+          "Identifying weaknesses",
+          "Collaboration and",
+          "coordination"
+        ]
+      }
+    },
+    {
+      "n": 3,
+      "title": "Failover",
+      "points": [
+        "Ensuring redundancy",
+        "Evaluating recovery",
+        "time",
+        "Validating continuity",
+        "plans"
+      ],
+      "raw": "Failover\nEnsuring redundancy\nEvaluating recovery\ntime\nValidating continuity\nplans",
+      "instructional": true,
+      "teach": "Read the source points, then explain the slide without looking. On Security+, recognition is not enough—you should be able to apply the concept to a scenario.",
+      "defs": [
+        [
+          "Failover",
+          "Switching service from a failed primary system to a secondary system."
+        ]
+      ],
+      "course": {
+        "learn": "Failover moves service from a failed primary resource to a secondary resource. It may be automatic or manual depending on architecture.",
+        "why": "Failover is a core availability mechanism because a single failure does not have to become a service outage.",
+        "example": "When the primary database becomes unhealthy, the standby replica is promoted and applications reconnect to it.",
+        "exam": "Primary fails → secondary takes over = failover.",
+        "breakdown": [
+          {
+            "term": "Ensuring redundancy",
+            "explanation": "Use duplicate components or paths so one failure does not stop the service."
+          },
+          {
+            "term": "Evaluating recovery time",
+            "explanation": "Backups create recoverable copies of data or systems so organizations can restore after deletion, corruption, ransomware, or disaster. Good backup strategy considers location, frequency, retention, immutability, encryption, and restore testing."
+          },
+          {
+            "term": "Validating continuity plans",
+            "explanation": "Within Failover, this is a specific factor you should be able to recognize and explain. Connect it to the purpose of Testing rather than memorizing the phrase by itself."
+          }
+        ],
+        "defs": [
+          {
+            "term": "Failover",
+            "definition": "Switching service from a failed primary system to a secondary system."
+          }
+        ],
+        "check_q": "Without looking back, explain Failover and describe at least two key ideas from this section.",
+        "check_a": "Failover moves service from a failed primary resource to a secondary resource. It may be automatic or manual depending on architecture. Key ideas include: Ensuring redundancy; Evaluating recovery time; Validating continuity plans.",
+        "points": [
+          "Ensuring redundancy",
+          "Evaluating recovery time",
+          "Validating continuity plans"
+        ]
+      }
+    },
+    {
+      "n": 4,
+      "title": "Simulation",
+      "points": [
+        "Real-World",
+        "scenario",
+        "evaluation",
+        "Training and",
+        "skill",
+        "development",
+        "Detection",
+        "and response",
+        "assessment"
+      ],
+      "raw": "Simulation\nReal-World\nscenario\nevaluation\nTraining and\nskill\ndevelopment\nDetection\nand response\nassessment",
+      "instructional": true,
+      "teach": "Read the source points, then explain the slide without looking. On Security+, recognition is not enough—you should be able to apply the concept to a scenario.",
+      "defs": [],
+      "course": {
+        "learn": "A simulation is a controlled exercise in which participants actively perform response tasks rather than only discussing them.",
+        "why": "Hands-on practice tests tools, coordination, timing, and procedures more realistically than a tabletop.",
+        "example": "A security team uses a lab environment to practice isolating hosts, restoring backups, and communicating during a mock ransomware event.",
+        "exam": "Discussion only = tabletop. Performing controlled response actions = simulation.",
+        "breakdown": [
+          {
+            "term": "Real-World scenario",
+            "explanation": "Within Simulation, this is a specific factor you should be able to recognize and explain. Connect it to the purpose of Testing rather than memorizing the phrase by itself."
+          },
+          {
+            "term": "evaluation",
+            "explanation": "Within Simulation, this is a specific factor you should be able to recognize and explain. Connect it to the purpose of Testing rather than memorizing the phrase by itself."
+          },
+          {
+            "term": "Training and skill",
+            "explanation": "Within Simulation, this is a specific factor you should be able to recognize and explain. Connect it to the purpose of Testing rather than memorizing the phrase by itself."
+          },
+          {
+            "term": "development",
+            "explanation": "Within Simulation, this is a specific factor you should be able to recognize and explain. Connect it to the purpose of Testing rather than memorizing the phrase by itself."
+          },
+          {
+            "term": "Detection and response",
+            "explanation": "Within Simulation, this is a specific factor you should be able to recognize and explain. Connect it to the purpose of Testing rather than memorizing the phrase by itself."
+          },
+          {
+            "term": "assessment",
+            "explanation": "Evaluate risk and verify whether controls meet organizational, legal, or regulatory requirements."
+          }
+        ],
+        "defs": [],
+        "check_q": "Without looking back, explain Simulation and describe at least two key ideas from this section.",
+        "check_a": "A simulation is a controlled exercise in which participants actively perform response tasks rather than only discussing them. Key ideas include: Real-World scenario; evaluation; Training and skill; development; Detection and response.",
+        "points": [
+          "Real-World scenario",
+          "evaluation",
+          "Training and skill",
+          "development",
+          "Detection and response",
+          "assessment"
+        ]
+      }
+    },
+    {
+      "n": 5,
+      "title": "Parallel Processing",
+      "points": [
+        "Continuous operation",
+        "Load distribution",
+        "Resource optimization"
+      ],
+      "raw": "Parallel Processing\nContinuous operation\nLoad distribution\nResource optimization",
+      "instructional": true,
+      "teach": "Study the order and purpose of each step. Process questions often ask what should happen next.",
+      "defs": [],
+      "course": {
+        "learn": "Parallel processing uses multiple resources at the same time to distribute workload, improve throughput, and reduce dependence on one processing path.",
+        "why": "It can improve performance and resilience when work can continue across multiple nodes.",
+        "example": "A security analytics platform processes log streams across several worker nodes so one node failure does not stop all analysis.",
+        "exam": "Parallel processing is about concurrent work; load balancing decides where work is sent; clustering coordinates resilient service nodes.",
+        "breakdown": [
+          {
+            "term": "Continuous operation",
+            "explanation": "Within Parallel Processing, this is a specific factor you should be able to recognize and explain. Connect it to the purpose of Testing rather than memorizing the phrase by itself."
+          },
+          {
+            "term": "Load distribution",
+            "explanation": "Within Parallel Processing, this is a specific factor you should be able to recognize and explain. Connect it to the purpose of Testing rather than memorizing the phrase by itself."
+          },
+          {
+            "term": "Resource optimization",
+            "explanation": "Within Parallel Processing, this is a specific factor you should be able to recognize and explain. Connect it to the purpose of Testing rather than memorizing the phrase by itself."
+          }
+        ],
+        "defs": [],
+        "check_q": "Without looking back, explain Parallel Processing and describe at least two key ideas from this section.",
+        "check_a": "Parallel processing uses multiple resources at the same time to distribute workload, improve throughput, and reduce dependence on one processing path. Key ideas include: Continuous operation; Load distribution; Resource optimization.",
+        "points": [
+          "Continuous operation",
+          "Load distribution",
+          "Resource optimization"
+        ]
+      }
+    },
+    {
+      "n": 6,
+      "title": "Backups",
+      "points": [],
+      "raw": "Backups",
+      "instructional": false,
+      "teach": "Read the source points, then explain the slide without looking. On Security+, recognition is not enough—you should be able to apply the concept to a scenario.",
+      "defs": []
+    }
+  ],
+  "slide_count": 6,
+  "instructional_count": 4,
+  "concepts": [
+    "Tabletop Exercise",
+    "Failover",
+    "Simulation",
+    "Parallel Processing"
+  ],
+  "source_filename": "13.05_Testing.pdf"
+}

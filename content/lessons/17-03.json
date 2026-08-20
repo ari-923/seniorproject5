@@ -1,0 +1,230 @@
+{
+  "id": "17.03",
+  "chapter": 17,
+  "sub": 3,
+  "title": "Tools",
+  "chapter_name": "Security Monitoring",
+  "slides": [
+    {
+      "n": 1,
+      "title": "Tools",
+      "points": [],
+      "raw": "Tools",
+      "instructional": false,
+      "teach": "Read the source points, then explain the slide without looking. On Security+, recognition is not enough—you should be able to apply the concept to a scenario.",
+      "defs": []
+    },
+    {
+      "n": 2,
+      "title": "Tools",
+      "points": [
+        "Security Content",
+        "Automation",
+        "Protocol (SCAP)",
+        "Benchmarks",
+        "Security",
+        "Information and",
+        "Event Management",
+        "(SIEM)",
+        "Agents/Agentless",
+        "Antivirus"
+      ],
+      "raw": "Tools\nSecurity Content\nAutomation\nProtocol (SCAP)\nBenchmarks\nSecurity\nInformation and\nEvent Management\n(SIEM)\nAgents/Agentless\nAntivirus",
+      "instructional": true,
+      "teach": "Read the source points, then explain the slide without looking. On Security+, recognition is not enough—you should be able to apply the concept to a scenario.",
+      "defs": [
+        [
+          "SCAP",
+          "Security Content Automation Protocol: standardized formats/specifications for automated security configuration and vulnerability information."
+        ],
+        [
+          "SIEM",
+          "Security Information and Event Management: centralizes and correlates logs/events for alerting, search, and investigation."
+        ]
+      ],
+      "course": {
+        "learn": "This section focuses on **Tools** within **Tools**. Security monitoring and automation tools include SIEM for event correlation, SCAP for standardized security-content automation, DLP for controlling sensitive data movement, and SNMP for device monitoring and traps.",
+        "why": "Different tools answer different questions; knowing the purpose prevents choosing a tool that cannot observe the required layer.",
+        "example": "A network switch sends an SNMP trap for a failed interface while the SIEM correlates that event with other security logs.",
+        "exam": "SCAP = standardized security automation/content, SIEM = log/event correlation, DLP = sensitive-data movement, SNMP trap = device-generated management alert.",
+        "breakdown": [
+          {
+            "term": "Security Content",
+            "explanation": "This is one of the mechanisms used to implement or support Tools. On the exam, focus on what problem it solves and where it fits."
+          },
+          {
+            "term": "Automation",
+            "explanation": "This is one of the mechanisms used to implement or support Tools. On the exam, focus on what problem it solves and where it fits."
+          },
+          {
+            "term": "Protocol (SCAP)",
+            "explanation": "This is one of the mechanisms used to implement or support Tools. On the exam, focus on what problem it solves and where it fits."
+          },
+          {
+            "term": "Benchmarks",
+            "explanation": "This is one of the mechanisms used to implement or support Tools. On the exam, focus on what problem it solves and where it fits."
+          },
+          {
+            "term": "Security",
+            "explanation": "Document required security rules and repeatable steps for carrying them out."
+          },
+          {
+            "term": "Information and Event Management",
+            "explanation": "This is one of the mechanisms used to implement or support Tools. On the exam, focus on what problem it solves and where it fits."
+          },
+          {
+            "term": "(SIEM)",
+            "explanation": "This is one of the mechanisms used to implement or support Tools. On the exam, focus on what problem it solves and where it fits."
+          },
+          {
+            "term": "Agents/Agentless",
+            "explanation": "This is one of the mechanisms used to implement or support Tools. On the exam, focus on what problem it solves and where it fits."
+          },
+          {
+            "term": "Antivirus",
+            "explanation": "Detect, block, quarantine, or remove malicious software on endpoints."
+          }
+        ],
+        "defs": [
+          {
+            "term": "SCAP",
+            "definition": "Security Content Automation Protocol: standardized formats/specifications for automated security configuration and vulnerability information."
+          },
+          {
+            "term": "SIEM",
+            "definition": "Security Information and Event Management: centralizes and correlates logs/events for alerting, search, and investigation."
+          }
+        ],
+        "check_q": "Without looking back, explain Tools and describe at least two key ideas from this section.",
+        "check_a": "This section focuses on **Tools** within **Tools**. Security monitoring and automation tools include SIEM for event correlation, SCAP for standardized security-content automation, DLP for controlling sensitive data movement, and SNMP for device monitoring and traps. Key ideas include: Security Content; Automation; Protocol (SCAP); Benchmarks; Security.",
+        "points": [
+          "Security Content",
+          "Automation",
+          "Protocol (SCAP)",
+          "Benchmarks",
+          "Security",
+          "Information and Event Management",
+          "(SIEM)",
+          "Agents/Agentless",
+          "Antivirus"
+        ]
+      }
+    },
+    {
+      "n": 3,
+      "title": "Tools",
+      "points": [
+        "Data Loss",
+        "Prevention (DLP)",
+        "Simple Network",
+        "Management",
+        "Protocol (SNMP)",
+        "Traps",
+        "NetFlow",
+        "Vulnerability",
+        "Scanners"
+      ],
+      "raw": "Tools\nData Loss\nPrevention (DLP)\nSimple Network\nManagement\nProtocol (SNMP)\nTraps\nNetFlow\nVulnerability\nScanners",
+      "instructional": true,
+      "teach": "Read the source points, then explain the slide without looking. On Security+, recognition is not enough—you should be able to apply the concept to a scenario.",
+      "defs": [
+        [
+          "NetFlow",
+          "Network-flow telemetry describing conversations such as endpoints, ports, volume, and timing rather than necessarily storing full packet payloads."
+        ],
+        [
+          "SNMP",
+          "Simple Network Management Protocol: used to monitor/manage network devices; traps are device-generated alerts."
+        ],
+        [
+          "DLP",
+          "Data Loss Prevention: controls that detect or prevent unauthorized movement/disclosure of sensitive data."
+        ]
+      ],
+      "course": {
+        "learn": "This section focuses on **Tools** within **Tools**. Security monitoring and automation tools include SIEM for event correlation, SCAP for standardized security-content automation, DLP for controlling sensitive data movement, and SNMP for device monitoring and traps.",
+        "why": "Different tools answer different questions; knowing the purpose prevents choosing a tool that cannot observe the required layer.",
+        "example": "A network switch sends an SNMP trap for a failed interface while the SIEM correlates that event with other security logs.",
+        "exam": "SCAP = standardized security automation/content, SIEM = log/event correlation, DLP = sensitive-data movement, SNMP trap = device-generated management alert.",
+        "breakdown": [
+          {
+            "term": "Data Loss",
+            "explanation": "This is one of the mechanisms used to implement or support Tools. On the exam, focus on what problem it solves and where it fits."
+          },
+          {
+            "term": "Prevention (DLP)",
+            "explanation": "This is one of the mechanisms used to implement or support Tools. On the exam, focus on what problem it solves and where it fits."
+          },
+          {
+            "term": "Simple Network",
+            "explanation": "This is one of the mechanisms used to implement or support Tools. On the exam, focus on what problem it solves and where it fits."
+          },
+          {
+            "term": "Management",
+            "explanation": "This is one of the mechanisms used to implement or support Tools. On the exam, focus on what problem it solves and where it fits."
+          },
+          {
+            "term": "Protocol (SNMP)",
+            "explanation": "This is one of the mechanisms used to implement or support Tools. On the exam, focus on what problem it solves and where it fits."
+          },
+          {
+            "term": "Traps",
+            "explanation": "This is one of the mechanisms used to implement or support Tools. On the exam, focus on what problem it solves and where it fits."
+          },
+          {
+            "term": "NetFlow",
+            "explanation": "This is one of the mechanisms used to implement or support Tools. On the exam, focus on what problem it solves and where it fits."
+          },
+          {
+            "term": "Vulnerability",
+            "explanation": "Systematically identify and evaluate weaknesses so remediation can be prioritized."
+          },
+          {
+            "term": "Scanners",
+            "explanation": "This is one of the mechanisms used to implement or support Tools. On the exam, focus on what problem it solves and where it fits."
+          }
+        ],
+        "defs": [
+          {
+            "term": "NetFlow",
+            "definition": "Network-flow telemetry describing conversations such as endpoints, ports, volume, and timing rather than necessarily storing full packet payloads."
+          },
+          {
+            "term": "SNMP",
+            "definition": "Simple Network Management Protocol: used to monitor/manage network devices; traps are device-generated alerts."
+          },
+          {
+            "term": "DLP",
+            "definition": "Data Loss Prevention: controls that detect or prevent unauthorized movement/disclosure of sensitive data."
+          }
+        ],
+        "check_q": "Without looking back, explain Tools and describe at least two key ideas from this section.",
+        "check_a": "This section focuses on **Tools** within **Tools**. Security monitoring and automation tools include SIEM for event correlation, SCAP for standardized security-content automation, DLP for controlling sensitive data movement, and SNMP for device monitoring and traps. Key ideas include: Data Loss; Prevention (DLP); Simple Network; Management; Protocol (SNMP).",
+        "points": [
+          "Data Loss",
+          "Prevention (DLP)",
+          "Simple Network",
+          "Management",
+          "Protocol (SNMP)",
+          "Traps",
+          "NetFlow",
+          "Vulnerability",
+          "Scanners"
+        ]
+      }
+    },
+    {
+      "n": 4,
+      "title": "Enterprise Capabilities to Enhance Security",
+      "points": [],
+      "raw": "Enterprise Capabilities to\nEnhance Security",
+      "instructional": false,
+      "teach": "Read the source points, then explain the slide without looking. On Security+, recognition is not enough—you should be able to apply the concept to a scenario.",
+      "defs": []
+    }
+  ],
+  "slide_count": 4,
+  "instructional_count": 2,
+  "concepts": [],
+  "source_filename": "17.03_Tools.pdf"
+}

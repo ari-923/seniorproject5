@@ -1,0 +1,241 @@
+{
+  "id": "04.02",
+  "chapter": 4,
+  "sub": 2,
+  "title": "Encryption",
+  "chapter_name": "Cryptography & PKI",
+  "slides": [
+    {
+      "n": 1,
+      "title": "Encryption",
+      "points": [],
+      "raw": "Encryption",
+      "instructional": false,
+      "teach": "Read the source points, then explain the slide without looking. On Security+, recognition is not enough—you should be able to apply the concept to a scenario.",
+      "defs": [
+        [
+          "Encryption",
+          "Transforms readable plaintext into ciphertext using an algorithm and key so unauthorized parties cannot understand it."
+        ]
+      ]
+    },
+    {
+      "n": 2,
+      "title": "Level",
+      "points": [
+        "Full-disk",
+        "Partition",
+        "File",
+        "Volume",
+        "Database",
+        "Record"
+      ],
+      "raw": "Level\nFull-disk\nPartition\nFile\nVolume\nDatabase\nRecord",
+      "instructional": true,
+      "teach": "Read the source points, then explain the slide without looking. On Security+, recognition is not enough—you should be able to apply the concept to a scenario.",
+      "defs": [],
+      "course": {
+        "learn": "Encryption can be applied at different levels of granularity: full disk, partition, volume, file, database, or individual record/field. The best level depends on what threats and workflows must be protected.",
+        "why": "Broader encryption is easier to deploy consistently, while fine-grained encryption can protect selected sensitive data even from other parts of the system.",
+        "example": "A laptop uses full-disk encryption for theft protection, while a database also encrypts a sensitive customer identifier at the field level.",
+        "exam": "Choose the encryption layer that matches the threat: stolen device often favors full-disk; protecting selected database values may require field/record-level encryption.",
+        "breakdown": [
+          {
+            "term": "Full-disk",
+            "explanation": "Within Level, this is a specific factor you should be able to recognize and explain. Connect it to the purpose of Encryption rather than memorizing the phrase by itself."
+          },
+          {
+            "term": "Partition",
+            "explanation": "Within Level, this is a specific factor you should be able to recognize and explain. Connect it to the purpose of Encryption rather than memorizing the phrase by itself."
+          },
+          {
+            "term": "File",
+            "explanation": "Encryption converts plaintext into ciphertext using an algorithm and key so unauthorized parties cannot understand the data. Symmetric encryption uses a shared secret; asymmetric encryption uses a public/private key pair."
+          },
+          {
+            "term": "Volume",
+            "explanation": "Within Level, this is a specific factor you should be able to recognize and explain. Connect it to the purpose of Encryption rather than memorizing the phrase by itself."
+          },
+          {
+            "term": "Database",
+            "explanation": "Within Level, this is a specific factor you should be able to recognize and explain. Connect it to the purpose of Encryption rather than memorizing the phrase by itself."
+          },
+          {
+            "term": "Record",
+            "explanation": "Within Level, this is a specific factor you should be able to recognize and explain. Connect it to the purpose of Encryption rather than memorizing the phrase by itself."
+          }
+        ],
+        "defs": [],
+        "check_q": "Without looking back, explain Level and describe at least two key ideas from this section.",
+        "check_a": "Encryption can be applied at different levels of granularity: full disk, partition, volume, file, database, or individual record/field. The best level depends on what threats and workflows must be protected. Key ideas include: Full-disk; Partition; File; Volume; Database.",
+        "points": [
+          "Full-disk",
+          "Partition",
+          "File",
+          "Volume",
+          "Database",
+          "Record"
+        ]
+      }
+    },
+    {
+      "n": 3,
+      "title": "Types",
+      "points": [
+        "Asymmetric",
+        "Symmetric"
+      ],
+      "raw": "Types\nAsymmetric\nSymmetric",
+      "instructional": true,
+      "teach": "Focus on the differences between the listed types and the clue words that distinguish them in exam questions.",
+      "defs": [],
+      "course": {
+        "learn": "This section focuses on **Types** within **Encryption**. Encryption converts plaintext into ciphertext using an algorithm and key so unauthorized parties cannot understand the data. Symmetric encryption uses a shared secret; asymmetric encryption uses a public/private key pair.",
+        "why": "Encryption is one of the primary ways to protect confidentiality for data at rest and in transit.",
+        "example": "A laptop uses full-disk encryption, while a TLS session protects web traffic crossing an untrusted network.",
+        "exam": "Encryption = confidentiality and reversible with the correct key. Hashing is one-way and primarily supports integrity.",
+        "breakdown": [
+          {
+            "term": "Asymmetric",
+            "explanation": "Within Types, this is a specific factor you should be able to recognize and explain. Connect it to the purpose of Encryption rather than memorizing the phrase by itself."
+          },
+          {
+            "term": "Symmetric",
+            "explanation": "Within Types, this is a specific factor you should be able to recognize and explain. Connect it to the purpose of Encryption rather than memorizing the phrase by itself."
+          }
+        ],
+        "defs": [],
+        "check_q": "Without looking back, explain Types and describe at least two key ideas from this section.",
+        "check_a": "This section focuses on **Types** within **Encryption**. Encryption converts plaintext into ciphertext using an algorithm and key so unauthorized parties cannot understand the data. Symmetric encryption uses a shared secret; asymmetric encryption uses a public/private key pair. Key ideas include: Asymmetric; Symmetric.",
+        "points": [
+          "Asymmetric",
+          "Symmetric"
+        ]
+      }
+    },
+    {
+      "n": 4,
+      "title": "Key Exchange",
+      "points": [
+        "Methods",
+        "Protocols"
+      ],
+      "raw": "Key Exchange\nMethods\nProtocols",
+      "instructional": true,
+      "teach": "Read the source points, then explain the slide without looking. On Security+, recognition is not enough—you should be able to apply the concept to a scenario.",
+      "defs": [],
+      "course": {
+        "learn": "Cryptographic strength depends on using the correct key type, algorithm, key length, and exchange method. Keys must be generated, distributed, stored, rotated, and retired securely.",
+        "why": "A strong algorithm can still fail if keys are weak, exposed, reused too long, or exchanged insecurely.",
+        "example": "A server uses asymmetric cryptography to establish trust and exchange key material, then switches to fast symmetric encryption for the session.",
+        "exam": "Focus on purpose: symmetric = fast shared secret; asymmetric = public/private pair; longer keys generally increase brute-force difficulty but algorithm choice also matters.",
+        "breakdown": [
+          {
+            "term": "Methods",
+            "explanation": "Encryption converts plaintext into ciphertext using an algorithm and key so unauthorized parties cannot understand the data. Symmetric encryption uses a shared secret; asymmetric encryption uses a public/private key pair."
+          },
+          {
+            "term": "Protocols",
+            "explanation": "Within Key Exchange, this is a specific factor you should be able to recognize and explain. Connect it to the purpose of Encryption rather than memorizing the phrase by itself."
+          }
+        ],
+        "defs": [],
+        "check_q": "Without looking back, explain Key Exchange and describe at least two key ideas from this section.",
+        "check_a": "Cryptographic strength depends on using the correct key type, algorithm, key length, and exchange method. Keys must be generated, distributed, stored, rotated, and retired securely. Key ideas include: Methods; Protocols.",
+        "points": [
+          "Methods",
+          "Protocols"
+        ]
+      }
+    },
+    {
+      "n": 5,
+      "title": "Algorithms",
+      "points": [
+        "Symmetric",
+        "Asymmetric"
+      ],
+      "raw": "Algorithms\nSymmetric\nAsymmetric",
+      "instructional": true,
+      "teach": "Read the source points, then explain the slide without looking. On Security+, recognition is not enough—you should be able to apply the concept to a scenario.",
+      "defs": [],
+      "course": {
+        "learn": "Cryptographic strength depends on using the correct key type, algorithm, key length, and exchange method. Keys must be generated, distributed, stored, rotated, and retired securely.",
+        "why": "A strong algorithm can still fail if keys are weak, exposed, reused too long, or exchanged insecurely.",
+        "example": "A server uses asymmetric cryptography to establish trust and exchange key material, then switches to fast symmetric encryption for the session.",
+        "exam": "Focus on purpose: symmetric = fast shared secret; asymmetric = public/private pair; longer keys generally increase brute-force difficulty but algorithm choice also matters.",
+        "breakdown": [
+          {
+            "term": "Symmetric",
+            "explanation": "Within Algorithms, this is a specific factor you should be able to recognize and explain. Connect it to the purpose of Encryption rather than memorizing the phrase by itself."
+          },
+          {
+            "term": "Asymmetric",
+            "explanation": "Within Algorithms, this is a specific factor you should be able to recognize and explain. Connect it to the purpose of Encryption rather than memorizing the phrase by itself."
+          }
+        ],
+        "defs": [],
+        "check_q": "Without looking back, explain Algorithms and describe at least two key ideas from this section.",
+        "check_a": "Cryptographic strength depends on using the correct key type, algorithm, key length, and exchange method. Keys must be generated, distributed, stored, rotated, and retired securely. Key ideas include: Symmetric; Asymmetric.",
+        "points": [
+          "Symmetric",
+          "Asymmetric"
+        ]
+      }
+    },
+    {
+      "n": 6,
+      "title": "Key Length",
+      "points": [
+        "Longer key lengths offer higher security",
+        "Specific cryptographic algorithm offer different length"
+      ],
+      "raw": "Key Length\nLonger key lengths offer higher security\nSpecific cryptographic algorithm offer different length",
+      "instructional": true,
+      "teach": "Read the source points, then explain the slide without looking. On Security+, recognition is not enough—you should be able to apply the concept to a scenario.",
+      "defs": [],
+      "course": {
+        "learn": "Cryptographic strength depends on using the correct key type, algorithm, key length, and exchange method. Keys must be generated, distributed, stored, rotated, and retired securely.",
+        "why": "A strong algorithm can still fail if keys are weak, exposed, reused too long, or exchanged insecurely.",
+        "example": "A server uses asymmetric cryptography to establish trust and exchange key material, then switches to fast symmetric encryption for the session.",
+        "exam": "Focus on purpose: symmetric = fast shared secret; asymmetric = public/private pair; longer keys generally increase brute-force difficulty but algorithm choice also matters.",
+        "breakdown": [
+          {
+            "term": "Longer key lengths offer higher security",
+            "explanation": "Cryptographic strength depends on using the correct key type, algorithm, key length, and exchange method. Keys must be generated, distributed, stored, rotated, and retired securely."
+          },
+          {
+            "term": "Specific cryptographic algorithm offer different length",
+            "explanation": "Within Key Length, this is a specific factor you should be able to recognize and explain. Connect it to the purpose of Encryption rather than memorizing the phrase by itself."
+          }
+        ],
+        "defs": [],
+        "check_q": "Without looking back, explain Key Length and describe at least two key ideas from this section.",
+        "check_a": "Cryptographic strength depends on using the correct key type, algorithm, key length, and exchange method. Keys must be generated, distributed, stored, rotated, and retired securely. Key ideas include: Longer key lengths offer higher security; Specific cryptographic algorithm offer different length.",
+        "points": [
+          "Longer key lengths offer higher security",
+          "Specific cryptographic algorithm offer different length"
+        ]
+      }
+    },
+    {
+      "n": 7,
+      "title": "Tools",
+      "points": [],
+      "raw": "Tools",
+      "instructional": false,
+      "teach": "Read the source points, then explain the slide without looking. On Security+, recognition is not enough—you should be able to apply the concept to a scenario.",
+      "defs": []
+    }
+  ],
+  "slide_count": 7,
+  "instructional_count": 5,
+  "concepts": [
+    "Level",
+    "Types",
+    "Key Exchange",
+    "Algorithms",
+    "Key Length"
+  ],
+  "source_filename": "04.02_Encryption.pdf"
+}

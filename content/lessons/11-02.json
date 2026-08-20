@@ -1,0 +1,898 @@
+{
+  "id": "11.02",
+  "chapter": 11,
+  "sub": 2,
+  "title": "Secure communication and access",
+  "chapter_name": "Secure Infrastructure & Communications",
+  "slides": [
+    {
+      "n": 1,
+      "title": "Secure Communication/Access",
+      "points": [],
+      "raw": "Secure\nCommunication/Access",
+      "instructional": false,
+      "teach": "Read the source points, then explain the slide without looking. On Security+, recognition is not enough—you should be able to apply the concept to a scenario.",
+      "defs": []
+    },
+    {
+      "n": 2,
+      "title": "Virtual Private Network (VPN)",
+      "points": [
+        "Secure and Encrypted",
+        "Connection",
+        "Versatility",
+        "Widely Adopted"
+      ],
+      "raw": "Virtual Private Network (VPN)\nSecure and Encrypted\nConnection\nVersatility\nWidely Adopted",
+      "instructional": true,
+      "teach": "Read the source points, then explain the slide without looking. On Security+, recognition is not enough—you should be able to apply the concept to a scenario.",
+      "defs": [
+        [
+          "VPN",
+          "Virtual Private Network: an encrypted/secured tunnel across an untrusted or shared network."
+        ]
+      ],
+      "course": {
+        "learn": "A Virtual Private Network (VPN) creates a protected tunnel across an untrusted network so remote users or sites can communicate securely.",
+        "why": "Without a secure tunnel, traffic crossing public networks may be observed or modified.",
+        "example": "A remote employee authenticates with MFA and establishes an encrypted VPN tunnel to the corporate network.",
+        "exam": "Know remote-access versus site-to-site VPN, strong authentication, split tunneling considerations, logging, and least privilege.",
+        "breakdown": [
+          {
+            "term": "Secure and Encrypted",
+            "explanation": "Within Virtual Private Network (VPN), this is a specific factor you should be able to recognize and explain. Connect it to the purpose of Secure communication and access rather than memorizing the phrase by itself."
+          },
+          {
+            "term": "Connection",
+            "explanation": "Within Virtual Private Network (VPN), this is a specific factor you should be able to recognize and explain. Connect it to the purpose of Secure communication and access rather than memorizing the phrase by itself."
+          },
+          {
+            "term": "Versatility",
+            "explanation": "Within Virtual Private Network (VPN), this is a specific factor you should be able to recognize and explain. Connect it to the purpose of Secure communication and access rather than memorizing the phrase by itself."
+          },
+          {
+            "term": "Widely Adopted",
+            "explanation": "Within Virtual Private Network (VPN), this is a specific factor you should be able to recognize and explain. Connect it to the purpose of Secure communication and access rather than memorizing the phrase by itself."
+          }
+        ],
+        "defs": [
+          {
+            "term": "VPN",
+            "definition": "Virtual Private Network: an encrypted/secured tunnel across an untrusted or shared network."
+          }
+        ],
+        "check_q": "Without looking back, explain Virtual Private Network (VPN) and describe at least two key ideas from this section.",
+        "check_a": "A Virtual Private Network (VPN) creates a protected tunnel across an untrusted network so remote users or sites can communicate securely. Key ideas include: Secure and Encrypted; Connection; Versatility; Widely Adopted.",
+        "points": [
+          "Secure and Encrypted",
+          "Connection",
+          "Versatility",
+          "Widely Adopted"
+        ]
+      }
+    },
+    {
+      "n": 3,
+      "title": "Considerations Using VPN",
+      "points": [
+        "• Strong Encryption and Authentication",
+        "• Regular Security Audits",
+        "• User Training",
+        "• Monitoring and Incident Response"
+      ],
+      "raw": "Considerations Using VPN\n• Strong Encryption and Authentication\n• Regular Security Audits\n• User Training\n• Monitoring and Incident Response",
+      "instructional": true,
+      "teach": "These are design tradeoffs. Learn why each factor matters rather than memorizing the words alone.",
+      "defs": [
+        [
+          "Authentication",
+          "Proving an identity—answering “who are you?”"
+        ],
+        [
+          "Encryption",
+          "Transforms readable plaintext into ciphertext using an algorithm and key so unauthorized parties cannot understand it."
+        ],
+        [
+          "VPN",
+          "Virtual Private Network: an encrypted/secured tunnel across an untrusted or shared network."
+        ]
+      ],
+      "course": {
+        "learn": "A Virtual Private Network (VPN) creates a protected tunnel across an untrusted network so remote users or sites can communicate securely.",
+        "why": "Without a secure tunnel, traffic crossing public networks may be observed or modified.",
+        "example": "A remote employee authenticates with MFA and establishes an encrypted VPN tunnel to the corporate network.",
+        "exam": "Know remote-access versus site-to-site VPN, strong authentication, split tunneling considerations, logging, and least privilege.",
+        "breakdown": [
+          {
+            "term": "Strong Encryption and Authentication",
+            "explanation": "Protect confidentiality by transforming plaintext into ciphertext using cryptographic keys."
+          },
+          {
+            "term": "Regular Security Audits",
+            "explanation": "This is a factor that must be evaluated when using Secure communication and access; ignoring it can create operational, security, cost, or compatibility risk."
+          },
+          {
+            "term": "User Training",
+            "explanation": "This is a factor that must be evaluated when using Secure communication and access; ignoring it can create operational, security, cost, or compatibility risk."
+          },
+          {
+            "term": "Monitoring and Incident Response",
+            "explanation": "Security monitoring continuously observes systems, networks, applications, and logs for suspicious activity, failures, policy violations, and indicators of compromise."
+          }
+        ],
+        "defs": [
+          {
+            "term": "Authentication",
+            "definition": "Proving an identity—answering “who are you?”"
+          },
+          {
+            "term": "Encryption",
+            "definition": "Transforms readable plaintext into ciphertext using an algorithm and key so unauthorized parties cannot understand it."
+          },
+          {
+            "term": "VPN",
+            "definition": "Virtual Private Network: an encrypted/secured tunnel across an untrusted or shared network."
+          }
+        ],
+        "check_q": "Without looking back, explain Considerations Using VPN and describe at least two key ideas from this section.",
+        "check_a": "A Virtual Private Network (VPN) creates a protected tunnel across an untrusted network so remote users or sites can communicate securely. Key ideas include: Strong Encryption and Authentication; Regular Security Audits; User Training; Monitoring and Incident Response.",
+        "points": [
+          "Strong Encryption and Authentication",
+          "Regular Security Audits",
+          "User Training",
+          "Monitoring and Incident Response"
+        ]
+      }
+    },
+    {
+      "n": 4,
+      "title": "Remote Access",
+      "points": [
+        "Anywhere",
+        "Connectivity",
+        "Multifactor",
+        "Authentication (MFA)",
+        "Access Controls"
+      ],
+      "raw": "Remote Access\nAnywhere\nConnectivity\nMultifactor\nAuthentication (MFA)\nAccess Controls",
+      "instructional": true,
+      "teach": "Read the source points, then explain the slide without looking. On Security+, recognition is not enough—you should be able to apply the concept to a scenario.",
+      "defs": [
+        [
+          "Authentication",
+          "Proving an identity—answering “who are you?”"
+        ],
+        [
+          "MFA",
+          "Multi-Factor Authentication: requires factors from more than one authentication category."
+        ]
+      ],
+      "course": {
+        "learn": "Remote access lets users administer or use organizational resources from outside the local network. It should combine strong authentication, secure transport, endpoint requirements, authorization, and monitoring.",
+        "why": "Remote users connect from networks and devices the organization may not fully control.",
+        "example": "An administrator must use MFA, a managed endpoint, VPN/ZTNA, and a jump host before reaching production servers.",
+        "exam": "CompTIA often favors MFA, least privilege, secure tunneling, endpoint compliance, logging, and limited administrative exposure.",
+        "breakdown": [
+          {
+            "term": "Anywhere",
+            "explanation": "Within Remote Access, this is a specific factor you should be able to recognize and explain. Connect it to the purpose of Secure communication and access rather than memorizing the phrase by itself."
+          },
+          {
+            "term": "Connectivity",
+            "explanation": "Secure architecture depends on where devices are placed, which trust zones they belong to, how they connect, what attack surface they expose, and what happens when a component fails."
+          },
+          {
+            "term": "Multifactor",
+            "explanation": "Within Remote Access, this is a specific factor you should be able to recognize and explain. Connect it to the purpose of Secure communication and access rather than memorizing the phrase by itself."
+          },
+          {
+            "term": "Authentication (MFA)",
+            "explanation": "Authentication is the process of proving an identity. Factors can be something you know, have, are, do, or somewhere you are; MFA requires factors from more than one category."
+          },
+          {
+            "term": "Access Controls",
+            "explanation": "Access control restricts which subjects can access which resources and what actions they may perform. ACLs express allow/deny rules on objects, interfaces, or network traffic."
+          }
+        ],
+        "defs": [
+          {
+            "term": "Authentication",
+            "definition": "Proving an identity—answering “who are you?”"
+          },
+          {
+            "term": "MFA",
+            "definition": "Multi-Factor Authentication: requires factors from more than one authentication category."
+          }
+        ],
+        "check_q": "Without looking back, explain Remote Access and describe at least two key ideas from this section.",
+        "check_a": "Remote access lets users administer or use organizational resources from outside the local network. It should combine strong authentication, secure transport, endpoint requirements, authorization, and monitoring. Key ideas include: Anywhere; Connectivity; Multifactor; Authentication (MFA); Access Controls.",
+        "points": [
+          "Anywhere",
+          "Connectivity",
+          "Multifactor",
+          "Authentication (MFA)",
+          "Access Controls"
+        ]
+      }
+    },
+    {
+      "n": 5,
+      "title": "Considerations Using Remote Access",
+      "points": [
+        "Comprehensive Authentication",
+        "Endpoint Security Policies",
+        "Educating Users",
+        "Monitoring and Incident Response"
+      ],
+      "raw": "Considerations Using Remote Access\nComprehensive Authentication\nEndpoint Security Policies\nEducating Users\nMonitoring and Incident Response",
+      "instructional": true,
+      "teach": "These are design tradeoffs. Learn why each factor matters rather than memorizing the words alone.",
+      "defs": [
+        [
+          "Authentication",
+          "Proving an identity—answering “who are you?”"
+        ]
+      ],
+      "course": {
+        "learn": "Remote access lets users administer or use organizational resources from outside the local network. It should combine strong authentication, secure transport, endpoint requirements, authorization, and monitoring.",
+        "why": "Remote users connect from networks and devices the organization may not fully control.",
+        "example": "An administrator must use MFA, a managed endpoint, VPN/ZTNA, and a jump host before reaching production servers.",
+        "exam": "CompTIA often favors MFA, least privilege, secure tunneling, endpoint compliance, logging, and limited administrative exposure.",
+        "breakdown": [
+          {
+            "term": "Comprehensive Authentication",
+            "explanation": "Authentication is the process of proving an identity. Factors can be something you know, have, are, do, or somewhere you are; MFA requires factors from more than one category."
+          },
+          {
+            "term": "Endpoint Security Policies",
+            "explanation": "This is a factor that must be evaluated when using Secure communication and access; ignoring it can create operational, security, cost, or compatibility risk."
+          },
+          {
+            "term": "Educating Users",
+            "explanation": "This is a factor that must be evaluated when using Secure communication and access; ignoring it can create operational, security, cost, or compatibility risk."
+          },
+          {
+            "term": "Monitoring and Incident Response",
+            "explanation": "Security monitoring continuously observes systems, networks, applications, and logs for suspicious activity, failures, policy violations, and indicators of compromise."
+          }
+        ],
+        "defs": [
+          {
+            "term": "Authentication",
+            "definition": "Proving an identity—answering “who are you?”"
+          }
+        ],
+        "check_q": "Without looking back, explain Considerations Using Remote Access and describe at least two key ideas from this section.",
+        "check_a": "Remote access lets users administer or use organizational resources from outside the local network. It should combine strong authentication, secure transport, endpoint requirements, authorization, and monitoring. Key ideas include: Comprehensive Authentication; Endpoint Security Policies; Educating Users; Monitoring and Incident Response.",
+        "points": [
+          "Comprehensive Authentication",
+          "Endpoint Security Policies",
+          "Educating Users",
+          "Monitoring and Incident Response"
+        ]
+      }
+    },
+    {
+      "n": 6,
+      "title": "Transport Layer Security (TLS)",
+      "points": [
+        "Secure Communication",
+        "Over the Internet",
+        "End-to-End Encryption",
+        "Authentication of",
+        "Communication"
+      ],
+      "raw": "Transport Layer Security (TLS)\nSecure Communication\nOver the Internet\nEnd-to-End Encryption\nAuthentication of\nCommunication",
+      "instructional": true,
+      "teach": "Read the source points, then explain the slide without looking. On Security+, recognition is not enough—you should be able to apply the concept to a scenario.",
+      "defs": [
+        [
+          "Authentication",
+          "Proving an identity—answering “who are you?”"
+        ],
+        [
+          "Encryption",
+          "Transforms readable plaintext into ciphertext using an algorithm and key so unauthorized parties cannot understand it."
+        ],
+        [
+          "TLS",
+          "Transport Layer Security: cryptographic protocol used to protect application communications such as HTTPS."
+        ]
+      ],
+      "course": {
+        "learn": "Transport Layer Security (TLS) protects application traffic in transit using authenticated cryptographic negotiation and session encryption. HTTPS is HTTP over TLS.",
+        "why": "TLS protects data from eavesdropping and tampering while it crosses untrusted networks.",
+        "example": "A browser validates a website certificate and negotiates an encrypted TLS session before sending login credentials.",
+        "exam": "TLS is strongly associated with HTTPS and application traffic. Certificate validation matters; “encrypted” is not enough if the peer is not authenticated.",
+        "breakdown": [
+          {
+            "term": "Secure Communication",
+            "explanation": "Within Transport Layer Security (TLS), this is a specific factor you should be able to recognize and explain. Connect it to the purpose of Secure communication and access rather than memorizing the phrase by itself."
+          },
+          {
+            "term": "Over the Internet",
+            "explanation": "Within Transport Layer Security (TLS), this is a specific factor you should be able to recognize and explain. Connect it to the purpose of Secure communication and access rather than memorizing the phrase by itself."
+          },
+          {
+            "term": "End-to-End Encryption",
+            "explanation": "Protect confidentiality by transforming plaintext into ciphertext using cryptographic keys."
+          },
+          {
+            "term": "Authentication of Communication",
+            "explanation": "Authentication is the process of proving an identity. Factors can be something you know, have, are, do, or somewhere you are; MFA requires factors from more than one category."
+          }
+        ],
+        "defs": [
+          {
+            "term": "Authentication",
+            "definition": "Proving an identity—answering “who are you?”"
+          },
+          {
+            "term": "Encryption",
+            "definition": "Transforms readable plaintext into ciphertext using an algorithm and key so unauthorized parties cannot understand it."
+          },
+          {
+            "term": "TLS",
+            "definition": "Transport Layer Security: cryptographic protocol used to protect application communications such as HTTPS."
+          }
+        ],
+        "check_q": "Without looking back, explain Transport Layer Security (TLS) and describe at least two key ideas from this section.",
+        "check_a": "Transport Layer Security (TLS) protects application traffic in transit using authenticated cryptographic negotiation and session encryption. HTTPS is HTTP over TLS. Key ideas include: Secure Communication; Over the Internet; End-to-End Encryption; Authentication of Communication.",
+        "points": [
+          "Secure Communication",
+          "Over the Internet",
+          "End-to-End Encryption",
+          "Authentication of Communication"
+        ]
+      }
+    },
+    {
+      "n": 7,
+      "title": "Internet Protocol Security (IPSec)",
+      "points": [
+        "Securing Network",
+        "Layer Communication",
+        "Secure Tunnels",
+        "Strong Encryption"
+      ],
+      "raw": "Internet Protocol Security (IPSec)\nSecuring Network\nLayer Communication\nSecure Tunnels\nStrong Encryption",
+      "instructional": true,
+      "teach": "Read the source points, then explain the slide without looking. On Security+, recognition is not enough—you should be able to apply the concept to a scenario.",
+      "defs": [
+        [
+          "Encryption",
+          "Transforms readable plaintext into ciphertext using an algorithm and key so unauthorized parties cannot understand it."
+        ],
+        [
+          "IPsec",
+          "A suite of protocols that protects IP traffic at the network layer; commonly used for VPNs."
+        ]
+      ],
+      "course": {
+        "learn": "IPsec secures IP-layer traffic using protocols that provide integrity, authentication, and optionally confidentiality. It is commonly used for site-to-site or remote-access VPNs.",
+        "why": "Because IPsec operates at the network layer, applications do not need to add their own tunnel logic.",
+        "example": "Two offices build an IPsec tunnel between firewalls so internal subnets communicate securely across the Internet.",
+        "exam": "IPsec = network-layer VPN/security. TLS is more commonly tied to application-layer sessions such as HTTPS.",
+        "breakdown": [
+          {
+            "term": "Securing Network",
+            "explanation": "Within Internet Protocol Security (IPSec), this is a specific factor you should be able to recognize and explain. Connect it to the purpose of Secure communication and access rather than memorizing the phrase by itself."
+          },
+          {
+            "term": "Layer Communication",
+            "explanation": "Within Internet Protocol Security (IPSec), this is a specific factor you should be able to recognize and explain. Connect it to the purpose of Secure communication and access rather than memorizing the phrase by itself."
+          },
+          {
+            "term": "Secure Tunnels",
+            "explanation": "Within Internet Protocol Security (IPSec), this is a specific factor you should be able to recognize and explain. Connect it to the purpose of Secure communication and access rather than memorizing the phrase by itself."
+          },
+          {
+            "term": "Strong Encryption",
+            "explanation": "Protect confidentiality by transforming plaintext into ciphertext using cryptographic keys."
+          }
+        ],
+        "defs": [
+          {
+            "term": "Encryption",
+            "definition": "Transforms readable plaintext into ciphertext using an algorithm and key so unauthorized parties cannot understand it."
+          },
+          {
+            "term": "IPsec",
+            "definition": "A suite of protocols that protects IP traffic at the network layer; commonly used for VPNs."
+          }
+        ],
+        "check_q": "Without looking back, explain Internet Protocol Security (IPSec) and describe at least two key ideas from this section.",
+        "check_a": "IPsec secures IP-layer traffic using protocols that provide integrity, authentication, and optionally confidentiality. It is commonly used for site-to-site or remote-access VPNs. Key ideas include: Securing Network; Layer Communication; Secure Tunnels; Strong Encryption.",
+        "points": [
+          "Securing Network",
+          "Layer Communication",
+          "Secure Tunnels",
+          "Strong Encryption"
+        ]
+      }
+    },
+    {
+      "n": 8,
+      "title": "Considerations for Implementing TLS and IPSec",
+      "points": [
+        "Protocol Selection",
+        "Key Management",
+        "Regular Audits and",
+        "Updates"
+      ],
+      "raw": "Considerations for Implementing TLS and\nIPSec\nProtocol Selection\nKey Management\nRegular Audits and\nUpdates",
+      "instructional": true,
+      "teach": "These are design tradeoffs. Learn why each factor matters rather than memorizing the words alone.",
+      "defs": [
+        [
+          "IPsec",
+          "A suite of protocols that protects IP traffic at the network layer; commonly used for VPNs."
+        ],
+        [
+          "TLS",
+          "Transport Layer Security: cryptographic protocol used to protect application communications such as HTTPS."
+        ]
+      ],
+      "course": {
+        "learn": "IPsec secures IP-layer traffic using protocols that provide integrity, authentication, and optionally confidentiality. It is commonly used for site-to-site or remote-access VPNs.",
+        "why": "Because IPsec operates at the network layer, applications do not need to add their own tunnel logic.",
+        "example": "Two offices build an IPsec tunnel between firewalls so internal subnets communicate securely across the Internet.",
+        "exam": "IPsec = network-layer VPN/security. TLS is more commonly tied to application-layer sessions such as HTTPS.",
+        "breakdown": [
+          {
+            "term": "Protocol Selection",
+            "explanation": "This is a factor that must be evaluated when using Secure communication and access; ignoring it can create operational, security, cost, or compatibility risk."
+          },
+          {
+            "term": "Key Management",
+            "explanation": "This is a factor that must be evaluated when using Secure communication and access; ignoring it can create operational, security, cost, or compatibility risk."
+          },
+          {
+            "term": "Regular Audits and Updates",
+            "explanation": "This is a factor that must be evaluated when using Secure communication and access; ignoring it can create operational, security, cost, or compatibility risk."
+          }
+        ],
+        "defs": [
+          {
+            "term": "IPsec",
+            "definition": "A suite of protocols that protects IP traffic at the network layer; commonly used for VPNs."
+          },
+          {
+            "term": "TLS",
+            "definition": "Transport Layer Security: cryptographic protocol used to protect application communications such as HTTPS."
+          }
+        ],
+        "check_q": "Without looking back, explain Considerations for Implementing TLS and IPSec and describe at least two key ideas from this section.",
+        "check_a": "IPsec secures IP-layer traffic using protocols that provide integrity, authentication, and optionally confidentiality. It is commonly used for site-to-site or remote-access VPNs. Key ideas include: Protocol Selection; Key Management; Regular Audits and Updates.",
+        "points": [
+          "Protocol Selection",
+          "Key Management",
+          "Regular Audits and Updates"
+        ]
+      }
+    },
+    {
+      "n": 9,
+      "title": "Software-Defined Wide Area Network (SD-WAN)",
+      "points": [
+        "Efficient and",
+        "Dynamic Traffic",
+        "Routing",
+        "Enhanced",
+        "Network",
+        "Performance",
+        "Security Features",
+        "Integration",
+        "Cost Savings"
+      ],
+      "raw": "Software-Defined Wide Area Network\n(SD-WAN)\nEfficient and\nDynamic Traffic\nRouting\nEnhanced\nNetwork\nPerformance\nSecurity Features\nIntegration\nCost Savings",
+      "instructional": true,
+      "teach": "Read the source points, then explain the slide without looking. On Security+, recognition is not enough—you should be able to apply the concept to a scenario.",
+      "defs": [],
+      "course": {
+        "learn": "SD-WAN centrally controls how branch and wide-area traffic uses multiple links such as broadband, MPLS, or cellular. Policies can choose paths based on application, performance, and security requirements.",
+        "why": "Centralized software control improves flexibility but makes controller security, segmentation, encryption, and policy accuracy important.",
+        "example": "Voice traffic uses the lowest-latency link while general web traffic uses broadband; sensitive traffic is encrypted and segmented by policy.",
+        "exam": "SD-WAN is about software-defined WAN path/control. Secure it with strong management access, encrypted tunnels, segmentation, and monitoring.",
+        "breakdown": [
+          {
+            "term": "Efficient and Dynamic Traffic",
+            "explanation": "Within Software-Defined Wide Area Network (SD-WAN), this is a specific factor you should be able to recognize and explain. Connect it to the purpose of Secure communication and access rather than memorizing the phrase by itself."
+          },
+          {
+            "term": "Routing",
+            "explanation": "Within Software-Defined Wide Area Network (SD-WAN), this is a specific factor you should be able to recognize and explain. Connect it to the purpose of Secure communication and access rather than memorizing the phrase by itself."
+          },
+          {
+            "term": "Enhanced",
+            "explanation": "Within Software-Defined Wide Area Network (SD-WAN), this is a specific factor you should be able to recognize and explain. Connect it to the purpose of Secure communication and access rather than memorizing the phrase by itself."
+          },
+          {
+            "term": "Network",
+            "explanation": "Networks that lack trustworthy encryption, authentication, segmentation, or monitoring."
+          },
+          {
+            "term": "Performance",
+            "explanation": "Within Software-Defined Wide Area Network (SD-WAN), this is a specific factor you should be able to recognize and explain. Connect it to the purpose of Secure communication and access rather than memorizing the phrase by itself."
+          },
+          {
+            "term": "Security Features",
+            "explanation": "This contributes to reducing risk in the broader Secure communication and access design and should be evaluated as part of defense in depth."
+          },
+          {
+            "term": "Integration",
+            "explanation": "Within Software-Defined Wide Area Network (SD-WAN), this is a specific factor you should be able to recognize and explain. Connect it to the purpose of Secure communication and access rather than memorizing the phrase by itself."
+          },
+          {
+            "term": "Cost Savings",
+            "explanation": "Within Software-Defined Wide Area Network (SD-WAN), this is a specific factor you should be able to recognize and explain. Connect it to the purpose of Secure communication and access rather than memorizing the phrase by itself."
+          }
+        ],
+        "defs": [],
+        "check_q": "Without looking back, explain Software-Defined Wide Area Network (SD-WAN) and describe at least two key ideas from this section.",
+        "check_a": "SD-WAN centrally controls how branch and wide-area traffic uses multiple links such as broadband, MPLS, or cellular. Policies can choose paths based on application, performance, and security requirements. Key ideas include: Efficient and Dynamic Traffic; Routing; Enhanced; Network; Performance.",
+        "points": [
+          "Efficient and Dynamic Traffic",
+          "Routing",
+          "Enhanced",
+          "Network",
+          "Performance",
+          "Security Features",
+          "Integration",
+          "Cost Savings"
+        ]
+      }
+    },
+    {
+      "n": 10,
+      "title": "Considerations for Implementing SD-WAN Security",
+      "points": [
+        "Considerations for Implementing SDWAN Security",
+        "Comprehensive",
+        "Security",
+        "Assessment",
+        "Regular Security",
+        "Audits",
+        "Policy",
+        "Development and",
+        "Enforcement",
+        "Staff Training and",
+        "Awareness"
+      ],
+      "raw": "Considerations for Implementing SDWAN Security\nComprehensive\nSecurity\nAssessment\nRegular Security\nAudits\nPolicy\nDevelopment and\nEnforcement\nStaff Training and\nAwareness",
+      "instructional": true,
+      "teach": "These are design tradeoffs. Learn why each factor matters rather than memorizing the words alone.",
+      "defs": [],
+      "course": {
+        "learn": "SD-WAN centrally controls how branch and wide-area traffic uses multiple links such as broadband, MPLS, or cellular. Policies can choose paths based on application, performance, and security requirements.",
+        "why": "Centralized software control improves flexibility but makes controller security, segmentation, encryption, and policy accuracy important.",
+        "example": "Voice traffic uses the lowest-latency link while general web traffic uses broadband; sensitive traffic is encrypted and segmented by policy.",
+        "exam": "SD-WAN is about software-defined WAN path/control. Secure it with strong management access, encrypted tunnels, segmentation, and monitoring.",
+        "breakdown": [
+          {
+            "term": "Considerations for Implementing SDWAN Security",
+            "explanation": "This is a factor that must be evaluated when using Secure communication and access; ignoring it can create operational, security, cost, or compatibility risk."
+          },
+          {
+            "term": "Comprehensive",
+            "explanation": "This is a factor that must be evaluated when using Secure communication and access; ignoring it can create operational, security, cost, or compatibility risk."
+          },
+          {
+            "term": "Security",
+            "explanation": "Document required security rules and repeatable steps for carrying them out."
+          },
+          {
+            "term": "Assessment",
+            "explanation": "Evaluate risk and verify whether controls meet organizational, legal, or regulatory requirements."
+          },
+          {
+            "term": "Regular Security",
+            "explanation": "This is a factor that must be evaluated when using Secure communication and access; ignoring it can create operational, security, cost, or compatibility risk."
+          },
+          {
+            "term": "Audits",
+            "explanation": "Evaluate risk and verify whether controls meet organizational, legal, or regulatory requirements."
+          },
+          {
+            "term": "Policy",
+            "explanation": "Enforces an allow, deny, or limited-access decision at the connection/resource boundary."
+          },
+          {
+            "term": "Development and Enforcement",
+            "explanation": "This is a factor that must be evaluated when using Secure communication and access; ignoring it can create operational, security, cost, or compatibility risk."
+          },
+          {
+            "term": "Staff Training and Awareness",
+            "explanation": "This is a factor that must be evaluated when using Secure communication and access; ignoring it can create operational, security, cost, or compatibility risk."
+          }
+        ],
+        "defs": [],
+        "check_q": "Without looking back, explain Considerations for Implementing SD-WAN Security and describe at least two key ideas from this section.",
+        "check_a": "SD-WAN centrally controls how branch and wide-area traffic uses multiple links such as broadband, MPLS, or cellular. Policies can choose paths based on application, performance, and security requirements. Key ideas include: Considerations for Implementing SDWAN Security; Comprehensive; Security; Assessment; Regular Security.",
+        "points": [
+          "Considerations for Implementing SDWAN Security",
+          "Comprehensive",
+          "Security",
+          "Assessment",
+          "Regular Security",
+          "Audits",
+          "Policy",
+          "Development and Enforcement",
+          "Staff Training and Awareness"
+        ]
+      }
+    },
+    {
+      "n": 11,
+      "title": "Secure Access Service Edge (SASE)",
+      "points": [
+        "Integration of Network",
+        "Security and WAN",
+        "Capabilities",
+        "Cloud-Native Approach",
+        "Securing User Access",
+        "to Applications",
+        "Zero Trust Architecture"
+      ],
+      "raw": "Secure Access Service Edge (SASE)\nIntegration of Network\nSecurity and WAN\nCapabilities\nCloud-Native Approach\nSecuring User Access\nto Applications\nZero Trust Architecture",
+      "instructional": true,
+      "teach": "Read the source points, then explain the slide without looking. On Security+, recognition is not enough—you should be able to apply the concept to a scenario.",
+      "defs": [
+        [
+          "Zero Trust",
+          "Security model that assumes no implicit trust and continuously verifies identities, devices, context, and access requests."
+        ],
+        [
+          "Cloud",
+          "Computing resources delivered on demand from a provider rather than entirely owned and operated locally."
+        ],
+        [
+          "SASE",
+          "Secure Access Service Edge: cloud-delivered networking and security functions combined around users, identities, and distributed resources."
+        ]
+      ],
+      "course": {
+        "learn": "Secure Access Service Edge (SASE) combines networking and security services—such as secure web gateway, firewall-as-a-service, CASB, and Zero-Trust access—through cloud-delivered architecture.",
+        "why": "Users and applications may be anywhere, so sending all traffic back through one traditional data-center perimeter can be inefficient and inconsistent.",
+        "example": "A remote user connects to the nearest cloud security point, is evaluated by identity/device policy, and receives access only to approved applications.",
+        "exam": "SASE clues: cloud-delivered networking + security, identity-aware access, distributed users, and Zero Trust alignment.",
+        "breakdown": [
+          {
+            "term": "Integration of Network",
+            "explanation": "Within Secure Access Service Edge (SASE), this is a specific factor you should be able to recognize and explain. Connect it to the purpose of Secure communication and access rather than memorizing the phrase by itself."
+          },
+          {
+            "term": "Security and WAN",
+            "explanation": "This contributes to reducing risk in the broader Secure communication and access design and should be evaluated as part of defense in depth."
+          },
+          {
+            "term": "Capabilities",
+            "explanation": "Within Secure Access Service Edge (SASE), this is a specific factor you should be able to recognize and explain. Connect it to the purpose of Secure communication and access rather than memorizing the phrase by itself."
+          },
+          {
+            "term": "Cloud-Native Approach",
+            "explanation": "Within Secure Access Service Edge (SASE), this is a specific factor you should be able to recognize and explain. Connect it to the purpose of Secure communication and access rather than memorizing the phrase by itself."
+          },
+          {
+            "term": "Securing User Access to Applications",
+            "explanation": "Application monitoring measures application behavior, performance, errors, and security events. APM focuses on health/performance, while a WAF inspects and protects web requests."
+          },
+          {
+            "term": "Zero Trust Architecture",
+            "explanation": "Zero Trust assumes that network location alone should not create trust. Every access request is evaluated using identity, device, context, policy, and least privilege, with continuous verification where possible."
+          }
+        ],
+        "defs": [
+          {
+            "term": "Zero Trust",
+            "definition": "Security model that assumes no implicit trust and continuously verifies identities, devices, context, and access requests."
+          },
+          {
+            "term": "Cloud",
+            "definition": "Computing resources delivered on demand from a provider rather than entirely owned and operated locally."
+          },
+          {
+            "term": "SASE",
+            "definition": "Secure Access Service Edge: cloud-delivered networking and security functions combined around users, identities, and distributed resources."
+          }
+        ],
+        "check_q": "Without looking back, explain Secure Access Service Edge (SASE) and describe at least two key ideas from this section.",
+        "check_a": "Secure Access Service Edge (SASE) combines networking and security services—such as secure web gateway, firewall-as-a-service, CASB, and Zero-Trust access—through cloud-delivered architecture. Key ideas include: Integration of Network; Security and WAN; Capabilities; Cloud-Native Approach; Securing User Access to Applications.",
+        "points": [
+          "Integration of Network",
+          "Security and WAN",
+          "Capabilities",
+          "Cloud-Native Approach",
+          "Securing User Access to Applications",
+          "Zero Trust Architecture"
+        ]
+      }
+    },
+    {
+      "n": 12,
+      "title": "Considerations for Implementing SASE Security",
+      "points": [
+        "Thorough",
+        "Vendor",
+        "Assessment",
+        "Data Protection",
+        "and Privacy",
+        "Compliance",
+        "Security",
+        "Policies and",
+        "Controls",
+        "Integration",
+        "Planning"
+      ],
+      "raw": "Considerations for Implementing SASE\nSecurity\nThorough\nVendor\nAssessment\nData Protection\nand Privacy\nCompliance\nSecurity\nPolicies and\nControls\nIntegration\nPlanning",
+      "instructional": true,
+      "teach": "These are design tradeoffs. Learn why each factor matters rather than memorizing the words alone.",
+      "defs": [
+        [
+          "SASE",
+          "Secure Access Service Edge: cloud-delivered networking and security functions combined around users, identities, and distributed resources."
+        ]
+      ],
+      "course": {
+        "learn": "Secure Access Service Edge (SASE) combines networking and security services—such as secure web gateway, firewall-as-a-service, CASB, and Zero-Trust access—through cloud-delivered architecture.",
+        "why": "Users and applications may be anywhere, so sending all traffic back through one traditional data-center perimeter can be inefficient and inconsistent.",
+        "example": "A remote user connects to the nearest cloud security point, is evaluated by identity/device policy, and receives access only to approved applications.",
+        "exam": "SASE clues: cloud-delivered networking + security, identity-aware access, distributed users, and Zero Trust alignment.",
+        "breakdown": [
+          {
+            "term": "Thorough",
+            "explanation": "This is a factor that must be evaluated when using Secure communication and access; ignoring it can create operational, security, cost, or compatibility risk."
+          },
+          {
+            "term": "Vendor",
+            "explanation": "This is a factor that must be evaluated when using Secure communication and access; ignoring it can create operational, security, cost, or compatibility risk."
+          },
+          {
+            "term": "Assessment",
+            "explanation": "Evaluate risk and verify whether controls meet organizational, legal, or regulatory requirements."
+          },
+          {
+            "term": "Data Protection and Privacy",
+            "explanation": "This is a factor that must be evaluated when using Secure communication and access; ignoring it can create operational, security, cost, or compatibility risk."
+          },
+          {
+            "term": "Compliance",
+            "explanation": "Evaluate risk and verify whether controls meet organizational, legal, or regulatory requirements."
+          },
+          {
+            "term": "Security",
+            "explanation": "Document required security rules and repeatable steps for carrying them out."
+          },
+          {
+            "term": "Policies and Controls",
+            "explanation": "This is a factor that must be evaluated when using Secure communication and access; ignoring it can create operational, security, cost, or compatibility risk."
+          },
+          {
+            "term": "Integration",
+            "explanation": "This is a factor that must be evaluated when using Secure communication and access; ignoring it can create operational, security, cost, or compatibility risk."
+          },
+          {
+            "term": "Planning",
+            "explanation": "This is a factor that must be evaluated when using Secure communication and access; ignoring it can create operational, security, cost, or compatibility risk."
+          }
+        ],
+        "defs": [
+          {
+            "term": "SASE",
+            "definition": "Secure Access Service Edge: cloud-delivered networking and security functions combined around users, identities, and distributed resources."
+          }
+        ],
+        "check_q": "Without looking back, explain Considerations for Implementing SASE Security and describe at least two key ideas from this section.",
+        "check_a": "Secure Access Service Edge (SASE) combines networking and security services—such as secure web gateway, firewall-as-a-service, CASB, and Zero-Trust access—through cloud-delivered architecture. Key ideas include: Thorough; Vendor; Assessment; Data Protection and Privacy; Compliance.",
+        "points": [
+          "Thorough",
+          "Vendor",
+          "Assessment",
+          "Data Protection and Privacy",
+          "Compliance",
+          "Security",
+          "Policies and Controls",
+          "Integration",
+          "Planning"
+        ]
+      }
+    },
+    {
+      "n": 13,
+      "title": "Selection of Effective Controls",
+      "points": [
+        "Encryption Strength",
+        "Authentication Methods",
+        "Scalability",
+        "Ease of Management",
+        "Adaptability to Evolving Threats"
+      ],
+      "raw": "Selection of Effective Controls\nEncryption Strength\nAuthentication Methods\nScalability\nEase of Management\nAdaptability to Evolving Threats",
+      "instructional": true,
+      "teach": "Read the source points, then explain the slide without looking. On Security+, recognition is not enough—you should be able to apply the concept to a scenario.",
+      "defs": [
+        [
+          "Authentication",
+          "Proving an identity—answering “who are you?”"
+        ],
+        [
+          "Encryption",
+          "Transforms readable plaintext into ciphertext using an algorithm and key so unauthorized parties cannot understand it."
+        ]
+      ],
+      "course": {
+        "learn": "Selecting an effective security control requires matching the control to the threat, asset, architecture, usability needs, scalability, management burden, and evolving risk.",
+        "why": "The strongest theoretical control is not automatically the best if it cannot be deployed, managed, or scaled correctly.",
+        "example": "A small branch may choose a managed cloud security service rather than maintaining several complex appliances locally.",
+        "exam": "Read BEST/MOST questions for constraints such as cost, scalability, ease of management, performance, and required security property.",
+        "breakdown": [
+          {
+            "term": "Encryption Strength",
+            "explanation": "Protect confidentiality by transforming plaintext into ciphertext using cryptographic keys."
+          },
+          {
+            "term": "Authentication Methods",
+            "explanation": "Authentication is the process of proving an identity. Factors can be something you know, have, are, do, or somewhere you are; MFA requires factors from more than one category."
+          },
+          {
+            "term": "Scalability",
+            "explanation": "Within Selection of Effective Controls, this is a specific factor you should be able to recognize and explain. Connect it to the purpose of Secure communication and access rather than memorizing the phrase by itself."
+          },
+          {
+            "term": "Ease of Management",
+            "explanation": "Within Selection of Effective Controls, this is a specific factor you should be able to recognize and explain. Connect it to the purpose of Secure communication and access rather than memorizing the phrase by itself."
+          },
+          {
+            "term": "Adaptability to Evolving Threats",
+            "explanation": "Within Selection of Effective Controls, this is a specific factor you should be able to recognize and explain. Connect it to the purpose of Secure communication and access rather than memorizing the phrase by itself."
+          }
+        ],
+        "defs": [
+          {
+            "term": "Authentication",
+            "definition": "Proving an identity—answering “who are you?”"
+          },
+          {
+            "term": "Encryption",
+            "definition": "Transforms readable plaintext into ciphertext using an algorithm and key so unauthorized parties cannot understand it."
+          }
+        ],
+        "check_q": "Without looking back, explain Selection of Effective Controls and describe at least two key ideas from this section.",
+        "check_a": "Selecting an effective security control requires matching the control to the threat, asset, architecture, usability needs, scalability, management burden, and evolving risk. Key ideas include: Encryption Strength; Authentication Methods; Scalability; Ease of Management; Adaptability to Evolving Threats.",
+        "points": [
+          "Encryption Strength",
+          "Authentication Methods",
+          "Scalability",
+          "Ease of Management",
+          "Adaptability to Evolving Threats"
+        ]
+      }
+    },
+    {
+      "n": 14,
+      "title": "Data Types",
+      "points": [],
+      "raw": "Data Types",
+      "instructional": false,
+      "teach": "Focus on the differences between the listed types and the clue words that distinguish them in exam questions.",
+      "defs": []
+    }
+  ],
+  "slide_count": 14,
+  "instructional_count": 12,
+  "concepts": [
+    "Virtual Private Network (VPN)",
+    "Considerations Using VPN",
+    "Remote Access",
+    "Considerations Using Remote Access",
+    "Transport Layer Security (TLS)",
+    "Internet Protocol Security (IPSec)",
+    "Considerations for Implementing TLS and IPSec",
+    "Software-Defined Wide Area Network (SD-WAN)",
+    "Considerations for Implementing SD-WAN Security",
+    "Secure Access Service Edge (SASE)",
+    "Considerations for Implementing SASE Security",
+    "Selection of Effective Controls"
+  ],
+  "source_filename": "11.02_Secure_communication_and_access.pdf"
+}

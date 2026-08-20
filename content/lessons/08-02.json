@@ -1,0 +1,225 @@
+{
+  "id": "08.02",
+  "chapter": 8,
+  "sub": 2,
+  "title": "Physical attacks",
+  "chapter_name": "Attack Indicators",
+  "slides": [
+    {
+      "n": 1,
+      "title": "Physical Attack Indicators",
+      "points": [],
+      "raw": "Physical Attack Indicators",
+      "instructional": false,
+      "teach": "Treat these as observable clues. On the exam, be ready to infer the most likely attack from the pattern of indicators.",
+      "defs": []
+    },
+    {
+      "n": 2,
+      "title": "Brute-force Attack",
+      "points": [
+        "• Repeated physical attempts to manipulate",
+        "locks, keypads, or access card readers.",
+        "• Evidence of scratches, tool marks, or wear",
+        "on the physical components",
+        "• Unusual patterns of failed access attempts",
+        "• Discovery of tools or implements near",
+        "access points",
+        "• Anomalies in security camera footage"
+      ],
+      "raw": "Brute-force Attack\n• Repeated physical attempts to manipulate\nlocks, keypads, or access card readers.\n• Evidence of scratches, tool marks, or wear\non the physical components\n• Unusual patterns of failed access attempts\n• Discovery of tools or implements near\naccess points\n• Anomalies in security camera footage",
+      "instructional": true,
+      "teach": "Learn the attacker behavior, the evidence it leaves behind, and the control that best detects or mitigates it.",
+      "defs": [],
+      "course": {
+        "learn": "A brute-force attack systematically tries many possible credentials, keys, or values until one works. It trades time and computing power for certainty.",
+        "why": "Weak or short secrets make exhaustive guessing practical.",
+        "example": "An attacker tries every four-digit PIN from 0000 through 9999.",
+        "exam": "Brute force = exhaustive guessing. Password spraying uses a small number of common passwords across many accounts; dictionary attacks use likely words/passwords.",
+        "breakdown": [
+          {
+            "term": "Repeated physical attempts to manipulate",
+            "explanation": "Within Brute-force Attack, this is a specific factor you should be able to recognize and explain. Connect it to the purpose of Physical attacks rather than memorizing the phrase by itself."
+          },
+          {
+            "term": "locks, keypads, or access card readers.",
+            "explanation": "This concerns who or what can reach a resource and what actions are permitted once access is granted."
+          },
+          {
+            "term": "Evidence of scratches, tool marks, or wear",
+            "explanation": "Within Brute-force Attack, this is a specific factor you should be able to recognize and explain. Connect it to the purpose of Physical attacks rather than memorizing the phrase by itself."
+          },
+          {
+            "term": "on the physical components",
+            "explanation": "Within Brute-force Attack, this is a specific factor you should be able to recognize and explain. Connect it to the purpose of Physical attacks rather than memorizing the phrase by itself."
+          },
+          {
+            "term": "Unusual patterns of failed access attempts",
+            "explanation": "This concerns who or what can reach a resource and what actions are permitted once access is granted."
+          },
+          {
+            "term": "Discovery of tools or implements near access points",
+            "explanation": "Security monitoring and automation tools include SIEM for event correlation, SCAP for standardized security-content automation, DLP for controlling sensitive data movement, and SNMP for device monitoring and traps."
+          },
+          {
+            "term": "Anomalies in security camera footage",
+            "explanation": "This contributes to reducing risk in the broader Physical attacks design and should be evaluated as part of defense in depth."
+          }
+        ],
+        "defs": [],
+        "check_q": "Without looking back, explain Brute-force Attack and describe at least two key ideas from this section.",
+        "check_a": "A brute-force attack systematically tries many possible credentials, keys, or values until one works. It trades time and computing power for certainty. Key ideas include: Repeated physical attempts to manipulate; locks, keypads, or access card readers.; Evidence of scratches, tool marks, or wear; on the physical components; Unusual patterns of failed access attempts.",
+        "points": [
+          "Repeated physical attempts to manipulate",
+          "locks, keypads, or access card readers.",
+          "Evidence of scratches, tool marks, or wear",
+          "on the physical components",
+          "Unusual patterns of failed access attempts",
+          "Discovery of tools or implements near access points",
+          "Anomalies in security camera footage"
+        ]
+      }
+    },
+    {
+      "n": 3,
+      "title": "Radio Frequency Identification (RFID) Cloning",
+      "points": [
+        "• Unexplained instances of unauthorized access",
+        "• Detection of multiple instances of the same",
+        "RFID signal being used simultaneously",
+        "• Anomalies in access logs",
+        "• Physical presence of unauthorized RFID",
+        "copying devices",
+        "• Inconsistencies between physical cardholder",
+        "presence and access logs"
+      ],
+      "raw": "Radio Frequency Identification (RFID)\nCloning\n• Unexplained instances of unauthorized access\n• Detection of multiple instances of the same\nRFID signal being used simultaneously\n• Anomalies in access logs\n• Physical presence of unauthorized RFID\ncopying devices\n• Inconsistencies between physical cardholder\npresence and access logs",
+      "instructional": true,
+      "teach": "Read the source points, then explain the slide without looking. On Security+, recognition is not enough—you should be able to apply the concept to a scenario.",
+      "defs": [],
+      "course": {
+        "learn": "Backups create recoverable copies of data or systems so organizations can restore after deletion, corruption, ransomware, or disaster. Good backup strategy considers location, frequency, retention, immutability, encryption, and restore testing.",
+        "why": "A backup is valuable only if it survives the incident and can actually be restored within business requirements.",
+        "example": "An organization keeps frequent local backups for speed plus protected offsite/immutable copies so ransomware cannot destroy every recovery point.",
+        "exam": "Know onsite vs offsite, snapshots vs true backups, restore testing, and the fact that replication does not replace historical backup copies.",
+        "breakdown": [
+          {
+            "term": "Unexplained instances of unauthorized access",
+            "explanation": "This concerns who or what can reach a resource and what actions are permitted once access is granted."
+          },
+          {
+            "term": "Detection of multiple instances of the same",
+            "explanation": "Within Radio Frequency Identification (RFID) Cloning, this is a specific factor you should be able to recognize and explain. Connect it to the purpose of Physical attacks rather than memorizing the phrase by itself."
+          },
+          {
+            "term": "RFID signal being used simultaneously",
+            "explanation": "Within Radio Frequency Identification (RFID) Cloning, this is a specific factor you should be able to recognize and explain. Connect it to the purpose of Physical attacks rather than memorizing the phrase by itself."
+          },
+          {
+            "term": "Anomalies in access logs",
+            "explanation": "This concerns who or what can reach a resource and what actions are permitted once access is granted."
+          },
+          {
+            "term": "Physical presence of unauthorized RFID",
+            "explanation": "Within Radio Frequency Identification (RFID) Cloning, this is a specific factor you should be able to recognize and explain. Connect it to the purpose of Physical attacks rather than memorizing the phrase by itself."
+          },
+          {
+            "term": "copying devices",
+            "explanation": "Within Radio Frequency Identification (RFID) Cloning, this is a specific factor you should be able to recognize and explain. Connect it to the purpose of Physical attacks rather than memorizing the phrase by itself."
+          },
+          {
+            "term": "Inconsistencies between physical cardholder",
+            "explanation": "Within Radio Frequency Identification (RFID) Cloning, this is a specific factor you should be able to recognize and explain. Connect it to the purpose of Physical attacks rather than memorizing the phrase by itself."
+          },
+          {
+            "term": "presence and access logs",
+            "explanation": "This concerns who or what can reach a resource and what actions are permitted once access is granted."
+          }
+        ],
+        "defs": [],
+        "check_q": "Without looking back, explain Radio Frequency Identification (RFID) Cloning and describe at least two key ideas from this section.",
+        "check_a": "Backups create recoverable copies of data or systems so organizations can restore after deletion, corruption, ransomware, or disaster. Good backup strategy considers location, frequency, retention, immutability, encryption, and restore testing. Key ideas include: Unexplained instances of unauthorized access; Detection of multiple instances of the same; RFID signal being used simultaneously; Anomalies in access logs; Physical presence of unauthorized RFID.",
+        "points": [
+          "Unexplained instances of unauthorized access",
+          "Detection of multiple instances of the same",
+          "RFID signal being used simultaneously",
+          "Anomalies in access logs",
+          "Physical presence of unauthorized RFID",
+          "copying devices",
+          "Inconsistencies between physical cardholder",
+          "presence and access logs"
+        ]
+      }
+    },
+    {
+      "n": 4,
+      "title": "Environmental",
+      "points": [
+        "Physical damage to security hardware",
+        "Evidence of tampering with environmental control systems",
+        "Changes in environmental conditions",
+        "Unexpected triggering of alarms related",
+        "Presence of unauthorized individuals or suspicious activities"
+      ],
+      "raw": "Environmental\nPhysical damage to security hardware\nEvidence of tampering with environmental control systems\nChanges in environmental conditions\nUnexpected triggering of alarms related\nPresence of unauthorized individuals or suspicious activities",
+      "instructional": true,
+      "teach": "Read the source points, then explain the slide without looking. On Security+, recognition is not enough—you should be able to apply the concept to a scenario.",
+      "defs": [],
+      "course": {
+        "learn": "Environmental attacks or incidents affect the physical conditions supporting technology—power, temperature, water, fire, ventilation, and facility controls. Tampering with environmental systems can become a security incident.",
+        "why": "Hardware can fail or become unavailable even when software and network controls are functioning correctly.",
+        "example": "An attacker disables cooling in a server room, causing temperature alarms and equipment shutdowns.",
+        "exam": "Look for changes in temperature/power, damaged environmental controls, alarms, or physical tampering.",
+        "breakdown": [
+          {
+            "term": "Physical damage to security hardware",
+            "explanation": "Hardware security risk includes vulnerable firmware, malicious peripherals, insecure interfaces, unsupported devices, and physical tampering."
+          },
+          {
+            "term": "Evidence of tampering with environmental control systems",
+            "explanation": "Environmental attacks or incidents affect the physical conditions supporting technology—power, temperature, water, fire, ventilation, and facility controls. Tampering with environmental systems can become a security incident."
+          },
+          {
+            "term": "Changes in environmental conditions",
+            "explanation": "Environmental attacks or incidents affect the physical conditions supporting technology—power, temperature, water, fire, ventilation, and facility controls. Tampering with environmental systems can become a security incident."
+          },
+          {
+            "term": "Unexpected triggering of alarms related",
+            "explanation": "Within Environmental, this is a specific factor you should be able to recognize and explain. Connect it to the purpose of Physical attacks rather than memorizing the phrase by itself."
+          },
+          {
+            "term": "Presence of unauthorized individuals or suspicious activities",
+            "explanation": "Within Environmental, this is a specific factor you should be able to recognize and explain. Connect it to the purpose of Physical attacks rather than memorizing the phrase by itself."
+          }
+        ],
+        "defs": [],
+        "check_q": "Without looking back, explain Environmental and describe at least two key ideas from this section.",
+        "check_a": "Environmental attacks or incidents affect the physical conditions supporting technology—power, temperature, water, fire, ventilation, and facility controls. Tampering with environmental systems can become a security incident. Key ideas include: Physical damage to security hardware; Evidence of tampering with environmental control systems; Changes in environmental conditions; Unexpected triggering of alarms related; Presence of unauthorized individuals or suspicious activities.",
+        "points": [
+          "Physical damage to security hardware",
+          "Evidence of tampering with environmental control systems",
+          "Changes in environmental conditions",
+          "Unexpected triggering of alarms related",
+          "Presence of unauthorized individuals or suspicious activities"
+        ]
+      }
+    },
+    {
+      "n": 5,
+      "title": "Network Attack Indicators",
+      "points": [],
+      "raw": "Network Attack Indicators",
+      "instructional": false,
+      "teach": "Treat these as observable clues. On the exam, be ready to infer the most likely attack from the pattern of indicators.",
+      "defs": []
+    }
+  ],
+  "slide_count": 5,
+  "instructional_count": 3,
+  "concepts": [
+    "Brute-force Attack",
+    "Radio Frequency Identification (RFID) Cloning",
+    "Environmental"
+  ],
+  "source_filename": "08.02_Physical_attacks.pdf"
+}

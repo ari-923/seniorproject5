@@ -1,0 +1,330 @@
+{
+  "id": "02.05",
+  "chapter": 2,
+  "sub": 5,
+  "title": "Zero Trust",
+  "chapter_name": "Fundamental Security Concepts",
+  "slides": [
+    {
+      "n": 1,
+      "title": "Zero Trust",
+      "points": [],
+      "raw": "Zero Trust",
+      "instructional": false,
+      "teach": "Read the source points, then explain the slide without looking. On Security+, recognition is not enough—you should be able to apply the concept to a scenario.",
+      "defs": [
+        [
+          "Zero Trust",
+          "Security model that assumes no implicit trust and continuously verifies identities, devices, context, and access requests."
+        ]
+      ]
+    },
+    {
+      "n": 2,
+      "title": "Zero Trust",
+      "points": [
+        "From perimeter",
+        "defense to microperimeters",
+        "From implicit",
+        "trust to adaptive",
+        "verification"
+      ],
+      "raw": "Zero Trust\nFrom perimeter\ndefense to microperimeters\nFrom implicit\ntrust to adaptive\nverification",
+      "instructional": true,
+      "teach": "Read the source points, then explain the slide without looking. On Security+, recognition is not enough—you should be able to apply the concept to a scenario.",
+      "defs": [
+        [
+          "Zero Trust",
+          "Security model that assumes no implicit trust and continuously verifies identities, devices, context, and access requests."
+        ]
+      ],
+      "course": {
+        "learn": "Zero Trust assumes that network location alone should not create trust. Every access request is evaluated using identity, device, context, policy, and least privilege, with continuous verification where possible.",
+        "why": "Modern users and resources are distributed across cloud, remote, and internal environments, so a hard perimeter is no longer enough.",
+        "example": "An employee on the corporate LAN still must authenticate, use a compliant device, and receive only the access needed for a specific application.",
+        "exam": "Common clues: never trust/always verify, least privilege, microsegmentation, policy engine, policy enforcement point, adaptive access.",
+        "breakdown": [
+          {
+            "term": "From perimeter defense to microperimeters",
+            "explanation": "Create small protected trust boundaries around specific resources instead of relying only on one large network perimeter."
+          },
+          {
+            "term": "From implicit trust to adaptive",
+            "explanation": "Within Zero Trust, this is a specific factor you should be able to recognize and explain. Connect it to the purpose of Zero Trust rather than memorizing the phrase by itself."
+          },
+          {
+            "term": "verification",
+            "explanation": "Within Zero Trust, this is a specific factor you should be able to recognize and explain. Connect it to the purpose of Zero Trust rather than memorizing the phrase by itself."
+          }
+        ],
+        "defs": [
+          {
+            "term": "Zero Trust",
+            "definition": "Security model that assumes no implicit trust and continuously verifies identities, devices, context, and access requests."
+          }
+        ],
+        "check_q": "Without looking back, explain Zero Trust and describe at least two key ideas from this section.",
+        "check_a": "Zero Trust assumes that network location alone should not create trust. Every access request is evaluated using identity, device, context, policy, and least privilege, with continuous verification where possible. Key ideas include: From perimeter defense to microperimeters; From implicit trust to adaptive; verification.",
+        "points": [
+          "From perimeter defense to microperimeters",
+          "From implicit trust to adaptive",
+          "verification"
+        ]
+      }
+    },
+    {
+      "n": 3,
+      "title": "Components",
+      "points": [
+        "Control Plane",
+        "Data Plane"
+      ],
+      "raw": "Components\nControl Plane\nData Plane",
+      "instructional": true,
+      "teach": "Know what each component does and how the components work together. CompTIA often asks which component best fits a scenario.",
+      "defs": [],
+      "course": {
+        "learn": "This section focuses on **Components** within **Zero Trust**. Zero Trust assumes that network location alone should not create trust. Every access request is evaluated using identity, device, context, policy, and least privilege, with continuous verification where possible.",
+        "why": "Modern users and resources are distributed across cloud, remote, and internal environments, so a hard perimeter is no longer enough.",
+        "example": "An employee on the corporate LAN still must authenticate, use a compliant device, and receive only the access needed for a specific application.",
+        "exam": "Common clues: never trust/always verify, least privilege, microsegmentation, policy engine, policy enforcement point, adaptive access.",
+        "breakdown": [
+          {
+            "term": "Control Plane",
+            "explanation": "In Zero Trust, the control plane makes access decisions. It evaluates identity, policy, context, and threat information to decide whether a request should be allowed."
+          },
+          {
+            "term": "Data Plane",
+            "explanation": "The Zero Trust data plane is where approved communication actually occurs and where policy decisions are enforced. Policy Enforcement Points (PEPs) allow, deny, or limit traffic."
+          }
+        ],
+        "defs": [],
+        "check_q": "Without looking back, explain Components and describe at least two key ideas from this section.",
+        "check_a": "This section focuses on **Components** within **Zero Trust**. Zero Trust assumes that network location alone should not create trust. Every access request is evaluated using identity, device, context, policy, and least privilege, with continuous verification where possible. Key ideas include: Control Plane; Data Plane.",
+        "points": [
+          "Control Plane",
+          "Data Plane"
+        ]
+      }
+    },
+    {
+      "n": 4,
+      "title": "Control Plane",
+      "points": [
+        "Adaptive Identity",
+        "Threat Scope Reduction",
+        "Policy-driven Access Control",
+        "Policy Administrator",
+        "Policy Engine"
+      ],
+      "raw": "Control Plane\nAdaptive Identity\nThreat Scope Reduction\nPolicy-driven Access Control\nPolicy Administrator\nPolicy Engine",
+      "instructional": true,
+      "teach": "Read the source points, then explain the slide without looking. On Security+, recognition is not enough—you should be able to apply the concept to a scenario.",
+      "defs": [],
+      "course": {
+        "learn": "In Zero Trust, the control plane makes access decisions. It evaluates identity, policy, context, and threat information to decide whether a request should be allowed.",
+        "why": "Separating decision logic from traffic enforcement makes access consistent and centrally governed.",
+        "example": "A policy engine determines that a user on an unmanaged device may read email but may not access sensitive finance systems.",
+        "exam": "Policy engine and policy administrator belong to the control plane; the PEP enforces the decision in the data plane.",
+        "breakdown": [
+          {
+            "term": "Adaptive Identity",
+            "explanation": "Evaluate identity and context dynamically rather than making a one-time static trust decision."
+          },
+          {
+            "term": "Threat Scope Reduction",
+            "explanation": "Within Control Plane, this is a specific factor you should be able to recognize and explain. Connect it to the purpose of Zero Trust rather than memorizing the phrase by itself."
+          },
+          {
+            "term": "Policy-driven Access Control",
+            "explanation": "Access control restricts which subjects can access which resources and what actions they may perform. ACLs express allow/deny rules on objects, interfaces, or network traffic."
+          },
+          {
+            "term": "Policy Administrator",
+            "explanation": "Coordinates or communicates the policy engine's access decision to enforcement components."
+          },
+          {
+            "term": "Policy Engine",
+            "explanation": "Evaluates information and decides whether access should be granted under Zero Trust policy."
+          }
+        ],
+        "defs": [],
+        "check_q": "Without looking back, explain Control Plane and describe at least two key ideas from this section.",
+        "check_a": "In Zero Trust, the control plane makes access decisions. It evaluates identity, policy, context, and threat information to decide whether a request should be allowed. Key ideas include: Adaptive Identity; Threat Scope Reduction; Policy-driven Access Control; Policy Administrator; Policy Engine.",
+        "points": [
+          "Adaptive Identity",
+          "Threat Scope Reduction",
+          "Policy-driven Access Control",
+          "Policy Administrator",
+          "Policy Engine"
+        ]
+      }
+    },
+    {
+      "n": 5,
+      "title": "Data Plane",
+      "points": [
+        "Implicit Trust",
+        "Zones",
+        "Subject/System",
+        "Policy",
+        "Enforcement",
+        "Point (PEP)"
+      ],
+      "raw": "Data Plane\nImplicit Trust\nZones\nSubject/System\nPolicy\nEnforcement\nPoint (PEP)",
+      "instructional": true,
+      "teach": "Read the source points, then explain the slide without looking. On Security+, recognition is not enough—you should be able to apply the concept to a scenario.",
+      "defs": [],
+      "course": {
+        "learn": "The Zero Trust data plane is where approved communication actually occurs and where policy decisions are enforced. Policy Enforcement Points (PEPs) allow, deny, or limit traffic.",
+        "why": "A good decision is useless unless the system can enforce it at the connection or resource boundary.",
+        "example": "A gateway receives an allow decision from the policy system and permits the user to reach one application while blocking others.",
+        "exam": "PEP is a data-plane clue. Policy decision logic is control plane.",
+        "breakdown": [
+          {
+            "term": "Implicit Trust",
+            "explanation": "Within Data Plane, this is a specific factor you should be able to recognize and explain. Connect it to the purpose of Zero Trust rather than memorizing the phrase by itself."
+          },
+          {
+            "term": "Zones",
+            "explanation": "Within Data Plane, this is a specific factor you should be able to recognize and explain. Connect it to the purpose of Zero Trust rather than memorizing the phrase by itself."
+          },
+          {
+            "term": "Subject/System",
+            "explanation": "Within Data Plane, this is a specific factor you should be able to recognize and explain. Connect it to the purpose of Zero Trust rather than memorizing the phrase by itself."
+          },
+          {
+            "term": "Policy",
+            "explanation": "Enforces an allow, deny, or limited-access decision at the connection/resource boundary."
+          },
+          {
+            "term": "Enforcement",
+            "explanation": "Enforces an allow, deny, or limited-access decision at the connection/resource boundary."
+          },
+          {
+            "term": "Point (PEP)",
+            "explanation": "Enforces an allow, deny, or limited-access decision at the connection/resource boundary."
+          }
+        ],
+        "defs": [],
+        "check_q": "Without looking back, explain Data Plane and describe at least two key ideas from this section.",
+        "check_a": "The Zero Trust data plane is where approved communication actually occurs and where policy decisions are enforced. Policy Enforcement Points (PEPs) allow, deny, or limit traffic. Key ideas include: Implicit Trust; Zones; Subject/System; Policy; Enforcement.",
+        "points": [
+          "Implicit Trust",
+          "Zones",
+          "Subject/System",
+          "Policy",
+          "Enforcement",
+          "Point (PEP)"
+        ]
+      }
+    },
+    {
+      "n": 6,
+      "title": "Benefits",
+      "points": [
+        "Enhanced security",
+        "Reduced attack surface",
+        "Improved user experience",
+        "Increased compliance"
+      ],
+      "raw": "Benefits\nEnhanced security\nReduced attack surface\nImproved user experience\nIncreased compliance",
+      "instructional": true,
+      "teach": "Read the source points, then explain the slide without looking. On Security+, recognition is not enough—you should be able to apply the concept to a scenario.",
+      "defs": [],
+      "course": {
+        "learn": "This section focuses on **Benefits** within **Zero Trust**. Zero Trust assumes that network location alone should not create trust. Every access request is evaluated using identity, device, context, policy, and least privilege, with continuous verification where possible.",
+        "why": "Modern users and resources are distributed across cloud, remote, and internal environments, so a hard perimeter is no longer enough.",
+        "example": "An employee on the corporate LAN still must authenticate, use a compliant device, and receive only the access needed for a specific application.",
+        "exam": "Common clues: never trust/always verify, least privilege, microsegmentation, policy engine, policy enforcement point, adaptive access.",
+        "breakdown": [
+          {
+            "term": "Enhanced security",
+            "explanation": "This is a practical benefit of Zero Trust: it describes an outcome the organization can gain when the concept is implemented effectively."
+          },
+          {
+            "term": "Reduced attack surface",
+            "explanation": "Secure architecture depends on where devices are placed, which trust zones they belong to, how they connect, what attack surface they expose, and what happens when a component fails."
+          },
+          {
+            "term": "Improved user experience",
+            "explanation": "This is a practical benefit of Zero Trust: it describes an outcome the organization can gain when the concept is implemented effectively."
+          },
+          {
+            "term": "Increased compliance",
+            "explanation": "This is a practical benefit of Zero Trust: it describes an outcome the organization can gain when the concept is implemented effectively."
+          }
+        ],
+        "defs": [],
+        "check_q": "Without looking back, explain Benefits and describe at least two key ideas from this section.",
+        "check_a": "This section focuses on **Benefits** within **Zero Trust**. Zero Trust assumes that network location alone should not create trust. Every access request is evaluated using identity, device, context, policy, and least privilege, with continuous verification where possible. Key ideas include: Enhanced security; Reduced attack surface; Improved user experience; Increased compliance.",
+        "points": [
+          "Enhanced security",
+          "Reduced attack surface",
+          "Improved user experience",
+          "Increased compliance"
+        ]
+      }
+    },
+    {
+      "n": 7,
+      "title": "Challenges",
+      "points": [
+        "Complexity",
+        "Integration",
+        "User adoption"
+      ],
+      "raw": "Challenges\nComplexity\nIntegration\nUser adoption",
+      "instructional": true,
+      "teach": "Read the source points, then explain the slide without looking. On Security+, recognition is not enough—you should be able to apply the concept to a scenario.",
+      "defs": [],
+      "course": {
+        "learn": "This section focuses on **Challenges** within **Zero Trust**. Zero Trust assumes that network location alone should not create trust. Every access request is evaluated using identity, device, context, policy, and least privilege, with continuous verification where possible.",
+        "why": "Modern users and resources are distributed across cloud, remote, and internal environments, so a hard perimeter is no longer enough.",
+        "example": "An employee on the corporate LAN still must authenticate, use a compliant device, and receive only the access needed for a specific application.",
+        "exam": "Common clues: never trust/always verify, least privilege, microsegmentation, policy engine, policy enforcement point, adaptive access.",
+        "breakdown": [
+          {
+            "term": "Complexity",
+            "explanation": "This is a factor that must be evaluated when using Zero Trust; ignoring it can create operational, security, cost, or compatibility risk."
+          },
+          {
+            "term": "Integration",
+            "explanation": "This is a factor that must be evaluated when using Zero Trust; ignoring it can create operational, security, cost, or compatibility risk."
+          },
+          {
+            "term": "User adoption",
+            "explanation": "This is a factor that must be evaluated when using Zero Trust; ignoring it can create operational, security, cost, or compatibility risk."
+          }
+        ],
+        "defs": [],
+        "check_q": "Without looking back, explain Challenges and describe at least two key ideas from this section.",
+        "check_a": "This section focuses on **Challenges** within **Zero Trust**. Zero Trust assumes that network location alone should not create trust. Every access request is evaluated using identity, device, context, policy, and least privilege, with continuous verification where possible. Key ideas include: Complexity; Integration; User adoption.",
+        "points": [
+          "Complexity",
+          "Integration",
+          "User adoption"
+        ]
+      }
+    },
+    {
+      "n": 8,
+      "title": "Physical Security",
+      "points": [],
+      "raw": "Physical Security",
+      "instructional": false,
+      "teach": "Read the source points, then explain the slide without looking. On Security+, recognition is not enough—you should be able to apply the concept to a scenario.",
+      "defs": []
+    }
+  ],
+  "slide_count": 8,
+  "instructional_count": 6,
+  "concepts": [
+    "Components",
+    "Control Plane",
+    "Data Plane",
+    "Benefits",
+    "Challenges"
+  ],
+  "source_filename": "02.05_Zero_Trust.pdf"
+}

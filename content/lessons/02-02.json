@@ -1,0 +1,153 @@
+{
+  "id": "02.02",
+  "chapter": 2,
+  "sub": 2,
+  "title": "Non-repudiation",
+  "chapter_name": "Fundamental Security Concepts",
+  "slides": [
+    {
+      "n": 1,
+      "title": "Non-repudiation",
+      "points": [],
+      "raw": "Non-repudiation",
+      "instructional": false,
+      "teach": "Read the source points, then explain the slide without looking. On Security+, recognition is not enough—you should be able to apply the concept to a scenario.",
+      "defs": [
+        [
+          "Non-repudiation",
+          "Evidence that makes it difficult for a party to credibly deny an action they performed."
+        ]
+      ]
+    },
+    {
+      "n": 2,
+      "title": "Non-repudiation",
+      "points": [
+        "Digital Signatures",
+        "Time Stamps",
+        "Audit Logs"
+      ],
+      "raw": "Non-repudiation\nDigital Signatures\nTime Stamps\nAudit Logs",
+      "instructional": true,
+      "teach": "Read the source points, then explain the slide without looking. On Security+, recognition is not enough—you should be able to apply the concept to a scenario.",
+      "defs": [
+        [
+          "Non-repudiation",
+          "Evidence that makes it difficult for a party to credibly deny an action they performed."
+        ]
+      ],
+      "course": {
+        "learn": "Non-repudiation provides evidence that makes it difficult for a person or system to credibly deny an action they performed. Digital signatures, trustworthy timestamps, and protected audit logs are common supporting mechanisms.",
+        "why": "Organizations may need to prove who approved, sent, signed, or changed something—especially for legal, financial, or administrative actions.",
+        "example": "A sender digitally signs a contract. The signature can later be verified with the sender's public key.",
+        "exam": "Digital signature questions often involve integrity, authentication, and non-repudiation—not confidentiality by itself.",
+        "breakdown": [
+          {
+            "term": "Digital Signatures",
+            "explanation": "A digital signature uses asymmetric cryptography to prove that data came from the holder of a private key and that the signed data has not changed."
+          },
+          {
+            "term": "Time Stamps",
+            "explanation": "Within Non-repudiation, this is a specific factor you should be able to recognize and explain. Connect it to the purpose of Non-repudiation rather than memorizing the phrase by itself."
+          },
+          {
+            "term": "Audit Logs",
+            "explanation": "Within Non-repudiation, this is a specific factor you should be able to recognize and explain. Connect it to the purpose of Non-repudiation rather than memorizing the phrase by itself."
+          }
+        ],
+        "defs": [
+          {
+            "term": "Non-repudiation",
+            "definition": "Evidence that makes it difficult for a party to credibly deny an action they performed."
+          }
+        ],
+        "check_q": "Without looking back, explain Non-repudiation and describe at least two key ideas from this section.",
+        "check_a": "Non-repudiation provides evidence that makes it difficult for a person or system to credibly deny an action they performed. Digital signatures, trustworthy timestamps, and protected audit logs are common supporting mechanisms. Key ideas include: Digital Signatures; Time Stamps; Audit Logs.",
+        "points": [
+          "Digital Signatures",
+          "Time Stamps",
+          "Audit Logs"
+        ]
+      }
+    },
+    {
+      "n": 3,
+      "title": "Challenges and Considerations",
+      "points": [
+        "Security of Keys",
+        "System Integrity",
+        "Legal Recognition"
+      ],
+      "raw": "Challenges and Considerations\nSecurity of Keys\nSystem Integrity\nLegal Recognition",
+      "instructional": true,
+      "teach": "These are design tradeoffs. Learn why each factor matters rather than memorizing the words alone.",
+      "defs": [
+        [
+          "Integrity",
+          "Ensuring data stays accurate, complete, and protected from unauthorized modification."
+        ]
+      ],
+      "course": {
+        "learn": "This section focuses on **Challenges and Considerations** within **Non-repudiation**. Non-repudiation provides evidence that makes it difficult for a person or system to credibly deny an action they performed. Digital signatures, trustworthy timestamps, and protected audit logs are common supporting mechanisms.",
+        "why": "Organizations may need to prove who approved, sent, signed, or changed something—especially for legal, financial, or administrative actions.",
+        "example": "A sender digitally signs a contract. The signature can later be verified with the sender's public key.",
+        "exam": "Digital signature questions often involve integrity, authentication, and non-repudiation—not confidentiality by itself.",
+        "breakdown": [
+          {
+            "term": "Security of Keys",
+            "explanation": "This is a factor that must be evaluated when using Non-repudiation; ignoring it can create operational, security, cost, or compatibility risk."
+          },
+          {
+            "term": "System Integrity",
+            "explanation": "This is a factor that must be evaluated when using Non-repudiation; ignoring it can create operational, security, cost, or compatibility risk."
+          },
+          {
+            "term": "Legal Recognition",
+            "explanation": "This is a factor that must be evaluated when using Non-repudiation; ignoring it can create operational, security, cost, or compatibility risk."
+          }
+        ],
+        "defs": [
+          {
+            "term": "Integrity",
+            "definition": "Ensuring data stays accurate, complete, and protected from unauthorized modification."
+          }
+        ],
+        "check_q": "Without looking back, explain Challenges and Considerations and describe at least two key ideas from this section.",
+        "check_a": "This section focuses on **Challenges and Considerations** within **Non-repudiation**. Non-repudiation provides evidence that makes it difficult for a person or system to credibly deny an action they performed. Digital signatures, trustworthy timestamps, and protected audit logs are common supporting mechanisms. Key ideas include: Security of Keys; System Integrity; Legal Recognition.",
+        "points": [
+          "Security of Keys",
+          "System Integrity",
+          "Legal Recognition"
+        ]
+      }
+    },
+    {
+      "n": 4,
+      "title": "Authentication, Authorization, and Accounting (AAA)",
+      "points": [],
+      "raw": "Authentication, Authorization,\nand Accounting (AAA)",
+      "instructional": false,
+      "teach": "Read the source points, then explain the slide without looking. On Security+, recognition is not enough—you should be able to apply the concept to a scenario.",
+      "defs": [
+        [
+          "Authentication",
+          "Proving an identity—answering “who are you?”"
+        ],
+        [
+          "Authorization",
+          "Determining what an authenticated identity is allowed to access or do."
+        ],
+        [
+          "Accounting",
+          "Recording activity through logs, audit trails, and session records."
+        ]
+      ]
+    }
+  ],
+  "slide_count": 4,
+  "instructional_count": 2,
+  "concepts": [
+    "Challenges and Considerations"
+  ],
+  "source_filename": "02.02_Non-repudiation.pdf"
+}

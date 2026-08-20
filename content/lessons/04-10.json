@@ -1,0 +1,892 @@
+{
+  "id": "04.10",
+  "chapter": 4,
+  "sub": 10,
+  "title": "Certificates",
+  "chapter_name": "Cryptography & PKI",
+  "slides": [
+    {
+      "n": 1,
+      "title": "Certificates",
+      "points": [],
+      "raw": "Certificates",
+      "instructional": false,
+      "teach": "Read the source points, then explain the slide without looking. On Security+, recognition is not enough—you should be able to apply the concept to a scenario.",
+      "defs": []
+    },
+    {
+      "n": 2,
+      "title": "Certificate Authorities",
+      "points": [
+        "Issues certificates",
+        "Validates identity",
+        "Manages certificate",
+        "validity"
+      ],
+      "raw": "Certificate Authorities\nIssues certificates\nValidates identity\nManages certificate\nvalidity",
+      "instructional": true,
+      "teach": "Read the source points, then explain the slide without looking. On Security+, recognition is not enough—you should be able to apply the concept to a scenario.",
+      "defs": [
+        [
+          "Certificate",
+          "A digitally signed document that binds an identity or system to a public key."
+        ]
+      ],
+      "course": {
+        "learn": "A Certificate Authority (CA) is a trusted entity that signs digital certificates and vouches that a public key is associated with the named identity. Root CAs anchor trust; intermediate CAs help issue certificates without exposing the root key constantly.",
+        "why": "Certificates are only useful if clients can trust the entity that signed them.",
+        "example": "A browser trusts a site certificate because an intermediate CA signed it and that intermediate chains to a trusted root CA.",
+        "exam": "Root CA = trust anchor. Intermediate CA = delegated issuer. Private/internal CAs serve an organization; public CAs issue publicly trusted certificates.",
+        "breakdown": [
+          {
+            "term": "Issues certificates",
+            "explanation": "Within Certificate Authorities, this is a specific factor you should be able to recognize and explain. Connect it to the purpose of Certificates rather than memorizing the phrase by itself."
+          },
+          {
+            "term": "Validates identity",
+            "explanation": "Within Certificate Authorities, this is a specific factor you should be able to recognize and explain. Connect it to the purpose of Certificates rather than memorizing the phrase by itself."
+          },
+          {
+            "term": "Manages certificate validity",
+            "explanation": "Within Certificate Authorities, this is a specific factor you should be able to recognize and explain. Connect it to the purpose of Certificates rather than memorizing the phrase by itself."
+          }
+        ],
+        "defs": [
+          {
+            "term": "Certificate",
+            "definition": "A digitally signed document that binds an identity or system to a public key."
+          }
+        ],
+        "check_q": "Without looking back, explain Certificate Authorities and describe at least two key ideas from this section.",
+        "check_a": "A Certificate Authority (CA) is a trusted entity that signs digital certificates and vouches that a public key is associated with the named identity. Root CAs anchor trust; intermediate CAs help issue certificates without exposing the root key constantly. Key ideas include: Issues certificates; Validates identity; Manages certificate validity.",
+        "points": [
+          "Issues certificates",
+          "Validates identity",
+          "Manages certificate validity"
+        ]
+      }
+    },
+    {
+      "n": 3,
+      "title": "Types of Certificate Authorities",
+      "points": [
+        "• Public",
+        "• Private",
+        "• Root",
+        "• Intermediate",
+        "• Cross-Certification Authorities",
+        "• Registration Authorities (RAs)"
+      ],
+      "raw": "Types of Certificate\nAuthorities\n• Public\n• Private\n• Root\n• Intermediate\n• Cross-Certification Authorities\n• Registration Authorities (RAs)",
+      "instructional": true,
+      "teach": "Focus on the differences between the listed types and the clue words that distinguish them in exam questions.",
+      "defs": [
+        [
+          "Certificate",
+          "A digitally signed document that binds an identity or system to a public key."
+        ]
+      ],
+      "course": {
+        "learn": "A Certificate Authority (CA) is a trusted entity that signs digital certificates and vouches that a public key is associated with the named identity. Root CAs anchor trust; intermediate CAs help issue certificates without exposing the root key constantly.",
+        "why": "Certificates are only useful if clients can trust the entity that signed them.",
+        "example": "A browser trusts a site certificate because an intermediate CA signed it and that intermediate chains to a trusted root CA.",
+        "exam": "Root CA = trust anchor. Intermediate CA = delegated issuer. Private/internal CAs serve an organization; public CAs issue publicly trusted certificates.",
+        "breakdown": [
+          {
+            "term": "Public",
+            "explanation": "Within Types of Certificate Authorities, this is a specific factor you should be able to recognize and explain. Connect it to the purpose of Certificates rather than memorizing the phrase by itself."
+          },
+          {
+            "term": "Private",
+            "explanation": "Within Types of Certificate Authorities, this is a specific factor you should be able to recognize and explain. Connect it to the purpose of Certificates rather than memorizing the phrase by itself."
+          },
+          {
+            "term": "Root",
+            "explanation": "A highly trusted hardware/software/key foundation from which other trust decisions are derived."
+          },
+          {
+            "term": "Intermediate",
+            "explanation": "Within Types of Certificate Authorities, this is a specific factor you should be able to recognize and explain. Connect it to the purpose of Certificates rather than memorizing the phrase by itself."
+          },
+          {
+            "term": "Cross-Certification Authorities",
+            "explanation": "Within Types of Certificate Authorities, this is a specific factor you should be able to recognize and explain. Connect it to the purpose of Certificates rather than memorizing the phrase by itself."
+          },
+          {
+            "term": "Registration Authorities (RAs)",
+            "explanation": "Within Types of Certificate Authorities, this is a specific factor you should be able to recognize and explain. Connect it to the purpose of Certificates rather than memorizing the phrase by itself."
+          }
+        ],
+        "defs": [
+          {
+            "term": "Certificate",
+            "definition": "A digitally signed document that binds an identity or system to a public key."
+          }
+        ],
+        "check_q": "Without looking back, explain Types of Certificate Authorities and describe at least two key ideas from this section.",
+        "check_a": "A Certificate Authority (CA) is a trusted entity that signs digital certificates and vouches that a public key is associated with the named identity. Root CAs anchor trust; intermediate CAs help issue certificates without exposing the root key constantly. Key ideas include: Public; Private; Root; Intermediate; Cross-Certification Authorities.",
+        "points": [
+          "Public",
+          "Private",
+          "Root",
+          "Intermediate",
+          "Cross-Certification Authorities",
+          "Registration Authorities (RAs)"
+        ]
+      }
+    },
+    {
+      "n": 4,
+      "title": "Certificate Revocation Lists (CRLs) vs. Online Certificate Status Protocol (OCSP)",
+      "points": [
+        "Feature",
+        "Purpose",
+        "Certificate Revocation Lists (CRLs)",
+        "Provides a list of revoked certificates",
+        "Online Certificate Status Protocol",
+        "(OCSP)",
+        "Offers real-time certificate revocation",
+        "checking",
+        "Frequency of Periodic updates (may not be",
+        "Updates",
+        "immediate)",
+        "Real-time or near real-time updates",
+        "Content",
+        "List of revoked certificate information",
+        "Response indicating the status of a",
+        "specific certificate",
+        "Granularity",
+        "Applies to all certificates from the CA",
+        "Specific to the queried certificate"
+      ],
+      "raw": "Certificate Revocation Lists (CRLs) vs. Online\nCertificate Status Protocol (OCSP)\nFeature\nPurpose\nCertificate Revocation Lists (CRLs)\nProvides a list of revoked certificates\nOnline Certificate Status Protocol\n(OCSP)\nOffers real-time certificate revocation\nchecking\nFrequency of Periodic updates (may not be\nUpdates\nimmediate)\nReal-time or near real-time updates\nContent\nList of revoked certificate information\nResponse indicating the status of a\nspecific certificate\nGranularity\nApplies to all certificates from the CA\nSpecific to the queried certificate",
+      "instructional": true,
+      "teach": "Build a side-by-side distinction: purpose, strengths, weaknesses, and the scenario where each option fits best.",
+      "defs": [
+        [
+          "Certificate",
+          "A digitally signed document that binds an identity or system to a public key."
+        ],
+        [
+          "OCSP",
+          "Online Certificate Status Protocol: lets a client query whether a certificate is still valid or has been revoked."
+        ],
+        [
+          "CA",
+          "Certificate Authority: a trusted entity that issues and digitally signs certificates."
+        ]
+      ],
+      "course": {
+        "learn": "Certificate revocation mechanisms let clients check whether a certificate should no longer be trusted before its normal expiration date. A CRL is a published list; OCSP is an online status query.",
+        "why": "A certificate may need immediate revocation after private-key compromise or improper issuance.",
+        "example": "A browser queries an OCSP responder to learn whether a site certificate is still valid instead of downloading an entire revocation list.",
+        "exam": "CRL = list. OCSP = online check. Both solve revocation/status, not certificate issuance.",
+        "breakdown": [
+          {
+            "term": "Feature",
+            "explanation": "Within Certificate Revocation Lists (CRLs) vs. Online Certificate Status Protocol (OCSP), this is a specific factor you should be able to recognize and explain. Connect it to the purpose of Certificates rather than memorizing the phrase by itself."
+          },
+          {
+            "term": "Purpose",
+            "explanation": "Within Certificate Revocation Lists (CRLs) vs. Online Certificate Status Protocol (OCSP), this is a specific factor you should be able to recognize and explain. Connect it to the purpose of Certificates rather than memorizing the phrase by itself."
+          },
+          {
+            "term": "Certificate Revocation Lists (CRLs)",
+            "explanation": "Certificate revocation mechanisms let clients check whether a certificate should no longer be trusted before its normal expiration date. A CRL is a published list; OCSP is an online status query."
+          },
+          {
+            "term": "Provides a list of revoked certificates",
+            "explanation": "Within Certificate Revocation Lists (CRLs) vs. Online Certificate Status Protocol (OCSP), this is a specific factor you should be able to recognize and explain. Connect it to the purpose of Certificates rather than memorizing the phrase by itself."
+          },
+          {
+            "term": "Online Certificate Status Protocol",
+            "explanation": "An online protocol used to ask for the current revocation/status of a specific certificate."
+          },
+          {
+            "term": "(OCSP)",
+            "explanation": "An online protocol used to ask for the current revocation/status of a specific certificate."
+          },
+          {
+            "term": "Offers real-time certificate revocation",
+            "explanation": "Within Certificate Revocation Lists (CRLs) vs. Online Certificate Status Protocol (OCSP), this is a specific factor you should be able to recognize and explain. Connect it to the purpose of Certificates rather than memorizing the phrase by itself."
+          },
+          {
+            "term": "checking",
+            "explanation": "Within Certificate Revocation Lists (CRLs) vs. Online Certificate Status Protocol (OCSP), this is a specific factor you should be able to recognize and explain. Connect it to the purpose of Certificates rather than memorizing the phrase by itself."
+          },
+          {
+            "term": "Frequency of Periodic updates (may not be",
+            "explanation": "Backups create recoverable copies of data or systems so organizations can restore after deletion, corruption, ransomware, or disaster. Good backup strategy considers location, frequency, retention, immutability, encryption, and restore testing."
+          },
+          {
+            "term": "Updates immediate)",
+            "explanation": "Within Certificate Revocation Lists (CRLs) vs. Online Certificate Status Protocol (OCSP), this is a specific factor you should be able to recognize and explain. Connect it to the purpose of Certificates rather than memorizing the phrase by itself."
+          },
+          {
+            "term": "Real-time or near real-time updates",
+            "explanation": "Within Certificate Revocation Lists (CRLs) vs. Online Certificate Status Protocol (OCSP), this is a specific factor you should be able to recognize and explain. Connect it to the purpose of Certificates rather than memorizing the phrase by itself."
+          },
+          {
+            "term": "Content",
+            "explanation": "Within Certificate Revocation Lists (CRLs) vs. Online Certificate Status Protocol (OCSP), this is a specific factor you should be able to recognize and explain. Connect it to the purpose of Certificates rather than memorizing the phrase by itself."
+          },
+          {
+            "term": "List of revoked certificate information",
+            "explanation": "Within Certificate Revocation Lists (CRLs) vs. Online Certificate Status Protocol (OCSP), this is a specific factor you should be able to recognize and explain. Connect it to the purpose of Certificates rather than memorizing the phrase by itself."
+          },
+          {
+            "term": "Response indicating the status of a specific certificate",
+            "explanation": "Within Certificate Revocation Lists (CRLs) vs. Online Certificate Status Protocol (OCSP), this is a specific factor you should be able to recognize and explain. Connect it to the purpose of Certificates rather than memorizing the phrase by itself."
+          },
+          {
+            "term": "Granularity",
+            "explanation": "Within Certificate Revocation Lists (CRLs) vs. Online Certificate Status Protocol (OCSP), this is a specific factor you should be able to recognize and explain. Connect it to the purpose of Certificates rather than memorizing the phrase by itself."
+          },
+          {
+            "term": "Applies to all certificates from the CA",
+            "explanation": "Within Certificate Revocation Lists (CRLs) vs. Online Certificate Status Protocol (OCSP), this is a specific factor you should be able to recognize and explain. Connect it to the purpose of Certificates rather than memorizing the phrase by itself."
+          },
+          {
+            "term": "Specific to the queried certificate",
+            "explanation": "Within Certificate Revocation Lists (CRLs) vs. Online Certificate Status Protocol (OCSP), this is a specific factor you should be able to recognize and explain. Connect it to the purpose of Certificates rather than memorizing the phrase by itself."
+          }
+        ],
+        "defs": [
+          {
+            "term": "Certificate",
+            "definition": "A digitally signed document that binds an identity or system to a public key."
+          },
+          {
+            "term": "OCSP",
+            "definition": "Online Certificate Status Protocol: lets a client query whether a certificate is still valid or has been revoked."
+          },
+          {
+            "term": "CA",
+            "definition": "Certificate Authority: a trusted entity that issues and digitally signs certificates."
+          }
+        ],
+        "check_q": "Without looking back, explain Certificate Revocation Lists (CRLs) vs. Online Certificate Status Protocol (OCSP) and describe at least two key ideas from this section.",
+        "check_a": "Certificate revocation mechanisms let clients check whether a certificate should no longer be trusted before its normal expiration date. A CRL is a published list; OCSP is an online status query. Key ideas include: Feature; Purpose; Certificate Revocation Lists (CRLs); Provides a list of revoked certificates; Online Certificate Status Protocol.",
+        "points": [
+          "Feature",
+          "Purpose",
+          "Certificate Revocation Lists (CRLs)",
+          "Provides a list of revoked certificates",
+          "Online Certificate Status Protocol",
+          "(OCSP)",
+          "Offers real-time certificate revocation",
+          "checking",
+          "Frequency of Periodic updates (may not be",
+          "Updates immediate)",
+          "Real-time or near real-time updates",
+          "Content",
+          "List of revoked certificate information",
+          "Response indicating the status of a specific certificate",
+          "Granularity",
+          "Applies to all certificates from the CA",
+          "Specific to the queried certificate"
+        ]
+      }
+    },
+    {
+      "n": 5,
+      "title": "Certificate Revocation Lists (CRLs) vs. Online Certificate Status Protocol (OCSP)",
+      "points": [
+        "Feature",
+        "Certificate Revocation Lists (CRLs)",
+        "Online Certificate Status Protocol",
+        "(OCSP)",
+        "Verification",
+        "Mechanism",
+        "Relying party downloads and checks",
+        "the entire CRL",
+        "Relying party sends a query to the",
+        "OCSP responder",
+        "Distribution",
+        "HTTP, LDAP, or other protocols",
+        "Mechanism",
+        "HTTP or other protocols",
+        "Scalability",
+        "May pose scalability challenges as the Generally considered more scalable",
+        "CRL size grows",
+        "for individual certificate checks",
+        "Network",
+        "Overhead",
+        "Downloading the entire CRL can result OCSP queries are typically smaller",
+        "in higher network overhead",
+        "and result in lower overhead"
+      ],
+      "raw": "Certificate Revocation Lists (CRLs) vs. Online\nCertificate Status Protocol (OCSP)\nFeature\nCertificate Revocation Lists (CRLs)\nOnline Certificate Status Protocol\n(OCSP)\nVerification\nMechanism\nRelying party downloads and checks\nthe entire CRL\nRelying party sends a query to the\nOCSP responder\nDistribution\nHTTP, LDAP, or other protocols\nMechanism\nHTTP or other protocols\nScalability\nMay pose scalability challenges as the Generally considered more scalable\nCRL size grows\nfor individual certificate checks\nNetwork\nOverhead\nDownloading the entire CRL can result OCSP queries are typically smaller\nin higher network overhead\nand result in lower overhead",
+      "instructional": true,
+      "teach": "Build a side-by-side distinction: purpose, strengths, weaknesses, and the scenario where each option fits best.",
+      "defs": [
+        [
+          "Certificate",
+          "A digitally signed document that binds an identity or system to a public key."
+        ],
+        [
+          "OCSP",
+          "Online Certificate Status Protocol: lets a client query whether a certificate is still valid or has been revoked."
+        ],
+        [
+          "CRL",
+          "Certificate Revocation List: a published list of certificates that should no longer be trusted."
+        ]
+      ],
+      "course": {
+        "learn": "Certificate revocation mechanisms let clients check whether a certificate should no longer be trusted before its normal expiration date. A CRL is a published list; OCSP is an online status query.",
+        "why": "A certificate may need immediate revocation after private-key compromise or improper issuance.",
+        "example": "A browser queries an OCSP responder to learn whether a site certificate is still valid instead of downloading an entire revocation list.",
+        "exam": "CRL = list. OCSP = online check. Both solve revocation/status, not certificate issuance.",
+        "breakdown": [
+          {
+            "term": "Feature",
+            "explanation": "Within Certificate Revocation Lists (CRLs) vs. Online Certificate Status Protocol (OCSP), this is a specific factor you should be able to recognize and explain. Connect it to the purpose of Certificates rather than memorizing the phrase by itself."
+          },
+          {
+            "term": "Certificate Revocation Lists (CRLs)",
+            "explanation": "Certificate revocation mechanisms let clients check whether a certificate should no longer be trusted before its normal expiration date. A CRL is a published list; OCSP is an online status query."
+          },
+          {
+            "term": "Online Certificate Status Protocol",
+            "explanation": "An online protocol used to ask for the current revocation/status of a specific certificate."
+          },
+          {
+            "term": "(OCSP)",
+            "explanation": "An online protocol used to ask for the current revocation/status of a specific certificate."
+          },
+          {
+            "term": "Verification",
+            "explanation": "Within Certificate Revocation Lists (CRLs) vs. Online Certificate Status Protocol (OCSP), this is a specific factor you should be able to recognize and explain. Connect it to the purpose of Certificates rather than memorizing the phrase by itself."
+          },
+          {
+            "term": "Mechanism",
+            "explanation": "Within Certificate Revocation Lists (CRLs) vs. Online Certificate Status Protocol (OCSP), this is a specific factor you should be able to recognize and explain. Connect it to the purpose of Certificates rather than memorizing the phrase by itself."
+          },
+          {
+            "term": "Relying party downloads and checks the entire CRL",
+            "explanation": "Within Certificate Revocation Lists (CRLs) vs. Online Certificate Status Protocol (OCSP), this is a specific factor you should be able to recognize and explain. Connect it to the purpose of Certificates rather than memorizing the phrase by itself."
+          },
+          {
+            "term": "Relying party sends a query to the",
+            "explanation": "Within Certificate Revocation Lists (CRLs) vs. Online Certificate Status Protocol (OCSP), this is a specific factor you should be able to recognize and explain. Connect it to the purpose of Certificates rather than memorizing the phrase by itself."
+          },
+          {
+            "term": "OCSP responder",
+            "explanation": "Certificate revocation mechanisms let clients check whether a certificate should no longer be trusted before its normal expiration date. A CRL is a published list; OCSP is an online status query."
+          },
+          {
+            "term": "Distribution",
+            "explanation": "Within Certificate Revocation Lists (CRLs) vs. Online Certificate Status Protocol (OCSP), this is a specific factor you should be able to recognize and explain. Connect it to the purpose of Certificates rather than memorizing the phrase by itself."
+          },
+          {
+            "term": "HTTP, LDAP, or other protocols",
+            "explanation": "Within Certificate Revocation Lists (CRLs) vs. Online Certificate Status Protocol (OCSP), this is a specific factor you should be able to recognize and explain. Connect it to the purpose of Certificates rather than memorizing the phrase by itself."
+          },
+          {
+            "term": "Mechanism",
+            "explanation": "Within Certificate Revocation Lists (CRLs) vs. Online Certificate Status Protocol (OCSP), this is a specific factor you should be able to recognize and explain. Connect it to the purpose of Certificates rather than memorizing the phrase by itself."
+          },
+          {
+            "term": "HTTP or other protocols",
+            "explanation": "Within Certificate Revocation Lists (CRLs) vs. Online Certificate Status Protocol (OCSP), this is a specific factor you should be able to recognize and explain. Connect it to the purpose of Certificates rather than memorizing the phrase by itself."
+          },
+          {
+            "term": "Scalability",
+            "explanation": "Within Certificate Revocation Lists (CRLs) vs. Online Certificate Status Protocol (OCSP), this is a specific factor you should be able to recognize and explain. Connect it to the purpose of Certificates rather than memorizing the phrase by itself."
+          },
+          {
+            "term": "May pose scalability challenges as the Generally considered more scalable",
+            "explanation": "Within Certificate Revocation Lists (CRLs) vs. Online Certificate Status Protocol (OCSP), this is a specific factor you should be able to recognize and explain. Connect it to the purpose of Certificates rather than memorizing the phrase by itself."
+          },
+          {
+            "term": "CRL size grows for individual certificate checks",
+            "explanation": "Within Certificate Revocation Lists (CRLs) vs. Online Certificate Status Protocol (OCSP), this is a specific factor you should be able to recognize and explain. Connect it to the purpose of Certificates rather than memorizing the phrase by itself."
+          },
+          {
+            "term": "Network",
+            "explanation": "Networks that lack trustworthy encryption, authentication, segmentation, or monitoring."
+          },
+          {
+            "term": "Overhead",
+            "explanation": "Within Certificate Revocation Lists (CRLs) vs. Online Certificate Status Protocol (OCSP), this is a specific factor you should be able to recognize and explain. Connect it to the purpose of Certificates rather than memorizing the phrase by itself."
+          },
+          {
+            "term": "Downloading the entire CRL can result OCSP queries are typically smaller",
+            "explanation": "Certificate revocation mechanisms let clients check whether a certificate should no longer be trusted before its normal expiration date. A CRL is a published list; OCSP is an online status query."
+          },
+          {
+            "term": "in higher network overhead and result in lower overhead",
+            "explanation": "Within Certificate Revocation Lists (CRLs) vs. Online Certificate Status Protocol (OCSP), this is a specific factor you should be able to recognize and explain. Connect it to the purpose of Certificates rather than memorizing the phrase by itself."
+          }
+        ],
+        "defs": [
+          {
+            "term": "Certificate",
+            "definition": "A digitally signed document that binds an identity or system to a public key."
+          },
+          {
+            "term": "OCSP",
+            "definition": "Online Certificate Status Protocol: lets a client query whether a certificate is still valid or has been revoked."
+          },
+          {
+            "term": "CRL",
+            "definition": "Certificate Revocation List: a published list of certificates that should no longer be trusted."
+          }
+        ],
+        "check_q": "Without looking back, explain Certificate Revocation Lists (CRLs) vs. Online Certificate Status Protocol (OCSP) and describe at least two key ideas from this section.",
+        "check_a": "Certificate revocation mechanisms let clients check whether a certificate should no longer be trusted before its normal expiration date. A CRL is a published list; OCSP is an online status query. Key ideas include: Feature; Certificate Revocation Lists (CRLs); Online Certificate Status Protocol; (OCSP); Verification.",
+        "points": [
+          "Feature",
+          "Certificate Revocation Lists (CRLs)",
+          "Online Certificate Status Protocol",
+          "(OCSP)",
+          "Verification",
+          "Mechanism",
+          "Relying party downloads and checks the entire CRL",
+          "Relying party sends a query to the",
+          "OCSP responder",
+          "Distribution",
+          "HTTP, LDAP, or other protocols",
+          "Mechanism",
+          "HTTP or other protocols",
+          "Scalability",
+          "May pose scalability challenges as the Generally considered more scalable",
+          "CRL size grows for individual certificate checks",
+          "Network",
+          "Overhead",
+          "Downloading the entire CRL can result OCSP queries are typically smaller",
+          "in higher network overhead and result in lower overhead"
+        ]
+      }
+    },
+    {
+      "n": 6,
+      "title": "Certificate Revocation Lists (CRLs) vs. Online Certificate Status Protocol (OCSP)",
+      "points": [
+        "Certificate Revocation Lists (CRLs)",
+        "Online Certificate Status Protocol",
+        "(OCSP)",
+        "Offline",
+        "Access",
+        "Requires periodic downloading for",
+        "offline verification",
+        "OCSP responses can be cached for a",
+        "limited time",
+        "Complexity",
+        "in Setup",
+        "May require additional effort",
+        "Generally considered easier to set up",
+        "and manage",
+        "Real-Time",
+        "Response",
+        "No",
+        "Yes",
+        "Response",
+        "Types",
+        "Good, revoked, or unknown",
+        "g#ood, revoked, or unknown",
+        "Feature"
+      ],
+      "raw": "Certificate Revocation Lists (CRLs) vs. Online\nCertificate Status Protocol (OCSP)\nCertificate Revocation Lists (CRLs)\nOnline Certificate Status Protocol\n(OCSP)\nOffline\nAccess\nRequires periodic downloading for\noffline verification\nOCSP responses can be cached for a\nlimited time\nComplexity\nin Setup\nMay require additional effort\nGenerally considered easier to set up\nand manage\nReal-Time\nResponse\nNo\nYes\nResponse\nTypes\nGood, revoked, or unknown\ng#ood, revoked, or unknown\nFeature",
+      "instructional": true,
+      "teach": "Build a side-by-side distinction: purpose, strengths, weaknesses, and the scenario where each option fits best.",
+      "defs": [
+        [
+          "Certificate",
+          "A digitally signed document that binds an identity or system to a public key."
+        ],
+        [
+          "OCSP",
+          "Online Certificate Status Protocol: lets a client query whether a certificate is still valid or has been revoked."
+        ]
+      ],
+      "course": {
+        "learn": "Certificate revocation mechanisms let clients check whether a certificate should no longer be trusted before its normal expiration date. A CRL is a published list; OCSP is an online status query.",
+        "why": "A certificate may need immediate revocation after private-key compromise or improper issuance.",
+        "example": "A browser queries an OCSP responder to learn whether a site certificate is still valid instead of downloading an entire revocation list.",
+        "exam": "CRL = list. OCSP = online check. Both solve revocation/status, not certificate issuance.",
+        "breakdown": [
+          {
+            "term": "Certificate Revocation Lists (CRLs)",
+            "explanation": "Certificate revocation mechanisms let clients check whether a certificate should no longer be trusted before its normal expiration date. A CRL is a published list; OCSP is an online status query."
+          },
+          {
+            "term": "Online Certificate Status Protocol",
+            "explanation": "An online protocol used to ask for the current revocation/status of a specific certificate."
+          },
+          {
+            "term": "(OCSP)",
+            "explanation": "An online protocol used to ask for the current revocation/status of a specific certificate."
+          },
+          {
+            "term": "Offline",
+            "explanation": "Within Certificate Revocation Lists (CRLs) vs. Online Certificate Status Protocol (OCSP), this is a specific factor you should be able to recognize and explain. Connect it to the purpose of Certificates rather than memorizing the phrase by itself."
+          },
+          {
+            "term": "Access",
+            "explanation": "Use hard-to-guess credentials and limit what authenticated users can reach."
+          },
+          {
+            "term": "Requires periodic downloading for offline verification",
+            "explanation": "Within Certificate Revocation Lists (CRLs) vs. Online Certificate Status Protocol (OCSP), this is a specific factor you should be able to recognize and explain. Connect it to the purpose of Certificates rather than memorizing the phrase by itself."
+          },
+          {
+            "term": "OCSP responses can be cached for a limited time",
+            "explanation": "Certificate revocation mechanisms let clients check whether a certificate should no longer be trusted before its normal expiration date. A CRL is a published list; OCSP is an online status query."
+          },
+          {
+            "term": "Complexity in Setup",
+            "explanation": "Within Certificate Revocation Lists (CRLs) vs. Online Certificate Status Protocol (OCSP), this is a specific factor you should be able to recognize and explain. Connect it to the purpose of Certificates rather than memorizing the phrase by itself."
+          },
+          {
+            "term": "May require additional effort",
+            "explanation": "Within Certificate Revocation Lists (CRLs) vs. Online Certificate Status Protocol (OCSP), this is a specific factor you should be able to recognize and explain. Connect it to the purpose of Certificates rather than memorizing the phrase by itself."
+          },
+          {
+            "term": "Generally considered easier to set up and manage",
+            "explanation": "Within Certificate Revocation Lists (CRLs) vs. Online Certificate Status Protocol (OCSP), this is a specific factor you should be able to recognize and explain. Connect it to the purpose of Certificates rather than memorizing the phrase by itself."
+          },
+          {
+            "term": "Real-Time",
+            "explanation": "Within Certificate Revocation Lists (CRLs) vs. Online Certificate Status Protocol (OCSP), this is a specific factor you should be able to recognize and explain. Connect it to the purpose of Certificates rather than memorizing the phrase by itself."
+          },
+          {
+            "term": "Response",
+            "explanation": "Define how an organization prepares for, detects, contains, eradicates, and recovers from security incidents."
+          },
+          {
+            "term": "No",
+            "explanation": "Assesses a target without logging in, approximating an external viewpoint."
+          },
+          {
+            "term": "Yes",
+            "explanation": "Within Certificate Revocation Lists (CRLs) vs. Online Certificate Status Protocol (OCSP), this is a specific factor you should be able to recognize and explain. Connect it to the purpose of Certificates rather than memorizing the phrase by itself."
+          },
+          {
+            "term": "Response",
+            "explanation": "Define how an organization prepares for, detects, contains, eradicates, and recovers from security incidents."
+          },
+          {
+            "term": "Types",
+            "explanation": "Within Certificate Revocation Lists (CRLs) vs. Online Certificate Status Protocol (OCSP), this is a specific factor you should be able to recognize and explain. Connect it to the purpose of Certificates rather than memorizing the phrase by itself."
+          },
+          {
+            "term": "Good, revoked, or unknown g#ood, revoked, or unknown",
+            "explanation": "Within Certificate Revocation Lists (CRLs) vs. Online Certificate Status Protocol (OCSP), this is a specific factor you should be able to recognize and explain. Connect it to the purpose of Certificates rather than memorizing the phrase by itself."
+          },
+          {
+            "term": "Feature",
+            "explanation": "Within Certificate Revocation Lists (CRLs) vs. Online Certificate Status Protocol (OCSP), this is a specific factor you should be able to recognize and explain. Connect it to the purpose of Certificates rather than memorizing the phrase by itself."
+          }
+        ],
+        "defs": [
+          {
+            "term": "Certificate",
+            "definition": "A digitally signed document that binds an identity or system to a public key."
+          },
+          {
+            "term": "OCSP",
+            "definition": "Online Certificate Status Protocol: lets a client query whether a certificate is still valid or has been revoked."
+          }
+        ],
+        "check_q": "Without looking back, explain Certificate Revocation Lists (CRLs) vs. Online Certificate Status Protocol (OCSP) and describe at least two key ideas from this section.",
+        "check_a": "Certificate revocation mechanisms let clients check whether a certificate should no longer be trusted before its normal expiration date. A CRL is a published list; OCSP is an online status query. Key ideas include: Certificate Revocation Lists (CRLs); Online Certificate Status Protocol; (OCSP); Offline; Access.",
+        "points": [
+          "Certificate Revocation Lists (CRLs)",
+          "Online Certificate Status Protocol",
+          "(OCSP)",
+          "Offline",
+          "Access",
+          "Requires periodic downloading for offline verification",
+          "OCSP responses can be cached for a limited time",
+          "Complexity in Setup",
+          "May require additional effort",
+          "Generally considered easier to set up and manage",
+          "Real-Time",
+          "Response",
+          "No",
+          "Yes",
+          "Response",
+          "Types",
+          "Good, revoked, or unknown g#ood, revoked, or unknown",
+          "Feature"
+        ]
+      }
+    },
+    {
+      "n": 7,
+      "title": "Types of Certificates",
+      "points": [
+        "Wildcard",
+        "Subject Alternative Name",
+        "Code Signing",
+        "Self-signed",
+        "Machine/computer"
+      ],
+      "raw": "Types of Certificates\nWildcard\nSubject Alternative Name\nCode Signing\nSelf-signed\nMachine/computer",
+      "instructional": true,
+      "teach": "Focus on the differences between the listed types and the clue words that distinguish them in exam questions.",
+      "defs": [],
+      "course": {
+        "learn": "Digital certificates can be issued for different purposes and scopes, such as a single host, multiple names, wildcard subdomains, code signing, users, email, or devices.",
+        "why": "The certificate must match how the identity and key will actually be used.",
+        "example": "A wildcard certificate for *.example.com can cover many first-level subdomains, while a single-name certificate covers one specific host name.",
+        "exam": "CompTIA may ask which certificate type best fits one host, many SAN names, wildcard subdomains, or signing code.",
+        "breakdown": [
+          {
+            "term": "Wildcard",
+            "explanation": "Within Types of Certificates, this is a specific factor you should be able to recognize and explain. Connect it to the purpose of Certificates rather than memorizing the phrase by itself."
+          },
+          {
+            "term": "Subject Alternative Name",
+            "explanation": "Within Types of Certificates, this is a specific factor you should be able to recognize and explain. Connect it to the purpose of Certificates rather than memorizing the phrase by itself."
+          },
+          {
+            "term": "Code Signing",
+            "explanation": "Within Types of Certificates, this is a specific factor you should be able to recognize and explain. Connect it to the purpose of Certificates rather than memorizing the phrase by itself."
+          },
+          {
+            "term": "Self-signed",
+            "explanation": "Within Types of Certificates, this is a specific factor you should be able to recognize and explain. Connect it to the purpose of Certificates rather than memorizing the phrase by itself."
+          },
+          {
+            "term": "Machine/computer",
+            "explanation": "Within Types of Certificates, this is a specific factor you should be able to recognize and explain. Connect it to the purpose of Certificates rather than memorizing the phrase by itself."
+          }
+        ],
+        "defs": [],
+        "check_q": "Without looking back, explain Types of Certificates and describe at least two key ideas from this section.",
+        "check_a": "Digital certificates can be issued for different purposes and scopes, such as a single host, multiple names, wildcard subdomains, code signing, users, email, or devices. Key ideas include: Wildcard; Subject Alternative Name; Code Signing; Self-signed; Machine/computer.",
+        "points": [
+          "Wildcard",
+          "Subject Alternative Name",
+          "Code Signing",
+          "Self-signed",
+          "Machine/computer"
+        ]
+      }
+    },
+    {
+      "n": 8,
+      "title": "Types of Certificates",
+      "points": [
+        "Email",
+        "User",
+        "Root",
+        "Domain Validation",
+        "Extended Validation"
+      ],
+      "raw": "Types of Certificates\nEmail\nUser\nRoot\nDomain Validation\nExtended Validation",
+      "instructional": true,
+      "teach": "Focus on the differences between the listed types and the clue words that distinguish them in exam questions.",
+      "defs": [],
+      "course": {
+        "learn": "Digital certificates can be issued for different purposes and scopes, such as a single host, multiple names, wildcard subdomains, code signing, users, email, or devices.",
+        "why": "The certificate must match how the identity and key will actually be used.",
+        "example": "A wildcard certificate for *.example.com can cover many first-level subdomains, while a single-name certificate covers one specific host name.",
+        "exam": "CompTIA may ask which certificate type best fits one host, many SAN names, wildcard subdomains, or signing code.",
+        "breakdown": [
+          {
+            "term": "Email",
+            "explanation": "Within Types of Certificates, this is a specific factor you should be able to recognize and explain. Connect it to the purpose of Certificates rather than memorizing the phrase by itself."
+          },
+          {
+            "term": "User",
+            "explanation": "Within Types of Certificates, this is a specific factor you should be able to recognize and explain. Connect it to the purpose of Certificates rather than memorizing the phrase by itself."
+          },
+          {
+            "term": "Root",
+            "explanation": "A highly trusted hardware/software/key foundation from which other trust decisions are derived."
+          },
+          {
+            "term": "Domain Validation",
+            "explanation": "Within Types of Certificates, this is a specific factor you should be able to recognize and explain. Connect it to the purpose of Certificates rather than memorizing the phrase by itself."
+          },
+          {
+            "term": "Extended Validation",
+            "explanation": "Within Types of Certificates, this is a specific factor you should be able to recognize and explain. Connect it to the purpose of Certificates rather than memorizing the phrase by itself."
+          }
+        ],
+        "defs": [],
+        "check_q": "Without looking back, explain Types of Certificates and describe at least two key ideas from this section.",
+        "check_a": "Digital certificates can be issued for different purposes and scopes, such as a single host, multiple names, wildcard subdomains, code signing, users, email, or devices. Key ideas include: Email; User; Root; Domain Validation; Extended Validation.",
+        "points": [
+          "Email",
+          "User",
+          "Root",
+          "Domain Validation",
+          "Extended Validation"
+        ]
+      }
+    },
+    {
+      "n": 9,
+      "title": "Certificate Signing Request (CSR) Generation",
+      "points": [
+        "Common",
+        "Name (CN)",
+        "Organization",
+        "(O)",
+        "State/Province",
+        "(ST)",
+        "Organizational",
+        "Unit (OU)",
+        "Locality (L)",
+        "Country (C)",
+        "Public Key"
+      ],
+      "raw": "Certificate Signing Request (CSR)\nGeneration\nCommon\nName (CN)\nOrganization\n(O)\nState/Province\n(ST)\nOrganizational\nUnit (OU)\nLocality (L)\nCountry (C)\nPublic Key",
+      "instructional": true,
+      "teach": "Read the source points, then explain the slide without looking. On Security+, recognition is not enough—you should be able to apply the concept to a scenario.",
+      "defs": [
+        [
+          "Certificate",
+          "A digitally signed document that binds an identity or system to a public key."
+        ]
+      ],
+      "course": {
+        "learn": "A Certificate Signing Request (CSR) contains identity information and a public key that an applicant sends to a CA when requesting a certificate. The private key should remain with the applicant.",
+        "why": "The CA needs the public key and verified identity information in order to issue a certificate without receiving the private key.",
+        "example": "A web server generates a key pair locally, sends a CSR containing the public key to a CA, and receives a signed certificate.",
+        "exam": "Private key stays private. CSR carries the public key and certificate-request information.",
+        "breakdown": [
+          {
+            "term": "Common",
+            "explanation": "Within Certificate Signing Request (CSR) Generation, this is a specific factor you should be able to recognize and explain. Connect it to the purpose of Certificates rather than memorizing the phrase by itself."
+          },
+          {
+            "term": "Name (CN)",
+            "explanation": "Within Certificate Signing Request (CSR) Generation, this is a specific factor you should be able to recognize and explain. Connect it to the purpose of Certificates rather than memorizing the phrase by itself."
+          },
+          {
+            "term": "Organization",
+            "explanation": "Within Certificate Signing Request (CSR) Generation, this is a specific factor you should be able to recognize and explain. Connect it to the purpose of Certificates rather than memorizing the phrase by itself."
+          },
+          {
+            "term": "(O)",
+            "explanation": "Within Certificate Signing Request (CSR) Generation, this is a specific factor you should be able to recognize and explain. Connect it to the purpose of Certificates rather than memorizing the phrase by itself."
+          },
+          {
+            "term": "State/Province",
+            "explanation": "Within Certificate Signing Request (CSR) Generation, this is a specific factor you should be able to recognize and explain. Connect it to the purpose of Certificates rather than memorizing the phrase by itself."
+          },
+          {
+            "term": "(ST)",
+            "explanation": "Within Certificate Signing Request (CSR) Generation, this is a specific factor you should be able to recognize and explain. Connect it to the purpose of Certificates rather than memorizing the phrase by itself."
+          },
+          {
+            "term": "Organizational",
+            "explanation": "Within Certificate Signing Request (CSR) Generation, this is a specific factor you should be able to recognize and explain. Connect it to the purpose of Certificates rather than memorizing the phrase by itself."
+          },
+          {
+            "term": "Unit (OU)",
+            "explanation": "Within Certificate Signing Request (CSR) Generation, this is a specific factor you should be able to recognize and explain. Connect it to the purpose of Certificates rather than memorizing the phrase by itself."
+          },
+          {
+            "term": "Locality (L)",
+            "explanation": "Within Certificate Signing Request (CSR) Generation, this is a specific factor you should be able to recognize and explain. Connect it to the purpose of Certificates rather than memorizing the phrase by itself."
+          },
+          {
+            "term": "Country (C)",
+            "explanation": "Within Certificate Signing Request (CSR) Generation, this is a specific factor you should be able to recognize and explain. Connect it to the purpose of Certificates rather than memorizing the phrase by itself."
+          },
+          {
+            "term": "Public Key",
+            "explanation": "Within Certificate Signing Request (CSR) Generation, this is a specific factor you should be able to recognize and explain. Connect it to the purpose of Certificates rather than memorizing the phrase by itself."
+          }
+        ],
+        "defs": [
+          {
+            "term": "Certificate",
+            "definition": "A digitally signed document that binds an identity or system to a public key."
+          }
+        ],
+        "check_q": "Without looking back, explain Certificate Signing Request (CSR) Generation and describe at least two key ideas from this section.",
+        "check_a": "A Certificate Signing Request (CSR) contains identity information and a public key that an applicant sends to a CA when requesting a certificate. The private key should remain with the applicant. Key ideas include: Common; Name (CN); Organization; (O); State/Province.",
+        "points": [
+          "Common",
+          "Name (CN)",
+          "Organization",
+          "(O)",
+          "State/Province",
+          "(ST)",
+          "Organizational",
+          "Unit (OU)",
+          "Locality (L)",
+          "Country (C)",
+          "Public Key"
+        ]
+      }
+    },
+    {
+      "n": 10,
+      "title": "Root of Trust",
+      "points": [
+        "• Requires the hardware to be",
+        "trusted before software",
+        "• Is based on the security chain",
+        "• Support secure boot, secure",
+        "enclave, and anti-tamper",
+        "resistance"
+      ],
+      "raw": "Root of Trust\n• Requires the hardware to be\ntrusted before software\n• Is based on the security chain\n• Support secure boot, secure\nenclave, and anti-tamper\nresistance",
+      "instructional": true,
+      "teach": "Read the source points, then explain the slide without looking. On Security+, recognition is not enough—you should be able to apply the concept to a scenario.",
+      "defs": [],
+      "course": {
+        "learn": "A root of trust is a highly trusted foundation—often hardware, firmware, or a protected key—from which later integrity and identity decisions are derived.",
+        "why": "If the foundation is trustworthy, systems can build a chain of verification upward through boot firmware, operating systems, and applications.",
+        "example": "Secure Boot verifies each boot component before allowing the next component to execute, starting from a hardware-backed trust anchor.",
+        "exam": "Root of trust and chain of trust appear in secure boot, TPM, HSM, certificate, and device-integrity scenarios.",
+        "breakdown": [
+          {
+            "term": "Requires the hardware to be trusted before software",
+            "explanation": "Hardware security risk includes vulnerable firmware, malicious peripherals, insecure interfaces, unsupported devices, and physical tampering."
+          },
+          {
+            "term": "Is based on the security chain",
+            "explanation": "This contributes to reducing risk in the broader Certificates design and should be evaluated as part of defense in depth."
+          },
+          {
+            "term": "Support secure boot, secure enclave, and anti-tamper",
+            "explanation": "A secure enclave is an isolated execution area designed to protect sensitive computations and secrets even if the main operating system is compromised."
+          },
+          {
+            "term": "resistance",
+            "explanation": "Within Root of Trust, this is a specific factor you should be able to recognize and explain. Connect it to the purpose of Certificates rather than memorizing the phrase by itself."
+          }
+        ],
+        "defs": [],
+        "check_q": "Without looking back, explain Root of Trust and describe at least two key ideas from this section.",
+        "check_a": "A root of trust is a highly trusted foundation—often hardware, firmware, or a protected key—from which later integrity and identity decisions are derived. Key ideas include: Requires the hardware to be trusted before software; Is based on the security chain; Support secure boot, secure enclave, and anti-tamper; resistance.",
+        "points": [
+          "Requires the hardware to be trusted before software",
+          "Is based on the security chain",
+          "Support secure boot, secure enclave, and anti-tamper",
+          "resistance"
+        ]
+      }
+    },
+    {
+      "n": 11,
+      "title": "Threat Actors",
+      "points": [],
+      "raw": "Threat Actors",
+      "instructional": false,
+      "teach": "Read the source points, then explain the slide without looking. On Security+, recognition is not enough—you should be able to apply the concept to a scenario.",
+      "defs": []
+    }
+  ],
+  "slide_count": 11,
+  "instructional_count": 9,
+  "concepts": [
+    "Certificate Authorities",
+    "Types of Certificate Authorities",
+    "Certificate Revocation Lists (CRLs) vs. Online Certificate Status Protocol (OCSP)",
+    "Types of Certificates",
+    "Certificate Signing Request (CSR) Generation",
+    "Root of Trust"
+  ],
+  "source_filename": "04.10_Certificates.pdf"
+}

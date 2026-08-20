@@ -1,0 +1,216 @@
+{
+  "id": "10.12",
+  "chapter": 10,
+  "sub": 12,
+  "title": "Embedded systems",
+  "chapter_name": "Security Architecture & Cloud",
+  "slides": [
+    {
+      "n": 1,
+      "title": "Embedded Systems",
+      "points": [],
+      "raw": "Embedded Systems",
+      "instructional": false,
+      "teach": "Read the source points, then explain the slide without looking. On Security+, recognition is not enough—you should be able to apply the concept to a scenario.",
+      "defs": []
+    },
+    {
+      "n": 2,
+      "title": "Embedded Systems",
+      "points": [
+        "Designed for dedicated functions",
+        "Embedded into devices"
+      ],
+      "raw": "Embedded Systems\nDesigned for dedicated functions\nEmbedded into devices",
+      "instructional": true,
+      "teach": "Read the source points, then explain the slide without looking. On Security+, recognition is not enough—you should be able to apply the concept to a scenario.",
+      "defs": [],
+      "course": {
+        "learn": "Embedded systems are specialized computers built into larger devices to perform dedicated functions. They often have constrained resources, long replacement cycles, and specialized firmware.",
+        "why": "They may be difficult to patch and easy to overlook in asset inventories.",
+        "example": "A network-connected building controller runs embedded firmware for years and must be isolated because the vendor no longer provides updates.",
+        "exam": "Inventory, firmware security, segmentation, physical protection, and lifecycle/EOL support are key themes.",
+        "breakdown": [
+          {
+            "term": "Designed for dedicated functions",
+            "explanation": "Within Embedded Systems, this is a specific factor you should be able to recognize and explain. Connect it to the purpose of Embedded systems rather than memorizing the phrase by itself."
+          },
+          {
+            "term": "Embedded into devices",
+            "explanation": "Within Embedded Systems, this is a specific factor you should be able to recognize and explain. Connect it to the purpose of Embedded systems rather than memorizing the phrase by itself."
+          }
+        ],
+        "defs": [],
+        "check_q": "Without looking back, explain Embedded Systems and describe at least two key ideas from this section.",
+        "check_a": "Embedded systems are specialized computers built into larger devices to perform dedicated functions. They often have constrained resources, long replacement cycles, and specialized firmware. Key ideas include: Designed for dedicated functions; Embedded into devices.",
+        "points": [
+          "Designed for dedicated functions",
+          "Embedded into devices"
+        ]
+      }
+    },
+    {
+      "n": 3,
+      "title": "Security Implications",
+      "points": [
+        "Resource",
+        "Constraints",
+        "Limited Update",
+        "Capabilities",
+        "Network",
+        "Connectivity",
+        "Physical Access",
+        "Insecure",
+        "Communication"
+      ],
+      "raw": "Security Implications\nResource\nConstraints\nLimited Update\nCapabilities\nNetwork\nConnectivity\nPhysical Access\nInsecure\nCommunication",
+      "instructional": true,
+      "teach": "Focus on the new risk introduced by the technology or design, then connect that risk to an appropriate mitigation.",
+      "defs": [],
+      "course": {
+        "learn": "This section focuses on **Security Implications** within **Embedded systems**. Embedded systems are specialized computers built into larger devices to perform dedicated functions. They often have constrained resources, long replacement cycles, and specialized firmware.",
+        "why": "They may be difficult to patch and easy to overlook in asset inventories.",
+        "example": "A network-connected building controller runs embedded firmware for years and must be isolated because the vendor no longer provides updates.",
+        "exam": "Inventory, firmware security, segmentation, physical protection, and lifecycle/EOL support are key themes.",
+        "breakdown": [
+          {
+            "term": "Resource",
+            "explanation": "This is a factor that must be evaluated when using Embedded systems; ignoring it can create operational, security, cost, or compatibility risk."
+          },
+          {
+            "term": "Constraints",
+            "explanation": "This is a factor that must be evaluated when using Embedded systems; ignoring it can create operational, security, cost, or compatibility risk."
+          },
+          {
+            "term": "Limited Update",
+            "explanation": "This is a factor that must be evaluated when using Embedded systems; ignoring it can create operational, security, cost, or compatibility risk."
+          },
+          {
+            "term": "Capabilities",
+            "explanation": "This is a factor that must be evaluated when using Embedded systems; ignoring it can create operational, security, cost, or compatibility risk."
+          },
+          {
+            "term": "Network",
+            "explanation": "Networks that lack trustworthy encryption, authentication, segmentation, or monitoring."
+          },
+          {
+            "term": "Connectivity",
+            "explanation": "Secure architecture depends on where devices are placed, which trust zones they belong to, how they connect, what attack surface they expose, and what happens when a component fails."
+          },
+          {
+            "term": "Physical Access",
+            "explanation": "This is a factor that must be evaluated when using Embedded systems; ignoring it can create operational, security, cost, or compatibility risk."
+          },
+          {
+            "term": "Insecure",
+            "explanation": "This is a factor that must be evaluated when using Embedded systems; ignoring it can create operational, security, cost, or compatibility risk."
+          },
+          {
+            "term": "Communication",
+            "explanation": "This is a factor that must be evaluated when using Embedded systems; ignoring it can create operational, security, cost, or compatibility risk."
+          }
+        ],
+        "defs": [],
+        "check_q": "Without looking back, explain Security Implications and describe at least two key ideas from this section.",
+        "check_a": "This section focuses on **Security Implications** within **Embedded systems**. Embedded systems are specialized computers built into larger devices to perform dedicated functions. They often have constrained resources, long replacement cycles, and specialized firmware. Key ideas include: Resource; Constraints; Limited Update; Capabilities; Network.",
+        "points": [
+          "Resource",
+          "Constraints",
+          "Limited Update",
+          "Capabilities",
+          "Network",
+          "Connectivity",
+          "Physical Access",
+          "Insecure",
+          "Communication"
+        ]
+      }
+    },
+    {
+      "n": 4,
+      "title": "Security Implications",
+      "points": [
+        "Authentication",
+        "and Authorization",
+        "Input Validation",
+        "Lack of Security",
+        "Updates"
+      ],
+      "raw": "Security Implications\nAuthentication\nand Authorization\nInput Validation\nLack of Security\nUpdates",
+      "instructional": true,
+      "teach": "Focus on the new risk introduced by the technology or design, then connect that risk to an appropriate mitigation.",
+      "defs": [
+        [
+          "Authentication",
+          "Proving an identity—answering “who are you?”"
+        ],
+        [
+          "Authorization",
+          "Determining what an authenticated identity is allowed to access or do."
+        ]
+      ],
+      "course": {
+        "learn": "This section focuses on **Security Implications** within **Embedded systems**. Embedded systems are specialized computers built into larger devices to perform dedicated functions. They often have constrained resources, long replacement cycles, and specialized firmware.",
+        "why": "They may be difficult to patch and easy to overlook in asset inventories.",
+        "example": "A network-connected building controller runs embedded firmware for years and must be isolated because the vendor no longer provides updates.",
+        "exam": "Inventory, firmware security, segmentation, physical protection, and lifecycle/EOL support are key themes.",
+        "breakdown": [
+          {
+            "term": "Authentication and Authorization",
+            "explanation": "Authentication is the process of proving an identity. Factors can be something you know, have, are, do, or somewhere you are; MFA requires factors from more than one category."
+          },
+          {
+            "term": "Input Validation",
+            "explanation": "This is a factor that must be evaluated when using Embedded systems; ignoring it can create operational, security, cost, or compatibility risk."
+          },
+          {
+            "term": "Lack of Security",
+            "explanation": "This is a factor that must be evaluated when using Embedded systems; ignoring it can create operational, security, cost, or compatibility risk."
+          },
+          {
+            "term": "Updates",
+            "explanation": "This is a factor that must be evaluated when using Embedded systems; ignoring it can create operational, security, cost, or compatibility risk."
+          }
+        ],
+        "defs": [
+          {
+            "term": "Authentication",
+            "definition": "Proving an identity—answering “who are you?”"
+          },
+          {
+            "term": "Authorization",
+            "definition": "Determining what an authenticated identity is allowed to access or do."
+          }
+        ],
+        "check_q": "Without looking back, explain Security Implications and describe at least two key ideas from this section.",
+        "check_a": "This section focuses on **Security Implications** within **Embedded systems**. Embedded systems are specialized computers built into larger devices to perform dedicated functions. They often have constrained resources, long replacement cycles, and specialized firmware. Key ideas include: Authentication and Authorization; Input Validation; Lack of Security; Updates.",
+        "points": [
+          "Authentication and Authorization",
+          "Input Validation",
+          "Lack of Security",
+          "Updates"
+        ]
+      }
+    },
+    {
+      "n": 5,
+      "title": "High Availability",
+      "points": [],
+      "raw": "High Availability",
+      "instructional": false,
+      "teach": "Read the source points, then explain the slide without looking. On Security+, recognition is not enough—you should be able to apply the concept to a scenario.",
+      "defs": [
+        [
+          "Availability",
+          "Ensuring authorized users can access systems and data when needed."
+        ]
+      ]
+    }
+  ],
+  "slide_count": 5,
+  "instructional_count": 3,
+  "concepts": [
+    "Security Implications"
+  ],
+  "source_filename": "10.12_Embedded_systems.pdf"
+}

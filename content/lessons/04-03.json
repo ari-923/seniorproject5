@@ -1,0 +1,390 @@
+{
+  "id": "04.03",
+  "chapter": 4,
+  "sub": 3,
+  "title": "Tools",
+  "chapter_name": "Cryptography & PKI",
+  "slides": [
+    {
+      "n": 1,
+      "title": "Tools",
+      "points": [],
+      "raw": "Tools",
+      "instructional": false,
+      "teach": "Read the source points, then explain the slide without looking. On Security+, recognition is not enough—you should be able to apply the concept to a scenario.",
+      "defs": []
+    },
+    {
+      "n": 2,
+      "title": "Trusted Platform Module (TPM)",
+      "points": [
+        "Is a chip on the motherboard for storing the encryption keys",
+        "Is a form of Hardware Security Module (HSM)",
+        "Is used when performing full-disk encryption"
+      ],
+      "raw": "Trusted Platform Module (TPM)\nIs a chip on the motherboard for storing the encryption keys\nIs a form of Hardware Security Module (HSM)\nIs used when performing full-disk encryption",
+      "instructional": true,
+      "teach": "Read the source points, then explain the slide without looking. On Security+, recognition is not enough—you should be able to apply the concept to a scenario.",
+      "defs": [
+        [
+          "Encryption",
+          "Transforms readable plaintext into ciphertext using an algorithm and key so unauthorized parties cannot understand it."
+        ]
+      ],
+      "course": {
+        "learn": "A Trusted Platform Module (TPM) is a hardware-based security component that can securely generate/store cryptographic material and measure platform integrity.",
+        "why": "Keeping key material in dedicated hardware makes it harder for malware to steal secrets directly from normal system storage.",
+        "example": "Full-disk encryption seals a key to the TPM so the drive unlocks only when expected boot measurements are present.",
+        "exam": "TPM is typically built into an endpoint/platform; HSM is usually a stronger dedicated device/service for protecting high-value keys at scale.",
+        "breakdown": [
+          {
+            "term": "Is a chip on the motherboard for storing the encryption keys",
+            "explanation": "Protect confidentiality by transforming plaintext into ciphertext using cryptographic keys."
+          },
+          {
+            "term": "Is a form of Hardware Security Module (HSM)",
+            "explanation": "A Hardware Security Module (HSM) is a dedicated tamper-resistant device or service for generating, storing, and performing cryptographic operations with high-value keys."
+          },
+          {
+            "term": "Is used when performing full-disk encryption",
+            "explanation": "Protect confidentiality by transforming plaintext into ciphertext using cryptographic keys."
+          }
+        ],
+        "defs": [
+          {
+            "term": "Encryption",
+            "definition": "Transforms readable plaintext into ciphertext using an algorithm and key so unauthorized parties cannot understand it."
+          }
+        ],
+        "check_q": "Without looking back, explain Trusted Platform Module (TPM) and describe at least two key ideas from this section.",
+        "check_a": "A Trusted Platform Module (TPM) is a hardware-based security component that can securely generate/store cryptographic material and measure platform integrity. Key ideas include: Is a chip on the motherboard for storing the encryption keys; Is a form of Hardware Security Module (HSM); Is used when performing full-disk encryption.",
+        "points": [
+          "Is a chip on the motherboard for storing the encryption keys",
+          "Is a form of Hardware Security Module (HSM)",
+          "Is used when performing full-disk encryption"
+        ]
+      }
+    },
+    {
+      "n": 3,
+      "title": "Hardware Security Module (HSM)",
+      "points": [
+        "• Stores and Manages Encryption Keys",
+        "• Physical Form",
+        "• Tamper-Resistant",
+        "• Secure Key Operations",
+        "• Key Backup and Recovery",
+        "• Compliance and Certification",
+        "• Integration with Applications"
+      ],
+      "raw": "Hardware Security Module (HSM)\n• Stores and Manages Encryption Keys\n• Physical Form\n• Tamper-Resistant\n• Secure Key Operations\n• Key Backup and Recovery\n• Compliance and Certification\n• Integration with Applications",
+      "instructional": true,
+      "teach": "Read the source points, then explain the slide without looking. On Security+, recognition is not enough—you should be able to apply the concept to a scenario.",
+      "defs": [
+        [
+          "Encryption",
+          "Transforms readable plaintext into ciphertext using an algorithm and key so unauthorized parties cannot understand it."
+        ]
+      ],
+      "course": {
+        "learn": "A Hardware Security Module (HSM) is a dedicated tamper-resistant device or service for generating, storing, and performing cryptographic operations with high-value keys.",
+        "why": "HSMs reduce the chance that private keys can be exported or stolen from general-purpose systems.",
+        "example": "A certificate authority keeps its signing key inside an HSM and performs signing operations without exposing the private key to the host OS.",
+        "exam": "HSM = dedicated high-assurance key protection; TPM = platform-integrated endpoint trust/key storage.",
+        "breakdown": [
+          {
+            "term": "Stores and Manages Encryption Keys",
+            "explanation": "Protect confidentiality by transforming plaintext into ciphertext using cryptographic keys."
+          },
+          {
+            "term": "Physical Form",
+            "explanation": "Within Hardware Security Module (HSM), this is a specific factor you should be able to recognize and explain. Connect it to the purpose of Tools rather than memorizing the phrase by itself."
+          },
+          {
+            "term": "Tamper-Resistant",
+            "explanation": "Within Hardware Security Module (HSM), this is a specific factor you should be able to recognize and explain. Connect it to the purpose of Tools rather than memorizing the phrase by itself."
+          },
+          {
+            "term": "Secure Key Operations",
+            "explanation": "Within Hardware Security Module (HSM), this is a specific factor you should be able to recognize and explain. Connect it to the purpose of Tools rather than memorizing the phrase by itself."
+          },
+          {
+            "term": "Key Backup and Recovery",
+            "explanation": "Backups create recoverable copies of data or systems so organizations can restore after deletion, corruption, ransomware, or disaster. Good backup strategy considers location, frequency, retention, immutability, encryption, and restore testing."
+          },
+          {
+            "term": "Compliance and Certification",
+            "explanation": "This relates to meeting and demonstrating required legal, regulatory, contractual, or policy obligations."
+          },
+          {
+            "term": "Integration with Applications",
+            "explanation": "Application monitoring measures application behavior, performance, errors, and security events. APM focuses on health/performance, while a WAF inspects and protects web requests."
+          }
+        ],
+        "defs": [
+          {
+            "term": "Encryption",
+            "definition": "Transforms readable plaintext into ciphertext using an algorithm and key so unauthorized parties cannot understand it."
+          }
+        ],
+        "check_q": "Without looking back, explain Hardware Security Module (HSM) and describe at least two key ideas from this section.",
+        "check_a": "A Hardware Security Module (HSM) is a dedicated tamper-resistant device or service for generating, storing, and performing cryptographic operations with high-value keys. Key ideas include: Stores and Manages Encryption Keys; Physical Form; Tamper-Resistant; Secure Key Operations; Key Backup and Recovery.",
+        "points": [
+          "Stores and Manages Encryption Keys",
+          "Physical Form",
+          "Tamper-Resistant",
+          "Secure Key Operations",
+          "Key Backup and Recovery",
+          "Compliance and Certification",
+          "Integration with Applications"
+        ]
+      }
+    },
+    {
+      "n": 4,
+      "title": "Key Management System (KMS)",
+      "points": [
+        "Key",
+        "Generation",
+        "Key",
+        "Distribution",
+        "Key",
+        "Rotation",
+        "Key Storage",
+        "Key",
+        "Revocation"
+      ],
+      "raw": "Key Management System (KMS)\nKey\nGeneration\nKey\nDistribution\nKey\nRotation\nKey Storage\nKey\nRevocation",
+      "instructional": true,
+      "teach": "Read the source points, then explain the slide without looking. On Security+, recognition is not enough—you should be able to apply the concept to a scenario.",
+      "defs": [],
+      "course": {
+        "learn": "Key-management systems centralize the creation, storage, rotation, access, backup, and retirement of cryptographic keys. Key escrow stores a recoverable copy under controlled conditions.",
+        "why": "Losing an encryption key can make legitimate data permanently inaccessible, while leaking the key destroys confidentiality.",
+        "example": "A cloud KMS rotates database-encryption keys automatically and restricts key use to a specific application role.",
+        "exam": "CompTIA may test availability versus confidentiality tradeoffs. Escrow improves recoverability but creates a high-value secret that must be strongly protected.",
+        "breakdown": [
+          {
+            "term": "Key",
+            "explanation": "Security monitoring and automation tools include SIEM for event correlation, SCAP for standardized security-content automation, DLP for controlling sensitive data movement, and SNMP for device monitoring and traps."
+          },
+          {
+            "term": "Generation",
+            "explanation": "Within Key Management System (KMS), this is a specific factor you should be able to recognize and explain. Connect it to the purpose of Tools rather than memorizing the phrase by itself."
+          },
+          {
+            "term": "Key",
+            "explanation": "Security monitoring and automation tools include SIEM for event correlation, SCAP for standardized security-content automation, DLP for controlling sensitive data movement, and SNMP for device monitoring and traps."
+          },
+          {
+            "term": "Distribution",
+            "explanation": "Within Key Management System (KMS), this is a specific factor you should be able to recognize and explain. Connect it to the purpose of Tools rather than memorizing the phrase by itself."
+          },
+          {
+            "term": "Key",
+            "explanation": "Security monitoring and automation tools include SIEM for event correlation, SCAP for standardized security-content automation, DLP for controlling sensitive data movement, and SNMP for device monitoring and traps."
+          },
+          {
+            "term": "Rotation",
+            "explanation": "Within Key Management System (KMS), this is a specific factor you should be able to recognize and explain. Connect it to the purpose of Tools rather than memorizing the phrase by itself."
+          },
+          {
+            "term": "Key Storage",
+            "explanation": "Within Key Management System (KMS), this is a specific factor you should be able to recognize and explain. Connect it to the purpose of Tools rather than memorizing the phrase by itself."
+          },
+          {
+            "term": "Key",
+            "explanation": "Security monitoring and automation tools include SIEM for event correlation, SCAP for standardized security-content automation, DLP for controlling sensitive data movement, and SNMP for device monitoring and traps."
+          },
+          {
+            "term": "Revocation",
+            "explanation": "A published list of certificates that a CA says should no longer be trusted."
+          }
+        ],
+        "defs": [],
+        "check_q": "Without looking back, explain Key Management System (KMS) and describe at least two key ideas from this section.",
+        "check_a": "Key-management systems centralize the creation, storage, rotation, access, backup, and retirement of cryptographic keys. Key escrow stores a recoverable copy under controlled conditions. Key ideas include: Key; Generation; Key; Distribution; Key.",
+        "points": [
+          "Key",
+          "Generation",
+          "Key",
+          "Distribution",
+          "Key",
+          "Rotation",
+          "Key Storage",
+          "Key",
+          "Revocation"
+        ]
+      }
+    },
+    {
+      "n": 5,
+      "title": "Key Management System (KMS)",
+      "points": [
+        "Audit Trails and Logging",
+        "Integration with Applications",
+        "Policy Enforcement",
+        "Secure Key Destruction",
+        "Compliance and Standards"
+      ],
+      "raw": "Key Management System (KMS)\nAudit Trails and Logging\nIntegration with Applications\nPolicy Enforcement\nSecure Key Destruction\nCompliance and Standards",
+      "instructional": true,
+      "teach": "Read the source points, then explain the slide without looking. On Security+, recognition is not enough—you should be able to apply the concept to a scenario.",
+      "defs": [],
+      "course": {
+        "learn": "Key-management systems centralize the creation, storage, rotation, access, backup, and retirement of cryptographic keys. Key escrow stores a recoverable copy under controlled conditions.",
+        "why": "Losing an encryption key can make legitimate data permanently inaccessible, while leaking the key destroys confidentiality.",
+        "example": "A cloud KMS rotates database-encryption keys automatically and restricts key use to a specific application role.",
+        "exam": "CompTIA may test availability versus confidentiality tradeoffs. Escrow improves recoverability but creates a high-value secret that must be strongly protected.",
+        "breakdown": [
+          {
+            "term": "Audit Trails and Logging",
+            "explanation": "Within Key Management System (KMS), this is a specific factor you should be able to recognize and explain. Connect it to the purpose of Tools rather than memorizing the phrase by itself."
+          },
+          {
+            "term": "Integration with Applications",
+            "explanation": "Application monitoring measures application behavior, performance, errors, and security events. APM focuses on health/performance, while a WAF inspects and protects web requests."
+          },
+          {
+            "term": "Policy Enforcement",
+            "explanation": "Enforces an allow, deny, or limited-access decision at the connection/resource boundary."
+          },
+          {
+            "term": "Secure Key Destruction",
+            "explanation": "Asset management tracks hardware, software, and data from acquisition through assignment, operation, maintenance, and secure disposal. A reliable inventory links assets to owners, location, status, and security requirements."
+          },
+          {
+            "term": "Compliance and Standards",
+            "explanation": "This relates to meeting and demonstrating required legal, regulatory, contractual, or policy obligations."
+          }
+        ],
+        "defs": [],
+        "check_q": "Without looking back, explain Key Management System (KMS) and describe at least two key ideas from this section.",
+        "check_a": "Key-management systems centralize the creation, storage, rotation, access, backup, and retirement of cryptographic keys. Key escrow stores a recoverable copy under controlled conditions. Key ideas include: Audit Trails and Logging; Integration with Applications; Policy Enforcement; Secure Key Destruction; Compliance and Standards.",
+        "points": [
+          "Audit Trails and Logging",
+          "Integration with Applications",
+          "Policy Enforcement",
+          "Secure Key Destruction",
+          "Compliance and Standards"
+        ]
+      }
+    },
+    {
+      "n": 6,
+      "title": "Secure Enclave",
+      "points": [
+        "Hardware Roots of Trust",
+        "Isolation",
+        "Confidentiality and Integrity Protections",
+        "Access Control"
+      ],
+      "raw": "Secure Enclave\nHardware Roots of Trust\nIsolation\nConfidentiality and Integrity Protections\nAccess Control",
+      "instructional": true,
+      "teach": "Read the source points, then explain the slide without looking. On Security+, recognition is not enough—you should be able to apply the concept to a scenario.",
+      "defs": [
+        [
+          "Integrity",
+          "Ensuring data stays accurate, complete, and protected from unauthorized modification."
+        ]
+      ],
+      "course": {
+        "learn": "A secure enclave is an isolated execution area designed to protect sensitive computations and secrets even if the main operating system is compromised.",
+        "why": "Isolation reduces the number of components that can directly access high-value secrets.",
+        "example": "A mobile device stores biometric-processing keys inside a hardware-backed enclave instead of normal application memory.",
+        "exam": "Look for isolated protected processing or protected key material on a device.",
+        "breakdown": [
+          {
+            "term": "Hardware Roots of Trust",
+            "explanation": "Hardware security risk includes vulnerable firmware, malicious peripherals, insecure interfaces, unsupported devices, and physical tampering."
+          },
+          {
+            "term": "Isolation",
+            "explanation": "Isolation separates a risky or sensitive system from other resources so compromise cannot easily spread. Physical isolation and air gaps provide stronger separation than ordinary logical controls."
+          },
+          {
+            "term": "Confidentiality and Integrity Protections",
+            "explanation": "Within Secure Enclave, this is a specific factor you should be able to recognize and explain. Connect it to the purpose of Tools rather than memorizing the phrase by itself."
+          },
+          {
+            "term": "Access Control",
+            "explanation": "Use hard-to-guess credentials and limit what authenticated users can reach."
+          }
+        ],
+        "defs": [
+          {
+            "term": "Integrity",
+            "definition": "Ensuring data stays accurate, complete, and protected from unauthorized modification."
+          }
+        ],
+        "check_q": "Without looking back, explain Secure Enclave and describe at least two key ideas from this section.",
+        "check_a": "A secure enclave is an isolated execution area designed to protect sensitive computations and secrets even if the main operating system is compromised. Key ideas include: Hardware Roots of Trust; Isolation; Confidentiality and Integrity Protections; Access Control.",
+        "points": [
+          "Hardware Roots of Trust",
+          "Isolation",
+          "Confidentiality and Integrity Protections",
+          "Access Control"
+        ]
+      }
+    },
+    {
+      "n": 7,
+      "title": "Secure Enclave",
+      "points": [
+        "Side-Channel Protections",
+        "Data Protection",
+        "Enhanced Security for Critical Operations"
+      ],
+      "raw": "Secure Enclave\nSide-Channel Protections\nData Protection\nEnhanced Security for Critical Operations",
+      "instructional": true,
+      "teach": "Read the source points, then explain the slide without looking. On Security+, recognition is not enough—you should be able to apply the concept to a scenario.",
+      "defs": [],
+      "course": {
+        "learn": "A secure enclave is an isolated execution area designed to protect sensitive computations and secrets even if the main operating system is compromised.",
+        "why": "Isolation reduces the number of components that can directly access high-value secrets.",
+        "example": "A mobile device stores biometric-processing keys inside a hardware-backed enclave instead of normal application memory.",
+        "exam": "Look for isolated protected processing or protected key material on a device.",
+        "breakdown": [
+          {
+            "term": "Side-Channel Protections",
+            "explanation": "Within Secure Enclave, this is a specific factor you should be able to recognize and explain. Connect it to the purpose of Tools rather than memorizing the phrase by itself."
+          },
+          {
+            "term": "Data Protection",
+            "explanation": "Within Secure Enclave, this is a specific factor you should be able to recognize and explain. Connect it to the purpose of Tools rather than memorizing the phrase by itself."
+          },
+          {
+            "term": "Enhanced Security for Critical Operations",
+            "explanation": "This contributes to reducing risk in the broader Tools design and should be evaluated as part of defense in depth."
+          }
+        ],
+        "defs": [],
+        "check_q": "Without looking back, explain Secure Enclave and describe at least two key ideas from this section.",
+        "check_a": "A secure enclave is an isolated execution area designed to protect sensitive computations and secrets even if the main operating system is compromised. Key ideas include: Side-Channel Protections; Data Protection; Enhanced Security for Critical Operations.",
+        "points": [
+          "Side-Channel Protections",
+          "Data Protection",
+          "Enhanced Security for Critical Operations"
+        ]
+      }
+    },
+    {
+      "n": 8,
+      "title": "Obfuscation",
+      "points": [],
+      "raw": "Obfuscation",
+      "instructional": false,
+      "teach": "Read the source points, then explain the slide without looking. On Security+, recognition is not enough—you should be able to apply the concept to a scenario.",
+      "defs": []
+    }
+  ],
+  "slide_count": 8,
+  "instructional_count": 6,
+  "concepts": [
+    "Trusted Platform Module (TPM)",
+    "Hardware Security Module (HSM)",
+    "Key Management System (KMS)",
+    "Secure Enclave"
+  ],
+  "source_filename": "04.03_Tools.pdf"
+}

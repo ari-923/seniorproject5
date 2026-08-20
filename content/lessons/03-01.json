@@ -1,0 +1,236 @@
+{
+  "id": "03.01",
+  "chapter": 3,
+  "sub": 1,
+  "title": "Business processes impacting security operation",
+  "chapter_name": "Change Management & Security Operations",
+  "slides": [
+    {
+      "n": 1,
+      "title": "Business Processes Impacting Security Operation",
+      "points": [],
+      "raw": "Business Processes\nImpacting Security Operation",
+      "instructional": false,
+      "teach": "Study the order and purpose of each step. Process questions often ask what should happen next.",
+      "defs": []
+    },
+    {
+      "n": 2,
+      "title": "Change Management",
+      "points": [
+        "Minimize vulnerabilities",
+        "introduced by changes",
+        "Improve incident",
+        "response",
+        "Foster a culture of",
+        "security"
+      ],
+      "raw": "Change Management\nMinimize vulnerabilities\nintroduced by changes\nImprove incident\nresponse\nFoster a culture of\nsecurity",
+      "instructional": true,
+      "teach": "Read the source points, then explain the slide without looking. On Security+, recognition is not enough—you should be able to apply the concept to a scenario.",
+      "defs": [],
+      "course": {
+        "learn": "Change management is the controlled process for planning, approving, testing, implementing, documenting, and—if necessary—reversing technical changes.",
+        "why": "Uncontrolled changes can create outages and security gaps. A repeatable process reduces surprise and preserves accountability.",
+        "example": "Before updating a production firewall, the team documents the change, assesses impact, gets approval, tests it, schedules a maintenance window, and prepares a rollback plan.",
+        "exam": "Common exam clues: approval, impact analysis, maintenance window, test results, backout plan, ownership, stakeholders, SOP, and documentation.",
+        "breakdown": [
+          {
+            "term": "Minimize vulnerabilities introduced by changes",
+            "explanation": "Within Change Management, this is a specific factor you should be able to recognize and explain. Connect it to the purpose of Business processes impacting security operation rather than memorizing the phrase by itself."
+          },
+          {
+            "term": "Improve incident response",
+            "explanation": "Within Change Management, this is a specific factor you should be able to recognize and explain. Connect it to the purpose of Business processes impacting security operation rather than memorizing the phrase by itself."
+          },
+          {
+            "term": "Foster a culture of security",
+            "explanation": "This contributes to reducing risk in the broader Business processes impacting security operation design and should be evaluated as part of defense in depth."
+          }
+        ],
+        "defs": [],
+        "check_q": "Without looking back, explain Change Management and describe at least two key ideas from this section.",
+        "check_a": "Change management is the controlled process for planning, approving, testing, implementing, documenting, and—if necessary—reversing technical changes. Key ideas include: Minimize vulnerabilities introduced by changes; Improve incident response; Foster a culture of security.",
+        "points": [
+          "Minimize vulnerabilities introduced by changes",
+          "Improve incident response",
+          "Foster a culture of security"
+        ]
+      }
+    },
+    {
+      "n": 3,
+      "title": "Key Processes",
+      "points": [
+        "Approval Process",
+        "Ownership",
+        "Stakeholders",
+        "Impact Analysis"
+      ],
+      "raw": "Key Processes\nApproval Process\nOwnership\nStakeholders\nImpact Analysis",
+      "instructional": true,
+      "teach": "Study the order and purpose of each step. Process questions often ask what should happen next.",
+      "defs": [],
+      "course": {
+        "learn": "Change management is the controlled process for planning, approving, testing, implementing, documenting, and—if necessary—reversing technical changes.",
+        "why": "Uncontrolled changes can create outages and security gaps. A repeatable process reduces surprise and preserves accountability.",
+        "example": "Before updating a production firewall, the team documents the change, assesses impact, gets approval, tests it, schedules a maintenance window, and prepares a rollback plan.",
+        "exam": "Common exam clues: approval, impact analysis, maintenance window, test results, backout plan, ownership, stakeholders, SOP, and documentation.",
+        "breakdown": [
+          {
+            "term": "Approval Process",
+            "explanation": "Requires an authorized person or group to review a proposed change before implementation."
+          },
+          {
+            "term": "Ownership",
+            "explanation": "Within Key Processes, this is a specific factor you should be able to recognize and explain. Connect it to the purpose of Business processes impacting security operation rather than memorizing the phrase by itself."
+          },
+          {
+            "term": "Stakeholders",
+            "explanation": "Within Key Processes, this is a specific factor you should be able to recognize and explain. Connect it to the purpose of Business processes impacting security operation rather than memorizing the phrase by itself."
+          },
+          {
+            "term": "Impact Analysis",
+            "explanation": "Examines how a proposed change could affect systems, users, dependencies, risk, and availability."
+          }
+        ],
+        "defs": [],
+        "check_q": "Without looking back, explain Key Processes and describe at least two key ideas from this section.",
+        "check_a": "Change management is the controlled process for planning, approving, testing, implementing, documenting, and—if necessary—reversing technical changes. Key ideas include: Approval Process; Ownership; Stakeholders; Impact Analysis.",
+        "points": [
+          "Approval Process",
+          "Ownership",
+          "Stakeholders",
+          "Impact Analysis"
+        ]
+      }
+    },
+    {
+      "n": 4,
+      "title": "Key Processes",
+      "points": [
+        "Test Results",
+        "Backout Plan",
+        "Maintenance Window",
+        "Standard Operating",
+        "Procedure (SOP)"
+      ],
+      "raw": "Key Processes\nTest Results\nBackout Plan\nMaintenance Window\nStandard Operating\nProcedure (SOP)",
+      "instructional": true,
+      "teach": "Study the order and purpose of each step. Process questions often ask what should happen next.",
+      "defs": [],
+      "course": {
+        "learn": "Change management is the controlled process for planning, approving, testing, implementing, documenting, and—if necessary—reversing technical changes.",
+        "why": "Uncontrolled changes can create outages and security gaps. A repeatable process reduces surprise and preserves accountability.",
+        "example": "Before updating a production firewall, the team documents the change, assesses impact, gets approval, tests it, schedules a maintenance window, and prepares a rollback plan.",
+        "exam": "Common exam clues: approval, impact analysis, maintenance window, test results, backout plan, ownership, stakeholders, SOP, and documentation.",
+        "breakdown": [
+          {
+            "term": "Test Results",
+            "explanation": "Evidence from testing that shows whether a proposed change behaves safely before production deployment."
+          },
+          {
+            "term": "Backout Plan",
+            "explanation": "Documented steps for returning to the prior known-good state if a change fails."
+          },
+          {
+            "term": "Maintenance Window",
+            "explanation": "Approved period when disruptive technical work can be performed with managed business impact."
+          },
+          {
+            "term": "Standard Operating",
+            "explanation": "Within Key Processes, this is a specific factor you should be able to recognize and explain. Connect it to the purpose of Business processes impacting security operation rather than memorizing the phrase by itself."
+          },
+          {
+            "term": "Procedure (SOP)",
+            "explanation": "Within Key Processes, this is a specific factor you should be able to recognize and explain. Connect it to the purpose of Business processes impacting security operation rather than memorizing the phrase by itself."
+          }
+        ],
+        "defs": [],
+        "check_q": "Without looking back, explain Key Processes and describe at least two key ideas from this section.",
+        "check_a": "Change management is the controlled process for planning, approving, testing, implementing, documenting, and—if necessary—reversing technical changes. Key ideas include: Test Results; Backout Plan; Maintenance Window; Standard Operating; Procedure (SOP).",
+        "points": [
+          "Test Results",
+          "Backout Plan",
+          "Maintenance Window",
+          "Standard Operating",
+          "Procedure (SOP)"
+        ]
+      }
+    },
+    {
+      "n": 5,
+      "title": "Key Steps",
+      "points": [
+        "1. Planning and",
+        "Assessment",
+        "2. Design and",
+        "Implementation",
+        "3. Deployment",
+        "and Monitoring",
+        "4. Backout and",
+        "Continuous",
+        "Improvement"
+      ],
+      "raw": "Key Steps\n1. Planning and\nAssessment\n2. Design and\nImplementation\n3. Deployment\nand Monitoring\n4. Backout and\nContinuous\nImprovement",
+      "instructional": true,
+      "teach": "Read the source points, then explain the slide without looking. On Security+, recognition is not enough—you should be able to apply the concept to a scenario.",
+      "defs": [],
+      "course": {
+        "learn": "Change management is the controlled process for planning, approving, testing, implementing, documenting, and—if necessary—reversing technical changes.",
+        "why": "Uncontrolled changes can create outages and security gaps. A repeatable process reduces surprise and preserves accountability.",
+        "example": "Before updating a production firewall, the team documents the change, assesses impact, gets approval, tests it, schedules a maintenance window, and prepares a rollback plan.",
+        "exam": "Common exam clues: approval, impact analysis, maintenance window, test results, backout plan, ownership, stakeholders, SOP, and documentation.",
+        "breakdown": [
+          {
+            "term": "1. Planning and Assessment",
+            "explanation": "Within Key Steps, this is a specific factor you should be able to recognize and explain. Connect it to the purpose of Business processes impacting security operation rather than memorizing the phrase by itself."
+          },
+          {
+            "term": "2. Design and Implementation",
+            "explanation": "Within Key Steps, this is a specific factor you should be able to recognize and explain. Connect it to the purpose of Business processes impacting security operation rather than memorizing the phrase by itself."
+          },
+          {
+            "term": "3. Deployment and Monitoring",
+            "explanation": "Security monitoring continuously observes systems, networks, applications, and logs for suspicious activity, failures, policy violations, and indicators of compromise."
+          },
+          {
+            "term": "4. Backout and Continuous",
+            "explanation": "Within Key Steps, this is a specific factor you should be able to recognize and explain. Connect it to the purpose of Business processes impacting security operation rather than memorizing the phrase by itself."
+          },
+          {
+            "term": "Improvement",
+            "explanation": "Within Key Steps, this is a specific factor you should be able to recognize and explain. Connect it to the purpose of Business processes impacting security operation rather than memorizing the phrase by itself."
+          }
+        ],
+        "defs": [],
+        "check_q": "Without looking back, explain Key Steps and describe at least two key ideas from this section.",
+        "check_a": "Change management is the controlled process for planning, approving, testing, implementing, documenting, and—if necessary—reversing technical changes. Key ideas include: 1. Planning and Assessment; 2. Design and Implementation; 3. Deployment and Monitoring; 4. Backout and Continuous; Improvement.",
+        "points": [
+          "1. Planning and Assessment",
+          "2. Design and Implementation",
+          "3. Deployment and Monitoring",
+          "4. Backout and Continuous",
+          "Improvement"
+        ]
+      }
+    },
+    {
+      "n": 6,
+      "title": "Technical Implications",
+      "points": [],
+      "raw": "Technical Implications",
+      "instructional": false,
+      "teach": "Read the source points, then explain the slide without looking. On Security+, recognition is not enough—you should be able to apply the concept to a scenario.",
+      "defs": []
+    }
+  ],
+  "slide_count": 6,
+  "instructional_count": 4,
+  "concepts": [
+    "Change Management",
+    "Key Processes",
+    "Key Steps"
+  ],
+  "source_filename": "03.01_Business_processes_impacting_security_operation.pdf"
+}

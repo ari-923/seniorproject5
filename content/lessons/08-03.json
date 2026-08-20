@@ -1,0 +1,1571 @@
+{
+  "id": "08.03",
+  "chapter": 8,
+  "sub": 3,
+  "title": "Network attacks",
+  "chapter_name": "Attack Indicators",
+  "slides": [
+    {
+      "n": 1,
+      "title": "Network Attack Indicators",
+      "points": [],
+      "raw": "Network Attack Indicators",
+      "instructional": false,
+      "teach": "Treat these as observable clues. On the exam, be ready to infer the most likely attack from the pattern of indicators.",
+      "defs": []
+    },
+    {
+      "n": 2,
+      "title": "Distributed Denial-of-Service (DDoS) Attacks",
+      "points": [
+        "Volumetric Attacks",
+        "Protocol Attacks",
+        "Application Layer",
+        "Attacks",
+        "Reflective/Amplification",
+        "Attacks",
+        "Resource Exhaustion",
+        "Attacks",
+        "Application Layer",
+        "Attacks"
+      ],
+      "raw": "Distributed Denial-of-Service (DDoS)\nAttacks\nVolumetric Attacks\nProtocol Attacks\nApplication Layer\nAttacks\nReflective/Amplification\nAttacks\nResource Exhaustion\nAttacks\nApplication Layer\nAttacks",
+      "instructional": true,
+      "teach": "Learn the attacker behavior, the evidence it leaves behind, and the control that best detects or mitigates it.",
+      "defs": [
+        [
+          "DDoS",
+          "Distributed Denial-of-Service: many distributed systems overwhelm a target with traffic or requests."
+        ]
+      ],
+      "course": {
+        "learn": "A Distributed Denial-of-Service (DDoS) attack uses many systems or traffic sources to overwhelm a target's bandwidth, processing, connection tables, or application resources.",
+        "why": "The distributed sources make blocking and attribution harder than a single-source DoS attack.",
+        "example": "Thousands of compromised IoT devices send requests to an online store until legitimate customers cannot connect.",
+        "exam": "Many sources + availability outage = DDoS. Layer-based attacks may target network/transport capacity or application resources.",
+        "breakdown": [
+          {
+            "term": "Volumetric Attacks",
+            "explanation": "Within Distributed Denial-of-Service (DDoS) Attacks, this is a specific factor you should be able to recognize and explain. Connect it to the purpose of Network attacks rather than memorizing the phrase by itself."
+          },
+          {
+            "term": "Protocol Attacks",
+            "explanation": "Within Distributed Denial-of-Service (DDoS) Attacks, this is a specific factor you should be able to recognize and explain. Connect it to the purpose of Network attacks rather than memorizing the phrase by itself."
+          },
+          {
+            "term": "Application Layer",
+            "explanation": "Application monitoring measures application behavior, performance, errors, and security events. APM focuses on health/performance, while a WAF inspects and protects web requests."
+          },
+          {
+            "term": "Attacks",
+            "explanation": "Within Distributed Denial-of-Service (DDoS) Attacks, this is a specific factor you should be able to recognize and explain. Connect it to the purpose of Network attacks rather than memorizing the phrase by itself."
+          },
+          {
+            "term": "Reflective/Amplification",
+            "explanation": "Within Distributed Denial-of-Service (DDoS) Attacks, this is a specific factor you should be able to recognize and explain. Connect it to the purpose of Network attacks rather than memorizing the phrase by itself."
+          },
+          {
+            "term": "Attacks",
+            "explanation": "Within Distributed Denial-of-Service (DDoS) Attacks, this is a specific factor you should be able to recognize and explain. Connect it to the purpose of Network attacks rather than memorizing the phrase by itself."
+          },
+          {
+            "term": "Resource Exhaustion",
+            "explanation": "Within Distributed Denial-of-Service (DDoS) Attacks, this is a specific factor you should be able to recognize and explain. Connect it to the purpose of Network attacks rather than memorizing the phrase by itself."
+          },
+          {
+            "term": "Attacks",
+            "explanation": "Within Distributed Denial-of-Service (DDoS) Attacks, this is a specific factor you should be able to recognize and explain. Connect it to the purpose of Network attacks rather than memorizing the phrase by itself."
+          },
+          {
+            "term": "Application Layer",
+            "explanation": "Application monitoring measures application behavior, performance, errors, and security events. APM focuses on health/performance, while a WAF inspects and protects web requests."
+          },
+          {
+            "term": "Attacks",
+            "explanation": "Within Distributed Denial-of-Service (DDoS) Attacks, this is a specific factor you should be able to recognize and explain. Connect it to the purpose of Network attacks rather than memorizing the phrase by itself."
+          }
+        ],
+        "defs": [
+          {
+            "term": "DDoS",
+            "definition": "Distributed Denial-of-Service: many distributed systems overwhelm a target with traffic or requests."
+          }
+        ],
+        "check_q": "Without looking back, explain Distributed Denial-of-Service (DDoS) Attacks and describe at least two key ideas from this section.",
+        "check_a": "A Distributed Denial-of-Service (DDoS) attack uses many systems or traffic sources to overwhelm a target's bandwidth, processing, connection tables, or application resources. Key ideas include: Volumetric Attacks; Protocol Attacks; Application Layer; Attacks; Reflective/Amplification.",
+        "points": [
+          "Volumetric Attacks",
+          "Protocol Attacks",
+          "Application Layer",
+          "Attacks",
+          "Reflective/Amplification",
+          "Attacks",
+          "Resource Exhaustion",
+          "Attacks",
+          "Application Layer",
+          "Attacks"
+        ]
+      }
+    },
+    {
+      "n": 3,
+      "title": "Layer-based DDoS Attacks",
+      "points": [
+        "Layer 3 (Network",
+        "Layer) Attacks:",
+        "• Volume-based",
+        "attacks",
+        "• Protocol attacks",
+        "Layer 4 (Transport",
+        "Layer) Attacks:",
+        "Layer 7 (Application",
+        "Layer) Attacks:",
+        "• TCP SYN flood",
+        "• Ping of death",
+        "• HTTP flood",
+        "• Applicationspecific attacks"
+      ],
+      "raw": "Layer-based DDoS Attacks\nLayer 3 (Network\nLayer) Attacks:\n• Volume-based\nattacks\n• Protocol attacks\nLayer 4 (Transport\nLayer) Attacks:\nLayer 7 (Application\nLayer) Attacks:\n• TCP SYN flood\n• Ping of death\n• HTTP flood\n• Applicationspecific attacks",
+      "instructional": true,
+      "teach": "Learn the attacker behavior, the evidence it leaves behind, and the control that best detects or mitigates it.",
+      "defs": [
+        [
+          "DDoS",
+          "Distributed Denial-of-Service: many distributed systems overwhelm a target with traffic or requests."
+        ]
+      ],
+      "course": {
+        "learn": "A Distributed Denial-of-Service (DDoS) attack uses many systems or traffic sources to overwhelm a target's bandwidth, processing, connection tables, or application resources.",
+        "why": "The distributed sources make blocking and attribution harder than a single-source DoS attack.",
+        "example": "Thousands of compromised IoT devices send requests to an online store until legitimate customers cannot connect.",
+        "exam": "Many sources + availability outage = DDoS. Layer-based attacks may target network/transport capacity or application resources.",
+        "breakdown": [
+          {
+            "term": "Layer 3 (Network",
+            "explanation": "Within Layer-based DDoS Attacks, this is a specific factor you should be able to recognize and explain. Connect it to the purpose of Network attacks rather than memorizing the phrase by itself."
+          },
+          {
+            "term": "Layer) Attacks:",
+            "explanation": "Within Layer-based DDoS Attacks, this is a specific factor you should be able to recognize and explain. Connect it to the purpose of Network attacks rather than memorizing the phrase by itself."
+          },
+          {
+            "term": "Volume-based attacks",
+            "explanation": "Within Layer-based DDoS Attacks, this is a specific factor you should be able to recognize and explain. Connect it to the purpose of Network attacks rather than memorizing the phrase by itself."
+          },
+          {
+            "term": "Protocol attacks",
+            "explanation": "Within Layer-based DDoS Attacks, this is a specific factor you should be able to recognize and explain. Connect it to the purpose of Network attacks rather than memorizing the phrase by itself."
+          },
+          {
+            "term": "Layer 4 (Transport",
+            "explanation": "Layer-4 filtering makes decisions using transport/network information such as IP addresses, protocols, and TCP/UDP ports. Layer-7 filtering understands application protocols and content."
+          },
+          {
+            "term": "Layer) Attacks:",
+            "explanation": "Within Layer-based DDoS Attacks, this is a specific factor you should be able to recognize and explain. Connect it to the purpose of Network attacks rather than memorizing the phrase by itself."
+          },
+          {
+            "term": "Layer 7 (Application",
+            "explanation": "Application monitoring measures application behavior, performance, errors, and security events. APM focuses on health/performance, while a WAF inspects and protects web requests."
+          },
+          {
+            "term": "Layer) Attacks:",
+            "explanation": "Within Layer-based DDoS Attacks, this is a specific factor you should be able to recognize and explain. Connect it to the purpose of Network attacks rather than memorizing the phrase by itself."
+          },
+          {
+            "term": "TCP SYN flood",
+            "explanation": "Within Layer-based DDoS Attacks, this is a specific factor you should be able to recognize and explain. Connect it to the purpose of Network attacks rather than memorizing the phrase by itself."
+          },
+          {
+            "term": "Ping of death",
+            "explanation": "Within Layer-based DDoS Attacks, this is a specific factor you should be able to recognize and explain. Connect it to the purpose of Network attacks rather than memorizing the phrase by itself."
+          },
+          {
+            "term": "HTTP flood",
+            "explanation": "Within Layer-based DDoS Attacks, this is a specific factor you should be able to recognize and explain. Connect it to the purpose of Network attacks rather than memorizing the phrase by itself."
+          },
+          {
+            "term": "Applicationspecific attacks",
+            "explanation": "Application monitoring measures application behavior, performance, errors, and security events. APM focuses on health/performance, while a WAF inspects and protects web requests."
+          }
+        ],
+        "defs": [
+          {
+            "term": "DDoS",
+            "definition": "Distributed Denial-of-Service: many distributed systems overwhelm a target with traffic or requests."
+          }
+        ],
+        "check_q": "Without looking back, explain Layer-based DDoS Attacks and describe at least two key ideas from this section.",
+        "check_a": "A Distributed Denial-of-Service (DDoS) attack uses many systems or traffic sources to overwhelm a target's bandwidth, processing, connection tables, or application resources. Key ideas include: Layer 3 (Network; Layer) Attacks:; Volume-based attacks; Protocol attacks; Layer 4 (Transport.",
+        "points": [
+          "Layer 3 (Network",
+          "Layer) Attacks:",
+          "Volume-based attacks",
+          "Protocol attacks",
+          "Layer 4 (Transport",
+          "Layer) Attacks:",
+          "Layer 7 (Application",
+          "Layer) Attacks:",
+          "TCP SYN flood",
+          "Ping of death",
+          "HTTP flood",
+          "Applicationspecific attacks"
+        ]
+      }
+    },
+    {
+      "n": 4,
+      "title": "DDoS Attack Indicators",
+      "points": [
+        "Unusually High Traffic Volume",
+        "Traffic Spike in Specific Protocols or Ports",
+        "Variability in Traffic Patterns",
+        "Unusual Geographical Distribution of Traffic",
+        "Increased Latency or Network Performance Issues",
+        "Unusual Pattern of Requests"
+      ],
+      "raw": "DDoS Attack Indicators\nUnusually High Traffic Volume\nTraffic Spike in Specific Protocols or Ports\nVariability in Traffic Patterns\nUnusual Geographical Distribution of Traffic\nIncreased Latency or Network Performance Issues\nUnusual Pattern of Requests",
+      "instructional": true,
+      "teach": "Treat these as observable clues. On the exam, be ready to infer the most likely attack from the pattern of indicators.",
+      "defs": [
+        [
+          "DDoS",
+          "Distributed Denial-of-Service: many distributed systems overwhelm a target with traffic or requests."
+        ]
+      ],
+      "course": {
+        "learn": "Security indicators are observable signs that may reveal compromise, misuse, or abnormal conditions. Examples include account lockouts, concurrent sessions, impossible travel, blocked content, missing logs, unusual resource consumption, and resources becoming inaccessible.",
+        "why": "One indicator rarely proves an incident by itself. Analysts correlate multiple signals with normal baselines and context before deciding how to respond.",
+        "example": "A user account signs in from two distant countries within minutes, generates repeated lockouts, and accesses resources at an unusual time. Together, the indicators justify investigation.",
+        "exam": "CompTIA may present symptoms rather than name the attack. Identify what the indicator suggests, correlate evidence, and choose the next defensive action.",
+        "breakdown": [
+          {
+            "term": "Unusually High Traffic Volume",
+            "explanation": "This can be an observable clue during monitoring or investigation. It should be correlated with other evidence before concluding that an attack occurred."
+          },
+          {
+            "term": "Traffic Spike in Specific Protocols or Ports",
+            "explanation": "This can be an observable clue during monitoring or investigation. It should be correlated with other evidence before concluding that an attack occurred."
+          },
+          {
+            "term": "Variability in Traffic Patterns",
+            "explanation": "This can be an observable clue during monitoring or investigation. It should be correlated with other evidence before concluding that an attack occurred."
+          },
+          {
+            "term": "Unusual Geographical Distribution of Traffic",
+            "explanation": "This can be an observable clue during monitoring or investigation. It should be correlated with other evidence before concluding that an attack occurred."
+          },
+          {
+            "term": "Increased Latency or Network Performance Issues",
+            "explanation": "This can be an observable clue during monitoring or investigation. It should be correlated with other evidence before concluding that an attack occurred."
+          },
+          {
+            "term": "Unusual Pattern of Requests",
+            "explanation": "This can be an observable clue during monitoring or investigation. It should be correlated with other evidence before concluding that an attack occurred."
+          }
+        ],
+        "defs": [
+          {
+            "term": "DDoS",
+            "definition": "Distributed Denial-of-Service: many distributed systems overwhelm a target with traffic or requests."
+          }
+        ],
+        "check_q": "Without looking back, explain DDoS Attack Indicators and describe at least two key ideas from this section.",
+        "check_a": "Security indicators are observable signs that may reveal compromise, misuse, or abnormal conditions. Examples include account lockouts, concurrent sessions, impossible travel, blocked content, missing logs, unusual resource consumption, and resources becoming inaccessible. Key ideas include: Unusually High Traffic Volume; Traffic Spike in Specific Protocols or Ports; Variability in Traffic Patterns; Unusual Geographical Distribution of Traffic; Increased Latency or Network Performance Issues.",
+        "points": [
+          "Unusually High Traffic Volume",
+          "Traffic Spike in Specific Protocols or Ports",
+          "Variability in Traffic Patterns",
+          "Unusual Geographical Distribution of Traffic",
+          "Increased Latency or Network Performance Issues",
+          "Unusual Pattern of Requests"
+        ]
+      }
+    },
+    {
+      "n": 5,
+      "title": "DDoS Attack Indicators",
+      "points": [
+        "Failure of",
+        "Network Devices",
+        "Unexplained",
+        "Server Errors",
+        "Unexpected",
+        "Source IP",
+        "Addresses",
+        "Abnormal",
+        "Behavior in",
+        "Application Logs",
+        "Notification from",
+        "DDoS Mitigation",
+        "Service"
+      ],
+      "raw": "DDoS Attack Indicators\nFailure of\nNetwork Devices\nUnexplained\nServer Errors\nUnexpected\nSource IP\nAddresses\nAbnormal\nBehavior in\nApplication Logs\nNotification from\nDDoS Mitigation\nService",
+      "instructional": true,
+      "teach": "Treat these as observable clues. On the exam, be ready to infer the most likely attack from the pattern of indicators.",
+      "defs": [
+        [
+          "DDoS",
+          "Distributed Denial-of-Service: many distributed systems overwhelm a target with traffic or requests."
+        ]
+      ],
+      "course": {
+        "learn": "Security indicators are observable signs that may reveal compromise, misuse, or abnormal conditions. Examples include account lockouts, concurrent sessions, impossible travel, blocked content, missing logs, unusual resource consumption, and resources becoming inaccessible.",
+        "why": "One indicator rarely proves an incident by itself. Analysts correlate multiple signals with normal baselines and context before deciding how to respond.",
+        "example": "A user account signs in from two distant countries within minutes, generates repeated lockouts, and accesses resources at an unusual time. Together, the indicators justify investigation.",
+        "exam": "CompTIA may present symptoms rather than name the attack. Identify what the indicator suggests, correlate evidence, and choose the next defensive action.",
+        "breakdown": [
+          {
+            "term": "Failure of Network Devices",
+            "explanation": "This can be an observable clue during monitoring or investigation. It should be correlated with other evidence before concluding that an attack occurred."
+          },
+          {
+            "term": "Unexplained",
+            "explanation": "This can be an observable clue during monitoring or investigation. It should be correlated with other evidence before concluding that an attack occurred."
+          },
+          {
+            "term": "Server Errors",
+            "explanation": "This can be an observable clue during monitoring or investigation. It should be correlated with other evidence before concluding that an attack occurred."
+          },
+          {
+            "term": "Unexpected",
+            "explanation": "This can be an observable clue during monitoring or investigation. It should be correlated with other evidence before concluding that an attack occurred."
+          },
+          {
+            "term": "Source IP",
+            "explanation": "This can be an observable clue during monitoring or investigation. It should be correlated with other evidence before concluding that an attack occurred."
+          },
+          {
+            "term": "Addresses",
+            "explanation": "This can be an observable clue during monitoring or investigation. It should be correlated with other evidence before concluding that an attack occurred."
+          },
+          {
+            "term": "Abnormal",
+            "explanation": "This can be an observable clue during monitoring or investigation. It should be correlated with other evidence before concluding that an attack occurred."
+          },
+          {
+            "term": "Behavior in",
+            "explanation": "This can be an observable clue during monitoring or investigation. It should be correlated with other evidence before concluding that an attack occurred."
+          },
+          {
+            "term": "Application Logs",
+            "explanation": "Application monitoring measures application behavior, performance, errors, and security events. APM focuses on health/performance, while a WAF inspects and protects web requests."
+          },
+          {
+            "term": "Notification from",
+            "explanation": "This can be an observable clue during monitoring or investigation. It should be correlated with other evidence before concluding that an attack occurred."
+          },
+          {
+            "term": "DDoS Mitigation",
+            "explanation": "A Distributed Denial-of-Service (DDoS) attack uses many systems or traffic sources to overwhelm a target's bandwidth, processing, connection tables, or application resources."
+          },
+          {
+            "term": "Service",
+            "explanation": "Network services listening for connections; unnecessary open ports increase attack surface."
+          }
+        ],
+        "defs": [
+          {
+            "term": "DDoS",
+            "definition": "Distributed Denial-of-Service: many distributed systems overwhelm a target with traffic or requests."
+          }
+        ],
+        "check_q": "Without looking back, explain DDoS Attack Indicators and describe at least two key ideas from this section.",
+        "check_a": "Security indicators are observable signs that may reveal compromise, misuse, or abnormal conditions. Examples include account lockouts, concurrent sessions, impossible travel, blocked content, missing logs, unusual resource consumption, and resources becoming inaccessible. Key ideas include: Failure of Network Devices; Unexplained; Server Errors; Unexpected; Source IP.",
+        "points": [
+          "Failure of Network Devices",
+          "Unexplained",
+          "Server Errors",
+          "Unexpected",
+          "Source IP",
+          "Addresses",
+          "Abnormal",
+          "Behavior in",
+          "Application Logs",
+          "Notification from",
+          "DDoS Mitigation",
+          "Service"
+        ]
+      }
+    },
+    {
+      "n": 6,
+      "title": "DNS Attacks",
+      "points": [
+        "DNS Spoofing or Cache",
+        "Poisoning",
+        "DNS Amplification",
+        "DNS Reflection",
+        "DNS Tunneling"
+      ],
+      "raw": "DNS Attacks\nDNS Spoofing or Cache\nPoisoning\nDNS Amplification\nDNS Reflection\nDNS Tunneling",
+      "instructional": true,
+      "teach": "Learn the attacker behavior, the evidence it leaves behind, and the control that best detects or mitigates it.",
+      "defs": [
+        [
+          "DNS",
+          "Domain Name System: translates names such as example.com into IP addresses and other records."
+        ]
+      ],
+      "course": {
+        "learn": "DNS attacks manipulate or abuse name-resolution infrastructure. Techniques can redirect users, poison cached records, tunnel data, or overwhelm DNS services.",
+        "why": "Users depend on DNS to find legitimate services; corrupt resolution can silently send them elsewhere.",
+        "example": "A poisoned DNS cache resolves a bank's domain to an attacker-controlled IP address.",
+        "exam": "Unexpected DNS responses, unusual query volume, odd domains, or changed records can indicate DNS abuse.",
+        "breakdown": [
+          {
+            "term": "DNS Spoofing or Cache",
+            "explanation": "Within DNS Attacks, this is a specific factor you should be able to recognize and explain. Connect it to the purpose of Network attacks rather than memorizing the phrase by itself."
+          },
+          {
+            "term": "Poisoning",
+            "explanation": "Within DNS Attacks, this is a specific factor you should be able to recognize and explain. Connect it to the purpose of Network attacks rather than memorizing the phrase by itself."
+          },
+          {
+            "term": "DNS Amplification",
+            "explanation": "Within DNS Attacks, this is a specific factor you should be able to recognize and explain. Connect it to the purpose of Network attacks rather than memorizing the phrase by itself."
+          },
+          {
+            "term": "DNS Reflection",
+            "explanation": "Within DNS Attacks, this is a specific factor you should be able to recognize and explain. Connect it to the purpose of Network attacks rather than memorizing the phrase by itself."
+          },
+          {
+            "term": "DNS Tunneling",
+            "explanation": "Within DNS Attacks, this is a specific factor you should be able to recognize and explain. Connect it to the purpose of Network attacks rather than memorizing the phrase by itself."
+          }
+        ],
+        "defs": [
+          {
+            "term": "DNS",
+            "definition": "Domain Name System: translates names such as example.com into IP addresses and other records."
+          }
+        ],
+        "check_q": "Without looking back, explain DNS Attacks and describe at least two key ideas from this section.",
+        "check_a": "DNS attacks manipulate or abuse name-resolution infrastructure. Techniques can redirect users, poison cached records, tunnel data, or overwhelm DNS services. Key ideas include: DNS Spoofing or Cache; Poisoning; DNS Amplification; DNS Reflection; DNS Tunneling.",
+        "points": [
+          "DNS Spoofing or Cache",
+          "Poisoning",
+          "DNS Amplification",
+          "DNS Reflection",
+          "DNS Tunneling"
+        ]
+      }
+    },
+    {
+      "n": 7,
+      "title": "DNS Attacks",
+      "points": [
+        "Distributed",
+        "Reflection Denial",
+        "of Service",
+        "(DRDoS)",
+        "NXDOMAIN",
+        "Random",
+        "Subdomain"
+      ],
+      "raw": "DNS Attacks\nDistributed\nReflection Denial\nof Service\n(DRDoS)\nNXDOMAIN\nRandom\nSubdomain",
+      "instructional": true,
+      "teach": "Learn the attacker behavior, the evidence it leaves behind, and the control that best detects or mitigates it.",
+      "defs": [
+        [
+          "DNS",
+          "Domain Name System: translates names such as example.com into IP addresses and other records."
+        ]
+      ],
+      "course": {
+        "learn": "DNS attacks manipulate or abuse name-resolution infrastructure. Techniques can redirect users, poison cached records, tunnel data, or overwhelm DNS services.",
+        "why": "Users depend on DNS to find legitimate services; corrupt resolution can silently send them elsewhere.",
+        "example": "A poisoned DNS cache resolves a bank's domain to an attacker-controlled IP address.",
+        "exam": "Unexpected DNS responses, unusual query volume, odd domains, or changed records can indicate DNS abuse.",
+        "breakdown": [
+          {
+            "term": "Distributed",
+            "explanation": "Within DNS Attacks, this is a specific factor you should be able to recognize and explain. Connect it to the purpose of Network attacks rather than memorizing the phrase by itself."
+          },
+          {
+            "term": "Reflection Denial of Service",
+            "explanation": "Within DNS Attacks, this is a specific factor you should be able to recognize and explain. Connect it to the purpose of Network attacks rather than memorizing the phrase by itself."
+          },
+          {
+            "term": "(DRDoS)",
+            "explanation": "Within DNS Attacks, this is a specific factor you should be able to recognize and explain. Connect it to the purpose of Network attacks rather than memorizing the phrase by itself."
+          },
+          {
+            "term": "NXDOMAIN",
+            "explanation": "Within DNS Attacks, this is a specific factor you should be able to recognize and explain. Connect it to the purpose of Network attacks rather than memorizing the phrase by itself."
+          },
+          {
+            "term": "Random",
+            "explanation": "Within DNS Attacks, this is a specific factor you should be able to recognize and explain. Connect it to the purpose of Network attacks rather than memorizing the phrase by itself."
+          },
+          {
+            "term": "Subdomain",
+            "explanation": "Within DNS Attacks, this is a specific factor you should be able to recognize and explain. Connect it to the purpose of Network attacks rather than memorizing the phrase by itself."
+          }
+        ],
+        "defs": [
+          {
+            "term": "DNS",
+            "definition": "Domain Name System: translates names such as example.com into IP addresses and other records."
+          }
+        ],
+        "check_q": "Without looking back, explain DNS Attacks and describe at least two key ideas from this section.",
+        "check_a": "DNS attacks manipulate or abuse name-resolution infrastructure. Techniques can redirect users, poison cached records, tunnel data, or overwhelm DNS services. Key ideas include: Distributed; Reflection Denial of Service; (DRDoS); NXDOMAIN; Random.",
+        "points": [
+          "Distributed",
+          "Reflection Denial of Service",
+          "(DRDoS)",
+          "NXDOMAIN",
+          "Random",
+          "Subdomain"
+        ]
+      }
+    },
+    {
+      "n": 8,
+      "title": "DNS Attack Indicators",
+      "points": [
+        "Unusual Traffic Patterns",
+        "High Query Rate for Specific Domains",
+        "Abnormal Query Types:",
+        "Unexpected Source IP Addresses",
+        "Excessive NXDOMAIN Responses"
+      ],
+      "raw": "DNS Attack Indicators\nUnusual Traffic Patterns\nHigh Query Rate for Specific Domains\nAbnormal Query Types:\nUnexpected Source IP Addresses\nExcessive NXDOMAIN Responses",
+      "instructional": true,
+      "teach": "Treat these as observable clues. On the exam, be ready to infer the most likely attack from the pattern of indicators.",
+      "defs": [
+        [
+          "DNS",
+          "Domain Name System: translates names such as example.com into IP addresses and other records."
+        ]
+      ],
+      "course": {
+        "learn": "DNS attacks manipulate or abuse name-resolution infrastructure. Techniques can redirect users, poison cached records, tunnel data, or overwhelm DNS services.",
+        "why": "Users depend on DNS to find legitimate services; corrupt resolution can silently send them elsewhere.",
+        "example": "A poisoned DNS cache resolves a bank's domain to an attacker-controlled IP address.",
+        "exam": "Unexpected DNS responses, unusual query volume, odd domains, or changed records can indicate DNS abuse.",
+        "breakdown": [
+          {
+            "term": "Unusual Traffic Patterns",
+            "explanation": "This can be an observable clue during monitoring or investigation. It should be correlated with other evidence before concluding that an attack occurred."
+          },
+          {
+            "term": "High Query Rate for Specific Domains",
+            "explanation": "This can be an observable clue during monitoring or investigation. It should be correlated with other evidence before concluding that an attack occurred."
+          },
+          {
+            "term": "Abnormal Query Types:",
+            "explanation": "This can be an observable clue during monitoring or investigation. It should be correlated with other evidence before concluding that an attack occurred."
+          },
+          {
+            "term": "Unexpected Source IP Addresses",
+            "explanation": "This can be an observable clue during monitoring or investigation. It should be correlated with other evidence before concluding that an attack occurred."
+          },
+          {
+            "term": "Excessive NXDOMAIN Responses",
+            "explanation": "This can be an observable clue during monitoring or investigation. It should be correlated with other evidence before concluding that an attack occurred."
+          }
+        ],
+        "defs": [
+          {
+            "term": "DNS",
+            "definition": "Domain Name System: translates names such as example.com into IP addresses and other records."
+          }
+        ],
+        "check_q": "Without looking back, explain DNS Attack Indicators and describe at least two key ideas from this section.",
+        "check_a": "DNS attacks manipulate or abuse name-resolution infrastructure. Techniques can redirect users, poison cached records, tunnel data, or overwhelm DNS services. Key ideas include: Unusual Traffic Patterns; High Query Rate for Specific Domains; Abnormal Query Types:; Unexpected Source IP Addresses; Excessive NXDOMAIN Responses.",
+        "points": [
+          "Unusual Traffic Patterns",
+          "High Query Rate for Specific Domains",
+          "Abnormal Query Types:",
+          "Unexpected Source IP Addresses",
+          "Excessive NXDOMAIN Responses"
+        ]
+      }
+    },
+    {
+      "n": 9,
+      "title": "DNS Attack Indicators",
+      "points": [
+        "Repeated DNS Query Failures",
+        "Unexpected Changes in DNS Records",
+        "Unexplained Latency or Delays",
+        "Unusual Behavior in Authoritative DNS Servers",
+        "DNSSEC Validation Failures"
+      ],
+      "raw": "DNS Attack Indicators\nRepeated DNS Query Failures\nUnexpected Changes in DNS Records\nUnexplained Latency or Delays\nUnusual Behavior in Authoritative DNS Servers\nDNSSEC Validation Failures",
+      "instructional": true,
+      "teach": "Treat these as observable clues. On the exam, be ready to infer the most likely attack from the pattern of indicators.",
+      "defs": [
+        [
+          "DNS",
+          "Domain Name System: translates names such as example.com into IP addresses and other records."
+        ]
+      ],
+      "course": {
+        "learn": "DNS attacks manipulate or abuse name-resolution infrastructure. Techniques can redirect users, poison cached records, tunnel data, or overwhelm DNS services.",
+        "why": "Users depend on DNS to find legitimate services; corrupt resolution can silently send them elsewhere.",
+        "example": "A poisoned DNS cache resolves a bank's domain to an attacker-controlled IP address.",
+        "exam": "Unexpected DNS responses, unusual query volume, odd domains, or changed records can indicate DNS abuse.",
+        "breakdown": [
+          {
+            "term": "Repeated DNS Query Failures",
+            "explanation": "This can be an observable clue during monitoring or investigation. It should be correlated with other evidence before concluding that an attack occurred."
+          },
+          {
+            "term": "Unexpected Changes in DNS Records",
+            "explanation": "This can be an observable clue during monitoring or investigation. It should be correlated with other evidence before concluding that an attack occurred."
+          },
+          {
+            "term": "Unexplained Latency or Delays",
+            "explanation": "This can be an observable clue during monitoring or investigation. It should be correlated with other evidence before concluding that an attack occurred."
+          },
+          {
+            "term": "Unusual Behavior in Authoritative DNS Servers",
+            "explanation": "This can be an observable clue during monitoring or investigation. It should be correlated with other evidence before concluding that an attack occurred."
+          },
+          {
+            "term": "DNSSEC Validation Failures",
+            "explanation": "This can be an observable clue during monitoring or investigation. It should be correlated with other evidence before concluding that an attack occurred."
+          }
+        ],
+        "defs": [
+          {
+            "term": "DNS",
+            "definition": "Domain Name System: translates names such as example.com into IP addresses and other records."
+          }
+        ],
+        "check_q": "Without looking back, explain DNS Attack Indicators and describe at least two key ideas from this section.",
+        "check_a": "DNS attacks manipulate or abuse name-resolution infrastructure. Techniques can redirect users, poison cached records, tunnel data, or overwhelm DNS services. Key ideas include: Repeated DNS Query Failures; Unexpected Changes in DNS Records; Unexplained Latency or Delays; Unusual Behavior in Authoritative DNS Servers; DNSSEC Validation Failures.",
+        "points": [
+          "Repeated DNS Query Failures",
+          "Unexpected Changes in DNS Records",
+          "Unexplained Latency or Delays",
+          "Unusual Behavior in Authoritative DNS Servers",
+          "DNSSEC Validation Failures"
+        ]
+      }
+    },
+    {
+      "n": 10,
+      "title": "Wireless Attacks",
+      "points": [
+        "Wireless",
+        "Eavesdropping",
+        "(Sniffing)",
+        "Rogue Access",
+        "Points",
+        "Man-in-theMiddle (MitM)",
+        "DoS and DDoS"
+      ],
+      "raw": "Wireless Attacks\nWireless\nEavesdropping\n(Sniffing)\nRogue Access\nPoints\nMan-in-theMiddle (MitM)\nDoS and DDoS",
+      "instructional": true,
+      "teach": "Learn the attacker behavior, the evidence it leaves behind, and the control that best detects or mitigates it.",
+      "defs": [
+        [
+          "DDoS",
+          "Distributed Denial-of-Service: many distributed systems overwhelm a target with traffic or requests."
+        ]
+      ],
+      "course": {
+        "learn": "Wireless attacks target radio-based networks through rogue access points, evil twins, weak encryption, deauthentication, jamming, or credential attacks.",
+        "why": "Wireless signals extend beyond physical walls, giving attackers a path that does not require a wired port.",
+        "example": "An attacker creates an evil-twin access point with the same SSID as the company guest network to capture credentials.",
+        "exam": "Look for unexpected SSIDs/APs, repeated disconnects, signal anomalies, and clients joining an unauthorized AP.",
+        "breakdown": [
+          {
+            "term": "Wireless",
+            "explanation": "Within Wireless Attacks, this is a specific factor you should be able to recognize and explain. Connect it to the purpose of Network attacks rather than memorizing the phrase by itself."
+          },
+          {
+            "term": "Eavesdropping",
+            "explanation": "Within Wireless Attacks, this is a specific factor you should be able to recognize and explain. Connect it to the purpose of Network attacks rather than memorizing the phrase by itself."
+          },
+          {
+            "term": "(Sniffing)",
+            "explanation": "Within Wireless Attacks, this is a specific factor you should be able to recognize and explain. Connect it to the purpose of Network attacks rather than memorizing the phrase by itself."
+          },
+          {
+            "term": "Rogue Access",
+            "explanation": "This concerns who or what can reach a resource and what actions are permitted once access is granted."
+          },
+          {
+            "term": "Points",
+            "explanation": "Within Wireless Attacks, this is a specific factor you should be able to recognize and explain. Connect it to the purpose of Network attacks rather than memorizing the phrase by itself."
+          },
+          {
+            "term": "Man-in-theMiddle (MitM)",
+            "explanation": "Within Wireless Attacks, this is a specific factor you should be able to recognize and explain. Connect it to the purpose of Network attacks rather than memorizing the phrase by itself."
+          },
+          {
+            "term": "DoS and DDoS",
+            "explanation": "A Distributed Denial-of-Service (DDoS) attack uses many systems or traffic sources to overwhelm a target's bandwidth, processing, connection tables, or application resources."
+          }
+        ],
+        "defs": [
+          {
+            "term": "DDoS",
+            "definition": "Distributed Denial-of-Service: many distributed systems overwhelm a target with traffic or requests."
+          }
+        ],
+        "check_q": "Without looking back, explain Wireless Attacks and describe at least two key ideas from this section.",
+        "check_a": "Wireless attacks target radio-based networks through rogue access points, evil twins, weak encryption, deauthentication, jamming, or credential attacks. Key ideas include: Wireless; Eavesdropping; (Sniffing); Rogue Access; Points.",
+        "points": [
+          "Wireless",
+          "Eavesdropping",
+          "(Sniffing)",
+          "Rogue Access",
+          "Points",
+          "Man-in-theMiddle (MitM)",
+          "DoS and DDoS"
+        ]
+      }
+    },
+    {
+      "n": 11,
+      "title": "Wireless Attacks",
+      "points": [
+        "WEP and WPA/WPA2 Cracking",
+        "Evil Twin",
+        "Wi-Fi Deauthentication",
+        "Bluejacking and Bluesnarfing"
+      ],
+      "raw": "Wireless Attacks\nWEP and WPA/WPA2 Cracking\nEvil Twin\nWi-Fi Deauthentication\nBluejacking and Bluesnarfing",
+      "instructional": true,
+      "teach": "Learn the attacker behavior, the evidence it leaves behind, and the control that best detects or mitigates it.",
+      "defs": [],
+      "course": {
+        "learn": "Wireless attacks target radio-based networks through rogue access points, evil twins, weak encryption, deauthentication, jamming, or credential attacks.",
+        "why": "Wireless signals extend beyond physical walls, giving attackers a path that does not require a wired port.",
+        "example": "An attacker creates an evil-twin access point with the same SSID as the company guest network to capture credentials.",
+        "exam": "Look for unexpected SSIDs/APs, repeated disconnects, signal anomalies, and clients joining an unauthorized AP.",
+        "breakdown": [
+          {
+            "term": "WEP and WPA/WPA2 Cracking",
+            "explanation": "Within Wireless Attacks, this is a specific factor you should be able to recognize and explain. Connect it to the purpose of Network attacks rather than memorizing the phrase by itself."
+          },
+          {
+            "term": "Evil Twin",
+            "explanation": "Within Wireless Attacks, this is a specific factor you should be able to recognize and explain. Connect it to the purpose of Network attacks rather than memorizing the phrase by itself."
+          },
+          {
+            "term": "Wi-Fi Deauthentication",
+            "explanation": "Authentication is the process of proving an identity. Factors can be something you know, have, are, do, or somewhere you are; MFA requires factors from more than one category."
+          },
+          {
+            "term": "Bluejacking and Bluesnarfing",
+            "explanation": "Within Wireless Attacks, this is a specific factor you should be able to recognize and explain. Connect it to the purpose of Network attacks rather than memorizing the phrase by itself."
+          }
+        ],
+        "defs": [],
+        "check_q": "Without looking back, explain Wireless Attacks and describe at least two key ideas from this section.",
+        "check_a": "Wireless attacks target radio-based networks through rogue access points, evil twins, weak encryption, deauthentication, jamming, or credential attacks. Key ideas include: WEP and WPA/WPA2 Cracking; Evil Twin; Wi-Fi Deauthentication; Bluejacking and Bluesnarfing.",
+        "points": [
+          "WEP and WPA/WPA2 Cracking",
+          "Evil Twin",
+          "Wi-Fi Deauthentication",
+          "Bluejacking and Bluesnarfing"
+        ]
+      }
+    },
+    {
+      "n": 12,
+      "title": "Wireless Attack Indicators",
+      "points": [
+        "• Unusual Network Traffic",
+        "• Unexpected Devices on the Network",
+        "• Unexplained Network Slowdowns",
+        "• Frequent Authentication Failures",
+        "• Repeated Disconnections and",
+        "Reconnections"
+      ],
+      "raw": "Wireless Attack\nIndicators\n• Unusual Network Traffic\n• Unexpected Devices on the Network\n• Unexplained Network Slowdowns\n• Frequent Authentication Failures\n• Repeated Disconnections and\nReconnections",
+      "instructional": true,
+      "teach": "Treat these as observable clues. On the exam, be ready to infer the most likely attack from the pattern of indicators.",
+      "defs": [
+        [
+          "Authentication",
+          "Proving an identity—answering “who are you?”"
+        ]
+      ],
+      "course": {
+        "learn": "Wireless attacks target radio-based networks through rogue access points, evil twins, weak encryption, deauthentication, jamming, or credential attacks.",
+        "why": "Wireless signals extend beyond physical walls, giving attackers a path that does not require a wired port.",
+        "example": "An attacker creates an evil-twin access point with the same SSID as the company guest network to capture credentials.",
+        "exam": "Look for unexpected SSIDs/APs, repeated disconnects, signal anomalies, and clients joining an unauthorized AP.",
+        "breakdown": [
+          {
+            "term": "Unusual Network Traffic",
+            "explanation": "This can be an observable clue during monitoring or investigation. It should be correlated with other evidence before concluding that an attack occurred."
+          },
+          {
+            "term": "Unexpected Devices on the Network",
+            "explanation": "This can be an observable clue during monitoring or investigation. It should be correlated with other evidence before concluding that an attack occurred."
+          },
+          {
+            "term": "Unexplained Network Slowdowns",
+            "explanation": "This can be an observable clue during monitoring or investigation. It should be correlated with other evidence before concluding that an attack occurred."
+          },
+          {
+            "term": "Frequent Authentication Failures",
+            "explanation": "Authentication is the process of proving an identity. Factors can be something you know, have, are, do, or somewhere you are; MFA requires factors from more than one category."
+          },
+          {
+            "term": "Repeated Disconnections and Reconnections",
+            "explanation": "This can be an observable clue during monitoring or investigation. It should be correlated with other evidence before concluding that an attack occurred."
+          }
+        ],
+        "defs": [
+          {
+            "term": "Authentication",
+            "definition": "Proving an identity—answering “who are you?”"
+          }
+        ],
+        "check_q": "Without looking back, explain Wireless Attack Indicators and describe at least two key ideas from this section.",
+        "check_a": "Wireless attacks target radio-based networks through rogue access points, evil twins, weak encryption, deauthentication, jamming, or credential attacks. Key ideas include: Unusual Network Traffic; Unexpected Devices on the Network; Unexplained Network Slowdowns; Frequent Authentication Failures; Repeated Disconnections and Reconnections.",
+        "points": [
+          "Unusual Network Traffic",
+          "Unexpected Devices on the Network",
+          "Unexplained Network Slowdowns",
+          "Frequent Authentication Failures",
+          "Repeated Disconnections and Reconnections"
+        ]
+      }
+    },
+    {
+      "n": 13,
+      "title": "Wireless Attack Indicators",
+      "points": [
+        "• Presence of Rogue Access Points",
+        "• Unusual Signal Strengths and",
+        "Channels",
+        "• Unexpected Probe Requests or",
+        "Responses",
+        "• Abnormal Device Behavior",
+        "• Bluetooth Anomalies"
+      ],
+      "raw": "Wireless Attack\nIndicators\n• Presence of Rogue Access Points\n• Unusual Signal Strengths and\nChannels\n• Unexpected Probe Requests or\nResponses\n• Abnormal Device Behavior\n• Bluetooth Anomalies",
+      "instructional": true,
+      "teach": "Treat these as observable clues. On the exam, be ready to infer the most likely attack from the pattern of indicators.",
+      "defs": [],
+      "course": {
+        "learn": "Wireless attacks target radio-based networks through rogue access points, evil twins, weak encryption, deauthentication, jamming, or credential attacks.",
+        "why": "Wireless signals extend beyond physical walls, giving attackers a path that does not require a wired port.",
+        "example": "An attacker creates an evil-twin access point with the same SSID as the company guest network to capture credentials.",
+        "exam": "Look for unexpected SSIDs/APs, repeated disconnects, signal anomalies, and clients joining an unauthorized AP.",
+        "breakdown": [
+          {
+            "term": "Presence of Rogue Access Points",
+            "explanation": "This can be an observable clue during monitoring or investigation. It should be correlated with other evidence before concluding that an attack occurred."
+          },
+          {
+            "term": "Unusual Signal Strengths and Channels",
+            "explanation": "This can be an observable clue during monitoring or investigation. It should be correlated with other evidence before concluding that an attack occurred."
+          },
+          {
+            "term": "Unexpected Probe Requests or Responses",
+            "explanation": "This can be an observable clue during monitoring or investigation. It should be correlated with other evidence before concluding that an attack occurred."
+          },
+          {
+            "term": "Abnormal Device Behavior",
+            "explanation": "This can be an observable clue during monitoring or investigation. It should be correlated with other evidence before concluding that an attack occurred."
+          },
+          {
+            "term": "Bluetooth Anomalies",
+            "explanation": "This can be an observable clue during monitoring or investigation. It should be correlated with other evidence before concluding that an attack occurred."
+          }
+        ],
+        "defs": [],
+        "check_q": "Without looking back, explain Wireless Attack Indicators and describe at least two key ideas from this section.",
+        "check_a": "Wireless attacks target radio-based networks through rogue access points, evil twins, weak encryption, deauthentication, jamming, or credential attacks. Key ideas include: Presence of Rogue Access Points; Unusual Signal Strengths and Channels; Unexpected Probe Requests or Responses; Abnormal Device Behavior; Bluetooth Anomalies.",
+        "points": [
+          "Presence of Rogue Access Points",
+          "Unusual Signal Strengths and Channels",
+          "Unexpected Probe Requests or Responses",
+          "Abnormal Device Behavior",
+          "Bluetooth Anomalies"
+        ]
+      }
+    },
+    {
+      "n": 14,
+      "title": "On-path Attack",
+      "points": [
+        "Interception of Communication",
+        "Unauthorized Access",
+        "Packet Sniffing",
+        "Spoofing Techniques",
+        "SSL Stripping"
+      ],
+      "raw": "On-path Attack\nInterception of Communication\nUnauthorized Access\nPacket Sniffing\nSpoofing Techniques\nSSL Stripping",
+      "instructional": true,
+      "teach": "Learn the attacker behavior, the evidence it leaves behind, and the control that best detects or mitigates it.",
+      "defs": [
+        [
+          "On-path attack",
+          "An attacker secretly intercepts traffic between parties and may observe or alter communications."
+        ]
+      ],
+      "course": {
+        "learn": "An on-path attack places the attacker between communicating parties so traffic can be observed, redirected, or altered without either endpoint realizing it.",
+        "why": "Unprotected traffic can reveal credentials or allow session manipulation.",
+        "example": "A malicious Wi-Fi hotspot intercepts a victim's unencrypted HTTP session and changes responses in transit.",
+        "exam": "Certificate warnings, ARP anomalies, unexpected gateways, or changed traffic can be clues. Strong authenticated encryption helps prevent useful interception.",
+        "breakdown": [
+          {
+            "term": "Interception of Communication",
+            "explanation": "Within On-path Attack, this is a specific factor you should be able to recognize and explain. Connect it to the purpose of Network attacks rather than memorizing the phrase by itself."
+          },
+          {
+            "term": "Unauthorized Access",
+            "explanation": "This concerns who or what can reach a resource and what actions are permitted once access is granted."
+          },
+          {
+            "term": "Packet Sniffing",
+            "explanation": "Within On-path Attack, this is a specific factor you should be able to recognize and explain. Connect it to the purpose of Network attacks rather than memorizing the phrase by itself."
+          },
+          {
+            "term": "Spoofing Techniques",
+            "explanation": "Within On-path Attack, this is a specific factor you should be able to recognize and explain. Connect it to the purpose of Network attacks rather than memorizing the phrase by itself."
+          },
+          {
+            "term": "SSL Stripping",
+            "explanation": "Within On-path Attack, this is a specific factor you should be able to recognize and explain. Connect it to the purpose of Network attacks rather than memorizing the phrase by itself."
+          }
+        ],
+        "defs": [
+          {
+            "term": "On-path attack",
+            "definition": "An attacker secretly intercepts traffic between parties and may observe or alter communications."
+          }
+        ],
+        "check_q": "Without looking back, explain On-path Attack and describe at least two key ideas from this section.",
+        "check_a": "An on-path attack places the attacker between communicating parties so traffic can be observed, redirected, or altered without either endpoint realizing it. Key ideas include: Interception of Communication; Unauthorized Access; Packet Sniffing; Spoofing Techniques; SSL Stripping.",
+        "points": [
+          "Interception of Communication",
+          "Unauthorized Access",
+          "Packet Sniffing",
+          "Spoofing Techniques",
+          "SSL Stripping"
+        ]
+      }
+    },
+    {
+      "n": 15,
+      "title": "On-path Attack",
+      "points": [
+        "Session Hijacking",
+        "DNS Spoofing",
+        "HTTP Session Hijacking",
+        "Man-in-the-Browser (MitB) Attacks",
+        "Wireless Eavesdropping"
+      ],
+      "raw": "On-path Attack\nSession Hijacking\nDNS Spoofing\nHTTP Session Hijacking\nMan-in-the-Browser (MitB) Attacks\nWireless Eavesdropping",
+      "instructional": true,
+      "teach": "Learn the attacker behavior, the evidence it leaves behind, and the control that best detects or mitigates it.",
+      "defs": [
+        [
+          "On-path attack",
+          "An attacker secretly intercepts traffic between parties and may observe or alter communications."
+        ],
+        [
+          "DNS",
+          "Domain Name System: translates names such as example.com into IP addresses and other records."
+        ]
+      ],
+      "course": {
+        "learn": "An on-path attack places the attacker between communicating parties so traffic can be observed, redirected, or altered without either endpoint realizing it.",
+        "why": "Unprotected traffic can reveal credentials or allow session manipulation.",
+        "example": "A malicious Wi-Fi hotspot intercepts a victim's unencrypted HTTP session and changes responses in transit.",
+        "exam": "Certificate warnings, ARP anomalies, unexpected gateways, or changed traffic can be clues. Strong authenticated encryption helps prevent useful interception.",
+        "breakdown": [
+          {
+            "term": "Session Hijacking",
+            "explanation": "Within On-path Attack, this is a specific factor you should be able to recognize and explain. Connect it to the purpose of Network attacks rather than memorizing the phrase by itself."
+          },
+          {
+            "term": "DNS Spoofing",
+            "explanation": "Within On-path Attack, this is a specific factor you should be able to recognize and explain. Connect it to the purpose of Network attacks rather than memorizing the phrase by itself."
+          },
+          {
+            "term": "HTTP Session Hijacking",
+            "explanation": "Within On-path Attack, this is a specific factor you should be able to recognize and explain. Connect it to the purpose of Network attacks rather than memorizing the phrase by itself."
+          },
+          {
+            "term": "Man-in-the-Browser (MitB) Attacks",
+            "explanation": "Within On-path Attack, this is a specific factor you should be able to recognize and explain. Connect it to the purpose of Network attacks rather than memorizing the phrase by itself."
+          },
+          {
+            "term": "Wireless Eavesdropping",
+            "explanation": "Within On-path Attack, this is a specific factor you should be able to recognize and explain. Connect it to the purpose of Network attacks rather than memorizing the phrase by itself."
+          }
+        ],
+        "defs": [
+          {
+            "term": "On-path attack",
+            "definition": "An attacker secretly intercepts traffic between parties and may observe or alter communications."
+          },
+          {
+            "term": "DNS",
+            "definition": "Domain Name System: translates names such as example.com into IP addresses and other records."
+          }
+        ],
+        "check_q": "Without looking back, explain On-path Attack and describe at least two key ideas from this section.",
+        "check_a": "An on-path attack places the attacker between communicating parties so traffic can be observed, redirected, or altered without either endpoint realizing it. Key ideas include: Session Hijacking; DNS Spoofing; HTTP Session Hijacking; Man-in-the-Browser (MitB) Attacks; Wireless Eavesdropping.",
+        "points": [
+          "Session Hijacking",
+          "DNS Spoofing",
+          "HTTP Session Hijacking",
+          "Man-in-the-Browser (MitB) Attacks",
+          "Wireless Eavesdropping"
+        ]
+      }
+    },
+    {
+      "n": 16,
+      "title": "On-path Attack Indicators",
+      "points": [
+        "Unexpected",
+        "Network",
+        "Behavior",
+        "Unexplained",
+        "Latency",
+        "Unexpected",
+        "SSL/TLS",
+        "Warnings",
+        "Mismatched",
+        "IP or MAC",
+        "Addresses",
+        "Unusual DNS",
+        "Responses"
+      ],
+      "raw": "On-path Attack Indicators\nUnexpected\nNetwork\nBehavior\nUnexplained\nLatency\nUnexpected\nSSL/TLS\nWarnings\nMismatched\nIP or MAC\nAddresses\nUnusual DNS\nResponses",
+      "instructional": true,
+      "teach": "Treat these as observable clues. On the exam, be ready to infer the most likely attack from the pattern of indicators.",
+      "defs": [
+        [
+          "On-path attack",
+          "An attacker secretly intercepts traffic between parties and may observe or alter communications."
+        ],
+        [
+          "DNS",
+          "Domain Name System: translates names such as example.com into IP addresses and other records."
+        ],
+        [
+          "TLS",
+          "Transport Layer Security: cryptographic protocol used to protect application communications such as HTTPS."
+        ]
+      ],
+      "course": {
+        "learn": "An on-path attack places the attacker between communicating parties so traffic can be observed, redirected, or altered without either endpoint realizing it.",
+        "why": "Unprotected traffic can reveal credentials or allow session manipulation.",
+        "example": "A malicious Wi-Fi hotspot intercepts a victim's unencrypted HTTP session and changes responses in transit.",
+        "exam": "Certificate warnings, ARP anomalies, unexpected gateways, or changed traffic can be clues. Strong authenticated encryption helps prevent useful interception.",
+        "breakdown": [
+          {
+            "term": "Unexpected",
+            "explanation": "This can be an observable clue during monitoring or investigation. It should be correlated with other evidence before concluding that an attack occurred."
+          },
+          {
+            "term": "Network",
+            "explanation": "Networks that lack trustworthy encryption, authentication, segmentation, or monitoring."
+          },
+          {
+            "term": "Behavior",
+            "explanation": "This can be an observable clue during monitoring or investigation. It should be correlated with other evidence before concluding that an attack occurred."
+          },
+          {
+            "term": "Unexplained",
+            "explanation": "This can be an observable clue during monitoring or investigation. It should be correlated with other evidence before concluding that an attack occurred."
+          },
+          {
+            "term": "Latency",
+            "explanation": "This can be an observable clue during monitoring or investigation. It should be correlated with other evidence before concluding that an attack occurred."
+          },
+          {
+            "term": "Unexpected",
+            "explanation": "This can be an observable clue during monitoring or investigation. It should be correlated with other evidence before concluding that an attack occurred."
+          },
+          {
+            "term": "SSL/TLS",
+            "explanation": "Transport Layer Security (TLS) protects application traffic in transit using authenticated cryptographic negotiation and session encryption. HTTPS is HTTP over TLS."
+          },
+          {
+            "term": "Warnings",
+            "explanation": "This can be an observable clue during monitoring or investigation. It should be correlated with other evidence before concluding that an attack occurred."
+          },
+          {
+            "term": "Mismatched",
+            "explanation": "This can be an observable clue during monitoring or investigation. It should be correlated with other evidence before concluding that an attack occurred."
+          },
+          {
+            "term": "IP or MAC",
+            "explanation": "This can be an observable clue during monitoring or investigation. It should be correlated with other evidence before concluding that an attack occurred."
+          },
+          {
+            "term": "Addresses",
+            "explanation": "This can be an observable clue during monitoring or investigation. It should be correlated with other evidence before concluding that an attack occurred."
+          },
+          {
+            "term": "Unusual DNS",
+            "explanation": "This can be an observable clue during monitoring or investigation. It should be correlated with other evidence before concluding that an attack occurred."
+          },
+          {
+            "term": "Responses",
+            "explanation": "This can be an observable clue during monitoring or investigation. It should be correlated with other evidence before concluding that an attack occurred."
+          }
+        ],
+        "defs": [
+          {
+            "term": "On-path attack",
+            "definition": "An attacker secretly intercepts traffic between parties and may observe or alter communications."
+          },
+          {
+            "term": "DNS",
+            "definition": "Domain Name System: translates names such as example.com into IP addresses and other records."
+          },
+          {
+            "term": "TLS",
+            "definition": "Transport Layer Security: cryptographic protocol used to protect application communications such as HTTPS."
+          }
+        ],
+        "check_q": "Without looking back, explain On-path Attack Indicators and describe at least two key ideas from this section.",
+        "check_a": "An on-path attack places the attacker between communicating parties so traffic can be observed, redirected, or altered without either endpoint realizing it. Key ideas include: Unexpected; Network; Behavior; Unexplained; Latency.",
+        "points": [
+          "Unexpected",
+          "Network",
+          "Behavior",
+          "Unexplained",
+          "Latency",
+          "Unexpected",
+          "SSL/TLS",
+          "Warnings",
+          "Mismatched",
+          "IP or MAC",
+          "Addresses",
+          "Unusual DNS",
+          "Responses"
+        ]
+      }
+    },
+    {
+      "n": 17,
+      "title": "On-path Attack Indicators",
+      "points": [
+        "Abnormal",
+        "Certificate",
+        "Issuance",
+        "Inconsistencies",
+        "in SSL/TLS",
+        "Versions",
+        "Unexpected",
+        "HTTP Redirects",
+        "Unusual User",
+        "Authentication",
+        "Failures",
+        "Unexplained",
+        "Changes in",
+        "Traffic Patterns"
+      ],
+      "raw": "On-path Attack Indicators\nAbnormal\nCertificate\nIssuance\nInconsistencies\nin SSL/TLS\nVersions\nUnexpected\nHTTP Redirects\nUnusual User\nAuthentication\nFailures\nUnexplained\nChanges in\nTraffic Patterns",
+      "instructional": true,
+      "teach": "Treat these as observable clues. On the exam, be ready to infer the most likely attack from the pattern of indicators.",
+      "defs": [
+        [
+          "Authentication",
+          "Proving an identity—answering “who are you?”"
+        ],
+        [
+          "On-path attack",
+          "An attacker secretly intercepts traffic between parties and may observe or alter communications."
+        ],
+        [
+          "Certificate",
+          "A digitally signed document that binds an identity or system to a public key."
+        ],
+        [
+          "TLS",
+          "Transport Layer Security: cryptographic protocol used to protect application communications such as HTTPS."
+        ]
+      ],
+      "course": {
+        "learn": "An on-path attack places the attacker between communicating parties so traffic can be observed, redirected, or altered without either endpoint realizing it.",
+        "why": "Unprotected traffic can reveal credentials or allow session manipulation.",
+        "example": "A malicious Wi-Fi hotspot intercepts a victim's unencrypted HTTP session and changes responses in transit.",
+        "exam": "Certificate warnings, ARP anomalies, unexpected gateways, or changed traffic can be clues. Strong authenticated encryption helps prevent useful interception.",
+        "breakdown": [
+          {
+            "term": "Abnormal",
+            "explanation": "This can be an observable clue during monitoring or investigation. It should be correlated with other evidence before concluding that an attack occurred."
+          },
+          {
+            "term": "Certificate",
+            "explanation": "An online protocol used to ask for the current revocation/status of a specific certificate."
+          },
+          {
+            "term": "Issuance",
+            "explanation": "This can be an observable clue during monitoring or investigation. It should be correlated with other evidence before concluding that an attack occurred."
+          },
+          {
+            "term": "Inconsistencies in SSL/TLS",
+            "explanation": "Transport Layer Security (TLS) protects application traffic in transit using authenticated cryptographic negotiation and session encryption. HTTPS is HTTP over TLS."
+          },
+          {
+            "term": "Versions",
+            "explanation": "This can be an observable clue during monitoring or investigation. It should be correlated with other evidence before concluding that an attack occurred."
+          },
+          {
+            "term": "Unexpected",
+            "explanation": "This can be an observable clue during monitoring or investigation. It should be correlated with other evidence before concluding that an attack occurred."
+          },
+          {
+            "term": "HTTP Redirects",
+            "explanation": "This can be an observable clue during monitoring or investigation. It should be correlated with other evidence before concluding that an attack occurred."
+          },
+          {
+            "term": "Unusual User",
+            "explanation": "This can be an observable clue during monitoring or investigation. It should be correlated with other evidence before concluding that an attack occurred."
+          },
+          {
+            "term": "Authentication",
+            "explanation": "Require authentication factors from more than one factor category, reducing dependence on one stolen secret."
+          },
+          {
+            "term": "Failures",
+            "explanation": "This can be an observable clue during monitoring or investigation. It should be correlated with other evidence before concluding that an attack occurred."
+          },
+          {
+            "term": "Unexplained",
+            "explanation": "This can be an observable clue during monitoring or investigation. It should be correlated with other evidence before concluding that an attack occurred."
+          },
+          {
+            "term": "Changes in",
+            "explanation": "This can be an observable clue during monitoring or investigation. It should be correlated with other evidence before concluding that an attack occurred."
+          },
+          {
+            "term": "Traffic Patterns",
+            "explanation": "This can be an observable clue during monitoring or investigation. It should be correlated with other evidence before concluding that an attack occurred."
+          }
+        ],
+        "defs": [
+          {
+            "term": "Authentication",
+            "definition": "Proving an identity—answering “who are you?”"
+          },
+          {
+            "term": "On-path attack",
+            "definition": "An attacker secretly intercepts traffic between parties and may observe or alter communications."
+          },
+          {
+            "term": "Certificate",
+            "definition": "A digitally signed document that binds an identity or system to a public key."
+          },
+          {
+            "term": "TLS",
+            "definition": "Transport Layer Security: cryptographic protocol used to protect application communications such as HTTPS."
+          }
+        ],
+        "check_q": "Without looking back, explain On-path Attack Indicators and describe at least two key ideas from this section.",
+        "check_a": "An on-path attack places the attacker between communicating parties so traffic can be observed, redirected, or altered without either endpoint realizing it. Key ideas include: Abnormal; Certificate; Issuance; Inconsistencies in SSL/TLS; Versions.",
+        "points": [
+          "Abnormal",
+          "Certificate",
+          "Issuance",
+          "Inconsistencies in SSL/TLS",
+          "Versions",
+          "Unexpected",
+          "HTTP Redirects",
+          "Unusual User",
+          "Authentication",
+          "Failures",
+          "Unexplained",
+          "Changes in",
+          "Traffic Patterns"
+        ]
+      }
+    },
+    {
+      "n": 18,
+      "title": "Credential Replay Attack",
+      "points": [
+        "Capture of",
+        "Credentials",
+        "Storage of",
+        "Captured",
+        "Credentials",
+        "Replay of",
+        "Captured",
+        "Credentials",
+        "Authentication",
+        "Bypass"
+      ],
+      "raw": "Credential Replay Attack\nCapture of\nCredentials\nStorage of\nCaptured\nCredentials\nReplay of\nCaptured\nCredentials\nAuthentication\nBypass",
+      "instructional": true,
+      "teach": "Learn the attacker behavior, the evidence it leaves behind, and the control that best detects or mitigates it.",
+      "defs": [
+        [
+          "Authentication",
+          "Proving an identity—answering “who are you?”"
+        ]
+      ],
+      "course": {
+        "learn": "Credential replay uses previously captured authentication material—such as a token, hash, ticket, or session value—to impersonate a user without knowing the original secret.",
+        "why": "If authentication data can be reused, stealing it may be enough to bypass normal login checks.",
+        "example": "An attacker steals a session token from a browser and reuses it from another machine to access the account.",
+        "exam": "Replay = reuse captured proof. Nonces, timestamps, short-lived tokens, channel binding, and challenge-response help prevent reuse.",
+        "breakdown": [
+          {
+            "term": "Capture of Credentials",
+            "explanation": "Within Credential Replay Attack, this is a specific factor you should be able to recognize and explain. Connect it to the purpose of Network attacks rather than memorizing the phrase by itself."
+          },
+          {
+            "term": "Storage of Captured",
+            "explanation": "Within Credential Replay Attack, this is a specific factor you should be able to recognize and explain. Connect it to the purpose of Network attacks rather than memorizing the phrase by itself."
+          },
+          {
+            "term": "Credentials",
+            "explanation": "Vendor-supplied usernames/passwords that attackers commonly know and that should be changed before production use."
+          },
+          {
+            "term": "Replay of Captured",
+            "explanation": "Replay attacks capture valid data or authentication material and transmit it again later so the receiver accepts an old action as new."
+          },
+          {
+            "term": "Credentials",
+            "explanation": "Vendor-supplied usernames/passwords that attackers commonly know and that should be changed before production use."
+          },
+          {
+            "term": "Authentication",
+            "explanation": "Require authentication factors from more than one factor category, reducing dependence on one stolen secret."
+          },
+          {
+            "term": "Bypass",
+            "explanation": "Within Credential Replay Attack, this is a specific factor you should be able to recognize and explain. Connect it to the purpose of Network attacks rather than memorizing the phrase by itself."
+          }
+        ],
+        "defs": [
+          {
+            "term": "Authentication",
+            "definition": "Proving an identity—answering “who are you?”"
+          }
+        ],
+        "check_q": "Without looking back, explain Credential Replay Attack and describe at least two key ideas from this section.",
+        "check_a": "Credential replay uses previously captured authentication material—such as a token, hash, ticket, or session value—to impersonate a user without knowing the original secret. Key ideas include: Capture of Credentials; Storage of Captured; Credentials; Replay of Captured; Credentials.",
+        "points": [
+          "Capture of Credentials",
+          "Storage of Captured",
+          "Credentials",
+          "Replay of Captured",
+          "Credentials",
+          "Authentication",
+          "Bypass"
+        ]
+      }
+    },
+    {
+      "n": 19,
+      "title": "Credential Replay Attack Indicators",
+      "points": [
+        "Unusual Login Times",
+        "Multiple Failed Login Attempts",
+        "Repeated Use of the Same Credentials",
+        "Rapid Succession of Login Attempts",
+        "Unexpected Location Changes"
+      ],
+      "raw": "Credential Replay Attack Indicators\nUnusual Login Times\nMultiple Failed Login Attempts\nRepeated Use of the Same Credentials\nRapid Succession of Login Attempts\nUnexpected Location Changes",
+      "instructional": true,
+      "teach": "Treat these as observable clues. On the exam, be ready to infer the most likely attack from the pattern of indicators.",
+      "defs": [],
+      "course": {
+        "learn": "Credential replay uses previously captured authentication material—such as a token, hash, ticket, or session value—to impersonate a user without knowing the original secret.",
+        "why": "If authentication data can be reused, stealing it may be enough to bypass normal login checks.",
+        "example": "An attacker steals a session token from a browser and reuses it from another machine to access the account.",
+        "exam": "Replay = reuse captured proof. Nonces, timestamps, short-lived tokens, channel binding, and challenge-response help prevent reuse.",
+        "breakdown": [
+          {
+            "term": "Unusual Login Times",
+            "explanation": "This can be an observable clue during monitoring or investigation. It should be correlated with other evidence before concluding that an attack occurred."
+          },
+          {
+            "term": "Multiple Failed Login Attempts",
+            "explanation": "This can be an observable clue during monitoring or investigation. It should be correlated with other evidence before concluding that an attack occurred."
+          },
+          {
+            "term": "Repeated Use of the Same Credentials",
+            "explanation": "This can be an observable clue during monitoring or investigation. It should be correlated with other evidence before concluding that an attack occurred."
+          },
+          {
+            "term": "Rapid Succession of Login Attempts",
+            "explanation": "This can be an observable clue during monitoring or investigation. It should be correlated with other evidence before concluding that an attack occurred."
+          },
+          {
+            "term": "Unexpected Location Changes",
+            "explanation": "This can be an observable clue during monitoring or investigation. It should be correlated with other evidence before concluding that an attack occurred."
+          }
+        ],
+        "defs": [],
+        "check_q": "Without looking back, explain Credential Replay Attack Indicators and describe at least two key ideas from this section.",
+        "check_a": "Credential replay uses previously captured authentication material—such as a token, hash, ticket, or session value—to impersonate a user without knowing the original secret. Key ideas include: Unusual Login Times; Multiple Failed Login Attempts; Repeated Use of the Same Credentials; Rapid Succession of Login Attempts; Unexpected Location Changes.",
+        "points": [
+          "Unusual Login Times",
+          "Multiple Failed Login Attempts",
+          "Repeated Use of the Same Credentials",
+          "Rapid Succession of Login Attempts",
+          "Unexpected Location Changes"
+        ]
+      }
+    },
+    {
+      "n": 20,
+      "title": "Malicious Code Attack",
+      "points": [
+        "Delivery",
+        "Execution",
+        "Payload",
+        "Activation",
+        "Propagation",
+        "Persistence"
+      ],
+      "raw": "Malicious Code Attack\nDelivery\nExecution\nPayload\nActivation\nPropagation\nPersistence",
+      "instructional": true,
+      "teach": "Learn the attacker behavior, the evidence it leaves behind, and the control that best detects or mitigates it.",
+      "defs": [],
+      "course": {
+        "learn": "Malicious-code attacks involve unauthorized code executing on a system to steal data, alter behavior, persist, or disrupt operations.",
+        "why": "Code execution often becomes the bridge from initial access to broader compromise.",
+        "example": "A user opens a malicious document that launches a script and installs a backdoor.",
+        "exam": "Unexpected processes, scripts, persistence entries, file changes, and outbound connections are common indicators.",
+        "breakdown": [
+          {
+            "term": "Delivery",
+            "explanation": "Within Malicious Code Attack, this is a specific factor you should be able to recognize and explain. Connect it to the purpose of Network attacks rather than memorizing the phrase by itself."
+          },
+          {
+            "term": "Execution",
+            "explanation": "Within Malicious Code Attack, this is a specific factor you should be able to recognize and explain. Connect it to the purpose of Network attacks rather than memorizing the phrase by itself."
+          },
+          {
+            "term": "Payload",
+            "explanation": "Within Malicious Code Attack, this is a specific factor you should be able to recognize and explain. Connect it to the purpose of Network attacks rather than memorizing the phrase by itself."
+          },
+          {
+            "term": "Activation",
+            "explanation": "Within Malicious Code Attack, this is a specific factor you should be able to recognize and explain. Connect it to the purpose of Network attacks rather than memorizing the phrase by itself."
+          },
+          {
+            "term": "Propagation",
+            "explanation": "Within Malicious Code Attack, this is a specific factor you should be able to recognize and explain. Connect it to the purpose of Network attacks rather than memorizing the phrase by itself."
+          },
+          {
+            "term": "Persistence",
+            "explanation": "Within Malicious Code Attack, this is a specific factor you should be able to recognize and explain. Connect it to the purpose of Network attacks rather than memorizing the phrase by itself."
+          }
+        ],
+        "defs": [],
+        "check_q": "Without looking back, explain Malicious Code Attack and describe at least two key ideas from this section.",
+        "check_a": "Malicious-code attacks involve unauthorized code executing on a system to steal data, alter behavior, persist, or disrupt operations. Key ideas include: Delivery; Execution; Payload; Activation; Propagation.",
+        "points": [
+          "Delivery",
+          "Execution",
+          "Payload",
+          "Activation",
+          "Propagation",
+          "Persistence"
+        ]
+      }
+    },
+    {
+      "n": 21,
+      "title": "Malicious Code Indicators",
+      "points": [
+        "Unusual System",
+        "Behavior",
+        "Unexplained Network",
+        "Activity",
+        "Unexpected Pop-up",
+        "Messages",
+        "Changes in File Sizes or",
+        "Timestamps"
+      ],
+      "raw": "Malicious Code Indicators\nUnusual System\nBehavior\nUnexplained Network\nActivity\nUnexpected Pop-up\nMessages\nChanges in File Sizes or\nTimestamps",
+      "instructional": true,
+      "teach": "Treat these as observable clues. On the exam, be ready to infer the most likely attack from the pattern of indicators.",
+      "defs": [],
+      "course": {
+        "learn": "Malicious-code attacks involve unauthorized code executing on a system to steal data, alter behavior, persist, or disrupt operations.",
+        "why": "Code execution often becomes the bridge from initial access to broader compromise.",
+        "example": "A user opens a malicious document that launches a script and installs a backdoor.",
+        "exam": "Unexpected processes, scripts, persistence entries, file changes, and outbound connections are common indicators.",
+        "breakdown": [
+          {
+            "term": "Unusual System",
+            "explanation": "This can be an observable clue during monitoring or investigation. It should be correlated with other evidence before concluding that an attack occurred."
+          },
+          {
+            "term": "Behavior",
+            "explanation": "This can be an observable clue during monitoring or investigation. It should be correlated with other evidence before concluding that an attack occurred."
+          },
+          {
+            "term": "Unexplained Network",
+            "explanation": "This can be an observable clue during monitoring or investigation. It should be correlated with other evidence before concluding that an attack occurred."
+          },
+          {
+            "term": "Activity",
+            "explanation": "This can be an observable clue during monitoring or investigation. It should be correlated with other evidence before concluding that an attack occurred."
+          },
+          {
+            "term": "Unexpected Pop-up",
+            "explanation": "This can be an observable clue during monitoring or investigation. It should be correlated with other evidence before concluding that an attack occurred."
+          },
+          {
+            "term": "Messages",
+            "explanation": "This can be an observable clue during monitoring or investigation. It should be correlated with other evidence before concluding that an attack occurred."
+          },
+          {
+            "term": "Changes in File Sizes or Timestamps",
+            "explanation": "This can be an observable clue during monitoring or investigation. It should be correlated with other evidence before concluding that an attack occurred."
+          }
+        ],
+        "defs": [],
+        "check_q": "Without looking back, explain Malicious Code Indicators and describe at least two key ideas from this section.",
+        "check_a": "Malicious-code attacks involve unauthorized code executing on a system to steal data, alter behavior, persist, or disrupt operations. Key ideas include: Unusual System; Behavior; Unexplained Network; Activity; Unexpected Pop-up.",
+        "points": [
+          "Unusual System",
+          "Behavior",
+          "Unexplained Network",
+          "Activity",
+          "Unexpected Pop-up",
+          "Messages",
+          "Changes in File Sizes or Timestamps"
+        ]
+      }
+    },
+    {
+      "n": 22,
+      "title": "Application Attack Indicators",
+      "points": [],
+      "raw": "Application Attack Indicators",
+      "instructional": false,
+      "teach": "Treat these as observable clues. On the exam, be ready to infer the most likely attack from the pattern of indicators.",
+      "defs": []
+    }
+  ],
+  "slide_count": 22,
+  "instructional_count": 20,
+  "concepts": [
+    "Distributed Denial-of-Service (DDoS) Attacks",
+    "Layer-based DDoS Attacks",
+    "DDoS Attack Indicators",
+    "DNS Attacks",
+    "DNS Attack Indicators",
+    "Wireless Attacks",
+    "Wireless Attack Indicators",
+    "On-path Attack",
+    "On-path Attack Indicators",
+    "Credential Replay Attack",
+    "Credential Replay Attack Indicators",
+    "Malicious Code Attack"
+  ],
+  "source_filename": "08.03_Network_attacks.pdf"
+}

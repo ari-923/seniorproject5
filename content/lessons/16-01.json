@@ -1,0 +1,825 @@
+{
+  "id": "16.01",
+  "chapter": 16,
+  "sub": 1,
+  "title": "Identification methods",
+  "chapter_name": "Vulnerability Management",
+  "slides": [
+    {
+      "n": 1,
+      "title": "Identification Methods",
+      "points": [],
+      "raw": "Identification Methods",
+      "instructional": false,
+      "teach": "Read the source points, then explain the slide without looking. On Security+, recognition is not enough—you should be able to apply the concept to a scenario.",
+      "defs": []
+    },
+    {
+      "n": 2,
+      "title": "Credentialed vs. Non-Credentialed",
+      "points": [
+        "Credentialed Vulnerability Scan",
+        "Non-Credentialed Vulnerability",
+        "Scan",
+        "• Does not use login credentials",
+        "• Uses valid login credentials to access the",
+        "target system or network",
+        "• Allows the scanning tool to have deeper",
+        "visibility",
+        "• Provides more accurate and",
+        "comprehensive results",
+        "• Offers insights into the security posture",
+        "from an internal perspective",
+        "• Assesses the target from an external",
+        "viewpoint",
+        "• Focus on identifying vulnerabilities that",
+        "can be detected without authenticated",
+        "access",
+        "• Is useful for assessing external-facing",
+        "vulnerabilities"
+      ],
+      "raw": "Credentialed vs. Non-Credentialed\nCredentialed Vulnerability Scan\nNon-Credentialed Vulnerability\nScan\n• Does not use login credentials\n• Uses valid login credentials to access the\ntarget system or network\n• Allows the scanning tool to have deeper\nvisibility\n• Provides more accurate and\ncomprehensive results\n• Offers insights into the security posture\nfrom an internal perspective\n• Assesses the target from an external\nviewpoint\n• Focus on identifying vulnerabilities that\ncan be detected without authenticated\naccess\n• Is useful for assessing external-facing\nvulnerabilities",
+      "instructional": true,
+      "teach": "Build a side-by-side distinction: purpose, strengths, weaknesses, and the scenario where each option fits best.",
+      "defs": [],
+      "course": {
+        "learn": "A credentialed vulnerability scan authenticates to the target using approved credentials, allowing deeper inspection of installed software, patches, configuration, and local settings. A non-credentialed scan views the target from the outside without login access.",
+        "why": "The two perspectives find different weaknesses and help distinguish external exposure from internal configuration risk.",
+        "example": "A credentialed scanner identifies a missing package update that is not visible from the network, while an unauthenticated scan shows an exposed service port.",
+        "exam": "Credentialed = deeper authenticated view. Non-credentialed = external/attacker-like view.",
+        "breakdown": [
+          {
+            "term": "Credentialed Vulnerability Scan",
+            "explanation": "Uses legitimate authentication to inspect a target more deeply."
+          },
+          {
+            "term": "Non-Credentialed Vulnerability",
+            "explanation": "Assesses a target without logging in, approximating an external viewpoint."
+          },
+          {
+            "term": "Scan",
+            "explanation": "Within Credentialed vs. Non-Credentialed, this is a specific factor you should be able to recognize and explain. Connect it to the purpose of Identification methods rather than memorizing the phrase by itself."
+          },
+          {
+            "term": "Does not use login credentials",
+            "explanation": "Within Credentialed vs. Non-Credentialed, this is a specific factor you should be able to recognize and explain. Connect it to the purpose of Identification methods rather than memorizing the phrase by itself."
+          },
+          {
+            "term": "Uses valid login credentials to access the",
+            "explanation": "This concerns who or what can reach a resource and what actions are permitted once access is granted."
+          },
+          {
+            "term": "target system or network",
+            "explanation": "Within Credentialed vs. Non-Credentialed, this is a specific factor you should be able to recognize and explain. Connect it to the purpose of Identification methods rather than memorizing the phrase by itself."
+          },
+          {
+            "term": "Allows the scanning tool to have deeper",
+            "explanation": "Security scanning automatically examines systems, networks, applications, or configurations for known weaknesses and risky conditions."
+          },
+          {
+            "term": "visibility",
+            "explanation": "Within Credentialed vs. Non-Credentialed, this is a specific factor you should be able to recognize and explain. Connect it to the purpose of Identification methods rather than memorizing the phrase by itself."
+          },
+          {
+            "term": "Provides more accurate and comprehensive results",
+            "explanation": "Within Credentialed vs. Non-Credentialed, this is a specific factor you should be able to recognize and explain. Connect it to the purpose of Identification methods rather than memorizing the phrase by itself."
+          },
+          {
+            "term": "Offers insights into the security posture",
+            "explanation": "This contributes to reducing risk in the broader Identification methods design and should be evaluated as part of defense in depth."
+          },
+          {
+            "term": "from an internal perspective",
+            "explanation": "Within Credentialed vs. Non-Credentialed, this is a specific factor you should be able to recognize and explain. Connect it to the purpose of Identification methods rather than memorizing the phrase by itself."
+          },
+          {
+            "term": "Assesses the target from an external viewpoint",
+            "explanation": "Within Credentialed vs. Non-Credentialed, this is a specific factor you should be able to recognize and explain. Connect it to the purpose of Identification methods rather than memorizing the phrase by itself."
+          },
+          {
+            "term": "Focus on identifying vulnerabilities that",
+            "explanation": "Within Credentialed vs. Non-Credentialed, this is a specific factor you should be able to recognize and explain. Connect it to the purpose of Identification methods rather than memorizing the phrase by itself."
+          },
+          {
+            "term": "can be detected without authenticated access",
+            "explanation": "This concerns who or what can reach a resource and what actions are permitted once access is granted."
+          },
+          {
+            "term": "Is useful for assessing external-facing",
+            "explanation": "Within Credentialed vs. Non-Credentialed, this is a specific factor you should be able to recognize and explain. Connect it to the purpose of Identification methods rather than memorizing the phrase by itself."
+          },
+          {
+            "term": "vulnerabilities",
+            "explanation": "Within Credentialed vs. Non-Credentialed, this is a specific factor you should be able to recognize and explain. Connect it to the purpose of Identification methods rather than memorizing the phrase by itself."
+          }
+        ],
+        "defs": [],
+        "check_q": "Without looking back, explain Credentialed vs. Non-Credentialed and describe at least two key ideas from this section.",
+        "check_a": "A credentialed vulnerability scan authenticates to the target using approved credentials, allowing deeper inspection of installed software, patches, configuration, and local settings. A non-credentialed scan views the target from the outside without login access. Key ideas include: Credentialed Vulnerability Scan; Non-Credentialed Vulnerability; Scan; Does not use login credentials; Uses valid login credentials to access the.",
+        "points": [
+          "Credentialed Vulnerability Scan",
+          "Non-Credentialed Vulnerability",
+          "Scan",
+          "Does not use login credentials",
+          "Uses valid login credentials to access the",
+          "target system or network",
+          "Allows the scanning tool to have deeper",
+          "visibility",
+          "Provides more accurate and comprehensive results",
+          "Offers insights into the security posture",
+          "from an internal perspective",
+          "Assesses the target from an external viewpoint",
+          "Focus on identifying vulnerabilities that",
+          "can be detected without authenticated access",
+          "Is useful for assessing external-facing",
+          "vulnerabilities"
+        ]
+      }
+    },
+    {
+      "n": 3,
+      "title": "Intrusive vs. Non-Intrusive",
+      "points": [
+        "Intrusive Vulnerability Scan",
+        "Non-Intrusive Vulnerability Scan",
+        "• Interact with the target system",
+        "• Avoids actively exploiting",
+        "vulnerabilities",
+        "• Simulate real-world attack scenarios",
+        "• Provides a more in-depth",
+        "understanding of potential risks",
+        "• Identifies vulnerabilities that may not",
+        "be apparent in non-intrusive scans",
+        "• Focuses on identifying weaknesses",
+        "without affecting the target system's",
+        "functionality",
+        "• Minimizes the risk of unintended",
+        "consequences or disruptions",
+        "• Provides a baseline assessment of",
+        "vulnerabilities"
+      ],
+      "raw": "Intrusive vs. Non-Intrusive\nIntrusive Vulnerability Scan\nNon-Intrusive Vulnerability Scan\n• Interact with the target system\n• Avoids actively exploiting\nvulnerabilities\n• Simulate real-world attack scenarios\n• Provides a more in-depth\nunderstanding of potential risks\n• Identifies vulnerabilities that may not\nbe apparent in non-intrusive scans\n• Focuses on identifying weaknesses\nwithout affecting the target system's\nfunctionality\n• Minimizes the risk of unintended\nconsequences or disruptions\n• Provides a baseline assessment of\nvulnerabilities",
+      "instructional": true,
+      "teach": "Build a side-by-side distinction: purpose, strengths, weaknesses, and the scenario where each option fits best.",
+      "defs": [],
+      "course": {
+        "learn": "Intrusive testing actively interacts with or attempts to exploit weaknesses and can have operational impact. Non-intrusive testing tries to identify risk without exploitation or disruptive actions.",
+        "why": "Testing must balance confidence with the risk of crashing or altering production systems.",
+        "example": "A scanner verifies a vulnerable version passively in production, while a lab penetration test actually exploits it to prove impact.",
+        "exam": "Critical production systems often favor safer testing unless explicit authorization and safeguards exist.",
+        "breakdown": [
+          {
+            "term": "Intrusive Vulnerability Scan",
+            "explanation": "Within Intrusive vs. Non-Intrusive, this is a specific factor you should be able to recognize and explain. Connect it to the purpose of Identification methods rather than memorizing the phrase by itself."
+          },
+          {
+            "term": "Non-Intrusive Vulnerability Scan",
+            "explanation": "Within Intrusive vs. Non-Intrusive, this is a specific factor you should be able to recognize and explain. Connect it to the purpose of Identification methods rather than memorizing the phrase by itself."
+          },
+          {
+            "term": "Interact with the target system",
+            "explanation": "Within Intrusive vs. Non-Intrusive, this is a specific factor you should be able to recognize and explain. Connect it to the purpose of Identification methods rather than memorizing the phrase by itself."
+          },
+          {
+            "term": "Avoids actively exploiting vulnerabilities",
+            "explanation": "Within Intrusive vs. Non-Intrusive, this is a specific factor you should be able to recognize and explain. Connect it to the purpose of Identification methods rather than memorizing the phrase by itself."
+          },
+          {
+            "term": "Simulate real-world attack scenarios",
+            "explanation": "Within Intrusive vs. Non-Intrusive, this is a specific factor you should be able to recognize and explain. Connect it to the purpose of Identification methods rather than memorizing the phrase by itself."
+          },
+          {
+            "term": "Provides a more in-depth understanding of potential risks",
+            "explanation": "This affects the likelihood or impact of harm and therefore changes how the organization should prioritize controls."
+          },
+          {
+            "term": "Identifies vulnerabilities that may not",
+            "explanation": "Within Intrusive vs. Non-Intrusive, this is a specific factor you should be able to recognize and explain. Connect it to the purpose of Identification methods rather than memorizing the phrase by itself."
+          },
+          {
+            "term": "be apparent in non-intrusive scans",
+            "explanation": "Within Intrusive vs. Non-Intrusive, this is a specific factor you should be able to recognize and explain. Connect it to the purpose of Identification methods rather than memorizing the phrase by itself."
+          },
+          {
+            "term": "Focuses on identifying weaknesses without affecting the target system's",
+            "explanation": "Within Intrusive vs. Non-Intrusive, this is a specific factor you should be able to recognize and explain. Connect it to the purpose of Identification methods rather than memorizing the phrase by itself."
+          },
+          {
+            "term": "functionality",
+            "explanation": "Within Intrusive vs. Non-Intrusive, this is a specific factor you should be able to recognize and explain. Connect it to the purpose of Identification methods rather than memorizing the phrase by itself."
+          },
+          {
+            "term": "Minimizes the risk of unintended consequences or disruptions",
+            "explanation": "This affects the likelihood or impact of harm and therefore changes how the organization should prioritize controls."
+          },
+          {
+            "term": "Provides a baseline assessment of vulnerabilities",
+            "explanation": "Within Intrusive vs. Non-Intrusive, this is a specific factor you should be able to recognize and explain. Connect it to the purpose of Identification methods rather than memorizing the phrase by itself."
+          }
+        ],
+        "defs": [],
+        "check_q": "Without looking back, explain Intrusive vs. Non-Intrusive and describe at least two key ideas from this section.",
+        "check_a": "Intrusive testing actively interacts with or attempts to exploit weaknesses and can have operational impact. Non-intrusive testing tries to identify risk without exploitation or disruptive actions. Key ideas include: Intrusive Vulnerability Scan; Non-Intrusive Vulnerability Scan; Interact with the target system; Avoids actively exploiting vulnerabilities; Simulate real-world attack scenarios.",
+        "points": [
+          "Intrusive Vulnerability Scan",
+          "Non-Intrusive Vulnerability Scan",
+          "Interact with the target system",
+          "Avoids actively exploiting vulnerabilities",
+          "Simulate real-world attack scenarios",
+          "Provides a more in-depth understanding of potential risks",
+          "Identifies vulnerabilities that may not",
+          "be apparent in non-intrusive scans",
+          "Focuses on identifying weaknesses without affecting the target system's",
+          "functionality",
+          "Minimizes the risk of unintended consequences or disruptions",
+          "Provides a baseline assessment of vulnerabilities"
+        ]
+      }
+    },
+    {
+      "n": 4,
+      "title": "Application Security",
+      "points": [
+        "Static Analysis",
+        "Dynamic Analysis",
+        "Package Monitoring"
+      ],
+      "raw": "Application Security\nStatic Analysis\nDynamic Analysis\nPackage Monitoring",
+      "instructional": true,
+      "teach": "Read the source points, then explain the slide without looking. On Security+, recognition is not enough—you should be able to apply the concept to a scenario.",
+      "defs": [],
+      "course": {
+        "learn": "Application-security testing looks for weaknesses in source code, dependencies, configuration, and running applications. SAST analyzes code without executing it; DAST tests a running application from the outside.",
+        "why": "Finding defects earlier reduces the cost and exposure of fixing them after deployment.",
+        "example": "A CI pipeline runs static analysis on source code and dependency scanning before deployment, then dynamic tests against a staging application.",
+        "exam": "SAST = static/source. DAST = dynamic/running. Dependency/package monitoring targets third-party components.",
+        "breakdown": [
+          {
+            "term": "Static Analysis",
+            "explanation": "Within Application Security, this is a specific factor you should be able to recognize and explain. Connect it to the purpose of Identification methods rather than memorizing the phrase by itself."
+          },
+          {
+            "term": "Dynamic Analysis",
+            "explanation": "Within Application Security, this is a specific factor you should be able to recognize and explain. Connect it to the purpose of Identification methods rather than memorizing the phrase by itself."
+          },
+          {
+            "term": "Package Monitoring",
+            "explanation": "Security monitoring continuously observes systems, networks, applications, and logs for suspicious activity, failures, policy violations, and indicators of compromise."
+          }
+        ],
+        "defs": [],
+        "check_q": "Without looking back, explain Application Security and describe at least two key ideas from this section.",
+        "check_a": "Application-security testing looks for weaknesses in source code, dependencies, configuration, and running applications. SAST analyzes code without executing it; DAST tests a running application from the outside. Key ideas include: Static Analysis; Dynamic Analysis; Package Monitoring.",
+        "points": [
+          "Static Analysis",
+          "Dynamic Analysis",
+          "Package Monitoring"
+        ]
+      }
+    },
+    {
+      "n": 5,
+      "title": "Threat Feeds",
+      "points": [
+        "Provide ongoing",
+        "surveillance",
+        "Aggregate and analyze",
+        "data",
+        "Deliver real-time alerts",
+        "Curate actionable",
+        "intelligence"
+      ],
+      "raw": "Threat Feeds\nProvide ongoing\nsurveillance\nAggregate and analyze\ndata\nDeliver real-time alerts\nCurate actionable\nintelligence",
+      "instructional": true,
+      "teach": "Read the source points, then explain the slide without looking. On Security+, recognition is not enough—you should be able to apply the concept to a scenario.",
+      "defs": [],
+      "course": {
+        "learn": "Threat feeds provide current indicators and context such as malicious IP addresses, domains, hashes, campaigns, vulnerabilities, and attacker techniques.",
+        "why": "External intelligence helps organizations recognize activity that may already be known elsewhere.",
+        "example": "A SIEM enriches an outbound connection with a threat feed that identifies the destination IP as command-and-control infrastructure.",
+        "exam": "Feeds can be OSINT, commercial, government, industry-sharing, or vendor sources. Quality and relevance matter more than raw volume.",
+        "breakdown": [
+          {
+            "term": "Provide ongoing surveillance",
+            "explanation": "Within Threat Feeds, this is a specific factor you should be able to recognize and explain. Connect it to the purpose of Identification methods rather than memorizing the phrase by itself."
+          },
+          {
+            "term": "Aggregate and analyze data",
+            "explanation": "Within Threat Feeds, this is a specific factor you should be able to recognize and explain. Connect it to the purpose of Identification methods rather than memorizing the phrase by itself."
+          },
+          {
+            "term": "Deliver real-time alerts",
+            "explanation": "Within Threat Feeds, this is a specific factor you should be able to recognize and explain. Connect it to the purpose of Identification methods rather than memorizing the phrase by itself."
+          },
+          {
+            "term": "Curate actionable intelligence",
+            "explanation": "Within Threat Feeds, this is a specific factor you should be able to recognize and explain. Connect it to the purpose of Identification methods rather than memorizing the phrase by itself."
+          }
+        ],
+        "defs": [],
+        "check_q": "Without looking back, explain Threat Feeds and describe at least two key ideas from this section.",
+        "check_a": "Threat feeds provide current indicators and context such as malicious IP addresses, domains, hashes, campaigns, vulnerabilities, and attacker techniques. Key ideas include: Provide ongoing surveillance; Aggregate and analyze data; Deliver real-time alerts; Curate actionable intelligence.",
+        "points": [
+          "Provide ongoing surveillance",
+          "Aggregate and analyze data",
+          "Deliver real-time alerts",
+          "Curate actionable intelligence"
+        ]
+      }
+    },
+    {
+      "n": 6,
+      "title": "Threat Feeds",
+      "points": [
+        "Facilitate Indicators Of",
+        "Compromise (IoC)",
+        "sharing",
+        "Enhance threat",
+        "detection capabilities",
+        "Support proactive",
+        "defense strategies",
+        "Enable timely incident",
+        "response"
+      ],
+      "raw": "Threat Feeds\nFacilitate Indicators Of\nCompromise (IoC)\nsharing\nEnhance threat\ndetection capabilities\nSupport proactive\ndefense strategies\nEnable timely incident\nresponse",
+      "instructional": true,
+      "teach": "Read the source points, then explain the slide without looking. On Security+, recognition is not enough—you should be able to apply the concept to a scenario.",
+      "defs": [],
+      "course": {
+        "learn": "Threat feeds provide current indicators and context such as malicious IP addresses, domains, hashes, campaigns, vulnerabilities, and attacker techniques.",
+        "why": "External intelligence helps organizations recognize activity that may already be known elsewhere.",
+        "example": "A SIEM enriches an outbound connection with a threat feed that identifies the destination IP as command-and-control infrastructure.",
+        "exam": "Feeds can be OSINT, commercial, government, industry-sharing, or vendor sources. Quality and relevance matter more than raw volume.",
+        "breakdown": [
+          {
+            "term": "Facilitate Indicators Of Compromise (IoC)",
+            "explanation": "Security indicators are observable signs that may reveal compromise, misuse, or abnormal conditions. Examples include account lockouts, concurrent sessions, impossible travel, blocked content, missing logs, unusual resource consumption, and resources becoming inaccessible."
+          },
+          {
+            "term": "sharing",
+            "explanation": "Within Threat Feeds, this is a specific factor you should be able to recognize and explain. Connect it to the purpose of Identification methods rather than memorizing the phrase by itself."
+          },
+          {
+            "term": "Enhance threat detection capabilities",
+            "explanation": "Within Threat Feeds, this is a specific factor you should be able to recognize and explain. Connect it to the purpose of Identification methods rather than memorizing the phrase by itself."
+          },
+          {
+            "term": "Support proactive defense strategies",
+            "explanation": "Within Threat Feeds, this is a specific factor you should be able to recognize and explain. Connect it to the purpose of Identification methods rather than memorizing the phrase by itself."
+          },
+          {
+            "term": "Enable timely incident response",
+            "explanation": "Within Threat Feeds, this is a specific factor you should be able to recognize and explain. Connect it to the purpose of Identification methods rather than memorizing the phrase by itself."
+          }
+        ],
+        "defs": [],
+        "check_q": "Without looking back, explain Threat Feeds and describe at least two key ideas from this section.",
+        "check_a": "Threat feeds provide current indicators and context such as malicious IP addresses, domains, hashes, campaigns, vulnerabilities, and attacker techniques. Key ideas include: Facilitate Indicators Of Compromise (IoC); sharing; Enhance threat detection capabilities; Support proactive defense strategies; Enable timely incident response.",
+        "points": [
+          "Facilitate Indicators Of Compromise (IoC)",
+          "sharing",
+          "Enhance threat detection capabilities",
+          "Support proactive defense strategies",
+          "Enable timely incident response"
+        ]
+      }
+    },
+    {
+      "n": 7,
+      "title": "Threat Feed Sources",
+      "points": [
+        "Open-source Intelligence (OSINT)",
+        "Proprietary/third-party threat feeds",
+        "Information-sharing organizations",
+        "Dark web monitoring"
+      ],
+      "raw": "Threat Feed Sources\nOpen-source Intelligence (OSINT)\nProprietary/third-party threat feeds\nInformation-sharing organizations\nDark web monitoring",
+      "instructional": true,
+      "teach": "Read the source points, then explain the slide without looking. On Security+, recognition is not enough—you should be able to apply the concept to a scenario.",
+      "defs": [],
+      "course": {
+        "learn": "Threat intelligence can come from open-source intelligence (OSINT), commercial vendors, information-sharing communities, government/industry groups, and dark-web monitoring. Sources differ in cost, timeliness, confidence, and relevance.",
+        "why": "More data is not automatically better; defenders need trustworthy intelligence that matches their environment and can be operationalized.",
+        "example": "A financial institution combines an industry ISAC feed with commercial malware indicators and public vulnerability advisories.",
+        "exam": "CompTIA may ask which source fits a need: OSINT is broadly available, commercial feeds may add curated context, sharing organizations provide sector-specific intelligence.",
+        "breakdown": [
+          {
+            "term": "Open-source Intelligence (OSINT)",
+            "explanation": "Within Threat Feed Sources, this is a specific factor you should be able to recognize and explain. Connect it to the purpose of Identification methods rather than memorizing the phrase by itself."
+          },
+          {
+            "term": "Proprietary/third-party threat feeds",
+            "explanation": "Threat feeds provide current indicators and context such as malicious IP addresses, domains, hashes, campaigns, vulnerabilities, and attacker techniques."
+          },
+          {
+            "term": "Information-sharing organizations",
+            "explanation": "Within Threat Feed Sources, this is a specific factor you should be able to recognize and explain. Connect it to the purpose of Identification methods rather than memorizing the phrase by itself."
+          },
+          {
+            "term": "Dark web monitoring",
+            "explanation": "Security monitoring continuously observes systems, networks, applications, and logs for suspicious activity, failures, policy violations, and indicators of compromise."
+          }
+        ],
+        "defs": [],
+        "check_q": "Without looking back, explain Threat Feed Sources and describe at least two key ideas from this section.",
+        "check_a": "Threat intelligence can come from open-source intelligence (OSINT), commercial vendors, information-sharing communities, government/industry groups, and dark-web monitoring. Sources differ in cost, timeliness, confidence, and relevance. Key ideas include: Open-source Intelligence (OSINT); Proprietary/third-party threat feeds; Information-sharing organizations; Dark web monitoring.",
+        "points": [
+          "Open-source Intelligence (OSINT)",
+          "Proprietary/third-party threat feeds",
+          "Information-sharing organizations",
+          "Dark web monitoring"
+        ]
+      }
+    },
+    {
+      "n": 8,
+      "title": "Penetration Testing",
+      "points": [
+        "Known",
+        "environment",
+        "Unknown",
+        "environment",
+        "Partially known",
+        "environment"
+      ],
+      "raw": "Penetration Testing\nKnown\nenvironment\nUnknown\nenvironment\nPartially known\nenvironment",
+      "instructional": true,
+      "teach": "Read the source points, then explain the slide without looking. On Security+, recognition is not enough—you should be able to apply the concept to a scenario.",
+      "defs": [],
+      "course": {
+        "learn": "Penetration testing is an authorized attempt to identify and exploit weaknesses to demonstrate real impact. Rules of engagement define scope, targets, timing, permitted techniques, communication, data handling, and stop conditions.",
+        "why": "Testing without clear boundaries can cause outages, legal problems, or accidental access to systems outside authorization.",
+        "example": "A tester is allowed to exploit a web application in staging but prohibited from social-engineering employees or disrupting production.",
+        "exam": "Authorization and scope come first. White/known, black/unknown, and gray/partially-known environments describe how much information the tester receives.",
+        "breakdown": [
+          {
+            "term": "Known environment",
+            "explanation": "Within Penetration Testing, this is a specific factor you should be able to recognize and explain. Connect it to the purpose of Identification methods rather than memorizing the phrase by itself."
+          },
+          {
+            "term": "Unknown environment",
+            "explanation": "Within Penetration Testing, this is a specific factor you should be able to recognize and explain. Connect it to the purpose of Identification methods rather than memorizing the phrase by itself."
+          },
+          {
+            "term": "Partially known environment",
+            "explanation": "Within Penetration Testing, this is a specific factor you should be able to recognize and explain. Connect it to the purpose of Identification methods rather than memorizing the phrase by itself."
+          }
+        ],
+        "defs": [],
+        "check_q": "Without looking back, explain Penetration Testing and describe at least two key ideas from this section.",
+        "check_a": "Penetration testing is an authorized attempt to identify and exploit weaknesses to demonstrate real impact. Rules of engagement define scope, targets, timing, permitted techniques, communication, data handling, and stop conditions. Key ideas include: Known environment; Unknown environment; Partially known environment.",
+        "points": [
+          "Known environment",
+          "Unknown environment",
+          "Partially known environment"
+        ]
+      }
+    },
+    {
+      "n": 9,
+      "title": "Penetration Testing Rules of Engagement",
+      "points": [
+        "Scope definition",
+        "Authorized",
+        "access",
+        "Rules for",
+        "exploitation",
+        "Communication",
+        "channels",
+        "Data handling",
+        "and privacy",
+        "Incident",
+        "response plan",
+        "Testing",
+        "constraints",
+        "Documentation",
+        "requirements",
+        "Legal and",
+        "regulatory",
+        "compliance",
+        "Post-test",
+        "communication"
+      ],
+      "raw": "Penetration Testing Rules of Engagement\nScope definition\nAuthorized\naccess\nRules for\nexploitation\nCommunication\nchannels\nData handling\nand privacy\nIncident\nresponse plan\nTesting\nconstraints\nDocumentation\nrequirements\nLegal and\nregulatory\ncompliance\nPost-test\ncommunication",
+      "instructional": true,
+      "teach": "Read the source points, then explain the slide without looking. On Security+, recognition is not enough—you should be able to apply the concept to a scenario.",
+      "defs": [],
+      "course": {
+        "learn": "Penetration testing is an authorized attempt to identify and exploit weaknesses to demonstrate real impact. Rules of engagement define scope, targets, timing, permitted techniques, communication, data handling, and stop conditions.",
+        "why": "Testing without clear boundaries can cause outages, legal problems, or accidental access to systems outside authorization.",
+        "example": "A tester is allowed to exploit a web application in staging but prohibited from social-engineering employees or disrupting production.",
+        "exam": "Authorization and scope come first. White/known, black/unknown, and gray/partially-known environments describe how much information the tester receives.",
+        "breakdown": [
+          {
+            "term": "Scope definition",
+            "explanation": "Within Penetration Testing Rules of Engagement, this is a specific factor you should be able to recognize and explain. Connect it to the purpose of Identification methods rather than memorizing the phrase by itself."
+          },
+          {
+            "term": "Authorized access",
+            "explanation": "This concerns who or what can reach a resource and what actions are permitted once access is granted."
+          },
+          {
+            "term": "Rules for exploitation",
+            "explanation": "Within Penetration Testing Rules of Engagement, this is a specific factor you should be able to recognize and explain. Connect it to the purpose of Identification methods rather than memorizing the phrase by itself."
+          },
+          {
+            "term": "Communication channels",
+            "explanation": "Within Penetration Testing Rules of Engagement, this is a specific factor you should be able to recognize and explain. Connect it to the purpose of Identification methods rather than memorizing the phrase by itself."
+          },
+          {
+            "term": "Data handling and privacy",
+            "explanation": "Within Penetration Testing Rules of Engagement, this is a specific factor you should be able to recognize and explain. Connect it to the purpose of Identification methods rather than memorizing the phrase by itself."
+          },
+          {
+            "term": "Incident response plan",
+            "explanation": "Define how an organization prepares for, detects, contains, eradicates, and recovers from security incidents."
+          },
+          {
+            "term": "Testing constraints",
+            "explanation": "Within Penetration Testing Rules of Engagement, this is a specific factor you should be able to recognize and explain. Connect it to the purpose of Identification methods rather than memorizing the phrase by itself."
+          },
+          {
+            "term": "Documentation requirements",
+            "explanation": "Security documentation keeps diagrams, policies, procedures, configurations, and versions synchronized with the real environment."
+          },
+          {
+            "term": "Legal and regulatory",
+            "explanation": "Within Penetration Testing Rules of Engagement, this is a specific factor you should be able to recognize and explain. Connect it to the purpose of Identification methods rather than memorizing the phrase by itself."
+          },
+          {
+            "term": "compliance",
+            "explanation": "Evaluate risk and verify whether controls meet organizational, legal, or regulatory requirements."
+          },
+          {
+            "term": "Post-test communication",
+            "explanation": "Within Penetration Testing Rules of Engagement, this is a specific factor you should be able to recognize and explain. Connect it to the purpose of Identification methods rather than memorizing the phrase by itself."
+          }
+        ],
+        "defs": [],
+        "check_q": "Without looking back, explain Penetration Testing Rules of Engagement and describe at least two key ideas from this section.",
+        "check_a": "Penetration testing is an authorized attempt to identify and exploit weaknesses to demonstrate real impact. Rules of engagement define scope, targets, timing, permitted techniques, communication, data handling, and stop conditions. Key ideas include: Scope definition; Authorized access; Rules for exploitation; Communication channels; Data handling and privacy.",
+        "points": [
+          "Scope definition",
+          "Authorized access",
+          "Rules for exploitation",
+          "Communication channels",
+          "Data handling and privacy",
+          "Incident response plan",
+          "Testing constraints",
+          "Documentation requirements",
+          "Legal and regulatory",
+          "compliance",
+          "Post-test communication"
+        ]
+      }
+    },
+    {
+      "n": 10,
+      "title": "Responsible Disclosure Program",
+      "points": [
+        "Communication",
+        "Channels",
+        "Legal Protection",
+        "Scope and Reward",
+        "Structure",
+        "Testing Guidelines"
+      ],
+      "raw": "Responsible Disclosure Program\nCommunication\nChannels\nLegal Protection\nScope and Reward\nStructure\nTesting Guidelines",
+      "instructional": true,
+      "teach": "Read the source points, then explain the slide without looking. On Security+, recognition is not enough—you should be able to apply the concept to a scenario.",
+      "defs": [],
+      "course": {
+        "learn": "Responsible disclosure is a coordinated process for reporting a vulnerability to the affected organization and allowing time for remediation before broad public disclosure.",
+        "why": "It reduces harm to users while still enabling legitimate security research and accountability.",
+        "example": "A researcher submits a reproducible vulnerability report through the vendor's security program and agrees on a disclosure timeline.",
+        "exam": "Look for approved reporting channels, scope, coordination, remediation time, and safe disclosure.",
+        "breakdown": [
+          {
+            "term": "Communication",
+            "explanation": "Within Responsible Disclosure Program, this is a specific factor you should be able to recognize and explain. Connect it to the purpose of Identification methods rather than memorizing the phrase by itself."
+          },
+          {
+            "term": "Channels",
+            "explanation": "Within Responsible Disclosure Program, this is a specific factor you should be able to recognize and explain. Connect it to the purpose of Identification methods rather than memorizing the phrase by itself."
+          },
+          {
+            "term": "Legal Protection",
+            "explanation": "Within Responsible Disclosure Program, this is a specific factor you should be able to recognize and explain. Connect it to the purpose of Identification methods rather than memorizing the phrase by itself."
+          },
+          {
+            "term": "Scope and Reward",
+            "explanation": "Within Responsible Disclosure Program, this is a specific factor you should be able to recognize and explain. Connect it to the purpose of Identification methods rather than memorizing the phrase by itself."
+          },
+          {
+            "term": "Structure",
+            "explanation": "Within Responsible Disclosure Program, this is a specific factor you should be able to recognize and explain. Connect it to the purpose of Identification methods rather than memorizing the phrase by itself."
+          },
+          {
+            "term": "Testing Guidelines",
+            "explanation": "Within Responsible Disclosure Program, this is a specific factor you should be able to recognize and explain. Connect it to the purpose of Identification methods rather than memorizing the phrase by itself."
+          }
+        ],
+        "defs": [],
+        "check_q": "Without looking back, explain Responsible Disclosure Program and describe at least two key ideas from this section.",
+        "check_a": "Responsible disclosure is a coordinated process for reporting a vulnerability to the affected organization and allowing time for remediation before broad public disclosure. Key ideas include: Communication; Channels; Legal Protection; Scope and Reward; Structure.",
+        "points": [
+          "Communication",
+          "Channels",
+          "Legal Protection",
+          "Scope and Reward",
+          "Structure",
+          "Testing Guidelines"
+        ]
+      }
+    },
+    {
+      "n": 11,
+      "title": "Responsible Disclosure Program",
+      "points": [
+        "Response and",
+        "Acknowledgment",
+        "Remediation",
+        "Process",
+        "Public Disclosure",
+        "Policy",
+        "Educational",
+        "Outreach",
+        "Continuous",
+        "Improvement"
+      ],
+      "raw": "Responsible Disclosure Program\nResponse and\nAcknowledgment\nRemediation\nProcess\nPublic Disclosure\nPolicy\nEducational\nOutreach\nContinuous\nImprovement",
+      "instructional": true,
+      "teach": "Read the source points, then explain the slide without looking. On Security+, recognition is not enough—you should be able to apply the concept to a scenario.",
+      "defs": [],
+      "course": {
+        "learn": "Responsible disclosure is a coordinated process for reporting a vulnerability to the affected organization and allowing time for remediation before broad public disclosure.",
+        "why": "It reduces harm to users while still enabling legitimate security research and accountability.",
+        "example": "A researcher submits a reproducible vulnerability report through the vendor's security program and agrees on a disclosure timeline.",
+        "exam": "Look for approved reporting channels, scope, coordination, remediation time, and safe disclosure.",
+        "breakdown": [
+          {
+            "term": "Response and Acknowledgment",
+            "explanation": "Within Responsible Disclosure Program, this is a specific factor you should be able to recognize and explain. Connect it to the purpose of Identification methods rather than memorizing the phrase by itself."
+          },
+          {
+            "term": "Remediation",
+            "explanation": "Within Responsible Disclosure Program, this is a specific factor you should be able to recognize and explain. Connect it to the purpose of Identification methods rather than memorizing the phrase by itself."
+          },
+          {
+            "term": "Process",
+            "explanation": "Requires an authorized person or group to review a proposed change before implementation."
+          },
+          {
+            "term": "Public Disclosure",
+            "explanation": "Within Responsible Disclosure Program, this is a specific factor you should be able to recognize and explain. Connect it to the purpose of Identification methods rather than memorizing the phrase by itself."
+          },
+          {
+            "term": "Policy",
+            "explanation": "Enforces an allow, deny, or limited-access decision at the connection/resource boundary."
+          },
+          {
+            "term": "Educational",
+            "explanation": "Within Responsible Disclosure Program, this is a specific factor you should be able to recognize and explain. Connect it to the purpose of Identification methods rather than memorizing the phrase by itself."
+          },
+          {
+            "term": "Outreach",
+            "explanation": "Within Responsible Disclosure Program, this is a specific factor you should be able to recognize and explain. Connect it to the purpose of Identification methods rather than memorizing the phrase by itself."
+          },
+          {
+            "term": "Continuous",
+            "explanation": "Within Responsible Disclosure Program, this is a specific factor you should be able to recognize and explain. Connect it to the purpose of Identification methods rather than memorizing the phrase by itself."
+          },
+          {
+            "term": "Improvement",
+            "explanation": "Within Responsible Disclosure Program, this is a specific factor you should be able to recognize and explain. Connect it to the purpose of Identification methods rather than memorizing the phrase by itself."
+          }
+        ],
+        "defs": [],
+        "check_q": "Without looking back, explain Responsible Disclosure Program and describe at least two key ideas from this section.",
+        "check_a": "Responsible disclosure is a coordinated process for reporting a vulnerability to the affected organization and allowing time for remediation before broad public disclosure. Key ideas include: Response and Acknowledgment; Remediation; Process; Public Disclosure; Policy.",
+        "points": [
+          "Response and Acknowledgment",
+          "Remediation",
+          "Process",
+          "Public Disclosure",
+          "Policy",
+          "Educational",
+          "Outreach",
+          "Continuous",
+          "Improvement"
+        ]
+      }
+    },
+    {
+      "n": 12,
+      "title": "System/Process Audit",
+      "points": [
+        "Systematic Reviews",
+        "Identification of Vulnerabilities",
+        "Misconfigurations",
+        "Outdated Software"
+      ],
+      "raw": "System/Process Audit\nSystematic Reviews\nIdentification of Vulnerabilities\nMisconfigurations\nOutdated Software",
+      "instructional": true,
+      "teach": "Study the order and purpose of each step. Process questions often ask what should happen next.",
+      "defs": [],
+      "course": {
+        "learn": "A system or process audit systematically reviews technology, configurations, procedures, and evidence to determine whether controls are working and requirements are being followed.",
+        "why": "Audits find misconfiguration, outdated software, weak practices, and process gaps that automated scanners may miss.",
+        "example": "An audit samples privileged accounts, patch records, firewall rules, and change tickets to verify policy compliance.",
+        "exam": "Audit = evidence-based review against criteria; vulnerability scanning is more automated and technically focused.",
+        "breakdown": [
+          {
+            "term": "Systematic Reviews",
+            "explanation": "Within System/Process Audit, this is a specific factor you should be able to recognize and explain. Connect it to the purpose of Identification methods rather than memorizing the phrase by itself."
+          },
+          {
+            "term": "Identification of Vulnerabilities",
+            "explanation": "Within System/Process Audit, this is a specific factor you should be able to recognize and explain. Connect it to the purpose of Identification methods rather than memorizing the phrase by itself."
+          },
+          {
+            "term": "Misconfigurations",
+            "explanation": "Misconfiguration means a system is deployed with unsafe settings such as default credentials, unnecessary services, open permissions, exposed management interfaces, or insecure cloud access."
+          },
+          {
+            "term": "Outdated Software",
+            "explanation": "Within System/Process Audit, this is a specific factor you should be able to recognize and explain. Connect it to the purpose of Identification methods rather than memorizing the phrase by itself."
+          }
+        ],
+        "defs": [],
+        "check_q": "Without looking back, explain System/Process Audit and describe at least two key ideas from this section.",
+        "check_a": "A system or process audit systematically reviews technology, configurations, procedures, and evidence to determine whether controls are working and requirements are being followed. Key ideas include: Systematic Reviews; Identification of Vulnerabilities; Misconfigurations; Outdated Software.",
+        "points": [
+          "Systematic Reviews",
+          "Identification of Vulnerabilities",
+          "Misconfigurations",
+          "Outdated Software"
+        ]
+      }
+    },
+    {
+      "n": 13,
+      "title": "System/Process Audit",
+      "points": [
+        "Weaknesses in Security Practices",
+        "Proactive Risk Management",
+        "Continuous Improvement"
+      ],
+      "raw": "System/Process Audit\nWeaknesses in Security Practices\nProactive Risk Management\nContinuous Improvement",
+      "instructional": true,
+      "teach": "Study the order and purpose of each step. Process questions often ask what should happen next.",
+      "defs": [],
+      "course": {
+        "learn": "A system or process audit systematically reviews technology, configurations, procedures, and evidence to determine whether controls are working and requirements are being followed.",
+        "why": "Audits find misconfiguration, outdated software, weak practices, and process gaps that automated scanners may miss.",
+        "example": "An audit samples privileged accounts, patch records, firewall rules, and change tickets to verify policy compliance.",
+        "exam": "Audit = evidence-based review against criteria; vulnerability scanning is more automated and technically focused.",
+        "breakdown": [
+          {
+            "term": "Weaknesses in Security Practices",
+            "explanation": "This contributes to reducing risk in the broader Identification methods design and should be evaluated as part of defense in depth."
+          },
+          {
+            "term": "Proactive Risk Management",
+            "explanation": "This affects the likelihood or impact of harm and therefore changes how the organization should prioritize controls."
+          },
+          {
+            "term": "Continuous Improvement",
+            "explanation": "Within System/Process Audit, this is a specific factor you should be able to recognize and explain. Connect it to the purpose of Identification methods rather than memorizing the phrase by itself."
+          }
+        ],
+        "defs": [],
+        "check_q": "Without looking back, explain System/Process Audit and describe at least two key ideas from this section.",
+        "check_a": "A system or process audit systematically reviews technology, configurations, procedures, and evidence to determine whether controls are working and requirements are being followed. Key ideas include: Weaknesses in Security Practices; Proactive Risk Management; Continuous Improvement.",
+        "points": [
+          "Weaknesses in Security Practices",
+          "Proactive Risk Management",
+          "Continuous Improvement"
+        ]
+      }
+    },
+    {
+      "n": 14,
+      "title": "Analysis",
+      "points": [],
+      "raw": "Analysis",
+      "instructional": false,
+      "teach": "Read the source points, then explain the slide without looking. On Security+, recognition is not enough—you should be able to apply the concept to a scenario.",
+      "defs": []
+    }
+  ],
+  "slide_count": 14,
+  "instructional_count": 12,
+  "concepts": [
+    "Credentialed vs. Non-Credentialed",
+    "Intrusive vs. Non-Intrusive",
+    "Application Security",
+    "Threat Feeds",
+    "Threat Feed Sources",
+    "Penetration Testing",
+    "Penetration Testing Rules of Engagement",
+    "Responsible Disclosure Program",
+    "System/Process Audit"
+  ],
+  "source_filename": "16.01_Identification_methods.pdf"
+}

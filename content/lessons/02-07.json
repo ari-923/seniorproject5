@@ -1,0 +1,278 @@
+{
+  "id": "02.07",
+  "chapter": 2,
+  "sub": 7,
+  "title": "Deception and disruption technology",
+  "chapter_name": "Fundamental Security Concepts",
+  "slides": [
+    {
+      "n": 1,
+      "title": "Deception and Disruption Technology",
+      "points": [],
+      "raw": "Deception and Disruption\nTechnology",
+      "instructional": false,
+      "teach": "Read the source points, then explain the slide without looking. On Security+, recognition is not enough—you should be able to apply the concept to a scenario.",
+      "defs": []
+    },
+    {
+      "n": 2,
+      "title": "Deception and Disruption Technology",
+      "points": [
+        "Honeypot",
+        "Honeynet",
+        "Honeyfile",
+        "Honeytoken"
+      ],
+      "raw": "Deception and Disruption Technology\nHoneypot\nHoneynet\nHoneyfile\nHoneytoken",
+      "instructional": true,
+      "teach": "Read the source points, then explain the slide without looking. On Security+, recognition is not enough—you should be able to apply the concept to a scenario.",
+      "defs": [
+        [
+          "Honeypot",
+          "A decoy system designed to attract, detect, or study attackers."
+        ]
+      ],
+      "course": {
+        "learn": "Deception technologies create fake resources that attract or reveal attackers. Because legitimate users should not normally interact with them, activity involving the decoy is highly suspicious.",
+        "why": "Decoys can provide early detection, waste attacker time, and reveal tactics without exposing real assets.",
+        "example": "A fake database credential is placed where only an intruder scanning sensitive files would find it; using it generates an alert.",
+        "exam": "Honeypot = decoy system; honeynet = decoy network; honeyfile = decoy file; honeytoken = decoy data/credential.",
+        "breakdown": [
+          {
+            "term": "Honeypot",
+            "explanation": "A honeypot is a decoy system deliberately made attractive to attackers so defenders can detect, distract, or study them."
+          },
+          {
+            "term": "Honeynet",
+            "explanation": "A honeynet is a network of multiple deception systems that gives defenders a broader view of attacker movement and techniques."
+          },
+          {
+            "term": "Honeyfile",
+            "explanation": "A honeyfile is a decoy document or data file intended to reveal unauthorized browsing, copying, or exfiltration."
+          },
+          {
+            "term": "Honeytoken",
+            "explanation": "A honeytoken is fake data—often a credential, API key, database value, or identifier—that has no legitimate use. Any use of it is suspicious."
+          }
+        ],
+        "defs": [
+          {
+            "term": "Honeypot",
+            "definition": "A decoy system designed to attract, detect, or study attackers."
+          }
+        ],
+        "check_q": "Without looking back, explain Deception and Disruption Technology and describe at least two key ideas from this section.",
+        "check_a": "Deception technologies create fake resources that attract or reveal attackers. Because legitimate users should not normally interact with them, activity involving the decoy is highly suspicious. Key ideas include: Honeypot; Honeynet; Honeyfile; Honeytoken.",
+        "points": [
+          "Honeypot",
+          "Honeynet",
+          "Honeyfile",
+          "Honeytoken"
+        ]
+      }
+    },
+    {
+      "n": 3,
+      "title": "Honeypot",
+      "points": [
+        "Early detection",
+        "of attacks",
+        "Gather threat",
+        "intelligence",
+        "Distract and",
+        "waste attacker",
+        "resources"
+      ],
+      "raw": "Honeypot\nEarly detection\nof attacks\nGather threat\nintelligence\nDistract and\nwaste attacker\nresources",
+      "instructional": true,
+      "teach": "Read the source points, then explain the slide without looking. On Security+, recognition is not enough—you should be able to apply the concept to a scenario.",
+      "defs": [
+        [
+          "Honeypot",
+          "A decoy system designed to attract, detect, or study attackers."
+        ]
+      ],
+      "course": {
+        "learn": "A honeypot is a decoy system deliberately made attractive to attackers so defenders can detect, distract, or study them.",
+        "why": "Normal users should not need the honeypot, so interactions are strong indicators of suspicious behavior.",
+        "example": "A fake SSH server records brute-force attempts and malware payloads used by attackers.",
+        "exam": "One decoy host is a honeypot; a collection/network of decoys is a honeynet.",
+        "breakdown": [
+          {
+            "term": "Early detection of attacks",
+            "explanation": "Within Honeypot, this is a specific factor you should be able to recognize and explain. Connect it to the purpose of Deception and disruption technology rather than memorizing the phrase by itself."
+          },
+          {
+            "term": "Gather threat intelligence",
+            "explanation": "Within Honeypot, this is a specific factor you should be able to recognize and explain. Connect it to the purpose of Deception and disruption technology rather than memorizing the phrase by itself."
+          },
+          {
+            "term": "Distract and waste attacker",
+            "explanation": "Within Honeypot, this is a specific factor you should be able to recognize and explain. Connect it to the purpose of Deception and disruption technology rather than memorizing the phrase by itself."
+          },
+          {
+            "term": "resources",
+            "explanation": "Within Honeypot, this is a specific factor you should be able to recognize and explain. Connect it to the purpose of Deception and disruption technology rather than memorizing the phrase by itself."
+          }
+        ],
+        "defs": [
+          {
+            "term": "Honeypot",
+            "definition": "A decoy system designed to attract, detect, or study attackers."
+          }
+        ],
+        "check_q": "Without looking back, explain Honeypot and describe at least two key ideas from this section.",
+        "check_a": "A honeypot is a decoy system deliberately made attractive to attackers so defenders can detect, distract, or study them. Key ideas include: Early detection of attacks; Gather threat intelligence; Distract and waste attacker; resources.",
+        "points": [
+          "Early detection of attacks",
+          "Gather threat intelligence",
+          "Distract and waste attacker",
+          "resources"
+        ]
+      }
+    },
+    {
+      "n": 4,
+      "title": "Honeynet",
+      "points": [
+        "Deeper insight into attack campaigns",
+        "Test and assess security controls",
+        "Hone incident response skills"
+      ],
+      "raw": "Honeynet\nDeeper insight into attack campaigns\nTest and assess security controls\nHone incident response skills",
+      "instructional": true,
+      "teach": "Read the source points, then explain the slide without looking. On Security+, recognition is not enough—you should be able to apply the concept to a scenario.",
+      "defs": [],
+      "course": {
+        "learn": "A honeynet is a network of multiple deception systems that gives defenders a broader view of attacker movement and techniques.",
+        "why": "It can reveal multi-stage behavior that a single honeypot cannot show.",
+        "example": "An attacker compromises a fake workstation and then attempts lateral movement into a decoy database server inside the same honeynet.",
+        "exam": "Honeynet = multiple interconnected decoys, not merely one fake server.",
+        "breakdown": [
+          {
+            "term": "Deeper insight into attack campaigns",
+            "explanation": "Within Honeynet, this is a specific factor you should be able to recognize and explain. Connect it to the purpose of Deception and disruption technology rather than memorizing the phrase by itself."
+          },
+          {
+            "term": "Test and assess security controls",
+            "explanation": "This contributes to reducing risk in the broader Deception and disruption technology design and should be evaluated as part of defense in depth."
+          },
+          {
+            "term": "Hone incident response skills",
+            "explanation": "Within Honeynet, this is a specific factor you should be able to recognize and explain. Connect it to the purpose of Deception and disruption technology rather than memorizing the phrase by itself."
+          }
+        ],
+        "defs": [],
+        "check_q": "Without looking back, explain Honeynet and describe at least two key ideas from this section.",
+        "check_a": "A honeynet is a network of multiple deception systems that gives defenders a broader view of attacker movement and techniques. Key ideas include: Deeper insight into attack campaigns; Test and assess security controls; Hone incident response skills.",
+        "points": [
+          "Deeper insight into attack campaigns",
+          "Test and assess security controls",
+          "Hone incident response skills"
+        ]
+      }
+    },
+    {
+      "n": 5,
+      "title": "Honeyfile",
+      "points": [
+        "Identify",
+        "Identify data exfiltration attempts",
+        "Understand Understand attacker targeting",
+        "Monitor",
+        "Monitor data access patterns"
+      ],
+      "raw": "Honeyfile\nIdentify\nIdentify data exfiltration attempts\nUnderstand Understand attacker targeting\nMonitor\nMonitor data access patterns",
+      "instructional": true,
+      "teach": "Read the source points, then explain the slide without looking. On Security+, recognition is not enough—you should be able to apply the concept to a scenario.",
+      "defs": [],
+      "course": {
+        "learn": "A honeyfile is a decoy document or data file intended to reveal unauthorized browsing, copying, or exfiltration.",
+        "why": "Legitimate workflows should not need the file, so opening or moving it can trigger investigation.",
+        "example": "A file named “Executive_Salaries.xlsx” contains fake records and alerts security when accessed from an unusual account.",
+        "exam": "File/document decoy = honeyfile; credential/string decoy = honeytoken.",
+        "breakdown": [
+          {
+            "term": "Identify data exfiltration attempts",
+            "explanation": "The goal is to discover and clearly document the condition so the organization can decide what action to take next."
+          },
+          {
+            "term": "Understand Understand attacker targeting",
+            "explanation": "Within Honeyfile, this is a specific factor you should be able to recognize and explain. Connect it to the purpose of Deception and disruption technology rather than memorizing the phrase by itself."
+          },
+          {
+            "term": "Monitor data access patterns",
+            "explanation": "Continuously observe activity or state so abnormal behavior, drift, or failure can be detected early."
+          }
+        ],
+        "defs": [],
+        "check_q": "Without looking back, explain Honeyfile and describe at least two key ideas from this section.",
+        "check_a": "A honeyfile is a decoy document or data file intended to reveal unauthorized browsing, copying, or exfiltration. Key ideas include: Identify data exfiltration attempts; Understand Understand attacker targeting; Monitor data access patterns.",
+        "points": [
+          "Identify data exfiltration attempts",
+          "Understand Understand attacker targeting",
+          "Monitor data access patterns"
+        ]
+      }
+    },
+    {
+      "n": 6,
+      "title": "Honeytoken",
+      "points": [
+        "Detect unauthorized access attempts",
+        "Track lateral movement within your network",
+        "Analyze credential cracking techniques"
+      ],
+      "raw": "Honeytoken\nDetect unauthorized access attempts\nTrack lateral movement within your network\nAnalyze credential cracking techniques",
+      "instructional": true,
+      "teach": "Read the source points, then explain the slide without looking. On Security+, recognition is not enough—you should be able to apply the concept to a scenario.",
+      "defs": [],
+      "course": {
+        "learn": "A honeytoken is fake data—often a credential, API key, database value, or identifier—that has no legitimate use. Any use of it is suspicious.",
+        "why": "Honeytokens are lightweight and can reveal credential theft or lateral movement quickly.",
+        "example": "A fake cloud access key is placed in a monitored repository. An alert fires if anyone attempts to authenticate with it.",
+        "exam": "The key clue is decoy data or credentials rather than a complete decoy host.",
+        "breakdown": [
+          {
+            "term": "Detect unauthorized access attempts",
+            "explanation": "This concerns who or what can reach a resource and what actions are permitted once access is granted."
+          },
+          {
+            "term": "Track lateral movement within your network",
+            "explanation": "Within Honeytoken, this is a specific factor you should be able to recognize and explain. Connect it to the purpose of Deception and disruption technology rather than memorizing the phrase by itself."
+          },
+          {
+            "term": "Analyze credential cracking techniques",
+            "explanation": "Within Honeytoken, this is a specific factor you should be able to recognize and explain. Connect it to the purpose of Deception and disruption technology rather than memorizing the phrase by itself."
+          }
+        ],
+        "defs": [],
+        "check_q": "Without looking back, explain Honeytoken and describe at least two key ideas from this section.",
+        "check_a": "A honeytoken is fake data—often a credential, API key, database value, or identifier—that has no legitimate use. Any use of it is suspicious. Key ideas include: Detect unauthorized access attempts; Track lateral movement within your network; Analyze credential cracking techniques.",
+        "points": [
+          "Detect unauthorized access attempts",
+          "Track lateral movement within your network",
+          "Analyze credential cracking techniques"
+        ]
+      }
+    },
+    {
+      "n": 7,
+      "title": "Business Processes Impacting Security Operation",
+      "points": [],
+      "raw": "Business Processes\nImpacting Security Operation",
+      "instructional": false,
+      "teach": "Study the order and purpose of each step. Process questions often ask what should happen next.",
+      "defs": []
+    }
+  ],
+  "slide_count": 7,
+  "instructional_count": 5,
+  "concepts": [
+    "Honeypot",
+    "Honeynet",
+    "Honeyfile",
+    "Honeytoken"
+  ],
+  "source_filename": "02.07_Deception_and_disruption_technology.pdf"
+}

@@ -1,0 +1,202 @@
+{
+  "id": "17.01",
+  "chapter": 17,
+  "sub": 1,
+  "title": "Monitoring computing resources",
+  "chapter_name": "Security Monitoring",
+  "slides": [
+    {
+      "n": 1,
+      "title": "Monitoring Computing Resources",
+      "points": [],
+      "raw": "Monitoring Computing Resources",
+      "instructional": false,
+      "teach": "Read the source points, then explain the slide without looking. On Security+, recognition is not enough—you should be able to apply the concept to a scenario.",
+      "defs": []
+    },
+    {
+      "n": 2,
+      "title": "Systems",
+      "points": [
+        "Endpoint Protection Platforms (EPP)",
+        "Security Information and Event Management (SIEM)"
+      ],
+      "raw": "Systems\nEndpoint Protection Platforms (EPP)\nSecurity Information and Event Management (SIEM)",
+      "instructional": true,
+      "teach": "Read the source points, then explain the slide without looking. On Security+, recognition is not enough—you should be able to apply the concept to a scenario.",
+      "defs": [
+        [
+          "SIEM",
+          "Security Information and Event Management: centralizes and correlates logs/events for alerting, search, and investigation."
+        ]
+      ],
+      "course": {
+        "learn": "This section focuses on **Systems** within **Monitoring computing resources**. System monitoring focuses on endpoints and hosts. Endpoint Protection Platforms (EPP) detect or prevent malicious endpoint activity, while SIEM platforms collect and correlate events from many systems.",
+        "why": "Host-level visibility shows processes, files, authentication, and local behavior that network monitoring may not see.",
+        "example": "An EPP quarantines a malicious executable and forwards the event to the SIEM for correlation with identity and firewall logs.",
+        "exam": "EPP = endpoint protection. SIEM = centralized event/log correlation.",
+        "breakdown": [
+          {
+            "term": "Endpoint Protection Platforms (EPP)",
+            "explanation": "Within Systems, this is a specific factor you should be able to recognize and explain. Connect it to the purpose of Monitoring computing resources rather than memorizing the phrase by itself."
+          },
+          {
+            "term": "Security Information and Event Management (SIEM)",
+            "explanation": "This contributes to reducing risk in the broader Monitoring computing resources design and should be evaluated as part of defense in depth."
+          }
+        ],
+        "defs": [
+          {
+            "term": "SIEM",
+            "definition": "Security Information and Event Management: centralizes and correlates logs/events for alerting, search, and investigation."
+          }
+        ],
+        "check_q": "Without looking back, explain Systems and describe at least two key ideas from this section.",
+        "check_a": "This section focuses on **Systems** within **Monitoring computing resources**. System monitoring focuses on endpoints and hosts. Endpoint Protection Platforms (EPP) detect or prevent malicious endpoint activity, while SIEM platforms collect and correlate events from many systems. Key ideas include: Endpoint Protection Platforms (EPP); Security Information and Event Management (SIEM).",
+        "points": [
+          "Endpoint Protection Platforms (EPP)",
+          "Security Information and Event Management (SIEM)"
+        ]
+      }
+    },
+    {
+      "n": 3,
+      "title": "Application",
+      "points": [
+        "Application Performance",
+        "Monitoring (APM)",
+        "Web Application Firewalls",
+        "(WAF)"
+      ],
+      "raw": "Application\nApplication Performance\nMonitoring (APM)\nWeb Application Firewalls\n(WAF)",
+      "instructional": true,
+      "teach": "Read the source points, then explain the slide without looking. On Security+, recognition is not enough—you should be able to apply the concept to a scenario.",
+      "defs": [
+        [
+          "WAF",
+          "Web Application Firewall: filters HTTP/HTTPS traffic to protect web applications."
+        ]
+      ],
+      "course": {
+        "learn": "This section focuses on **Application** within **Monitoring computing resources**. Application monitoring measures application behavior, performance, errors, and security events. APM focuses on health/performance, while a WAF inspects and protects web requests.",
+        "why": "Application-layer problems may not be visible from host or network metrics alone.",
+        "example": "APM shows a sudden increase in database latency while the WAF reports blocked injection attempts against the same application.",
+        "exam": "APM = performance/health; WAF = web application security filtering.",
+        "breakdown": [
+          {
+            "term": "Application Performance",
+            "explanation": "Application monitoring measures application behavior, performance, errors, and security events. APM focuses on health/performance, while a WAF inspects and protects web requests."
+          },
+          {
+            "term": "Monitoring (APM)",
+            "explanation": "Security monitoring continuously observes systems, networks, applications, and logs for suspicious activity, failures, policy violations, and indicators of compromise."
+          },
+          {
+            "term": "Web Application Firewalls",
+            "explanation": "Filter network traffic according to security rules, usually by source, destination, protocol, port, application, or context."
+          },
+          {
+            "term": "(WAF)",
+            "explanation": "A Web Application Firewall (WAF) inspects HTTP/HTTPS traffic with awareness of web requests and application-layer attacks."
+          }
+        ],
+        "defs": [
+          {
+            "term": "WAF",
+            "definition": "Web Application Firewall: filters HTTP/HTTPS traffic to protect web applications."
+          }
+        ],
+        "check_q": "Without looking back, explain Application and describe at least two key ideas from this section.",
+        "check_a": "This section focuses on **Application** within **Monitoring computing resources**. Application monitoring measures application behavior, performance, errors, and security events. APM focuses on health/performance, while a WAF inspects and protects web requests. Key ideas include: Application Performance; Monitoring (APM); Web Application Firewalls; (WAF).",
+        "points": [
+          "Application Performance",
+          "Monitoring (APM)",
+          "Web Application Firewalls",
+          "(WAF)"
+        ]
+      }
+    },
+    {
+      "n": 4,
+      "title": "Infrastructure",
+      "points": [
+        "Network Security Monitoring",
+        "(NSM)",
+        "Cloud Security Posture",
+        "Management (CSPM)"
+      ],
+      "raw": "Infrastructure\nNetwork Security Monitoring\n(NSM)\nCloud Security Posture\nManagement (CSPM)",
+      "instructional": true,
+      "teach": "Read the source points, then explain the slide without looking. On Security+, recognition is not enough—you should be able to apply the concept to a scenario.",
+      "defs": [
+        [
+          "Cloud",
+          "Computing resources delivered on demand from a provider rather than entirely owned and operated locally."
+        ],
+        [
+          "CSPM",
+          "Cloud Security Posture Management: tools/processes that identify risky cloud configuration and compliance issues."
+        ]
+      ],
+      "course": {
+        "learn": "This section focuses on **Infrastructure** within **Monitoring computing resources**. Infrastructure monitoring observes networks, cloud configuration, appliances, links, and supporting resources. NSM analyzes network behavior, while CSPM evaluates cloud security posture and misconfiguration.",
+        "why": "Infrastructure telemetry helps detect both attacks and unsafe configuration drift.",
+        "example": "CSPM flags a public storage bucket while NSM detects unusual outbound traffic from a server subnet.",
+        "exam": "NSM = network activity. CSPM = cloud configuration/posture.",
+        "breakdown": [
+          {
+            "term": "Network Security Monitoring",
+            "explanation": "Security monitoring continuously observes systems, networks, applications, and logs for suspicious activity, failures, policy violations, and indicators of compromise."
+          },
+          {
+            "term": "(NSM)",
+            "explanation": "Within Infrastructure, this is a specific factor you should be able to recognize and explain. Connect it to the purpose of Monitoring computing resources rather than memorizing the phrase by itself."
+          },
+          {
+            "term": "Cloud Security Posture",
+            "explanation": "This contributes to reducing risk in the broader Monitoring computing resources design and should be evaluated as part of defense in depth."
+          },
+          {
+            "term": "Management (CSPM)",
+            "explanation": "Within Infrastructure, this is a specific factor you should be able to recognize and explain. Connect it to the purpose of Monitoring computing resources rather than memorizing the phrase by itself."
+          }
+        ],
+        "defs": [
+          {
+            "term": "Cloud",
+            "definition": "Computing resources delivered on demand from a provider rather than entirely owned and operated locally."
+          },
+          {
+            "term": "CSPM",
+            "definition": "Cloud Security Posture Management: tools/processes that identify risky cloud configuration and compliance issues."
+          }
+        ],
+        "check_q": "Without looking back, explain Infrastructure and describe at least two key ideas from this section.",
+        "check_a": "This section focuses on **Infrastructure** within **Monitoring computing resources**. Infrastructure monitoring observes networks, cloud configuration, appliances, links, and supporting resources. NSM analyzes network behavior, while CSPM evaluates cloud security posture and misconfiguration. Key ideas include: Network Security Monitoring; (NSM); Cloud Security Posture; Management (CSPM).",
+        "points": [
+          "Network Security Monitoring",
+          "(NSM)",
+          "Cloud Security Posture",
+          "Management (CSPM)"
+        ]
+      }
+    },
+    {
+      "n": 5,
+      "title": "Activities",
+      "points": [],
+      "raw": "Activities",
+      "instructional": false,
+      "teach": "Read the source points, then explain the slide without looking. On Security+, recognition is not enough—you should be able to apply the concept to a scenario.",
+      "defs": []
+    }
+  ],
+  "slide_count": 5,
+  "instructional_count": 3,
+  "concepts": [
+    "Systems",
+    "Application",
+    "Infrastructure"
+  ],
+  "source_filename": "17.01_Monitoring_computing_resources.pdf"
+}

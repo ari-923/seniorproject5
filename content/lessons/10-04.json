@@ -1,0 +1,183 @@
+{
+  "id": "10.04",
+  "chapter": 10,
+  "sub": 4,
+  "title": "Infrastructure as code (IaC)",
+  "chapter_name": "Security Architecture & Cloud",
+  "slides": [
+    {
+      "n": 1,
+      "title": "Infrastructure as Code (IaC)",
+      "points": [],
+      "raw": "Infrastructure as Code (IaC)",
+      "instructional": false,
+      "teach": "Read the source points, then explain the slide without looking. On Security+, recognition is not enough—you should be able to apply the concept to a scenario.",
+      "defs": [
+        [
+          "IaC",
+          "Infrastructure as Code: defining and provisioning infrastructure through version-controlled code/templates."
+        ]
+      ]
+    },
+    {
+      "n": 2,
+      "title": "Key Concepts",
+      "points": [
+        "Declarative Configuration",
+        "Version Control",
+        "Automated Provisioning",
+        "Idempotence",
+        "Infrastructure as Versioned Code"
+      ],
+      "raw": "Key Concepts\nDeclarative Configuration\nVersion Control\nAutomated Provisioning\nIdempotence\nInfrastructure as Versioned Code",
+      "instructional": true,
+      "teach": "These points define the technology. Be able to explain each one in your own words and recognize it in a scenario.",
+      "defs": [],
+      "course": {
+        "learn": "This section focuses on **Key Concepts** within **Infrastructure as code (IaC)**. Infrastructure as Code (IaC) defines infrastructure and configuration in machine-readable templates or code so environments can be deployed consistently and automatically.",
+        "why": "Automation improves repeatability, but an insecure template can reproduce the same mistake everywhere.",
+        "example": "A Terraform template creates networks, security groups, and servers through version-controlled code reviewed before deployment.",
+        "exam": "Benefits: consistency, automation, versioning. Risks: secrets in code, insecure templates, overly broad permissions, and rapid propagation of mistakes.",
+        "breakdown": [
+          {
+            "term": "Declarative Configuration",
+            "explanation": "Within Key Concepts, this is a specific factor you should be able to recognize and explain. Connect it to the purpose of Infrastructure as code (IaC) rather than memorizing the phrase by itself."
+          },
+          {
+            "term": "Version Control",
+            "explanation": "Tracks revisions so teams know what changed, who changed it, and can recover earlier versions."
+          },
+          {
+            "term": "Automated Provisioning",
+            "explanation": "Within Key Concepts, this is a specific factor you should be able to recognize and explain. Connect it to the purpose of Infrastructure as code (IaC) rather than memorizing the phrase by itself."
+          },
+          {
+            "term": "Idempotence",
+            "explanation": "Within Key Concepts, this is a specific factor you should be able to recognize and explain. Connect it to the purpose of Infrastructure as code (IaC) rather than memorizing the phrase by itself."
+          },
+          {
+            "term": "Infrastructure as Versioned Code",
+            "explanation": "Infrastructure monitoring observes networks, cloud configuration, appliances, links, and supporting resources. NSM analyzes network behavior, while CSPM evaluates cloud security posture and misconfiguration."
+          }
+        ],
+        "defs": [],
+        "check_q": "Without looking back, explain Key Concepts and describe at least two key ideas from this section.",
+        "check_a": "This section focuses on **Key Concepts** within **Infrastructure as code (IaC)**. Infrastructure as Code (IaC) defines infrastructure and configuration in machine-readable templates or code so environments can be deployed consistently and automatically. Key ideas include: Declarative Configuration; Version Control; Automated Provisioning; Idempotence; Infrastructure as Versioned Code.",
+        "points": [
+          "Declarative Configuration",
+          "Version Control",
+          "Automated Provisioning",
+          "Idempotence",
+          "Infrastructure as Versioned Code"
+        ]
+      }
+    },
+    {
+      "n": 3,
+      "title": "Key Concepts",
+      "points": [
+        "Modularity and",
+        "Reusability",
+        "Multi-Cloud and Hybrid",
+        "Deployments",
+        "Collaboration and",
+        "Knowledge Sharing",
+        "Continuous Integration",
+        "and Continuous",
+        "Deployment (CI/CD)",
+        "Configuration Drift",
+        "Detection"
+      ],
+      "raw": "Key Concepts\nModularity and\nReusability\nMulti-Cloud and Hybrid\nDeployments\nCollaboration and\nKnowledge Sharing\nContinuous Integration\nand Continuous\nDeployment (CI/CD)\nConfiguration Drift\nDetection",
+      "instructional": true,
+      "teach": "These points define the technology. Be able to explain each one in your own words and recognize it in a scenario.",
+      "defs": [
+        [
+          "CI/CD",
+          "Continuous Integration / Continuous Delivery or Deployment: automated practices for building, testing, and releasing software frequently."
+        ],
+        [
+          "Cloud",
+          "Computing resources delivered on demand from a provider rather than entirely owned and operated locally."
+        ]
+      ],
+      "course": {
+        "learn": "This section focuses on **Key Concepts** within **Infrastructure as code (IaC)**. Infrastructure as Code (IaC) defines infrastructure and configuration in machine-readable templates or code so environments can be deployed consistently and automatically.",
+        "why": "Automation improves repeatability, but an insecure template can reproduce the same mistake everywhere.",
+        "example": "A Terraform template creates networks, security groups, and servers through version-controlled code reviewed before deployment.",
+        "exam": "Benefits: consistency, automation, versioning. Risks: secrets in code, insecure templates, overly broad permissions, and rapid propagation of mistakes.",
+        "breakdown": [
+          {
+            "term": "Modularity and Reusability",
+            "explanation": "Within Key Concepts, this is a specific factor you should be able to recognize and explain. Connect it to the purpose of Infrastructure as code (IaC) rather than memorizing the phrase by itself."
+          },
+          {
+            "term": "Multi-Cloud and Hybrid",
+            "explanation": "A multi-cloud strategy uses services from more than one cloud provider. It can reduce dependency on one provider and support specialized capabilities, but it increases operational and security complexity."
+          },
+          {
+            "term": "Deployments",
+            "explanation": "Within Key Concepts, this is a specific factor you should be able to recognize and explain. Connect it to the purpose of Infrastructure as code (IaC) rather than memorizing the phrase by itself."
+          },
+          {
+            "term": "Collaboration and Knowledge Sharing",
+            "explanation": "Within Key Concepts, this is a specific factor you should be able to recognize and explain. Connect it to the purpose of Infrastructure as code (IaC) rather than memorizing the phrase by itself."
+          },
+          {
+            "term": "Continuous Integration and Continuous",
+            "explanation": "Within Key Concepts, this is a specific factor you should be able to recognize and explain. Connect it to the purpose of Infrastructure as code (IaC) rather than memorizing the phrase by itself."
+          },
+          {
+            "term": "Deployment (CI/CD)",
+            "explanation": "Within Key Concepts, this is a specific factor you should be able to recognize and explain. Connect it to the purpose of Infrastructure as code (IaC) rather than memorizing the phrase by itself."
+          },
+          {
+            "term": "Configuration Drift",
+            "explanation": "Within Key Concepts, this is a specific factor you should be able to recognize and explain. Connect it to the purpose of Infrastructure as code (IaC) rather than memorizing the phrase by itself."
+          },
+          {
+            "term": "Detection",
+            "explanation": "Monitor traffic or activity for signs of attack and generate alerts; they do not normally block by themselves."
+          }
+        ],
+        "defs": [
+          {
+            "term": "CI/CD",
+            "definition": "Continuous Integration / Continuous Delivery or Deployment: automated practices for building, testing, and releasing software frequently."
+          },
+          {
+            "term": "Cloud",
+            "definition": "Computing resources delivered on demand from a provider rather than entirely owned and operated locally."
+          }
+        ],
+        "check_q": "Without looking back, explain Key Concepts and describe at least two key ideas from this section.",
+        "check_a": "This section focuses on **Key Concepts** within **Infrastructure as code (IaC)**. Infrastructure as Code (IaC) defines infrastructure and configuration in machine-readable templates or code so environments can be deployed consistently and automatically. Key ideas include: Modularity and Reusability; Multi-Cloud and Hybrid; Deployments; Collaboration and Knowledge Sharing; Continuous Integration and Continuous.",
+        "points": [
+          "Modularity and Reusability",
+          "Multi-Cloud and Hybrid",
+          "Deployments",
+          "Collaboration and Knowledge Sharing",
+          "Continuous Integration and Continuous",
+          "Deployment (CI/CD)",
+          "Configuration Drift",
+          "Detection"
+        ]
+      }
+    },
+    {
+      "n": 4,
+      "title": "Serverless",
+      "points": [],
+      "raw": "Serverless",
+      "instructional": false,
+      "teach": "Read the source points, then explain the slide without looking. On Security+, recognition is not enough—you should be able to apply the concept to a scenario.",
+      "defs": []
+    }
+  ],
+  "slide_count": 4,
+  "instructional_count": 2,
+  "concepts": [
+    "Key Concepts"
+  ],
+  "source_filename": "10.04_Infrastructure_as_code_IaC.pdf"
+}

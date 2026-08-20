@@ -1,0 +1,1111 @@
+{
+  "id": "11.01",
+  "chapter": 11,
+  "sub": 1,
+  "title": "Infrastructure considerations",
+  "chapter_name": "Secure Infrastructure & Communications",
+  "slides": [
+    {
+      "n": 1,
+      "title": "Infrastructure Considerations",
+      "points": [],
+      "raw": "Infrastructure Considerations",
+      "instructional": false,
+      "teach": "These are design tradeoffs. Learn why each factor matters rather than memorizing the words alone.",
+      "defs": []
+    },
+    {
+      "n": 2,
+      "title": "Device Placement",
+      "points": [
+        "Physical Security",
+        "Redundancy"
+      ],
+      "raw": "Device Placement\nPhysical Security\nRedundancy",
+      "instructional": true,
+      "teach": "Read the source points, then explain the slide without looking. On Security+, recognition is not enough—you should be able to apply the concept to a scenario.",
+      "defs": [],
+      "course": {
+        "learn": "Secure architecture depends on where devices are placed, which trust zones they belong to, how they connect, what attack surface they expose, and what happens when a component fails.",
+        "why": "Architecture determines the paths an attacker can use and the blast radius of each failure.",
+        "example": "A public web server is placed in a DMZ, management interfaces are reachable only from an admin network, and firewalls fail closed where confidentiality is more important than continued access.",
+        "exam": "Think trust boundaries, DMZ, segmentation, exposed interfaces, redundant paths, and fail-open versus fail-closed.",
+        "breakdown": [
+          {
+            "term": "Physical Security",
+            "explanation": "Physical security protects people, buildings, devices, documents, and infrastructure from unauthorized physical access, theft, tampering, or environmental harm."
+          },
+          {
+            "term": "Redundancy",
+            "explanation": "Use duplicate components or paths so one failure does not stop the service."
+          }
+        ],
+        "defs": [],
+        "check_q": "Without looking back, explain Device Placement and describe at least two key ideas from this section.",
+        "check_a": "Secure architecture depends on where devices are placed, which trust zones they belong to, how they connect, what attack surface they expose, and what happens when a component fails. Key ideas include: Physical Security; Redundancy.",
+        "points": [
+          "Physical Security",
+          "Redundancy"
+        ]
+      }
+    },
+    {
+      "n": 3,
+      "title": "Security Zones",
+      "points": [
+        "Network Segmentation",
+        "Demilitarized Zone (DMZ)"
+      ],
+      "raw": "Security Zones\nNetwork Segmentation\nDemilitarized Zone (DMZ)",
+      "instructional": true,
+      "teach": "Read the source points, then explain the slide without looking. On Security+, recognition is not enough—you should be able to apply the concept to a scenario.",
+      "defs": [
+        [
+          "Segmentation",
+          "Dividing a network into controlled zones to limit access and lateral movement."
+        ],
+        [
+          "DMZ",
+          "Demilitarized Zone: a separate network segment used for public-facing systems to reduce exposure of the internal network."
+        ]
+      ],
+      "course": {
+        "learn": "Secure architecture depends on where devices are placed, which trust zones they belong to, how they connect, what attack surface they expose, and what happens when a component fails.",
+        "why": "Architecture determines the paths an attacker can use and the blast radius of each failure.",
+        "example": "A public web server is placed in a DMZ, management interfaces are reachable only from an admin network, and firewalls fail closed where confidentiality is more important than continued access.",
+        "exam": "Think trust boundaries, DMZ, segmentation, exposed interfaces, redundant paths, and fail-open versus fail-closed.",
+        "breakdown": [
+          {
+            "term": "Network Segmentation",
+            "explanation": "Network segmentation separates systems into different trust zones so traffic must cross controlled boundaries. VLANs, subnets, ACLs, and firewalls are common mechanisms."
+          },
+          {
+            "term": "Demilitarized Zone (DMZ)",
+            "explanation": "Within Security Zones, this is a specific factor you should be able to recognize and explain. Connect it to the purpose of Infrastructure considerations rather than memorizing the phrase by itself."
+          }
+        ],
+        "defs": [
+          {
+            "term": "Segmentation",
+            "definition": "Dividing a network into controlled zones to limit access and lateral movement."
+          },
+          {
+            "term": "DMZ",
+            "definition": "Demilitarized Zone: a separate network segment used for public-facing systems to reduce exposure of the internal network."
+          }
+        ],
+        "check_q": "Without looking back, explain Security Zones and describe at least two key ideas from this section.",
+        "check_a": "Secure architecture depends on where devices are placed, which trust zones they belong to, how they connect, what attack surface they expose, and what happens when a component fails. Key ideas include: Network Segmentation; Demilitarized Zone (DMZ).",
+        "points": [
+          "Network Segmentation",
+          "Demilitarized Zone (DMZ)"
+        ]
+      }
+    },
+    {
+      "n": 4,
+      "title": "Attack Surface",
+      "points": [
+        "Minimization",
+        "Regular",
+        "Patching"
+      ],
+      "raw": "Attack Surface\nMinimization\nRegular\nPatching",
+      "instructional": true,
+      "teach": "Learn the attacker behavior, the evidence it leaves behind, and the control that best detects or mitigates it.",
+      "defs": [],
+      "course": {
+        "learn": "Secure architecture depends on where devices are placed, which trust zones they belong to, how they connect, what attack surface they expose, and what happens when a component fails.",
+        "why": "Architecture determines the paths an attacker can use and the blast radius of each failure.",
+        "example": "A public web server is placed in a DMZ, management interfaces are reachable only from an admin network, and firewalls fail closed where confidentiality is more important than continued access.",
+        "exam": "Think trust boundaries, DMZ, segmentation, exposed interfaces, redundant paths, and fail-open versus fail-closed.",
+        "breakdown": [
+          {
+            "term": "Minimization",
+            "explanation": "Within Attack Surface, this is a specific factor you should be able to recognize and explain. Connect it to the purpose of Infrastructure considerations rather than memorizing the phrase by itself."
+          },
+          {
+            "term": "Regular",
+            "explanation": "Within Attack Surface, this is a specific factor you should be able to recognize and explain. Connect it to the purpose of Infrastructure considerations rather than memorizing the phrase by itself."
+          },
+          {
+            "term": "Patching",
+            "explanation": "Apply vendor updates that fix known security flaws or bugs."
+          }
+        ],
+        "defs": [],
+        "check_q": "Without looking back, explain Attack Surface and describe at least two key ideas from this section.",
+        "check_a": "Secure architecture depends on where devices are placed, which trust zones they belong to, how they connect, what attack surface they expose, and what happens when a component fails. Key ideas include: Minimization; Regular; Patching.",
+        "points": [
+          "Minimization",
+          "Regular",
+          "Patching"
+        ]
+      }
+    },
+    {
+      "n": 5,
+      "title": "Connectivity",
+      "points": [
+        "VPN and encryption",
+        "Access controls"
+      ],
+      "raw": "Connectivity\nVPN and encryption\nAccess controls",
+      "instructional": true,
+      "teach": "Read the source points, then explain the slide without looking. On Security+, recognition is not enough—you should be able to apply the concept to a scenario.",
+      "defs": [
+        [
+          "Encryption",
+          "Transforms readable plaintext into ciphertext using an algorithm and key so unauthorized parties cannot understand it."
+        ],
+        [
+          "VPN",
+          "Virtual Private Network: an encrypted/secured tunnel across an untrusted or shared network."
+        ]
+      ],
+      "course": {
+        "learn": "Secure architecture depends on where devices are placed, which trust zones they belong to, how they connect, what attack surface they expose, and what happens when a component fails.",
+        "why": "Architecture determines the paths an attacker can use and the blast radius of each failure.",
+        "example": "A public web server is placed in a DMZ, management interfaces are reachable only from an admin network, and firewalls fail closed where confidentiality is more important than continued access.",
+        "exam": "Think trust boundaries, DMZ, segmentation, exposed interfaces, redundant paths, and fail-open versus fail-closed.",
+        "breakdown": [
+          {
+            "term": "VPN and encryption",
+            "explanation": "Protect confidentiality by transforming plaintext into ciphertext using cryptographic keys."
+          },
+          {
+            "term": "Access controls",
+            "explanation": "Access control restricts which subjects can access which resources and what actions they may perform. ACLs express allow/deny rules on objects, interfaces, or network traffic."
+          }
+        ],
+        "defs": [
+          {
+            "term": "Encryption",
+            "definition": "Transforms readable plaintext into ciphertext using an algorithm and key so unauthorized parties cannot understand it."
+          },
+          {
+            "term": "VPN",
+            "definition": "Virtual Private Network: an encrypted/secured tunnel across an untrusted or shared network."
+          }
+        ],
+        "check_q": "Without looking back, explain Connectivity and describe at least two key ideas from this section.",
+        "check_a": "Secure architecture depends on where devices are placed, which trust zones they belong to, how they connect, what attack surface they expose, and what happens when a component fails. Key ideas include: VPN and encryption; Access controls.",
+        "points": [
+          "VPN and encryption",
+          "Access controls"
+        ]
+      }
+    },
+    {
+      "n": 6,
+      "title": "Failure Modes",
+      "points": [
+        "Fail-open",
+        "Fail-closed",
+        "•Redundancy",
+        "•Continuous",
+        "monitoring",
+        "•Graceful",
+        "degradation",
+        "•Fallback",
+        "mechanisms"
+      ],
+      "raw": "Failure Modes\nFail-open\nFail-closed\n•Redundancy\n•Continuous\nmonitoring\n•Graceful\ndegradation\n•Fallback\nmechanisms",
+      "instructional": true,
+      "teach": "Read the source points, then explain the slide without looking. On Security+, recognition is not enough—you should be able to apply the concept to a scenario.",
+      "defs": [
+        [
+          "Fail-closed",
+          "A failure mode in which access is denied when a security control fails."
+        ],
+        [
+          "Fail-open",
+          "A failure mode in which access continues when a security control fails."
+        ]
+      ],
+      "course": {
+        "learn": "Secure architecture depends on where devices are placed, which trust zones they belong to, how they connect, what attack surface they expose, and what happens when a component fails.",
+        "why": "Architecture determines the paths an attacker can use and the blast radius of each failure.",
+        "example": "A public web server is placed in a DMZ, management interfaces are reachable only from an admin network, and firewalls fail closed where confidentiality is more important than continued access.",
+        "exam": "Think trust boundaries, DMZ, segmentation, exposed interfaces, redundant paths, and fail-open versus fail-closed.",
+        "breakdown": [
+          {
+            "term": "Fail-open",
+            "explanation": "Within Failure Modes, this is a specific factor you should be able to recognize and explain. Connect it to the purpose of Infrastructure considerations rather than memorizing the phrase by itself."
+          },
+          {
+            "term": "Fail-closed",
+            "explanation": "Within Failure Modes, this is a specific factor you should be able to recognize and explain. Connect it to the purpose of Infrastructure considerations rather than memorizing the phrase by itself."
+          },
+          {
+            "term": "Redundancy",
+            "explanation": "Use duplicate components or paths so one failure does not stop the service."
+          },
+          {
+            "term": "Continuous monitoring",
+            "explanation": "Security monitoring continuously observes systems, networks, applications, and logs for suspicious activity, failures, policy violations, and indicators of compromise."
+          },
+          {
+            "term": "Graceful degradation",
+            "explanation": "Within Failure Modes, this is a specific factor you should be able to recognize and explain. Connect it to the purpose of Infrastructure considerations rather than memorizing the phrase by itself."
+          },
+          {
+            "term": "Fallback mechanisms",
+            "explanation": "Within Failure Modes, this is a specific factor you should be able to recognize and explain. Connect it to the purpose of Infrastructure considerations rather than memorizing the phrase by itself."
+          }
+        ],
+        "defs": [
+          {
+            "term": "Fail-closed",
+            "definition": "A failure mode in which access is denied when a security control fails."
+          },
+          {
+            "term": "Fail-open",
+            "definition": "A failure mode in which access continues when a security control fails."
+          }
+        ],
+        "check_q": "Without looking back, explain Failure Modes and describe at least two key ideas from this section.",
+        "check_a": "Secure architecture depends on where devices are placed, which trust zones they belong to, how they connect, what attack surface they expose, and what happens when a component fails. Key ideas include: Fail-open; Fail-closed; Redundancy; Continuous monitoring; Graceful degradation.",
+        "points": [
+          "Fail-open",
+          "Fail-closed",
+          "Redundancy",
+          "Continuous monitoring",
+          "Graceful degradation",
+          "Fallback mechanisms"
+        ]
+      }
+    },
+    {
+      "n": 7,
+      "title": "Device Attribute",
+      "points": [
+        "Active Devices",
+        "Passive Devices",
+        "• Regular Updates",
+        "• Access Controls",
+        "• Anomaly",
+        "Detection",
+        "• Integration with",
+        "Active Devices"
+      ],
+      "raw": "Device Attribute\nActive Devices\nPassive Devices\n• Regular Updates\n• Access Controls\n• Anomaly\nDetection\n• Integration with\nActive Devices",
+      "instructional": true,
+      "teach": "Read the source points, then explain the slide without looking. On Security+, recognition is not enough—you should be able to apply the concept to a scenario.",
+      "defs": [],
+      "course": {
+        "learn": "Infrastructure devices have attributes that affect how they should be secured: active versus passive role, inline versus monitoring placement, update capability, management access, high-availability requirements, and traffic-analysis function.",
+        "why": "Placement and function determine both the device's security value and the impact if it fails or is compromised.",
+        "example": "An inline IPS can block attacks but may become a traffic bottleneck or outage point, while a passive tap observes traffic without sitting in the forwarding path.",
+        "exam": "Inline can enforce/block; passive/tap observes. Management interfaces should be restricted and monitored.",
+        "breakdown": [
+          {
+            "term": "Active Devices",
+            "explanation": "Within Device Attribute, this is a specific factor you should be able to recognize and explain. Connect it to the purpose of Infrastructure considerations rather than memorizing the phrase by itself."
+          },
+          {
+            "term": "Passive Devices",
+            "explanation": "Within Device Attribute, this is a specific factor you should be able to recognize and explain. Connect it to the purpose of Infrastructure considerations rather than memorizing the phrase by itself."
+          },
+          {
+            "term": "Regular Updates",
+            "explanation": "Within Device Attribute, this is a specific factor you should be able to recognize and explain. Connect it to the purpose of Infrastructure considerations rather than memorizing the phrase by itself."
+          },
+          {
+            "term": "Access Controls",
+            "explanation": "Access control restricts which subjects can access which resources and what actions they may perform. ACLs express allow/deny rules on objects, interfaces, or network traffic."
+          },
+          {
+            "term": "Anomaly",
+            "explanation": "Within Device Attribute, this is a specific factor you should be able to recognize and explain. Connect it to the purpose of Infrastructure considerations rather than memorizing the phrase by itself."
+          },
+          {
+            "term": "Detection",
+            "explanation": "Monitor traffic or activity for signs of attack and generate alerts; they do not normally block by themselves."
+          },
+          {
+            "term": "Integration with Active Devices",
+            "explanation": "Within Device Attribute, this is a specific factor you should be able to recognize and explain. Connect it to the purpose of Infrastructure considerations rather than memorizing the phrase by itself."
+          }
+        ],
+        "defs": [],
+        "check_q": "Without looking back, explain Device Attribute and describe at least two key ideas from this section.",
+        "check_a": "Infrastructure devices have attributes that affect how they should be secured: active versus passive role, inline versus monitoring placement, update capability, management access, high-availability requirements, and traffic-analysis function. Key ideas include: Active Devices; Passive Devices; Regular Updates; Access Controls; Anomaly.",
+        "points": [
+          "Active Devices",
+          "Passive Devices",
+          "Regular Updates",
+          "Access Controls",
+          "Anomaly",
+          "Detection",
+          "Integration with Active Devices"
+        ]
+      }
+    },
+    {
+      "n": 8,
+      "title": "Device Attribute",
+      "points": [
+        "Inline",
+        "Tap/Monitor",
+        "•High availability",
+        "•Traffic",
+        "validation",
+        "•Secure access",
+        "•Traffic analysis"
+      ],
+      "raw": "Device Attribute\nInline\nTap/Monitor\n•High availability\n•Traffic\nvalidation\n•Secure access\n•Traffic analysis",
+      "instructional": true,
+      "teach": "Read the source points, then explain the slide without looking. On Security+, recognition is not enough—you should be able to apply the concept to a scenario.",
+      "defs": [
+        [
+          "Availability",
+          "Ensuring authorized users can access systems and data when needed."
+        ]
+      ],
+      "course": {
+        "learn": "Infrastructure devices have attributes that affect how they should be secured: active versus passive role, inline versus monitoring placement, update capability, management access, high-availability requirements, and traffic-analysis function.",
+        "why": "Placement and function determine both the device's security value and the impact if it fails or is compromised.",
+        "example": "An inline IPS can block attacks but may become a traffic bottleneck or outage point, while a passive tap observes traffic without sitting in the forwarding path.",
+        "exam": "Inline can enforce/block; passive/tap observes. Management interfaces should be restricted and monitored.",
+        "breakdown": [
+          {
+            "term": "Inline",
+            "explanation": "Within Device Attribute, this is a specific factor you should be able to recognize and explain. Connect it to the purpose of Infrastructure considerations rather than memorizing the phrase by itself."
+          },
+          {
+            "term": "Tap/Monitor",
+            "explanation": "Within Device Attribute, this is a specific factor you should be able to recognize and explain. Connect it to the purpose of Infrastructure considerations rather than memorizing the phrase by itself."
+          },
+          {
+            "term": "High availability",
+            "explanation": "High availability designs services to remain accessible despite failures. It uses redundancy, failover, load balancing, clustering, replication, resilient power, and removal of single points of failure."
+          },
+          {
+            "term": "Traffic validation",
+            "explanation": "Within Device Attribute, this is a specific factor you should be able to recognize and explain. Connect it to the purpose of Infrastructure considerations rather than memorizing the phrase by itself."
+          },
+          {
+            "term": "Secure access",
+            "explanation": "This concerns who or what can reach a resource and what actions are permitted once access is granted."
+          },
+          {
+            "term": "Traffic analysis",
+            "explanation": "Within Device Attribute, this is a specific factor you should be able to recognize and explain. Connect it to the purpose of Infrastructure considerations rather than memorizing the phrase by itself."
+          }
+        ],
+        "defs": [
+          {
+            "term": "Availability",
+            "definition": "Ensuring authorized users can access systems and data when needed."
+          }
+        ],
+        "check_q": "Without looking back, explain Device Attribute and describe at least two key ideas from this section.",
+        "check_a": "Infrastructure devices have attributes that affect how they should be secured: active versus passive role, inline versus monitoring placement, update capability, management access, high-availability requirements, and traffic-analysis function. Key ideas include: Inline; Tap/Monitor; High availability; Traffic validation; Secure access.",
+        "points": [
+          "Inline",
+          "Tap/Monitor",
+          "High availability",
+          "Traffic validation",
+          "Secure access",
+          "Traffic analysis"
+        ]
+      }
+    },
+    {
+      "n": 9,
+      "title": "Network Appliances",
+      "points": [
+        "Jump Server",
+        "• Access Control",
+        "• Audit Logging",
+        "Proxy Server",
+        "• Content Filtering",
+        "• SSL Inspection",
+        "Intrusion Prevention",
+        "System (IPS)/Intrusion",
+        "Detection System (IDS)",
+        "• Signature Updates",
+        "• Network",
+        "Segmentation"
+      ],
+      "raw": "Network Appliances\nJump Server\n• Access Control\n• Audit Logging\nProxy Server\n• Content Filtering\n• SSL Inspection\nIntrusion Prevention\nSystem (IPS)/Intrusion\nDetection System (IDS)\n• Signature Updates\n• Network\nSegmentation",
+      "instructional": true,
+      "teach": "Read the source points, then explain the slide without looking. On Security+, recognition is not enough—you should be able to apply the concept to a scenario.",
+      "defs": [
+        [
+          "Segmentation",
+          "Dividing a network into controlled zones to limit access and lateral movement."
+        ],
+        [
+          "Proxy",
+          "An intermediary that sends or receives requests on behalf of another system and can provide filtering, logging, or access control."
+        ],
+        [
+          "IDS",
+          "Intrusion Detection System: monitors for suspicious activity and alerts; it normally does not block traffic by itself."
+        ],
+        [
+          "IPS",
+          "Intrusion Prevention System: detects malicious traffic and can actively block it."
+        ]
+      ],
+      "course": {
+        "learn": "Network security appliances perform specialized functions such as jump access, proxying, load balancing, TLS offload, filtering, health checks, and anomaly detection.",
+        "why": "Correct placement and function determine which traffic the appliance can see and what control it can enforce.",
+        "example": "A jump server centralizes admin access, a proxy mediates client requests, and a load balancer distributes traffic across healthy application servers.",
+        "exam": "Know the purpose of each appliance from the scenario rather than memorizing product names.",
+        "breakdown": [
+          {
+            "term": "Jump Server",
+            "explanation": "Within Network Appliances, this is a specific factor you should be able to recognize and explain. Connect it to the purpose of Infrastructure considerations rather than memorizing the phrase by itself."
+          },
+          {
+            "term": "Access Control",
+            "explanation": "Use hard-to-guess credentials and limit what authenticated users can reach."
+          },
+          {
+            "term": "Audit Logging",
+            "explanation": "Within Network Appliances, this is a specific factor you should be able to recognize and explain. Connect it to the purpose of Infrastructure considerations rather than memorizing the phrase by itself."
+          },
+          {
+            "term": "Proxy Server",
+            "explanation": "Within Network Appliances, this is a specific factor you should be able to recognize and explain. Connect it to the purpose of Infrastructure considerations rather than memorizing the phrase by itself."
+          },
+          {
+            "term": "Content Filtering",
+            "explanation": "Within Network Appliances, this is a specific factor you should be able to recognize and explain. Connect it to the purpose of Infrastructure considerations rather than memorizing the phrase by itself."
+          },
+          {
+            "term": "SSL Inspection",
+            "explanation": "Within Network Appliances, this is a specific factor you should be able to recognize and explain. Connect it to the purpose of Infrastructure considerations rather than memorizing the phrase by itself."
+          },
+          {
+            "term": "Intrusion Prevention",
+            "explanation": "Within Network Appliances, this is a specific factor you should be able to recognize and explain. Connect it to the purpose of Infrastructure considerations rather than memorizing the phrase by itself."
+          },
+          {
+            "term": "System (IPS)/Intrusion",
+            "explanation": "Within Network Appliances, this is a specific factor you should be able to recognize and explain. Connect it to the purpose of Infrastructure considerations rather than memorizing the phrase by itself."
+          },
+          {
+            "term": "Detection System (IDS)",
+            "explanation": "Within Network Appliances, this is a specific factor you should be able to recognize and explain. Connect it to the purpose of Infrastructure considerations rather than memorizing the phrase by itself."
+          },
+          {
+            "term": "Signature Updates",
+            "explanation": "Within Network Appliances, this is a specific factor you should be able to recognize and explain. Connect it to the purpose of Infrastructure considerations rather than memorizing the phrase by itself."
+          },
+          {
+            "term": "Network",
+            "explanation": "Networks that lack trustworthy encryption, authentication, segmentation, or monitoring."
+          },
+          {
+            "term": "Segmentation",
+            "explanation": "Network segmentation separates systems into different trust zones so traffic must cross controlled boundaries. VLANs, subnets, ACLs, and firewalls are common mechanisms."
+          }
+        ],
+        "defs": [
+          {
+            "term": "Segmentation",
+            "definition": "Dividing a network into controlled zones to limit access and lateral movement."
+          },
+          {
+            "term": "Proxy",
+            "definition": "An intermediary that sends or receives requests on behalf of another system and can provide filtering, logging, or access control."
+          },
+          {
+            "term": "IDS",
+            "definition": "Intrusion Detection System: monitors for suspicious activity and alerts; it normally does not block traffic by itself."
+          },
+          {
+            "term": "IPS",
+            "definition": "Intrusion Prevention System: detects malicious traffic and can actively block it."
+          }
+        ],
+        "check_q": "Without looking back, explain Network Appliances and describe at least two key ideas from this section.",
+        "check_a": "Network security appliances perform specialized functions such as jump access, proxying, load balancing, TLS offload, filtering, health checks, and anomaly detection. Key ideas include: Jump Server; Access Control; Audit Logging; Proxy Server; Content Filtering.",
+        "points": [
+          "Jump Server",
+          "Access Control",
+          "Audit Logging",
+          "Proxy Server",
+          "Content Filtering",
+          "SSL Inspection",
+          "Intrusion Prevention",
+          "System (IPS)/Intrusion",
+          "Detection System (IDS)",
+          "Signature Updates",
+          "Network",
+          "Segmentation"
+        ]
+      }
+    },
+    {
+      "n": 10,
+      "title": "Network Appliances",
+      "points": [
+        "Load Balancer",
+        "•SSL Offloading",
+        "•Health Checks",
+        "Sensors",
+        "•Anomaly",
+        "Detection",
+        "•Integration with",
+        "SIEM"
+      ],
+      "raw": "Network Appliances\nLoad Balancer\n•SSL Offloading\n•Health Checks\nSensors\n•Anomaly\nDetection\n•Integration with\nSIEM",
+      "instructional": true,
+      "teach": "Read the source points, then explain the slide without looking. On Security+, recognition is not enough—you should be able to apply the concept to a scenario.",
+      "defs": [
+        [
+          "Load balancer",
+          "A system/service that distributes incoming requests across multiple backend resources."
+        ],
+        [
+          "SIEM",
+          "Security Information and Event Management: centralizes and correlates logs/events for alerting, search, and investigation."
+        ]
+      ],
+      "course": {
+        "learn": "Network security appliances perform specialized functions such as jump access, proxying, load balancing, TLS offload, filtering, health checks, and anomaly detection.",
+        "why": "Correct placement and function determine which traffic the appliance can see and what control it can enforce.",
+        "example": "A jump server centralizes admin access, a proxy mediates client requests, and a load balancer distributes traffic across healthy application servers.",
+        "exam": "Know the purpose of each appliance from the scenario rather than memorizing product names.",
+        "breakdown": [
+          {
+            "term": "Load Balancer",
+            "explanation": "Within Network Appliances, this is a specific factor you should be able to recognize and explain. Connect it to the purpose of Infrastructure considerations rather than memorizing the phrase by itself."
+          },
+          {
+            "term": "SSL Offloading",
+            "explanation": "Within Network Appliances, this is a specific factor you should be able to recognize and explain. Connect it to the purpose of Infrastructure considerations rather than memorizing the phrase by itself."
+          },
+          {
+            "term": "Health Checks",
+            "explanation": "Within Network Appliances, this is a specific factor you should be able to recognize and explain. Connect it to the purpose of Infrastructure considerations rather than memorizing the phrase by itself."
+          },
+          {
+            "term": "Sensors",
+            "explanation": "Physical sensors detect environmental or movement conditions that may indicate intrusion or danger. Different sensors detect heat, pressure, microwave reflection, sound, motion, moisture, or other changes."
+          },
+          {
+            "term": "Anomaly",
+            "explanation": "Within Network Appliances, this is a specific factor you should be able to recognize and explain. Connect it to the purpose of Infrastructure considerations rather than memorizing the phrase by itself."
+          },
+          {
+            "term": "Detection",
+            "explanation": "Monitor traffic or activity for signs of attack and generate alerts; they do not normally block by themselves."
+          },
+          {
+            "term": "Integration with SIEM",
+            "explanation": "Within Network Appliances, this is a specific factor you should be able to recognize and explain. Connect it to the purpose of Infrastructure considerations rather than memorizing the phrase by itself."
+          }
+        ],
+        "defs": [
+          {
+            "term": "Load balancer",
+            "definition": "A system/service that distributes incoming requests across multiple backend resources."
+          },
+          {
+            "term": "SIEM",
+            "definition": "Security Information and Event Management: centralizes and correlates logs/events for alerting, search, and investigation."
+          }
+        ],
+        "check_q": "Without looking back, explain Network Appliances and describe at least two key ideas from this section.",
+        "check_a": "Network security appliances perform specialized functions such as jump access, proxying, load balancing, TLS offload, filtering, health checks, and anomaly detection. Key ideas include: Load Balancer; SSL Offloading; Health Checks; Sensors; Anomaly.",
+        "points": [
+          "Load Balancer",
+          "SSL Offloading",
+          "Health Checks",
+          "Sensors",
+          "Anomaly",
+          "Detection",
+          "Integration with SIEM"
+        ]
+      }
+    },
+    {
+      "n": 11,
+      "title": "Port Security",
+      "points": [
+        "Port Security with",
+        "802.1X",
+        "• `Port-Based Access",
+        "Control",
+        "• Identity Verification",
+        "Extensible",
+        "Authentication",
+        "Protocol (EAP)",
+        "• Mutual",
+        "Authentication",
+        "• Encrypted",
+        "Authentication"
+      ],
+      "raw": "Port Security\nPort Security with\n802.1X\n• `Port-Based Access\nControl\n• Identity Verification\nExtensible\nAuthentication\nProtocol (EAP)\n• Mutual\nAuthentication\n• Encrypted\nAuthentication",
+      "instructional": true,
+      "teach": "Read the source points, then explain the slide without looking. On Security+, recognition is not enough—you should be able to apply the concept to a scenario.",
+      "defs": [
+        [
+          "Authentication",
+          "Proving an identity—answering “who are you?”"
+        ],
+        [
+          "802.1X",
+          "Port-based network access control that authenticates users/devices before allowing access to the network."
+        ]
+      ],
+      "course": {
+        "learn": "Port security restricts who or what may use a network switch port. 802.1X is a common port-based access-control method that authenticates a user or device before normal network access is granted.",
+        "why": "Physical access to an Ethernet jack should not automatically provide trusted network access.",
+        "example": "A laptop connects to a switch, completes 802.1X authentication using EAP/RADIUS, and is assigned the appropriate network access.",
+        "exam": "802.1X = port-based NAC/authentication. EAP carries authentication methods; RADIUS commonly provides AAA services.",
+        "breakdown": [
+          {
+            "term": "Port Security with 802.1X",
+            "explanation": "Port security restricts who or what may use a network switch port. 802.1X is a common port-based access-control method that authenticates a user or device before normal network access is granted."
+          },
+          {
+            "term": "`Port-Based Access",
+            "explanation": "This concerns who or what can reach a resource and what actions are permitted once access is granted."
+          },
+          {
+            "term": "Control",
+            "explanation": "Use hard-to-guess credentials and limit what authenticated users can reach."
+          },
+          {
+            "term": "Identity Verification",
+            "explanation": "Within Port Security, this is a specific factor you should be able to recognize and explain. Connect it to the purpose of Infrastructure considerations rather than memorizing the phrase by itself."
+          },
+          {
+            "term": "Extensible",
+            "explanation": "Within Port Security, this is a specific factor you should be able to recognize and explain. Connect it to the purpose of Infrastructure considerations rather than memorizing the phrase by itself."
+          },
+          {
+            "term": "Authentication",
+            "explanation": "Require authentication factors from more than one factor category, reducing dependence on one stolen secret."
+          },
+          {
+            "term": "Protocol (EAP)",
+            "explanation": "Within Port Security, this is a specific factor you should be able to recognize and explain. Connect it to the purpose of Infrastructure considerations rather than memorizing the phrase by itself."
+          },
+          {
+            "term": "Mutual",
+            "explanation": "Within Port Security, this is a specific factor you should be able to recognize and explain. Connect it to the purpose of Infrastructure considerations rather than memorizing the phrase by itself."
+          },
+          {
+            "term": "Authentication",
+            "explanation": "Require authentication factors from more than one factor category, reducing dependence on one stolen secret."
+          },
+          {
+            "term": "Encrypted",
+            "explanation": "Within Port Security, this is a specific factor you should be able to recognize and explain. Connect it to the purpose of Infrastructure considerations rather than memorizing the phrase by itself."
+          },
+          {
+            "term": "Authentication",
+            "explanation": "Require authentication factors from more than one factor category, reducing dependence on one stolen secret."
+          }
+        ],
+        "defs": [
+          {
+            "term": "Authentication",
+            "definition": "Proving an identity—answering “who are you?”"
+          },
+          {
+            "term": "802.1X",
+            "definition": "Port-based network access control that authenticates users/devices before allowing access to the network."
+          }
+        ],
+        "check_q": "Without looking back, explain Port Security and describe at least two key ideas from this section.",
+        "check_a": "Port security restricts who or what may use a network switch port. 802.1X is a common port-based access-control method that authenticates a user or device before normal network access is granted. Key ideas include: Port Security with 802.1X; `Port-Based Access; Control; Identity Verification; Extensible.",
+        "points": [
+          "Port Security with 802.1X",
+          "`Port-Based Access",
+          "Control",
+          "Identity Verification",
+          "Extensible",
+          "Authentication",
+          "Protocol (EAP)",
+          "Mutual",
+          "Authentication",
+          "Encrypted",
+          "Authentication"
+        ]
+      }
+    },
+    {
+      "n": 12,
+      "title": "Firewall Types",
+      "points": [
+        "Web",
+        "Application",
+        "Firewall",
+        "(WAF)",
+        "Unified",
+        "Threat",
+        "Management",
+        "(UTM)",
+        "Nextgeneration",
+        "Firewall",
+        "(NGFW)",
+        "Layer 4/Layer",
+        "7"
+      ],
+      "raw": "Firewall Types\nWeb\nApplication\nFirewall\n(WAF)\nUnified\nThreat\nManagement\n(UTM)\nNextgeneration\nFirewall\n(NGFW)\nLayer 4/Layer\n7",
+      "instructional": true,
+      "teach": "Focus on the differences between the listed types and the clue words that distinguish them in exam questions.",
+      "defs": [
+        [
+          "Firewall",
+          "A control that permits or blocks network traffic according to configured rules."
+        ],
+        [
+          "NGFW",
+          "Next-Generation Firewall: a firewall with capabilities such as application awareness, deeper inspection, and integrated threat controls."
+        ],
+        [
+          "WAF",
+          "Web Application Firewall: filters HTTP/HTTPS traffic to protect web applications."
+        ]
+      ],
+      "course": {
+        "learn": "Firewalls can filter at different layers and may specialize in different traffic. Traditional firewalls focus on network/transport rules; WAFs protect web applications; UTM and NGFW platforms combine broader capabilities.",
+        "why": "Choosing the wrong firewall type can leave the actual attack layer uninspected.",
+        "example": "A company keeps a network firewall at the Internet edge and adds a WAF in front of a public web application for HTTP-specific threats.",
+        "exam": "Match tool to layer: WAF = web app, NGFW = application-aware firewall, UTM = multiple integrated security services.",
+        "breakdown": [
+          {
+            "term": "Web",
+            "explanation": "Infrastructure monitoring observes networks, cloud configuration, appliances, links, and supporting resources. NSM analyzes network behavior, while CSPM evaluates cloud security posture and misconfiguration."
+          },
+          {
+            "term": "Application",
+            "explanation": "Products no longer receiving security updates or vendor support, leaving new vulnerabilities harder to fix."
+          },
+          {
+            "term": "Firewall",
+            "explanation": "Filter network traffic according to security rules, usually by source, destination, protocol, port, application, or context."
+          },
+          {
+            "term": "(WAF)",
+            "explanation": "A Web Application Firewall (WAF) inspects HTTP/HTTPS traffic with awareness of web requests and application-layer attacks."
+          },
+          {
+            "term": "Unified",
+            "explanation": "Within Firewall Types, this is a specific factor you should be able to recognize and explain. Connect it to the purpose of Infrastructure considerations rather than memorizing the phrase by itself."
+          },
+          {
+            "term": "Threat",
+            "explanation": "Within Firewall Types, this is a specific factor you should be able to recognize and explain. Connect it to the purpose of Infrastructure considerations rather than memorizing the phrase by itself."
+          },
+          {
+            "term": "Management",
+            "explanation": "Within Firewall Types, this is a specific factor you should be able to recognize and explain. Connect it to the purpose of Infrastructure considerations rather than memorizing the phrase by itself."
+          },
+          {
+            "term": "(UTM)",
+            "explanation": "Unified Threat Management (UTM) combines multiple security functions—such as firewalling, IPS, filtering, malware inspection, and VPN—into one platform."
+          },
+          {
+            "term": "Nextgeneration",
+            "explanation": "Within Firewall Types, this is a specific factor you should be able to recognize and explain. Connect it to the purpose of Infrastructure considerations rather than memorizing the phrase by itself."
+          },
+          {
+            "term": "Firewall",
+            "explanation": "Filter network traffic according to security rules, usually by source, destination, protocol, port, application, or context."
+          },
+          {
+            "term": "(NGFW)",
+            "explanation": "A Next-Generation Firewall (NGFW) extends traditional IP/port filtering with application awareness, deep inspection, identity context, and often integrated threat prevention."
+          },
+          {
+            "term": "Layer 4/Layer",
+            "explanation": "Layer-4 filtering makes decisions using transport/network information such as IP addresses, protocols, and TCP/UDP ports. Layer-7 filtering understands application protocols and content."
+          },
+          {
+            "term": "7",
+            "explanation": "Infrastructure monitoring observes networks, cloud configuration, appliances, links, and supporting resources. NSM analyzes network behavior, while CSPM evaluates cloud security posture and misconfiguration."
+          }
+        ],
+        "defs": [
+          {
+            "term": "Firewall",
+            "definition": "A control that permits or blocks network traffic according to configured rules."
+          },
+          {
+            "term": "NGFW",
+            "definition": "Next-Generation Firewall: a firewall with capabilities such as application awareness, deeper inspection, and integrated threat controls."
+          },
+          {
+            "term": "WAF",
+            "definition": "Web Application Firewall: filters HTTP/HTTPS traffic to protect web applications."
+          }
+        ],
+        "check_q": "Without looking back, explain Firewall Types and describe at least two key ideas from this section.",
+        "check_a": "Firewalls can filter at different layers and may specialize in different traffic. Traditional firewalls focus on network/transport rules; WAFs protect web applications; UTM and NGFW platforms combine broader capabilities. Key ideas include: Web; Application; Firewall; (WAF); Unified.",
+        "points": [
+          "Web",
+          "Application",
+          "Firewall",
+          "(WAF)",
+          "Unified",
+          "Threat",
+          "Management",
+          "(UTM)",
+          "Nextgeneration",
+          "Firewall",
+          "(NGFW)",
+          "Layer 4/Layer",
+          "7"
+        ]
+      }
+    },
+    {
+      "n": 13,
+      "title": "Web Application Firewall (WAF)",
+      "points": [
+        "• Application layer protection",
+        "• Granular policy control",
+        "• Monitor traffic",
+        "• Customized rules"
+      ],
+      "raw": "Web Application Firewall (WAF)\n• Application layer protection\n• Granular policy control\n• Monitor traffic\n• Customized rules",
+      "instructional": true,
+      "teach": "Read the source points, then explain the slide without looking. On Security+, recognition is not enough—you should be able to apply the concept to a scenario.",
+      "defs": [
+        [
+          "Firewall",
+          "A control that permits or blocks network traffic according to configured rules."
+        ],
+        [
+          "WAF",
+          "Web Application Firewall: filters HTTP/HTTPS traffic to protect web applications."
+        ]
+      ],
+      "course": {
+        "learn": "A Web Application Firewall (WAF) inspects HTTP/HTTPS traffic with awareness of web requests and application-layer attacks.",
+        "why": "Traditional network filtering may allow TCP 443 while malicious content still passes inside the permitted connection.",
+        "example": "A WAF blocks a request containing a known SQL-injection pattern before it reaches the web application.",
+        "exam": "WAF = web/application-layer protection. It complements secure coding; it is not a substitute for fixing the application.",
+        "breakdown": [
+          {
+            "term": "Application layer protection",
+            "explanation": "Application monitoring measures application behavior, performance, errors, and security events. APM focuses on health/performance, while a WAF inspects and protects web requests."
+          },
+          {
+            "term": "Granular policy control",
+            "explanation": "Within Web Application Firewall (WAF), this is a specific factor you should be able to recognize and explain. Connect it to the purpose of Infrastructure considerations rather than memorizing the phrase by itself."
+          },
+          {
+            "term": "Monitor traffic",
+            "explanation": "Continuously observe activity or state so abnormal behavior, drift, or failure can be detected early."
+          },
+          {
+            "term": "Customized rules",
+            "explanation": "Within Web Application Firewall (WAF), this is a specific factor you should be able to recognize and explain. Connect it to the purpose of Infrastructure considerations rather than memorizing the phrase by itself."
+          }
+        ],
+        "defs": [
+          {
+            "term": "Firewall",
+            "definition": "A control that permits or blocks network traffic according to configured rules."
+          },
+          {
+            "term": "WAF",
+            "definition": "Web Application Firewall: filters HTTP/HTTPS traffic to protect web applications."
+          }
+        ],
+        "check_q": "Without looking back, explain Web Application Firewall (WAF) and describe at least two key ideas from this section.",
+        "check_a": "A Web Application Firewall (WAF) inspects HTTP/HTTPS traffic with awareness of web requests and application-layer attacks. Key ideas include: Application layer protection; Granular policy control; Monitor traffic; Customized rules.",
+        "points": [
+          "Application layer protection",
+          "Granular policy control",
+          "Monitor traffic",
+          "Customized rules"
+        ]
+      }
+    },
+    {
+      "n": 14,
+      "title": "Unified Threat Management (UTM)",
+      "points": [
+        "• Multi-layered defense",
+        "• Centralized management",
+        "• Consistent configuration",
+        "• Policy enforcement"
+      ],
+      "raw": "Unified Threat Management (UTM)\n• Multi-layered defense\n• Centralized management\n• Consistent configuration\n• Policy enforcement",
+      "instructional": true,
+      "teach": "Read the source points, then explain the slide without looking. On Security+, recognition is not enough—you should be able to apply the concept to a scenario.",
+      "defs": [],
+      "course": {
+        "learn": "Unified Threat Management (UTM) combines multiple security functions—such as firewalling, IPS, filtering, malware inspection, and VPN—into one platform.",
+        "why": "Integration simplifies management for some environments, though it can create concentration and performance tradeoffs.",
+        "example": "A branch office deploys one appliance that provides firewall, IPS, web filtering, and VPN services.",
+        "exam": "Multiple security functions in one appliance = UTM. NGFW specifically emphasizes advanced/application-aware firewall capabilities.",
+        "breakdown": [
+          {
+            "term": "Multi-layered defense",
+            "explanation": "Within Unified Threat Management (UTM), this is a specific factor you should be able to recognize and explain. Connect it to the purpose of Infrastructure considerations rather than memorizing the phrase by itself."
+          },
+          {
+            "term": "Centralized management",
+            "explanation": "Within Unified Threat Management (UTM), this is a specific factor you should be able to recognize and explain. Connect it to the purpose of Infrastructure considerations rather than memorizing the phrase by itself."
+          },
+          {
+            "term": "Consistent configuration",
+            "explanation": "Within Unified Threat Management (UTM), this is a specific factor you should be able to recognize and explain. Connect it to the purpose of Infrastructure considerations rather than memorizing the phrase by itself."
+          },
+          {
+            "term": "Policy enforcement",
+            "explanation": "Enforces an allow, deny, or limited-access decision at the connection/resource boundary."
+          }
+        ],
+        "defs": [],
+        "check_q": "Without looking back, explain Unified Threat Management (UTM) and describe at least two key ideas from this section.",
+        "check_a": "Unified Threat Management (UTM) combines multiple security functions—such as firewalling, IPS, filtering, malware inspection, and VPN—into one platform. Key ideas include: Multi-layered defense; Centralized management; Consistent configuration; Policy enforcement.",
+        "points": [
+          "Multi-layered defense",
+          "Centralized management",
+          "Consistent configuration",
+          "Policy enforcement"
+        ]
+      }
+    },
+    {
+      "n": 15,
+      "title": "Next-generation Firewall (NGFW)",
+      "points": [
+        "• Advanced features",
+        "• Application awareness",
+        "• Threat intelligence integration"
+      ],
+      "raw": "Next-generation Firewall (NGFW)\n• Advanced features\n• Application awareness\n• Threat intelligence integration",
+      "instructional": true,
+      "teach": "Read the source points, then explain the slide without looking. On Security+, recognition is not enough—you should be able to apply the concept to a scenario.",
+      "defs": [
+        [
+          "Firewall",
+          "A control that permits or blocks network traffic according to configured rules."
+        ],
+        [
+          "NGFW",
+          "Next-Generation Firewall: a firewall with capabilities such as application awareness, deeper inspection, and integrated threat controls."
+        ]
+      ],
+      "course": {
+        "learn": "A Next-Generation Firewall (NGFW) extends traditional IP/port filtering with application awareness, deep inspection, identity context, and often integrated threat prevention.",
+        "why": "Applications can share ports, so Layer-7 awareness lets policy describe the actual application rather than only TCP/UDP numbers.",
+        "example": "A firewall allows Microsoft 365 traffic on HTTPS but blocks an unauthorized file-sharing application using the same port.",
+        "exam": "Application-aware firewall = NGFW. Traditional Layer-4 filtering mainly uses addresses, protocols, and ports.",
+        "breakdown": [
+          {
+            "term": "Advanced features",
+            "explanation": "Within Next-generation Firewall (NGFW), this is a specific factor you should be able to recognize and explain. Connect it to the purpose of Infrastructure considerations rather than memorizing the phrase by itself."
+          },
+          {
+            "term": "Application awareness",
+            "explanation": "Application monitoring measures application behavior, performance, errors, and security events. APM focuses on health/performance, while a WAF inspects and protects web requests."
+          },
+          {
+            "term": "Threat intelligence integration",
+            "explanation": "Within Next-generation Firewall (NGFW), this is a specific factor you should be able to recognize and explain. Connect it to the purpose of Infrastructure considerations rather than memorizing the phrase by itself."
+          }
+        ],
+        "defs": [
+          {
+            "term": "Firewall",
+            "definition": "A control that permits or blocks network traffic according to configured rules."
+          },
+          {
+            "term": "NGFW",
+            "definition": "Next-Generation Firewall: a firewall with capabilities such as application awareness, deeper inspection, and integrated threat controls."
+          }
+        ],
+        "check_q": "Without looking back, explain Next-generation Firewall (NGFW) and describe at least two key ideas from this section.",
+        "check_a": "A Next-Generation Firewall (NGFW) extends traditional IP/port filtering with application awareness, deep inspection, identity context, and often integrated threat prevention. Key ideas include: Advanced features; Application awareness; Threat intelligence integration.",
+        "points": [
+          "Advanced features",
+          "Application awareness",
+          "Threat intelligence integration"
+        ]
+      }
+    },
+    {
+      "n": 16,
+      "title": "Layer 4/Layer 7",
+      "points": [
+        "• Use Layer 4 firewalls to filter",
+        "traffic based on source and",
+        "destination IP addresses and",
+        "port numbers",
+        "• Employ Layer 7 firewalls to",
+        "understand and filter traffic at",
+        "the application layer"
+      ],
+      "raw": "Layer 4/Layer 7\n• Use Layer 4 firewalls to filter\ntraffic based on source and\ndestination IP addresses and\nport numbers\n• Employ Layer 7 firewalls to\nunderstand and filter traffic at\nthe application layer",
+      "instructional": true,
+      "teach": "Read the source points, then explain the slide without looking. On Security+, recognition is not enough—you should be able to apply the concept to a scenario.",
+      "defs": [],
+      "course": {
+        "learn": "Layer-4 filtering makes decisions using transport/network information such as IP addresses, protocols, and TCP/UDP ports. Layer-7 filtering understands application protocols and content.",
+        "why": "Deeper inspection enables more precise policy but costs more processing and may require decryption visibility.",
+        "example": "A Layer-4 rule allows TCP 443; a Layer-7 rule permits approved SaaS traffic while blocking another application that also uses HTTPS.",
+        "exam": "L4 = ports/protocols. L7 = application/content awareness.",
+        "breakdown": [
+          {
+            "term": "Use Layer 4 firewalls to filter traffic based on source and",
+            "explanation": "Filter network traffic according to security rules, usually by source, destination, protocol, port, application, or context."
+          },
+          {
+            "term": "destination IP addresses and port numbers",
+            "explanation": "Within Layer 4/Layer 7, this is a specific factor you should be able to recognize and explain. Connect it to the purpose of Infrastructure considerations rather than memorizing the phrase by itself."
+          },
+          {
+            "term": "Employ Layer 7 firewalls to understand and filter traffic at",
+            "explanation": "Filter network traffic according to security rules, usually by source, destination, protocol, port, application, or context."
+          },
+          {
+            "term": "the application layer",
+            "explanation": "Application monitoring measures application behavior, performance, errors, and security events. APM focuses on health/performance, while a WAF inspects and protects web requests."
+          }
+        ],
+        "defs": [],
+        "check_q": "Without looking back, explain Layer 4/Layer 7 and describe at least two key ideas from this section.",
+        "check_a": "Layer-4 filtering makes decisions using transport/network information such as IP addresses, protocols, and TCP/UDP ports. Layer-7 filtering understands application protocols and content. Key ideas include: Use Layer 4 firewalls to filter traffic based on source and; destination IP addresses and port numbers; Employ Layer 7 firewalls to understand and filter traffic at; the application layer.",
+        "points": [
+          "Use Layer 4 firewalls to filter traffic based on source and",
+          "destination IP addresses and port numbers",
+          "Employ Layer 7 firewalls to understand and filter traffic at",
+          "the application layer"
+        ]
+      }
+    },
+    {
+      "n": 17,
+      "title": "Secure Communication/Access",
+      "points": [],
+      "raw": "Secure\nCommunication/Access",
+      "instructional": false,
+      "teach": "Read the source points, then explain the slide without looking. On Security+, recognition is not enough—you should be able to apply the concept to a scenario.",
+      "defs": []
+    }
+  ],
+  "slide_count": 17,
+  "instructional_count": 15,
+  "concepts": [
+    "Device Placement",
+    "Security Zones",
+    "Attack Surface",
+    "Connectivity",
+    "Failure Modes",
+    "Device Attribute",
+    "Network Appliances",
+    "Port Security",
+    "Firewall Types",
+    "Web Application Firewall (WAF)",
+    "Unified Threat Management (UTM)",
+    "Next-generation Firewall (NGFW)"
+  ],
+  "source_filename": "11.01_Infrastructure_considerations.pdf"
+}

@@ -1,0 +1,151 @@
+{
+  "id": "04.05",
+  "chapter": 4,
+  "sub": 5,
+  "title": "Hashing and Salting",
+  "chapter_name": "Cryptography & PKI",
+  "slides": [
+    {
+      "n": 1,
+      "title": "Hashing and Salting",
+      "points": [],
+      "raw": "Hashing and Salting",
+      "instructional": false,
+      "teach": "Read the source points, then explain the slide without looking. On Security+, recognition is not enough—you should be able to apply the concept to a scenario.",
+      "defs": [
+        [
+          "Hashing",
+          "A one-way function that maps data to a fixed-size digest; commonly used for integrity verification and password storage."
+        ]
+      ]
+    },
+    {
+      "n": 2,
+      "title": "Hashing",
+      "points": [
+        "Message Digest 5 (MD5)",
+        "Secure Hash Algorithm (SHA)",
+        "Hash-based Message Authentication Code (HMAC)"
+      ],
+      "raw": "Hashing\nMessage Digest 5 (MD5)\nSecure Hash Algorithm (SHA)\nHash-based Message Authentication Code (HMAC)",
+      "instructional": true,
+      "teach": "Read the source points, then explain the slide without looking. On Security+, recognition is not enough—you should be able to apply the concept to a scenario.",
+      "defs": [
+        [
+          "Authentication",
+          "Proving an identity—answering “who are you?”"
+        ],
+        [
+          "Hashing",
+          "A one-way function that maps data to a fixed-size digest; commonly used for integrity verification and password storage."
+        ]
+      ],
+      "course": {
+        "learn": "Hashing produces a fixed-size digest from input data using a one-way function. It is used to verify integrity and to store password verifiers when combined with appropriate password-hashing techniques.",
+        "why": "If the input changes, the digest should change, allowing systems to detect tampering without needing the original content to be secret.",
+        "example": "A downloaded ISO is hashed with SHA-256 and compared with the publisher's published digest.",
+        "exam": "Hashing is not encryption: there is no decryption key. Hash comparison is an integrity clue.",
+        "breakdown": [
+          {
+            "term": "Message Digest 5 (MD5)",
+            "explanation": "Within Hashing, this is a specific factor you should be able to recognize and explain. Connect it to the purpose of Hashing and Salting rather than memorizing the phrase by itself."
+          },
+          {
+            "term": "Secure Hash Algorithm (SHA)",
+            "explanation": "Within Hashing, this is a specific factor you should be able to recognize and explain. Connect it to the purpose of Hashing and Salting rather than memorizing the phrase by itself."
+          },
+          {
+            "term": "Hash-based Message Authentication Code (HMAC)",
+            "explanation": "Authentication is the process of proving an identity. Factors can be something you know, have, are, do, or somewhere you are; MFA requires factors from more than one category."
+          }
+        ],
+        "defs": [
+          {
+            "term": "Authentication",
+            "definition": "Proving an identity—answering “who are you?”"
+          },
+          {
+            "term": "Hashing",
+            "definition": "A one-way function that maps data to a fixed-size digest; commonly used for integrity verification and password storage."
+          }
+        ],
+        "check_q": "Without looking back, explain Hashing and describe at least two key ideas from this section.",
+        "check_a": "Hashing produces a fixed-size digest from input data using a one-way function. It is used to verify integrity and to store password verifiers when combined with appropriate password-hashing techniques. Key ideas include: Message Digest 5 (MD5); Secure Hash Algorithm (SHA); Hash-based Message Authentication Code (HMAC).",
+        "points": [
+          "Message Digest 5 (MD5)",
+          "Secure Hash Algorithm (SHA)",
+          "Hash-based Message Authentication Code (HMAC)"
+        ]
+      }
+    },
+    {
+      "n": 3,
+      "title": "Salting",
+      "points": [
+        "• Random Salt Generation",
+        "• Combining Salt and Password",
+        "• Storing Salt and Hashed Password",
+        "• Preventing Rainbow Table Attacks",
+        "• Enhancing Security"
+      ],
+      "raw": "Salting\n• Random Salt Generation\n• Combining Salt and Password\n• Storing Salt and Hashed Password\n• Preventing Rainbow Table Attacks\n• Enhancing Security",
+      "instructional": true,
+      "teach": "Read the source points, then explain the slide without looking. On Security+, recognition is not enough—you should be able to apply the concept to a scenario.",
+      "defs": [],
+      "course": {
+        "learn": "A salt is unique random data combined with a password before hashing. It ensures that two users with the same password do not end up with the same stored hash.",
+        "why": "Salts make precomputed rainbow tables far less useful and force attackers to crack each password hash separately.",
+        "example": "Two users both choose “Winter2026!”, but different salts produce different stored hashes.",
+        "exam": "Salt does not need to be secret; uniqueness/randomness is the key property.",
+        "breakdown": [
+          {
+            "term": "Random Salt Generation",
+            "explanation": "Within Salting, this is a specific factor you should be able to recognize and explain. Connect it to the purpose of Hashing and Salting rather than memorizing the phrase by itself."
+          },
+          {
+            "term": "Combining Salt and Password",
+            "explanation": "Within Salting, this is a specific factor you should be able to recognize and explain. Connect it to the purpose of Hashing and Salting rather than memorizing the phrase by itself."
+          },
+          {
+            "term": "Storing Salt and Hashed Password",
+            "explanation": "Within Salting, this is a specific factor you should be able to recognize and explain. Connect it to the purpose of Hashing and Salting rather than memorizing the phrase by itself."
+          },
+          {
+            "term": "Preventing Rainbow Table Attacks",
+            "explanation": "Within Salting, this is a specific factor you should be able to recognize and explain. Connect it to the purpose of Hashing and Salting rather than memorizing the phrase by itself."
+          },
+          {
+            "term": "Enhancing Security",
+            "explanation": "This contributes to reducing risk in the broader Hashing and Salting design and should be evaluated as part of defense in depth."
+          }
+        ],
+        "defs": [],
+        "check_q": "Without looking back, explain Salting and describe at least two key ideas from this section.",
+        "check_a": "A salt is unique random data combined with a password before hashing. It ensures that two users with the same password do not end up with the same stored hash. Key ideas include: Random Salt Generation; Combining Salt and Password; Storing Salt and Hashed Password; Preventing Rainbow Table Attacks; Enhancing Security.",
+        "points": [
+          "Random Salt Generation",
+          "Combining Salt and Password",
+          "Storing Salt and Hashed Password",
+          "Preventing Rainbow Table Attacks",
+          "Enhancing Security"
+        ]
+      }
+    },
+    {
+      "n": 4,
+      "title": "Digital Signatures",
+      "points": [],
+      "raw": "Digital Signatures",
+      "instructional": false,
+      "teach": "Read the source points, then explain the slide without looking. On Security+, recognition is not enough—you should be able to apply the concept to a scenario.",
+      "defs": []
+    }
+  ],
+  "slide_count": 4,
+  "instructional_count": 2,
+  "concepts": [
+    "Hashing",
+    "Salting"
+  ],
+  "source_filename": "04.05_Hashing_and_Salting.pdf"
+}

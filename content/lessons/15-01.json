@@ -1,0 +1,635 @@
+{
+  "id": "15.01",
+  "chapter": 15,
+  "sub": 1,
+  "title": "Security implications of proper hardware, software, and data asset management",
+  "chapter_name": "Asset Management",
+  "slides": [
+    {
+      "n": 1,
+      "title": "Security Implications of Proper Hardware, Software, and Data Asset Management",
+      "points": [],
+      "raw": "Security Implications of Proper\nHardware, Software, and Data\nAsset Management",
+      "instructional": false,
+      "teach": "Focus on the new risk introduced by the technology or design, then connect that risk to an appropriate mitigation.",
+      "defs": []
+    },
+    {
+      "n": 2,
+      "title": "Acquisition and Procurement Process",
+      "points": [
+        "Needs",
+        "Assessment",
+        "Market Research",
+        "Vendor Selection",
+        "Request for",
+        "Proposal (RFP) or",
+        "Quotation (RFQ)",
+        "Procurement",
+        "Contract",
+        "Finalization",
+        "Negotiation",
+        "Proposal",
+        "Evaluation",
+        "Implementation",
+        "and Integration",
+        "Quality",
+        "Assurance",
+        "Training and",
+        "Transition",
+        "Monitoring and",
+        "Evaluation"
+      ],
+      "raw": "Acquisition and Procurement Process\nNeeds\nAssessment\nMarket Research\nVendor Selection\nRequest for\nProposal (RFP) or\nQuotation (RFQ)\nProcurement\nContract\nFinalization\nNegotiation\nProposal\nEvaluation\nImplementation\nand Integration\nQuality\nAssurance\nTraining and\nTransition\nMonitoring and\nEvaluation",
+      "instructional": true,
+      "teach": "Study the order and purpose of each step. Process questions often ask what should happen next.",
+      "defs": [],
+      "course": {
+        "learn": "Asset management tracks hardware, software, and data from acquisition through assignment, operation, maintenance, and secure disposal. A reliable inventory links assets to owners, location, status, and security requirements.",
+        "why": "Organizations cannot patch, monitor, classify, or decommission assets they do not know exist.",
+        "example": "A laptop is recorded at purchase, assigned to an employee, monitored in inventory, wiped at return, and physically destroyed or reused according to policy.",
+        "exam": "Inventory/ownership/lifecycle are key. Disposal must include appropriate data sanitization or destruction before equipment leaves control.",
+        "breakdown": [
+          {
+            "term": "Needs",
+            "explanation": "Within Acquisition and Procurement Process, this is a specific factor you should be able to recognize and explain. Connect it to the purpose of Security implications of proper hardware, software, and data asset management rather than memorizing the phrase by itself."
+          },
+          {
+            "term": "Assessment",
+            "explanation": "Evaluate risk and verify whether controls meet organizational, legal, or regulatory requirements."
+          },
+          {
+            "term": "Market Research",
+            "explanation": "Within Acquisition and Procurement Process, this is a specific factor you should be able to recognize and explain. Connect it to the purpose of Security implications of proper hardware, software, and data asset management rather than memorizing the phrase by itself."
+          },
+          {
+            "term": "Vendor Selection",
+            "explanation": "Within Acquisition and Procurement Process, this is a specific factor you should be able to recognize and explain. Connect it to the purpose of Security implications of proper hardware, software, and data asset management rather than memorizing the phrase by itself."
+          },
+          {
+            "term": "Request for Proposal (RFP) or",
+            "explanation": "Within Acquisition and Procurement Process, this is a specific factor you should be able to recognize and explain. Connect it to the purpose of Security implications of proper hardware, software, and data asset management rather than memorizing the phrase by itself."
+          },
+          {
+            "term": "Quotation (RFQ)",
+            "explanation": "Within Acquisition and Procurement Process, this is a specific factor you should be able to recognize and explain. Connect it to the purpose of Security implications of proper hardware, software, and data asset management rather than memorizing the phrase by itself."
+          },
+          {
+            "term": "Procurement",
+            "explanation": "Within Acquisition and Procurement Process, this is a specific factor you should be able to recognize and explain. Connect it to the purpose of Security implications of proper hardware, software, and data asset management rather than memorizing the phrase by itself."
+          },
+          {
+            "term": "Contract",
+            "explanation": "Within Acquisition and Procurement Process, this is a specific factor you should be able to recognize and explain. Connect it to the purpose of Security implications of proper hardware, software, and data asset management rather than memorizing the phrase by itself."
+          },
+          {
+            "term": "Finalization",
+            "explanation": "Within Acquisition and Procurement Process, this is a specific factor you should be able to recognize and explain. Connect it to the purpose of Security implications of proper hardware, software, and data asset management rather than memorizing the phrase by itself."
+          },
+          {
+            "term": "Negotiation",
+            "explanation": "Within Acquisition and Procurement Process, this is a specific factor you should be able to recognize and explain. Connect it to the purpose of Security implications of proper hardware, software, and data asset management rather than memorizing the phrase by itself."
+          },
+          {
+            "term": "Proposal",
+            "explanation": "Within Acquisition and Procurement Process, this is a specific factor you should be able to recognize and explain. Connect it to the purpose of Security implications of proper hardware, software, and data asset management rather than memorizing the phrase by itself."
+          },
+          {
+            "term": "Evaluation",
+            "explanation": "Within Acquisition and Procurement Process, this is a specific factor you should be able to recognize and explain. Connect it to the purpose of Security implications of proper hardware, software, and data asset management rather than memorizing the phrase by itself."
+          },
+          {
+            "term": "Implementation and Integration",
+            "explanation": "Within Acquisition and Procurement Process, this is a specific factor you should be able to recognize and explain. Connect it to the purpose of Security implications of proper hardware, software, and data asset management rather than memorizing the phrase by itself."
+          },
+          {
+            "term": "Quality",
+            "explanation": "Within Acquisition and Procurement Process, this is a specific factor you should be able to recognize and explain. Connect it to the purpose of Security implications of proper hardware, software, and data asset management rather than memorizing the phrase by itself."
+          },
+          {
+            "term": "Assurance",
+            "explanation": "Within Acquisition and Procurement Process, this is a specific factor you should be able to recognize and explain. Connect it to the purpose of Security implications of proper hardware, software, and data asset management rather than memorizing the phrase by itself."
+          },
+          {
+            "term": "Training and Transition",
+            "explanation": "Within Acquisition and Procurement Process, this is a specific factor you should be able to recognize and explain. Connect it to the purpose of Security implications of proper hardware, software, and data asset management rather than memorizing the phrase by itself."
+          },
+          {
+            "term": "Monitoring and Evaluation",
+            "explanation": "Security monitoring continuously observes systems, networks, applications, and logs for suspicious activity, failures, policy violations, and indicators of compromise."
+          }
+        ],
+        "defs": [],
+        "check_q": "Without looking back, explain Acquisition and Procurement Process and describe at least two key ideas from this section.",
+        "check_a": "Asset management tracks hardware, software, and data from acquisition through assignment, operation, maintenance, and secure disposal. A reliable inventory links assets to owners, location, status, and security requirements. Key ideas include: Needs; Assessment; Market Research; Vendor Selection; Request for Proposal (RFP) or.",
+        "points": [
+          "Needs",
+          "Assessment",
+          "Market Research",
+          "Vendor Selection",
+          "Request for Proposal (RFP) or",
+          "Quotation (RFQ)",
+          "Procurement",
+          "Contract",
+          "Finalization",
+          "Negotiation",
+          "Proposal",
+          "Evaluation",
+          "Implementation and Integration",
+          "Quality",
+          "Assurance",
+          "Training and Transition",
+          "Monitoring and Evaluation"
+        ]
+      }
+    },
+    {
+      "n": 3,
+      "title": "Assignment/Accounting",
+      "points": [
+        "Ownership",
+        "Classification",
+        "•Clear",
+        "Accountability",
+        "•Access Control",
+        "•Data Sensitivity",
+        "•Software",
+        "Criticality"
+      ],
+      "raw": "Assignment/Accounting\nOwnership\nClassification\n•Clear\nAccountability\n•Access Control\n•Data Sensitivity\n•Software\nCriticality",
+      "instructional": true,
+      "teach": "Read the source points, then explain the slide without looking. On Security+, recognition is not enough—you should be able to apply the concept to a scenario.",
+      "defs": [
+        [
+          "Accounting",
+          "Recording activity through logs, audit trails, and session records."
+        ]
+      ],
+      "course": {
+        "learn": "Asset management tracks hardware, software, and data from acquisition through assignment, operation, maintenance, and secure disposal. A reliable inventory links assets to owners, location, status, and security requirements.",
+        "why": "Organizations cannot patch, monitor, classify, or decommission assets they do not know exist.",
+        "example": "A laptop is recorded at purchase, assigned to an employee, monitored in inventory, wiped at return, and physically destroyed or reused according to policy.",
+        "exam": "Inventory/ownership/lifecycle are key. Disposal must include appropriate data sanitization or destruction before equipment leaves control.",
+        "breakdown": [
+          {
+            "term": "Ownership",
+            "explanation": "Within Assignment/Accounting, this is a specific factor you should be able to recognize and explain. Connect it to the purpose of Security implications of proper hardware, software, and data asset management rather than memorizing the phrase by itself."
+          },
+          {
+            "term": "Classification",
+            "explanation": "Within Assignment/Accounting, this is a specific factor you should be able to recognize and explain. Connect it to the purpose of Security implications of proper hardware, software, and data asset management rather than memorizing the phrase by itself."
+          },
+          {
+            "term": "Clear",
+            "explanation": "Within Assignment/Accounting, this is a specific factor you should be able to recognize and explain. Connect it to the purpose of Security implications of proper hardware, software, and data asset management rather than memorizing the phrase by itself."
+          },
+          {
+            "term": "Accountability",
+            "explanation": "Within Assignment/Accounting, this is a specific factor you should be able to recognize and explain. Connect it to the purpose of Security implications of proper hardware, software, and data asset management rather than memorizing the phrase by itself."
+          },
+          {
+            "term": "Access Control",
+            "explanation": "Use hard-to-guess credentials and limit what authenticated users can reach."
+          },
+          {
+            "term": "Data Sensitivity",
+            "explanation": "Within Assignment/Accounting, this is a specific factor you should be able to recognize and explain. Connect it to the purpose of Security implications of proper hardware, software, and data asset management rather than memorizing the phrase by itself."
+          },
+          {
+            "term": "Software",
+            "explanation": "Detect, block, quarantine, or remove malicious software on endpoints."
+          },
+          {
+            "term": "Criticality",
+            "explanation": "Within Assignment/Accounting, this is a specific factor you should be able to recognize and explain. Connect it to the purpose of Security implications of proper hardware, software, and data asset management rather than memorizing the phrase by itself."
+          }
+        ],
+        "defs": [
+          {
+            "term": "Accounting",
+            "definition": "Recording activity through logs, audit trails, and session records."
+          }
+        ],
+        "check_q": "Without looking back, explain Assignment/Accounting and describe at least two key ideas from this section.",
+        "check_a": "Asset management tracks hardware, software, and data from acquisition through assignment, operation, maintenance, and secure disposal. A reliable inventory links assets to owners, location, status, and security requirements. Key ideas include: Ownership; Classification; Clear; Accountability; Access Control.",
+        "points": [
+          "Ownership",
+          "Classification",
+          "Clear",
+          "Accountability",
+          "Access Control",
+          "Data Sensitivity",
+          "Software",
+          "Criticality"
+        ]
+      }
+    },
+    {
+      "n": 4,
+      "title": "Monitoring/Asset Tracking",
+      "points": [
+        "Inventory",
+        "Enumeration",
+        "• Detection of",
+        "Unauthorized",
+        "Assets",
+        "• License Compliance",
+        "• Identifying",
+        "Vulnerabilities",
+        "• Patch Management"
+      ],
+      "raw": "Monitoring/Asset Tracking\nInventory\nEnumeration\n• Detection of\nUnauthorized\nAssets\n• License Compliance\n• Identifying\nVulnerabilities\n• Patch Management",
+      "instructional": true,
+      "teach": "Read the source points, then explain the slide without looking. On Security+, recognition is not enough—you should be able to apply the concept to a scenario.",
+      "defs": [],
+      "course": {
+        "learn": "Asset management tracks hardware, software, and data from acquisition through assignment, operation, maintenance, and secure disposal. A reliable inventory links assets to owners, location, status, and security requirements.",
+        "why": "Organizations cannot patch, monitor, classify, or decommission assets they do not know exist.",
+        "example": "A laptop is recorded at purchase, assigned to an employee, monitored in inventory, wiped at return, and physically destroyed or reused according to policy.",
+        "exam": "Inventory/ownership/lifecycle are key. Disposal must include appropriate data sanitization or destruction before equipment leaves control.",
+        "breakdown": [
+          {
+            "term": "Inventory",
+            "explanation": "Within Monitoring/Asset Tracking, this is a specific factor you should be able to recognize and explain. Connect it to the purpose of Security implications of proper hardware, software, and data asset management rather than memorizing the phrase by itself."
+          },
+          {
+            "term": "Enumeration",
+            "explanation": "Within Monitoring/Asset Tracking, this is a specific factor you should be able to recognize and explain. Connect it to the purpose of Security implications of proper hardware, software, and data asset management rather than memorizing the phrase by itself."
+          },
+          {
+            "term": "Detection of Unauthorized",
+            "explanation": "Within Monitoring/Asset Tracking, this is a specific factor you should be able to recognize and explain. Connect it to the purpose of Security implications of proper hardware, software, and data asset management rather than memorizing the phrase by itself."
+          },
+          {
+            "term": "Assets",
+            "explanation": "Within Monitoring/Asset Tracking, this is a specific factor you should be able to recognize and explain. Connect it to the purpose of Security implications of proper hardware, software, and data asset management rather than memorizing the phrase by itself."
+          },
+          {
+            "term": "License Compliance",
+            "explanation": "This relates to meeting and demonstrating required legal, regulatory, contractual, or policy obligations."
+          },
+          {
+            "term": "Identifying",
+            "explanation": "The goal is to discover and clearly document the condition so the organization can decide what action to take next."
+          },
+          {
+            "term": "Vulnerabilities",
+            "explanation": "Within Monitoring/Asset Tracking, this is a specific factor you should be able to recognize and explain. Connect it to the purpose of Security implications of proper hardware, software, and data asset management rather than memorizing the phrase by itself."
+          },
+          {
+            "term": "Patch Management",
+            "explanation": "Within Monitoring/Asset Tracking, this is a specific factor you should be able to recognize and explain. Connect it to the purpose of Security implications of proper hardware, software, and data asset management rather than memorizing the phrase by itself."
+          }
+        ],
+        "defs": [],
+        "check_q": "Without looking back, explain Monitoring/Asset Tracking and describe at least two key ideas from this section.",
+        "check_a": "Asset management tracks hardware, software, and data from acquisition through assignment, operation, maintenance, and secure disposal. A reliable inventory links assets to owners, location, status, and security requirements. Key ideas include: Inventory; Enumeration; Detection of Unauthorized; Assets; License Compliance.",
+        "points": [
+          "Inventory",
+          "Enumeration",
+          "Detection of Unauthorized",
+          "Assets",
+          "License Compliance",
+          "Identifying",
+          "Vulnerabilities",
+          "Patch Management"
+        ]
+      }
+    },
+    {
+      "n": 5,
+      "title": "Disposal/Decommissioning",
+      "points": [
+        "Sanitization",
+        "Destruction",
+        "Certification",
+        "Data Retention"
+      ],
+      "raw": "Disposal/Decommissioning\nSanitization\nDestruction\nCertification\nData Retention",
+      "instructional": true,
+      "teach": "Read the source points, then explain the slide without looking. On Security+, recognition is not enough—you should be able to apply the concept to a scenario.",
+      "defs": [],
+      "course": {
+        "learn": "Asset management tracks hardware, software, and data from acquisition through assignment, operation, maintenance, and secure disposal. A reliable inventory links assets to owners, location, status, and security requirements.",
+        "why": "Organizations cannot patch, monitor, classify, or decommission assets they do not know exist.",
+        "example": "A laptop is recorded at purchase, assigned to an employee, monitored in inventory, wiped at return, and physically destroyed or reused according to policy.",
+        "exam": "Inventory/ownership/lifecycle are key. Disposal must include appropriate data sanitization or destruction before equipment leaves control.",
+        "breakdown": [
+          {
+            "term": "Sanitization",
+            "explanation": "Within Disposal/Decommissioning, this is a specific factor you should be able to recognize and explain. Connect it to the purpose of Security implications of proper hardware, software, and data asset management rather than memorizing the phrase by itself."
+          },
+          {
+            "term": "Destruction",
+            "explanation": "Asset management tracks hardware, software, and data from acquisition through assignment, operation, maintenance, and secure disposal. A reliable inventory links assets to owners, location, status, and security requirements."
+          },
+          {
+            "term": "Certification",
+            "explanation": "Within Disposal/Decommissioning, this is a specific factor you should be able to recognize and explain. Connect it to the purpose of Security implications of proper hardware, software, and data asset management rather than memorizing the phrase by itself."
+          },
+          {
+            "term": "Data Retention",
+            "explanation": "Within Disposal/Decommissioning, this is a specific factor you should be able to recognize and explain. Connect it to the purpose of Security implications of proper hardware, software, and data asset management rather than memorizing the phrase by itself."
+          }
+        ],
+        "defs": [],
+        "check_q": "Without looking back, explain Disposal/Decommissioning and describe at least two key ideas from this section.",
+        "check_a": "Asset management tracks hardware, software, and data from acquisition through assignment, operation, maintenance, and secure disposal. A reliable inventory links assets to owners, location, status, and security requirements. Key ideas include: Sanitization; Destruction; Certification; Data Retention.",
+        "points": [
+          "Sanitization",
+          "Destruction",
+          "Certification",
+          "Data Retention"
+        ]
+      }
+    },
+    {
+      "n": 6,
+      "title": "Destruction",
+      "points": [
+        "Burning",
+        "Shredding",
+        "Pulping",
+        "Pulverizing",
+        "Degaussing",
+        "Purging",
+        "Third-Party",
+        "Solutions"
+      ],
+      "raw": "Destruction\nBurning\nShredding\nPulping\nPulverizing\nDegaussing\nPurging\nThird-Party\nSolutions",
+      "instructional": true,
+      "teach": "Read the source points, then explain the slide without looking. On Security+, recognition is not enough—you should be able to apply the concept to a scenario.",
+      "defs": [],
+      "course": {
+        "learn": "Asset management tracks hardware, software, and data from acquisition through assignment, operation, maintenance, and secure disposal. A reliable inventory links assets to owners, location, status, and security requirements.",
+        "why": "Organizations cannot patch, monitor, classify, or decommission assets they do not know exist.",
+        "example": "A laptop is recorded at purchase, assigned to an employee, monitored in inventory, wiped at return, and physically destroyed or reused according to policy.",
+        "exam": "Inventory/ownership/lifecycle are key. Disposal must include appropriate data sanitization or destruction before equipment leaves control.",
+        "breakdown": [
+          {
+            "term": "Burning",
+            "explanation": "Within Destruction, this is a specific factor you should be able to recognize and explain. Connect it to the purpose of Security implications of proper hardware, software, and data asset management rather than memorizing the phrase by itself."
+          },
+          {
+            "term": "Shredding",
+            "explanation": "Within Destruction, this is a specific factor you should be able to recognize and explain. Connect it to the purpose of Security implications of proper hardware, software, and data asset management rather than memorizing the phrase by itself."
+          },
+          {
+            "term": "Pulping",
+            "explanation": "Within Destruction, this is a specific factor you should be able to recognize and explain. Connect it to the purpose of Security implications of proper hardware, software, and data asset management rather than memorizing the phrase by itself."
+          },
+          {
+            "term": "Pulverizing",
+            "explanation": "Within Destruction, this is a specific factor you should be able to recognize and explain. Connect it to the purpose of Security implications of proper hardware, software, and data asset management rather than memorizing the phrase by itself."
+          },
+          {
+            "term": "Degaussing",
+            "explanation": "Within Destruction, this is a specific factor you should be able to recognize and explain. Connect it to the purpose of Security implications of proper hardware, software, and data asset management rather than memorizing the phrase by itself."
+          },
+          {
+            "term": "Purging",
+            "explanation": "Within Destruction, this is a specific factor you should be able to recognize and explain. Connect it to the purpose of Security implications of proper hardware, software, and data asset management rather than memorizing the phrase by itself."
+          },
+          {
+            "term": "Third-Party",
+            "explanation": "Third-party risk comes from vendors, service providers, contractors, and dependencies that connect to systems or handle data. Their weaknesses can become your weaknesses."
+          },
+          {
+            "term": "Solutions",
+            "explanation": "Within Destruction, this is a specific factor you should be able to recognize and explain. Connect it to the purpose of Security implications of proper hardware, software, and data asset management rather than memorizing the phrase by itself."
+          }
+        ],
+        "defs": [],
+        "check_q": "Without looking back, explain Destruction and describe at least two key ideas from this section.",
+        "check_a": "Asset management tracks hardware, software, and data from acquisition through assignment, operation, maintenance, and secure disposal. A reliable inventory links assets to owners, location, status, and security requirements. Key ideas include: Burning; Shredding; Pulping; Pulverizing; Degaussing.",
+        "points": [
+          "Burning",
+          "Shredding",
+          "Pulping",
+          "Pulverizing",
+          "Degaussing",
+          "Purging",
+          "Third-Party",
+          "Solutions"
+        ]
+      }
+    },
+    {
+      "n": 7,
+      "title": "Security Implications",
+      "points": [
+        "Vendor",
+        "Security",
+        "Assessment",
+        "Supply Chain",
+        "Security",
+        "Data",
+        "Protection and",
+        "Privacy",
+        "Security",
+        "Features and",
+        "Configurations",
+        "Patch and",
+        "Update",
+        "Management",
+        "Compliance",
+        "and Legal",
+        "Considerations"
+      ],
+      "raw": "Security Implications\nVendor\nSecurity\nAssessment\nSupply Chain\nSecurity\nData\nProtection and\nPrivacy\nSecurity\nFeatures and\nConfigurations\nPatch and\nUpdate\nManagement\nCompliance\nand Legal\nConsiderations",
+      "instructional": true,
+      "teach": "Focus on the new risk introduced by the technology or design, then connect that risk to an appropriate mitigation.",
+      "defs": [],
+      "course": {
+        "learn": "This section focuses on **Security Implications** within **Security implications of proper hardware, software, and data asset management**. Asset management tracks hardware, software, and data from acquisition through assignment, operation, maintenance, and secure disposal. A reliable inventory links assets to owners, location, status, and security requirements.",
+        "why": "Organizations cannot patch, monitor, classify, or decommission assets they do not know exist.",
+        "example": "A laptop is recorded at purchase, assigned to an employee, monitored in inventory, wiped at return, and physically destroyed or reused according to policy.",
+        "exam": "Inventory/ownership/lifecycle are key. Disposal must include appropriate data sanitization or destruction before equipment leaves control.",
+        "breakdown": [
+          {
+            "term": "Vendor",
+            "explanation": "This is a factor that must be evaluated when using Security implications of proper hardware, software, and data asset management; ignoring it can create operational, security, cost, or compatibility risk."
+          },
+          {
+            "term": "Security",
+            "explanation": "Document required security rules and repeatable steps for carrying them out."
+          },
+          {
+            "term": "Assessment",
+            "explanation": "Evaluate risk and verify whether controls meet organizational, legal, or regulatory requirements."
+          },
+          {
+            "term": "Supply Chain",
+            "explanation": "A supply-chain attack compromises a trusted supplier, software dependency, hardware component, update mechanism, or service provider so the attacker can reach downstream customers."
+          },
+          {
+            "term": "Security",
+            "explanation": "Document required security rules and repeatable steps for carrying them out."
+          },
+          {
+            "term": "Data",
+            "explanation": "Legal/jurisdictional requirements that apply because of where data is stored or processed."
+          },
+          {
+            "term": "Protection and Privacy",
+            "explanation": "This is a factor that must be evaluated when using Security implications of proper hardware, software, and data asset management; ignoring it can create operational, security, cost, or compatibility risk."
+          },
+          {
+            "term": "Security",
+            "explanation": "Document required security rules and repeatable steps for carrying them out."
+          },
+          {
+            "term": "Features and Configurations",
+            "explanation": "This is a factor that must be evaluated when using Security implications of proper hardware, software, and data asset management; ignoring it can create operational, security, cost, or compatibility risk."
+          },
+          {
+            "term": "Patch and Update",
+            "explanation": "This is a factor that must be evaluated when using Security implications of proper hardware, software, and data asset management; ignoring it can create operational, security, cost, or compatibility risk."
+          },
+          {
+            "term": "Management",
+            "explanation": "This is a factor that must be evaluated when using Security implications of proper hardware, software, and data asset management; ignoring it can create operational, security, cost, or compatibility risk."
+          },
+          {
+            "term": "Compliance and Legal",
+            "explanation": "This is a factor that must be evaluated when using Security implications of proper hardware, software, and data asset management; ignoring it can create operational, security, cost, or compatibility risk."
+          },
+          {
+            "term": "Considerations",
+            "explanation": "Asset management tracks hardware, software, and data from acquisition through assignment, operation, maintenance, and secure disposal. A reliable inventory links assets to owners, location, status, and security requirements."
+          }
+        ],
+        "defs": [],
+        "check_q": "Without looking back, explain Security Implications and describe at least two key ideas from this section.",
+        "check_a": "This section focuses on **Security Implications** within **Security implications of proper hardware, software, and data asset management**. Asset management tracks hardware, software, and data from acquisition through assignment, operation, maintenance, and secure disposal. A reliable inventory links assets to owners, location, status, and security requirements. Key ideas include: Vendor; Security; Assessment; Supply Chain; Security.",
+        "points": [
+          "Vendor",
+          "Security",
+          "Assessment",
+          "Supply Chain",
+          "Security",
+          "Data",
+          "Protection and Privacy",
+          "Security",
+          "Features and Configurations",
+          "Patch and Update",
+          "Management",
+          "Compliance and Legal",
+          "Considerations"
+        ]
+      }
+    },
+    {
+      "n": 8,
+      "title": "Security Implications",
+      "points": [
+        "End-of-Life",
+        "Planning",
+        "Incident",
+        "Response",
+        "Planning",
+        "Training and",
+        "Awareness",
+        "Continuous",
+        "Monitoring",
+        "Documentation",
+        "and Auditing",
+        "Integration with",
+        "Existing Security",
+        "Infrastructure"
+      ],
+      "raw": "Security Implications\nEnd-of-Life\nPlanning\nIncident\nResponse\nPlanning\nTraining and\nAwareness\nContinuous\nMonitoring\nDocumentation\nand Auditing\nIntegration with\nExisting Security\nInfrastructure",
+      "instructional": true,
+      "teach": "Focus on the new risk introduced by the technology or design, then connect that risk to an appropriate mitigation.",
+      "defs": [],
+      "course": {
+        "learn": "This section focuses on **Security Implications** within **Security implications of proper hardware, software, and data asset management**. Asset management tracks hardware, software, and data from acquisition through assignment, operation, maintenance, and secure disposal. A reliable inventory links assets to owners, location, status, and security requirements.",
+        "why": "Organizations cannot patch, monitor, classify, or decommission assets they do not know exist.",
+        "example": "A laptop is recorded at purchase, assigned to an employee, monitored in inventory, wiped at return, and physically destroyed or reused according to policy.",
+        "exam": "Inventory/ownership/lifecycle are key. Disposal must include appropriate data sanitization or destruction before equipment leaves control.",
+        "breakdown": [
+          {
+            "term": "End-of-Life",
+            "explanation": "This is a factor that must be evaluated when using Security implications of proper hardware, software, and data asset management; ignoring it can create operational, security, cost, or compatibility risk."
+          },
+          {
+            "term": "Planning",
+            "explanation": "This is a factor that must be evaluated when using Security implications of proper hardware, software, and data asset management; ignoring it can create operational, security, cost, or compatibility risk."
+          },
+          {
+            "term": "Incident",
+            "explanation": "Define how an organization prepares for, detects, contains, eradicates, and recovers from security incidents."
+          },
+          {
+            "term": "Response",
+            "explanation": "Define how an organization prepares for, detects, contains, eradicates, and recovers from security incidents."
+          },
+          {
+            "term": "Planning",
+            "explanation": "This is a factor that must be evaluated when using Security implications of proper hardware, software, and data asset management; ignoring it can create operational, security, cost, or compatibility risk."
+          },
+          {
+            "term": "Training and Awareness",
+            "explanation": "This is a factor that must be evaluated when using Security implications of proper hardware, software, and data asset management; ignoring it can create operational, security, cost, or compatibility risk."
+          },
+          {
+            "term": "Continuous",
+            "explanation": "This is a factor that must be evaluated when using Security implications of proper hardware, software, and data asset management; ignoring it can create operational, security, cost, or compatibility risk."
+          },
+          {
+            "term": "Monitoring",
+            "explanation": "Review events from systems and applications to detect suspicious behavior or failures."
+          },
+          {
+            "term": "Documentation and Auditing",
+            "explanation": "Security documentation keeps diagrams, policies, procedures, configurations, and versions synchronized with the real environment."
+          },
+          {
+            "term": "Integration with Existing Security",
+            "explanation": "This is a factor that must be evaluated when using Security implications of proper hardware, software, and data asset management; ignoring it can create operational, security, cost, or compatibility risk."
+          },
+          {
+            "term": "Infrastructure",
+            "explanation": "Infrastructure monitoring observes networks, cloud configuration, appliances, links, and supporting resources. NSM analyzes network behavior, while CSPM evaluates cloud security posture and misconfiguration."
+          }
+        ],
+        "defs": [],
+        "check_q": "Without looking back, explain Security Implications and describe at least two key ideas from this section.",
+        "check_a": "This section focuses on **Security Implications** within **Security implications of proper hardware, software, and data asset management**. Asset management tracks hardware, software, and data from acquisition through assignment, operation, maintenance, and secure disposal. A reliable inventory links assets to owners, location, status, and security requirements. Key ideas include: End-of-Life; Planning; Incident; Response; Planning.",
+        "points": [
+          "End-of-Life",
+          "Planning",
+          "Incident",
+          "Response",
+          "Planning",
+          "Training and Awareness",
+          "Continuous",
+          "Monitoring",
+          "Documentation and Auditing",
+          "Integration with Existing Security",
+          "Infrastructure"
+        ]
+      }
+    },
+    {
+      "n": 9,
+      "title": "Identification Methods",
+      "points": [],
+      "raw": "Identification Methods",
+      "instructional": false,
+      "teach": "Read the source points, then explain the slide without looking. On Security+, recognition is not enough—you should be able to apply the concept to a scenario.",
+      "defs": []
+    }
+  ],
+  "slide_count": 9,
+  "instructional_count": 7,
+  "concepts": [
+    "Acquisition and Procurement Process",
+    "Assignment/Accounting",
+    "Monitoring/Asset Tracking",
+    "Disposal/Decommissioning",
+    "Destruction",
+    "Security Implications"
+  ],
+  "source_filename": "15.01_Security_implications_of_proper_hardware_software_and_data_asset_management.pdf"
+}

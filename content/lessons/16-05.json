@@ -1,0 +1,133 @@
+{
+  "id": "16.05",
+  "chapter": 16,
+  "sub": 5,
+  "title": "Reporting",
+  "chapter_name": "Vulnerability Management",
+  "slides": [
+    {
+      "n": 1,
+      "title": "Reporting",
+      "points": [],
+      "raw": "Reporting",
+      "instructional": false,
+      "teach": "Read the source points, then explain the slide without looking. On Security+, recognition is not enough—you should be able to apply the concept to a scenario.",
+      "defs": []
+    },
+    {
+      "n": 2,
+      "title": "Reporting",
+      "points": [
+        "Regular Reporting",
+        "Executive Summaries",
+        "Trend Analysis",
+        "Customized Reporting"
+      ],
+      "raw": "Reporting\nRegular Reporting\nExecutive Summaries\nTrend Analysis\nCustomized Reporting",
+      "instructional": true,
+      "teach": "Read the source points, then explain the slide without looking. On Security+, recognition is not enough—you should be able to apply the concept to a scenario.",
+      "defs": [],
+      "course": {
+        "learn": "Security reporting communicates findings, risk, remediation status, trends, and evidence to the people who need to act. Good reports are accurate, prioritized, and appropriate for the audience.",
+        "why": "Executives, engineers, auditors, and incident responders need different levels of technical detail.",
+        "example": "A vulnerability report includes affected assets, severity, business impact, recommended fix, owner, due date, and validation status.",
+        "exam": "CompTIA may ask what belongs in a report or who should receive it. Match detail and action to the audience.",
+        "breakdown": [
+          {
+            "term": "Regular Reporting",
+            "explanation": "Security reporting communicates findings, risk, remediation status, trends, and evidence to the people who need to act. Good reports are accurate, prioritized, and appropriate for the audience."
+          },
+          {
+            "term": "Executive Summaries",
+            "explanation": "Within Reporting, this is a specific factor you should be able to recognize and explain. Connect it to the purpose of Reporting rather than memorizing the phrase by itself."
+          },
+          {
+            "term": "Trend Analysis",
+            "explanation": "Within Reporting, this is a specific factor you should be able to recognize and explain. Connect it to the purpose of Reporting rather than memorizing the phrase by itself."
+          },
+          {
+            "term": "Customized Reporting",
+            "explanation": "Security reporting communicates findings, risk, remediation status, trends, and evidence to the people who need to act. Good reports are accurate, prioritized, and appropriate for the audience."
+          }
+        ],
+        "defs": [],
+        "check_q": "Without looking back, explain Reporting and describe at least two key ideas from this section.",
+        "check_a": "Security reporting communicates findings, risk, remediation status, trends, and evidence to the people who need to act. Good reports are accurate, prioritized, and appropriate for the audience. Key ideas include: Regular Reporting; Executive Summaries; Trend Analysis; Customized Reporting.",
+        "points": [
+          "Regular Reporting",
+          "Executive Summaries",
+          "Trend Analysis",
+          "Customized Reporting"
+        ]
+      }
+    },
+    {
+      "n": 3,
+      "title": "Additional Considerations",
+      "points": [
+        "Benchmarking",
+        "Escalation processes",
+        "Continuous improvement",
+        "Compliance reporting",
+        "User awareness"
+      ],
+      "raw": "Additional Considerations\nBenchmarking\nEscalation processes\nContinuous improvement\nCompliance reporting\nUser awareness",
+      "instructional": true,
+      "teach": "These are design tradeoffs. Learn why each factor matters rather than memorizing the words alone.",
+      "defs": [],
+      "course": {
+        "learn": "This section focuses on **Additional Considerations** within **Reporting**. Security reporting communicates findings, risk, remediation status, trends, and evidence to the people who need to act. Good reports are accurate, prioritized, and appropriate for the audience.",
+        "why": "Executives, engineers, auditors, and incident responders need different levels of technical detail.",
+        "example": "A vulnerability report includes affected assets, severity, business impact, recommended fix, owner, due date, and validation status.",
+        "exam": "CompTIA may ask what belongs in a report or who should receive it. Match detail and action to the audience.",
+        "breakdown": [
+          {
+            "term": "Benchmarking",
+            "explanation": "This is a factor that must be evaluated when using Reporting; ignoring it can create operational, security, cost, or compatibility risk."
+          },
+          {
+            "term": "Escalation processes",
+            "explanation": "This is a factor that must be evaluated when using Reporting; ignoring it can create operational, security, cost, or compatibility risk."
+          },
+          {
+            "term": "Continuous improvement",
+            "explanation": "This is a factor that must be evaluated when using Reporting; ignoring it can create operational, security, cost, or compatibility risk."
+          },
+          {
+            "term": "Compliance reporting",
+            "explanation": "Security reporting communicates findings, risk, remediation status, trends, and evidence to the people who need to act. Good reports are accurate, prioritized, and appropriate for the audience."
+          },
+          {
+            "term": "User awareness",
+            "explanation": "This is a factor that must be evaluated when using Reporting; ignoring it can create operational, security, cost, or compatibility risk."
+          }
+        ],
+        "defs": [],
+        "check_q": "Without looking back, explain Additional Considerations and describe at least two key ideas from this section.",
+        "check_a": "This section focuses on **Additional Considerations** within **Reporting**. Security reporting communicates findings, risk, remediation status, trends, and evidence to the people who need to act. Good reports are accurate, prioritized, and appropriate for the audience. Key ideas include: Benchmarking; Escalation processes; Continuous improvement; Compliance reporting; User awareness.",
+        "points": [
+          "Benchmarking",
+          "Escalation processes",
+          "Continuous improvement",
+          "Compliance reporting",
+          "User awareness"
+        ]
+      }
+    },
+    {
+      "n": 4,
+      "title": "Monitoring Computing Resources",
+      "points": [],
+      "raw": "Monitoring Computing Resources",
+      "instructional": false,
+      "teach": "Read the source points, then explain the slide without looking. On Security+, recognition is not enough—you should be able to apply the concept to a scenario.",
+      "defs": []
+    }
+  ],
+  "slide_count": 4,
+  "instructional_count": 2,
+  "concepts": [
+    "Additional Considerations"
+  ],
+  "source_filename": "16.05_Reporting.pdf"
+}

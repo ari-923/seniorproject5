@@ -1,0 +1,223 @@
+{
+  "id": "10.10",
+  "chapter": 10,
+  "sub": 10,
+  "title": "ICS and SCADA",
+  "chapter_name": "Security Architecture & Cloud",
+  "slides": [
+    {
+      "n": 1,
+      "title": "Industrial Control Systems (ICS)/Supervisory Control and Data Acquisition (SCADA)",
+      "points": [],
+      "raw": "Industrial Control Systems\n(ICS)/Supervisory Control and\nData Acquisition (SCADA)",
+      "instructional": false,
+      "teach": "Read the source points, then explain the slide without looking. On Security+, recognition is not enough—you should be able to apply the concept to a scenario.",
+      "defs": [
+        [
+          "SCADA",
+          "Supervisory Control and Data Acquisition: systems used to monitor/control industrial processes, often distributed geographically."
+        ],
+        [
+          "ICS",
+          "Industrial Control System: systems that monitor or control industrial processes and physical equipment."
+        ]
+      ]
+    },
+    {
+      "n": 2,
+      "title": "ICS and SCADA",
+      "points": [
+        "ICS (Industrial Control Systems):",
+        "SCADA (Supervisory Control and",
+        "Data Acquisition)"
+      ],
+      "raw": "ICS and SCADA\nICS (Industrial Control Systems):\nSCADA (Supervisory Control and\nData Acquisition)",
+      "instructional": true,
+      "teach": "Read the source points, then explain the slide without looking. On Security+, recognition is not enough—you should be able to apply the concept to a scenario.",
+      "defs": [
+        [
+          "SCADA",
+          "Supervisory Control and Data Acquisition: systems used to monitor/control industrial processes, often distributed geographically."
+        ],
+        [
+          "ICS",
+          "Industrial Control System: systems that monitor or control industrial processes and physical equipment."
+        ]
+      ],
+      "course": {
+        "learn": "Industrial Control Systems (ICS) and SCADA monitor or control physical processes such as manufacturing, power, and water. Safety and availability may be more important than rapid change.",
+        "why": "A security action that is routine in office IT—such as rebooting or aggressively scanning—can disrupt physical operations.",
+        "example": "A water-treatment control network is segmented from business IT and changes are tested carefully before deployment.",
+        "exam": "Expect emphasis on safety, availability, segmentation, legacy systems, controlled maintenance, and specialized protocols.",
+        "breakdown": [
+          {
+            "term": "ICS (Industrial Control Systems):",
+            "explanation": "System monitoring focuses on endpoints and hosts. Endpoint Protection Platforms (EPP) detect or prevent malicious endpoint activity, while SIEM platforms collect and correlate events from many systems."
+          },
+          {
+            "term": "SCADA (Supervisory Control and Data Acquisition)",
+            "explanation": "Industrial Control Systems (ICS) and SCADA monitor or control physical processes such as manufacturing, power, and water. Safety and availability may be more important than rapid change."
+          }
+        ],
+        "defs": [
+          {
+            "term": "SCADA",
+            "definition": "Supervisory Control and Data Acquisition: systems used to monitor/control industrial processes, often distributed geographically."
+          },
+          {
+            "term": "ICS",
+            "definition": "Industrial Control System: systems that monitor or control industrial processes and physical equipment."
+          }
+        ],
+        "check_q": "Without looking back, explain ICS and SCADA and describe at least two key ideas from this section.",
+        "check_a": "Industrial Control Systems (ICS) and SCADA monitor or control physical processes such as manufacturing, power, and water. Safety and availability may be more important than rapid change. Key ideas include: ICS (Industrial Control Systems):; SCADA (Supervisory Control and Data Acquisition).",
+        "points": [
+          "ICS (Industrial Control Systems):",
+          "SCADA (Supervisory Control and Data Acquisition)"
+        ]
+      }
+    },
+    {
+      "n": 3,
+      "title": "Security Implications",
+      "points": [
+        "Vulnerability to cyber",
+        "attacks",
+        "Outdated technology",
+        "Insufficient",
+        "authentication and",
+        "authorization",
+        "Lack of encryption"
+      ],
+      "raw": "Security Implications\nVulnerability to cyber\nattacks\nOutdated technology\nInsufficient\nauthentication and\nauthorization\nLack of encryption",
+      "instructional": true,
+      "teach": "Focus on the new risk introduced by the technology or design, then connect that risk to an appropriate mitigation.",
+      "defs": [
+        [
+          "Authentication",
+          "Proving an identity—answering “who are you?”"
+        ],
+        [
+          "Authorization",
+          "Determining what an authenticated identity is allowed to access or do."
+        ],
+        [
+          "Encryption",
+          "Transforms readable plaintext into ciphertext using an algorithm and key so unauthorized parties cannot understand it."
+        ]
+      ],
+      "course": {
+        "learn": "This section focuses on **Security Implications** within **ICS and SCADA**. Industrial Control Systems (ICS) and SCADA monitor or control physical processes such as manufacturing, power, and water. Safety and availability may be more important than rapid change.",
+        "why": "A security action that is routine in office IT—such as rebooting or aggressively scanning—can disrupt physical operations.",
+        "example": "A water-treatment control network is segmented from business IT and changes are tested carefully before deployment.",
+        "exam": "Expect emphasis on safety, availability, segmentation, legacy systems, controlled maintenance, and specialized protocols.",
+        "breakdown": [
+          {
+            "term": "Vulnerability to cyber attacks",
+            "explanation": "This is a factor that must be evaluated when using ICS and SCADA; ignoring it can create operational, security, cost, or compatibility risk."
+          },
+          {
+            "term": "Outdated technology",
+            "explanation": "This is a factor that must be evaluated when using ICS and SCADA; ignoring it can create operational, security, cost, or compatibility risk."
+          },
+          {
+            "term": "Insufficient authentication and",
+            "explanation": "Authentication is the process of proving an identity. Factors can be something you know, have, are, do, or somewhere you are; MFA requires factors from more than one category."
+          },
+          {
+            "term": "authorization",
+            "explanation": "Authorization determines what an authenticated subject is allowed to access or do. Models include DAC, MAC, RBAC, and ABAC."
+          },
+          {
+            "term": "Lack of encryption",
+            "explanation": "Protect confidentiality by transforming plaintext into ciphertext using cryptographic keys."
+          }
+        ],
+        "defs": [
+          {
+            "term": "Authentication",
+            "definition": "Proving an identity—answering “who are you?”"
+          },
+          {
+            "term": "Authorization",
+            "definition": "Determining what an authenticated identity is allowed to access or do."
+          },
+          {
+            "term": "Encryption",
+            "definition": "Transforms readable plaintext into ciphertext using an algorithm and key so unauthorized parties cannot understand it."
+          }
+        ],
+        "check_q": "Without looking back, explain Security Implications and describe at least two key ideas from this section.",
+        "check_a": "This section focuses on **Security Implications** within **ICS and SCADA**. Industrial Control Systems (ICS) and SCADA monitor or control physical processes such as manufacturing, power, and water. Safety and availability may be more important than rapid change. Key ideas include: Vulnerability to cyber attacks; Outdated technology; Insufficient authentication and; authorization; Lack of encryption.",
+        "points": [
+          "Vulnerability to cyber attacks",
+          "Outdated technology",
+          "Insufficient authentication and",
+          "authorization",
+          "Lack of encryption"
+        ]
+      }
+    },
+    {
+      "n": 4,
+      "title": "Security Implications",
+      "points": [
+        "• Human factor",
+        "• Integration with IT networks",
+        "• Physical security risks"
+      ],
+      "raw": "Security Implications\n• Human factor\n• Integration with IT networks\n• Physical security risks",
+      "instructional": true,
+      "teach": "Focus on the new risk introduced by the technology or design, then connect that risk to an appropriate mitigation.",
+      "defs": [],
+      "course": {
+        "learn": "This section focuses on **Security Implications** within **ICS and SCADA**. Industrial Control Systems (ICS) and SCADA monitor or control physical processes such as manufacturing, power, and water. Safety and availability may be more important than rapid change.",
+        "why": "A security action that is routine in office IT—such as rebooting or aggressively scanning—can disrupt physical operations.",
+        "example": "A water-treatment control network is segmented from business IT and changes are tested carefully before deployment.",
+        "exam": "Expect emphasis on safety, availability, segmentation, legacy systems, controlled maintenance, and specialized protocols.",
+        "breakdown": [
+          {
+            "term": "Human factor",
+            "explanation": "This is a factor that must be evaluated when using ICS and SCADA; ignoring it can create operational, security, cost, or compatibility risk."
+          },
+          {
+            "term": "Integration with IT networks",
+            "explanation": "This is a factor that must be evaluated when using ICS and SCADA; ignoring it can create operational, security, cost, or compatibility risk."
+          },
+          {
+            "term": "Physical security risks",
+            "explanation": "Physical security protects people, buildings, devices, documents, and infrastructure from unauthorized physical access, theft, tampering, or environmental harm."
+          }
+        ],
+        "defs": [],
+        "check_q": "Without looking back, explain Security Implications and describe at least two key ideas from this section.",
+        "check_a": "This section focuses on **Security Implications** within **ICS and SCADA**. Industrial Control Systems (ICS) and SCADA monitor or control physical processes such as manufacturing, power, and water. Safety and availability may be more important than rapid change. Key ideas include: Human factor; Integration with IT networks; Physical security risks.",
+        "points": [
+          "Human factor",
+          "Integration with IT networks",
+          "Physical security risks"
+        ]
+      }
+    },
+    {
+      "n": 5,
+      "title": "Real-time Operating System (RTOS)",
+      "points": [],
+      "raw": "Real-time Operating System\n(RTOS)",
+      "instructional": false,
+      "teach": "Read the source points, then explain the slide without looking. On Security+, recognition is not enough—you should be able to apply the concept to a scenario.",
+      "defs": [
+        [
+          "RTOS",
+          "Real-Time Operating System: an OS designed for predictable, time-bounded responses to events."
+        ]
+      ]
+    }
+  ],
+  "slide_count": 5,
+  "instructional_count": 3,
+  "concepts": [
+    "Security Implications"
+  ],
+  "source_filename": "10.10_ICS_and_SCADA.pdf"
+}

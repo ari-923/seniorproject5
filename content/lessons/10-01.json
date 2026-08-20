@@ -1,0 +1,433 @@
+{
+  "id": "10.01",
+  "chapter": 10,
+  "sub": 1,
+  "title": "Shared Responsibility Matrix",
+  "chapter_name": "Security Architecture & Cloud",
+  "slides": [
+    {
+      "n": 1,
+      "title": "Shared Responsibility Matrix",
+      "points": [],
+      "raw": "Shared Responsibility Matrix",
+      "instructional": false,
+      "teach": "Read the source points, then explain the slide without looking. On Security+, recognition is not enough—you should be able to apply the concept to a scenario.",
+      "defs": []
+    },
+    {
+      "n": 2,
+      "title": "Shared Responsibility Matrix",
+      "points": [
+        "Service Model",
+        "Cloud Provider Responsibility",
+        "- Physical infrastructure",
+        "- Virtualization layer",
+        "Infrastructure as - Basic OS provisioning, patching,",
+        "a Service (IaaS) and management",
+        "- Security of the underlying",
+        "infrastructure",
+        "Customer Responsibility",
+        "- Guest operating system and",
+        "applications",
+        "- Data privacy and security within",
+        "applications",
+        "- Configuration of security groups",
+        "and firewalls",
+        "- Patching and vulnerability",
+        "management within VMs",
+        "- User and access management",
+        "- Application security"
+      ],
+      "raw": "Shared Responsibility Matrix\nService Model\nCloud Provider Responsibility\n- Physical infrastructure\n- Virtualization layer\nInfrastructure as - Basic OS provisioning, patching,\na Service (IaaS) and management\n- Security of the underlying\ninfrastructure\nCustomer Responsibility\n- Guest operating system and\napplications\n- Data privacy and security within\napplications\n- Configuration of security groups\nand firewalls\n- Patching and vulnerability\nmanagement within VMs\n- User and access management\n- Application security",
+      "instructional": true,
+      "teach": "Read the source points, then explain the slide without looking. On Security+, recognition is not enough—you should be able to apply the concept to a scenario.",
+      "defs": [
+        [
+          "Virtualization",
+          "Using a hypervisor to run multiple virtual machines, usually with separate guest operating systems, on shared hardware."
+        ],
+        [
+          "Cloud",
+          "Computing resources delivered on demand from a provider rather than entirely owned and operated locally."
+        ],
+        [
+          "IaaS",
+          "Infrastructure as a Service: cloud model where the provider supplies infrastructure while the customer manages more of the OS, apps, and data."
+        ]
+      ],
+      "course": {
+        "learn": "The cloud shared-responsibility model divides security duties between the cloud provider and the customer. The exact split changes across IaaS, PaaS, and SaaS.",
+        "why": "Moving to the cloud transfers some infrastructure duties but never transfers all security responsibility.",
+        "example": "In IaaS, the provider secures physical infrastructure while the customer still manages guest OS configuration, identities, applications, and data.",
+        "exam": "Never choose “the cloud provider handles everything.” Customer responsibilities commonly include data, IAM, configuration, and use of services.",
+        "breakdown": [
+          {
+            "term": "Service Model",
+            "explanation": "Within Shared Responsibility Matrix, this is a specific factor you should be able to recognize and explain. Connect it to the purpose of Shared Responsibility Matrix rather than memorizing the phrase by itself."
+          },
+          {
+            "term": "Cloud Provider Responsibility",
+            "explanation": "Within Shared Responsibility Matrix, this is a specific factor you should be able to recognize and explain. Connect it to the purpose of Shared Responsibility Matrix rather than memorizing the phrase by itself."
+          },
+          {
+            "term": "Physical infrastructure",
+            "explanation": "Infrastructure monitoring observes networks, cloud configuration, appliances, links, and supporting resources. NSM analyzes network behavior, while CSPM evaluates cloud security posture and misconfiguration."
+          },
+          {
+            "term": "Virtualization layer",
+            "explanation": "Within Shared Responsibility Matrix, this is a specific factor you should be able to recognize and explain. Connect it to the purpose of Shared Responsibility Matrix rather than memorizing the phrase by itself."
+          },
+          {
+            "term": "Infrastructure as - Basic OS provisioning, patching,",
+            "explanation": "Infrastructure monitoring observes networks, cloud configuration, appliances, links, and supporting resources. NSM analyzes network behavior, while CSPM evaluates cloud security posture and misconfiguration."
+          },
+          {
+            "term": "a Service (IaaS) and management",
+            "explanation": "Within Shared Responsibility Matrix, this is a specific factor you should be able to recognize and explain. Connect it to the purpose of Shared Responsibility Matrix rather than memorizing the phrase by itself."
+          },
+          {
+            "term": "Security of the underlying infrastructure",
+            "explanation": "Infrastructure monitoring observes networks, cloud configuration, appliances, links, and supporting resources. NSM analyzes network behavior, while CSPM evaluates cloud security posture and misconfiguration."
+          },
+          {
+            "term": "Customer Responsibility",
+            "explanation": "Within Shared Responsibility Matrix, this is a specific factor you should be able to recognize and explain. Connect it to the purpose of Shared Responsibility Matrix rather than memorizing the phrase by itself."
+          },
+          {
+            "term": "Guest operating system and applications",
+            "explanation": "Application monitoring measures application behavior, performance, errors, and security events. APM focuses on health/performance, while a WAF inspects and protects web requests."
+          },
+          {
+            "term": "Data privacy and security within applications",
+            "explanation": "Application monitoring measures application behavior, performance, errors, and security events. APM focuses on health/performance, while a WAF inspects and protects web requests."
+          },
+          {
+            "term": "Configuration of security groups and firewalls",
+            "explanation": "Filter network traffic according to security rules, usually by source, destination, protocol, port, application, or context."
+          },
+          {
+            "term": "Patching and vulnerability management within VMs",
+            "explanation": "Patching applies vendor fixes that correct vulnerabilities, bugs, or insecure behavior. Effective patch management includes inventory, testing, prioritization, deployment, and verification."
+          },
+          {
+            "term": "User and access management",
+            "explanation": "This concerns who or what can reach a resource and what actions are permitted once access is granted."
+          },
+          {
+            "term": "Application security",
+            "explanation": "Application-security testing looks for weaknesses in source code, dependencies, configuration, and running applications. SAST analyzes code without executing it; DAST tests a running application from the outside."
+          }
+        ],
+        "defs": [
+          {
+            "term": "Virtualization",
+            "definition": "Using a hypervisor to run multiple virtual machines, usually with separate guest operating systems, on shared hardware."
+          },
+          {
+            "term": "Cloud",
+            "definition": "Computing resources delivered on demand from a provider rather than entirely owned and operated locally."
+          },
+          {
+            "term": "IaaS",
+            "definition": "Infrastructure as a Service: cloud model where the provider supplies infrastructure while the customer manages more of the OS, apps, and data."
+          }
+        ],
+        "check_q": "Without looking back, explain Shared Responsibility Matrix and describe at least two key ideas from this section.",
+        "check_a": "The cloud shared-responsibility model divides security duties between the cloud provider and the customer. The exact split changes across IaaS, PaaS, and SaaS. Key ideas include: Service Model; Cloud Provider Responsibility; Physical infrastructure; Virtualization layer; Infrastructure as - Basic OS provisioning, patching,.",
+        "points": [
+          "Service Model",
+          "Cloud Provider Responsibility",
+          "Physical infrastructure",
+          "Virtualization layer",
+          "Infrastructure as - Basic OS provisioning, patching,",
+          "a Service (IaaS) and management",
+          "Security of the underlying infrastructure",
+          "Customer Responsibility",
+          "Guest operating system and applications",
+          "Data privacy and security within applications",
+          "Configuration of security groups and firewalls",
+          "Patching and vulnerability management within VMs",
+          "User and access management",
+          "Application security"
+        ]
+      }
+    },
+    {
+      "n": 3,
+      "title": "Shared Responsibility Matrix",
+      "points": [
+        "Service Model",
+        "Platform as a Service",
+        "(PaaS)",
+        "Cloud Provider Responsibility",
+        "Customer Responsibility",
+        "- Application code and data",
+        "- Application security",
+        "- Underlying infrastructure and",
+        "- Configuration of application",
+        "virtualization",
+        "settings and environments",
+        "- Runtime environment",
+        "- User and access management",
+        "- Operating system for the platform",
+        "within the platform",
+        "- Basic security of the platform",
+        "- Logging and monitoring of",
+        "applications"
+      ],
+      "raw": "Shared Responsibility Matrix\nService Model\nPlatform as a Service\n(PaaS)\nCloud Provider Responsibility\nCustomer Responsibility\n- Application code and data\n- Application security\n- Underlying infrastructure and\n- Configuration of application\nvirtualization\nsettings and environments\n- Runtime environment\n- User and access management\n- Operating system for the platform\nwithin the platform\n- Basic security of the platform\n- Logging and monitoring of\napplications",
+      "instructional": true,
+      "teach": "Read the source points, then explain the slide without looking. On Security+, recognition is not enough—you should be able to apply the concept to a scenario.",
+      "defs": [
+        [
+          "Virtualization",
+          "Using a hypervisor to run multiple virtual machines, usually with separate guest operating systems, on shared hardware."
+        ],
+        [
+          "Cloud",
+          "Computing resources delivered on demand from a provider rather than entirely owned and operated locally."
+        ],
+        [
+          "PaaS",
+          "Platform as a Service: cloud model where the provider manages infrastructure and platform/runtime while the customer focuses more on apps and data."
+        ]
+      ],
+      "course": {
+        "learn": "The cloud shared-responsibility model divides security duties between the cloud provider and the customer. The exact split changes across IaaS, PaaS, and SaaS.",
+        "why": "Moving to the cloud transfers some infrastructure duties but never transfers all security responsibility.",
+        "example": "In IaaS, the provider secures physical infrastructure while the customer still manages guest OS configuration, identities, applications, and data.",
+        "exam": "Never choose “the cloud provider handles everything.” Customer responsibilities commonly include data, IAM, configuration, and use of services.",
+        "breakdown": [
+          {
+            "term": "Service Model",
+            "explanation": "Within Shared Responsibility Matrix, this is a specific factor you should be able to recognize and explain. Connect it to the purpose of Shared Responsibility Matrix rather than memorizing the phrase by itself."
+          },
+          {
+            "term": "Platform as a Service",
+            "explanation": "Within Shared Responsibility Matrix, this is a specific factor you should be able to recognize and explain. Connect it to the purpose of Shared Responsibility Matrix rather than memorizing the phrase by itself."
+          },
+          {
+            "term": "(PaaS)",
+            "explanation": "Within Shared Responsibility Matrix, this is a specific factor you should be able to recognize and explain. Connect it to the purpose of Shared Responsibility Matrix rather than memorizing the phrase by itself."
+          },
+          {
+            "term": "Cloud Provider Responsibility",
+            "explanation": "Within Shared Responsibility Matrix, this is a specific factor you should be able to recognize and explain. Connect it to the purpose of Shared Responsibility Matrix rather than memorizing the phrase by itself."
+          },
+          {
+            "term": "Customer Responsibility",
+            "explanation": "Within Shared Responsibility Matrix, this is a specific factor you should be able to recognize and explain. Connect it to the purpose of Shared Responsibility Matrix rather than memorizing the phrase by itself."
+          },
+          {
+            "term": "Application code and data",
+            "explanation": "Application monitoring measures application behavior, performance, errors, and security events. APM focuses on health/performance, while a WAF inspects and protects web requests."
+          },
+          {
+            "term": "Application security",
+            "explanation": "Application-security testing looks for weaknesses in source code, dependencies, configuration, and running applications. SAST analyzes code without executing it; DAST tests a running application from the outside."
+          },
+          {
+            "term": "Underlying infrastructure and Configuration of application",
+            "explanation": "Infrastructure monitoring observes networks, cloud configuration, appliances, links, and supporting resources. NSM analyzes network behavior, while CSPM evaluates cloud security posture and misconfiguration."
+          },
+          {
+            "term": "virtualization settings and environments",
+            "explanation": "Within Shared Responsibility Matrix, this is a specific factor you should be able to recognize and explain. Connect it to the purpose of Shared Responsibility Matrix rather than memorizing the phrase by itself."
+          },
+          {
+            "term": "Runtime environment",
+            "explanation": "Within Shared Responsibility Matrix, this is a specific factor you should be able to recognize and explain. Connect it to the purpose of Shared Responsibility Matrix rather than memorizing the phrase by itself."
+          },
+          {
+            "term": "User and access management",
+            "explanation": "This concerns who or what can reach a resource and what actions are permitted once access is granted."
+          },
+          {
+            "term": "Operating system for the platform within the platform",
+            "explanation": "Within Shared Responsibility Matrix, this is a specific factor you should be able to recognize and explain. Connect it to the purpose of Shared Responsibility Matrix rather than memorizing the phrase by itself."
+          },
+          {
+            "term": "Basic security of the platform",
+            "explanation": "This contributes to reducing risk in the broader Shared Responsibility Matrix design and should be evaluated as part of defense in depth."
+          },
+          {
+            "term": "Logging and monitoring of applications",
+            "explanation": "Application monitoring measures application behavior, performance, errors, and security events. APM focuses on health/performance, while a WAF inspects and protects web requests."
+          }
+        ],
+        "defs": [
+          {
+            "term": "Virtualization",
+            "definition": "Using a hypervisor to run multiple virtual machines, usually with separate guest operating systems, on shared hardware."
+          },
+          {
+            "term": "Cloud",
+            "definition": "Computing resources delivered on demand from a provider rather than entirely owned and operated locally."
+          },
+          {
+            "term": "PaaS",
+            "definition": "Platform as a Service: cloud model where the provider manages infrastructure and platform/runtime while the customer focuses more on apps and data."
+          }
+        ],
+        "check_q": "Without looking back, explain Shared Responsibility Matrix and describe at least two key ideas from this section.",
+        "check_a": "The cloud shared-responsibility model divides security duties between the cloud provider and the customer. The exact split changes across IaaS, PaaS, and SaaS. Key ideas include: Service Model; Platform as a Service; (PaaS); Cloud Provider Responsibility; Customer Responsibility.",
+        "points": [
+          "Service Model",
+          "Platform as a Service",
+          "(PaaS)",
+          "Cloud Provider Responsibility",
+          "Customer Responsibility",
+          "Application code and data",
+          "Application security",
+          "Underlying infrastructure and Configuration of application",
+          "virtualization settings and environments",
+          "Runtime environment",
+          "User and access management",
+          "Operating system for the platform within the platform",
+          "Basic security of the platform",
+          "Logging and monitoring of applications"
+        ]
+      }
+    },
+    {
+      "n": 4,
+      "title": "Shared Responsibility Matrix",
+      "points": [
+        "Service Model",
+        "Cloud Provider Responsibility",
+        "Customer Responsibility",
+        "- User data and access",
+        "- Application and underlying",
+        "management within the",
+        "infrastructure",
+        "application",
+        "Software as a Service - Data storage and security",
+        "- Configuration of application",
+        "(SaaS)",
+        "- Security of the application itself settings within allowed limits",
+        "- Updates and maintenance of the - Compliance with application",
+        "application",
+        "terms of service",
+        "- Integration with other systems"
+      ],
+      "raw": "Shared Responsibility Matrix\nService Model\nCloud Provider Responsibility\nCustomer Responsibility\n- User data and access\n- Application and underlying\nmanagement within the\ninfrastructure\napplication\nSoftware as a Service - Data storage and security\n- Configuration of application\n(SaaS)\n- Security of the application itself settings within allowed limits\n- Updates and maintenance of the - Compliance with application\napplication\nterms of service\n- Integration with other systems",
+      "instructional": true,
+      "teach": "Read the source points, then explain the slide without looking. On Security+, recognition is not enough—you should be able to apply the concept to a scenario.",
+      "defs": [
+        [
+          "Cloud",
+          "Computing resources delivered on demand from a provider rather than entirely owned and operated locally."
+        ],
+        [
+          "SaaS",
+          "Software as a Service: provider delivers the application; customer responsibilities focus more on users, data, and configuration."
+        ]
+      ],
+      "course": {
+        "learn": "The cloud shared-responsibility model divides security duties between the cloud provider and the customer. The exact split changes across IaaS, PaaS, and SaaS.",
+        "why": "Moving to the cloud transfers some infrastructure duties but never transfers all security responsibility.",
+        "example": "In IaaS, the provider secures physical infrastructure while the customer still manages guest OS configuration, identities, applications, and data.",
+        "exam": "Never choose “the cloud provider handles everything.” Customer responsibilities commonly include data, IAM, configuration, and use of services.",
+        "breakdown": [
+          {
+            "term": "Service Model",
+            "explanation": "Within Shared Responsibility Matrix, this is a specific factor you should be able to recognize and explain. Connect it to the purpose of Shared Responsibility Matrix rather than memorizing the phrase by itself."
+          },
+          {
+            "term": "Cloud Provider Responsibility",
+            "explanation": "Within Shared Responsibility Matrix, this is a specific factor you should be able to recognize and explain. Connect it to the purpose of Shared Responsibility Matrix rather than memorizing the phrase by itself."
+          },
+          {
+            "term": "Customer Responsibility",
+            "explanation": "Within Shared Responsibility Matrix, this is a specific factor you should be able to recognize and explain. Connect it to the purpose of Shared Responsibility Matrix rather than memorizing the phrase by itself."
+          },
+          {
+            "term": "User data and access",
+            "explanation": "This concerns who or what can reach a resource and what actions are permitted once access is granted."
+          },
+          {
+            "term": "Application and underlying management within the",
+            "explanation": "Application monitoring measures application behavior, performance, errors, and security events. APM focuses on health/performance, while a WAF inspects and protects web requests."
+          },
+          {
+            "term": "infrastructure application",
+            "explanation": "Infrastructure monitoring observes networks, cloud configuration, appliances, links, and supporting resources. NSM analyzes network behavior, while CSPM evaluates cloud security posture and misconfiguration."
+          },
+          {
+            "term": "Software as a Service - Data storage and security",
+            "explanation": "This contributes to reducing risk in the broader Shared Responsibility Matrix design and should be evaluated as part of defense in depth."
+          },
+          {
+            "term": "Configuration of application",
+            "explanation": "Application monitoring measures application behavior, performance, errors, and security events. APM focuses on health/performance, while a WAF inspects and protects web requests."
+          },
+          {
+            "term": "(SaaS)",
+            "explanation": "Within Shared Responsibility Matrix, this is a specific factor you should be able to recognize and explain. Connect it to the purpose of Shared Responsibility Matrix rather than memorizing the phrase by itself."
+          },
+          {
+            "term": "Security of the application itself settings within allowed limits",
+            "explanation": "Application monitoring measures application behavior, performance, errors, and security events. APM focuses on health/performance, while a WAF inspects and protects web requests."
+          },
+          {
+            "term": "Updates and maintenance of the - Compliance with application",
+            "explanation": "Application monitoring measures application behavior, performance, errors, and security events. APM focuses on health/performance, while a WAF inspects and protects web requests."
+          },
+          {
+            "term": "application terms of service",
+            "explanation": "Application monitoring measures application behavior, performance, errors, and security events. APM focuses on health/performance, while a WAF inspects and protects web requests."
+          },
+          {
+            "term": "Integration with other systems",
+            "explanation": "System monitoring focuses on endpoints and hosts. Endpoint Protection Platforms (EPP) detect or prevent malicious endpoint activity, while SIEM platforms collect and correlate events from many systems."
+          }
+        ],
+        "defs": [
+          {
+            "term": "Cloud",
+            "definition": "Computing resources delivered on demand from a provider rather than entirely owned and operated locally."
+          },
+          {
+            "term": "SaaS",
+            "definition": "Software as a Service: provider delivers the application; customer responsibilities focus more on users, data, and configuration."
+          }
+        ],
+        "check_q": "Without looking back, explain Shared Responsibility Matrix and describe at least two key ideas from this section.",
+        "check_a": "The cloud shared-responsibility model divides security duties between the cloud provider and the customer. The exact split changes across IaaS, PaaS, and SaaS. Key ideas include: Service Model; Cloud Provider Responsibility; Customer Responsibility; User data and access; Application and underlying management within the.",
+        "points": [
+          "Service Model",
+          "Cloud Provider Responsibility",
+          "Customer Responsibility",
+          "User data and access",
+          "Application and underlying management within the",
+          "infrastructure application",
+          "Software as a Service - Data storage and security",
+          "Configuration of application",
+          "(SaaS)",
+          "Security of the application itself settings within allowed limits",
+          "Updates and maintenance of the - Compliance with application",
+          "application terms of service",
+          "Integration with other systems"
+        ]
+      }
+    },
+    {
+      "n": 5,
+      "title": "Hybrid Cloud Considerations",
+      "points": [],
+      "raw": "Hybrid Cloud Considerations",
+      "instructional": false,
+      "teach": "These are design tradeoffs. Learn why each factor matters rather than memorizing the words alone.",
+      "defs": [
+        [
+          "Cloud",
+          "Computing resources delivered on demand from a provider rather than entirely owned and operated locally."
+        ]
+      ]
+    }
+  ],
+  "slide_count": 5,
+  "instructional_count": 3,
+  "concepts": [],
+  "source_filename": "10.01_Shared_Responsibility_Matrix.pdf"
+}

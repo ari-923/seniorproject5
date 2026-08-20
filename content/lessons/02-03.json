@@ -1,0 +1,417 @@
+{
+  "id": "02.03",
+  "chapter": 2,
+  "sub": 3,
+  "title": "Authentication, Authorization, and Accounting (AAA)",
+  "chapter_name": "Fundamental Security Concepts",
+  "slides": [
+    {
+      "n": 1,
+      "title": "Authentication, Authorization, and Accounting (AAA)",
+      "points": [],
+      "raw": "Authentication, Authorization,\nand Accounting (AAA)",
+      "instructional": false,
+      "teach": "Read the source points, then explain the slide without looking. On Security+, recognition is not enough—you should be able to apply the concept to a scenario.",
+      "defs": [
+        [
+          "Authentication",
+          "Proving an identity—answering “who are you?”"
+        ],
+        [
+          "Authorization",
+          "Determining what an authenticated identity is allowed to access or do."
+        ],
+        [
+          "Accounting",
+          "Recording activity through logs, audit trails, and session records."
+        ]
+      ]
+    },
+    {
+      "n": 2,
+      "title": "Authentication, Authorization, and Accounting (AAA)",
+      "points": [
+        "Gatekeeper",
+        "Scrutiny",
+        "Permission",
+        "Slips",
+        "Tracking",
+        "Footsteps"
+      ],
+      "raw": "Authentication, Authorization, and\nAccounting (AAA)\nGatekeeper\nScrutiny\nPermission\nSlips\nTracking\nFootsteps",
+      "instructional": true,
+      "teach": "Read the source points, then explain the slide without looking. On Security+, recognition is not enough—you should be able to apply the concept to a scenario.",
+      "defs": [
+        [
+          "Authentication",
+          "Proving an identity—answering “who are you?”"
+        ],
+        [
+          "Authorization",
+          "Determining what an authenticated identity is allowed to access or do."
+        ],
+        [
+          "Accounting",
+          "Recording activity through logs, audit trails, and session records."
+        ]
+      ],
+      "course": {
+        "learn": "AAA is a sequence for controlling and recording access. Authentication proves identity, authorization decides what that identity may do, and accounting records activity.",
+        "why": "Separating these functions prevents “being logged in” from automatically meaning “allowed to do everything,” and it preserves an audit trail.",
+        "example": "A user signs in with MFA, receives read-only access to a database based on role, and every query is logged.",
+        "exam": "Identity = authentication. Permission = authorization. Activity record = accounting.",
+        "breakdown": [
+          {
+            "term": "Gatekeeper",
+            "explanation": "Within Authentication, Authorization, and Accounting (AAA), this is a specific factor you should be able to recognize and explain. Connect it to the purpose of Authentication, Authorization, and Accounting (AAA) rather than memorizing the phrase by itself."
+          },
+          {
+            "term": "Scrutiny",
+            "explanation": "Within Authentication, Authorization, and Accounting (AAA), this is a specific factor you should be able to recognize and explain. Connect it to the purpose of Authentication, Authorization, and Accounting (AAA) rather than memorizing the phrase by itself."
+          },
+          {
+            "term": "Permission",
+            "explanation": "Within Authentication, Authorization, and Accounting (AAA), this is a specific factor you should be able to recognize and explain. Connect it to the purpose of Authentication, Authorization, and Accounting (AAA) rather than memorizing the phrase by itself."
+          },
+          {
+            "term": "Slips",
+            "explanation": "Within Authentication, Authorization, and Accounting (AAA), this is a specific factor you should be able to recognize and explain. Connect it to the purpose of Authentication, Authorization, and Accounting (AAA) rather than memorizing the phrase by itself."
+          },
+          {
+            "term": "Tracking",
+            "explanation": "Within Authentication, Authorization, and Accounting (AAA), this is a specific factor you should be able to recognize and explain. Connect it to the purpose of Authentication, Authorization, and Accounting (AAA) rather than memorizing the phrase by itself."
+          },
+          {
+            "term": "Footsteps",
+            "explanation": "Within Authentication, Authorization, and Accounting (AAA), this is a specific factor you should be able to recognize and explain. Connect it to the purpose of Authentication, Authorization, and Accounting (AAA) rather than memorizing the phrase by itself."
+          }
+        ],
+        "defs": [
+          {
+            "term": "Authentication",
+            "definition": "Proving an identity—answering “who are you?”"
+          },
+          {
+            "term": "Authorization",
+            "definition": "Determining what an authenticated identity is allowed to access or do."
+          },
+          {
+            "term": "Accounting",
+            "definition": "Recording activity through logs, audit trails, and session records."
+          }
+        ],
+        "check_q": "Without looking back, explain Authentication, Authorization, and Accounting (AAA) and describe at least two key ideas from this section.",
+        "check_a": "AAA is a sequence for controlling and recording access. Authentication proves identity, authorization decides what that identity may do, and accounting records activity. Key ideas include: Gatekeeper; Scrutiny; Permission; Slips; Tracking.",
+        "points": [
+          "Gatekeeper",
+          "Scrutiny",
+          "Permission",
+          "Slips",
+          "Tracking",
+          "Footsteps"
+        ]
+      }
+    },
+    {
+      "n": 3,
+      "title": "Authentication",
+      "points": [
+        "People",
+        "System"
+      ],
+      "raw": "Authentication\nPeople\nSystem",
+      "instructional": true,
+      "teach": "Read the source points, then explain the slide without looking. On Security+, recognition is not enough—you should be able to apply the concept to a scenario.",
+      "defs": [
+        [
+          "Authentication",
+          "Proving an identity—answering “who are you?”"
+        ]
+      ],
+      "course": {
+        "learn": "Authentication is the process of proving an identity. Factors can be something you know, have, are, do, or somewhere you are; MFA requires factors from more than one category.",
+        "why": "If attackers can impersonate legitimate users, every later access-control decision becomes unreliable.",
+        "example": "A user enters a password and then approves a hardware-token challenge.",
+        "exam": "Do not confuse authentication with authorization. Authentication answers “who are you?”",
+        "breakdown": [
+          {
+            "term": "People",
+            "explanation": "AAA is a sequence for controlling and recording access. Authentication proves identity, authorization decides what that identity may do, and accounting records activity."
+          },
+          {
+            "term": "System",
+            "explanation": "Products no longer receiving security updates or vendor support, leaving new vulnerabilities harder to fix."
+          }
+        ],
+        "defs": [
+          {
+            "term": "Authentication",
+            "definition": "Proving an identity—answering “who are you?”"
+          }
+        ],
+        "check_q": "Without looking back, explain Authentication and describe at least two key ideas from this section.",
+        "check_a": "Authentication is the process of proving an identity. Factors can be something you know, have, are, do, or somewhere you are; MFA requires factors from more than one category. Key ideas include: People; System.",
+        "points": [
+          "People",
+          "System"
+        ]
+      }
+    },
+    {
+      "n": 4,
+      "title": "Authorization",
+      "points": [
+        "Discretionary Access Control (DAC",
+        "Mandatory Access Control (MAC)",
+        "Role-Based Access Control (RBAC)",
+        "Attribute-Based Access Control (ABAC)"
+      ],
+      "raw": "Authorization\nDiscretionary Access Control (DAC\nMandatory Access Control (MAC)\nRole-Based Access Control (RBAC)\nAttribute-Based Access Control (ABAC)",
+      "instructional": true,
+      "teach": "Read the source points, then explain the slide without looking. On Security+, recognition is not enough—you should be able to apply the concept to a scenario.",
+      "defs": [
+        [
+          "Authorization",
+          "Determining what an authenticated identity is allowed to access or do."
+        ]
+      ],
+      "course": {
+        "learn": "Authorization determines what an authenticated subject is allowed to access or do. Models include DAC, MAC, RBAC, and ABAC.",
+        "why": "A valid identity still should receive only the permissions needed for its role or attributes.",
+        "example": "Two employees authenticate successfully, but only the HR employee is authorized to open payroll records.",
+        "exam": "Authorization comes after authentication. RBAC uses roles; ABAC evaluates attributes; MAC uses centrally enforced labels; DAC lets owners grant access.",
+        "breakdown": [
+          {
+            "term": "Discretionary Access Control (DAC",
+            "explanation": "Access control restricts which subjects can access which resources and what actions they may perform. ACLs express allow/deny rules on objects, interfaces, or network traffic."
+          },
+          {
+            "term": "Mandatory Access Control (MAC)",
+            "explanation": "Access control restricts which subjects can access which resources and what actions they may perform. ACLs express allow/deny rules on objects, interfaces, or network traffic."
+          },
+          {
+            "term": "Role-Based Access Control (RBAC)",
+            "explanation": "Access control restricts which subjects can access which resources and what actions they may perform. ACLs express allow/deny rules on objects, interfaces, or network traffic."
+          },
+          {
+            "term": "Attribute-Based Access Control (ABAC)",
+            "explanation": "Access control restricts which subjects can access which resources and what actions they may perform. ACLs express allow/deny rules on objects, interfaces, or network traffic."
+          }
+        ],
+        "defs": [
+          {
+            "term": "Authorization",
+            "definition": "Determining what an authenticated identity is allowed to access or do."
+          }
+        ],
+        "check_q": "Without looking back, explain Authorization and describe at least two key ideas from this section.",
+        "check_a": "Authorization determines what an authenticated subject is allowed to access or do. Models include DAC, MAC, RBAC, and ABAC. Key ideas include: Discretionary Access Control (DAC; Mandatory Access Control (MAC); Role-Based Access Control (RBAC); Attribute-Based Access Control (ABAC).",
+        "points": [
+          "Discretionary Access Control (DAC",
+          "Mandatory Access Control (MAC)",
+          "Role-Based Access Control (RBAC)",
+          "Attribute-Based Access Control (ABAC)"
+        ]
+      }
+    },
+    {
+      "n": 5,
+      "title": "Accounting",
+      "points": [
+        "Monitors resource usage",
+        "Generates logs",
+        "Helps identify unauthorized access attempts"
+      ],
+      "raw": "Accounting\nMonitors resource usage\nGenerates logs\nHelps identify unauthorized access attempts",
+      "instructional": true,
+      "teach": "Read the source points, then explain the slide without looking. On Security+, recognition is not enough—you should be able to apply the concept to a scenario.",
+      "defs": [
+        [
+          "Accounting",
+          "Recording activity through logs, audit trails, and session records."
+        ]
+      ],
+      "course": {
+        "learn": "Accounting records how identities and systems use resources. Logs, audit trails, session records, and usage data support accountability and investigations.",
+        "why": "Without records, defenders may know an incident happened but not who did what or when.",
+        "example": "A VPN gateway records login time, source IP, session duration, and bytes transferred for each user.",
+        "exam": "If the question asks about tracking or recording activity, think accounting/logging.",
+        "breakdown": [
+          {
+            "term": "Monitors resource usage",
+            "explanation": "Continuously observe activity or state so abnormal behavior, drift, or failure can be detected early."
+          },
+          {
+            "term": "Generates logs",
+            "explanation": "Within Accounting, this is a specific factor you should be able to recognize and explain. Connect it to the purpose of Authentication, Authorization, and Accounting (AAA) rather than memorizing the phrase by itself."
+          },
+          {
+            "term": "Helps identify unauthorized access attempts",
+            "explanation": "This concerns who or what can reach a resource and what actions are permitted once access is granted."
+          }
+        ],
+        "defs": [
+          {
+            "term": "Accounting",
+            "definition": "Recording activity through logs, audit trails, and session records."
+          }
+        ],
+        "check_q": "Without looking back, explain Accounting and describe at least two key ideas from this section.",
+        "check_a": "Accounting records how identities and systems use resources. Logs, audit trails, session records, and usage data support accountability and investigations. Key ideas include: Monitors resource usage; Generates logs; Helps identify unauthorized access attempts.",
+        "points": [
+          "Monitors resource usage",
+          "Generates logs",
+          "Helps identify unauthorized access attempts"
+        ]
+      }
+    },
+    {
+      "n": 6,
+      "title": "Benefits",
+      "points": [
+        "Enhanced security",
+        "Improved access control",
+        "Accountability",
+        "Efficient resource management",
+        "Scalability"
+      ],
+      "raw": "Benefits\nEnhanced security\nImproved access control\nAccountability\nEfficient resource management\nScalability",
+      "instructional": true,
+      "teach": "Read the source points, then explain the slide without looking. On Security+, recognition is not enough—you should be able to apply the concept to a scenario.",
+      "defs": [],
+      "course": {
+        "learn": "This section focuses on **Benefits** within **Authentication, Authorization, and Accounting (AAA)**. AAA is a sequence for controlling and recording access. Authentication proves identity, authorization decides what that identity may do, and accounting records activity.",
+        "why": "Separating these functions prevents “being logged in” from automatically meaning “allowed to do everything,” and it preserves an audit trail.",
+        "example": "A user signs in with MFA, receives read-only access to a database based on role, and every query is logged.",
+        "exam": "Identity = authentication. Permission = authorization. Activity record = accounting.",
+        "breakdown": [
+          {
+            "term": "Enhanced security",
+            "explanation": "This is a practical benefit of Authentication, Authorization, and Accounting (AAA): it describes an outcome the organization can gain when the concept is implemented effectively."
+          },
+          {
+            "term": "Improved access control",
+            "explanation": "Access control restricts which subjects can access which resources and what actions they may perform. ACLs express allow/deny rules on objects, interfaces, or network traffic."
+          },
+          {
+            "term": "Accountability",
+            "explanation": "This is a practical benefit of Authentication, Authorization, and Accounting (AAA): it describes an outcome the organization can gain when the concept is implemented effectively."
+          },
+          {
+            "term": "Efficient resource management",
+            "explanation": "This is a practical benefit of Authentication, Authorization, and Accounting (AAA): it describes an outcome the organization can gain when the concept is implemented effectively."
+          },
+          {
+            "term": "Scalability",
+            "explanation": "This is a practical benefit of Authentication, Authorization, and Accounting (AAA): it describes an outcome the organization can gain when the concept is implemented effectively."
+          }
+        ],
+        "defs": [],
+        "check_q": "Without looking back, explain Benefits and describe at least two key ideas from this section.",
+        "check_a": "This section focuses on **Benefits** within **Authentication, Authorization, and Accounting (AAA)**. AAA is a sequence for controlling and recording access. Authentication proves identity, authorization decides what that identity may do, and accounting records activity. Key ideas include: Enhanced security; Improved access control; Accountability; Efficient resource management; Scalability.",
+        "points": [
+          "Enhanced security",
+          "Improved access control",
+          "Accountability",
+          "Efficient resource management",
+          "Scalability"
+        ]
+      }
+    },
+    {
+      "n": 7,
+      "title": "Working of AAA",
+      "points": [
+        "Authentication",
+        "request",
+        "Authentication",
+        "process",
+        "Authorization",
+        "granted",
+        "Accounting"
+      ],
+      "raw": "Working of AAA\nAuthentication\nrequest\nAuthentication\nprocess\nAuthorization\ngranted\nAccounting",
+      "instructional": true,
+      "teach": "Read the source points, then explain the slide without looking. On Security+, recognition is not enough—you should be able to apply the concept to a scenario.",
+      "defs": [
+        [
+          "Authentication",
+          "Proving an identity—answering “who are you?”"
+        ],
+        [
+          "Authorization",
+          "Determining what an authenticated identity is allowed to access or do."
+        ],
+        [
+          "Accounting",
+          "Recording activity through logs, audit trails, and session records."
+        ]
+      ],
+      "course": {
+        "learn": "AAA is a sequence for controlling and recording access. Authentication proves identity, authorization decides what that identity may do, and accounting records activity.",
+        "why": "Separating these functions prevents “being logged in” from automatically meaning “allowed to do everything,” and it preserves an audit trail.",
+        "example": "A user signs in with MFA, receives read-only access to a database based on role, and every query is logged.",
+        "exam": "Identity = authentication. Permission = authorization. Activity record = accounting.",
+        "breakdown": [
+          {
+            "term": "Authentication request",
+            "explanation": "Authentication is the process of proving an identity. Factors can be something you know, have, are, do, or somewhere you are; MFA requires factors from more than one category."
+          },
+          {
+            "term": "Authentication process",
+            "explanation": "Authentication is the process of proving an identity. Factors can be something you know, have, are, do, or somewhere you are; MFA requires factors from more than one category."
+          },
+          {
+            "term": "Authorization granted",
+            "explanation": "Authorization determines what an authenticated subject is allowed to access or do. Models include DAC, MAC, RBAC, and ABAC."
+          },
+          {
+            "term": "Accounting",
+            "explanation": "Accounting records how identities and systems use resources. Logs, audit trails, session records, and usage data support accountability and investigations."
+          }
+        ],
+        "defs": [
+          {
+            "term": "Authentication",
+            "definition": "Proving an identity—answering “who are you?”"
+          },
+          {
+            "term": "Authorization",
+            "definition": "Determining what an authenticated identity is allowed to access or do."
+          },
+          {
+            "term": "Accounting",
+            "definition": "Recording activity through logs, audit trails, and session records."
+          }
+        ],
+        "check_q": "Without looking back, explain Working of AAA and describe at least two key ideas from this section.",
+        "check_a": "AAA is a sequence for controlling and recording access. Authentication proves identity, authorization decides what that identity may do, and accounting records activity. Key ideas include: Authentication request; Authentication process; Authorization granted; Accounting.",
+        "points": [
+          "Authentication request",
+          "Authentication process",
+          "Authorization granted",
+          "Accounting"
+        ]
+      }
+    },
+    {
+      "n": 8,
+      "title": "Gap Analysis",
+      "points": [],
+      "raw": "Gap Analysis",
+      "instructional": false,
+      "teach": "Read the source points, then explain the slide without looking. On Security+, recognition is not enough—you should be able to apply the concept to a scenario.",
+      "defs": []
+    }
+  ],
+  "slide_count": 8,
+  "instructional_count": 6,
+  "concepts": [
+    "Authentication",
+    "Authorization",
+    "Accounting",
+    "Benefits",
+    "Working of AAA"
+  ],
+  "source_filename": "02.03_Authentication_Authorization_and_Accounting_AAA.pdf"
+}

@@ -1,0 +1,175 @@
+{
+  "id": "16.03",
+  "chapter": 16,
+  "sub": 3,
+  "title": "Vulnerability response and remediation",
+  "chapter_name": "Vulnerability Management",
+  "slides": [
+    {
+      "n": 1,
+      "title": "Vulnerability Response and Remediation",
+      "points": [],
+      "raw": "Vulnerability Response and\nRemediation",
+      "instructional": false,
+      "teach": "A vulnerability is a weakness. For each item, connect the weakness to its likely impact and the best mitigation.",
+      "defs": []
+    },
+    {
+      "n": 2,
+      "title": "Response and Remediation",
+      "points": [
+        "Patching",
+        "Insurance",
+        "Segmentation",
+        "Compensating",
+        "Controls",
+        "Exceptions and",
+        "Exemptions"
+      ],
+      "raw": "Response and Remediation\nPatching\nInsurance\nSegmentation\nCompensating\nControls\nExceptions and\nExemptions",
+      "instructional": true,
+      "teach": "Read the source points, then explain the slide without looking. On Security+, recognition is not enough—you should be able to apply the concept to a scenario.",
+      "defs": [
+        [
+          "Segmentation",
+          "Dividing a network into controlled zones to limit access and lateral movement."
+        ]
+      ],
+      "course": {
+        "learn": "Vulnerability response turns findings into risk reduction: patch, reconfigure, isolate, remove, replace, apply compensating controls, or formally accept risk. Validation confirms the chosen fix actually worked.",
+        "why": "A scan finding has no value if it is never remediated or if the remediation is assumed successful without verification.",
+        "example": "A team patches a vulnerable service and then rescans the host to verify the vulnerability is no longer present.",
+        "exam": "After remediation, validate—often by rescanning, testing, or auditing. Do not simply close the ticket because a patch command ran.",
+        "breakdown": [
+          {
+            "term": "Patching",
+            "explanation": "Apply vendor updates that fix known security flaws or bugs."
+          },
+          {
+            "term": "Insurance",
+            "explanation": "Within Response and Remediation, this is a specific factor you should be able to recognize and explain. Connect it to the purpose of Vulnerability response and remediation rather than memorizing the phrase by itself."
+          },
+          {
+            "term": "Segmentation",
+            "explanation": "Network segmentation separates systems into different trust zones so traffic must cross controlled boundaries. VLANs, subnets, ACLs, and firewalls are common mechanisms."
+          },
+          {
+            "term": "Compensating",
+            "explanation": "A compensating control is an alternative safeguard used when the preferred or required control cannot be implemented exactly as intended."
+          },
+          {
+            "term": "Controls",
+            "explanation": "Within Response and Remediation, this is a specific factor you should be able to recognize and explain. Connect it to the purpose of Vulnerability response and remediation rather than memorizing the phrase by itself."
+          },
+          {
+            "term": "Exceptions and Exemptions",
+            "explanation": "Within Response and Remediation, this is a specific factor you should be able to recognize and explain. Connect it to the purpose of Vulnerability response and remediation rather than memorizing the phrase by itself."
+          }
+        ],
+        "defs": [
+          {
+            "term": "Segmentation",
+            "definition": "Dividing a network into controlled zones to limit access and lateral movement."
+          }
+        ],
+        "check_q": "Without looking back, explain Response and Remediation and describe at least two key ideas from this section.",
+        "check_a": "Vulnerability response turns findings into risk reduction: patch, reconfigure, isolate, remove, replace, apply compensating controls, or formally accept risk. Validation confirms the chosen fix actually worked. Key ideas include: Patching; Insurance; Segmentation; Compensating; Controls.",
+        "points": [
+          "Patching",
+          "Insurance",
+          "Segmentation",
+          "Compensating",
+          "Controls",
+          "Exceptions and Exemptions"
+        ]
+      }
+    },
+    {
+      "n": 3,
+      "title": "Other Considerations",
+      "points": [
+        "Incident",
+        "response",
+        "planning",
+        "Continuous",
+        "monitoring",
+        "Communication",
+        "and reporting",
+        "Testing and",
+        "validation",
+        "Documentation",
+        "and compliance",
+        "Training and",
+        "awareness"
+      ],
+      "raw": "Other Considerations\nIncident\nresponse\nplanning\nContinuous\nmonitoring\nCommunication\nand reporting\nTesting and\nvalidation\nDocumentation\nand compliance\nTraining and\nawareness",
+      "instructional": true,
+      "teach": "These are design tradeoffs. Learn why each factor matters rather than memorizing the words alone.",
+      "defs": [],
+      "course": {
+        "learn": "This section focuses on **Other Considerations** within **Vulnerability response and remediation**. Vulnerability response turns findings into risk reduction: patch, reconfigure, isolate, remove, replace, apply compensating controls, or formally accept risk. Validation confirms the chosen fix actually worked.",
+        "why": "A scan finding has no value if it is never remediated or if the remediation is assumed successful without verification.",
+        "example": "A team patches a vulnerable service and then rescans the host to verify the vulnerability is no longer present.",
+        "exam": "After remediation, validate—often by rescanning, testing, or auditing. Do not simply close the ticket because a patch command ran.",
+        "breakdown": [
+          {
+            "term": "Incident response",
+            "explanation": "Define how an organization prepares for, detects, contains, eradicates, and recovers from security incidents."
+          },
+          {
+            "term": "planning",
+            "explanation": "This is a factor that must be evaluated when using Vulnerability response and remediation; ignoring it can create operational, security, cost, or compatibility risk."
+          },
+          {
+            "term": "Continuous monitoring",
+            "explanation": "Security monitoring continuously observes systems, networks, applications, and logs for suspicious activity, failures, policy violations, and indicators of compromise."
+          },
+          {
+            "term": "Communication and reporting",
+            "explanation": "Security reporting communicates findings, risk, remediation status, trends, and evidence to the people who need to act. Good reports are accurate, prioritized, and appropriate for the audience."
+          },
+          {
+            "term": "Testing and validation",
+            "explanation": "This is a factor that must be evaluated when using Vulnerability response and remediation; ignoring it can create operational, security, cost, or compatibility risk."
+          },
+          {
+            "term": "Documentation and compliance",
+            "explanation": "Security documentation keeps diagrams, policies, procedures, configurations, and versions synchronized with the real environment."
+          },
+          {
+            "term": "Training and awareness",
+            "explanation": "This is a factor that must be evaluated when using Vulnerability response and remediation; ignoring it can create operational, security, cost, or compatibility risk."
+          }
+        ],
+        "defs": [],
+        "check_q": "Without looking back, explain Other Considerations and describe at least two key ideas from this section.",
+        "check_a": "This section focuses on **Other Considerations** within **Vulnerability response and remediation**. Vulnerability response turns findings into risk reduction: patch, reconfigure, isolate, remove, replace, apply compensating controls, or formally accept risk. Validation confirms the chosen fix actually worked. Key ideas include: Incident response; planning; Continuous monitoring; Communication and reporting; Testing and validation.",
+        "points": [
+          "Incident response",
+          "planning",
+          "Continuous monitoring",
+          "Communication and reporting",
+          "Testing and validation",
+          "Documentation and compliance",
+          "Training and awareness"
+        ]
+      }
+    },
+    {
+      "n": 4,
+      "title": "Validation of Remediation",
+      "points": [],
+      "raw": "Validation of Remediation",
+      "instructional": false,
+      "teach": "Read the source points, then explain the slide without looking. On Security+, recognition is not enough—you should be able to apply the concept to a scenario.",
+      "defs": []
+    }
+  ],
+  "slide_count": 4,
+  "instructional_count": 2,
+  "concepts": [
+    "Response and Remediation",
+    "Other Considerations"
+  ],
+  "source_filename": "16.03_Vulnerability_response_and_remediation.pdf"
+}

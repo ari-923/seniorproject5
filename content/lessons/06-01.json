@@ -1,0 +1,1006 @@
+{
+  "id": "06.01",
+  "chapter": 6,
+  "sub": 1,
+  "title": "Common Threat Vectors and Attack Surfaces",
+  "chapter_name": "Threat Vectors & Attack Surfaces",
+  "slides": [
+    {
+      "n": 1,
+      "title": "Common Threat Vectors and Attack Surfaces",
+      "points": [],
+      "raw": "Common Threat Vectors and\nAttack Surfaces",
+      "instructional": false,
+      "teach": "Learn the attacker behavior, the evidence it leaves behind, and the control that best detects or mitigates it.",
+      "defs": []
+    },
+    {
+      "n": 2,
+      "title": "Message-based",
+      "points": [
+        "Email",
+        "Short Message Service",
+        "(SMS)",
+        "Instant Messaging (IM)"
+      ],
+      "raw": "Message-based\nEmail\nShort Message Service\n(SMS)\nInstant Messaging (IM)",
+      "instructional": true,
+      "teach": "Read the source points, then explain the slide without looking. On Security+, recognition is not enough—you should be able to apply the concept to a scenario.",
+      "defs": [],
+      "course": {
+        "learn": "Message-based threat vectors deliver malicious links, attachments, social engineering, or instructions through email, SMS, instant messaging, or collaboration platforms.",
+        "why": "Messaging reaches users directly and can bypass perimeter controls by convincing the user to initiate the unsafe action.",
+        "example": "An attacker sends a fake password-reset link through a collaboration chat rather than email.",
+        "exam": "Do not treat phishing as email-only. The delivery channel may be email, SMS, chat, social media, or another message system.",
+        "breakdown": [
+          {
+            "term": "Email",
+            "explanation": "Within Message-based, this is a specific factor you should be able to recognize and explain. Connect it to the purpose of Common Threat Vectors and Attack Surfaces rather than memorizing the phrase by itself."
+          },
+          {
+            "term": "Short Message Service",
+            "explanation": "Within Message-based, this is a specific factor you should be able to recognize and explain. Connect it to the purpose of Common Threat Vectors and Attack Surfaces rather than memorizing the phrase by itself."
+          },
+          {
+            "term": "(SMS)",
+            "explanation": "Within Message-based, this is a specific factor you should be able to recognize and explain. Connect it to the purpose of Common Threat Vectors and Attack Surfaces rather than memorizing the phrase by itself."
+          },
+          {
+            "term": "Instant Messaging (IM)",
+            "explanation": "Within Message-based, this is a specific factor you should be able to recognize and explain. Connect it to the purpose of Common Threat Vectors and Attack Surfaces rather than memorizing the phrase by itself."
+          }
+        ],
+        "defs": [],
+        "check_q": "Without looking back, explain Message-based and describe at least two key ideas from this section.",
+        "check_a": "Message-based threat vectors deliver malicious links, attachments, social engineering, or instructions through email, SMS, instant messaging, or collaboration platforms. Key ideas include: Email; Short Message Service; (SMS); Instant Messaging (IM).",
+        "points": [
+          "Email",
+          "Short Message Service",
+          "(SMS)",
+          "Instant Messaging (IM)"
+        ]
+      }
+    },
+    {
+      "n": 3,
+      "title": "Image, File, and Voice Call",
+      "points": [
+        "• Malicious code",
+        "• Malicious files",
+        "• Vishing"
+      ],
+      "raw": "Image, File, and Voice Call\n• Malicious code\n• Malicious files\n• Vishing",
+      "instructional": true,
+      "teach": "Read the source points, then explain the slide without looking. On Security+, recognition is not enough—you should be able to apply the concept to a scenario.",
+      "defs": [],
+      "course": {
+        "learn": "Files, images, documents, and voice calls can all be attack vectors. Files may contain malicious code; media can hide payloads or social-engineering content; voice calls can be used for vishing and impersonation.",
+        "why": "Security controls must inspect both technical content and human manipulation paths.",
+        "example": "A malicious document exploits a vulnerable reader, while a separate caller impersonates IT to request the user's MFA code.",
+        "exam": "Match the vector to the threat: malicious file/code is technical delivery; deceptive voice interaction is vishing/social engineering.",
+        "breakdown": [
+          {
+            "term": "Malicious code",
+            "explanation": "Within Image, File, and Voice Call, this is a specific factor you should be able to recognize and explain. Connect it to the purpose of Common Threat Vectors and Attack Surfaces rather than memorizing the phrase by itself."
+          },
+          {
+            "term": "Malicious files",
+            "explanation": "Within Image, File, and Voice Call, this is a specific factor you should be able to recognize and explain. Connect it to the purpose of Common Threat Vectors and Attack Surfaces rather than memorizing the phrase by itself."
+          },
+          {
+            "term": "Vishing",
+            "explanation": "Vishing is voice-based phishing. Attackers use phone calls or voice systems to impersonate trusted organizations and pressure victims into revealing secrets or taking action."
+          }
+        ],
+        "defs": [],
+        "check_q": "Without looking back, explain Image, File, and Voice Call and describe at least two key ideas from this section.",
+        "check_a": "Files, images, documents, and voice calls can all be attack vectors. Files may contain malicious code; media can hide payloads or social-engineering content; voice calls can be used for vishing and impersonation. Key ideas include: Malicious code; Malicious files; Vishing.",
+        "points": [
+          "Malicious code",
+          "Malicious files",
+          "Vishing"
+        ]
+      }
+    },
+    {
+      "n": 4,
+      "title": "Removable Device",
+      "points": [
+        "Refers to external storage tools like USB drives or flash drives",
+        "Pose a potential security risk when infected with malware",
+        "Can be used to transfer malware to a system"
+      ],
+      "raw": "Removable Device\nRefers to external storage tools like USB drives or flash drives\nPose a potential security risk when infected with malware\nCan be used to transfer malware to a system",
+      "instructional": true,
+      "teach": "Read the source points, then explain the slide without looking. On Security+, recognition is not enough—you should be able to apply the concept to a scenario.",
+      "defs": [],
+      "course": {
+        "learn": "Removable devices such as USB drives can carry malware, steal data, bypass network controls, or introduce unauthorized hardware into a system.",
+        "why": "Physical media can cross security boundaries without using normal network paths.",
+        "example": "A found USB drive is plugged into a workstation and automatically launches a malicious payload.",
+        "exam": "Common defenses include device control, disabling autorun, allow listing approved media, encryption, scanning, and user awareness.",
+        "breakdown": [
+          {
+            "term": "Refers to external storage tools like USB drives or flash drives",
+            "explanation": "Security monitoring and automation tools include SIEM for event correlation, SCAP for standardized security-content automation, DLP for controlling sensitive data movement, and SNMP for device monitoring and traps."
+          },
+          {
+            "term": "Pose a potential security risk when infected with malware",
+            "explanation": "This affects the likelihood or impact of harm and therefore changes how the organization should prioritize controls."
+          },
+          {
+            "term": "Can be used to transfer malware to a system",
+            "explanation": "Within Removable Device, this is a specific factor you should be able to recognize and explain. Connect it to the purpose of Common Threat Vectors and Attack Surfaces rather than memorizing the phrase by itself."
+          }
+        ],
+        "defs": [],
+        "check_q": "Without looking back, explain Removable Device and describe at least two key ideas from this section.",
+        "check_a": "Removable devices such as USB drives can carry malware, steal data, bypass network controls, or introduce unauthorized hardware into a system. Key ideas include: Refers to external storage tools like USB drives or flash drives; Pose a potential security risk when infected with malware; Can be used to transfer malware to a system.",
+        "points": [
+          "Refers to external storage tools like USB drives or flash drives",
+          "Pose a potential security risk when infected with malware",
+          "Can be used to transfer malware to a system"
+        ]
+      }
+    },
+    {
+      "n": 5,
+      "title": "Vulnerable Software",
+      "points": [
+        "Identifying",
+        "Exploiting",
+        "Targeting",
+        "Expanding"
+      ],
+      "raw": "Vulnerable Software\nIdentifying\nExploiting\nTargeting\nExpanding",
+      "instructional": true,
+      "teach": "Read the source points, then explain the slide without looking. On Security+, recognition is not enough—you should be able to apply the concept to a scenario.",
+      "defs": [],
+      "course": {
+        "learn": "Vulnerable software contains flaws attackers can identify and exploit to gain access, execute code, escalate privilege, or move deeper into an environment.",
+        "why": "Publicly known vulnerabilities give attackers a repeatable path when organizations delay patching or continue using obsolete software.",
+        "example": "An Internet-facing web framework remains several versions behind and is exploited using a published proof of concept.",
+        "exam": "Inventory, vulnerability scanning, patching, version management, and EOL replacement are the core defensive themes.",
+        "breakdown": [
+          {
+            "term": "Identifying",
+            "explanation": "The goal is to discover and clearly document the condition so the organization can decide what action to take next."
+          },
+          {
+            "term": "Exploiting",
+            "explanation": "Within Vulnerable Software, this is a specific factor you should be able to recognize and explain. Connect it to the purpose of Common Threat Vectors and Attack Surfaces rather than memorizing the phrase by itself."
+          },
+          {
+            "term": "Targeting",
+            "explanation": "Within Vulnerable Software, this is a specific factor you should be able to recognize and explain. Connect it to the purpose of Common Threat Vectors and Attack Surfaces rather than memorizing the phrase by itself."
+          },
+          {
+            "term": "Expanding",
+            "explanation": "Within Vulnerable Software, this is a specific factor you should be able to recognize and explain. Connect it to the purpose of Common Threat Vectors and Attack Surfaces rather than memorizing the phrase by itself."
+          }
+        ],
+        "defs": [],
+        "check_q": "Without looking back, explain Vulnerable Software and describe at least two key ideas from this section.",
+        "check_a": "Vulnerable software contains flaws attackers can identify and exploit to gain access, execute code, escalate privilege, or move deeper into an environment. Key ideas include: Identifying; Exploiting; Targeting; Expanding.",
+        "points": [
+          "Identifying",
+          "Exploiting",
+          "Targeting",
+          "Expanding"
+        ]
+      }
+    },
+    {
+      "n": 6,
+      "title": "Client-based vs. Agentless",
+      "points": [
+        "Client-based",
+        "Agentless",
+        "• Are locally installed",
+        "applications on",
+        "individual devices",
+        "• Are targeted for",
+        "specific weaknesses",
+        "• Exploits weaknesses in",
+        "systems without the",
+        "need for agent",
+        "• Targets vulnerabilities",
+        "in the overall system or",
+        "network infrastructure"
+      ],
+      "raw": "Client-based vs. Agentless\nClient-based\nAgentless\n• Are locally installed\napplications on\nindividual devices\n• Are targeted for\nspecific weaknesses\n• Exploits weaknesses in\nsystems without the\nneed for agent\n• Targets vulnerabilities\nin the overall system or\nnetwork infrastructure",
+      "instructional": true,
+      "teach": "Build a side-by-side distinction: purpose, strengths, weaknesses, and the scenario where each option fits best.",
+      "defs": [],
+      "course": {
+        "learn": "Client-based attacks target software installed on an endpoint, while agentless techniques can interact with services or systems remotely without first installing a local client/agent.",
+        "why": "The distinction changes what prerequisites the attacker needs and where defenders should monitor.",
+        "example": "A malicious document exploits a local office application, while a remote exploit targets an exposed web service directly.",
+        "exam": "Ask whether compromise depends on software running on the victim endpoint or can be performed remotely against an exposed service.",
+        "breakdown": [
+          {
+            "term": "Client-based",
+            "explanation": "Within Client-based vs. Agentless, this is a specific factor you should be able to recognize and explain. Connect it to the purpose of Common Threat Vectors and Attack Surfaces rather than memorizing the phrase by itself."
+          },
+          {
+            "term": "Agentless",
+            "explanation": "Within Client-based vs. Agentless, this is a specific factor you should be able to recognize and explain. Connect it to the purpose of Common Threat Vectors and Attack Surfaces rather than memorizing the phrase by itself."
+          },
+          {
+            "term": "Are locally installed applications on",
+            "explanation": "Application monitoring measures application behavior, performance, errors, and security events. APM focuses on health/performance, while a WAF inspects and protects web requests."
+          },
+          {
+            "term": "individual devices",
+            "explanation": "Within Client-based vs. Agentless, this is a specific factor you should be able to recognize and explain. Connect it to the purpose of Common Threat Vectors and Attack Surfaces rather than memorizing the phrase by itself."
+          },
+          {
+            "term": "Are targeted for specific weaknesses",
+            "explanation": "Within Client-based vs. Agentless, this is a specific factor you should be able to recognize and explain. Connect it to the purpose of Common Threat Vectors and Attack Surfaces rather than memorizing the phrase by itself."
+          },
+          {
+            "term": "Exploits weaknesses in systems without the",
+            "explanation": "System monitoring focuses on endpoints and hosts. Endpoint Protection Platforms (EPP) detect or prevent malicious endpoint activity, while SIEM platforms collect and correlate events from many systems."
+          },
+          {
+            "term": "need for agent",
+            "explanation": "Within Client-based vs. Agentless, this is a specific factor you should be able to recognize and explain. Connect it to the purpose of Common Threat Vectors and Attack Surfaces rather than memorizing the phrase by itself."
+          },
+          {
+            "term": "Targets vulnerabilities in the overall system or",
+            "explanation": "Within Client-based vs. Agentless, this is a specific factor you should be able to recognize and explain. Connect it to the purpose of Common Threat Vectors and Attack Surfaces rather than memorizing the phrase by itself."
+          },
+          {
+            "term": "network infrastructure",
+            "explanation": "Infrastructure monitoring observes networks, cloud configuration, appliances, links, and supporting resources. NSM analyzes network behavior, while CSPM evaluates cloud security posture and misconfiguration."
+          }
+        ],
+        "defs": [],
+        "check_q": "Without looking back, explain Client-based vs. Agentless and describe at least two key ideas from this section.",
+        "check_a": "Client-based attacks target software installed on an endpoint, while agentless techniques can interact with services or systems remotely without first installing a local client/agent. Key ideas include: Client-based; Agentless; Are locally installed applications on; individual devices; Are targeted for specific weaknesses.",
+        "points": [
+          "Client-based",
+          "Agentless",
+          "Are locally installed applications on",
+          "individual devices",
+          "Are targeted for specific weaknesses",
+          "Exploits weaknesses in systems without the",
+          "need for agent",
+          "Targets vulnerabilities in the overall system or",
+          "network infrastructure"
+        ]
+      }
+    },
+    {
+      "n": 7,
+      "title": "Unsupported Systems and Applications",
+      "points": [
+        "Are neglected to update or patch their systems or applications",
+        "Are left without the necessary updates",
+        "Are exposed to potential exploitation",
+        "Can contain vulnerabilities that may be exploited"
+      ],
+      "raw": "Unsupported Systems and Applications\nAre neglected to update or patch their systems or applications\nAre left without the necessary updates\nAre exposed to potential exploitation\nCan contain vulnerabilities that may be exploited",
+      "instructional": true,
+      "teach": "Read the source points, then explain the slide without looking. On Security+, recognition is not enough—you should be able to apply the concept to a scenario.",
+      "defs": [],
+      "course": {
+        "learn": "Unsupported or end-of-life systems no longer receive normal vendor security fixes, leaving organizations unable to patch newly discovered weaknesses reliably.",
+        "why": "Risk grows over time as new vulnerabilities are found but the product remains unchanged.",
+        "example": "A legacy medical device cannot be upgraded, so it is segmented, tightly monitored, and accessible only through a controlled management path.",
+        "exam": "If replacement is not immediate, use compensating controls such as isolation, allow listing, restricted access, and monitoring.",
+        "breakdown": [
+          {
+            "term": "Are neglected to update or patch their systems or applications",
+            "explanation": "Application monitoring measures application behavior, performance, errors, and security events. APM focuses on health/performance, while a WAF inspects and protects web requests."
+          },
+          {
+            "term": "Are left without the necessary updates",
+            "explanation": "Within Unsupported Systems and Applications, this is a specific factor you should be able to recognize and explain. Connect it to the purpose of Common Threat Vectors and Attack Surfaces rather than memorizing the phrase by itself."
+          },
+          {
+            "term": "Are exposed to potential exploitation",
+            "explanation": "Within Unsupported Systems and Applications, this is a specific factor you should be able to recognize and explain. Connect it to the purpose of Common Threat Vectors and Attack Surfaces rather than memorizing the phrase by itself."
+          },
+          {
+            "term": "Can contain vulnerabilities that may be exploited",
+            "explanation": "Within Unsupported Systems and Applications, this is a specific factor you should be able to recognize and explain. Connect it to the purpose of Common Threat Vectors and Attack Surfaces rather than memorizing the phrase by itself."
+          }
+        ],
+        "defs": [],
+        "check_q": "Without looking back, explain Unsupported Systems and Applications and describe at least two key ideas from this section.",
+        "check_a": "Unsupported or end-of-life systems no longer receive normal vendor security fixes, leaving organizations unable to patch newly discovered weaknesses reliably. Key ideas include: Are neglected to update or patch their systems or applications; Are left without the necessary updates; Are exposed to potential exploitation; Can contain vulnerabilities that may be exploited.",
+        "points": [
+          "Are neglected to update or patch their systems or applications",
+          "Are left without the necessary updates",
+          "Are exposed to potential exploitation",
+          "Can contain vulnerabilities that may be exploited"
+        ]
+      }
+    },
+    {
+      "n": 8,
+      "title": "Unsecure Networks",
+      "points": [
+        "Compromising Wi-Fi Networks",
+        "Exploiting Wired Networks",
+        "Targeting Bluetooth Connections"
+      ],
+      "raw": "Unsecure Networks\nCompromising Wi-Fi Networks\nExploiting Wired Networks\nTargeting Bluetooth Connections",
+      "instructional": true,
+      "teach": "Read the source points, then explain the slide without looking. On Security+, recognition is not enough—you should be able to apply the concept to a scenario.",
+      "defs": [],
+      "course": {
+        "learn": "Unsecure networks expose users to eavesdropping, rogue infrastructure, weak authentication, and traffic manipulation. Public Wi-Fi, poorly configured wired networks, and insecure Bluetooth can all create risk.",
+        "why": "Network proximity can give an attacker a path to observe or influence traffic.",
+        "example": "A traveler uses an open Wi-Fi network; the organization requires a VPN and disables automatic connection to unknown access points.",
+        "exam": "Use authenticated encryption, VPNs, trusted access points, segmentation, and secure wireless configuration.",
+        "breakdown": [
+          {
+            "term": "Compromising Wi-Fi Networks",
+            "explanation": "Within Unsecure Networks, this is a specific factor you should be able to recognize and explain. Connect it to the purpose of Common Threat Vectors and Attack Surfaces rather than memorizing the phrase by itself."
+          },
+          {
+            "term": "Exploiting Wired Networks",
+            "explanation": "Within Unsecure Networks, this is a specific factor you should be able to recognize and explain. Connect it to the purpose of Common Threat Vectors and Attack Surfaces rather than memorizing the phrase by itself."
+          },
+          {
+            "term": "Targeting Bluetooth Connections",
+            "explanation": "Within Unsecure Networks, this is a specific factor you should be able to recognize and explain. Connect it to the purpose of Common Threat Vectors and Attack Surfaces rather than memorizing the phrase by itself."
+          }
+        ],
+        "defs": [],
+        "check_q": "Without looking back, explain Unsecure Networks and describe at least two key ideas from this section.",
+        "check_a": "Unsecure networks expose users to eavesdropping, rogue infrastructure, weak authentication, and traffic manipulation. Public Wi-Fi, poorly configured wired networks, and insecure Bluetooth can all create risk. Key ideas include: Compromising Wi-Fi Networks; Exploiting Wired Networks; Targeting Bluetooth Connections.",
+        "points": [
+          "Compromising Wi-Fi Networks",
+          "Exploiting Wired Networks",
+          "Targeting Bluetooth Connections"
+        ]
+      }
+    },
+    {
+      "n": 9,
+      "title": "Open Service Ports",
+      "points": [
+        "Exposing Entry Points",
+        "Opening Ports",
+        "Providing Opportunities",
+        "Gaining Unauthorized Access"
+      ],
+      "raw": "Open Service Ports\nExposing Entry Points\nOpening Ports\nProviding Opportunities\nGaining Unauthorized Access",
+      "instructional": true,
+      "teach": "Read the source points, then explain the slide without looking. On Security+, recognition is not enough—you should be able to apply the concept to a scenario.",
+      "defs": [],
+      "course": {
+        "learn": "An open service port means a network service is listening for connections. Every exposed service adds attack surface and must be intentionally required, patched, authenticated, and filtered.",
+        "why": "Attackers scan for exposed services because they provide reachable entry points.",
+        "example": "A server unintentionally exposes a remote-management port to the Internet even though administration should be VPN-only.",
+        "exam": "Close unnecessary ports and restrict necessary management services by firewall, ACL, VPN, or jump host.",
+        "breakdown": [
+          {
+            "term": "Exposing Entry Points",
+            "explanation": "Within Open Service Ports, this is a specific factor you should be able to recognize and explain. Connect it to the purpose of Common Threat Vectors and Attack Surfaces rather than memorizing the phrase by itself."
+          },
+          {
+            "term": "Opening Ports",
+            "explanation": "Within Open Service Ports, this is a specific factor you should be able to recognize and explain. Connect it to the purpose of Common Threat Vectors and Attack Surfaces rather than memorizing the phrase by itself."
+          },
+          {
+            "term": "Providing Opportunities",
+            "explanation": "Within Open Service Ports, this is a specific factor you should be able to recognize and explain. Connect it to the purpose of Common Threat Vectors and Attack Surfaces rather than memorizing the phrase by itself."
+          },
+          {
+            "term": "Gaining Unauthorized Access",
+            "explanation": "This concerns who or what can reach a resource and what actions are permitted once access is granted."
+          }
+        ],
+        "defs": [],
+        "check_q": "Without looking back, explain Open Service Ports and describe at least two key ideas from this section.",
+        "check_a": "An open service port means a network service is listening for connections. Every exposed service adds attack surface and must be intentionally required, patched, authenticated, and filtered. Key ideas include: Exposing Entry Points; Opening Ports; Providing Opportunities; Gaining Unauthorized Access.",
+        "points": [
+          "Exposing Entry Points",
+          "Opening Ports",
+          "Providing Opportunities",
+          "Gaining Unauthorized Access"
+        ]
+      }
+    },
+    {
+      "n": 10,
+      "title": "Default Credentials",
+      "points": [
+        "Using Default Credentials",
+        "Neglecting Change",
+        "Facilitating Unauthorized Access"
+      ],
+      "raw": "Default Credentials\nUsing Default Credentials\nNeglecting Change\nFacilitating Unauthorized Access",
+      "instructional": true,
+      "teach": "Read the source points, then explain the slide without looking. On Security+, recognition is not enough—you should be able to apply the concept to a scenario.",
+      "defs": [],
+      "course": {
+        "learn": "Default credentials are vendor-supplied usernames and passwords that are widely known or easy to discover. Leaving them unchanged gives attackers a predictable authentication path.",
+        "why": "Automated attacks routinely scan for devices still using defaults.",
+        "example": "A newly installed IP camera remains configured with admin/admin and is taken over from the Internet.",
+        "exam": "Changing default credentials is a basic hardening step and should happen before production deployment.",
+        "breakdown": [
+          {
+            "term": "Using Default Credentials",
+            "explanation": "Vendor-supplied usernames/passwords that attackers commonly know and that should be changed before production use."
+          },
+          {
+            "term": "Neglecting Change",
+            "explanation": "Within Default Credentials, this is a specific factor you should be able to recognize and explain. Connect it to the purpose of Common Threat Vectors and Attack Surfaces rather than memorizing the phrase by itself."
+          },
+          {
+            "term": "Facilitating Unauthorized Access",
+            "explanation": "This concerns who or what can reach a resource and what actions are permitted once access is granted."
+          }
+        ],
+        "defs": [],
+        "check_q": "Without looking back, explain Default Credentials and describe at least two key ideas from this section.",
+        "check_a": "Default credentials are vendor-supplied usernames and passwords that are widely known or easy to discover. Leaving them unchanged gives attackers a predictable authentication path. Key ideas include: Using Default Credentials; Neglecting Change; Facilitating Unauthorized Access.",
+        "points": [
+          "Using Default Credentials",
+          "Neglecting Change",
+          "Facilitating Unauthorized Access"
+        ]
+      }
+    },
+    {
+      "n": 11,
+      "title": "Supply Chain",
+      "points": [
+        "• Compromising MSPs",
+        "• Targeting Vendors",
+        "• Affecting Suppliers"
+      ],
+      "raw": "Supply Chain\n• Compromising MSPs\n• Targeting Vendors\n• Affecting Suppliers",
+      "instructional": true,
+      "teach": "Read the source points, then explain the slide without looking. On Security+, recognition is not enough—you should be able to apply the concept to a scenario.",
+      "defs": [],
+      "course": {
+        "learn": "A supply-chain attack compromises a trusted supplier, software dependency, hardware component, update mechanism, or service provider so the attacker can reach downstream customers.",
+        "why": "Organizations inherit risk from technology they did not build themselves.",
+        "example": "Attackers compromise a vendor's build environment and malicious code is distributed through a signed software update.",
+        "exam": "Trusted vendor/update/dependency becomes the attack path = supply chain.",
+        "breakdown": [
+          {
+            "term": "Compromising MSPs",
+            "explanation": "Within Supply Chain, this is a specific factor you should be able to recognize and explain. Connect it to the purpose of Common Threat Vectors and Attack Surfaces rather than memorizing the phrase by itself."
+          },
+          {
+            "term": "Targeting Vendors",
+            "explanation": "Within Supply Chain, this is a specific factor you should be able to recognize and explain. Connect it to the purpose of Common Threat Vectors and Attack Surfaces rather than memorizing the phrase by itself."
+          },
+          {
+            "term": "Affecting Suppliers",
+            "explanation": "Within Supply Chain, this is a specific factor you should be able to recognize and explain. Connect it to the purpose of Common Threat Vectors and Attack Surfaces rather than memorizing the phrase by itself."
+          }
+        ],
+        "defs": [],
+        "check_q": "Without looking back, explain Supply Chain and describe at least two key ideas from this section.",
+        "check_a": "A supply-chain attack compromises a trusted supplier, software dependency, hardware component, update mechanism, or service provider so the attacker can reach downstream customers. Key ideas include: Compromising MSPs; Targeting Vendors; Affecting Suppliers.",
+        "points": [
+          "Compromising MSPs",
+          "Targeting Vendors",
+          "Affecting Suppliers"
+        ]
+      }
+    },
+    {
+      "n": 12,
+      "title": "Social Engineering",
+      "points": [
+        "Information Theft",
+        "Unauthorized Access",
+        "Manipulation"
+      ],
+      "raw": "Social Engineering\nInformation Theft\nUnauthorized Access\nManipulation",
+      "instructional": true,
+      "teach": "Read the source points, then explain the slide without looking. On Security+, recognition is not enough—you should be able to apply the concept to a scenario.",
+      "defs": [],
+      "course": {
+        "learn": "Social engineering manipulates people into revealing information, granting access, transferring money, or bypassing procedures. Attackers exploit trust, urgency, authority, fear, curiosity, or helpfulness.",
+        "why": "Technical controls can be bypassed when a legitimate user is persuaded to perform the attacker's action.",
+        "example": "An attacker claims to be a new executive and pressures help desk staff to reset an account outside normal verification procedures.",
+        "exam": "Common forms include phishing, vishing, smishing, impersonation, BEC, watering holes, misinformation, and brand impersonation.",
+        "breakdown": [
+          {
+            "term": "Information Theft",
+            "explanation": "Within Social Engineering, this is a specific factor you should be able to recognize and explain. Connect it to the purpose of Common Threat Vectors and Attack Surfaces rather than memorizing the phrase by itself."
+          },
+          {
+            "term": "Unauthorized Access",
+            "explanation": "This concerns who or what can reach a resource and what actions are permitted once access is granted."
+          },
+          {
+            "term": "Manipulation",
+            "explanation": "Within Social Engineering, this is a specific factor you should be able to recognize and explain. Connect it to the purpose of Common Threat Vectors and Attack Surfaces rather than memorizing the phrase by itself."
+          }
+        ],
+        "defs": [],
+        "check_q": "Without looking back, explain Social Engineering and describe at least two key ideas from this section.",
+        "check_a": "Social engineering manipulates people into revealing information, granting access, transferring money, or bypassing procedures. Attackers exploit trust, urgency, authority, fear, curiosity, or helpfulness. Key ideas include: Information Theft; Unauthorized Access; Manipulation.",
+        "points": [
+          "Information Theft",
+          "Unauthorized Access",
+          "Manipulation"
+        ]
+      }
+    },
+    {
+      "n": 13,
+      "title": "Phishing",
+      "points": [
+        "Is an email with malicious intent",
+        "Is sent with content that attracts or scares the target",
+        "Seems to have come from a legitimate source",
+        "Attempts to get the personal information from the user"
+      ],
+      "raw": "Phishing\nIs an email with malicious intent\nIs sent with content that attracts or scares the target\nSeems to have come from a legitimate source\nAttempts to get the personal information from the user",
+      "instructional": true,
+      "teach": "Read the source points, then explain the slide without looking. On Security+, recognition is not enough—you should be able to apply the concept to a scenario.",
+      "defs": [],
+      "course": {
+        "learn": "Phishing uses deceptive messages to manipulate victims into revealing information, opening malicious content, or performing an unsafe action. It is a social-engineering technique rather than a purely technical exploit.",
+        "why": "Attackers often find it easier to trick a person than to break strong cryptography directly.",
+        "example": "An employee receives a fake Microsoft 365 sign-in page linked from an urgent “password expires today” email.",
+        "exam": "Email = phishing; voice = vishing; SMS/text = smishing. Spear phishing is targeted; whaling targets high-value executives.",
+        "breakdown": [
+          {
+            "term": "Is an email with malicious intent",
+            "explanation": "Within Phishing, this is a specific factor you should be able to recognize and explain. Connect it to the purpose of Common Threat Vectors and Attack Surfaces rather than memorizing the phrase by itself."
+          },
+          {
+            "term": "Is sent with content that attracts or scares the target",
+            "explanation": "Within Phishing, this is a specific factor you should be able to recognize and explain. Connect it to the purpose of Common Threat Vectors and Attack Surfaces rather than memorizing the phrase by itself."
+          },
+          {
+            "term": "Seems to have come from a legitimate source",
+            "explanation": "Within Phishing, this is a specific factor you should be able to recognize and explain. Connect it to the purpose of Common Threat Vectors and Attack Surfaces rather than memorizing the phrase by itself."
+          },
+          {
+            "term": "Attempts to get the personal information from the user",
+            "explanation": "Within Phishing, this is a specific factor you should be able to recognize and explain. Connect it to the purpose of Common Threat Vectors and Attack Surfaces rather than memorizing the phrase by itself."
+          }
+        ],
+        "defs": [],
+        "check_q": "Without looking back, explain Phishing and describe at least two key ideas from this section.",
+        "check_a": "Phishing uses deceptive messages to manipulate victims into revealing information, opening malicious content, or performing an unsafe action. It is a social-engineering technique rather than a purely technical exploit. Key ideas include: Is an email with malicious intent; Is sent with content that attracts or scares the target; Seems to have come from a legitimate source; Attempts to get the personal information from the user.",
+        "points": [
+          "Is an email with malicious intent",
+          "Is sent with content that attracts or scares the target",
+          "Seems to have come from a legitimate source",
+          "Attempts to get the personal information from the user"
+        ]
+      }
+    },
+    {
+      "n": 14,
+      "title": "Vishing",
+      "points": [
+        "Is another form of phishing that uses Voice over IP (VoIP)",
+        "Is designed to steal money from the target",
+        "Requests for the personal information",
+        "Drives the target to reveal sensitive information"
+      ],
+      "raw": "Vishing\nIs another form of phishing that uses Voice over IP (VoIP)\nIs designed to steal money from the target\nRequests for the personal information\nDrives the target to reveal sensitive information",
+      "instructional": true,
+      "teach": "Read the source points, then explain the slide without looking. On Security+, recognition is not enough—you should be able to apply the concept to a scenario.",
+      "defs": [],
+      "course": {
+        "learn": "Vishing is voice-based phishing. Attackers use phone calls or voice systems to impersonate trusted organizations and pressure victims into revealing secrets or taking action.",
+        "why": "Human urgency and authority cues can bypass technical controls if users willingly disclose credentials or codes.",
+        "example": "A caller pretends to be the bank and asks the victim to read back an MFA code.",
+        "exam": "Voice/phone social engineering = vishing.",
+        "breakdown": [
+          {
+            "term": "Is another form of phishing that uses Voice over IP (VoIP)",
+            "explanation": "Phishing uses deceptive messages to manipulate victims into revealing information, opening malicious content, or performing an unsafe action. It is a social-engineering technique rather than a purely technical exploit."
+          },
+          {
+            "term": "Is designed to steal money from the target",
+            "explanation": "Within Vishing, this is a specific factor you should be able to recognize and explain. Connect it to the purpose of Common Threat Vectors and Attack Surfaces rather than memorizing the phrase by itself."
+          },
+          {
+            "term": "Requests for the personal information",
+            "explanation": "Within Vishing, this is a specific factor you should be able to recognize and explain. Connect it to the purpose of Common Threat Vectors and Attack Surfaces rather than memorizing the phrase by itself."
+          },
+          {
+            "term": "Drives the target to reveal sensitive information",
+            "explanation": "Within Vishing, this is a specific factor you should be able to recognize and explain. Connect it to the purpose of Common Threat Vectors and Attack Surfaces rather than memorizing the phrase by itself."
+          }
+        ],
+        "defs": [],
+        "check_q": "Without looking back, explain Vishing and describe at least two key ideas from this section.",
+        "check_a": "Vishing is voice-based phishing. Attackers use phone calls or voice systems to impersonate trusted organizations and pressure victims into revealing secrets or taking action. Key ideas include: Is another form of phishing that uses Voice over IP (VoIP); Is designed to steal money from the target; Requests for the personal information; Drives the target to reveal sensitive information.",
+        "points": [
+          "Is another form of phishing that uses Voice over IP (VoIP)",
+          "Is designed to steal money from the target",
+          "Requests for the personal information",
+          "Drives the target to reveal sensitive information"
+        ]
+      }
+    },
+    {
+      "n": 15,
+      "title": "Smishing",
+      "points": [
+        "Is fairly a new concept started a few years back",
+        "Is a type of phishing – combination of SMS and phishing",
+        "Uses SMS instead of email",
+        "Uses the same concepts as phishing but in SMS",
+        "Contains a link for the target to click"
+      ],
+      "raw": "Smishing\nIs fairly a new concept started a few years back\nIs a type of phishing – combination of SMS and phishing\nUses SMS instead of email\nUses the same concepts as phishing but in SMS\nContains a link for the target to click",
+      "instructional": true,
+      "teach": "Read the source points, then explain the slide without looking. On Security+, recognition is not enough—you should be able to apply the concept to a scenario.",
+      "defs": [],
+      "course": {
+        "learn": "Smishing is phishing delivered through SMS or other text messaging. Messages often use short links, delivery notices, account warnings, or urgent payment requests.",
+        "why": "Users may trust texts more than email and mobile screens can make malicious URLs harder to inspect.",
+        "example": "A text claims a package cannot be delivered and links to a fake payment page.",
+        "exam": "SMS/text = smishing; voice = vishing; email/message phishing = phishing.",
+        "breakdown": [
+          {
+            "term": "Is fairly a new concept started a few years back",
+            "explanation": "Within Smishing, this is a specific factor you should be able to recognize and explain. Connect it to the purpose of Common Threat Vectors and Attack Surfaces rather than memorizing the phrase by itself."
+          },
+          {
+            "term": "Is a type of phishing – combination of SMS and phishing",
+            "explanation": "Phishing uses deceptive messages to manipulate victims into revealing information, opening malicious content, or performing an unsafe action. It is a social-engineering technique rather than a purely technical exploit."
+          },
+          {
+            "term": "Uses SMS instead of email",
+            "explanation": "Within Smishing, this is a specific factor you should be able to recognize and explain. Connect it to the purpose of Common Threat Vectors and Attack Surfaces rather than memorizing the phrase by itself."
+          },
+          {
+            "term": "Uses the same concepts as phishing but in SMS",
+            "explanation": "Phishing uses deceptive messages to manipulate victims into revealing information, opening malicious content, or performing an unsafe action. It is a social-engineering technique rather than a purely technical exploit."
+          },
+          {
+            "term": "Contains a link for the target to click",
+            "explanation": "Within Smishing, this is a specific factor you should be able to recognize and explain. Connect it to the purpose of Common Threat Vectors and Attack Surfaces rather than memorizing the phrase by itself."
+          }
+        ],
+        "defs": [],
+        "check_q": "Without looking back, explain Smishing and describe at least two key ideas from this section.",
+        "check_a": "Smishing is phishing delivered through SMS or other text messaging. Messages often use short links, delivery notices, account warnings, or urgent payment requests. Key ideas include: Is fairly a new concept started a few years back; Is a type of phishing – combination of SMS and phishing; Uses SMS instead of email; Uses the same concepts as phishing but in SMS; Contains a link for the target to click.",
+        "points": [
+          "Is fairly a new concept started a few years back",
+          "Is a type of phishing – combination of SMS and phishing",
+          "Uses SMS instead of email",
+          "Uses the same concepts as phishing but in SMS",
+          "Contains a link for the target to click"
+        ]
+      }
+    },
+    {
+      "n": 16,
+      "title": "Misinformation/disinformation",
+      "points": [
+        "Influence Public",
+        "Opinion",
+        "Undermine Trust",
+        "Create Confusion"
+      ],
+      "raw": "Misinformation/disinformation\nInfluence Public\nOpinion\nUndermine Trust\nCreate Confusion",
+      "instructional": true,
+      "teach": "Read the source points, then explain the slide without looking. On Security+, recognition is not enough—you should be able to apply the concept to a scenario.",
+      "defs": [],
+      "course": {
+        "learn": "Misinformation is false information shared without necessarily intending harm; disinformation is deliberately false or misleading content intended to influence behavior or perception.",
+        "why": "Manipulating trust and public understanding can support fraud, social engineering, reputational damage, or broader influence operations.",
+        "example": "An attacker deliberately spreads a fake breach notice using copied company branding to drive customers to a credential-stealing site.",
+        "exam": "The important distinction is intent: disinformation is intentionally deceptive; misinformation may be inaccurate without malicious intent.",
+        "breakdown": [
+          {
+            "term": "Influence Public",
+            "explanation": "Within Misinformation/disinformation, this is a specific factor you should be able to recognize and explain. Connect it to the purpose of Common Threat Vectors and Attack Surfaces rather than memorizing the phrase by itself."
+          },
+          {
+            "term": "Opinion",
+            "explanation": "Within Misinformation/disinformation, this is a specific factor you should be able to recognize and explain. Connect it to the purpose of Common Threat Vectors and Attack Surfaces rather than memorizing the phrase by itself."
+          },
+          {
+            "term": "Undermine Trust",
+            "explanation": "Within Misinformation/disinformation, this is a specific factor you should be able to recognize and explain. Connect it to the purpose of Common Threat Vectors and Attack Surfaces rather than memorizing the phrase by itself."
+          },
+          {
+            "term": "Create Confusion",
+            "explanation": "Within Misinformation/disinformation, this is a specific factor you should be able to recognize and explain. Connect it to the purpose of Common Threat Vectors and Attack Surfaces rather than memorizing the phrase by itself."
+          }
+        ],
+        "defs": [],
+        "check_q": "Without looking back, explain Misinformation/disinformation and describe at least two key ideas from this section.",
+        "check_a": "Misinformation is false information shared without necessarily intending harm; disinformation is deliberately false or misleading content intended to influence behavior or perception. Key ideas include: Influence Public; Opinion; Undermine Trust; Create Confusion.",
+        "points": [
+          "Influence Public",
+          "Opinion",
+          "Undermine Trust",
+          "Create Confusion"
+        ]
+      }
+    },
+    {
+      "n": 17,
+      "title": "Impersonation",
+      "points": [
+        "Is an act of social engineering – a targeted phishing attack",
+        "Allows the attacker to be someone else",
+        "Helps to extract sensitive information or gain monetary rewards",
+        "Can be effective if the target falls for it"
+      ],
+      "raw": "Impersonation\nIs an act of social engineering – a targeted phishing attack\nAllows the attacker to be someone else\nHelps to extract sensitive information or gain monetary rewards\nCan be effective if the target falls for it",
+      "instructional": true,
+      "teach": "Read the source points, then explain the slide without looking. On Security+, recognition is not enough—you should be able to apply the concept to a scenario.",
+      "defs": [],
+      "course": {
+        "learn": "Impersonation pretends to be a trusted person or organization to gain information, access, money, or credibility. Brand impersonation copies logos, domains, websites, or communication style to appear legitimate.",
+        "why": "People make trust decisions quickly based on familiar names and appearance.",
+        "example": "A fake support account uses the company logo and a look-alike domain to send customers to a malicious sign-in page.",
+        "exam": "Verify identity through trusted channels; look-alike domains and copied branding are strong clues.",
+        "breakdown": [
+          {
+            "term": "Is an act of social engineering – a targeted phishing attack",
+            "explanation": "Social engineering manipulates people into revealing information, granting access, transferring money, or bypassing procedures. Attackers exploit trust, urgency, authority, fear, curiosity, or helpfulness."
+          },
+          {
+            "term": "Allows the attacker to be someone else",
+            "explanation": "Within Impersonation, this is a specific factor you should be able to recognize and explain. Connect it to the purpose of Common Threat Vectors and Attack Surfaces rather than memorizing the phrase by itself."
+          },
+          {
+            "term": "Helps to extract sensitive information or gain monetary rewards",
+            "explanation": "Within Impersonation, this is a specific factor you should be able to recognize and explain. Connect it to the purpose of Common Threat Vectors and Attack Surfaces rather than memorizing the phrase by itself."
+          },
+          {
+            "term": "Can be effective if the target falls for it",
+            "explanation": "Within Impersonation, this is a specific factor you should be able to recognize and explain. Connect it to the purpose of Common Threat Vectors and Attack Surfaces rather than memorizing the phrase by itself."
+          }
+        ],
+        "defs": [],
+        "check_q": "Without looking back, explain Impersonation and describe at least two key ideas from this section.",
+        "check_a": "Impersonation pretends to be a trusted person or organization to gain information, access, money, or credibility. Brand impersonation copies logos, domains, websites, or communication style to appear legitimate. Key ideas include: Is an act of social engineering – a targeted phishing attack; Allows the attacker to be someone else; Helps to extract sensitive information or gain monetary rewards; Can be effective if the target falls for it.",
+        "points": [
+          "Is an act of social engineering – a targeted phishing attack",
+          "Allows the attacker to be someone else",
+          "Helps to extract sensitive information or gain monetary rewards",
+          "Can be effective if the target falls for it"
+        ]
+      }
+    },
+    {
+      "n": 18,
+      "title": "Business Email Compromise",
+      "points": [
+        "Email",
+        "Manipulation",
+        "Impersonation",
+        "Financial",
+        "Fraud"
+      ],
+      "raw": "Business Email Compromise\nEmail\nManipulation\nImpersonation\nFinancial\nFraud",
+      "instructional": true,
+      "teach": "Read the source points, then explain the slide without looking. On Security+, recognition is not enough—you should be able to apply the concept to a scenario.",
+      "defs": [],
+      "course": {
+        "learn": "Business Email Compromise (BEC) is a targeted fraud in which attackers impersonate or take over a trusted business identity to manipulate payments, invoices, payroll, or sensitive data.",
+        "why": "BEC can cause large financial losses without malware if the social deception is convincing.",
+        "example": "An attacker compromises a vendor mailbox and sends a real customer an invoice with new bank details.",
+        "exam": "Look for executive/vendor impersonation, wire-transfer requests, invoice changes, and urgent financial action.",
+        "breakdown": [
+          {
+            "term": "Email",
+            "explanation": "Within Business Email Compromise, this is a specific factor you should be able to recognize and explain. Connect it to the purpose of Common Threat Vectors and Attack Surfaces rather than memorizing the phrase by itself."
+          },
+          {
+            "term": "Manipulation",
+            "explanation": "Within Business Email Compromise, this is a specific factor you should be able to recognize and explain. Connect it to the purpose of Common Threat Vectors and Attack Surfaces rather than memorizing the phrase by itself."
+          },
+          {
+            "term": "Impersonation",
+            "explanation": "Impersonation pretends to be a trusted person or organization to gain information, access, money, or credibility. Brand impersonation copies logos, domains, websites, or communication style to appear legitimate."
+          },
+          {
+            "term": "Financial",
+            "explanation": "Within Business Email Compromise, this is a specific factor you should be able to recognize and explain. Connect it to the purpose of Common Threat Vectors and Attack Surfaces rather than memorizing the phrase by itself."
+          },
+          {
+            "term": "Fraud",
+            "explanation": "Within Business Email Compromise, this is a specific factor you should be able to recognize and explain. Connect it to the purpose of Common Threat Vectors and Attack Surfaces rather than memorizing the phrase by itself."
+          }
+        ],
+        "defs": [],
+        "check_q": "Without looking back, explain Business Email Compromise and describe at least two key ideas from this section.",
+        "check_a": "Business Email Compromise (BEC) is a targeted fraud in which attackers impersonate or take over a trusted business identity to manipulate payments, invoices, payroll, or sensitive data. Key ideas include: Email; Manipulation; Impersonation; Financial; Fraud.",
+        "points": [
+          "Email",
+          "Manipulation",
+          "Impersonation",
+          "Financial",
+          "Fraud"
+        ]
+      }
+    },
+    {
+      "n": 19,
+      "title": "Watering hole",
+      "points": [
+        "Is performed by identifying an insecure website used by many",
+        "users",
+        "Requires the attacker to implant a malware or malicious code in",
+        "the website",
+        "Is conducted to steal confidential and sensitive information from",
+        "the targets"
+      ],
+      "raw": "Watering hole\nIs performed by identifying an insecure website used by many\nusers\nRequires the attacker to implant a malware or malicious code in\nthe website\nIs conducted to steal confidential and sensitive information from\nthe targets",
+      "instructional": true,
+      "teach": "Read the source points, then explain the slide without looking. On Security+, recognition is not enough—you should be able to apply the concept to a scenario.",
+      "defs": [],
+      "course": {
+        "learn": "A watering-hole attack compromises a website frequently visited by the intended victims so the attacker can reach them indirectly.",
+        "why": "Targeting a trusted site can bypass users' suspicion of unsolicited links.",
+        "example": "An attacker compromises an industry association website that employees of several target companies visit every day.",
+        "exam": "Targeted victims + compromised site they normally visit = watering hole.",
+        "breakdown": [
+          {
+            "term": "Is performed by identifying an insecure website used by many",
+            "explanation": "Within Watering hole, this is a specific factor you should be able to recognize and explain. Connect it to the purpose of Common Threat Vectors and Attack Surfaces rather than memorizing the phrase by itself."
+          },
+          {
+            "term": "users",
+            "explanation": "Within Watering hole, this is a specific factor you should be able to recognize and explain. Connect it to the purpose of Common Threat Vectors and Attack Surfaces rather than memorizing the phrase by itself."
+          },
+          {
+            "term": "Requires the attacker to implant a malware or malicious code in",
+            "explanation": "Within Watering hole, this is a specific factor you should be able to recognize and explain. Connect it to the purpose of Common Threat Vectors and Attack Surfaces rather than memorizing the phrase by itself."
+          },
+          {
+            "term": "the website",
+            "explanation": "Within Watering hole, this is a specific factor you should be able to recognize and explain. Connect it to the purpose of Common Threat Vectors and Attack Surfaces rather than memorizing the phrase by itself."
+          },
+          {
+            "term": "Is conducted to steal confidential and sensitive information from",
+            "explanation": "Within Watering hole, this is a specific factor you should be able to recognize and explain. Connect it to the purpose of Common Threat Vectors and Attack Surfaces rather than memorizing the phrase by itself."
+          },
+          {
+            "term": "the targets",
+            "explanation": "Within Watering hole, this is a specific factor you should be able to recognize and explain. Connect it to the purpose of Common Threat Vectors and Attack Surfaces rather than memorizing the phrase by itself."
+          }
+        ],
+        "defs": [],
+        "check_q": "Without looking back, explain Watering hole and describe at least two key ideas from this section.",
+        "check_a": "A watering-hole attack compromises a website frequently visited by the intended victims so the attacker can reach them indirectly. Key ideas include: Is performed by identifying an insecure website used by many; users; Requires the attacker to implant a malware or malicious code in; the website; Is conducted to steal confidential and sensitive information from.",
+        "points": [
+          "Is performed by identifying an insecure website used by many",
+          "users",
+          "Requires the attacker to implant a malware or malicious code in",
+          "the website",
+          "Is conducted to steal confidential and sensitive information from",
+          "the targets"
+        ]
+      }
+    },
+    {
+      "n": 20,
+      "title": "Brand Impersonation",
+      "points": [
+        "Phishing Emails",
+        "Fake Websites",
+        "Social Media",
+        "Impersonation"
+      ],
+      "raw": "Brand Impersonation\nPhishing Emails\nFake Websites\nSocial Media\nImpersonation",
+      "instructional": true,
+      "teach": "Read the source points, then explain the slide without looking. On Security+, recognition is not enough—you should be able to apply the concept to a scenario.",
+      "defs": [],
+      "course": {
+        "learn": "Impersonation pretends to be a trusted person or organization to gain information, access, money, or credibility. Brand impersonation copies logos, domains, websites, or communication style to appear legitimate.",
+        "why": "People make trust decisions quickly based on familiar names and appearance.",
+        "example": "A fake support account uses the company logo and a look-alike domain to send customers to a malicious sign-in page.",
+        "exam": "Verify identity through trusted channels; look-alike domains and copied branding are strong clues.",
+        "breakdown": [
+          {
+            "term": "Phishing Emails",
+            "explanation": "Phishing uses deceptive messages to manipulate victims into revealing information, opening malicious content, or performing an unsafe action. It is a social-engineering technique rather than a purely technical exploit."
+          },
+          {
+            "term": "Fake Websites",
+            "explanation": "Within Brand Impersonation, this is a specific factor you should be able to recognize and explain. Connect it to the purpose of Common Threat Vectors and Attack Surfaces rather than memorizing the phrase by itself."
+          },
+          {
+            "term": "Social Media",
+            "explanation": "Within Brand Impersonation, this is a specific factor you should be able to recognize and explain. Connect it to the purpose of Common Threat Vectors and Attack Surfaces rather than memorizing the phrase by itself."
+          },
+          {
+            "term": "Impersonation",
+            "explanation": "Impersonation pretends to be a trusted person or organization to gain information, access, money, or credibility. Brand impersonation copies logos, domains, websites, or communication style to appear legitimate."
+          }
+        ],
+        "defs": [],
+        "check_q": "Without looking back, explain Brand Impersonation and describe at least two key ideas from this section.",
+        "check_a": "Impersonation pretends to be a trusted person or organization to gain information, access, money, or credibility. Brand impersonation copies logos, domains, websites, or communication style to appear legitimate. Key ideas include: Phishing Emails; Fake Websites; Social Media; Impersonation.",
+        "points": [
+          "Phishing Emails",
+          "Fake Websites",
+          "Social Media",
+          "Impersonation"
+        ]
+      }
+    },
+    {
+      "n": 21,
+      "title": "Typosquatting",
+      "points": [
+        "Is used by an attacker to set up a domain that is similar to a real",
+        "domain",
+        "Is used for various purposes but stealing user credentials is one",
+        "of the key purpose"
+      ],
+      "raw": "Typosquatting\nIs used by an attacker to set up a domain that is similar to a real\ndomain\nIs used for various purposes but stealing user credentials is one\nof the key purpose",
+      "instructional": true,
+      "teach": "Read the source points, then explain the slide without looking. On Security+, recognition is not enough—you should be able to apply the concept to a scenario.",
+      "defs": [],
+      "course": {
+        "learn": "Typosquatting registers look-alike domain names based on common typing mistakes or visually similar characters so victims land on an attacker-controlled site.",
+        "why": "Users may overlook small domain differences, allowing credential theft or malware delivery.",
+        "example": "micros0ft-support.example is designed to resemble a legitimate brand domain.",
+        "exam": "Misspelled/look-alike domain = typosquatting. Broader copying of a company identity is brand impersonation.",
+        "breakdown": [
+          {
+            "term": "Is used by an attacker to set up a domain that is similar to a real",
+            "explanation": "Within Typosquatting, this is a specific factor you should be able to recognize and explain. Connect it to the purpose of Common Threat Vectors and Attack Surfaces rather than memorizing the phrase by itself."
+          },
+          {
+            "term": "domain",
+            "explanation": "Within Typosquatting, this is a specific factor you should be able to recognize and explain. Connect it to the purpose of Common Threat Vectors and Attack Surfaces rather than memorizing the phrase by itself."
+          },
+          {
+            "term": "Is used for various purposes but stealing user credentials is one",
+            "explanation": "Within Typosquatting, this is a specific factor you should be able to recognize and explain. Connect it to the purpose of Common Threat Vectors and Attack Surfaces rather than memorizing the phrase by itself."
+          },
+          {
+            "term": "of the key purpose",
+            "explanation": "Within Typosquatting, this is a specific factor you should be able to recognize and explain. Connect it to the purpose of Common Threat Vectors and Attack Surfaces rather than memorizing the phrase by itself."
+          }
+        ],
+        "defs": [],
+        "check_q": "Without looking back, explain Typosquatting and describe at least two key ideas from this section.",
+        "check_a": "Typosquatting registers look-alike domain names based on common typing mistakes or visually similar characters so victims land on an attacker-controlled site. Key ideas include: Is used by an attacker to set up a domain that is similar to a real; domain; Is used for various purposes but stealing user credentials is one; of the key purpose.",
+        "points": [
+          "Is used by an attacker to set up a domain that is similar to a real",
+          "domain",
+          "Is used for various purposes but stealing user credentials is one",
+          "of the key purpose"
+        ]
+      }
+    },
+    {
+      "n": 22,
+      "title": "Types of Vulnerabilities",
+      "points": [],
+      "raw": "Types of Vulnerabilities",
+      "instructional": false,
+      "teach": "A vulnerability is a weakness. For each item, connect the weakness to its likely impact and the best mitigation.",
+      "defs": []
+    }
+  ],
+  "slide_count": 22,
+  "instructional_count": 20,
+  "concepts": [
+    "Message-based",
+    "Image, File, and Voice Call",
+    "Removable Device",
+    "Vulnerable Software",
+    "Client-based vs. Agentless",
+    "Unsupported Systems and Applications",
+    "Unsecure Networks",
+    "Open Service Ports",
+    "Default Credentials",
+    "Supply Chain",
+    "Social Engineering",
+    "Phishing"
+  ],
+  "source_filename": "06.01_Common_Threat_Vectors_and_Attack_Surfaces.pdf"
+}

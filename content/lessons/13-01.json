@@ -1,0 +1,311 @@
+{
+  "id": "13.01",
+  "chapter": 13,
+  "sub": 1,
+  "title": "High availability",
+  "chapter_name": "Resilience & Recovery",
+  "slides": [
+    {
+      "n": 1,
+      "title": "High Availability",
+      "points": [],
+      "raw": "High Availability",
+      "instructional": false,
+      "teach": "Read the source points, then explain the slide without looking. On Security+, recognition is not enough—you should be able to apply the concept to a scenario.",
+      "defs": [
+        [
+          "Availability",
+          "Ensuring authorized users can access systems and data when needed."
+        ]
+      ]
+    },
+    {
+      "n": 2,
+      "title": "High Availability",
+      "points": [
+        "Continuous Access",
+        "Minimizing Downtime",
+        "Resilience to Failures",
+        "User-Centric Approach"
+      ],
+      "raw": "High Availability\nContinuous Access\nMinimizing Downtime\nResilience to Failures\nUser-Centric Approach",
+      "instructional": true,
+      "teach": "Read the source points, then explain the slide without looking. On Security+, recognition is not enough—you should be able to apply the concept to a scenario.",
+      "defs": [
+        [
+          "Availability",
+          "Ensuring authorized users can access systems and data when needed."
+        ]
+      ],
+      "course": {
+        "learn": "High availability designs services to remain accessible despite failures. It uses redundancy, failover, load balancing, clustering, replication, resilient power, and removal of single points of failure.",
+        "why": "The goal is not merely fast recovery after an outage; it is to minimize or avoid service interruption.",
+        "example": "Two application nodes run in separate availability zones behind a load balancer so one zone can fail without taking down the service.",
+        "exam": "Availability clues: redundancy, clustering, failover, load balancing, geographically separated resources, UPS/generator.",
+        "breakdown": [
+          {
+            "term": "Continuous Access",
+            "explanation": "This concerns who or what can reach a resource and what actions are permitted once access is granted."
+          },
+          {
+            "term": "Minimizing Downtime",
+            "explanation": "Within High Availability, this is a specific factor you should be able to recognize and explain. Connect it to the purpose of High availability rather than memorizing the phrase by itself."
+          },
+          {
+            "term": "Resilience to Failures",
+            "explanation": "Within High Availability, this is a specific factor you should be able to recognize and explain. Connect it to the purpose of High availability rather than memorizing the phrase by itself."
+          },
+          {
+            "term": "User-Centric Approach",
+            "explanation": "Within High Availability, this is a specific factor you should be able to recognize and explain. Connect it to the purpose of High availability rather than memorizing the phrase by itself."
+          }
+        ],
+        "defs": [
+          {
+            "term": "Availability",
+            "definition": "Ensuring authorized users can access systems and data when needed."
+          }
+        ],
+        "check_q": "Without looking back, explain High Availability and describe at least two key ideas from this section.",
+        "check_a": "High availability designs services to remain accessible despite failures. It uses redundancy, failover, load balancing, clustering, replication, resilient power, and removal of single points of failure. Key ideas include: Continuous Access; Minimizing Downtime; Resilience to Failures; User-Centric Approach.",
+        "points": [
+          "Continuous Access",
+          "Minimizing Downtime",
+          "Resilience to Failures",
+          "User-Centric Approach"
+        ]
+      }
+    },
+    {
+      "n": 3,
+      "title": "High Availability",
+      "points": [
+        "Proactive Monitoring and Management",
+        "Fault-Tolerant Design",
+        "Scalability",
+        "Redundancy"
+      ],
+      "raw": "High Availability\nProactive Monitoring and Management\nFault-Tolerant Design\nScalability\nRedundancy",
+      "instructional": true,
+      "teach": "Read the source points, then explain the slide without looking. On Security+, recognition is not enough—you should be able to apply the concept to a scenario.",
+      "defs": [
+        [
+          "Availability",
+          "Ensuring authorized users can access systems and data when needed."
+        ]
+      ],
+      "course": {
+        "learn": "High availability designs services to remain accessible despite failures. It uses redundancy, failover, load balancing, clustering, replication, resilient power, and removal of single points of failure.",
+        "why": "The goal is not merely fast recovery after an outage; it is to minimize or avoid service interruption.",
+        "example": "Two application nodes run in separate availability zones behind a load balancer so one zone can fail without taking down the service.",
+        "exam": "Availability clues: redundancy, clustering, failover, load balancing, geographically separated resources, UPS/generator.",
+        "breakdown": [
+          {
+            "term": "Proactive Monitoring and Management",
+            "explanation": "Security monitoring continuously observes systems, networks, applications, and logs for suspicious activity, failures, policy violations, and indicators of compromise."
+          },
+          {
+            "term": "Fault-Tolerant Design",
+            "explanation": "Within High Availability, this is a specific factor you should be able to recognize and explain. Connect it to the purpose of High availability rather than memorizing the phrase by itself."
+          },
+          {
+            "term": "Scalability",
+            "explanation": "Within High Availability, this is a specific factor you should be able to recognize and explain. Connect it to the purpose of High availability rather than memorizing the phrase by itself."
+          },
+          {
+            "term": "Redundancy",
+            "explanation": "Use duplicate components or paths so one failure does not stop the service."
+          }
+        ],
+        "defs": [
+          {
+            "term": "Availability",
+            "definition": "Ensuring authorized users can access systems and data when needed."
+          }
+        ],
+        "check_q": "Without looking back, explain High Availability and describe at least two key ideas from this section.",
+        "check_a": "High availability designs services to remain accessible despite failures. It uses redundancy, failover, load balancing, clustering, replication, resilient power, and removal of single points of failure. Key ideas include: Proactive Monitoring and Management; Fault-Tolerant Design; Scalability; Redundancy.",
+        "points": [
+          "Proactive Monitoring and Management",
+          "Fault-Tolerant Design",
+          "Scalability",
+          "Redundancy"
+        ]
+      }
+    },
+    {
+      "n": 4,
+      "title": "Load Balancing vs. Clustering",
+      "points": [
+        "Aspect",
+        "Load Balancing",
+        "Clustering",
+        "Focus",
+        "Distributing incoming traffic",
+        "Creating a unified system",
+        "Scalability",
+        "Dynamic distributing of traffic",
+        "By adding new nodes",
+        "Failover",
+        "By redirecting traffic away from a",
+        "failed server",
+        "Offers comprehensive failover",
+        "capabilities",
+        "Resource Sharing",
+        "Predefined algorithms",
+        "Involves sharing resources,",
+        "Use Cases",
+        "Critical systems, databases, and",
+        "Web servers, application servers,",
+        "applications requiring high",
+        "and networking environments",
+        "availability and fault tolerance"
+      ],
+      "raw": "Load Balancing vs. Clustering\nAspect\nLoad Balancing\nClustering\nFocus\nDistributing incoming traffic\nCreating a unified system\nScalability\nDynamic distributing of traffic\nBy adding new nodes\nFailover\nBy redirecting traffic away from a\nfailed server\nOffers comprehensive failover\ncapabilities\nResource Sharing\nPredefined algorithms\nInvolves sharing resources,\nUse Cases\nCritical systems, databases, and\nWeb servers, application servers,\napplications requiring high\nand networking environments\navailability and fault tolerance",
+      "instructional": true,
+      "teach": "Build a side-by-side distinction: purpose, strengths, weaknesses, and the scenario where each option fits best.",
+      "defs": [
+        [
+          "Availability",
+          "Ensuring authorized users can access systems and data when needed."
+        ],
+        [
+          "Failover",
+          "Switching service from a failed primary system to a secondary system."
+        ]
+      ],
+      "course": {
+        "learn": "Load balancing distributes incoming work across multiple systems. Clustering coordinates multiple nodes to provide a service with redundancy and failover.",
+        "why": "Both improve availability, but they solve slightly different problems: workload distribution versus coordinated service resilience.",
+        "example": "A load balancer sends new web requests across three servers; a database cluster elects another node if the active node fails.",
+        "exam": "Load balancer = spread traffic. Cluster = nodes cooperate for resilient service.",
+        "breakdown": [
+          {
+            "term": "Aspect",
+            "explanation": "Within Load Balancing vs. Clustering, this is a specific factor you should be able to recognize and explain. Connect it to the purpose of High availability rather than memorizing the phrase by itself."
+          },
+          {
+            "term": "Load Balancing",
+            "explanation": "Distribute work across multiple systems to improve performance and availability."
+          },
+          {
+            "term": "Clustering",
+            "explanation": "Coordinate multiple systems so they provide a service together and can tolerate individual node failure."
+          },
+          {
+            "term": "Focus",
+            "explanation": "Within Load Balancing vs. Clustering, this is a specific factor you should be able to recognize and explain. Connect it to the purpose of High availability rather than memorizing the phrase by itself."
+          },
+          {
+            "term": "Distributing incoming traffic",
+            "explanation": "Within Load Balancing vs. Clustering, this is a specific factor you should be able to recognize and explain. Connect it to the purpose of High availability rather than memorizing the phrase by itself."
+          },
+          {
+            "term": "Creating a unified system",
+            "explanation": "Within Load Balancing vs. Clustering, this is a specific factor you should be able to recognize and explain. Connect it to the purpose of High availability rather than memorizing the phrase by itself."
+          },
+          {
+            "term": "Scalability",
+            "explanation": "Within Load Balancing vs. Clustering, this is a specific factor you should be able to recognize and explain. Connect it to the purpose of High availability rather than memorizing the phrase by itself."
+          },
+          {
+            "term": "Dynamic distributing of traffic",
+            "explanation": "Within Load Balancing vs. Clustering, this is a specific factor you should be able to recognize and explain. Connect it to the purpose of High availability rather than memorizing the phrase by itself."
+          },
+          {
+            "term": "By adding new nodes",
+            "explanation": "Within Load Balancing vs. Clustering, this is a specific factor you should be able to recognize and explain. Connect it to the purpose of High availability rather than memorizing the phrase by itself."
+          },
+          {
+            "term": "Failover",
+            "explanation": "Failover moves service from a failed primary resource to a secondary resource. It may be automatic or manual depending on architecture."
+          },
+          {
+            "term": "By redirecting traffic away from a failed server",
+            "explanation": "Within Load Balancing vs. Clustering, this is a specific factor you should be able to recognize and explain. Connect it to the purpose of High availability rather than memorizing the phrase by itself."
+          },
+          {
+            "term": "Offers comprehensive failover capabilities",
+            "explanation": "Failover moves service from a failed primary resource to a secondary resource. It may be automatic or manual depending on architecture."
+          },
+          {
+            "term": "Resource Sharing",
+            "explanation": "Within Load Balancing vs. Clustering, this is a specific factor you should be able to recognize and explain. Connect it to the purpose of High availability rather than memorizing the phrase by itself."
+          },
+          {
+            "term": "Predefined algorithms",
+            "explanation": "Cryptographic strength depends on using the correct key type, algorithm, key length, and exchange method. Keys must be generated, distributed, stored, rotated, and retired securely."
+          },
+          {
+            "term": "Involves sharing resources,",
+            "explanation": "Within Load Balancing vs. Clustering, this is a specific factor you should be able to recognize and explain. Connect it to the purpose of High availability rather than memorizing the phrase by itself."
+          },
+          {
+            "term": "Use Cases",
+            "explanation": "Within Load Balancing vs. Clustering, this is a specific factor you should be able to recognize and explain. Connect it to the purpose of High availability rather than memorizing the phrase by itself."
+          },
+          {
+            "term": "Critical systems, databases, and Web servers, application servers,",
+            "explanation": "Application monitoring measures application behavior, performance, errors, and security events. APM focuses on health/performance, while a WAF inspects and protects web requests."
+          },
+          {
+            "term": "applications requiring high and networking environments",
+            "explanation": "Application monitoring measures application behavior, performance, errors, and security events. APM focuses on health/performance, while a WAF inspects and protects web requests."
+          },
+          {
+            "term": "availability and fault tolerance",
+            "explanation": "Within Load Balancing vs. Clustering, this is a specific factor you should be able to recognize and explain. Connect it to the purpose of High availability rather than memorizing the phrase by itself."
+          }
+        ],
+        "defs": [
+          {
+            "term": "Availability",
+            "definition": "Ensuring authorized users can access systems and data when needed."
+          },
+          {
+            "term": "Failover",
+            "definition": "Switching service from a failed primary system to a secondary system."
+          }
+        ],
+        "check_q": "Without looking back, explain Load Balancing vs. Clustering and describe at least two key ideas from this section.",
+        "check_a": "Load balancing distributes incoming work across multiple systems. Clustering coordinates multiple nodes to provide a service with redundancy and failover. Key ideas include: Aspect; Load Balancing; Clustering; Focus; Distributing incoming traffic.",
+        "points": [
+          "Aspect",
+          "Load Balancing",
+          "Clustering",
+          "Focus",
+          "Distributing incoming traffic",
+          "Creating a unified system",
+          "Scalability",
+          "Dynamic distributing of traffic",
+          "By adding new nodes",
+          "Failover",
+          "By redirecting traffic away from a failed server",
+          "Offers comprehensive failover capabilities",
+          "Resource Sharing",
+          "Predefined algorithms",
+          "Involves sharing resources,",
+          "Use Cases",
+          "Critical systems, databases, and Web servers, application servers,",
+          "applications requiring high and networking environments",
+          "availability and fault tolerance"
+        ]
+      }
+    },
+    {
+      "n": 5,
+      "title": "Site Considerations",
+      "points": [],
+      "raw": "Site Considerations",
+      "instructional": false,
+      "teach": "These are design tradeoffs. Learn why each factor matters rather than memorizing the words alone.",
+      "defs": []
+    }
+  ],
+  "slide_count": 5,
+  "instructional_count": 3,
+  "concepts": [
+    "Load Balancing vs. Clustering"
+  ],
+  "source_filename": "13.01_High_availability.pdf"
+}

@@ -1,0 +1,283 @@
+{
+  "id": "10.08",
+  "chapter": 10,
+  "sub": 8,
+  "title": "Containerization vs Virtualization",
+  "chapter_name": "Security Architecture & Cloud",
+  "slides": [
+    {
+      "n": 1,
+      "title": "Containerization vs. Virtualization",
+      "points": [],
+      "raw": "Containerization vs.\nVirtualization",
+      "instructional": false,
+      "teach": "Build a side-by-side distinction: purpose, strengths, weaknesses, and the scenario where each option fits best.",
+      "defs": [
+        [
+          "Virtualization",
+          "Using a hypervisor to run multiple virtual machines, usually with separate guest operating systems, on shared hardware."
+        ]
+      ]
+    },
+    {
+      "n": 2,
+      "title": "Containers vs. Virtual Machines",
+      "points": [
+        "Feature",
+        "Containers",
+        "Virtual Machines",
+        "Isolation",
+        "Lightweight isolation",
+        "Strong isolation",
+        "Resource",
+        "usage",
+        "Share the host operating system's kernel and",
+        "resources",
+        "Have their own operating system",
+        "Scalability",
+        "Easier to scale horizontally",
+        "Easier to scale vertically",
+        "Flexibility",
+        "More flexible",
+        "Less flexible",
+        "Security",
+        "Less secure than VMs",
+        "More secure than containers"
+      ],
+      "raw": "Containers vs. Virtual Machines\nFeature\nContainers\nVirtual Machines\nIsolation\nLightweight isolation\nStrong isolation\nResource\nusage\nShare the host operating system's kernel and\nresources\nHave their own operating system\nScalability\nEasier to scale horizontally\nEasier to scale vertically\nFlexibility\nMore flexible\nLess flexible\nSecurity\nLess secure than VMs\nMore secure than containers",
+      "instructional": true,
+      "teach": "Build a side-by-side distinction: purpose, strengths, weaknesses, and the scenario where each option fits best.",
+      "defs": [],
+      "course": {
+        "learn": "Virtual machines emulate hardware and run separate guest operating systems. Containers share the host kernel while isolating processes and filesystems, making them lighter but more dependent on host security.",
+        "why": "The isolation boundary determines what happens if a workload escapes or the host is compromised.",
+        "example": "Ten containers share one Linux kernel, while ten VMs each have their own guest OS above the hypervisor.",
+        "exam": "VM escape targets VM/hypervisor isolation; container escape reaches the shared host. Images, registries, secrets, and runtime permissions matter for containers.",
+        "breakdown": [
+          {
+            "term": "Feature",
+            "explanation": "Within Containers vs. Virtual Machines, this is a specific factor you should be able to recognize and explain. Connect it to the purpose of Containerization vs Virtualization rather than memorizing the phrase by itself."
+          },
+          {
+            "term": "Containers",
+            "explanation": "Virtual machines emulate hardware and run separate guest operating systems. Containers share the host kernel while isolating processes and filesystems, making them lighter but more dependent on host security."
+          },
+          {
+            "term": "Virtual Machines",
+            "explanation": "Within Containers vs. Virtual Machines, this is a specific factor you should be able to recognize and explain. Connect it to the purpose of Containerization vs Virtualization rather than memorizing the phrase by itself."
+          },
+          {
+            "term": "Isolation",
+            "explanation": "Isolation separates a risky or sensitive system from other resources so compromise cannot easily spread. Physical isolation and air gaps provide stronger separation than ordinary logical controls."
+          },
+          {
+            "term": "Lightweight isolation",
+            "explanation": "Isolation separates a risky or sensitive system from other resources so compromise cannot easily spread. Physical isolation and air gaps provide stronger separation than ordinary logical controls."
+          },
+          {
+            "term": "Strong isolation",
+            "explanation": "Isolation separates a risky or sensitive system from other resources so compromise cannot easily spread. Physical isolation and air gaps provide stronger separation than ordinary logical controls."
+          },
+          {
+            "term": "Resource usage",
+            "explanation": "Within Containers vs. Virtual Machines, this is a specific factor you should be able to recognize and explain. Connect it to the purpose of Containerization vs Virtualization rather than memorizing the phrase by itself."
+          },
+          {
+            "term": "Share the host operating system's kernel and resources",
+            "explanation": "Within Containers vs. Virtual Machines, this is a specific factor you should be able to recognize and explain. Connect it to the purpose of Containerization vs Virtualization rather than memorizing the phrase by itself."
+          },
+          {
+            "term": "Have their own operating system",
+            "explanation": "Within Containers vs. Virtual Machines, this is a specific factor you should be able to recognize and explain. Connect it to the purpose of Containerization vs Virtualization rather than memorizing the phrase by itself."
+          },
+          {
+            "term": "Scalability",
+            "explanation": "Within Containers vs. Virtual Machines, this is a specific factor you should be able to recognize and explain. Connect it to the purpose of Containerization vs Virtualization rather than memorizing the phrase by itself."
+          },
+          {
+            "term": "Easier to scale horizontally",
+            "explanation": "Within Containers vs. Virtual Machines, this is a specific factor you should be able to recognize and explain. Connect it to the purpose of Containerization vs Virtualization rather than memorizing the phrase by itself."
+          },
+          {
+            "term": "Easier to scale vertically",
+            "explanation": "Within Containers vs. Virtual Machines, this is a specific factor you should be able to recognize and explain. Connect it to the purpose of Containerization vs Virtualization rather than memorizing the phrase by itself."
+          },
+          {
+            "term": "Flexibility",
+            "explanation": "Within Containers vs. Virtual Machines, this is a specific factor you should be able to recognize and explain. Connect it to the purpose of Containerization vs Virtualization rather than memorizing the phrase by itself."
+          },
+          {
+            "term": "More flexible",
+            "explanation": "Within Containers vs. Virtual Machines, this is a specific factor you should be able to recognize and explain. Connect it to the purpose of Containerization vs Virtualization rather than memorizing the phrase by itself."
+          },
+          {
+            "term": "Less flexible",
+            "explanation": "Within Containers vs. Virtual Machines, this is a specific factor you should be able to recognize and explain. Connect it to the purpose of Containerization vs Virtualization rather than memorizing the phrase by itself."
+          },
+          {
+            "term": "Security",
+            "explanation": "Document required security rules and repeatable steps for carrying them out."
+          },
+          {
+            "term": "Less secure than VMs",
+            "explanation": "Within Containers vs. Virtual Machines, this is a specific factor you should be able to recognize and explain. Connect it to the purpose of Containerization vs Virtualization rather than memorizing the phrase by itself."
+          },
+          {
+            "term": "More secure than containers",
+            "explanation": "Virtual machines emulate hardware and run separate guest operating systems. Containers share the host kernel while isolating processes and filesystems, making them lighter but more dependent on host security."
+          }
+        ],
+        "defs": [],
+        "check_q": "Without looking back, explain Containers vs. Virtual Machines and describe at least two key ideas from this section.",
+        "check_a": "Virtual machines emulate hardware and run separate guest operating systems. Containers share the host kernel while isolating processes and filesystems, making them lighter but more dependent on host security. Key ideas include: Feature; Containers; Virtual Machines; Isolation; Lightweight isolation.",
+        "points": [
+          "Feature",
+          "Containers",
+          "Virtual Machines",
+          "Isolation",
+          "Lightweight isolation",
+          "Strong isolation",
+          "Resource usage",
+          "Share the host operating system's kernel and resources",
+          "Have their own operating system",
+          "Scalability",
+          "Easier to scale horizontally",
+          "Easier to scale vertically",
+          "Flexibility",
+          "More flexible",
+          "Less flexible",
+          "Security",
+          "Less secure than VMs",
+          "More secure than containers"
+        ]
+      }
+    },
+    {
+      "n": 3,
+      "title": "Considerations When Using Containers",
+      "points": [
+        "Security",
+        "Networking",
+        "Storage",
+        "Orchestration",
+        "Monitoring"
+      ],
+      "raw": "Considerations When Using Containers\nSecurity\nNetworking\nStorage\nOrchestration\nMonitoring",
+      "instructional": true,
+      "teach": "These are design tradeoffs. Learn why each factor matters rather than memorizing the words alone.",
+      "defs": [],
+      "course": {
+        "learn": "Virtual machines emulate hardware and run separate guest operating systems. Containers share the host kernel while isolating processes and filesystems, making them lighter but more dependent on host security.",
+        "why": "The isolation boundary determines what happens if a workload escapes or the host is compromised.",
+        "example": "Ten containers share one Linux kernel, while ten VMs each have their own guest OS above the hypervisor.",
+        "exam": "VM escape targets VM/hypervisor isolation; container escape reaches the shared host. Images, registries, secrets, and runtime permissions matter for containers.",
+        "breakdown": [
+          {
+            "term": "Security",
+            "explanation": "Document required security rules and repeatable steps for carrying them out."
+          },
+          {
+            "term": "Networking",
+            "explanation": "This is a factor that must be evaluated when using Containerization vs Virtualization; ignoring it can create operational, security, cost, or compatibility risk."
+          },
+          {
+            "term": "Storage",
+            "explanation": "This is a factor that must be evaluated when using Containerization vs Virtualization; ignoring it can create operational, security, cost, or compatibility risk."
+          },
+          {
+            "term": "Orchestration",
+            "explanation": "This is a factor that must be evaluated when using Containerization vs Virtualization; ignoring it can create operational, security, cost, or compatibility risk."
+          },
+          {
+            "term": "Monitoring",
+            "explanation": "Review events from systems and applications to detect suspicious behavior or failures."
+          }
+        ],
+        "defs": [],
+        "check_q": "Without looking back, explain Considerations When Using Containers and describe at least two key ideas from this section.",
+        "check_a": "Virtual machines emulate hardware and run separate guest operating systems. Containers share the host kernel while isolating processes and filesystems, making them lighter but more dependent on host security. Key ideas include: Security; Networking; Storage; Orchestration; Monitoring.",
+        "points": [
+          "Security",
+          "Networking",
+          "Storage",
+          "Orchestration",
+          "Monitoring"
+        ]
+      }
+    },
+    {
+      "n": 4,
+      "title": "Considerations When Using Containers",
+      "points": [
+        "Image management",
+        "Logging",
+        "Resource management",
+        "Security policies",
+        "Testing"
+      ],
+      "raw": "Considerations When Using Containers\nImage management\nLogging\nResource management\nSecurity policies\nTesting",
+      "instructional": true,
+      "teach": "These are design tradeoffs. Learn why each factor matters rather than memorizing the words alone.",
+      "defs": [],
+      "course": {
+        "learn": "Virtual machines emulate hardware and run separate guest operating systems. Containers share the host kernel while isolating processes and filesystems, making them lighter but more dependent on host security.",
+        "why": "The isolation boundary determines what happens if a workload escapes or the host is compromised.",
+        "example": "Ten containers share one Linux kernel, while ten VMs each have their own guest OS above the hypervisor.",
+        "exam": "VM escape targets VM/hypervisor isolation; container escape reaches the shared host. Images, registries, secrets, and runtime permissions matter for containers.",
+        "breakdown": [
+          {
+            "term": "Image management",
+            "explanation": "This is a factor that must be evaluated when using Containerization vs Virtualization; ignoring it can create operational, security, cost, or compatibility risk."
+          },
+          {
+            "term": "Logging",
+            "explanation": "This is a factor that must be evaluated when using Containerization vs Virtualization; ignoring it can create operational, security, cost, or compatibility risk."
+          },
+          {
+            "term": "Resource management",
+            "explanation": "This is a factor that must be evaluated when using Containerization vs Virtualization; ignoring it can create operational, security, cost, or compatibility risk."
+          },
+          {
+            "term": "Security policies",
+            "explanation": "Document required security rules and repeatable steps for carrying them out."
+          },
+          {
+            "term": "Testing",
+            "explanation": "This is a factor that must be evaluated when using Containerization vs Virtualization; ignoring it can create operational, security, cost, or compatibility risk."
+          }
+        ],
+        "defs": [],
+        "check_q": "Without looking back, explain Considerations When Using Containers and describe at least two key ideas from this section.",
+        "check_a": "Virtual machines emulate hardware and run separate guest operating systems. Containers share the host kernel while isolating processes and filesystems, making them lighter but more dependent on host security. Key ideas include: Image management; Logging; Resource management; Security policies; Testing.",
+        "points": [
+          "Image management",
+          "Logging",
+          "Resource management",
+          "Security policies",
+          "Testing"
+        ]
+      }
+    },
+    {
+      "n": 5,
+      "title": "Internet of Things (IoT)",
+      "points": [],
+      "raw": "Internet of Things (IoT)",
+      "instructional": false,
+      "teach": "Read the source points, then explain the slide without looking. On Security+, recognition is not enough—you should be able to apply the concept to a scenario.",
+      "defs": [
+        [
+          "IoT",
+          "Internet of Things: network-connected devices such as sensors, appliances, cameras, and embedded devices."
+        ]
+      ]
+    }
+  ],
+  "slide_count": 5,
+  "instructional_count": 3,
+  "concepts": [
+    "Containers vs. Virtual Machines",
+    "Considerations When Using Containers"
+  ],
+  "source_filename": "10.08_Containerization_vs_Virtualization.pdf"
+}

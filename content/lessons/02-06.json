@@ -1,0 +1,267 @@
+{
+  "id": "02.06",
+  "chapter": 2,
+  "sub": 6,
+  "title": "Physical security",
+  "chapter_name": "Fundamental Security Concepts",
+  "slides": [
+    {
+      "n": 1,
+      "title": "Physical Security",
+      "points": [],
+      "raw": "Physical Security",
+      "instructional": false,
+      "teach": "Read the source points, then explain the slide without looking. On Security+, recognition is not enough—you should be able to apply the concept to a scenario.",
+      "defs": []
+    },
+    {
+      "n": 2,
+      "title": "Physical Security",
+      "points": [
+        "Perimeter",
+        "security",
+        "Data center",
+        "security",
+        "Device security",
+        "Document",
+        "security",
+        "Inventory",
+        "management",
+        "Disaster",
+        "preparedness"
+      ],
+      "raw": "Physical Security\nPerimeter\nsecurity\nData center\nsecurity\nDevice security\nDocument\nsecurity\nInventory\nmanagement\nDisaster\npreparedness",
+      "instructional": true,
+      "teach": "Read the source points, then explain the slide without looking. On Security+, recognition is not enough—you should be able to apply the concept to a scenario.",
+      "defs": [],
+      "course": {
+        "learn": "Physical security protects people, buildings, devices, documents, and infrastructure from unauthorized physical access, theft, tampering, or environmental harm.",
+        "why": "An attacker who can physically reach equipment may bypass many logical controls, so cybersecurity includes doors, barriers, surveillance, and environmental protections.",
+        "example": "A data center uses fencing, bollards, badge access, an access-control vestibule, guards, cameras, and locked racks.",
+        "exam": "Match the control to the threat: bollards stop vehicles; vestibules reduce tailgating; cameras detect/deter; badges control entry.",
+        "breakdown": [
+          {
+            "term": "Perimeter security",
+            "explanation": "This contributes to reducing risk in the broader Physical security design and should be evaluated as part of defense in depth."
+          },
+          {
+            "term": "Data center security",
+            "explanation": "This contributes to reducing risk in the broader Physical security design and should be evaluated as part of defense in depth."
+          },
+          {
+            "term": "Device security",
+            "explanation": "This contributes to reducing risk in the broader Physical security design and should be evaluated as part of defense in depth."
+          },
+          {
+            "term": "Document security",
+            "explanation": "This contributes to reducing risk in the broader Physical security design and should be evaluated as part of defense in depth."
+          },
+          {
+            "term": "Inventory management",
+            "explanation": "Within Physical Security, this is a specific factor you should be able to recognize and explain. Connect it to the purpose of Physical security rather than memorizing the phrase by itself."
+          },
+          {
+            "term": "Disaster preparedness",
+            "explanation": "Within Physical Security, this is a specific factor you should be able to recognize and explain. Connect it to the purpose of Physical security rather than memorizing the phrase by itself."
+          }
+        ],
+        "defs": [],
+        "check_q": "Without looking back, explain Physical Security and describe at least two key ideas from this section.",
+        "check_a": "Physical security protects people, buildings, devices, documents, and infrastructure from unauthorized physical access, theft, tampering, or environmental harm. Key ideas include: Perimeter security; Data center security; Device security; Document security; Inventory management.",
+        "points": [
+          "Perimeter security",
+          "Data center security",
+          "Device security",
+          "Document security",
+          "Inventory management",
+          "Disaster preparedness"
+        ]
+      }
+    },
+    {
+      "n": 3,
+      "title": "Benefits",
+      "points": [
+        "• Prevents data breaches",
+        "• Mitigates cyberattacks",
+        "• Improves compliance",
+        "• Reduces overall risk"
+      ],
+      "raw": "Benefits\n• Prevents data breaches\n• Mitigates cyberattacks\n• Improves compliance\n• Reduces overall risk",
+      "instructional": true,
+      "teach": "Read the source points, then explain the slide without looking. On Security+, recognition is not enough—you should be able to apply the concept to a scenario.",
+      "defs": [],
+      "course": {
+        "learn": "This section focuses on **Benefits** within **Physical security**. Physical security protects people, buildings, devices, documents, and infrastructure from unauthorized physical access, theft, tampering, or environmental harm.",
+        "why": "An attacker who can physically reach equipment may bypass many logical controls, so cybersecurity includes doors, barriers, surveillance, and environmental protections.",
+        "example": "A data center uses fencing, bollards, badge access, an access-control vestibule, guards, cameras, and locked racks.",
+        "exam": "Match the control to the threat: bollards stop vehicles; vestibules reduce tailgating; cameras detect/deter; badges control entry.",
+        "breakdown": [
+          {
+            "term": "Prevents data breaches",
+            "explanation": "This is a practical benefit of Physical security: it describes an outcome the organization can gain when the concept is implemented effectively."
+          },
+          {
+            "term": "Mitigates cyberattacks",
+            "explanation": "This is a practical benefit of Physical security: it describes an outcome the organization can gain when the concept is implemented effectively."
+          },
+          {
+            "term": "Improves compliance",
+            "explanation": "This is a practical benefit of Physical security: it describes an outcome the organization can gain when the concept is implemented effectively."
+          },
+          {
+            "term": "Reduces overall risk",
+            "explanation": "This is a practical benefit of Physical security: it describes an outcome the organization can gain when the concept is implemented effectively."
+          }
+        ],
+        "defs": [],
+        "check_q": "Without looking back, explain Benefits and describe at least two key ideas from this section.",
+        "check_a": "This section focuses on **Benefits** within **Physical security**. Physical security protects people, buildings, devices, documents, and infrastructure from unauthorized physical access, theft, tampering, or environmental harm. Key ideas include: Prevents data breaches; Mitigates cyberattacks; Improves compliance; Reduces overall risk.",
+        "points": [
+          "Prevents data breaches",
+          "Mitigates cyberattacks",
+          "Improves compliance",
+          "Reduces overall risk"
+        ]
+      }
+    },
+    {
+      "n": 4,
+      "title": "Physical Security Elements",
+      "points": [
+        "Bollards",
+        "Access",
+        "control",
+        "vestibule",
+        "Security",
+        "guard",
+        "Fencing",
+        "Access badge",
+        "Video",
+        "surveillance",
+        "Lighting"
+      ],
+      "raw": "Physical Security Elements\nBollards\nAccess\ncontrol\nvestibule\nSecurity\nguard\nFencing\nAccess badge\nVideo\nsurveillance\nLighting",
+      "instructional": true,
+      "teach": "Read the source points, then explain the slide without looking. On Security+, recognition is not enough—you should be able to apply the concept to a scenario.",
+      "defs": [],
+      "course": {
+        "learn": "Physical security protects people, buildings, devices, documents, and infrastructure from unauthorized physical access, theft, tampering, or environmental harm.",
+        "why": "An attacker who can physically reach equipment may bypass many logical controls, so cybersecurity includes doors, barriers, surveillance, and environmental protections.",
+        "example": "A data center uses fencing, bollards, badge access, an access-control vestibule, guards, cameras, and locked racks.",
+        "exam": "Match the control to the threat: bollards stop vehicles; vestibules reduce tailgating; cameras detect/deter; badges control entry.",
+        "breakdown": [
+          {
+            "term": "Bollards",
+            "explanation": "Strong posts or barriers that prevent vehicles from reaching protected buildings or areas."
+          },
+          {
+            "term": "Access control",
+            "explanation": "Use hard-to-guess credentials and limit what authenticated users can reach."
+          },
+          {
+            "term": "vestibule",
+            "explanation": "A two-door controlled-entry space (often called a mantrap) designed to reduce tailgating and unauthorized entry."
+          },
+          {
+            "term": "Security guard",
+            "explanation": "This contributes to reducing risk in the broader Physical security design and should be evaluated as part of defense in depth."
+          },
+          {
+            "term": "Fencing",
+            "explanation": "Within Physical Security Elements, this is a specific factor you should be able to recognize and explain. Connect it to the purpose of Physical security rather than memorizing the phrase by itself."
+          },
+          {
+            "term": "Access badge",
+            "explanation": "This concerns who or what can reach a resource and what actions are permitted once access is granted."
+          },
+          {
+            "term": "Video surveillance",
+            "explanation": "Records or monitors physical areas to deter activity and provide evidence."
+          },
+          {
+            "term": "Lighting",
+            "explanation": "Improves visibility and can deter physical intrusion by reducing concealment."
+          }
+        ],
+        "defs": [],
+        "check_q": "Without looking back, explain Physical Security Elements and describe at least two key ideas from this section.",
+        "check_a": "Physical security protects people, buildings, devices, documents, and infrastructure from unauthorized physical access, theft, tampering, or environmental harm. Key ideas include: Bollards; Access control; vestibule; Security guard; Fencing.",
+        "points": [
+          "Bollards",
+          "Access control",
+          "vestibule",
+          "Security guard",
+          "Fencing",
+          "Access badge",
+          "Video surveillance",
+          "Lighting"
+        ]
+      }
+    },
+    {
+      "n": 5,
+      "title": "Sensors",
+      "points": [
+        "Infrared",
+        "Pressure",
+        "Microwave",
+        "Ultrasonic"
+      ],
+      "raw": "Sensors\nInfrared\nPressure\nMicrowave\nUltrasonic",
+      "instructional": true,
+      "teach": "Read the source points, then explain the slide without looking. On Security+, recognition is not enough—you should be able to apply the concept to a scenario.",
+      "defs": [],
+      "course": {
+        "learn": "Physical sensors detect environmental or movement conditions that may indicate intrusion or danger. Different sensors detect heat, pressure, microwave reflection, sound, motion, moisture, or other changes.",
+        "why": "Sensors extend monitoring into the physical environment and can provide early warning before damage occurs.",
+        "example": "An infrared motion sensor detects a person entering a restricted room after hours and triggers an alarm.",
+        "exam": "CompTIA may ask which sensor best fits a physical condition. Focus on what each technology detects.",
+        "breakdown": [
+          {
+            "term": "Infrared",
+            "explanation": "Within Sensors, this is a specific factor you should be able to recognize and explain. Connect it to the purpose of Physical security rather than memorizing the phrase by itself."
+          },
+          {
+            "term": "Pressure",
+            "explanation": "Within Sensors, this is a specific factor you should be able to recognize and explain. Connect it to the purpose of Physical security rather than memorizing the phrase by itself."
+          },
+          {
+            "term": "Microwave",
+            "explanation": "Within Sensors, this is a specific factor you should be able to recognize and explain. Connect it to the purpose of Physical security rather than memorizing the phrase by itself."
+          },
+          {
+            "term": "Ultrasonic",
+            "explanation": "Within Sensors, this is a specific factor you should be able to recognize and explain. Connect it to the purpose of Physical security rather than memorizing the phrase by itself."
+          }
+        ],
+        "defs": [],
+        "check_q": "Without looking back, explain Sensors and describe at least two key ideas from this section.",
+        "check_a": "Physical sensors detect environmental or movement conditions that may indicate intrusion or danger. Different sensors detect heat, pressure, microwave reflection, sound, motion, moisture, or other changes. Key ideas include: Infrared; Pressure; Microwave; Ultrasonic.",
+        "points": [
+          "Infrared",
+          "Pressure",
+          "Microwave",
+          "Ultrasonic"
+        ]
+      }
+    },
+    {
+      "n": 6,
+      "title": "Deception and Disruption Technology",
+      "points": [],
+      "raw": "Deception and Disruption\nTechnology",
+      "instructional": false,
+      "teach": "Read the source points, then explain the slide without looking. On Security+, recognition is not enough—you should be able to apply the concept to a scenario.",
+      "defs": []
+    }
+  ],
+  "slide_count": 6,
+  "instructional_count": 4,
+  "concepts": [
+    "Benefits",
+    "Physical Security Elements",
+    "Sensors"
+  ],
+  "source_filename": "02.06_Physical_security.pdf"
+}

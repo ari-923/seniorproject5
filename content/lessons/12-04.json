@@ -1,0 +1,168 @@
+{
+  "id": "12.04",
+  "chapter": 12,
+  "sub": 4,
+  "title": "Methods to secure data",
+  "chapter_name": "Data Security",
+  "slides": [
+    {
+      "n": 1,
+      "title": "Methods to Secure Data",
+      "points": [],
+      "raw": "Methods to Secure Data",
+      "instructional": false,
+      "teach": "Read the source points, then explain the slide without looking. On Security+, recognition is not enough—you should be able to apply the concept to a scenario.",
+      "defs": []
+    },
+    {
+      "n": 2,
+      "title": "Methods",
+      "points": [
+        "Geographic restrictions",
+        "Encryption",
+        "Hashing",
+        "Masking"
+      ],
+      "raw": "Methods\nGeographic restrictions\nEncryption\nHashing\nMasking",
+      "instructional": true,
+      "teach": "Read the source points, then explain the slide without looking. On Security+, recognition is not enough—you should be able to apply the concept to a scenario.",
+      "defs": [
+        [
+          "Encryption",
+          "Transforms readable plaintext into ciphertext using an algorithm and key so unauthorized parties cannot understand it."
+        ],
+        [
+          "Hashing",
+          "A one-way function that maps data to a fixed-size digest; commonly used for integrity verification and password storage."
+        ]
+      ],
+      "course": {
+        "learn": "This section focuses on **Methods** within **Methods to secure data**. Data can be secured through multiple complementary methods: geographic restrictions, encryption, hashing, masking, tokenization, obfuscation, segmentation, and permission restrictions. Each method protects a different property or exposure path.",
+        "why": "No single data-protection method covers confidentiality, integrity, location, access, and privacy at the same time.",
+        "example": "A company restricts regulated data to approved regions, encrypts it at rest, hashes files for integrity, masks values in support screens, and limits database access by role.",
+        "exam": "Match method to goal: encryption = confidentiality, hashing = integrity, masking/tokenization = reduce exposure, segmentation/permissions = restrict access, geographic restriction = location/compliance.",
+        "breakdown": [
+          {
+            "term": "Geographic restrictions",
+            "explanation": "This is one of the mechanisms used to implement or support Methods to secure data. On the exam, focus on what problem it solves and where it fits."
+          },
+          {
+            "term": "Encryption",
+            "explanation": "Protect readable data by converting it to ciphertext that requires an authorized key to recover."
+          },
+          {
+            "term": "Hashing",
+            "explanation": "Hashing produces a fixed-size digest from input data using a one-way function. It is used to verify integrity and to store password verifiers when combined with appropriate password-hashing techniques."
+          },
+          {
+            "term": "Masking",
+            "explanation": "This is one of the mechanisms used to implement or support Methods to secure data. On the exam, focus on what problem it solves and where it fits."
+          }
+        ],
+        "defs": [
+          {
+            "term": "Encryption",
+            "definition": "Transforms readable plaintext into ciphertext using an algorithm and key so unauthorized parties cannot understand it."
+          },
+          {
+            "term": "Hashing",
+            "definition": "A one-way function that maps data to a fixed-size digest; commonly used for integrity verification and password storage."
+          }
+        ],
+        "check_q": "Without looking back, explain Methods and describe at least two key ideas from this section.",
+        "check_a": "This section focuses on **Methods** within **Methods to secure data**. Data can be secured through multiple complementary methods: geographic restrictions, encryption, hashing, masking, tokenization, obfuscation, segmentation, and permission restrictions. Each method protects a different property or exposure path. Key ideas include: Geographic restrictions; Encryption; Hashing; Masking.",
+        "points": [
+          "Geographic restrictions",
+          "Encryption",
+          "Hashing",
+          "Masking"
+        ]
+      }
+    },
+    {
+      "n": 3,
+      "title": "Methods",
+      "points": [
+        "Tokenization",
+        "Obfuscation",
+        "Segmentation",
+        "Permission restrictions"
+      ],
+      "raw": "Methods\nTokenization\nObfuscation\nSegmentation\nPermission restrictions",
+      "instructional": true,
+      "teach": "Read the source points, then explain the slide without looking. On Security+, recognition is not enough—you should be able to apply the concept to a scenario.",
+      "defs": [
+        [
+          "Segmentation",
+          "Dividing a network into controlled zones to limit access and lateral movement."
+        ],
+        [
+          "Tokenization",
+          "Replacing sensitive data with a non-sensitive token while the original value is stored separately."
+        ]
+      ],
+      "course": {
+        "learn": "This section focuses on **Methods** within **Methods to secure data**. Data can be secured through multiple complementary methods: geographic restrictions, encryption, hashing, masking, tokenization, obfuscation, segmentation, and permission restrictions. Each method protects a different property or exposure path.",
+        "why": "No single data-protection method covers confidentiality, integrity, location, access, and privacy at the same time.",
+        "example": "A company restricts regulated data to approved regions, encrypts it at rest, hashes files for integrity, masks values in support screens, and limits database access by role.",
+        "exam": "Match method to goal: encryption = confidentiality, hashing = integrity, masking/tokenization = reduce exposure, segmentation/permissions = restrict access, geographic restriction = location/compliance.",
+        "breakdown": [
+          {
+            "term": "Tokenization",
+            "explanation": "Tokenization replaces a sensitive value with a non-sensitive stand-in token. The original value is stored separately in a protected token vault or mapping system."
+          },
+          {
+            "term": "Obfuscation",
+            "explanation": "This is one of the mechanisms used to implement or support Methods to secure data. On the exam, focus on what problem it solves and where it fits."
+          },
+          {
+            "term": "Segmentation",
+            "explanation": "Network segmentation separates systems into different trust zones so traffic must cross controlled boundaries. VLANs, subnets, ACLs, and firewalls are common mechanisms."
+          },
+          {
+            "term": "Permission restrictions",
+            "explanation": "This is one of the mechanisms used to implement or support Methods to secure data. On the exam, focus on what problem it solves and where it fits."
+          }
+        ],
+        "defs": [
+          {
+            "term": "Segmentation",
+            "definition": "Dividing a network into controlled zones to limit access and lateral movement."
+          },
+          {
+            "term": "Tokenization",
+            "definition": "Replacing sensitive data with a non-sensitive token while the original value is stored separately."
+          }
+        ],
+        "check_q": "Without looking back, explain Methods and describe at least two key ideas from this section.",
+        "check_a": "This section focuses on **Methods** within **Methods to secure data**. Data can be secured through multiple complementary methods: geographic restrictions, encryption, hashing, masking, tokenization, obfuscation, segmentation, and permission restrictions. Each method protects a different property or exposure path. Key ideas include: Tokenization; Obfuscation; Segmentation; Permission restrictions.",
+        "points": [
+          "Tokenization",
+          "Obfuscation",
+          "Segmentation",
+          "Permission restrictions"
+        ]
+      }
+    },
+    {
+      "n": 4,
+      "title": "High Availability",
+      "points": [],
+      "raw": "High Availability",
+      "instructional": false,
+      "teach": "Read the source points, then explain the slide without looking. On Security+, recognition is not enough—you should be able to apply the concept to a scenario.",
+      "defs": [
+        [
+          "Availability",
+          "Ensuring authorized users can access systems and data when needed."
+        ]
+      ]
+    }
+  ],
+  "slide_count": 4,
+  "instructional_count": 2,
+  "concepts": [
+    "Methods"
+  ],
+  "source_filename": "12.04_Methods_to_secure_data.pdf"
+}

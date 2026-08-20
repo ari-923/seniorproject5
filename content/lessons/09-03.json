@@ -1,0 +1,457 @@
+{
+  "id": "09.03",
+  "chapter": 9,
+  "sub": 3,
+  "title": "Mitigation Methods",
+  "chapter_name": "Mitigation & Hardening",
+  "slides": [
+    {
+      "n": 1,
+      "title": "Mitigation Methods",
+      "points": [],
+      "raw": "Mitigation Methods",
+      "instructional": false,
+      "teach": "These are defensive actions. Learn what each one reduces and when it is the best response to a scenario.",
+      "defs": []
+    },
+    {
+      "n": 2,
+      "title": "Application Allow List",
+      "points": [
+        "Is a safe listing approach for applications",
+        "Specifies approved applications that can run",
+        "Blocks execution of unauthorized or malicious software",
+        "Prevents the execution of unapproved applications"
+      ],
+      "raw": "Application Allow List\nIs a safe listing approach for applications\nSpecifies approved applications that can run\nBlocks execution of unauthorized or malicious software\nPrevents the execution of unapproved applications",
+      "instructional": true,
+      "teach": "Read the source points, then explain the slide without looking. On Security+, recognition is not enough—you should be able to apply the concept to a scenario.",
+      "defs": [],
+      "course": {
+        "learn": "Application allow listing permits only explicitly approved software or code to execute. Everything else is blocked by default.",
+        "why": "It can stop unknown or unauthorized executables even when traditional malware signatures do not recognize them.",
+        "example": "A kiosk can run only the browser and management agent; downloaded executables are denied.",
+        "exam": "Allow list = default deny for unapproved applications. Deny list blocks known bad items but allows unknown ones.",
+        "breakdown": [
+          {
+            "term": "Is a safe listing approach for applications",
+            "explanation": "Application monitoring measures application behavior, performance, errors, and security events. APM focuses on health/performance, while a WAF inspects and protects web requests."
+          },
+          {
+            "term": "Specifies approved applications that can run",
+            "explanation": "Application monitoring measures application behavior, performance, errors, and security events. APM focuses on health/performance, while a WAF inspects and protects web requests."
+          },
+          {
+            "term": "Blocks execution of unauthorized or malicious software",
+            "explanation": "Within Application Allow List, this is a specific factor you should be able to recognize and explain. Connect it to the purpose of Mitigation Methods rather than memorizing the phrase by itself."
+          },
+          {
+            "term": "Prevents the execution of unapproved applications",
+            "explanation": "Application monitoring measures application behavior, performance, errors, and security events. APM focuses on health/performance, while a WAF inspects and protects web requests."
+          }
+        ],
+        "defs": [],
+        "check_q": "Without looking back, explain Application Allow List and describe at least two key ideas from this section.",
+        "check_a": "Application allow listing permits only explicitly approved software or code to execute. Everything else is blocked by default. Key ideas include: Is a safe listing approach for applications; Specifies approved applications that can run; Blocks execution of unauthorized or malicious software; Prevents the execution of unapproved applications.",
+        "points": [
+          "Is a safe listing approach for applications",
+          "Specifies approved applications that can run",
+          "Blocks execution of unauthorized or malicious software",
+          "Prevents the execution of unapproved applications"
+        ]
+      }
+    },
+    {
+      "n": 3,
+      "title": "Isolation",
+      "points": [
+        "Segregates sensitive systems or resources",
+        "Limits the impact of security incidents",
+        "Prevents lateral movement of threats within a network",
+        "Contains and isolates potential threats"
+      ],
+      "raw": "Isolation\nSegregates sensitive systems or resources\nLimits the impact of security incidents\nPrevents lateral movement of threats within a network\nContains and isolates potential threats",
+      "instructional": true,
+      "teach": "Read the source points, then explain the slide without looking. On Security+, recognition is not enough—you should be able to apply the concept to a scenario.",
+      "defs": [],
+      "course": {
+        "learn": "Isolation separates a risky or sensitive system from other resources so compromise cannot easily spread. Physical isolation and air gaps provide stronger separation than ordinary logical controls.",
+        "why": "Reducing connectivity reduces attack paths and lateral movement.",
+        "example": "A malware-analysis workstation is placed on an isolated network with no route to production systems.",
+        "exam": "Air-gapped means no normal network connection. Quarantine is often temporary isolation during an incident.",
+        "breakdown": [
+          {
+            "term": "Segregates sensitive systems or resources",
+            "explanation": "System monitoring focuses on endpoints and hosts. Endpoint Protection Platforms (EPP) detect or prevent malicious endpoint activity, while SIEM platforms collect and correlate events from many systems."
+          },
+          {
+            "term": "Limits the impact of security incidents",
+            "explanation": "This contributes to reducing risk in the broader Mitigation Methods design and should be evaluated as part of defense in depth."
+          },
+          {
+            "term": "Prevents lateral movement of threats within a network",
+            "explanation": "Within Isolation, this is a specific factor you should be able to recognize and explain. Connect it to the purpose of Mitigation Methods rather than memorizing the phrase by itself."
+          },
+          {
+            "term": "Contains and isolates potential threats",
+            "explanation": "Within Isolation, this is a specific factor you should be able to recognize and explain. Connect it to the purpose of Mitigation Methods rather than memorizing the phrase by itself."
+          }
+        ],
+        "defs": [],
+        "check_q": "Without looking back, explain Isolation and describe at least two key ideas from this section.",
+        "check_a": "Isolation separates a risky or sensitive system from other resources so compromise cannot easily spread. Physical isolation and air gaps provide stronger separation than ordinary logical controls. Key ideas include: Segregates sensitive systems or resources; Limits the impact of security incidents; Prevents lateral movement of threats within a network; Contains and isolates potential threats.",
+        "points": [
+          "Segregates sensitive systems or resources",
+          "Limits the impact of security incidents",
+          "Prevents lateral movement of threats within a network",
+          "Contains and isolates potential threats"
+        ]
+      }
+    },
+    {
+      "n": 4,
+      "title": "Patching",
+      "points": [
+        "Regular updates to software, systems, and applications",
+        "Addresses vulnerabilities and security flaws",
+        "Protects against exploits and cyberattacks",
+        "Ensures the security of the enterprise IT infrastructure"
+      ],
+      "raw": "Patching\nRegular updates to software, systems, and applications\nAddresses vulnerabilities and security flaws\nProtects against exploits and cyberattacks\nEnsures the security of the enterprise IT infrastructure",
+      "instructional": true,
+      "teach": "Read the source points, then explain the slide without looking. On Security+, recognition is not enough—you should be able to apply the concept to a scenario.",
+      "defs": [],
+      "course": {
+        "learn": "Patching applies vendor fixes that correct vulnerabilities, bugs, or insecure behavior. Effective patch management includes inventory, testing, prioritization, deployment, and verification.",
+        "why": "Known vulnerabilities remain easy targets when fixes exist but are not deployed.",
+        "example": "A critical Internet-facing server receives an emergency security update after testing confirms application compatibility.",
+        "exam": "If an official fix exists, patching is usually the direct remediation—unless operational constraints require a compensating control first.",
+        "breakdown": [
+          {
+            "term": "Regular updates to software, systems, and applications",
+            "explanation": "Application monitoring measures application behavior, performance, errors, and security events. APM focuses on health/performance, while a WAF inspects and protects web requests."
+          },
+          {
+            "term": "Addresses vulnerabilities and security flaws",
+            "explanation": "This contributes to reducing risk in the broader Mitigation Methods design and should be evaluated as part of defense in depth."
+          },
+          {
+            "term": "Protects against exploits and cyberattacks",
+            "explanation": "Within Patching, this is a specific factor you should be able to recognize and explain. Connect it to the purpose of Mitigation Methods rather than memorizing the phrase by itself."
+          },
+          {
+            "term": "Ensures the security of the enterprise IT infrastructure",
+            "explanation": "Infrastructure monitoring observes networks, cloud configuration, appliances, links, and supporting resources. NSM analyzes network behavior, while CSPM evaluates cloud security posture and misconfiguration."
+          }
+        ],
+        "defs": [],
+        "check_q": "Without looking back, explain Patching and describe at least two key ideas from this section.",
+        "check_a": "Patching applies vendor fixes that correct vulnerabilities, bugs, or insecure behavior. Effective patch management includes inventory, testing, prioritization, deployment, and verification. Key ideas include: Regular updates to software, systems, and applications; Addresses vulnerabilities and security flaws; Protects against exploits and cyberattacks; Ensures the security of the enterprise IT infrastructure.",
+        "points": [
+          "Regular updates to software, systems, and applications",
+          "Addresses vulnerabilities and security flaws",
+          "Protects against exploits and cyberattacks",
+          "Ensures the security of the enterprise IT infrastructure"
+        ]
+      }
+    },
+    {
+      "n": 5,
+      "title": "Encryption",
+      "points": [
+        "Converts data into a secure format",
+        "Protects data from unauthorized access",
+        "Safeguards sensitive information during transmission",
+        "Enhances data confidentiality and integrity"
+      ],
+      "raw": "Encryption\nConverts data into a secure format\nProtects data from unauthorized access\nSafeguards sensitive information during transmission\nEnhances data confidentiality and integrity",
+      "instructional": true,
+      "teach": "Read the source points, then explain the slide without looking. On Security+, recognition is not enough—you should be able to apply the concept to a scenario.",
+      "defs": [
+        [
+          "Encryption",
+          "Transforms readable plaintext into ciphertext using an algorithm and key so unauthorized parties cannot understand it."
+        ],
+        [
+          "Integrity",
+          "Ensuring data stays accurate, complete, and protected from unauthorized modification."
+        ]
+      ],
+      "course": {
+        "learn": "Encryption converts plaintext into ciphertext using an algorithm and key so unauthorized parties cannot understand the data. Symmetric encryption uses a shared secret; asymmetric encryption uses a public/private key pair.",
+        "why": "Encryption is one of the primary ways to protect confidentiality for data at rest and in transit.",
+        "example": "A laptop uses full-disk encryption, while a TLS session protects web traffic crossing an untrusted network.",
+        "exam": "Encryption = confidentiality and reversible with the correct key. Hashing is one-way and primarily supports integrity.",
+        "breakdown": [
+          {
+            "term": "Converts data into a secure format",
+            "explanation": "Within Encryption, this is a specific factor you should be able to recognize and explain. Connect it to the purpose of Mitigation Methods rather than memorizing the phrase by itself."
+          },
+          {
+            "term": "Protects data from unauthorized access",
+            "explanation": "This concerns who or what can reach a resource and what actions are permitted once access is granted."
+          },
+          {
+            "term": "Safeguards sensitive information during transmission",
+            "explanation": "Within Encryption, this is a specific factor you should be able to recognize and explain. Connect it to the purpose of Mitigation Methods rather than memorizing the phrase by itself."
+          },
+          {
+            "term": "Enhances data confidentiality and integrity",
+            "explanation": "Within Encryption, this is a specific factor you should be able to recognize and explain. Connect it to the purpose of Mitigation Methods rather than memorizing the phrase by itself."
+          }
+        ],
+        "defs": [
+          {
+            "term": "Encryption",
+            "definition": "Transforms readable plaintext into ciphertext using an algorithm and key so unauthorized parties cannot understand it."
+          },
+          {
+            "term": "Integrity",
+            "definition": "Ensuring data stays accurate, complete, and protected from unauthorized modification."
+          }
+        ],
+        "check_q": "Without looking back, explain Encryption and describe at least two key ideas from this section.",
+        "check_a": "Encryption converts plaintext into ciphertext using an algorithm and key so unauthorized parties cannot understand the data. Symmetric encryption uses a shared secret; asymmetric encryption uses a public/private key pair. Key ideas include: Converts data into a secure format; Protects data from unauthorized access; Safeguards sensitive information during transmission; Enhances data confidentiality and integrity.",
+        "points": [
+          "Converts data into a secure format",
+          "Protects data from unauthorized access",
+          "Safeguards sensitive information during transmission",
+          "Enhances data confidentiality and integrity"
+        ]
+      }
+    },
+    {
+      "n": 6,
+      "title": "Monitoring",
+      "points": [
+        "• Continuous surveillance of network",
+        "activities",
+        "• Detects and alerts on suspicious or",
+        "anomalous behavior",
+        "• Facilitates early detection of security",
+        "incidents",
+        "• Supports proactive response to",
+        "potential threats"
+      ],
+      "raw": "Monitoring\n• Continuous surveillance of network\nactivities\n• Detects and alerts on suspicious or\nanomalous behavior\n• Facilitates early detection of security\nincidents\n• Supports proactive response to\npotential threats",
+      "instructional": true,
+      "teach": "Read the source points, then explain the slide without looking. On Security+, recognition is not enough—you should be able to apply the concept to a scenario.",
+      "defs": [],
+      "course": {
+        "learn": "Security monitoring continuously observes systems, networks, applications, and logs for suspicious activity, failures, policy violations, and indicators of compromise.",
+        "why": "Early detection shortens attacker dwell time and gives defenders evidence for response.",
+        "example": "Endpoint and network telemetry reveal an unusual process making outbound connections immediately after a phishing attachment opens.",
+        "exam": "Monitoring is detective; it should feed alerting, investigation, containment, and validation.",
+        "breakdown": [
+          {
+            "term": "Continuous surveillance of network activities",
+            "explanation": "Within Monitoring, this is a specific factor you should be able to recognize and explain. Connect it to the purpose of Mitigation Methods rather than memorizing the phrase by itself."
+          },
+          {
+            "term": "Detects and alerts on suspicious or anomalous behavior",
+            "explanation": "Within Monitoring, this is a specific factor you should be able to recognize and explain. Connect it to the purpose of Mitigation Methods rather than memorizing the phrase by itself."
+          },
+          {
+            "term": "Facilitates early detection of security",
+            "explanation": "This contributes to reducing risk in the broader Mitigation Methods design and should be evaluated as part of defense in depth."
+          },
+          {
+            "term": "incidents",
+            "explanation": "Within Monitoring, this is a specific factor you should be able to recognize and explain. Connect it to the purpose of Mitigation Methods rather than memorizing the phrase by itself."
+          },
+          {
+            "term": "Supports proactive response to potential threats",
+            "explanation": "Within Monitoring, this is a specific factor you should be able to recognize and explain. Connect it to the purpose of Mitigation Methods rather than memorizing the phrase by itself."
+          }
+        ],
+        "defs": [],
+        "check_q": "Without looking back, explain Monitoring and describe at least two key ideas from this section.",
+        "check_a": "Security monitoring continuously observes systems, networks, applications, and logs for suspicious activity, failures, policy violations, and indicators of compromise. Key ideas include: Continuous surveillance of network activities; Detects and alerts on suspicious or anomalous behavior; Facilitates early detection of security; incidents; Supports proactive response to potential threats.",
+        "points": [
+          "Continuous surveillance of network activities",
+          "Detects and alerts on suspicious or anomalous behavior",
+          "Facilitates early detection of security",
+          "incidents",
+          "Supports proactive response to potential threats"
+        ]
+      }
+    },
+    {
+      "n": 7,
+      "title": "Least Privilege",
+      "points": [
+        "• Users granted the minimum",
+        "necessary access",
+        "• Reduces the risk of privilege",
+        "misuse",
+        "• Limits the potential impact of",
+        "compromised accounts",
+        "• Follows the principle of providing",
+        "the least access"
+      ],
+      "raw": "Least Privilege\n• Users granted the minimum\nnecessary access\n• Reduces the risk of privilege\nmisuse\n• Limits the potential impact of\ncompromised accounts\n• Follows the principle of providing\nthe least access",
+      "instructional": true,
+      "teach": "Read the source points, then explain the slide without looking. On Security+, recognition is not enough—you should be able to apply the concept to a scenario.",
+      "defs": [
+        [
+          "Least privilege",
+          "Granting only the minimum permissions required to perform a task."
+        ]
+      ],
+      "course": {
+        "learn": "Least privilege gives users, applications, and services only the permissions required for their legitimate tasks and no more.",
+        "why": "If an account is compromised, limited privilege reduces what the attacker can access or change.",
+        "example": "A backup service account can read required data and write to the backup repository but cannot log on interactively as an administrator.",
+        "exam": "Minimum necessary permissions = least privilege. Just-in-time access can reduce standing privilege even further.",
+        "breakdown": [
+          {
+            "term": "Users granted the minimum necessary access",
+            "explanation": "This concerns who or what can reach a resource and what actions are permitted once access is granted."
+          },
+          {
+            "term": "Reduces the risk of privilege misuse",
+            "explanation": "This affects the likelihood or impact of harm and therefore changes how the organization should prioritize controls."
+          },
+          {
+            "term": "Limits the potential impact of compromised accounts",
+            "explanation": "Within Least Privilege, this is a specific factor you should be able to recognize and explain. Connect it to the purpose of Mitigation Methods rather than memorizing the phrase by itself."
+          },
+          {
+            "term": "Follows the principle of providing the least access",
+            "explanation": "This concerns who or what can reach a resource and what actions are permitted once access is granted."
+          }
+        ],
+        "defs": [
+          {
+            "term": "Least privilege",
+            "definition": "Granting only the minimum permissions required to perform a task."
+          }
+        ],
+        "check_q": "Without looking back, explain Least Privilege and describe at least two key ideas from this section.",
+        "check_a": "Least privilege gives users, applications, and services only the permissions required for their legitimate tasks and no more. Key ideas include: Users granted the minimum necessary access; Reduces the risk of privilege misuse; Limits the potential impact of compromised accounts; Follows the principle of providing the least access.",
+        "points": [
+          "Users granted the minimum necessary access",
+          "Reduces the risk of privilege misuse",
+          "Limits the potential impact of compromised accounts",
+          "Follows the principle of providing the least access"
+        ]
+      }
+    },
+    {
+      "n": 8,
+      "title": "Configuration Enforcement",
+      "points": [
+        "Ensures systems and devices adhere to secure configurations",
+        "Prevents misconfigurations that may lead to vulnerabilities",
+        "Enhances consistency in security settings",
+        "Strengthens the overall security posture of the organization"
+      ],
+      "raw": "Configuration Enforcement\nEnsures systems and devices adhere to secure configurations\nPrevents misconfigurations that may lead to vulnerabilities\nEnhances consistency in security settings\nStrengthens the overall security posture of the organization",
+      "instructional": true,
+      "teach": "Read the source points, then explain the slide without looking. On Security+, recognition is not enough—you should be able to apply the concept to a scenario.",
+      "defs": [],
+      "course": {
+        "learn": "Configuration enforcement keeps systems aligned with an approved secure baseline and detects or corrects drift from required settings.",
+        "why": "One insecure change can reopen a vulnerability even after a system was originally hardened.",
+        "example": "A device-management platform automatically re-enables the host firewall if a local user disables it.",
+        "exam": "Baseline + continuous enforcement/drift correction are the clues.",
+        "breakdown": [
+          {
+            "term": "Ensures systems and devices adhere to secure configurations",
+            "explanation": "System monitoring focuses on endpoints and hosts. Endpoint Protection Platforms (EPP) detect or prevent malicious endpoint activity, while SIEM platforms collect and correlate events from many systems."
+          },
+          {
+            "term": "Prevents misconfigurations that may lead to vulnerabilities",
+            "explanation": "Misconfiguration means a system is deployed with unsafe settings such as default credentials, unnecessary services, open permissions, exposed management interfaces, or insecure cloud access."
+          },
+          {
+            "term": "Enhances consistency in security settings",
+            "explanation": "This contributes to reducing risk in the broader Mitigation Methods design and should be evaluated as part of defense in depth."
+          },
+          {
+            "term": "Strengthens the overall security posture of the organization",
+            "explanation": "This contributes to reducing risk in the broader Mitigation Methods design and should be evaluated as part of defense in depth."
+          }
+        ],
+        "defs": [],
+        "check_q": "Without looking back, explain Configuration Enforcement and describe at least two key ideas from this section.",
+        "check_a": "Configuration enforcement keeps systems aligned with an approved secure baseline and detects or corrects drift from required settings. Key ideas include: Ensures systems and devices adhere to secure configurations; Prevents misconfigurations that may lead to vulnerabilities; Enhances consistency in security settings; Strengthens the overall security posture of the organization.",
+        "points": [
+          "Ensures systems and devices adhere to secure configurations",
+          "Prevents misconfigurations that may lead to vulnerabilities",
+          "Enhances consistency in security settings",
+          "Strengthens the overall security posture of the organization"
+        ]
+      }
+    },
+    {
+      "n": 9,
+      "title": "Decommissioning",
+      "points": [
+        "Retiring and removing outdated or unused systems",
+        "Mitigates security risks associated with obsolete technology",
+        "Prevents unauthorized access to decommissioned systems",
+        "Supports efficient management of the IT environment"
+      ],
+      "raw": "Decommissioning\nRetiring and removing outdated or unused systems\nMitigates security risks associated with obsolete technology\nPrevents unauthorized access to decommissioned systems\nSupports efficient management of the IT environment",
+      "instructional": true,
+      "teach": "Read the source points, then explain the slide without looking. On Security+, recognition is not enough—you should be able to apply the concept to a scenario.",
+      "defs": [],
+      "course": {
+        "learn": "Decommissioning safely removes a system or service from use by revoking access, removing network exposure, handling data, updating inventory, and disposing or repurposing the asset securely.",
+        "why": "Forgotten systems become unmanaged attack surface and retired storage can leak data.",
+        "example": "Before recycling a server, the organization removes credentials, wipes or destroys drives, removes DNS/firewall entries, and updates the asset inventory.",
+        "exam": "Retire securely—not simply power off and forget.",
+        "breakdown": [
+          {
+            "term": "Retiring and removing outdated or unused systems",
+            "explanation": "System monitoring focuses on endpoints and hosts. Endpoint Protection Platforms (EPP) detect or prevent malicious endpoint activity, while SIEM platforms collect and correlate events from many systems."
+          },
+          {
+            "term": "Mitigates security risks associated with obsolete technology",
+            "explanation": "This affects the likelihood or impact of harm and therefore changes how the organization should prioritize controls."
+          },
+          {
+            "term": "Prevents unauthorized access to decommissioned systems",
+            "explanation": "System monitoring focuses on endpoints and hosts. Endpoint Protection Platforms (EPP) detect or prevent malicious endpoint activity, while SIEM platforms collect and correlate events from many systems."
+          },
+          {
+            "term": "Supports efficient management of the IT environment",
+            "explanation": "Within Decommissioning, this is a specific factor you should be able to recognize and explain. Connect it to the purpose of Mitigation Methods rather than memorizing the phrase by itself."
+          }
+        ],
+        "defs": [],
+        "check_q": "Without looking back, explain Decommissioning and describe at least two key ideas from this section.",
+        "check_a": "Decommissioning safely removes a system or service from use by revoking access, removing network exposure, handling data, updating inventory, and disposing or repurposing the asset securely. Key ideas include: Retiring and removing outdated or unused systems; Mitigates security risks associated with obsolete technology; Prevents unauthorized access to decommissioned systems; Supports efficient management of the IT environment.",
+        "points": [
+          "Retiring and removing outdated or unused systems",
+          "Mitigates security risks associated with obsolete technology",
+          "Prevents unauthorized access to decommissioned systems",
+          "Supports efficient management of the IT environment"
+        ]
+      }
+    },
+    {
+      "n": 10,
+      "title": "Hardening Techniques",
+      "points": [],
+      "raw": "Hardening Techniques",
+      "instructional": false,
+      "teach": "These are defensive actions. Learn what each one reduces and when it is the best response to a scenario.",
+      "defs": []
+    }
+  ],
+  "slide_count": 10,
+  "instructional_count": 8,
+  "concepts": [
+    "Application Allow List",
+    "Isolation",
+    "Patching",
+    "Encryption",
+    "Monitoring",
+    "Least Privilege",
+    "Configuration Enforcement",
+    "Decommissioning"
+  ],
+  "source_filename": "09.03_Mitigation_Methods.pdf"
+}

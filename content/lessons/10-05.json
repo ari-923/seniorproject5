@@ -1,0 +1,154 @@
+{
+  "id": "10.05",
+  "chapter": 10,
+  "sub": 5,
+  "title": "Serverless",
+  "chapter_name": "Security Architecture & Cloud",
+  "slides": [
+    {
+      "n": 1,
+      "title": "Serverless",
+      "points": [],
+      "raw": "Serverless",
+      "instructional": false,
+      "teach": "Read the source points, then explain the slide without looking. On Security+, recognition is not enough—you should be able to apply the concept to a scenario.",
+      "defs": []
+    },
+    {
+      "n": 2,
+      "title": "Key Concepts",
+      "points": [
+        "Event-Driven Execution",
+        "Automatic Scaling",
+        "Pay-as-You-Go Billing Model",
+        "Stateless Functions",
+        "No Server Management"
+      ],
+      "raw": "Key Concepts\nEvent-Driven Execution\nAutomatic Scaling\nPay-as-You-Go Billing Model\nStateless Functions\nNo Server Management",
+      "instructional": true,
+      "teach": "These points define the technology. Be able to explain each one in your own words and recognize it in a scenario.",
+      "defs": [],
+      "course": {
+        "learn": "This section focuses on **Key Concepts** within **Serverless**. Serverless computing lets developers run functions or managed application logic without administering traditional servers directly. The provider manages much of the underlying runtime infrastructure.",
+        "why": "The attack surface shifts rather than disappears: identity, function permissions, APIs, dependencies, secrets, and event inputs still need protection.",
+        "example": "A function processes uploaded images when a storage event occurs and has permission only to read that bucket and write results.",
+        "exam": "Serverless ≠ no servers and ≠ no security responsibility. Focus on least-privilege function roles, dependencies, API security, and secret handling.",
+        "breakdown": [
+          {
+            "term": "Event-Driven Execution",
+            "explanation": "Within Key Concepts, this is a specific factor you should be able to recognize and explain. Connect it to the purpose of Serverless rather than memorizing the phrase by itself."
+          },
+          {
+            "term": "Automatic Scaling",
+            "explanation": "Within Key Concepts, this is a specific factor you should be able to recognize and explain. Connect it to the purpose of Serverless rather than memorizing the phrase by itself."
+          },
+          {
+            "term": "Pay-as-You-Go Billing Model",
+            "explanation": "Within Key Concepts, this is a specific factor you should be able to recognize and explain. Connect it to the purpose of Serverless rather than memorizing the phrase by itself."
+          },
+          {
+            "term": "Stateless Functions",
+            "explanation": "Within Key Concepts, this is a specific factor you should be able to recognize and explain. Connect it to the purpose of Serverless rather than memorizing the phrase by itself."
+          },
+          {
+            "term": "No Server Management",
+            "explanation": "Within Key Concepts, this is a specific factor you should be able to recognize and explain. Connect it to the purpose of Serverless rather than memorizing the phrase by itself."
+          }
+        ],
+        "defs": [],
+        "check_q": "Without looking back, explain Key Concepts and describe at least two key ideas from this section.",
+        "check_a": "This section focuses on **Key Concepts** within **Serverless**. Serverless computing lets developers run functions or managed application logic without administering traditional servers directly. The provider manages much of the underlying runtime infrastructure. Key ideas include: Event-Driven Execution; Automatic Scaling; Pay-as-You-Go Billing Model; Stateless Functions; No Server Management.",
+        "points": [
+          "Event-Driven Execution",
+          "Automatic Scaling",
+          "Pay-as-You-Go Billing Model",
+          "Stateless Functions",
+          "No Server Management"
+        ]
+      }
+    },
+    {
+      "n": 3,
+      "title": "Key Concepts",
+      "points": [
+        "Microservices Architecture",
+        "Rapid Development and Deployment",
+        "Vendor-Managed Security and Maintenance",
+        "Global Scalability",
+        "Ephemeral Execution Environments"
+      ],
+      "raw": "Key Concepts\nMicroservices Architecture\nRapid Development and Deployment\nVendor-Managed Security and Maintenance\nGlobal Scalability\nEphemeral Execution Environments",
+      "instructional": true,
+      "teach": "These points define the technology. Be able to explain each one in your own words and recognize it in a scenario.",
+      "defs": [
+        [
+          "Microservices",
+          "An architecture that divides an application into smaller independently deployable services communicating through interfaces/APIs."
+        ]
+      ],
+      "course": {
+        "learn": "This section focuses on **Key Concepts** within **Serverless**. Serverless computing lets developers run functions or managed application logic without administering traditional servers directly. The provider manages much of the underlying runtime infrastructure.",
+        "why": "The attack surface shifts rather than disappears: identity, function permissions, APIs, dependencies, secrets, and event inputs still need protection.",
+        "example": "A function processes uploaded images when a storage event occurs and has permission only to read that bucket and write results.",
+        "exam": "Serverless ≠ no servers and ≠ no security responsibility. Focus on least-privilege function roles, dependencies, API security, and secret handling.",
+        "breakdown": [
+          {
+            "term": "Microservices Architecture",
+            "explanation": "Microservices divide an application into smaller independently deployable services that communicate through APIs or messaging."
+          },
+          {
+            "term": "Rapid Development and Deployment",
+            "explanation": "Within Key Concepts, this is a specific factor you should be able to recognize and explain. Connect it to the purpose of Serverless rather than memorizing the phrase by itself."
+          },
+          {
+            "term": "Vendor-Managed Security and Maintenance",
+            "explanation": "This contributes to reducing risk in the broader Serverless design and should be evaluated as part of defense in depth."
+          },
+          {
+            "term": "Global Scalability",
+            "explanation": "Within Key Concepts, this is a specific factor you should be able to recognize and explain. Connect it to the purpose of Serverless rather than memorizing the phrase by itself."
+          },
+          {
+            "term": "Ephemeral Execution Environments",
+            "explanation": "Within Key Concepts, this is a specific factor you should be able to recognize and explain. Connect it to the purpose of Serverless rather than memorizing the phrase by itself."
+          }
+        ],
+        "defs": [
+          {
+            "term": "Microservices",
+            "definition": "An architecture that divides an application into smaller independently deployable services communicating through interfaces/APIs."
+          }
+        ],
+        "check_q": "Without looking back, explain Key Concepts and describe at least two key ideas from this section.",
+        "check_a": "This section focuses on **Key Concepts** within **Serverless**. Serverless computing lets developers run functions or managed application logic without administering traditional servers directly. The provider manages much of the underlying runtime infrastructure. Key ideas include: Microservices Architecture; Rapid Development and Deployment; Vendor-Managed Security and Maintenance; Global Scalability; Ephemeral Execution Environments.",
+        "points": [
+          "Microservices Architecture",
+          "Rapid Development and Deployment",
+          "Vendor-Managed Security and Maintenance",
+          "Global Scalability",
+          "Ephemeral Execution Environments"
+        ]
+      }
+    },
+    {
+      "n": 4,
+      "title": "Microservices",
+      "points": [],
+      "raw": "Microservices",
+      "instructional": false,
+      "teach": "Read the source points, then explain the slide without looking. On Security+, recognition is not enough—you should be able to apply the concept to a scenario.",
+      "defs": [
+        [
+          "Microservices",
+          "An architecture that divides an application into smaller independently deployable services communicating through interfaces/APIs."
+        ]
+      ]
+    }
+  ],
+  "slide_count": 4,
+  "instructional_count": 2,
+  "concepts": [
+    "Key Concepts"
+  ],
+  "source_filename": "10.05_Serverless.pdf"
+}

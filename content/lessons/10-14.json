@@ -1,0 +1,192 @@
+{
+  "id": "10.14",
+  "chapter": 10,
+  "sub": 14,
+  "title": "Architectural Considerations",
+  "chapter_name": "Security Architecture & Cloud",
+  "slides": [
+    {
+      "n": 1,
+      "title": "Architectural Considerations",
+      "points": [],
+      "raw": "Architectural Considerations",
+      "instructional": false,
+      "teach": "These are design tradeoffs. Learn why each factor matters rather than memorizing the words alone.",
+      "defs": []
+    },
+    {
+      "n": 2,
+      "title": "Architectural Considerations",
+      "points": [
+        "Availability",
+        "Resilience",
+        "Cost",
+        "Responsiveness"
+      ],
+      "raw": "Architectural Considerations\nAvailability\nResilience\nCost\nResponsiveness",
+      "instructional": true,
+      "teach": "These are design tradeoffs. Learn why each factor matters rather than memorizing the words alone.",
+      "defs": [
+        [
+          "Availability",
+          "Ensuring authorized users can access systems and data when needed."
+        ]
+      ],
+      "course": {
+        "learn": "This section focuses on **Architectural Considerations** within **Architectural Considerations**. Architectural decisions balance availability, resilience, cost, responsiveness, scalability, deployment complexity, recovery, patchability, power, and compute capacity. There is rarely one universally best design.",
+        "why": "Security architecture must meet business requirements as well as technical security goals.",
+        "example": "A highly available design adds redundant regions and automated failover, but the organization accepts higher cost and operational complexity.",
+        "exam": "When several answers are technically secure, choose the design that best satisfies the stated business constraint and failure scenario.",
+        "breakdown": [
+          {
+            "term": "Availability",
+            "explanation": "This is a factor that must be evaluated when using Architectural Considerations; ignoring it can create operational, security, cost, or compatibility risk."
+          },
+          {
+            "term": "Resilience",
+            "explanation": "This is a factor that must be evaluated when using Architectural Considerations; ignoring it can create operational, security, cost, or compatibility risk."
+          },
+          {
+            "term": "Cost",
+            "explanation": "Architectural decisions balance availability, resilience, cost, responsiveness, scalability, deployment complexity, recovery, patchability, power, and compute capacity. There is rarely one universally best design."
+          },
+          {
+            "term": "Responsiveness",
+            "explanation": "This is a factor that must be evaluated when using Architectural Considerations; ignoring it can create operational, security, cost, or compatibility risk."
+          }
+        ],
+        "defs": [
+          {
+            "term": "Availability",
+            "definition": "Ensuring authorized users can access systems and data when needed."
+          }
+        ],
+        "check_q": "Without looking back, explain Architectural Considerations and describe at least two key ideas from this section.",
+        "check_a": "This section focuses on **Architectural Considerations** within **Architectural Considerations**. Architectural decisions balance availability, resilience, cost, responsiveness, scalability, deployment complexity, recovery, patchability, power, and compute capacity. There is rarely one universally best design. Key ideas include: Availability; Resilience; Cost; Responsiveness.",
+        "points": [
+          "Availability",
+          "Resilience",
+          "Cost",
+          "Responsiveness"
+        ]
+      }
+    },
+    {
+      "n": 3,
+      "title": "Architectural Considerations",
+      "points": [
+        "Scalability",
+        "Ease of deployment",
+        "Risk transference",
+        "Ease of recovery"
+      ],
+      "raw": "Architectural Considerations\nScalability\nEase of deployment\nRisk transference\nEase of recovery",
+      "instructional": true,
+      "teach": "These are design tradeoffs. Learn why each factor matters rather than memorizing the words alone.",
+      "defs": [],
+      "course": {
+        "learn": "This section focuses on **Architectural Considerations** within **Architectural Considerations**. Architectural decisions balance availability, resilience, cost, responsiveness, scalability, deployment complexity, recovery, patchability, power, and compute capacity. There is rarely one universally best design.",
+        "why": "Security architecture must meet business requirements as well as technical security goals.",
+        "example": "A highly available design adds redundant regions and automated failover, but the organization accepts higher cost and operational complexity.",
+        "exam": "When several answers are technically secure, choose the design that best satisfies the stated business constraint and failure scenario.",
+        "breakdown": [
+          {
+            "term": "Scalability",
+            "explanation": "This is a factor that must be evaluated when using Architectural Considerations; ignoring it can create operational, security, cost, or compatibility risk."
+          },
+          {
+            "term": "Ease of deployment",
+            "explanation": "This is a factor that must be evaluated when using Architectural Considerations; ignoring it can create operational, security, cost, or compatibility risk."
+          },
+          {
+            "term": "Risk transference",
+            "explanation": "This is a factor that must be evaluated when using Architectural Considerations; ignoring it can create operational, security, cost, or compatibility risk."
+          },
+          {
+            "term": "Ease of recovery",
+            "explanation": "Backups create recoverable copies of data or systems so organizations can restore after deletion, corruption, ransomware, or disaster. Good backup strategy considers location, frequency, retention, immutability, encryption, and restore testing."
+          }
+        ],
+        "defs": [],
+        "check_q": "Without looking back, explain Architectural Considerations and describe at least two key ideas from this section.",
+        "check_a": "This section focuses on **Architectural Considerations** within **Architectural Considerations**. Architectural decisions balance availability, resilience, cost, responsiveness, scalability, deployment complexity, recovery, patchability, power, and compute capacity. There is rarely one universally best design. Key ideas include: Scalability; Ease of deployment; Risk transference; Ease of recovery.",
+        "points": [
+          "Scalability",
+          "Ease of deployment",
+          "Risk transference",
+          "Ease of recovery"
+        ]
+      }
+    },
+    {
+      "n": 4,
+      "title": "Architectural Considerations",
+      "points": [
+        "Patch availability",
+        "Inability to patch",
+        "Power",
+        "Compute"
+      ],
+      "raw": "Architectural Considerations\nPatch availability\nInability to patch\nPower\nCompute",
+      "instructional": true,
+      "teach": "These are design tradeoffs. Learn why each factor matters rather than memorizing the words alone.",
+      "defs": [
+        [
+          "Availability",
+          "Ensuring authorized users can access systems and data when needed."
+        ]
+      ],
+      "course": {
+        "learn": "This section focuses on **Architectural Considerations** within **Architectural Considerations**. Architectural decisions balance availability, resilience, cost, responsiveness, scalability, deployment complexity, recovery, patchability, power, and compute capacity. There is rarely one universally best design.",
+        "why": "Security architecture must meet business requirements as well as technical security goals.",
+        "example": "A highly available design adds redundant regions and automated failover, but the organization accepts higher cost and operational complexity.",
+        "exam": "When several answers are technically secure, choose the design that best satisfies the stated business constraint and failure scenario.",
+        "breakdown": [
+          {
+            "term": "Patch availability",
+            "explanation": "This is a factor that must be evaluated when using Architectural Considerations; ignoring it can create operational, security, cost, or compatibility risk."
+          },
+          {
+            "term": "Inability to patch",
+            "explanation": "This is a factor that must be evaluated when using Architectural Considerations; ignoring it can create operational, security, cost, or compatibility risk."
+          },
+          {
+            "term": "Power",
+            "explanation": "This is a factor that must be evaluated when using Architectural Considerations; ignoring it can create operational, security, cost, or compatibility risk."
+          },
+          {
+            "term": "Compute",
+            "explanation": "This is a factor that must be evaluated when using Architectural Considerations; ignoring it can create operational, security, cost, or compatibility risk."
+          }
+        ],
+        "defs": [
+          {
+            "term": "Availability",
+            "definition": "Ensuring authorized users can access systems and data when needed."
+          }
+        ],
+        "check_q": "Without looking back, explain Architectural Considerations and describe at least two key ideas from this section.",
+        "check_a": "This section focuses on **Architectural Considerations** within **Architectural Considerations**. Architectural decisions balance availability, resilience, cost, responsiveness, scalability, deployment complexity, recovery, patchability, power, and compute capacity. There is rarely one universally best design. Key ideas include: Patch availability; Inability to patch; Power; Compute.",
+        "points": [
+          "Patch availability",
+          "Inability to patch",
+          "Power",
+          "Compute"
+        ]
+      }
+    },
+    {
+      "n": 5,
+      "title": "Infrastructure Considerations",
+      "points": [],
+      "raw": "Infrastructure Considerations",
+      "instructional": false,
+      "teach": "These are design tradeoffs. Learn why each factor matters rather than memorizing the words alone.",
+      "defs": []
+    }
+  ],
+  "slide_count": 5,
+  "instructional_count": 3,
+  "concepts": [],
+  "source_filename": "10.14_Architectural_Considerations.pdf"
+}

@@ -1,0 +1,554 @@
+{
+  "id": "02.01",
+  "chapter": 2,
+  "sub": 1,
+  "title": "Confidentiality, Integrity, and Availability (CIA)",
+  "chapter_name": "Fundamental Security Concepts",
+  "slides": [
+    {
+      "n": 1,
+      "title": "Confidentiality, Integrity, and Availability (CIA)",
+      "points": [],
+      "raw": "Confidentiality, Integrity, and\nAvailability (CIA)",
+      "instructional": false,
+      "teach": "Read the source points, then explain the slide without looking. On Security+, recognition is not enough—you should be able to apply the concept to a scenario.",
+      "defs": [
+        [
+          "Availability",
+          "Ensuring authorized users can access systems and data when needed."
+        ],
+        [
+          "Integrity",
+          "Ensuring data stays accurate, complete, and protected from unauthorized modification."
+        ],
+        [
+          "CIA",
+          "Confidentiality, Integrity, Availability—the three foundational information-security objectives."
+        ]
+      ]
+    },
+    {
+      "n": 2,
+      "title": "The CIA Triad",
+      "points": [
+        "Confidentiality",
+        "Integrity",
+        "Availability"
+      ],
+      "raw": "The CIA Triad\nConfidentiality\nIntegrity\nAvailability",
+      "instructional": true,
+      "teach": "Read the source points, then explain the slide without looking. On Security+, recognition is not enough—you should be able to apply the concept to a scenario.",
+      "defs": [
+        [
+          "Availability",
+          "Ensuring authorized users can access systems and data when needed."
+        ],
+        [
+          "Integrity",
+          "Ensuring data stays accurate, complete, and protected from unauthorized modification."
+        ],
+        [
+          "CIA",
+          "Confidentiality, Integrity, Availability—the three foundational information-security objectives."
+        ]
+      ],
+      "course": {
+        "learn": "The CIA triad organizes security goals into confidentiality, integrity, and availability. Confidentiality limits unauthorized disclosure, integrity protects accuracy and trustworthiness, and availability keeps systems and data accessible to authorized users when needed.",
+        "why": "Most security controls protect one or more of these three objectives, so the triad gives you a quick way to classify what a scenario is trying to protect.",
+        "example": "Encrypting a stolen laptop protects confidentiality; hashing a file can verify integrity; redundant servers protect availability.",
+        "exam": "CompTIA often asks which CIA component is MOST directly affected. Ask: was data exposed, changed, or made unavailable?",
+        "breakdown": [
+          {
+            "term": "Confidentiality",
+            "explanation": "Within The CIA Triad, this is a specific factor you should be able to recognize and explain. Connect it to the purpose of Confidentiality, Integrity, and Availability (CIA) rather than memorizing the phrase by itself."
+          },
+          {
+            "term": "Integrity",
+            "explanation": "Within The CIA Triad, this is a specific factor you should be able to recognize and explain. Connect it to the purpose of Confidentiality, Integrity, and Availability (CIA) rather than memorizing the phrase by itself."
+          },
+          {
+            "term": "Availability",
+            "explanation": "Within The CIA Triad, this is a specific factor you should be able to recognize and explain. Connect it to the purpose of Confidentiality, Integrity, and Availability (CIA) rather than memorizing the phrase by itself."
+          }
+        ],
+        "defs": [
+          {
+            "term": "Availability",
+            "definition": "Ensuring authorized users can access systems and data when needed."
+          },
+          {
+            "term": "Integrity",
+            "definition": "Ensuring data stays accurate, complete, and protected from unauthorized modification."
+          },
+          {
+            "term": "CIA",
+            "definition": "Confidentiality, Integrity, Availability—the three foundational information-security objectives."
+          }
+        ],
+        "check_q": "Without looking back, explain The CIA Triad and describe at least two key ideas from this section.",
+        "check_a": "The CIA triad organizes security goals into confidentiality, integrity, and availability. Confidentiality limits unauthorized disclosure, integrity protects accuracy and trustworthiness, and availability keeps systems and data accessible to authorized users when needed. Key ideas include: Confidentiality; Integrity; Availability.",
+        "points": [
+          "Confidentiality",
+          "Integrity",
+          "Availability"
+        ]
+      }
+    },
+    {
+      "n": 3,
+      "title": "Relationship Between the CIA Components",
+      "points": [
+        "• Confidentiality and integrity",
+        "• Integrity and availability",
+        "• Confidentiality and availability"
+      ],
+      "raw": "Relationship Between\nthe CIA Components\n• Confidentiality and integrity\n• Integrity and availability\n• Confidentiality and availability",
+      "instructional": true,
+      "teach": "Know what each component does and how the components work together. CompTIA often asks which component best fits a scenario.",
+      "defs": [
+        [
+          "Availability",
+          "Ensuring authorized users can access systems and data when needed."
+        ],
+        [
+          "Integrity",
+          "Ensuring data stays accurate, complete, and protected from unauthorized modification."
+        ],
+        [
+          "CIA",
+          "Confidentiality, Integrity, Availability—the three foundational information-security objectives."
+        ]
+      ],
+      "course": {
+        "learn": "Confidentiality, integrity, and availability overlap. A single control can protect multiple CIA objectives, and improving one objective can sometimes create tradeoffs with another.",
+        "why": "Security design is usually a balance rather than a choice of only one objective.",
+        "example": "Encrypting a database protects confidentiality, but if encryption keys are lost the organization can create an availability problem.",
+        "exam": "When several CIA components seem affected, choose the one MOST directly described by the scenario.",
+        "breakdown": [
+          {
+            "term": "Confidentiality and integrity",
+            "explanation": "Within Relationship Between the CIA Components, this is a specific factor you should be able to recognize and explain. Connect it to the purpose of Confidentiality, Integrity, and Availability (CIA) rather than memorizing the phrase by itself."
+          },
+          {
+            "term": "Integrity and availability",
+            "explanation": "Within Relationship Between the CIA Components, this is a specific factor you should be able to recognize and explain. Connect it to the purpose of Confidentiality, Integrity, and Availability (CIA) rather than memorizing the phrase by itself."
+          },
+          {
+            "term": "Confidentiality and availability",
+            "explanation": "Within Relationship Between the CIA Components, this is a specific factor you should be able to recognize and explain. Connect it to the purpose of Confidentiality, Integrity, and Availability (CIA) rather than memorizing the phrase by itself."
+          }
+        ],
+        "defs": [
+          {
+            "term": "Availability",
+            "definition": "Ensuring authorized users can access systems and data when needed."
+          },
+          {
+            "term": "Integrity",
+            "definition": "Ensuring data stays accurate, complete, and protected from unauthorized modification."
+          },
+          {
+            "term": "CIA",
+            "definition": "Confidentiality, Integrity, Availability—the three foundational information-security objectives."
+          }
+        ],
+        "check_q": "Without looking back, explain Relationship Between the CIA Components and describe at least two key ideas from this section.",
+        "check_a": "Confidentiality, integrity, and availability overlap. A single control can protect multiple CIA objectives, and improving one objective can sometimes create tradeoffs with another. Key ideas include: Confidentiality and integrity; Integrity and availability; Confidentiality and availability.",
+        "points": [
+          "Confidentiality and integrity",
+          "Integrity and availability",
+          "Confidentiality and availability"
+        ]
+      }
+    },
+    {
+      "n": 4,
+      "title": "Confidentiality Compromise",
+      "points": [
+        "Human error",
+        "Technical",
+        "failures",
+        "Social",
+        "engineering",
+        "Malicious",
+        "insiders",
+        "Physical",
+        "security",
+        "breaches"
+      ],
+      "raw": "Confidentiality Compromise\nHuman error\nTechnical\nfailures\nSocial\nengineering\nMalicious\ninsiders\nPhysical\nsecurity\nbreaches",
+      "instructional": true,
+      "teach": "Read the source points, then explain the slide without looking. On Security+, recognition is not enough—you should be able to apply the concept to a scenario.",
+      "defs": [],
+      "course": {
+        "learn": "A confidentiality compromise happens when information is disclosed to someone who is not authorized to see it. The cause can be technical, physical, or human.",
+        "why": "Sensitive information loses value and can create legal, financial, or safety consequences once unauthorized parties gain access.",
+        "example": "An employee emails a confidential report to the wrong external address, or an attacker steals unencrypted customer records.",
+        "exam": "Exposure, disclosure, eavesdropping, data leakage, and unauthorized viewing point toward confidentiality.",
+        "breakdown": [
+          {
+            "term": "Human error",
+            "explanation": "Within Confidentiality Compromise, this is a specific factor you should be able to recognize and explain. Connect it to the purpose of Confidentiality, Integrity, and Availability (CIA) rather than memorizing the phrase by itself."
+          },
+          {
+            "term": "Technical failures",
+            "explanation": "Within Confidentiality Compromise, this is a specific factor you should be able to recognize and explain. Connect it to the purpose of Confidentiality, Integrity, and Availability (CIA) rather than memorizing the phrase by itself."
+          },
+          {
+            "term": "Social engineering",
+            "explanation": "Social engineering manipulates people into revealing information, granting access, transferring money, or bypassing procedures. Attackers exploit trust, urgency, authority, fear, curiosity, or helpfulness."
+          },
+          {
+            "term": "Malicious insiders",
+            "explanation": "Within Confidentiality Compromise, this is a specific factor you should be able to recognize and explain. Connect it to the purpose of Confidentiality, Integrity, and Availability (CIA) rather than memorizing the phrase by itself."
+          },
+          {
+            "term": "Physical security",
+            "explanation": "Physical security protects people, buildings, devices, documents, and infrastructure from unauthorized physical access, theft, tampering, or environmental harm."
+          },
+          {
+            "term": "breaches",
+            "explanation": "Within Confidentiality Compromise, this is a specific factor you should be able to recognize and explain. Connect it to the purpose of Confidentiality, Integrity, and Availability (CIA) rather than memorizing the phrase by itself."
+          }
+        ],
+        "defs": [],
+        "check_q": "Without looking back, explain Confidentiality Compromise and describe at least two key ideas from this section.",
+        "check_a": "A confidentiality compromise happens when information is disclosed to someone who is not authorized to see it. The cause can be technical, physical, or human. Key ideas include: Human error; Technical failures; Social engineering; Malicious insiders; Physical security.",
+        "points": [
+          "Human error",
+          "Technical failures",
+          "Social engineering",
+          "Malicious insiders",
+          "Physical security",
+          "breaches"
+        ]
+      }
+    },
+    {
+      "n": 5,
+      "title": "Methods to Protect Confidentiality",
+      "points": [
+        "Physical security",
+        "Access control &",
+        "authentication",
+        "Security awareness &",
+        "training",
+        "Monitoring & auditing"
+      ],
+      "raw": "Methods to Protect Confidentiality\nPhysical security\nAccess control &\nauthentication\nSecurity awareness &\ntraining\nMonitoring & auditing",
+      "instructional": true,
+      "teach": "Read the source points, then explain the slide without looking. On Security+, recognition is not enough—you should be able to apply the concept to a scenario.",
+      "defs": [
+        [
+          "Authentication",
+          "Proving an identity—answering “who are you?”"
+        ]
+      ],
+      "course": {
+        "learn": "Protecting confidentiality means controlling who can view information and preventing unauthorized disclosure. Common layers include physical security, authentication, authorization, encryption, training, and monitoring.",
+        "why": "No single control protects every path to sensitive data, so confidentiality normally requires defense in depth.",
+        "example": "A company encrypts laptops, requires MFA, limits file permissions, and monitors unusual downloads.",
+        "exam": "When the goal is secrecy, favor access control and encryption over availability controls such as clustering.",
+        "breakdown": [
+          {
+            "term": "Physical security",
+            "explanation": "Physical security protects people, buildings, devices, documents, and infrastructure from unauthorized physical access, theft, tampering, or environmental harm."
+          },
+          {
+            "term": "Access control & authentication",
+            "explanation": "Authentication is the process of proving an identity. Factors can be something you know, have, are, do, or somewhere you are; MFA requires factors from more than one category."
+          },
+          {
+            "term": "Security awareness & training",
+            "explanation": "This is one of the mechanisms used to implement or support Confidentiality, Integrity, and Availability (CIA). On the exam, focus on what problem it solves and where it fits."
+          },
+          {
+            "term": "Monitoring & auditing",
+            "explanation": "Security monitoring continuously observes systems, networks, applications, and logs for suspicious activity, failures, policy violations, and indicators of compromise."
+          }
+        ],
+        "defs": [
+          {
+            "term": "Authentication",
+            "definition": "Proving an identity—answering “who are you?”"
+          }
+        ],
+        "check_q": "Without looking back, explain Methods to Protect Confidentiality and describe at least two key ideas from this section.",
+        "check_a": "Protecting confidentiality means controlling who can view information and preventing unauthorized disclosure. Common layers include physical security, authentication, authorization, encryption, training, and monitoring. Key ideas include: Physical security; Access control & authentication; Security awareness & training; Monitoring & auditing.",
+        "points": [
+          "Physical security",
+          "Access control & authentication",
+          "Security awareness & training",
+          "Monitoring & auditing"
+        ]
+      }
+    },
+    {
+      "n": 6,
+      "title": "Integrity Compromise",
+      "points": [
+        "Accidental Errors",
+        "Malicious Actions",
+        "Systemic Weaknesses",
+        "Environmental Factors"
+      ],
+      "raw": "Integrity Compromise\nAccidental Errors\nMalicious Actions\nSystemic Weaknesses\nEnvironmental Factors",
+      "instructional": true,
+      "teach": "Read the source points, then explain the slide without looking. On Security+, recognition is not enough—you should be able to apply the concept to a scenario.",
+      "defs": [
+        [
+          "Integrity",
+          "Ensuring data stays accurate, complete, and protected from unauthorized modification."
+        ]
+      ],
+      "course": {
+        "learn": "An integrity compromise means data, software, or configuration has been changed in an unauthorized or untrustworthy way. Changes may be malicious or accidental.",
+        "why": "Organizations make decisions based on data. If the data cannot be trusted, the system can produce harmful or incorrect results.",
+        "example": "An attacker modifies payroll records, or a corrupted update changes application files unexpectedly.",
+        "exam": "Unauthorized modification, tampering, corruption, and incorrect data point toward integrity.",
+        "breakdown": [
+          {
+            "term": "Accidental Errors",
+            "explanation": "Within Integrity Compromise, this is a specific factor you should be able to recognize and explain. Connect it to the purpose of Confidentiality, Integrity, and Availability (CIA) rather than memorizing the phrase by itself."
+          },
+          {
+            "term": "Malicious Actions",
+            "explanation": "Within Integrity Compromise, this is a specific factor you should be able to recognize and explain. Connect it to the purpose of Confidentiality, Integrity, and Availability (CIA) rather than memorizing the phrase by itself."
+          },
+          {
+            "term": "Systemic Weaknesses",
+            "explanation": "Within Integrity Compromise, this is a specific factor you should be able to recognize and explain. Connect it to the purpose of Confidentiality, Integrity, and Availability (CIA) rather than memorizing the phrase by itself."
+          },
+          {
+            "term": "Environmental Factors",
+            "explanation": "Environmental attacks or incidents affect the physical conditions supporting technology—power, temperature, water, fire, ventilation, and facility controls. Tampering with environmental systems can become a security incident."
+          }
+        ],
+        "defs": [
+          {
+            "term": "Integrity",
+            "definition": "Ensuring data stays accurate, complete, and protected from unauthorized modification."
+          }
+        ],
+        "check_q": "Without looking back, explain Integrity Compromise and describe at least two key ideas from this section.",
+        "check_a": "An integrity compromise means data, software, or configuration has been changed in an unauthorized or untrustworthy way. Changes may be malicious or accidental. Key ideas include: Accidental Errors; Malicious Actions; Systemic Weaknesses; Environmental Factors.",
+        "points": [
+          "Accidental Errors",
+          "Malicious Actions",
+          "Systemic Weaknesses",
+          "Environmental Factors"
+        ]
+      }
+    },
+    {
+      "n": 7,
+      "title": "Methods to Protect Integrity",
+      "points": [
+        "Strengthening your",
+        "system",
+        "Empowering your users",
+        "Physical security",
+        "measures",
+        "Continuous",
+        "improvement"
+      ],
+      "raw": "Methods to Protect Integrity\nStrengthening your\nsystem\nEmpowering your users\nPhysical security\nmeasures\nContinuous\nimprovement",
+      "instructional": true,
+      "teach": "Read the source points, then explain the slide without looking. On Security+, recognition is not enough—you should be able to apply the concept to a scenario.",
+      "defs": [
+        [
+          "Integrity",
+          "Ensuring data stays accurate, complete, and protected from unauthorized modification."
+        ]
+      ],
+      "course": {
+        "learn": "Integrity controls help prove that information is complete, accurate, and unchanged except by authorized processes. Hashing, digital signatures, permissions, change control, and file-integrity monitoring are common examples.",
+        "why": "Integrity lets users trust that the information or software they receive is the same information that was intended.",
+        "example": "A software publisher signs an update, and the client verifies the signature before installing it.",
+        "exam": "Hashing and digital signatures are strong integrity clues. Remember that a digital signature also supports authentication and non-repudiation.",
+        "breakdown": [
+          {
+            "term": "Strengthening your system",
+            "explanation": "This is one of the mechanisms used to implement or support Confidentiality, Integrity, and Availability (CIA). On the exam, focus on what problem it solves and where it fits."
+          },
+          {
+            "term": "Empowering your users",
+            "explanation": "This is one of the mechanisms used to implement or support Confidentiality, Integrity, and Availability (CIA). On the exam, focus on what problem it solves and where it fits."
+          },
+          {
+            "term": "Physical security measures",
+            "explanation": "Physical security protects people, buildings, devices, documents, and infrastructure from unauthorized physical access, theft, tampering, or environmental harm."
+          },
+          {
+            "term": "Continuous improvement",
+            "explanation": "This is one of the mechanisms used to implement or support Confidentiality, Integrity, and Availability (CIA). On the exam, focus on what problem it solves and where it fits."
+          }
+        ],
+        "defs": [
+          {
+            "term": "Integrity",
+            "definition": "Ensuring data stays accurate, complete, and protected from unauthorized modification."
+          }
+        ],
+        "check_q": "Without looking back, explain Methods to Protect Integrity and describe at least two key ideas from this section.",
+        "check_a": "Integrity controls help prove that information is complete, accurate, and unchanged except by authorized processes. Hashing, digital signatures, permissions, change control, and file-integrity monitoring are common examples. Key ideas include: Strengthening your system; Empowering your users; Physical security measures; Continuous improvement.",
+        "points": [
+          "Strengthening your system",
+          "Empowering your users",
+          "Physical security measures",
+          "Continuous improvement"
+        ]
+      }
+    },
+    {
+      "n": 8,
+      "title": "Availability Compromise",
+      "points": [
+        "Technical glitches",
+        "Cybersecurity threats",
+        "External factors",
+        "Human errors"
+      ],
+      "raw": "Availability Compromise\nTechnical glitches\nCybersecurity threats\nExternal factors\nHuman errors",
+      "instructional": true,
+      "teach": "Read the source points, then explain the slide without looking. On Security+, recognition is not enough—you should be able to apply the concept to a scenario.",
+      "defs": [
+        [
+          "Availability",
+          "Ensuring authorized users can access systems and data when needed."
+        ]
+      ],
+      "course": {
+        "learn": "An availability compromise prevents authorized users from accessing a system, service, or data when they need it. Outages can be caused by attacks, failures, disasters, or mistakes.",
+        "why": "Security is not useful if legitimate users cannot perform required work. Availability is especially important for critical services.",
+        "example": "A DDoS attack overwhelms a web service, or a failed power supply takes down a server with no redundancy.",
+        "exam": "Outage, downtime, denial of service, failed hardware, and inaccessible resources point toward availability.",
+        "breakdown": [
+          {
+            "term": "Technical glitches",
+            "explanation": "Within Availability Compromise, this is a specific factor you should be able to recognize and explain. Connect it to the purpose of Confidentiality, Integrity, and Availability (CIA) rather than memorizing the phrase by itself."
+          },
+          {
+            "term": "Cybersecurity threats",
+            "explanation": "This contributes to reducing risk in the broader Confidentiality, Integrity, and Availability (CIA) design and should be evaluated as part of defense in depth."
+          },
+          {
+            "term": "External factors",
+            "explanation": "Within Availability Compromise, this is a specific factor you should be able to recognize and explain. Connect it to the purpose of Confidentiality, Integrity, and Availability (CIA) rather than memorizing the phrase by itself."
+          },
+          {
+            "term": "Human errors",
+            "explanation": "Within Availability Compromise, this is a specific factor you should be able to recognize and explain. Connect it to the purpose of Confidentiality, Integrity, and Availability (CIA) rather than memorizing the phrase by itself."
+          }
+        ],
+        "defs": [
+          {
+            "term": "Availability",
+            "definition": "Ensuring authorized users can access systems and data when needed."
+          }
+        ],
+        "check_q": "Without looking back, explain Availability Compromise and describe at least two key ideas from this section.",
+        "check_a": "An availability compromise prevents authorized users from accessing a system, service, or data when they need it. Outages can be caused by attacks, failures, disasters, or mistakes. Key ideas include: Technical glitches; Cybersecurity threats; External factors; Human errors.",
+        "points": [
+          "Technical glitches",
+          "Cybersecurity threats",
+          "External factors",
+          "Human errors"
+        ]
+      }
+    },
+    {
+      "n": 9,
+      "title": "Methods to Protect Availability",
+      "points": [
+        "Redundancy and",
+        "Disaster Recovery",
+        "Proactive Maintenance",
+        "and Security",
+        "Cybersecurity",
+        "Measures",
+        "Human Factors and",
+        "Awareness"
+      ],
+      "raw": "Methods to Protect Availability\nRedundancy and\nDisaster Recovery\nProactive Maintenance\nand Security\nCybersecurity\nMeasures\nHuman Factors and\nAwareness",
+      "instructional": true,
+      "teach": "Read the source points, then explain the slide without looking. On Security+, recognition is not enough—you should be able to apply the concept to a scenario.",
+      "defs": [
+        [
+          "Availability",
+          "Ensuring authorized users can access systems and data when needed."
+        ]
+      ],
+      "course": {
+        "learn": "Availability is protected through redundancy, maintenance, monitoring, backups, disaster recovery, failover, resilient power, and capacity planning.",
+        "why": "Resilient design removes single points of failure and reduces recovery time after disruption.",
+        "example": "Two web servers sit behind a load balancer so traffic can continue if one server fails.",
+        "exam": "Look for uptime, redundancy, failover, backups, alternate sites, UPS, generators, clustering, and load balancing.",
+        "breakdown": [
+          {
+            "term": "Redundancy and Disaster Recovery",
+            "explanation": "Restore technology and data after a major disruption."
+          },
+          {
+            "term": "Proactive Maintenance and Security",
+            "explanation": "This is one of the mechanisms used to implement or support Confidentiality, Integrity, and Availability (CIA). On the exam, focus on what problem it solves and where it fits."
+          },
+          {
+            "term": "Cybersecurity",
+            "explanation": "This is one of the mechanisms used to implement or support Confidentiality, Integrity, and Availability (CIA). On the exam, focus on what problem it solves and where it fits."
+          },
+          {
+            "term": "Measures",
+            "explanation": "This is one of the mechanisms used to implement or support Confidentiality, Integrity, and Availability (CIA). On the exam, focus on what problem it solves and where it fits."
+          },
+          {
+            "term": "Human Factors and Awareness",
+            "explanation": "This is one of the mechanisms used to implement or support Confidentiality, Integrity, and Availability (CIA). On the exam, focus on what problem it solves and where it fits."
+          }
+        ],
+        "defs": [
+          {
+            "term": "Availability",
+            "definition": "Ensuring authorized users can access systems and data when needed."
+          }
+        ],
+        "check_q": "Without looking back, explain Methods to Protect Availability and describe at least two key ideas from this section.",
+        "check_a": "Availability is protected through redundancy, maintenance, monitoring, backups, disaster recovery, failover, resilient power, and capacity planning. Key ideas include: Redundancy and Disaster Recovery; Proactive Maintenance and Security; Cybersecurity; Measures; Human Factors and Awareness.",
+        "points": [
+          "Redundancy and Disaster Recovery",
+          "Proactive Maintenance and Security",
+          "Cybersecurity",
+          "Measures",
+          "Human Factors and Awareness"
+        ]
+      }
+    },
+    {
+      "n": 10,
+      "title": "Non-repudiation",
+      "points": [],
+      "raw": "Non-repudiation",
+      "instructional": false,
+      "teach": "Read the source points, then explain the slide without looking. On Security+, recognition is not enough—you should be able to apply the concept to a scenario.",
+      "defs": [
+        [
+          "Non-repudiation",
+          "Evidence that makes it difficult for a party to credibly deny an action they performed."
+        ]
+      ]
+    }
+  ],
+  "slide_count": 10,
+  "instructional_count": 8,
+  "concepts": [
+    "The CIA Triad",
+    "Relationship Between the CIA Components",
+    "Confidentiality Compromise",
+    "Methods to Protect Confidentiality",
+    "Integrity Compromise",
+    "Methods to Protect Integrity",
+    "Availability Compromise",
+    "Methods to Protect Availability"
+  ],
+  "source_filename": "02.01_Confidentiality_Integrity_and_Availability_CIA.pdf"
+}

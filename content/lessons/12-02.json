@@ -1,0 +1,350 @@
+{
+  "id": "12.02",
+  "chapter": 12,
+  "sub": 2,
+  "title": "Data classifications",
+  "chapter_name": "Data Security",
+  "slides": [
+    {
+      "n": 1,
+      "title": "Data Classification",
+      "points": [],
+      "raw": "Data Classification",
+      "instructional": false,
+      "teach": "Read the source points, then explain the slide without looking. On Security+, recognition is not enough—you should be able to apply the concept to a scenario.",
+      "defs": []
+    },
+    {
+      "n": 2,
+      "title": "Data Classification",
+      "points": [
+        "Sensitive Data",
+        "Confidential Data",
+        "Public Data",
+        "• Social Security",
+        "numbers",
+        "• Personal",
+        "identification",
+        "information (PII)",
+        "• Health records",
+        "• Financial account",
+        "details",
+        "• Intellectual",
+        "property (trade",
+        "secrets, patents)",
+        "• Business plans and",
+        "strategies",
+        "• Non-disclosure",
+        "agreements",
+        "• Legal documents",
+        "• Marketing",
+        "materials",
+        "• General product",
+        "information",
+        "• Public",
+        "announcements"
+      ],
+      "raw": "Data Classification\nSensitive Data\nConfidential Data\nPublic Data\n• Social Security\nnumbers\n• Personal\nidentification\ninformation (PII)\n• Health records\n• Financial account\ndetails\n• Intellectual\nproperty (trade\nsecrets, patents)\n• Business plans and\nstrategies\n• Non-disclosure\nagreements\n• Legal documents\n• Marketing\nmaterials\n• General product\ninformation\n• Public\nannouncements",
+      "instructional": true,
+      "teach": "Read the source points, then explain the slide without looking. On Security+, recognition is not enough—you should be able to apply the concept to a scenario.",
+      "defs": [],
+      "course": {
+        "learn": "Data classification assigns labels based on sensitivity, value, and handling requirements so controls can match the risk. Common organizational labels include public, internal, confidential, and restricted.",
+        "why": "Without classification, organizations either overprotect everything or fail to protect the data that matters most.",
+        "example": "Customer tax records are labeled restricted, requiring encryption, limited access, logging, and approved disposal.",
+        "exam": "Classification drives handling. The exact label names vary by organization; focus on increasing sensitivity and required controls.",
+        "breakdown": [
+          {
+            "term": "Sensitive Data",
+            "explanation": "Within Data Classification, this is a specific factor you should be able to recognize and explain. Connect it to the purpose of Data classifications rather than memorizing the phrase by itself."
+          },
+          {
+            "term": "Confidential Data",
+            "explanation": "Within Data Classification, this is a specific factor you should be able to recognize and explain. Connect it to the purpose of Data classifications rather than memorizing the phrase by itself."
+          },
+          {
+            "term": "Public Data",
+            "explanation": "Within Data Classification, this is a specific factor you should be able to recognize and explain. Connect it to the purpose of Data classifications rather than memorizing the phrase by itself."
+          },
+          {
+            "term": "Social Security numbers",
+            "explanation": "This contributes to reducing risk in the broader Data classifications design and should be evaluated as part of defense in depth."
+          },
+          {
+            "term": "Personal identification",
+            "explanation": "Within Data Classification, this is a specific factor you should be able to recognize and explain. Connect it to the purpose of Data classifications rather than memorizing the phrase by itself."
+          },
+          {
+            "term": "information (PII)",
+            "explanation": "Within Data Classification, this is a specific factor you should be able to recognize and explain. Connect it to the purpose of Data classifications rather than memorizing the phrase by itself."
+          },
+          {
+            "term": "Health records",
+            "explanation": "Within Data Classification, this is a specific factor you should be able to recognize and explain. Connect it to the purpose of Data classifications rather than memorizing the phrase by itself."
+          },
+          {
+            "term": "Financial account details",
+            "explanation": "Within Data Classification, this is a specific factor you should be able to recognize and explain. Connect it to the purpose of Data classifications rather than memorizing the phrase by itself."
+          },
+          {
+            "term": "Intellectual property (trade",
+            "explanation": "Intellectual property (IP) includes creations such as software, designs, inventions, copyrighted material, and other valuable creative work."
+          },
+          {
+            "term": "secrets, patents)",
+            "explanation": "Within Data Classification, this is a specific factor you should be able to recognize and explain. Connect it to the purpose of Data classifications rather than memorizing the phrase by itself."
+          },
+          {
+            "term": "Business plans and strategies",
+            "explanation": "Within Data Classification, this is a specific factor you should be able to recognize and explain. Connect it to the purpose of Data classifications rather than memorizing the phrase by itself."
+          },
+          {
+            "term": "Non-disclosure agreements",
+            "explanation": "Within Data Classification, this is a specific factor you should be able to recognize and explain. Connect it to the purpose of Data classifications rather than memorizing the phrase by itself."
+          },
+          {
+            "term": "Legal documents",
+            "explanation": "Within Data Classification, this is a specific factor you should be able to recognize and explain. Connect it to the purpose of Data classifications rather than memorizing the phrase by itself."
+          },
+          {
+            "term": "Marketing materials",
+            "explanation": "Within Data Classification, this is a specific factor you should be able to recognize and explain. Connect it to the purpose of Data classifications rather than memorizing the phrase by itself."
+          },
+          {
+            "term": "General product information",
+            "explanation": "Within Data Classification, this is a specific factor you should be able to recognize and explain. Connect it to the purpose of Data classifications rather than memorizing the phrase by itself."
+          },
+          {
+            "term": "Public announcements",
+            "explanation": "Within Data Classification, this is a specific factor you should be able to recognize and explain. Connect it to the purpose of Data classifications rather than memorizing the phrase by itself."
+          }
+        ],
+        "defs": [],
+        "check_q": "Without looking back, explain Data Classification and describe at least two key ideas from this section.",
+        "check_a": "Data classification assigns labels based on sensitivity, value, and handling requirements so controls can match the risk. Common organizational labels include public, internal, confidential, and restricted. Key ideas include: Sensitive Data; Confidential Data; Public Data; Social Security numbers; Personal identification.",
+        "points": [
+          "Sensitive Data",
+          "Confidential Data",
+          "Public Data",
+          "Social Security numbers",
+          "Personal identification",
+          "information (PII)",
+          "Health records",
+          "Financial account details",
+          "Intellectual property (trade",
+          "secrets, patents)",
+          "Business plans and strategies",
+          "Non-disclosure agreements",
+          "Legal documents",
+          "Marketing materials",
+          "General product information",
+          "Public announcements"
+        ]
+      }
+    },
+    {
+      "n": 3,
+      "title": "Data Classification",
+      "points": [
+        "Restricted Data",
+        "Private Data",
+        "Critical Data",
+        "• Employee records",
+        "with limited access",
+        "• Internal project",
+        "documentation",
+        "• Restricted-access",
+        "databases",
+        "• Research data with",
+        "access restrictions",
+        "• Employee contact",
+        "information",
+        "• Internal",
+        "communication logs",
+        "• Customer feedback",
+        "with privacy",
+        "considerations",
+        "• Limited-access",
+        "internal reports",
+        "• Emergency response",
+        "plans",
+        "• Key infrastructure",
+        "blueprints",
+        "• Critical system",
+        "configurations",
+        "• Strategic partnership",
+        "agreements"
+      ],
+      "raw": "Data Classification\nRestricted Data\nPrivate Data\nCritical Data\n• Employee records\nwith limited access\n• Internal project\ndocumentation\n• Restricted-access\ndatabases\n• Research data with\naccess restrictions\n• Employee contact\ninformation\n• Internal\ncommunication logs\n• Customer feedback\nwith privacy\nconsiderations\n• Limited-access\ninternal reports\n• Emergency response\nplans\n• Key infrastructure\nblueprints\n• Critical system\nconfigurations\n• Strategic partnership\nagreements",
+      "instructional": true,
+      "teach": "Read the source points, then explain the slide without looking. On Security+, recognition is not enough—you should be able to apply the concept to a scenario.",
+      "defs": [],
+      "course": {
+        "learn": "Data classification assigns labels based on sensitivity, value, and handling requirements so controls can match the risk. Common organizational labels include public, internal, confidential, and restricted.",
+        "why": "Without classification, organizations either overprotect everything or fail to protect the data that matters most.",
+        "example": "Customer tax records are labeled restricted, requiring encryption, limited access, logging, and approved disposal.",
+        "exam": "Classification drives handling. The exact label names vary by organization; focus on increasing sensitivity and required controls.",
+        "breakdown": [
+          {
+            "term": "Restricted Data",
+            "explanation": "Within Data Classification, this is a specific factor you should be able to recognize and explain. Connect it to the purpose of Data classifications rather than memorizing the phrase by itself."
+          },
+          {
+            "term": "Private Data",
+            "explanation": "Within Data Classification, this is a specific factor you should be able to recognize and explain. Connect it to the purpose of Data classifications rather than memorizing the phrase by itself."
+          },
+          {
+            "term": "Critical Data",
+            "explanation": "Within Data Classification, this is a specific factor you should be able to recognize and explain. Connect it to the purpose of Data classifications rather than memorizing the phrase by itself."
+          },
+          {
+            "term": "Employee records with limited access",
+            "explanation": "This concerns who or what can reach a resource and what actions are permitted once access is granted."
+          },
+          {
+            "term": "Internal project documentation",
+            "explanation": "Security documentation keeps diagrams, policies, procedures, configurations, and versions synchronized with the real environment."
+          },
+          {
+            "term": "Restricted-access databases",
+            "explanation": "This concerns who or what can reach a resource and what actions are permitted once access is granted."
+          },
+          {
+            "term": "Research data with access restrictions",
+            "explanation": "This concerns who or what can reach a resource and what actions are permitted once access is granted."
+          },
+          {
+            "term": "Employee contact information",
+            "explanation": "Within Data Classification, this is a specific factor you should be able to recognize and explain. Connect it to the purpose of Data classifications rather than memorizing the phrase by itself."
+          },
+          {
+            "term": "Internal communication logs",
+            "explanation": "Within Data Classification, this is a specific factor you should be able to recognize and explain. Connect it to the purpose of Data classifications rather than memorizing the phrase by itself."
+          },
+          {
+            "term": "Customer feedback with privacy",
+            "explanation": "Within Data Classification, this is a specific factor you should be able to recognize and explain. Connect it to the purpose of Data classifications rather than memorizing the phrase by itself."
+          },
+          {
+            "term": "considerations",
+            "explanation": "Data classification assigns labels based on sensitivity, value, and handling requirements so controls can match the risk. Common organizational labels include public, internal, confidential, and restricted."
+          },
+          {
+            "term": "Limited-access internal reports",
+            "explanation": "This concerns who or what can reach a resource and what actions are permitted once access is granted."
+          },
+          {
+            "term": "Emergency response plans",
+            "explanation": "Within Data Classification, this is a specific factor you should be able to recognize and explain. Connect it to the purpose of Data classifications rather than memorizing the phrase by itself."
+          },
+          {
+            "term": "Key infrastructure blueprints",
+            "explanation": "Infrastructure monitoring observes networks, cloud configuration, appliances, links, and supporting resources. NSM analyzes network behavior, while CSPM evaluates cloud security posture and misconfiguration."
+          },
+          {
+            "term": "Critical system configurations",
+            "explanation": "Within Data Classification, this is a specific factor you should be able to recognize and explain. Connect it to the purpose of Data classifications rather than memorizing the phrase by itself."
+          },
+          {
+            "term": "Strategic partnership agreements",
+            "explanation": "Within Data Classification, this is a specific factor you should be able to recognize and explain. Connect it to the purpose of Data classifications rather than memorizing the phrase by itself."
+          }
+        ],
+        "defs": [],
+        "check_q": "Without looking back, explain Data Classification and describe at least two key ideas from this section.",
+        "check_a": "Data classification assigns labels based on sensitivity, value, and handling requirements so controls can match the risk. Common organizational labels include public, internal, confidential, and restricted. Key ideas include: Restricted Data; Private Data; Critical Data; Employee records with limited access; Internal project documentation.",
+        "points": [
+          "Restricted Data",
+          "Private Data",
+          "Critical Data",
+          "Employee records with limited access",
+          "Internal project documentation",
+          "Restricted-access databases",
+          "Research data with access restrictions",
+          "Employee contact information",
+          "Internal communication logs",
+          "Customer feedback with privacy",
+          "considerations",
+          "Limited-access internal reports",
+          "Emergency response plans",
+          "Key infrastructure blueprints",
+          "Critical system configurations",
+          "Strategic partnership agreements"
+        ]
+      }
+    },
+    {
+      "n": 4,
+      "title": "Security Measures",
+      "points": [
+        "Access Controls",
+        "Encryption and Security Measures",
+        "Data Handling Procedures",
+        "Legal and Regulatory Compliance"
+      ],
+      "raw": "Security Measures\nAccess Controls\nEncryption and Security Measures\nData Handling Procedures\nLegal and Regulatory Compliance",
+      "instructional": true,
+      "teach": "Read the source points, then explain the slide without looking. On Security+, recognition is not enough—you should be able to apply the concept to a scenario.",
+      "defs": [
+        [
+          "Encryption",
+          "Transforms readable plaintext into ciphertext using an algorithm and key so unauthorized parties cannot understand it."
+        ]
+      ],
+      "course": {
+        "learn": "This section focuses on **Security Measures** within **Data classifications**. Security measures are the controls used to protect the specific data or system being discussed. Common measures include encryption, access control, secure storage, monitoring, legal/compliance controls, and integrity protection.",
+        "why": "Different data types require different handling based on sensitivity, business value, and legal obligations.",
+        "example": "Sensitive legal records are encrypted, restricted to authorized staff, stored in approved systems, and retained according to policy.",
+        "exam": "Start with the required security objective, then choose controls that directly protect it.",
+        "breakdown": [
+          {
+            "term": "Access Controls",
+            "explanation": "Access control restricts which subjects can access which resources and what actions they may perform. ACLs express allow/deny rules on objects, interfaces, or network traffic."
+          },
+          {
+            "term": "Encryption and Security Measures",
+            "explanation": "Protect confidentiality by transforming plaintext into ciphertext using cryptographic keys."
+          },
+          {
+            "term": "Data Handling Procedures",
+            "explanation": "This is one of the mechanisms used to implement or support Data classifications. On the exam, focus on what problem it solves and where it fits."
+          },
+          {
+            "term": "Legal and Regulatory Compliance",
+            "explanation": "This is one of the mechanisms used to implement or support Data classifications. On the exam, focus on what problem it solves and where it fits."
+          }
+        ],
+        "defs": [
+          {
+            "term": "Encryption",
+            "definition": "Transforms readable plaintext into ciphertext using an algorithm and key so unauthorized parties cannot understand it."
+          }
+        ],
+        "check_q": "Without looking back, explain Security Measures and describe at least two key ideas from this section.",
+        "check_a": "This section focuses on **Security Measures** within **Data classifications**. Security measures are the controls used to protect the specific data or system being discussed. Common measures include encryption, access control, secure storage, monitoring, legal/compliance controls, and integrity protection. Key ideas include: Access Controls; Encryption and Security Measures; Data Handling Procedures; Legal and Regulatory Compliance.",
+        "points": [
+          "Access Controls",
+          "Encryption and Security Measures",
+          "Data Handling Procedures",
+          "Legal and Regulatory Compliance"
+        ]
+      }
+    },
+    {
+      "n": 5,
+      "title": "General Data Considerations",
+      "points": [],
+      "raw": "General Data Considerations",
+      "instructional": false,
+      "teach": "These are design tradeoffs. Learn why each factor matters rather than memorizing the words alone.",
+      "defs": []
+    }
+  ],
+  "slide_count": 5,
+  "instructional_count": 3,
+  "concepts": [
+    "Data Classification",
+    "Security Measures"
+  ],
+  "source_filename": "12.02_Data_classifications.pdf"
+}

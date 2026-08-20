@@ -1,0 +1,170 @@
+{
+  "id": "09.01",
+  "chapter": 9,
+  "sub": 1,
+  "title": "Segmentation",
+  "chapter_name": "Mitigation & Hardening",
+  "slides": [
+    {
+      "n": 1,
+      "title": "Segmentation",
+      "points": [],
+      "raw": "Segmentation",
+      "instructional": false,
+      "teach": "Read the source points, then explain the slide without looking. On Security+, recognition is not enough—you should be able to apply the concept to a scenario.",
+      "defs": [
+        [
+          "Segmentation",
+          "Dividing a network into controlled zones to limit access and lateral movement."
+        ]
+      ]
+    },
+    {
+      "n": 2,
+      "title": "Segmentation",
+      "points": [
+        "Containment of Threats",
+        "Reduced Attack Surface",
+        "Granular Access Control",
+        "Compliance Requirements",
+        "Enhanced Incident Response"
+      ],
+      "raw": "Segmentation\nContainment of Threats\nReduced Attack Surface\nGranular Access Control\nCompliance Requirements\nEnhanced Incident Response",
+      "instructional": true,
+      "teach": "Read the source points, then explain the slide without looking. On Security+, recognition is not enough—you should be able to apply the concept to a scenario.",
+      "defs": [
+        [
+          "Segmentation",
+          "Dividing a network into controlled zones to limit access and lateral movement."
+        ]
+      ],
+      "course": {
+        "learn": "Network segmentation separates systems into different trust zones so traffic must cross controlled boundaries. VLANs, subnets, ACLs, and firewalls are common mechanisms.",
+        "why": "Segmentation limits lateral movement and reduces the blast radius of a compromised host.",
+        "example": "Guest Wi-Fi is placed in a separate VLAN with firewall rules that block access to internal servers.",
+        "exam": "If the goal is containment or preventing one network from freely reaching another, segmentation is a strong answer.",
+        "breakdown": [
+          {
+            "term": "Containment of Threats",
+            "explanation": "Within Segmentation, this is a specific factor you should be able to recognize and explain. Connect it to the purpose of Segmentation rather than memorizing the phrase by itself."
+          },
+          {
+            "term": "Reduced Attack Surface",
+            "explanation": "Secure architecture depends on where devices are placed, which trust zones they belong to, how they connect, what attack surface they expose, and what happens when a component fails."
+          },
+          {
+            "term": "Granular Access Control",
+            "explanation": "Access control restricts which subjects can access which resources and what actions they may perform. ACLs express allow/deny rules on objects, interfaces, or network traffic."
+          },
+          {
+            "term": "Compliance Requirements",
+            "explanation": "This relates to meeting and demonstrating required legal, regulatory, contractual, or policy obligations."
+          },
+          {
+            "term": "Enhanced Incident Response",
+            "explanation": "Within Segmentation, this is a specific factor you should be able to recognize and explain. Connect it to the purpose of Segmentation rather than memorizing the phrase by itself."
+          }
+        ],
+        "defs": [
+          {
+            "term": "Segmentation",
+            "definition": "Dividing a network into controlled zones to limit access and lateral movement."
+          }
+        ],
+        "check_q": "Without looking back, explain Segmentation and describe at least two key ideas from this section.",
+        "check_a": "Network segmentation separates systems into different trust zones so traffic must cross controlled boundaries. VLANs, subnets, ACLs, and firewalls are common mechanisms. Key ideas include: Containment of Threats; Reduced Attack Surface; Granular Access Control; Compliance Requirements; Enhanced Incident Response.",
+        "points": [
+          "Containment of Threats",
+          "Reduced Attack Surface",
+          "Granular Access Control",
+          "Compliance Requirements",
+          "Enhanced Incident Response"
+        ]
+      }
+    },
+    {
+      "n": 3,
+      "title": "Segmentation",
+      "points": [
+        "Improved Performance and Bandwidth Management:",
+        "Protection of Critical Assets",
+        "Isolation of IoT Devices",
+        "Prevention of Lateral Movement",
+        "Adaptability to Evolving Threats"
+      ],
+      "raw": "Segmentation\nImproved Performance and Bandwidth Management:\nProtection of Critical Assets\nIsolation of IoT Devices\nPrevention of Lateral Movement\nAdaptability to Evolving Threats",
+      "instructional": true,
+      "teach": "Read the source points, then explain the slide without looking. On Security+, recognition is not enough—you should be able to apply the concept to a scenario.",
+      "defs": [
+        [
+          "Segmentation",
+          "Dividing a network into controlled zones to limit access and lateral movement."
+        ],
+        [
+          "IoT",
+          "Internet of Things: network-connected devices such as sensors, appliances, cameras, and embedded devices."
+        ]
+      ],
+      "course": {
+        "learn": "Network segmentation separates systems into different trust zones so traffic must cross controlled boundaries. VLANs, subnets, ACLs, and firewalls are common mechanisms.",
+        "why": "Segmentation limits lateral movement and reduces the blast radius of a compromised host.",
+        "example": "Guest Wi-Fi is placed in a separate VLAN with firewall rules that block access to internal servers.",
+        "exam": "If the goal is containment or preventing one network from freely reaching another, segmentation is a strong answer.",
+        "breakdown": [
+          {
+            "term": "Improved Performance and Bandwidth Management:",
+            "explanation": "Within Segmentation, this is a specific factor you should be able to recognize and explain. Connect it to the purpose of Segmentation rather than memorizing the phrase by itself."
+          },
+          {
+            "term": "Protection of Critical Assets",
+            "explanation": "Within Segmentation, this is a specific factor you should be able to recognize and explain. Connect it to the purpose of Segmentation rather than memorizing the phrase by itself."
+          },
+          {
+            "term": "Isolation of IoT Devices",
+            "explanation": "Isolation separates a risky or sensitive system from other resources so compromise cannot easily spread. Physical isolation and air gaps provide stronger separation than ordinary logical controls."
+          },
+          {
+            "term": "Prevention of Lateral Movement",
+            "explanation": "Within Segmentation, this is a specific factor you should be able to recognize and explain. Connect it to the purpose of Segmentation rather than memorizing the phrase by itself."
+          },
+          {
+            "term": "Adaptability to Evolving Threats",
+            "explanation": "Within Segmentation, this is a specific factor you should be able to recognize and explain. Connect it to the purpose of Segmentation rather than memorizing the phrase by itself."
+          }
+        ],
+        "defs": [
+          {
+            "term": "Segmentation",
+            "definition": "Dividing a network into controlled zones to limit access and lateral movement."
+          },
+          {
+            "term": "IoT",
+            "definition": "Internet of Things: network-connected devices such as sensors, appliances, cameras, and embedded devices."
+          }
+        ],
+        "check_q": "Without looking back, explain Segmentation and describe at least two key ideas from this section.",
+        "check_a": "Network segmentation separates systems into different trust zones so traffic must cross controlled boundaries. VLANs, subnets, ACLs, and firewalls are common mechanisms. Key ideas include: Improved Performance and Bandwidth Management:; Protection of Critical Assets; Isolation of IoT Devices; Prevention of Lateral Movement; Adaptability to Evolving Threats.",
+        "points": [
+          "Improved Performance and Bandwidth Management:",
+          "Protection of Critical Assets",
+          "Isolation of IoT Devices",
+          "Prevention of Lateral Movement",
+          "Adaptability to Evolving Threats"
+        ]
+      }
+    },
+    {
+      "n": 4,
+      "title": "Access Control",
+      "points": [],
+      "raw": "Access Control",
+      "instructional": false,
+      "teach": "Read the source points, then explain the slide without looking. On Security+, recognition is not enough—you should be able to apply the concept to a scenario.",
+      "defs": []
+    }
+  ],
+  "slide_count": 4,
+  "instructional_count": 2,
+  "concepts": [],
+  "source_filename": "09.01_Segmentation.pdf"
+}

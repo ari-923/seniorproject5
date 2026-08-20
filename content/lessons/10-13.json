@@ -1,0 +1,314 @@
+{
+  "id": "10.13",
+  "chapter": 10,
+  "sub": 13,
+  "title": "High availability",
+  "chapter_name": "Security Architecture & Cloud",
+  "slides": [
+    {
+      "n": 1,
+      "title": "High Availability",
+      "points": [],
+      "raw": "High Availability",
+      "instructional": false,
+      "teach": "Read the source points, then explain the slide without looking. On Security+, recognition is not enough—you should be able to apply the concept to a scenario.",
+      "defs": [
+        [
+          "Availability",
+          "Ensuring authorized users can access systems and data when needed."
+        ]
+      ]
+    },
+    {
+      "n": 2,
+      "title": "Components",
+      "points": [
+        "Redundancy",
+        "Fault Tolerance",
+        "Failover Mechanisms"
+      ],
+      "raw": "Components\nRedundancy\nFault Tolerance\nFailover Mechanisms",
+      "instructional": true,
+      "teach": "Know what each component does and how the components work together. CompTIA often asks which component best fits a scenario.",
+      "defs": [
+        [
+          "Failover",
+          "Switching service from a failed primary system to a secondary system."
+        ]
+      ],
+      "course": {
+        "learn": "This section focuses on **Components** within **High availability**. High availability designs services to remain accessible despite failures. It uses redundancy, failover, load balancing, clustering, replication, resilient power, and removal of single points of failure.",
+        "why": "The goal is not merely fast recovery after an outage; it is to minimize or avoid service interruption.",
+        "example": "Two application nodes run in separate availability zones behind a load balancer so one zone can fail without taking down the service.",
+        "exam": "Availability clues: redundancy, clustering, failover, load balancing, geographically separated resources, UPS/generator.",
+        "breakdown": [
+          {
+            "term": "Redundancy",
+            "explanation": "Use duplicate components or paths so one failure does not stop the service."
+          },
+          {
+            "term": "Fault Tolerance",
+            "explanation": "Within Components, this is a specific factor you should be able to recognize and explain. Connect it to the purpose of High availability rather than memorizing the phrase by itself."
+          },
+          {
+            "term": "Failover Mechanisms",
+            "explanation": "Failover moves service from a failed primary resource to a secondary resource. It may be automatic or manual depending on architecture."
+          }
+        ],
+        "defs": [
+          {
+            "term": "Failover",
+            "definition": "Switching service from a failed primary system to a secondary system."
+          }
+        ],
+        "check_q": "Without looking back, explain Components and describe at least two key ideas from this section.",
+        "check_a": "This section focuses on **Components** within **High availability**. High availability designs services to remain accessible despite failures. It uses redundancy, failover, load balancing, clustering, replication, resilient power, and removal of single points of failure. Key ideas include: Redundancy; Fault Tolerance; Failover Mechanisms.",
+        "points": [
+          "Redundancy",
+          "Fault Tolerance",
+          "Failover Mechanisms"
+        ]
+      }
+    },
+    {
+      "n": 3,
+      "title": "Key Principles of High Availability",
+      "points": [
+        "Continuous",
+        "Operation",
+        "Minimizing",
+        "Downtime",
+        "Eliminating",
+        "Single Points",
+        "of Failure",
+        "Immediate",
+        "Response to",
+        "Failures",
+        "Scalability"
+      ],
+      "raw": "Key Principles of High Availability\nContinuous\nOperation\nMinimizing\nDowntime\nEliminating\nSingle Points\nof Failure\nImmediate\nResponse to\nFailures\nScalability",
+      "instructional": true,
+      "teach": "Read the source points, then explain the slide without looking. On Security+, recognition is not enough—you should be able to apply the concept to a scenario.",
+      "defs": [
+        [
+          "Availability",
+          "Ensuring authorized users can access systems and data when needed."
+        ]
+      ],
+      "course": {
+        "learn": "High availability designs services to remain accessible despite failures. It uses redundancy, failover, load balancing, clustering, replication, resilient power, and removal of single points of failure.",
+        "why": "The goal is not merely fast recovery after an outage; it is to minimize or avoid service interruption.",
+        "example": "Two application nodes run in separate availability zones behind a load balancer so one zone can fail without taking down the service.",
+        "exam": "Availability clues: redundancy, clustering, failover, load balancing, geographically separated resources, UPS/generator.",
+        "breakdown": [
+          {
+            "term": "Continuous",
+            "explanation": "Within Key Principles of High Availability, this is a specific factor you should be able to recognize and explain. Connect it to the purpose of High availability rather than memorizing the phrase by itself."
+          },
+          {
+            "term": "Operation",
+            "explanation": "Within Key Principles of High Availability, this is a specific factor you should be able to recognize and explain. Connect it to the purpose of High availability rather than memorizing the phrase by itself."
+          },
+          {
+            "term": "Minimizing",
+            "explanation": "Within Key Principles of High Availability, this is a specific factor you should be able to recognize and explain. Connect it to the purpose of High availability rather than memorizing the phrase by itself."
+          },
+          {
+            "term": "Downtime",
+            "explanation": "Within Key Principles of High Availability, this is a specific factor you should be able to recognize and explain. Connect it to the purpose of High availability rather than memorizing the phrase by itself."
+          },
+          {
+            "term": "Eliminating",
+            "explanation": "Within Key Principles of High Availability, this is a specific factor you should be able to recognize and explain. Connect it to the purpose of High availability rather than memorizing the phrase by itself."
+          },
+          {
+            "term": "Single Points of Failure",
+            "explanation": "Within Key Principles of High Availability, this is a specific factor you should be able to recognize and explain. Connect it to the purpose of High availability rather than memorizing the phrase by itself."
+          },
+          {
+            "term": "Immediate",
+            "explanation": "Within Key Principles of High Availability, this is a specific factor you should be able to recognize and explain. Connect it to the purpose of High availability rather than memorizing the phrase by itself."
+          },
+          {
+            "term": "Response to Failures",
+            "explanation": "Within Key Principles of High Availability, this is a specific factor you should be able to recognize and explain. Connect it to the purpose of High availability rather than memorizing the phrase by itself."
+          },
+          {
+            "term": "Scalability",
+            "explanation": "Within Key Principles of High Availability, this is a specific factor you should be able to recognize and explain. Connect it to the purpose of High availability rather than memorizing the phrase by itself."
+          }
+        ],
+        "defs": [
+          {
+            "term": "Availability",
+            "definition": "Ensuring authorized users can access systems and data when needed."
+          }
+        ],
+        "check_q": "Without looking back, explain Key Principles of High Availability and describe at least two key ideas from this section.",
+        "check_a": "High availability designs services to remain accessible despite failures. It uses redundancy, failover, load balancing, clustering, replication, resilient power, and removal of single points of failure. Key ideas include: Continuous; Operation; Minimizing; Downtime; Eliminating.",
+        "points": [
+          "Continuous",
+          "Operation",
+          "Minimizing",
+          "Downtime",
+          "Eliminating",
+          "Single Points of Failure",
+          "Immediate",
+          "Response to Failures",
+          "Scalability"
+        ]
+      }
+    },
+    {
+      "n": 4,
+      "title": "Security Implications",
+      "points": [
+        "Increased Attack Surface",
+        "Complexity and Misconfigurations",
+        "Dependency on Network Infrastructure",
+        "Data Synchronization Challenges",
+        "Resource Exhaustion Attacks"
+      ],
+      "raw": "Security Implications\nIncreased Attack Surface\nComplexity and Misconfigurations\nDependency on Network Infrastructure\nData Synchronization Challenges\nResource Exhaustion Attacks",
+      "instructional": true,
+      "teach": "Focus on the new risk introduced by the technology or design, then connect that risk to an appropriate mitigation.",
+      "defs": [],
+      "course": {
+        "learn": "This section focuses on **Security Implications** within **High availability**. High availability designs services to remain accessible despite failures. It uses redundancy, failover, load balancing, clustering, replication, resilient power, and removal of single points of failure.",
+        "why": "The goal is not merely fast recovery after an outage; it is to minimize or avoid service interruption.",
+        "example": "Two application nodes run in separate availability zones behind a load balancer so one zone can fail without taking down the service.",
+        "exam": "Availability clues: redundancy, clustering, failover, load balancing, geographically separated resources, UPS/generator.",
+        "breakdown": [
+          {
+            "term": "Increased Attack Surface",
+            "explanation": "Secure architecture depends on where devices are placed, which trust zones they belong to, how they connect, what attack surface they expose, and what happens when a component fails."
+          },
+          {
+            "term": "Complexity and Misconfigurations",
+            "explanation": "Misconfiguration means a system is deployed with unsafe settings such as default credentials, unnecessary services, open permissions, exposed management interfaces, or insecure cloud access."
+          },
+          {
+            "term": "Dependency on Network Infrastructure",
+            "explanation": "Infrastructure monitoring observes networks, cloud configuration, appliances, links, and supporting resources. NSM analyzes network behavior, while CSPM evaluates cloud security posture and misconfiguration."
+          },
+          {
+            "term": "Data Synchronization Challenges",
+            "explanation": "This is a factor that must be evaluated when using High availability; ignoring it can create operational, security, cost, or compatibility risk."
+          },
+          {
+            "term": "Resource Exhaustion Attacks",
+            "explanation": "This is a factor that must be evaluated when using High availability; ignoring it can create operational, security, cost, or compatibility risk."
+          }
+        ],
+        "defs": [],
+        "check_q": "Without looking back, explain Security Implications and describe at least two key ideas from this section.",
+        "check_a": "This section focuses on **Security Implications** within **High availability**. High availability designs services to remain accessible despite failures. It uses redundancy, failover, load balancing, clustering, replication, resilient power, and removal of single points of failure. Key ideas include: Increased Attack Surface; Complexity and Misconfigurations; Dependency on Network Infrastructure; Data Synchronization Challenges; Resource Exhaustion Attacks.",
+        "points": [
+          "Increased Attack Surface",
+          "Complexity and Misconfigurations",
+          "Dependency on Network Infrastructure",
+          "Data Synchronization Challenges",
+          "Resource Exhaustion Attacks"
+        ]
+      }
+    },
+    {
+      "n": 5,
+      "title": "Security Implications",
+      "points": [
+        "Credential",
+        "Management",
+        "Attack on Failover",
+        "Mechanisms",
+        "Overreliance on",
+        "Redundancy",
+        "Ensuring Secure",
+        "Communication"
+      ],
+      "raw": "Security Implications\nCredential\nManagement\nAttack on Failover\nMechanisms\nOverreliance on\nRedundancy\nEnsuring Secure\nCommunication",
+      "instructional": true,
+      "teach": "Focus on the new risk introduced by the technology or design, then connect that risk to an appropriate mitigation.",
+      "defs": [
+        [
+          "Failover",
+          "Switching service from a failed primary system to a secondary system."
+        ]
+      ],
+      "course": {
+        "learn": "This section focuses on **Security Implications** within **High availability**. High availability designs services to remain accessible despite failures. It uses redundancy, failover, load balancing, clustering, replication, resilient power, and removal of single points of failure.",
+        "why": "The goal is not merely fast recovery after an outage; it is to minimize or avoid service interruption.",
+        "example": "Two application nodes run in separate availability zones behind a load balancer so one zone can fail without taking down the service.",
+        "exam": "Availability clues: redundancy, clustering, failover, load balancing, geographically separated resources, UPS/generator.",
+        "breakdown": [
+          {
+            "term": "Credential",
+            "explanation": "Vendor-supplied usernames/passwords that attackers commonly know and that should be changed before production use."
+          },
+          {
+            "term": "Management",
+            "explanation": "This is a factor that must be evaluated when using High availability; ignoring it can create operational, security, cost, or compatibility risk."
+          },
+          {
+            "term": "Attack on Failover",
+            "explanation": "Failover moves service from a failed primary resource to a secondary resource. It may be automatic or manual depending on architecture."
+          },
+          {
+            "term": "Mechanisms",
+            "explanation": "This is a factor that must be evaluated when using High availability; ignoring it can create operational, security, cost, or compatibility risk."
+          },
+          {
+            "term": "Overreliance on",
+            "explanation": "This is a factor that must be evaluated when using High availability; ignoring it can create operational, security, cost, or compatibility risk."
+          },
+          {
+            "term": "Redundancy",
+            "explanation": "Use duplicate components or paths so one failure does not stop the service."
+          },
+          {
+            "term": "Ensuring Secure",
+            "explanation": "This is a factor that must be evaluated when using High availability; ignoring it can create operational, security, cost, or compatibility risk."
+          },
+          {
+            "term": "Communication",
+            "explanation": "This is a factor that must be evaluated when using High availability; ignoring it can create operational, security, cost, or compatibility risk."
+          }
+        ],
+        "defs": [
+          {
+            "term": "Failover",
+            "definition": "Switching service from a failed primary system to a secondary system."
+          }
+        ],
+        "check_q": "Without looking back, explain Security Implications and describe at least two key ideas from this section.",
+        "check_a": "This section focuses on **Security Implications** within **High availability**. High availability designs services to remain accessible despite failures. It uses redundancy, failover, load balancing, clustering, replication, resilient power, and removal of single points of failure. Key ideas include: Credential; Management; Attack on Failover; Mechanisms; Overreliance on.",
+        "points": [
+          "Credential",
+          "Management",
+          "Attack on Failover",
+          "Mechanisms",
+          "Overreliance on",
+          "Redundancy",
+          "Ensuring Secure",
+          "Communication"
+        ]
+      }
+    },
+    {
+      "n": 6,
+      "title": "Architectural Considerations",
+      "points": [],
+      "raw": "Architectural Considerations",
+      "instructional": false,
+      "teach": "These are design tradeoffs. Learn why each factor matters rather than memorizing the words alone.",
+      "defs": []
+    }
+  ],
+  "slide_count": 6,
+  "instructional_count": 4,
+  "concepts": [
+    "Components",
+    "Key Principles of High Availability",
+    "Security Implications"
+  ],
+  "source_filename": "10.13_High_availability.pdf"
+}

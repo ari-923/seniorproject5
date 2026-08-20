@@ -1,0 +1,133 @@
+{
+  "id": "13.03",
+  "chapter": 13,
+  "sub": 3,
+  "title": "Platform diversity",
+  "chapter_name": "Resilience & Recovery",
+  "slides": [
+    {
+      "n": 1,
+      "title": "Platform Diversity",
+      "points": [],
+      "raw": "Platform Diversity",
+      "instructional": false,
+      "teach": "Read the source points, then explain the slide without looking. On Security+, recognition is not enough—you should be able to apply the concept to a scenario.",
+      "defs": []
+    },
+    {
+      "n": 2,
+      "title": "Multi-cloud Systems",
+      "points": [
+        "• Reduced single points of failure",
+        "• Enhanced security",
+        "• Flexibility and scalability"
+      ],
+      "raw": "Multi-cloud Systems\n• Reduced single points of failure\n• Enhanced security\n• Flexibility and scalability",
+      "instructional": true,
+      "teach": "Read the source points, then explain the slide without looking. On Security+, recognition is not enough—you should be able to apply the concept to a scenario.",
+      "defs": [
+        [
+          "Cloud",
+          "Computing resources delivered on demand from a provider rather than entirely owned and operated locally."
+        ]
+      ],
+      "course": {
+        "learn": "A multi-cloud strategy uses services from more than one cloud provider. It can reduce dependency on one provider and support specialized capabilities, but it increases operational and security complexity.",
+        "why": "Different IAM, logging, networking, and security tooling can make consistent controls harder.",
+        "example": "A company runs customer-facing applications in one cloud and analytics workloads in another while centralizing identity and logging.",
+        "exam": "Multi-cloud is not automatically redundant unless workloads/data can actually fail over across providers.",
+        "breakdown": [
+          {
+            "term": "Reduced single points of failure",
+            "explanation": "Within Multi-cloud Systems, this is a specific factor you should be able to recognize and explain. Connect it to the purpose of Platform diversity rather than memorizing the phrase by itself."
+          },
+          {
+            "term": "Enhanced security",
+            "explanation": "This contributes to reducing risk in the broader Platform diversity design and should be evaluated as part of defense in depth."
+          },
+          {
+            "term": "Flexibility and scalability",
+            "explanation": "Within Multi-cloud Systems, this is a specific factor you should be able to recognize and explain. Connect it to the purpose of Platform diversity rather than memorizing the phrase by itself."
+          }
+        ],
+        "defs": [
+          {
+            "term": "Cloud",
+            "definition": "Computing resources delivered on demand from a provider rather than entirely owned and operated locally."
+          }
+        ],
+        "check_q": "Without looking back, explain Multi-cloud Systems and describe at least two key ideas from this section.",
+        "check_a": "A multi-cloud strategy uses services from more than one cloud provider. It can reduce dependency on one provider and support specialized capabilities, but it increases operational and security complexity. Key ideas include: Reduced single points of failure; Enhanced security; Flexibility and scalability.",
+        "points": [
+          "Reduced single points of failure",
+          "Enhanced security",
+          "Flexibility and scalability"
+        ]
+      }
+    },
+    {
+      "n": 3,
+      "title": "Continuity of Operations",
+      "points": [
+        "Mitigation of",
+        "Downtime",
+        "Regulatory",
+        "Compliance",
+        "Maintaining Trust"
+      ],
+      "raw": "Continuity of Operations\nMitigation of\nDowntime\nRegulatory\nCompliance\nMaintaining Trust",
+      "instructional": true,
+      "teach": "Read the source points, then explain the slide without looking. On Security+, recognition is not enough—you should be able to apply the concept to a scenario.",
+      "defs": [],
+      "course": {
+        "learn": "Continuity of Operations (COOP) planning defines how essential functions continue during disruption, including people, alternate facilities, communications, technology, and procedures.",
+        "why": "Business continuity is broader than restoring one server; it keeps the organization's critical mission functioning.",
+        "example": "If headquarters is unavailable, designated staff move to an alternate site and use documented procedures to continue priority services.",
+        "exam": "COOP/business continuity focuses on essential operations; disaster recovery is more technology-recovery focused.",
+        "breakdown": [
+          {
+            "term": "Mitigation of Downtime",
+            "explanation": "Within Continuity of Operations, this is a specific factor you should be able to recognize and explain. Connect it to the purpose of Platform diversity rather than memorizing the phrase by itself."
+          },
+          {
+            "term": "Regulatory",
+            "explanation": "Within Continuity of Operations, this is a specific factor you should be able to recognize and explain. Connect it to the purpose of Platform diversity rather than memorizing the phrase by itself."
+          },
+          {
+            "term": "Compliance",
+            "explanation": "Evaluate risk and verify whether controls meet organizational, legal, or regulatory requirements."
+          },
+          {
+            "term": "Maintaining Trust",
+            "explanation": "Within Continuity of Operations, this is a specific factor you should be able to recognize and explain. Connect it to the purpose of Platform diversity rather than memorizing the phrase by itself."
+          }
+        ],
+        "defs": [],
+        "check_q": "Without looking back, explain Continuity of Operations and describe at least two key ideas from this section.",
+        "check_a": "Continuity of Operations (COOP) planning defines how essential functions continue during disruption, including people, alternate facilities, communications, technology, and procedures. Key ideas include: Mitigation of Downtime; Regulatory; Compliance; Maintaining Trust.",
+        "points": [
+          "Mitigation of Downtime",
+          "Regulatory",
+          "Compliance",
+          "Maintaining Trust"
+        ]
+      }
+    },
+    {
+      "n": 4,
+      "title": "Capacity Planning",
+      "points": [],
+      "raw": "Capacity Planning",
+      "instructional": false,
+      "teach": "Read the source points, then explain the slide without looking. On Security+, recognition is not enough—you should be able to apply the concept to a scenario.",
+      "defs": []
+    }
+  ],
+  "slide_count": 4,
+  "instructional_count": 2,
+  "concepts": [
+    "Multi-cloud Systems",
+    "Continuity of Operations"
+  ],
+  "source_filename": "13.03_Platform_diversity.pdf"
+}

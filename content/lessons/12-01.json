@@ -1,0 +1,1025 @@
+{
+  "id": "12.01",
+  "chapter": 12,
+  "sub": 1,
+  "title": "Data types",
+  "chapter_name": "Data Security",
+  "slides": [
+    {
+      "n": 1,
+      "title": "Data Types",
+      "points": [],
+      "raw": "Data Types",
+      "instructional": false,
+      "teach": "Focus on the differences between the listed types and the clue words that distinguish them in exam questions.",
+      "defs": []
+    },
+    {
+      "n": 2,
+      "title": "Regulated Data",
+      "points": [
+        "Subject to Laws",
+        "and Regulations",
+        "Diverse Types of",
+        "Data",
+        "Governed by",
+        "Specific Laws"
+      ],
+      "raw": "Regulated Data\nSubject to Laws\nand Regulations\nDiverse Types of\nData\nGoverned by\nSpecific Laws",
+      "instructional": true,
+      "teach": "Read the source points, then explain the slide without looking. On Security+, recognition is not enough—you should be able to apply the concept to a scenario.",
+      "defs": [],
+      "course": {
+        "learn": "Regulated data is information whose handling is governed by laws, regulations, or industry rules. Requirements may define access, retention, encryption, reporting, or breach notification.",
+        "why": "Failure to protect regulated data can create legal penalties and mandatory response obligations in addition to security harm.",
+        "example": "A healthcare organization applies stricter access controls and audit logging to protected health information.",
+        "exam": "When a scenario mentions legal/industry obligations, identify data classification and compliance requirements before choosing controls.",
+        "breakdown": [
+          {
+            "term": "Subject to Laws and Regulations",
+            "explanation": "Within Regulated Data, this is a specific factor you should be able to recognize and explain. Connect it to the purpose of Data types rather than memorizing the phrase by itself."
+          },
+          {
+            "term": "Diverse Types of Data",
+            "explanation": "Within Regulated Data, this is a specific factor you should be able to recognize and explain. Connect it to the purpose of Data types rather than memorizing the phrase by itself."
+          },
+          {
+            "term": "Governed by",
+            "explanation": "Within Regulated Data, this is a specific factor you should be able to recognize and explain. Connect it to the purpose of Data types rather than memorizing the phrase by itself."
+          },
+          {
+            "term": "Specific Laws",
+            "explanation": "Within Regulated Data, this is a specific factor you should be able to recognize and explain. Connect it to the purpose of Data types rather than memorizing the phrase by itself."
+          }
+        ],
+        "defs": [],
+        "check_q": "Without looking back, explain Regulated Data and describe at least two key ideas from this section.",
+        "check_a": "Regulated data is information whose handling is governed by laws, regulations, or industry rules. Requirements may define access, retention, encryption, reporting, or breach notification. Key ideas include: Subject to Laws and Regulations; Diverse Types of Data; Governed by; Specific Laws.",
+        "points": [
+          "Subject to Laws and Regulations",
+          "Diverse Types of Data",
+          "Governed by",
+          "Specific Laws"
+        ]
+      }
+    },
+    {
+      "n": 3,
+      "title": "Importance of Regulated Data",
+      "points": [
+        "Legal",
+        "Compliance",
+        "Preserving",
+        "Individual Privacy",
+        "Maintaining Trust",
+        "with Stakeholders",
+        "Financial",
+        "Penalties and",
+        "Legal",
+        "Consequences",
+        "Data Breach",
+        "Mitigation",
+        "Competitive",
+        "Advantage and",
+        "Market Access"
+      ],
+      "raw": "Importance of Regulated Data\nLegal\nCompliance\nPreserving\nIndividual Privacy\nMaintaining Trust\nwith Stakeholders\nFinancial\nPenalties and\nLegal\nConsequences\nData Breach\nMitigation\nCompetitive\nAdvantage and\nMarket Access",
+      "instructional": true,
+      "teach": "Read the source points, then explain the slide without looking. On Security+, recognition is not enough—you should be able to apply the concept to a scenario.",
+      "defs": [],
+      "course": {
+        "learn": "Regulated data is information whose handling is governed by laws, regulations, or industry rules. Requirements may define access, retention, encryption, reporting, or breach notification.",
+        "why": "Failure to protect regulated data can create legal penalties and mandatory response obligations in addition to security harm.",
+        "example": "A healthcare organization applies stricter access controls and audit logging to protected health information.",
+        "exam": "When a scenario mentions legal/industry obligations, identify data classification and compliance requirements before choosing controls.",
+        "breakdown": [
+          {
+            "term": "Legal",
+            "explanation": "Within Importance of Regulated Data, this is a specific factor you should be able to recognize and explain. Connect it to the purpose of Data types rather than memorizing the phrase by itself."
+          },
+          {
+            "term": "Compliance",
+            "explanation": "Evaluate risk and verify whether controls meet organizational, legal, or regulatory requirements."
+          },
+          {
+            "term": "Preserving",
+            "explanation": "Within Importance of Regulated Data, this is a specific factor you should be able to recognize and explain. Connect it to the purpose of Data types rather than memorizing the phrase by itself."
+          },
+          {
+            "term": "Individual Privacy",
+            "explanation": "Within Importance of Regulated Data, this is a specific factor you should be able to recognize and explain. Connect it to the purpose of Data types rather than memorizing the phrase by itself."
+          },
+          {
+            "term": "Maintaining Trust with Stakeholders",
+            "explanation": "Within Importance of Regulated Data, this is a specific factor you should be able to recognize and explain. Connect it to the purpose of Data types rather than memorizing the phrase by itself."
+          },
+          {
+            "term": "Financial",
+            "explanation": "Within Importance of Regulated Data, this is a specific factor you should be able to recognize and explain. Connect it to the purpose of Data types rather than memorizing the phrase by itself."
+          },
+          {
+            "term": "Penalties and Legal",
+            "explanation": "Within Importance of Regulated Data, this is a specific factor you should be able to recognize and explain. Connect it to the purpose of Data types rather than memorizing the phrase by itself."
+          },
+          {
+            "term": "Consequences",
+            "explanation": "Within Importance of Regulated Data, this is a specific factor you should be able to recognize and explain. Connect it to the purpose of Data types rather than memorizing the phrase by itself."
+          },
+          {
+            "term": "Data Breach",
+            "explanation": "Within Importance of Regulated Data, this is a specific factor you should be able to recognize and explain. Connect it to the purpose of Data types rather than memorizing the phrase by itself."
+          },
+          {
+            "term": "Mitigation",
+            "explanation": "Within Importance of Regulated Data, this is a specific factor you should be able to recognize and explain. Connect it to the purpose of Data types rather than memorizing the phrase by itself."
+          },
+          {
+            "term": "Competitive",
+            "explanation": "Within Importance of Regulated Data, this is a specific factor you should be able to recognize and explain. Connect it to the purpose of Data types rather than memorizing the phrase by itself."
+          },
+          {
+            "term": "Advantage and Market Access",
+            "explanation": "This concerns who or what can reach a resource and what actions are permitted once access is granted."
+          }
+        ],
+        "defs": [],
+        "check_q": "Without looking back, explain Importance of Regulated Data and describe at least two key ideas from this section.",
+        "check_a": "Regulated data is information whose handling is governed by laws, regulations, or industry rules. Requirements may define access, retention, encryption, reporting, or breach notification. Key ideas include: Legal; Compliance; Preserving; Individual Privacy; Maintaining Trust with Stakeholders.",
+        "points": [
+          "Legal",
+          "Compliance",
+          "Preserving",
+          "Individual Privacy",
+          "Maintaining Trust with Stakeholders",
+          "Financial",
+          "Penalties and Legal",
+          "Consequences",
+          "Data Breach",
+          "Mitigation",
+          "Competitive",
+          "Advantage and Market Access"
+        ]
+      }
+    },
+    {
+      "n": 4,
+      "title": "Trade Secret",
+      "points": [
+        "Confidential",
+        "Business",
+        "Information",
+        "Diverse Nature",
+        "of Information",
+        "Competitive",
+        "Advantage"
+      ],
+      "raw": "Trade Secret\nConfidential\nBusiness\nInformation\nDiverse Nature\nof Information\nCompetitive\nAdvantage",
+      "instructional": true,
+      "teach": "Read the source points, then explain the slide without looking. On Security+, recognition is not enough—you should be able to apply the concept to a scenario.",
+      "defs": [],
+      "course": {
+        "learn": "A trade secret is confidential business information that provides competitive value because it is not generally known, such as formulas, methods, designs, or internal processes.",
+        "why": "Loss can permanently damage competitive advantage even if the data is not regulated by a specific privacy law.",
+        "example": "A company restricts access to a proprietary manufacturing process and requires NDAs for authorized partners.",
+        "exam": "Trade secrets emphasize confidentiality, access control, monitoring, contractual protection, and data-loss prevention.",
+        "breakdown": [
+          {
+            "term": "Confidential",
+            "explanation": "Within Trade Secret, this is a specific factor you should be able to recognize and explain. Connect it to the purpose of Data types rather than memorizing the phrase by itself."
+          },
+          {
+            "term": "Business",
+            "explanation": "Within Trade Secret, this is a specific factor you should be able to recognize and explain. Connect it to the purpose of Data types rather than memorizing the phrase by itself."
+          },
+          {
+            "term": "Information",
+            "explanation": "Within Trade Secret, this is a specific factor you should be able to recognize and explain. Connect it to the purpose of Data types rather than memorizing the phrase by itself."
+          },
+          {
+            "term": "Diverse Nature of Information",
+            "explanation": "Within Trade Secret, this is a specific factor you should be able to recognize and explain. Connect it to the purpose of Data types rather than memorizing the phrase by itself."
+          },
+          {
+            "term": "Competitive",
+            "explanation": "Within Trade Secret, this is a specific factor you should be able to recognize and explain. Connect it to the purpose of Data types rather than memorizing the phrase by itself."
+          },
+          {
+            "term": "Advantage",
+            "explanation": "Within Trade Secret, this is a specific factor you should be able to recognize and explain. Connect it to the purpose of Data types rather than memorizing the phrase by itself."
+          }
+        ],
+        "defs": [],
+        "check_q": "Without looking back, explain Trade Secret and describe at least two key ideas from this section.",
+        "check_a": "A trade secret is confidential business information that provides competitive value because it is not generally known, such as formulas, methods, designs, or internal processes. Key ideas include: Confidential; Business; Information; Diverse Nature of Information; Competitive.",
+        "points": [
+          "Confidential",
+          "Business",
+          "Information",
+          "Diverse Nature of Information",
+          "Competitive",
+          "Advantage"
+        ]
+      }
+    },
+    {
+      "n": 5,
+      "title": "Importance of Trade Secret",
+      "points": [
+        "Value to Company's Success",
+        "Financial Impact",
+        "Sustaining Innovation",
+        "Market Leadership"
+      ],
+      "raw": "Importance of Trade Secret\nValue to Company's Success\nFinancial Impact\nSustaining Innovation\nMarket Leadership",
+      "instructional": true,
+      "teach": "Read the source points, then explain the slide without looking. On Security+, recognition is not enough—you should be able to apply the concept to a scenario.",
+      "defs": [],
+      "course": {
+        "learn": "A trade secret is confidential business information that provides competitive value because it is not generally known, such as formulas, methods, designs, or internal processes.",
+        "why": "Loss can permanently damage competitive advantage even if the data is not regulated by a specific privacy law.",
+        "example": "A company restricts access to a proprietary manufacturing process and requires NDAs for authorized partners.",
+        "exam": "Trade secrets emphasize confidentiality, access control, monitoring, contractual protection, and data-loss prevention.",
+        "breakdown": [
+          {
+            "term": "Value to Company's Success",
+            "explanation": "Within Importance of Trade Secret, this is a specific factor you should be able to recognize and explain. Connect it to the purpose of Data types rather than memorizing the phrase by itself."
+          },
+          {
+            "term": "Financial Impact",
+            "explanation": "Within Importance of Trade Secret, this is a specific factor you should be able to recognize and explain. Connect it to the purpose of Data types rather than memorizing the phrase by itself."
+          },
+          {
+            "term": "Sustaining Innovation",
+            "explanation": "Within Importance of Trade Secret, this is a specific factor you should be able to recognize and explain. Connect it to the purpose of Data types rather than memorizing the phrase by itself."
+          },
+          {
+            "term": "Market Leadership",
+            "explanation": "Within Importance of Trade Secret, this is a specific factor you should be able to recognize and explain. Connect it to the purpose of Data types rather than memorizing the phrase by itself."
+          }
+        ],
+        "defs": [],
+        "check_q": "Without looking back, explain Importance of Trade Secret and describe at least two key ideas from this section.",
+        "check_a": "A trade secret is confidential business information that provides competitive value because it is not generally known, such as formulas, methods, designs, or internal processes. Key ideas include: Value to Company's Success; Financial Impact; Sustaining Innovation; Market Leadership.",
+        "points": [
+          "Value to Company's Success",
+          "Financial Impact",
+          "Sustaining Innovation",
+          "Market Leadership"
+        ]
+      }
+    },
+    {
+      "n": 6,
+      "title": "Importance of Trade Secret",
+      "points": [
+        "Intellectual Property Protection",
+        "Confidentiality and Trust",
+        "Legal Remedies"
+      ],
+      "raw": "Importance of Trade Secret\nIntellectual Property Protection\nConfidentiality and Trust\nLegal Remedies",
+      "instructional": true,
+      "teach": "Read the source points, then explain the slide without looking. On Security+, recognition is not enough—you should be able to apply the concept to a scenario.",
+      "defs": [],
+      "course": {
+        "learn": "A trade secret is confidential business information that provides competitive value because it is not generally known, such as formulas, methods, designs, or internal processes.",
+        "why": "Loss can permanently damage competitive advantage even if the data is not regulated by a specific privacy law.",
+        "example": "A company restricts access to a proprietary manufacturing process and requires NDAs for authorized partners.",
+        "exam": "Trade secrets emphasize confidentiality, access control, monitoring, contractual protection, and data-loss prevention.",
+        "breakdown": [
+          {
+            "term": "Intellectual Property Protection",
+            "explanation": "Intellectual property (IP) includes creations such as software, designs, inventions, copyrighted material, and other valuable creative work."
+          },
+          {
+            "term": "Confidentiality and Trust",
+            "explanation": "Within Importance of Trade Secret, this is a specific factor you should be able to recognize and explain. Connect it to the purpose of Data types rather than memorizing the phrase by itself."
+          },
+          {
+            "term": "Legal Remedies",
+            "explanation": "Within Importance of Trade Secret, this is a specific factor you should be able to recognize and explain. Connect it to the purpose of Data types rather than memorizing the phrase by itself."
+          }
+        ],
+        "defs": [],
+        "check_q": "Without looking back, explain Importance of Trade Secret and describe at least two key ideas from this section.",
+        "check_a": "A trade secret is confidential business information that provides competitive value because it is not generally known, such as formulas, methods, designs, or internal processes. Key ideas include: Intellectual Property Protection; Confidentiality and Trust; Legal Remedies.",
+        "points": [
+          "Intellectual Property Protection",
+          "Confidentiality and Trust",
+          "Legal Remedies"
+        ]
+      }
+    },
+    {
+      "n": 7,
+      "title": "Security Measures",
+      "points": [
+        "Encryption",
+        "Access Controls",
+        "Legal Compliance",
+        "Secure Storage"
+      ],
+      "raw": "Security Measures\nEncryption\nAccess Controls\nLegal Compliance\nSecure Storage",
+      "instructional": true,
+      "teach": "Read the source points, then explain the slide without looking. On Security+, recognition is not enough—you should be able to apply the concept to a scenario.",
+      "defs": [
+        [
+          "Encryption",
+          "Transforms readable plaintext into ciphertext using an algorithm and key so unauthorized parties cannot understand it."
+        ]
+      ],
+      "course": {
+        "learn": "This section focuses on **Security Measures** within **Data types**. Security measures are the controls used to protect the specific data or system being discussed. Common measures include encryption, access control, secure storage, monitoring, legal/compliance controls, and integrity protection.",
+        "why": "Different data types require different handling based on sensitivity, business value, and legal obligations.",
+        "example": "Sensitive legal records are encrypted, restricted to authorized staff, stored in approved systems, and retained according to policy.",
+        "exam": "Start with the required security objective, then choose controls that directly protect it.",
+        "breakdown": [
+          {
+            "term": "Encryption",
+            "explanation": "Protect readable data by converting it to ciphertext that requires an authorized key to recover."
+          },
+          {
+            "term": "Access Controls",
+            "explanation": "Access control restricts which subjects can access which resources and what actions they may perform. ACLs express allow/deny rules on objects, interfaces, or network traffic."
+          },
+          {
+            "term": "Legal Compliance",
+            "explanation": "This is one of the mechanisms used to implement or support Data types. On the exam, focus on what problem it solves and where it fits."
+          },
+          {
+            "term": "Secure Storage",
+            "explanation": "This is one of the mechanisms used to implement or support Data types. On the exam, focus on what problem it solves and where it fits."
+          }
+        ],
+        "defs": [
+          {
+            "term": "Encryption",
+            "definition": "Transforms readable plaintext into ciphertext using an algorithm and key so unauthorized parties cannot understand it."
+          }
+        ],
+        "check_q": "Without looking back, explain Security Measures and describe at least two key ideas from this section.",
+        "check_a": "This section focuses on **Security Measures** within **Data types**. Security measures are the controls used to protect the specific data or system being discussed. Common measures include encryption, access control, secure storage, monitoring, legal/compliance controls, and integrity protection. Key ideas include: Encryption; Access Controls; Legal Compliance; Secure Storage.",
+        "points": [
+          "Encryption",
+          "Access Controls",
+          "Legal Compliance",
+          "Secure Storage"
+        ]
+      }
+    },
+    {
+      "n": 8,
+      "title": "Intellectual Property (IP)",
+      "points": [
+        "Creations of the Mind",
+        "Protection",
+        "Mechanisms",
+        "Forms of Expression"
+      ],
+      "raw": "Intellectual Property (IP)\nCreations of the Mind\nProtection\nMechanisms\nForms of Expression",
+      "instructional": true,
+      "teach": "Read the source points, then explain the slide without looking. On Security+, recognition is not enough—you should be able to apply the concept to a scenario.",
+      "defs": [],
+      "course": {
+        "learn": "Intellectual property (IP) includes creations such as software, designs, inventions, copyrighted material, and other valuable creative work.",
+        "why": "Theft or unauthorized disclosure can cause financial loss and weaken an organization's competitive position.",
+        "example": "Source code repositories use least privilege, logging, DLP, and strong authentication to reduce unauthorized copying.",
+        "exam": "IP protection commonly involves confidentiality, legal rights, access control, monitoring, and DLP.",
+        "breakdown": [
+          {
+            "term": "Creations of the Mind",
+            "explanation": "Within Intellectual Property (IP), this is a specific factor you should be able to recognize and explain. Connect it to the purpose of Data types rather than memorizing the phrase by itself."
+          },
+          {
+            "term": "Protection",
+            "explanation": "Within Intellectual Property (IP), this is a specific factor you should be able to recognize and explain. Connect it to the purpose of Data types rather than memorizing the phrase by itself."
+          },
+          {
+            "term": "Mechanisms",
+            "explanation": "Within Intellectual Property (IP), this is a specific factor you should be able to recognize and explain. Connect it to the purpose of Data types rather than memorizing the phrase by itself."
+          },
+          {
+            "term": "Forms of Expression",
+            "explanation": "Within Intellectual Property (IP), this is a specific factor you should be able to recognize and explain. Connect it to the purpose of Data types rather than memorizing the phrase by itself."
+          }
+        ],
+        "defs": [],
+        "check_q": "Without looking back, explain Intellectual Property (IP) and describe at least two key ideas from this section.",
+        "check_a": "Intellectual property (IP) includes creations such as software, designs, inventions, copyrighted material, and other valuable creative work. Key ideas include: Creations of the Mind; Protection; Mechanisms; Forms of Expression.",
+        "points": [
+          "Creations of the Mind",
+          "Protection",
+          "Mechanisms",
+          "Forms of Expression"
+        ]
+      }
+    },
+    {
+      "n": 9,
+      "title": "Importance of Intellectual Property",
+      "points": [
+        "• Cornerstone of Company's Value",
+        "• Preservation of Innovation",
+        "• Exclusive Rights",
+        "• Brand Integrity"
+      ],
+      "raw": "Importance of Intellectual Property\n• Cornerstone of Company's Value\n• Preservation of Innovation\n• Exclusive Rights\n• Brand Integrity",
+      "instructional": true,
+      "teach": "Read the source points, then explain the slide without looking. On Security+, recognition is not enough—you should be able to apply the concept to a scenario.",
+      "defs": [
+        [
+          "Integrity",
+          "Ensuring data stays accurate, complete, and protected from unauthorized modification."
+        ]
+      ],
+      "course": {
+        "learn": "Intellectual property (IP) includes creations such as software, designs, inventions, copyrighted material, and other valuable creative work.",
+        "why": "Theft or unauthorized disclosure can cause financial loss and weaken an organization's competitive position.",
+        "example": "Source code repositories use least privilege, logging, DLP, and strong authentication to reduce unauthorized copying.",
+        "exam": "IP protection commonly involves confidentiality, legal rights, access control, monitoring, and DLP.",
+        "breakdown": [
+          {
+            "term": "Cornerstone of Company's Value",
+            "explanation": "Within Importance of Intellectual Property, this is a specific factor you should be able to recognize and explain. Connect it to the purpose of Data types rather than memorizing the phrase by itself."
+          },
+          {
+            "term": "Preservation of Innovation",
+            "explanation": "Within Importance of Intellectual Property, this is a specific factor you should be able to recognize and explain. Connect it to the purpose of Data types rather than memorizing the phrase by itself."
+          },
+          {
+            "term": "Exclusive Rights",
+            "explanation": "Within Importance of Intellectual Property, this is a specific factor you should be able to recognize and explain. Connect it to the purpose of Data types rather than memorizing the phrase by itself."
+          },
+          {
+            "term": "Brand Integrity",
+            "explanation": "Within Importance of Intellectual Property, this is a specific factor you should be able to recognize and explain. Connect it to the purpose of Data types rather than memorizing the phrase by itself."
+          }
+        ],
+        "defs": [
+          {
+            "term": "Integrity",
+            "definition": "Ensuring data stays accurate, complete, and protected from unauthorized modification."
+          }
+        ],
+        "check_q": "Without looking back, explain Importance of Intellectual Property and describe at least two key ideas from this section.",
+        "check_a": "Intellectual property (IP) includes creations such as software, designs, inventions, copyrighted material, and other valuable creative work. Key ideas include: Cornerstone of Company's Value; Preservation of Innovation; Exclusive Rights; Brand Integrity.",
+        "points": [
+          "Cornerstone of Company's Value",
+          "Preservation of Innovation",
+          "Exclusive Rights",
+          "Brand Integrity"
+        ]
+      }
+    },
+    {
+      "n": 10,
+      "title": "Importance of Intellectual Property",
+      "points": [
+        "• Marketplace Distinction",
+        "• Monetization Opportunities",
+        "• Legal Recourse",
+        "• Encouraging Creativity and",
+        "Inventiveness"
+      ],
+      "raw": "Importance of\nIntellectual Property\n• Marketplace Distinction\n• Monetization Opportunities\n• Legal Recourse\n• Encouraging Creativity and\nInventiveness",
+      "instructional": true,
+      "teach": "Read the source points, then explain the slide without looking. On Security+, recognition is not enough—you should be able to apply the concept to a scenario.",
+      "defs": [],
+      "course": {
+        "learn": "Intellectual property (IP) includes creations such as software, designs, inventions, copyrighted material, and other valuable creative work.",
+        "why": "Theft or unauthorized disclosure can cause financial loss and weaken an organization's competitive position.",
+        "example": "Source code repositories use least privilege, logging, DLP, and strong authentication to reduce unauthorized copying.",
+        "exam": "IP protection commonly involves confidentiality, legal rights, access control, monitoring, and DLP.",
+        "breakdown": [
+          {
+            "term": "Marketplace Distinction",
+            "explanation": "Within Importance of Intellectual Property, this is a specific factor you should be able to recognize and explain. Connect it to the purpose of Data types rather than memorizing the phrase by itself."
+          },
+          {
+            "term": "Monetization Opportunities",
+            "explanation": "Within Importance of Intellectual Property, this is a specific factor you should be able to recognize and explain. Connect it to the purpose of Data types rather than memorizing the phrase by itself."
+          },
+          {
+            "term": "Legal Recourse",
+            "explanation": "Within Importance of Intellectual Property, this is a specific factor you should be able to recognize and explain. Connect it to the purpose of Data types rather than memorizing the phrase by itself."
+          },
+          {
+            "term": "Encouraging Creativity and Inventiveness",
+            "explanation": "Within Importance of Intellectual Property, this is a specific factor you should be able to recognize and explain. Connect it to the purpose of Data types rather than memorizing the phrase by itself."
+          }
+        ],
+        "defs": [],
+        "check_q": "Without looking back, explain Importance of Intellectual Property and describe at least two key ideas from this section.",
+        "check_a": "Intellectual property (IP) includes creations such as software, designs, inventions, copyrighted material, and other valuable creative work. Key ideas include: Marketplace Distinction; Monetization Opportunities; Legal Recourse; Encouraging Creativity and Inventiveness.",
+        "points": [
+          "Marketplace Distinction",
+          "Monetization Opportunities",
+          "Legal Recourse",
+          "Encouraging Creativity and Inventiveness"
+        ]
+      }
+    },
+    {
+      "n": 11,
+      "title": "Legal Information",
+      "points": [
+        "Documentation of Legal",
+        "Matters",
+        "Sensitive Information",
+        "Comprehensive",
+        "Recordkeeping",
+        "Strategic Legal",
+        "Decisions"
+      ],
+      "raw": "Legal Information\nDocumentation of Legal\nMatters\nSensitive Information\nComprehensive\nRecordkeeping\nStrategic Legal\nDecisions",
+      "instructional": true,
+      "teach": "Read the source points, then explain the slide without looking. On Security+, recognition is not enough—you should be able to apply the concept to a scenario.",
+      "defs": [],
+      "course": {
+        "learn": "Legal information includes contracts, case materials, legal strategy, privileged communications, evidence, and records related to legal matters.",
+        "why": "Unauthorized disclosure can harm litigation strategy, violate privilege, or create regulatory and contractual consequences.",
+        "example": "Attorney-client communications are restricted to approved users, encrypted, retained according to policy, and logged.",
+        "exam": "Legal data emphasizes confidentiality, integrity, retention, access control, and preservation requirements.",
+        "breakdown": [
+          {
+            "term": "Documentation of Legal",
+            "explanation": "Security documentation keeps diagrams, policies, procedures, configurations, and versions synchronized with the real environment."
+          },
+          {
+            "term": "Matters",
+            "explanation": "Within Legal Information, this is a specific factor you should be able to recognize and explain. Connect it to the purpose of Data types rather than memorizing the phrase by itself."
+          },
+          {
+            "term": "Sensitive Information",
+            "explanation": "Within Legal Information, this is a specific factor you should be able to recognize and explain. Connect it to the purpose of Data types rather than memorizing the phrase by itself."
+          },
+          {
+            "term": "Comprehensive",
+            "explanation": "Within Legal Information, this is a specific factor you should be able to recognize and explain. Connect it to the purpose of Data types rather than memorizing the phrase by itself."
+          },
+          {
+            "term": "Recordkeeping",
+            "explanation": "Within Legal Information, this is a specific factor you should be able to recognize and explain. Connect it to the purpose of Data types rather than memorizing the phrase by itself."
+          },
+          {
+            "term": "Strategic Legal",
+            "explanation": "Within Legal Information, this is a specific factor you should be able to recognize and explain. Connect it to the purpose of Data types rather than memorizing the phrase by itself."
+          },
+          {
+            "term": "Decisions",
+            "explanation": "Within Legal Information, this is a specific factor you should be able to recognize and explain. Connect it to the purpose of Data types rather than memorizing the phrase by itself."
+          }
+        ],
+        "defs": [],
+        "check_q": "Without looking back, explain Legal Information and describe at least two key ideas from this section.",
+        "check_a": "Legal information includes contracts, case materials, legal strategy, privileged communications, evidence, and records related to legal matters. Key ideas include: Documentation of Legal; Matters; Sensitive Information; Comprehensive; Recordkeeping.",
+        "points": [
+          "Documentation of Legal",
+          "Matters",
+          "Sensitive Information",
+          "Comprehensive",
+          "Recordkeeping",
+          "Strategic Legal",
+          "Decisions"
+        ]
+      }
+    },
+    {
+      "n": 12,
+      "title": "Importance of Legal Information",
+      "points": [
+        "Maintaining",
+        "Confidentiality",
+        "Ensuring Compliance",
+        "Safeguarding Legal",
+        "Strategies",
+        "Preserving AttorneyClient Privilege"
+      ],
+      "raw": "Importance of Legal Information\nMaintaining\nConfidentiality\nEnsuring Compliance\nSafeguarding Legal\nStrategies\nPreserving AttorneyClient Privilege",
+      "instructional": true,
+      "teach": "Read the source points, then explain the slide without looking. On Security+, recognition is not enough—you should be able to apply the concept to a scenario.",
+      "defs": [],
+      "course": {
+        "learn": "Legal information includes contracts, case materials, legal strategy, privileged communications, evidence, and records related to legal matters.",
+        "why": "Unauthorized disclosure can harm litigation strategy, violate privilege, or create regulatory and contractual consequences.",
+        "example": "Attorney-client communications are restricted to approved users, encrypted, retained according to policy, and logged.",
+        "exam": "Legal data emphasizes confidentiality, integrity, retention, access control, and preservation requirements.",
+        "breakdown": [
+          {
+            "term": "Maintaining",
+            "explanation": "Within Importance of Legal Information, this is a specific factor you should be able to recognize and explain. Connect it to the purpose of Data types rather than memorizing the phrase by itself."
+          },
+          {
+            "term": "Confidentiality",
+            "explanation": "Within Importance of Legal Information, this is a specific factor you should be able to recognize and explain. Connect it to the purpose of Data types rather than memorizing the phrase by itself."
+          },
+          {
+            "term": "Ensuring Compliance",
+            "explanation": "This relates to meeting and demonstrating required legal, regulatory, contractual, or policy obligations."
+          },
+          {
+            "term": "Safeguarding Legal",
+            "explanation": "Within Importance of Legal Information, this is a specific factor you should be able to recognize and explain. Connect it to the purpose of Data types rather than memorizing the phrase by itself."
+          },
+          {
+            "term": "Strategies",
+            "explanation": "Within Importance of Legal Information, this is a specific factor you should be able to recognize and explain. Connect it to the purpose of Data types rather than memorizing the phrase by itself."
+          },
+          {
+            "term": "Preserving AttorneyClient Privilege",
+            "explanation": "Within Importance of Legal Information, this is a specific factor you should be able to recognize and explain. Connect it to the purpose of Data types rather than memorizing the phrase by itself."
+          }
+        ],
+        "defs": [],
+        "check_q": "Without looking back, explain Importance of Legal Information and describe at least two key ideas from this section.",
+        "check_a": "Legal information includes contracts, case materials, legal strategy, privileged communications, evidence, and records related to legal matters. Key ideas include: Maintaining; Confidentiality; Ensuring Compliance; Safeguarding Legal; Strategies.",
+        "points": [
+          "Maintaining",
+          "Confidentiality",
+          "Ensuring Compliance",
+          "Safeguarding Legal",
+          "Strategies",
+          "Preserving AttorneyClient Privilege"
+        ]
+      }
+    },
+    {
+      "n": 13,
+      "title": "Importance of Legal Information",
+      "points": [
+        "Supporting Legal",
+        "Proceedings",
+        "Mitigating Legal Risks",
+        "Preserving Business",
+        "Interests",
+        "Building Trust with",
+        "Legal Partners"
+      ],
+      "raw": "Importance of Legal Information\nSupporting Legal\nProceedings\nMitigating Legal Risks\nPreserving Business\nInterests\nBuilding Trust with\nLegal Partners",
+      "instructional": true,
+      "teach": "Read the source points, then explain the slide without looking. On Security+, recognition is not enough—you should be able to apply the concept to a scenario.",
+      "defs": [],
+      "course": {
+        "learn": "Legal information includes contracts, case materials, legal strategy, privileged communications, evidence, and records related to legal matters.",
+        "why": "Unauthorized disclosure can harm litigation strategy, violate privilege, or create regulatory and contractual consequences.",
+        "example": "Attorney-client communications are restricted to approved users, encrypted, retained according to policy, and logged.",
+        "exam": "Legal data emphasizes confidentiality, integrity, retention, access control, and preservation requirements.",
+        "breakdown": [
+          {
+            "term": "Supporting Legal",
+            "explanation": "Within Importance of Legal Information, this is a specific factor you should be able to recognize and explain. Connect it to the purpose of Data types rather than memorizing the phrase by itself."
+          },
+          {
+            "term": "Proceedings",
+            "explanation": "Within Importance of Legal Information, this is a specific factor you should be able to recognize and explain. Connect it to the purpose of Data types rather than memorizing the phrase by itself."
+          },
+          {
+            "term": "Mitigating Legal Risks",
+            "explanation": "This affects the likelihood or impact of harm and therefore changes how the organization should prioritize controls."
+          },
+          {
+            "term": "Preserving Business",
+            "explanation": "Within Importance of Legal Information, this is a specific factor you should be able to recognize and explain. Connect it to the purpose of Data types rather than memorizing the phrase by itself."
+          },
+          {
+            "term": "Interests",
+            "explanation": "Within Importance of Legal Information, this is a specific factor you should be able to recognize and explain. Connect it to the purpose of Data types rather than memorizing the phrase by itself."
+          },
+          {
+            "term": "Building Trust with Legal Partners",
+            "explanation": "Within Importance of Legal Information, this is a specific factor you should be able to recognize and explain. Connect it to the purpose of Data types rather than memorizing the phrase by itself."
+          }
+        ],
+        "defs": [],
+        "check_q": "Without looking back, explain Importance of Legal Information and describe at least two key ideas from this section.",
+        "check_a": "Legal information includes contracts, case materials, legal strategy, privileged communications, evidence, and records related to legal matters. Key ideas include: Supporting Legal; Proceedings; Mitigating Legal Risks; Preserving Business; Interests.",
+        "points": [
+          "Supporting Legal",
+          "Proceedings",
+          "Mitigating Legal Risks",
+          "Preserving Business",
+          "Interests",
+          "Building Trust with Legal Partners"
+        ]
+      }
+    },
+    {
+      "n": 14,
+      "title": "Financial Information",
+      "points": [
+        "Data on Financial",
+        "Transactions:",
+        "Accounts and Budgets",
+        "Financial Performance",
+        "Records"
+      ],
+      "raw": "Financial Information\nData on Financial\nTransactions:\nAccounts and Budgets\nFinancial Performance\nRecords",
+      "instructional": true,
+      "teach": "Read the source points, then explain the slide without looking. On Security+, recognition is not enough—you should be able to apply the concept to a scenario.",
+      "defs": [],
+      "course": {
+        "learn": "Financial information includes transaction data, accounts, budgets, performance records, payment information, and other data used to operate or report on finances.",
+        "why": "It is attractive to attackers and its integrity is essential for fraud prevention, reporting, and business decisions.",
+        "example": "A payment system uses strong access control, encryption, transaction logging, separation of duties, and anomaly monitoring.",
+        "exam": "Financial scenarios often combine confidentiality, integrity, fraud prevention, auditability, and compliance.",
+        "breakdown": [
+          {
+            "term": "Data on Financial",
+            "explanation": "Within Financial Information, this is a specific factor you should be able to recognize and explain. Connect it to the purpose of Data types rather than memorizing the phrase by itself."
+          },
+          {
+            "term": "Transactions:",
+            "explanation": "Within Financial Information, this is a specific factor you should be able to recognize and explain. Connect it to the purpose of Data types rather than memorizing the phrase by itself."
+          },
+          {
+            "term": "Accounts and Budgets",
+            "explanation": "Within Financial Information, this is a specific factor you should be able to recognize and explain. Connect it to the purpose of Data types rather than memorizing the phrase by itself."
+          },
+          {
+            "term": "Financial Performance",
+            "explanation": "Within Financial Information, this is a specific factor you should be able to recognize and explain. Connect it to the purpose of Data types rather than memorizing the phrase by itself."
+          },
+          {
+            "term": "Records",
+            "explanation": "Within Financial Information, this is a specific factor you should be able to recognize and explain. Connect it to the purpose of Data types rather than memorizing the phrase by itself."
+          }
+        ],
+        "defs": [],
+        "check_q": "Without looking back, explain Financial Information and describe at least two key ideas from this section.",
+        "check_a": "Financial information includes transaction data, accounts, budgets, performance records, payment information, and other data used to operate or report on finances. Key ideas include: Data on Financial; Transactions:; Accounts and Budgets; Financial Performance; Records.",
+        "points": [
+          "Data on Financial",
+          "Transactions:",
+          "Accounts and Budgets",
+          "Financial Performance",
+          "Records"
+        ]
+      }
+    },
+    {
+      "n": 15,
+      "title": "Importance of Financial Information",
+      "points": [
+        "High Sensitivity",
+        "Target for Attacks",
+        "Integrity of Financial Processes",
+        "Preventing Financial Crimes",
+        "Compliance with Regulations"
+      ],
+      "raw": "Importance of Financial Information\nHigh Sensitivity\nTarget for Attacks\nIntegrity of Financial Processes\nPreventing Financial Crimes\nCompliance with Regulations",
+      "instructional": true,
+      "teach": "Read the source points, then explain the slide without looking. On Security+, recognition is not enough—you should be able to apply the concept to a scenario.",
+      "defs": [
+        [
+          "Integrity",
+          "Ensuring data stays accurate, complete, and protected from unauthorized modification."
+        ]
+      ],
+      "course": {
+        "learn": "Financial information includes transaction data, accounts, budgets, performance records, payment information, and other data used to operate or report on finances.",
+        "why": "It is attractive to attackers and its integrity is essential for fraud prevention, reporting, and business decisions.",
+        "example": "A payment system uses strong access control, encryption, transaction logging, separation of duties, and anomaly monitoring.",
+        "exam": "Financial scenarios often combine confidentiality, integrity, fraud prevention, auditability, and compliance.",
+        "breakdown": [
+          {
+            "term": "High Sensitivity",
+            "explanation": "Within Importance of Financial Information, this is a specific factor you should be able to recognize and explain. Connect it to the purpose of Data types rather than memorizing the phrase by itself."
+          },
+          {
+            "term": "Target for Attacks",
+            "explanation": "Within Importance of Financial Information, this is a specific factor you should be able to recognize and explain. Connect it to the purpose of Data types rather than memorizing the phrase by itself."
+          },
+          {
+            "term": "Integrity of Financial Processes",
+            "explanation": "Within Importance of Financial Information, this is a specific factor you should be able to recognize and explain. Connect it to the purpose of Data types rather than memorizing the phrase by itself."
+          },
+          {
+            "term": "Preventing Financial Crimes",
+            "explanation": "Within Importance of Financial Information, this is a specific factor you should be able to recognize and explain. Connect it to the purpose of Data types rather than memorizing the phrase by itself."
+          },
+          {
+            "term": "Compliance with Regulations",
+            "explanation": "This relates to meeting and demonstrating required legal, regulatory, contractual, or policy obligations."
+          }
+        ],
+        "defs": [
+          {
+            "term": "Integrity",
+            "definition": "Ensuring data stays accurate, complete, and protected from unauthorized modification."
+          }
+        ],
+        "check_q": "Without looking back, explain Importance of Financial Information and describe at least two key ideas from this section.",
+        "check_a": "Financial information includes transaction data, accounts, budgets, performance records, payment information, and other data used to operate or report on finances. Key ideas include: High Sensitivity; Target for Attacks; Integrity of Financial Processes; Preventing Financial Crimes; Compliance with Regulations.",
+        "points": [
+          "High Sensitivity",
+          "Target for Attacks",
+          "Integrity of Financial Processes",
+          "Preventing Financial Crimes",
+          "Compliance with Regulations"
+        ]
+      }
+    },
+    {
+      "n": 16,
+      "title": "Importance of Financial Information",
+      "points": [
+        "Preserving Investor and Stakeholder Trust",
+        "Business Decision-Making",
+        "Protecting Trade Secrets and Competitive Advantage",
+        "Financial Stability and Viability"
+      ],
+      "raw": "Importance of Financial Information\nPreserving Investor and Stakeholder Trust\nBusiness Decision-Making\nProtecting Trade Secrets and Competitive Advantage\nFinancial Stability and Viability",
+      "instructional": true,
+      "teach": "Read the source points, then explain the slide without looking. On Security+, recognition is not enough—you should be able to apply the concept to a scenario.",
+      "defs": [],
+      "course": {
+        "learn": "Financial information includes transaction data, accounts, budgets, performance records, payment information, and other data used to operate or report on finances.",
+        "why": "It is attractive to attackers and its integrity is essential for fraud prevention, reporting, and business decisions.",
+        "example": "A payment system uses strong access control, encryption, transaction logging, separation of duties, and anomaly monitoring.",
+        "exam": "Financial scenarios often combine confidentiality, integrity, fraud prevention, auditability, and compliance.",
+        "breakdown": [
+          {
+            "term": "Preserving Investor and Stakeholder Trust",
+            "explanation": "Within Importance of Financial Information, this is a specific factor you should be able to recognize and explain. Connect it to the purpose of Data types rather than memorizing the phrase by itself."
+          },
+          {
+            "term": "Business Decision-Making",
+            "explanation": "Within Importance of Financial Information, this is a specific factor you should be able to recognize and explain. Connect it to the purpose of Data types rather than memorizing the phrase by itself."
+          },
+          {
+            "term": "Protecting Trade Secrets and Competitive Advantage",
+            "explanation": "A trade secret is confidential business information that provides competitive value because it is not generally known, such as formulas, methods, designs, or internal processes."
+          },
+          {
+            "term": "Financial Stability and Viability",
+            "explanation": "Within Importance of Financial Information, this is a specific factor you should be able to recognize and explain. Connect it to the purpose of Data types rather than memorizing the phrase by itself."
+          }
+        ],
+        "defs": [],
+        "check_q": "Without looking back, explain Importance of Financial Information and describe at least two key ideas from this section.",
+        "check_a": "Financial information includes transaction data, accounts, budgets, performance records, payment information, and other data used to operate or report on finances. Key ideas include: Preserving Investor and Stakeholder Trust; Business Decision-Making; Protecting Trade Secrets and Competitive Advantage; Financial Stability and Viability.",
+        "points": [
+          "Preserving Investor and Stakeholder Trust",
+          "Business Decision-Making",
+          "Protecting Trade Secrets and Competitive Advantage",
+          "Financial Stability and Viability"
+        ]
+      }
+    },
+    {
+      "n": 17,
+      "title": "Human and Non-human Readable Data",
+      "points": [
+        "Human",
+        "Non-human",
+        "•Text",
+        "•Images",
+        "•Videos",
+        "•Documents",
+        "•Binary code",
+        "•Encrypted data",
+        "•Machine code"
+      ],
+      "raw": "Human and Non-human Readable Data\nHuman\nNon-human\n•Text\n•Images\n•Videos\n•Documents\n•Binary code\n•Encrypted data\n•Machine code",
+      "instructional": true,
+      "teach": "Read the source points, then explain the slide without looking. On Security+, recognition is not enough—you should be able to apply the concept to a scenario.",
+      "defs": [],
+      "course": {
+        "learn": "Human-readable data can be directly understood by people, such as text, images, documents, and videos. Non-human-readable data may require software or structured interpretation, such as binary formats, machine telemetry, or encoded records.",
+        "why": "Both forms can contain sensitive information and require appropriate access, integrity, and handling controls.",
+        "example": "A PDF contract is human-readable, while a binary database file requires software to interpret its records.",
+        "exam": "Do not assume machine-readable means non-sensitive; classify and protect data by value and content, not format alone.",
+        "breakdown": [
+          {
+            "term": "Human",
+            "explanation": "Within Human and Non-human Readable Data, this is a specific factor you should be able to recognize and explain. Connect it to the purpose of Data types rather than memorizing the phrase by itself."
+          },
+          {
+            "term": "Non-human",
+            "explanation": "Within Human and Non-human Readable Data, this is a specific factor you should be able to recognize and explain. Connect it to the purpose of Data types rather than memorizing the phrase by itself."
+          },
+          {
+            "term": "Text",
+            "explanation": "Within Human and Non-human Readable Data, this is a specific factor you should be able to recognize and explain. Connect it to the purpose of Data types rather than memorizing the phrase by itself."
+          },
+          {
+            "term": "Images",
+            "explanation": "Within Human and Non-human Readable Data, this is a specific factor you should be able to recognize and explain. Connect it to the purpose of Data types rather than memorizing the phrase by itself."
+          },
+          {
+            "term": "Videos",
+            "explanation": "Within Human and Non-human Readable Data, this is a specific factor you should be able to recognize and explain. Connect it to the purpose of Data types rather than memorizing the phrase by itself."
+          },
+          {
+            "term": "Documents",
+            "explanation": "Within Human and Non-human Readable Data, this is a specific factor you should be able to recognize and explain. Connect it to the purpose of Data types rather than memorizing the phrase by itself."
+          },
+          {
+            "term": "Binary code",
+            "explanation": "Within Human and Non-human Readable Data, this is a specific factor you should be able to recognize and explain. Connect it to the purpose of Data types rather than memorizing the phrase by itself."
+          },
+          {
+            "term": "Encrypted data",
+            "explanation": "Within Human and Non-human Readable Data, this is a specific factor you should be able to recognize and explain. Connect it to the purpose of Data types rather than memorizing the phrase by itself."
+          },
+          {
+            "term": "Machine code",
+            "explanation": "Within Human and Non-human Readable Data, this is a specific factor you should be able to recognize and explain. Connect it to the purpose of Data types rather than memorizing the phrase by itself."
+          }
+        ],
+        "defs": [],
+        "check_q": "Without looking back, explain Human and Non-human Readable Data and describe at least two key ideas from this section.",
+        "check_a": "Human-readable data can be directly understood by people, such as text, images, documents, and videos. Non-human-readable data may require software or structured interpretation, such as binary formats, machine telemetry, or encoded records. Key ideas include: Human; Non-human; Text; Images; Videos.",
+        "points": [
+          "Human",
+          "Non-human",
+          "Text",
+          "Images",
+          "Videos",
+          "Documents",
+          "Binary code",
+          "Encrypted data",
+          "Machine code"
+        ]
+      }
+    },
+    {
+      "n": 18,
+      "title": "Importance of Human and Non-human Readable Data",
+      "points": [
+        "Access Control and Security",
+        "Protection Against Unauthorized Access",
+        "Confidentiality and Privacy",
+        "Preventing Tampering",
+        "Interoperability and Communication"
+      ],
+      "raw": "Importance of Human and Non-human\nReadable Data\nAccess Control and Security\nProtection Against Unauthorized Access\nConfidentiality and Privacy\nPreventing Tampering\nInteroperability and Communication",
+      "instructional": true,
+      "teach": "Read the source points, then explain the slide without looking. On Security+, recognition is not enough—you should be able to apply the concept to a scenario.",
+      "defs": [],
+      "course": {
+        "learn": "Human-readable data can be directly understood by people, such as text, images, documents, and videos. Non-human-readable data may require software or structured interpretation, such as binary formats, machine telemetry, or encoded records.",
+        "why": "Both forms can contain sensitive information and require appropriate access, integrity, and handling controls.",
+        "example": "A PDF contract is human-readable, while a binary database file requires software to interpret its records.",
+        "exam": "Do not assume machine-readable means non-sensitive; classify and protect data by value and content, not format alone.",
+        "breakdown": [
+          {
+            "term": "Access Control and Security",
+            "explanation": "Access control restricts which subjects can access which resources and what actions they may perform. ACLs express allow/deny rules on objects, interfaces, or network traffic."
+          },
+          {
+            "term": "Protection Against Unauthorized Access",
+            "explanation": "This concerns who or what can reach a resource and what actions are permitted once access is granted."
+          },
+          {
+            "term": "Confidentiality and Privacy",
+            "explanation": "Within Importance of Human and Non-human Readable Data, this is a specific factor you should be able to recognize and explain. Connect it to the purpose of Data types rather than memorizing the phrase by itself."
+          },
+          {
+            "term": "Preventing Tampering",
+            "explanation": "Within Importance of Human and Non-human Readable Data, this is a specific factor you should be able to recognize and explain. Connect it to the purpose of Data types rather than memorizing the phrase by itself."
+          },
+          {
+            "term": "Interoperability and Communication",
+            "explanation": "Within Importance of Human and Non-human Readable Data, this is a specific factor you should be able to recognize and explain. Connect it to the purpose of Data types rather than memorizing the phrase by itself."
+          }
+        ],
+        "defs": [],
+        "check_q": "Without looking back, explain Importance of Human and Non-human Readable Data and describe at least two key ideas from this section.",
+        "check_a": "Human-readable data can be directly understood by people, such as text, images, documents, and videos. Non-human-readable data may require software or structured interpretation, such as binary formats, machine telemetry, or encoded records. Key ideas include: Access Control and Security; Protection Against Unauthorized Access; Confidentiality and Privacy; Preventing Tampering; Interoperability and Communication.",
+        "points": [
+          "Access Control and Security",
+          "Protection Against Unauthorized Access",
+          "Confidentiality and Privacy",
+          "Preventing Tampering",
+          "Interoperability and Communication"
+        ]
+      }
+    },
+    {
+      "n": 19,
+      "title": "Data Classification",
+      "points": [],
+      "raw": "Data Classification",
+      "instructional": false,
+      "teach": "Read the source points, then explain the slide without looking. On Security+, recognition is not enough—you should be able to apply the concept to a scenario.",
+      "defs": []
+    }
+  ],
+  "slide_count": 19,
+  "instructional_count": 17,
+  "concepts": [
+    "Regulated Data",
+    "Importance of Regulated Data",
+    "Trade Secret",
+    "Importance of Trade Secret",
+    "Security Measures",
+    "Intellectual Property (IP)",
+    "Importance of Intellectual Property",
+    "Legal Information",
+    "Importance of Legal Information",
+    "Financial Information",
+    "Importance of Financial Information",
+    "Human and Non-human Readable Data"
+  ],
+  "source_filename": "12.01_Data_types.pdf"
+}

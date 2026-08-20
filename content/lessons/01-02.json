@@ -1,0 +1,395 @@
+{
+  "id": "01.02",
+  "chapter": 1,
+  "sub": 2,
+  "title": "Security Control Types",
+  "chapter_name": "Security Controls",
+  "slides": [
+    {
+      "n": 1,
+      "title": "Security Control Types",
+      "points": [],
+      "raw": "Security Control Types",
+      "instructional": false,
+      "teach": "Focus on the differences between the listed types and the clue words that distinguish them in exam questions.",
+      "defs": []
+    },
+    {
+      "n": 2,
+      "title": "Control Types",
+      "points": [
+        "Preventive",
+        "Deterrent",
+        "Detective",
+        "Corrective",
+        "Compensating",
+        "Directive"
+      ],
+      "raw": "Control Types\nPreventive\nDeterrent\nDetective\nCorrective\nCompensating\nDirective",
+      "instructional": true,
+      "teach": "Focus on the differences between the listed types and the clue words that distinguish them in exam questions.",
+      "defs": [],
+      "course": {
+        "learn": "Security controls can be classified by what they do: preventive, deterrent, detective, corrective, compensating, or directive. The same technology can sometimes serve more than one function depending on how it is used.",
+        "why": "Security+ scenarios often ask for the BEST control type based on purpose rather than the product name.",
+        "example": "A visible camera can deter a person, while the recorded footage can also be used as a detective control after an event.",
+        "exam": "Focus on the verb in the scenario: stop = preventive, discourage = deterrent, discover = detective, fix = corrective, alternative = compensating, instruct = directive.",
+        "breakdown": [
+          {
+            "term": "Preventive",
+            "explanation": "Preventive controls are designed to stop a security event before it succeeds. They reduce the chance that an attacker, mistake, or unsafe action can reach the point of causing damage."
+          },
+          {
+            "term": "Deterrent",
+            "explanation": "Deterrent controls try to discourage a person from attempting an unwanted action. They work by increasing the perceived chance of being caught or the perceived cost of attacking."
+          },
+          {
+            "term": "Detective",
+            "explanation": "Detective controls identify suspicious activity, policy violations, or evidence that an event has occurred. Their value is visibility: they tell defenders that something needs investigation."
+          },
+          {
+            "term": "Corrective",
+            "explanation": "Corrective controls reduce damage and restore a system after a problem is discovered. They focus on fixing the condition or returning operations to a known-good state."
+          },
+          {
+            "term": "Compensating",
+            "explanation": "A compensating control is an alternative safeguard used when the preferred or required control cannot be implemented exactly as intended."
+          },
+          {
+            "term": "Directive",
+            "explanation": "Directive controls tell people what they are expected or required to do. Policies, procedures, standards, and mandatory training guide behavior."
+          }
+        ],
+        "defs": [],
+        "check_q": "Without looking back, explain Control Types and describe at least two key ideas from this section.",
+        "check_a": "Security controls can be classified by what they do: preventive, deterrent, detective, corrective, compensating, or directive. The same technology can sometimes serve more than one function depending on how it is used. Key ideas include: Preventive; Deterrent; Detective; Corrective; Compensating.",
+        "points": [
+          "Preventive",
+          "Deterrent",
+          "Detective",
+          "Corrective",
+          "Compensating",
+          "Directive"
+        ]
+      }
+    },
+    {
+      "n": 3,
+      "title": "Preventive",
+      "points": [
+        "Firewalls",
+        "Strong passwords and",
+        "access control",
+        "Data encryption",
+        "Security awareness",
+        "training"
+      ],
+      "raw": "Preventive\nFirewalls\nStrong passwords and\naccess control\nData encryption\nSecurity awareness\ntraining",
+      "instructional": true,
+      "teach": "Read the source points, then explain the slide without looking. On Security+, recognition is not enough—you should be able to apply the concept to a scenario.",
+      "defs": [
+        [
+          "Encryption",
+          "Transforms readable plaintext into ciphertext using an algorithm and key so unauthorized parties cannot understand it."
+        ]
+      ],
+      "course": {
+        "learn": "Preventive controls are designed to stop a security event before it succeeds. They reduce the chance that an attacker, mistake, or unsafe action can reach the point of causing damage.",
+        "why": "Prevention reduces the number of incidents defenders have to detect and clean up later, so it is usually the first layer of defense.",
+        "example": "A firewall blocks an unauthorized inbound connection before it reaches a server. MFA can stop a stolen password from being enough to sign in.",
+        "exam": "Look for words such as block, stop, prevent, deny, restrict, or before the incident. Do not confuse preventive controls with detective controls that only alert.",
+        "breakdown": [
+          {
+            "term": "Firewalls",
+            "explanation": "Filter network traffic according to security rules, usually by source, destination, protocol, port, application, or context."
+          },
+          {
+            "term": "Strong passwords and access control",
+            "explanation": "Use hard-to-guess credentials and limit what authenticated users can reach."
+          },
+          {
+            "term": "Data encryption",
+            "explanation": "Protect readable data by converting it to ciphertext that requires an authorized key to recover."
+          },
+          {
+            "term": "Security awareness training",
+            "explanation": "Teach users how to recognize threats and follow secure behavior so human mistakes are less likely."
+          }
+        ],
+        "defs": [
+          {
+            "term": "Encryption",
+            "definition": "Transforms readable plaintext into ciphertext using an algorithm and key so unauthorized parties cannot understand it."
+          }
+        ],
+        "check_q": "Without looking back, explain Preventive and describe at least two key ideas from this section.",
+        "check_a": "Preventive controls are designed to stop a security event before it succeeds. They reduce the chance that an attacker, mistake, or unsafe action can reach the point of causing damage. Key ideas include: Firewalls; Strong passwords and access control; Data encryption; Security awareness training.",
+        "points": [
+          "Firewalls",
+          "Strong passwords and access control",
+          "Data encryption",
+          "Security awareness training"
+        ]
+      }
+    },
+    {
+      "n": 4,
+      "title": "Deterrent",
+      "points": [
+        "Security cameras and alarms",
+        "Intrusion detection systems",
+        "Security awareness posters and messages"
+      ],
+      "raw": "Deterrent\nSecurity cameras and alarms\nIntrusion detection systems\nSecurity awareness posters and messages",
+      "instructional": true,
+      "teach": "Read the source points, then explain the slide without looking. On Security+, recognition is not enough—you should be able to apply the concept to a scenario.",
+      "defs": [],
+      "course": {
+        "learn": "Deterrent controls try to discourage a person from attempting an unwanted action. They work by increasing the perceived chance of being caught or the perceived cost of attacking.",
+        "why": "A control can reduce risk even if it does not physically block an action. Visible monitoring and warning messages can change attacker behavior.",
+        "example": "A clearly visible camera and a warning banner may cause someone to abandon an attempt even though neither one physically prevents the action.",
+        "exam": "If the scenario emphasizes discouraging behavior rather than technically blocking it, deterrent is usually the best answer.",
+        "breakdown": [
+          {
+            "term": "Security cameras and alarms",
+            "explanation": "Provide visible deterrence and evidence/notification when physical activity occurs."
+          },
+          {
+            "term": "Intrusion detection systems",
+            "explanation": "Monitor traffic or activity for signs of attack and generate alerts; they do not normally block by themselves."
+          },
+          {
+            "term": "Security awareness posters and messages",
+            "explanation": "This contributes to reducing risk in the broader Security Control Types design and should be evaluated as part of defense in depth."
+          }
+        ],
+        "defs": [],
+        "check_q": "Without looking back, explain Deterrent and describe at least two key ideas from this section.",
+        "check_a": "Deterrent controls try to discourage a person from attempting an unwanted action. They work by increasing the perceived chance of being caught or the perceived cost of attacking. Key ideas include: Security cameras and alarms; Intrusion detection systems; Security awareness posters and messages.",
+        "points": [
+          "Security cameras and alarms",
+          "Intrusion detection systems",
+          "Security awareness posters and messages"
+        ]
+      }
+    },
+    {
+      "n": 5,
+      "title": "Detective",
+      "points": [
+        "Log monitoring",
+        "Vulnerability",
+        "assessments",
+        "Antivirus and antimalware software"
+      ],
+      "raw": "Detective\nLog monitoring\nVulnerability\nassessments\nAntivirus and antimalware software",
+      "instructional": true,
+      "teach": "Read the source points, then explain the slide without looking. On Security+, recognition is not enough—you should be able to apply the concept to a scenario.",
+      "defs": [],
+      "course": {
+        "learn": "Detective controls identify suspicious activity, policy violations, or evidence that an event has occurred. Their value is visibility: they tell defenders that something needs investigation.",
+        "why": "You cannot respond to an incident you never notice. Detection shortens the time an attacker can remain active.",
+        "example": "An IDS generates an alert after identifying malicious network behavior; log monitoring reveals repeated failed sign-ins.",
+        "exam": "Look for alert, identify, monitor, discover, detect, log, or notify. IDS and SIEM are classic detective examples.",
+        "breakdown": [
+          {
+            "term": "Log monitoring",
+            "explanation": "Review events from systems and applications to detect suspicious behavior or failures."
+          },
+          {
+            "term": "Vulnerability assessments",
+            "explanation": "Systematically identify and evaluate weaknesses so remediation can be prioritized."
+          },
+          {
+            "term": "Antivirus and antimalware software",
+            "explanation": "Detect, block, quarantine, or remove malicious software on endpoints."
+          }
+        ],
+        "defs": [],
+        "check_q": "Without looking back, explain Detective and describe at least two key ideas from this section.",
+        "check_a": "Detective controls identify suspicious activity, policy violations, or evidence that an event has occurred. Their value is visibility: they tell defenders that something needs investigation. Key ideas include: Log monitoring; Vulnerability assessments; Antivirus and antimalware software.",
+        "points": [
+          "Log monitoring",
+          "Vulnerability assessments",
+          "Antivirus and antimalware software"
+        ]
+      }
+    },
+    {
+      "n": 6,
+      "title": "Corrective",
+      "points": [
+        "Backups and",
+        "disaster",
+        "recovery plans",
+        "Incident",
+        "response plans",
+        "Software",
+        "patching"
+      ],
+      "raw": "Corrective\nBackups and\ndisaster\nrecovery plans\nIncident\nresponse plans\nSoftware\npatching",
+      "instructional": true,
+      "teach": "Read the source points, then explain the slide without looking. On Security+, recognition is not enough—you should be able to apply the concept to a scenario.",
+      "defs": [],
+      "course": {
+        "learn": "Corrective controls reduce damage and restore a system after a problem is discovered. They focus on fixing the condition or returning operations to a known-good state.",
+        "why": "Even strong preventive controls can fail. Corrective controls make recovery possible and limit the duration of an incident.",
+        "example": "After ransomware is contained, an organization restores clean backups and patches the exploited vulnerability.",
+        "exam": "Look for restore, remediate, recover, repair, remove, or after the incident.",
+        "breakdown": [
+          {
+            "term": "Backups and disaster",
+            "explanation": "Keep recoverable copies and documented recovery procedures so operations can be restored after disruption."
+          },
+          {
+            "term": "recovery plans",
+            "explanation": "Keep recoverable copies and documented recovery procedures so operations can be restored after disruption."
+          },
+          {
+            "term": "Incident response plans",
+            "explanation": "Define how an organization prepares for, detects, contains, eradicates, and recovers from security incidents."
+          },
+          {
+            "term": "Software patching",
+            "explanation": "Apply vendor updates that fix known security flaws or bugs."
+          }
+        ],
+        "defs": [],
+        "check_q": "Without looking back, explain Corrective and describe at least two key ideas from this section.",
+        "check_a": "Corrective controls reduce damage and restore a system after a problem is discovered. They focus on fixing the condition or returning operations to a known-good state. Key ideas include: Backups and disaster; recovery plans; Incident response plans; Software patching.",
+        "points": [
+          "Backups and disaster",
+          "recovery plans",
+          "Incident response plans",
+          "Software patching"
+        ]
+      }
+    },
+    {
+      "n": 7,
+      "title": "Compensating",
+      "points": [
+        "Manual security reviews",
+        "Increased user training",
+        "Multi-factor authentication"
+      ],
+      "raw": "Compensating\nManual security reviews\nIncreased user training\nMulti-factor authentication",
+      "instructional": true,
+      "teach": "Read the source points, then explain the slide without looking. On Security+, recognition is not enough—you should be able to apply the concept to a scenario.",
+      "defs": [
+        [
+          "Authentication",
+          "Proving an identity—answering “who are you?”"
+        ]
+      ],
+      "course": {
+        "learn": "A compensating control is an alternative safeguard used when the preferred or required control cannot be implemented exactly as intended.",
+        "why": "Legacy systems, operational constraints, or cost can make an ideal control impossible. Security still needs another way to reduce the same risk.",
+        "example": "A legacy application cannot support MFA, so access is restricted through a hardened jump server with strong authentication and monitoring.",
+        "exam": "Compensating means alternative control—not a weaker synonym for preventive. The clue is usually that the normal control cannot be used.",
+        "breakdown": [
+          {
+            "term": "Manual security reviews",
+            "explanation": "This contributes to reducing risk in the broader Security Control Types design and should be evaluated as part of defense in depth."
+          },
+          {
+            "term": "Increased user training",
+            "explanation": "Within Compensating, this is a specific factor you should be able to recognize and explain. Connect it to the purpose of Security Control Types rather than memorizing the phrase by itself."
+          },
+          {
+            "term": "Multi-factor authentication",
+            "explanation": "Require authentication factors from more than one factor category, reducing dependence on one stolen secret."
+          }
+        ],
+        "defs": [
+          {
+            "term": "Authentication",
+            "definition": "Proving an identity—answering “who are you?”"
+          }
+        ],
+        "check_q": "Without looking back, explain Compensating and describe at least two key ideas from this section.",
+        "check_a": "A compensating control is an alternative safeguard used when the preferred or required control cannot be implemented exactly as intended. Key ideas include: Manual security reviews; Increased user training; Multi-factor authentication.",
+        "points": [
+          "Manual security reviews",
+          "Increased user training",
+          "Multi-factor authentication"
+        ]
+      }
+    },
+    {
+      "n": 8,
+      "title": "Directive",
+      "points": [
+        "Security policies and procedures",
+        "Training materials and awareness campaigns",
+        "Risk assessments and compliance audits"
+      ],
+      "raw": "Directive\nSecurity policies and procedures\nTraining materials and awareness campaigns\nRisk assessments and compliance audits",
+      "instructional": true,
+      "teach": "Read the source points, then explain the slide without looking. On Security+, recognition is not enough—you should be able to apply the concept to a scenario.",
+      "defs": [],
+      "course": {
+        "learn": "Directive controls tell people what they are expected or required to do. Policies, procedures, standards, and mandatory training guide behavior.",
+        "why": "Many security failures come from inconsistent human decisions. Clear direction creates repeatable expectations.",
+        "example": "An acceptable-use policy tells employees which activities are prohibited on company systems.",
+        "exam": "If the control is primarily an instruction, rule, policy, or required procedure, think directive.",
+        "breakdown": [
+          {
+            "term": "Security policies and procedures",
+            "explanation": "Document required security rules and repeatable steps for carrying them out."
+          },
+          {
+            "term": "Training materials and awareness campaigns",
+            "explanation": "Within Directive, this is a specific factor you should be able to recognize and explain. Connect it to the purpose of Security Control Types rather than memorizing the phrase by itself."
+          },
+          {
+            "term": "Risk assessments and compliance audits",
+            "explanation": "Evaluate risk and verify whether controls meet organizational, legal, or regulatory requirements."
+          }
+        ],
+        "defs": [],
+        "check_q": "Without looking back, explain Directive and describe at least two key ideas from this section.",
+        "check_a": "Directive controls tell people what they are expected or required to do. Policies, procedures, standards, and mandatory training guide behavior. Key ideas include: Security policies and procedures; Training materials and awareness campaigns; Risk assessments and compliance audits.",
+        "points": [
+          "Security policies and procedures",
+          "Training materials and awareness campaigns",
+          "Risk assessments and compliance audits"
+        ]
+      }
+    },
+    {
+      "n": 9,
+      "title": "Confidentiality, Integrity, and Availability (CIA)",
+      "points": [],
+      "raw": "Confidentiality, Integrity, and\nAvailability (CIA)",
+      "instructional": false,
+      "teach": "Read the source points, then explain the slide without looking. On Security+, recognition is not enough—you should be able to apply the concept to a scenario.",
+      "defs": [
+        [
+          "Availability",
+          "Ensuring authorized users can access systems and data when needed."
+        ],
+        [
+          "Integrity",
+          "Ensuring data stays accurate, complete, and protected from unauthorized modification."
+        ],
+        [
+          "CIA",
+          "Confidentiality, Integrity, Availability—the three foundational information-security objectives."
+        ]
+      ]
+    }
+  ],
+  "slide_count": 9,
+  "instructional_count": 7,
+  "concepts": [
+    "Control Types",
+    "Preventive",
+    "Deterrent",
+    "Detective",
+    "Corrective",
+    "Compensating",
+    "Directive"
+  ],
+  "source_filename": "01.02_Security_Control_Types.pdf"
+}

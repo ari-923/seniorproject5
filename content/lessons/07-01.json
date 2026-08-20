@@ -1,0 +1,1154 @@
+{
+  "id": "07.01",
+  "chapter": 7,
+  "sub": 1,
+  "title": "Explain various types of vulnerabilities",
+  "chapter_name": "Vulnerabilities",
+  "slides": [
+    {
+      "n": 1,
+      "title": "Explain Various Types of Vulnerabilities",
+      "points": [],
+      "raw": "Explain Various Types of\nVulnerabilities",
+      "instructional": false,
+      "teach": "A vulnerability is a weakness. For each item, connect the weakness to its likely impact and the best mitigation.",
+      "defs": []
+    },
+    {
+      "n": 2,
+      "title": "Application Vulnerabilities",
+      "points": [
+        "Memory",
+        "Injection",
+        "Buffer",
+        "Overflow",
+        "Race",
+        "Conditions",
+        "Malicious",
+        "Update",
+        "• Unauthorized",
+        "access",
+        "• Data",
+        "manipulation",
+        "• Execution of",
+        "malicious",
+        "commands",
+        "• Arbitrary code",
+        "execution",
+        "• Crashes",
+        "• Unauthorized",
+        "access",
+        "• unexpected",
+        "behavior",
+        "• Unauthorized",
+        "access",
+        "• Compromised",
+        "integrity",
+        "• Unauthorized",
+        "access",
+        "• Unintended",
+        "functionality",
+        "in the updated",
+        "application"
+      ],
+      "raw": "Application Vulnerabilities\nMemory\nInjection\nBuffer\nOverflow\nRace\nConditions\nMalicious\nUpdate\n• Unauthorized\naccess\n• Data\nmanipulation\n• Execution of\nmalicious\ncommands\n• Arbitrary code\nexecution\n• Crashes\n• Unauthorized\naccess\n• unexpected\nbehavior\n• Unauthorized\naccess\n• Compromised\nintegrity\n• Unauthorized\naccess\n• Unintended\nfunctionality\nin the updated\napplication",
+      "instructional": true,
+      "teach": "A vulnerability is a weakness. For each item, connect the weakness to its likely impact and the best mitigation.",
+      "defs": [
+        [
+          "Buffer overflow",
+          "A memory-safety flaw where more data is written into a buffer than it was designed to hold."
+        ],
+        [
+          "Integrity",
+          "Ensuring data stays accurate, complete, and protected from unauthorized modification."
+        ]
+      ],
+      "course": {
+        "learn": "Application vulnerabilities are flaws in software design, coding, input handling, authentication, authorization, or memory management that attackers can exploit.",
+        "why": "Applications directly process untrusted input and sensitive data, making secure coding and testing essential.",
+        "example": "A web application builds SQL statements by concatenating user input, allowing an attacker to alter the query.",
+        "exam": "Know common web/app flaws such as injection, XSS, broken access control, race conditions, and buffer overflows.",
+        "breakdown": [
+          {
+            "term": "Memory",
+            "explanation": "Within Application Vulnerabilities, this is a specific factor you should be able to recognize and explain. Connect it to the purpose of Explain various types of vulnerabilities rather than memorizing the phrase by itself."
+          },
+          {
+            "term": "Injection",
+            "explanation": "Within Application Vulnerabilities, this is a specific factor you should be able to recognize and explain. Connect it to the purpose of Explain various types of vulnerabilities rather than memorizing the phrase by itself."
+          },
+          {
+            "term": "Buffer",
+            "explanation": "Within Application Vulnerabilities, this is a specific factor you should be able to recognize and explain. Connect it to the purpose of Explain various types of vulnerabilities rather than memorizing the phrase by itself."
+          },
+          {
+            "term": "Overflow",
+            "explanation": "Within Application Vulnerabilities, this is a specific factor you should be able to recognize and explain. Connect it to the purpose of Explain various types of vulnerabilities rather than memorizing the phrase by itself."
+          },
+          {
+            "term": "Race",
+            "explanation": "Within Application Vulnerabilities, this is a specific factor you should be able to recognize and explain. Connect it to the purpose of Explain various types of vulnerabilities rather than memorizing the phrase by itself."
+          },
+          {
+            "term": "Conditions",
+            "explanation": "Within Application Vulnerabilities, this is a specific factor you should be able to recognize and explain. Connect it to the purpose of Explain various types of vulnerabilities rather than memorizing the phrase by itself."
+          },
+          {
+            "term": "Malicious",
+            "explanation": "Within Application Vulnerabilities, this is a specific factor you should be able to recognize and explain. Connect it to the purpose of Explain various types of vulnerabilities rather than memorizing the phrase by itself."
+          },
+          {
+            "term": "Update",
+            "explanation": "Within Application Vulnerabilities, this is a specific factor you should be able to recognize and explain. Connect it to the purpose of Explain various types of vulnerabilities rather than memorizing the phrase by itself."
+          },
+          {
+            "term": "Unauthorized access",
+            "explanation": "This concerns who or what can reach a resource and what actions are permitted once access is granted."
+          },
+          {
+            "term": "Data manipulation",
+            "explanation": "Within Application Vulnerabilities, this is a specific factor you should be able to recognize and explain. Connect it to the purpose of Explain various types of vulnerabilities rather than memorizing the phrase by itself."
+          },
+          {
+            "term": "Execution of malicious",
+            "explanation": "Within Application Vulnerabilities, this is a specific factor you should be able to recognize and explain. Connect it to the purpose of Explain various types of vulnerabilities rather than memorizing the phrase by itself."
+          },
+          {
+            "term": "commands",
+            "explanation": "Within Application Vulnerabilities, this is a specific factor you should be able to recognize and explain. Connect it to the purpose of Explain various types of vulnerabilities rather than memorizing the phrase by itself."
+          },
+          {
+            "term": "Arbitrary code execution",
+            "explanation": "Within Application Vulnerabilities, this is a specific factor you should be able to recognize and explain. Connect it to the purpose of Explain various types of vulnerabilities rather than memorizing the phrase by itself."
+          },
+          {
+            "term": "Crashes",
+            "explanation": "Within Application Vulnerabilities, this is a specific factor you should be able to recognize and explain. Connect it to the purpose of Explain various types of vulnerabilities rather than memorizing the phrase by itself."
+          },
+          {
+            "term": "Unauthorized access",
+            "explanation": "This concerns who or what can reach a resource and what actions are permitted once access is granted."
+          },
+          {
+            "term": "unexpected behavior",
+            "explanation": "Within Application Vulnerabilities, this is a specific factor you should be able to recognize and explain. Connect it to the purpose of Explain various types of vulnerabilities rather than memorizing the phrase by itself."
+          },
+          {
+            "term": "Unauthorized access",
+            "explanation": "This concerns who or what can reach a resource and what actions are permitted once access is granted."
+          },
+          {
+            "term": "Compromised integrity",
+            "explanation": "Within Application Vulnerabilities, this is a specific factor you should be able to recognize and explain. Connect it to the purpose of Explain various types of vulnerabilities rather than memorizing the phrase by itself."
+          },
+          {
+            "term": "Unauthorized access",
+            "explanation": "This concerns who or what can reach a resource and what actions are permitted once access is granted."
+          },
+          {
+            "term": "Unintended functionality",
+            "explanation": "Within Application Vulnerabilities, this is a specific factor you should be able to recognize and explain. Connect it to the purpose of Explain various types of vulnerabilities rather than memorizing the phrase by itself."
+          },
+          {
+            "term": "in the updated application",
+            "explanation": "Application monitoring measures application behavior, performance, errors, and security events. APM focuses on health/performance, while a WAF inspects and protects web requests."
+          }
+        ],
+        "defs": [
+          {
+            "term": "Buffer overflow",
+            "definition": "A memory-safety flaw where more data is written into a buffer than it was designed to hold."
+          },
+          {
+            "term": "Integrity",
+            "definition": "Ensuring data stays accurate, complete, and protected from unauthorized modification."
+          }
+        ],
+        "check_q": "Without looking back, explain Application Vulnerabilities and describe at least two key ideas from this section.",
+        "check_a": "Application vulnerabilities are flaws in software design, coding, input handling, authentication, authorization, or memory management that attackers can exploit. Key ideas include: Memory; Injection; Buffer; Overflow; Race.",
+        "points": [
+          "Memory",
+          "Injection",
+          "Buffer",
+          "Overflow",
+          "Race",
+          "Conditions",
+          "Malicious",
+          "Update",
+          "Unauthorized access",
+          "Data manipulation",
+          "Execution of malicious",
+          "commands",
+          "Arbitrary code execution",
+          "Crashes",
+          "Unauthorized access",
+          "unexpected behavior",
+          "Unauthorized access",
+          "Compromised integrity",
+          "Unauthorized access",
+          "Unintended functionality",
+          "in the updated application"
+        ]
+      }
+    },
+    {
+      "n": 3,
+      "title": "Operating System Vulnerabilities",
+      "points": [
+        "Denial-of-Service (DoS) Attacks",
+        "Authentication Issues",
+        "Kernel Exploits",
+        "File and Directory Permissions",
+        "Inter-Process Communication (IPC) Vulnerabilities"
+      ],
+      "raw": "Operating System Vulnerabilities\nDenial-of-Service (DoS) Attacks\nAuthentication Issues\nKernel Exploits\nFile and Directory Permissions\nInter-Process Communication (IPC) Vulnerabilities",
+      "instructional": true,
+      "teach": "A vulnerability is a weakness. For each item, connect the weakness to its likely impact and the best mitigation.",
+      "defs": [
+        [
+          "Authentication",
+          "Proving an identity—answering “who are you?”"
+        ]
+      ],
+      "course": {
+        "learn": "Operating-system vulnerabilities include missing patches, weak permissions, kernel flaws, insecure services, authentication weaknesses, and configuration errors.",
+        "why": "The OS is the foundation for applications and hardware access; compromise can give an attacker broad control.",
+        "example": "An unpatched privilege-escalation flaw lets a local user gain administrator/root rights.",
+        "exam": "Patch and harden where possible; legacy or unsupported systems may require isolation and compensating controls.",
+        "breakdown": [
+          {
+            "term": "Denial-of-Service (DoS) Attacks",
+            "explanation": "Within Operating System Vulnerabilities, this is a specific factor you should be able to recognize and explain. Connect it to the purpose of Explain various types of vulnerabilities rather than memorizing the phrase by itself."
+          },
+          {
+            "term": "Authentication Issues",
+            "explanation": "Authentication is the process of proving an identity. Factors can be something you know, have, are, do, or somewhere you are; MFA requires factors from more than one category."
+          },
+          {
+            "term": "Kernel Exploits",
+            "explanation": "Within Operating System Vulnerabilities, this is a specific factor you should be able to recognize and explain. Connect it to the purpose of Explain various types of vulnerabilities rather than memorizing the phrase by itself."
+          },
+          {
+            "term": "File and Directory Permissions",
+            "explanation": "Permissions define the actions a subject may perform on a resource, such as read, write, execute, modify, or administer. They are one mechanism used to implement authorization."
+          },
+          {
+            "term": "Inter-Process Communication (IPC) Vulnerabilities",
+            "explanation": "Within Operating System Vulnerabilities, this is a specific factor you should be able to recognize and explain. Connect it to the purpose of Explain various types of vulnerabilities rather than memorizing the phrase by itself."
+          }
+        ],
+        "defs": [
+          {
+            "term": "Authentication",
+            "definition": "Proving an identity—answering “who are you?”"
+          }
+        ],
+        "check_q": "Without looking back, explain Operating System Vulnerabilities and describe at least two key ideas from this section.",
+        "check_a": "Operating-system vulnerabilities include missing patches, weak permissions, kernel flaws, insecure services, authentication weaknesses, and configuration errors. Key ideas include: Denial-of-Service (DoS) Attacks; Authentication Issues; Kernel Exploits; File and Directory Permissions; Inter-Process Communication (IPC) Vulnerabilities.",
+        "points": [
+          "Denial-of-Service (DoS) Attacks",
+          "Authentication Issues",
+          "Kernel Exploits",
+          "File and Directory Permissions",
+          "Inter-Process Communication (IPC) Vulnerabilities"
+        ]
+      }
+    },
+    {
+      "n": 4,
+      "title": "Operating System Vulnerabilities",
+      "points": [
+        "Privilege Escalation",
+        "Security Misconfigurations",
+        "Unpatched Software",
+        "Zero-Day Vulnerabilities",
+        "Buffer Overflows"
+      ],
+      "raw": "Operating System Vulnerabilities\nPrivilege Escalation\nSecurity Misconfigurations\nUnpatched Software\nZero-Day Vulnerabilities\nBuffer Overflows",
+      "instructional": true,
+      "teach": "A vulnerability is a weakness. For each item, connect the weakness to its likely impact and the best mitigation.",
+      "defs": [],
+      "course": {
+        "learn": "Operating-system vulnerabilities include missing patches, weak permissions, kernel flaws, insecure services, authentication weaknesses, and configuration errors.",
+        "why": "The OS is the foundation for applications and hardware access; compromise can give an attacker broad control.",
+        "example": "An unpatched privilege-escalation flaw lets a local user gain administrator/root rights.",
+        "exam": "Patch and harden where possible; legacy or unsupported systems may require isolation and compensating controls.",
+        "breakdown": [
+          {
+            "term": "Privilege Escalation",
+            "explanation": "Privilege escalation occurs when an attacker moves from lower privileges to higher privileges, such as from a normal user to administrator/root."
+          },
+          {
+            "term": "Security Misconfigurations",
+            "explanation": "Misconfiguration means a system is deployed with unsafe settings such as default credentials, unnecessary services, open permissions, exposed management interfaces, or insecure cloud access."
+          },
+          {
+            "term": "Unpatched Software",
+            "explanation": "Within Operating System Vulnerabilities, this is a specific factor you should be able to recognize and explain. Connect it to the purpose of Explain various types of vulnerabilities rather than memorizing the phrase by itself."
+          },
+          {
+            "term": "Zero-Day Vulnerabilities",
+            "explanation": "Within Operating System Vulnerabilities, this is a specific factor you should be able to recognize and explain. Connect it to the purpose of Explain various types of vulnerabilities rather than memorizing the phrase by itself."
+          },
+          {
+            "term": "Buffer Overflows",
+            "explanation": "A buffer overflow happens when software writes more data into a memory region than it was designed to hold, potentially corrupting adjacent memory and control data."
+          }
+        ],
+        "defs": [],
+        "check_q": "Without looking back, explain Operating System Vulnerabilities and describe at least two key ideas from this section.",
+        "check_a": "Operating-system vulnerabilities include missing patches, weak permissions, kernel flaws, insecure services, authentication weaknesses, and configuration errors. Key ideas include: Privilege Escalation; Security Misconfigurations; Unpatched Software; Zero-Day Vulnerabilities; Buffer Overflows.",
+        "points": [
+          "Privilege Escalation",
+          "Security Misconfigurations",
+          "Unpatched Software",
+          "Zero-Day Vulnerabilities",
+          "Buffer Overflows"
+        ]
+      }
+    },
+    {
+      "n": 5,
+      "title": "Web-based Vulnerabilities",
+      "points": [
+        "Cross-Site Scripting (XSS)",
+        "SQL Injection",
+        "Cross-Site Request Forgery (CSRF)",
+        "Security Misconfigurations",
+        "Insecure Direct Object References (IDOR)"
+      ],
+      "raw": "Web-based Vulnerabilities\nCross-Site Scripting (XSS)\nSQL Injection\nCross-Site Request Forgery (CSRF)\nSecurity Misconfigurations\nInsecure Direct Object References (IDOR)",
+      "instructional": true,
+      "teach": "A vulnerability is a weakness. For each item, connect the weakness to its likely impact and the best mitigation.",
+      "defs": [
+        [
+          "CSRF",
+          "Cross-Site Request Forgery: tricks an authenticated browser into sending an unwanted request."
+        ],
+        [
+          "IDOR",
+          "Insecure Direct Object Reference: an authorization flaw where changing an object identifier exposes another user’s resource."
+        ],
+        [
+          "XSS",
+          "Cross-Site Scripting: malicious client-side script executes in another user’s browser."
+        ]
+      ],
+      "course": {
+        "learn": "Web applications face vulnerabilities in input handling, authentication, sessions, authorization, file uploads, security headers, and XML processing. Common examples include XSS, SQL injection, CSRF, IDOR, and XXE.",
+        "why": "Web applications are exposed to untrusted users and often connect directly to sensitive data or backend services.",
+        "example": "A site correctly authenticates users but fails to check object ownership, allowing one user to change an ID in the URL and read another user's record.",
+        "exam": "Identify the layer: SQLi = database query, XSS = browser script, CSRF = unwanted authenticated request, IDOR = broken object authorization, XXE = XML parser.",
+        "breakdown": [
+          {
+            "term": "Cross-Site Scripting (XSS)",
+            "explanation": "Cross-Site Scripting (XSS) lets attacker-controlled script execute in another user's browser in the context of a trusted site."
+          },
+          {
+            "term": "SQL Injection",
+            "explanation": "SQL injection changes a database query by inserting malicious SQL through application input. Prepared/parameterized queries keep user data separate from SQL syntax."
+          },
+          {
+            "term": "Cross-Site Request Forgery (CSRF)",
+            "explanation": "Forgery creates or alters data, documents, messages, tokens, or transactions so they appear legitimate when they are not."
+          },
+          {
+            "term": "Security Misconfigurations",
+            "explanation": "Misconfiguration means a system is deployed with unsafe settings such as default credentials, unnecessary services, open permissions, exposed management interfaces, or insecure cloud access."
+          },
+          {
+            "term": "Insecure Direct Object References (IDOR)",
+            "explanation": "Within Web-based Vulnerabilities, this is a specific factor you should be able to recognize and explain. Connect it to the purpose of Explain various types of vulnerabilities rather than memorizing the phrase by itself."
+          }
+        ],
+        "defs": [
+          {
+            "term": "CSRF",
+            "definition": "Cross-Site Request Forgery: tricks an authenticated browser into sending an unwanted request."
+          },
+          {
+            "term": "IDOR",
+            "definition": "Insecure Direct Object Reference: an authorization flaw where changing an object identifier exposes another user’s resource."
+          },
+          {
+            "term": "XSS",
+            "definition": "Cross-Site Scripting: malicious client-side script executes in another user’s browser."
+          }
+        ],
+        "check_q": "Without looking back, explain Web-based Vulnerabilities and describe at least two key ideas from this section.",
+        "check_a": "Web applications face vulnerabilities in input handling, authentication, sessions, authorization, file uploads, security headers, and XML processing. Common examples include XSS, SQL injection, CSRF, IDOR, and XXE. Key ideas include: Cross-Site Scripting (XSS); SQL Injection; Cross-Site Request Forgery (CSRF); Security Misconfigurations; Insecure Direct Object References (IDOR).",
+        "points": [
+          "Cross-Site Scripting (XSS)",
+          "SQL Injection",
+          "Cross-Site Request Forgery (CSRF)",
+          "Security Misconfigurations",
+          "Insecure Direct Object References (IDOR)"
+        ]
+      }
+    },
+    {
+      "n": 6,
+      "title": "Web-based Vulnerabilities",
+      "points": [
+        "File Upload Vulnerabilities",
+        "Session Management Issues",
+        "Security Headers Missing",
+        "XML External Entity (XXE) Injection",
+        "Broken Authentication and Session Management"
+      ],
+      "raw": "Web-based Vulnerabilities\nFile Upload Vulnerabilities\nSession Management Issues\nSecurity Headers Missing\nXML External Entity (XXE) Injection\nBroken Authentication and Session Management",
+      "instructional": true,
+      "teach": "A vulnerability is a weakness. For each item, connect the weakness to its likely impact and the best mitigation.",
+      "defs": [
+        [
+          "Authentication",
+          "Proving an identity—answering “who are you?”"
+        ],
+        [
+          "XXE",
+          "XML External Entity: an XML parser attack that can expose files or internal resources when external entities are processed insecurely."
+        ]
+      ],
+      "course": {
+        "learn": "Web applications face vulnerabilities in input handling, authentication, sessions, authorization, file uploads, security headers, and XML processing. Common examples include XSS, SQL injection, CSRF, IDOR, and XXE.",
+        "why": "Web applications are exposed to untrusted users and often connect directly to sensitive data or backend services.",
+        "example": "A site correctly authenticates users but fails to check object ownership, allowing one user to change an ID in the URL and read another user's record.",
+        "exam": "Identify the layer: SQLi = database query, XSS = browser script, CSRF = unwanted authenticated request, IDOR = broken object authorization, XXE = XML parser.",
+        "breakdown": [
+          {
+            "term": "File Upload Vulnerabilities",
+            "explanation": "Within Web-based Vulnerabilities, this is a specific factor you should be able to recognize and explain. Connect it to the purpose of Explain various types of vulnerabilities rather than memorizing the phrase by itself."
+          },
+          {
+            "term": "Session Management Issues",
+            "explanation": "Within Web-based Vulnerabilities, this is a specific factor you should be able to recognize and explain. Connect it to the purpose of Explain various types of vulnerabilities rather than memorizing the phrase by itself."
+          },
+          {
+            "term": "Security Headers Missing",
+            "explanation": "This contributes to reducing risk in the broader Explain various types of vulnerabilities design and should be evaluated as part of defense in depth."
+          },
+          {
+            "term": "XML External Entity (XXE) Injection",
+            "explanation": "Within Web-based Vulnerabilities, this is a specific factor you should be able to recognize and explain. Connect it to the purpose of Explain various types of vulnerabilities rather than memorizing the phrase by itself."
+          },
+          {
+            "term": "Broken Authentication and Session Management",
+            "explanation": "Authentication is the process of proving an identity. Factors can be something you know, have, are, do, or somewhere you are; MFA requires factors from more than one category."
+          }
+        ],
+        "defs": [
+          {
+            "term": "Authentication",
+            "definition": "Proving an identity—answering “who are you?”"
+          },
+          {
+            "term": "XXE",
+            "definition": "XML External Entity: an XML parser attack that can expose files or internal resources when external entities are processed insecurely."
+          }
+        ],
+        "check_q": "Without looking back, explain Web-based Vulnerabilities and describe at least two key ideas from this section.",
+        "check_a": "Web applications face vulnerabilities in input handling, authentication, sessions, authorization, file uploads, security headers, and XML processing. Common examples include XSS, SQL injection, CSRF, IDOR, and XXE. Key ideas include: File Upload Vulnerabilities; Session Management Issues; Security Headers Missing; XML External Entity (XXE) Injection; Broken Authentication and Session Management.",
+        "points": [
+          "File Upload Vulnerabilities",
+          "Session Management Issues",
+          "Security Headers Missing",
+          "XML External Entity (XXE) Injection",
+          "Broken Authentication and Session Management"
+        ]
+      }
+    },
+    {
+      "n": 7,
+      "title": "Hardware",
+      "points": [
+        "Firmware",
+        "End-of-life",
+        "Legacy"
+      ],
+      "raw": "Hardware\nFirmware\nEnd-of-life\nLegacy",
+      "instructional": true,
+      "teach": "Read the source points, then explain the slide without looking. On Security+, recognition is not enough—you should be able to apply the concept to a scenario.",
+      "defs": [],
+      "course": {
+        "learn": "Hardware security risk includes vulnerable firmware, malicious peripherals, insecure interfaces, unsupported devices, and physical tampering.",
+        "why": "Software controls can be undermined if the underlying hardware or firmware is compromised.",
+        "example": "An attacker installs a malicious USB device that impersonates a keyboard and injects commands.",
+        "exam": "Hardware/firmware threats often require physical security, signed firmware, inventory, secure boot, or device control.",
+        "breakdown": [
+          {
+            "term": "Firmware",
+            "explanation": "Within Hardware, this is a specific factor you should be able to recognize and explain. Connect it to the purpose of Explain various types of vulnerabilities rather than memorizing the phrase by itself."
+          },
+          {
+            "term": "End-of-life",
+            "explanation": "Within Hardware, this is a specific factor you should be able to recognize and explain. Connect it to the purpose of Explain various types of vulnerabilities rather than memorizing the phrase by itself."
+          },
+          {
+            "term": "Legacy",
+            "explanation": "Within Hardware, this is a specific factor you should be able to recognize and explain. Connect it to the purpose of Explain various types of vulnerabilities rather than memorizing the phrase by itself."
+          }
+        ],
+        "defs": [],
+        "check_q": "Without looking back, explain Hardware and describe at least two key ideas from this section.",
+        "check_a": "Hardware security risk includes vulnerable firmware, malicious peripherals, insecure interfaces, unsupported devices, and physical tampering. Key ideas include: Firmware; End-of-life; Legacy.",
+        "points": [
+          "Firmware",
+          "End-of-life",
+          "Legacy"
+        ]
+      }
+    },
+    {
+      "n": 8,
+      "title": "Virtualization Vulnerabilities",
+      "points": [
+        "• VM Escape",
+        "• Insecure Hypervisor",
+        "• Insufficient Isolation",
+        "• Resource Exhaustion",
+        "• Snapshots and Backups Risks",
+        "• Insecure APIs",
+        "• Insufficient Logging and Monitoring"
+      ],
+      "raw": "Virtualization Vulnerabilities\n• VM Escape\n• Insecure Hypervisor\n• Insufficient Isolation\n• Resource Exhaustion\n• Snapshots and Backups Risks\n• Insecure APIs\n• Insufficient Logging and Monitoring",
+      "instructional": true,
+      "teach": "A vulnerability is a weakness. For each item, connect the weakness to its likely impact and the best mitigation.",
+      "defs": [
+        [
+          "Virtualization",
+          "Using a hypervisor to run multiple virtual machines, usually with separate guest operating systems, on shared hardware."
+        ]
+      ],
+      "course": {
+        "learn": "Virtualization adds a hypervisor and isolation boundary between workloads. Weaknesses include VM escape, hypervisor compromise, poor isolation, and resource exhaustion.",
+        "why": "One hypervisor may host many critical systems, so a virtualization-layer flaw can have a large blast radius.",
+        "example": "A VM escape vulnerability lets code inside one guest reach the host and potentially other VMs.",
+        "exam": "VM escape/hypervisor = virtualization clue. Containers share the host kernel and have different isolation tradeoffs.",
+        "breakdown": [
+          {
+            "term": "VM Escape",
+            "explanation": "Within Virtualization Vulnerabilities, this is a specific factor you should be able to recognize and explain. Connect it to the purpose of Explain various types of vulnerabilities rather than memorizing the phrase by itself."
+          },
+          {
+            "term": "Insecure Hypervisor",
+            "explanation": "Within Virtualization Vulnerabilities, this is a specific factor you should be able to recognize and explain. Connect it to the purpose of Explain various types of vulnerabilities rather than memorizing the phrase by itself."
+          },
+          {
+            "term": "Insufficient Isolation",
+            "explanation": "Isolation separates a risky or sensitive system from other resources so compromise cannot easily spread. Physical isolation and air gaps provide stronger separation than ordinary logical controls."
+          },
+          {
+            "term": "Resource Exhaustion",
+            "explanation": "Within Virtualization Vulnerabilities, this is a specific factor you should be able to recognize and explain. Connect it to the purpose of Explain various types of vulnerabilities rather than memorizing the phrase by itself."
+          },
+          {
+            "term": "Snapshots and Backups Risks",
+            "explanation": "Capture a point-in-time state for quick rollback or recovery; not automatically an independent backup."
+          },
+          {
+            "term": "Insecure APIs",
+            "explanation": "Within Virtualization Vulnerabilities, this is a specific factor you should be able to recognize and explain. Connect it to the purpose of Explain various types of vulnerabilities rather than memorizing the phrase by itself."
+          },
+          {
+            "term": "Insufficient Logging and Monitoring",
+            "explanation": "Security monitoring continuously observes systems, networks, applications, and logs for suspicious activity, failures, policy violations, and indicators of compromise."
+          }
+        ],
+        "defs": [
+          {
+            "term": "Virtualization",
+            "definition": "Using a hypervisor to run multiple virtual machines, usually with separate guest operating systems, on shared hardware."
+          }
+        ],
+        "check_q": "Without looking back, explain Virtualization Vulnerabilities and describe at least two key ideas from this section.",
+        "check_a": "Virtualization adds a hypervisor and isolation boundary between workloads. Weaknesses include VM escape, hypervisor compromise, poor isolation, and resource exhaustion. Key ideas include: VM Escape; Insecure Hypervisor; Insufficient Isolation; Resource Exhaustion; Snapshots and Backups Risks.",
+        "points": [
+          "VM Escape",
+          "Insecure Hypervisor",
+          "Insufficient Isolation",
+          "Resource Exhaustion",
+          "Snapshots and Backups Risks",
+          "Insecure APIs",
+          "Insufficient Logging and Monitoring"
+        ]
+      }
+    },
+    {
+      "n": 9,
+      "title": "Cloud-specific Vulnerabilities",
+      "points": [
+        "Inadequate Identity and Access Management (IAM)",
+        "Data Breaches and Data Loss",
+        "Insecure APIs",
+        "Shared Technology Vulnerabilities"
+      ],
+      "raw": "Cloud-specific Vulnerabilities\nInadequate Identity and Access Management (IAM)\nData Breaches and Data Loss\nInsecure APIs\nShared Technology Vulnerabilities",
+      "instructional": true,
+      "teach": "A vulnerability is a weakness. For each item, connect the weakness to its likely impact and the best mitigation.",
+      "defs": [
+        [
+          "Cloud",
+          "Computing resources delivered on demand from a provider rather than entirely owned and operated locally."
+        ],
+        [
+          "IAM",
+          "Identity and Access Management: processes and technologies for identities, authentication, authorization, and access lifecycle."
+        ]
+      ],
+      "course": {
+        "learn": "Cloud vulnerabilities often come from excessive IAM permissions, exposed storage, insecure APIs, weak secrets, poor logging, and misunderstanding the shared-responsibility model.",
+        "why": "Cloud resources can be Internet-accessible in seconds, so one configuration mistake can expose large amounts of data.",
+        "example": "A storage bucket containing customer exports is accidentally configured for public read access.",
+        "exam": "Public bucket, over-privileged role, leaked API key, or insecure cloud API usually points to cloud misconfiguration/IAM.",
+        "breakdown": [
+          {
+            "term": "Inadequate Identity and Access Management (IAM)",
+            "explanation": "This concerns who or what can reach a resource and what actions are permitted once access is granted."
+          },
+          {
+            "term": "Data Breaches and Data Loss",
+            "explanation": "Within Cloud-specific Vulnerabilities, this is a specific factor you should be able to recognize and explain. Connect it to the purpose of Explain various types of vulnerabilities rather than memorizing the phrase by itself."
+          },
+          {
+            "term": "Insecure APIs",
+            "explanation": "Within Cloud-specific Vulnerabilities, this is a specific factor you should be able to recognize and explain. Connect it to the purpose of Explain various types of vulnerabilities rather than memorizing the phrase by itself."
+          },
+          {
+            "term": "Shared Technology Vulnerabilities",
+            "explanation": "Within Cloud-specific Vulnerabilities, this is a specific factor you should be able to recognize and explain. Connect it to the purpose of Explain various types of vulnerabilities rather than memorizing the phrase by itself."
+          }
+        ],
+        "defs": [
+          {
+            "term": "Cloud",
+            "definition": "Computing resources delivered on demand from a provider rather than entirely owned and operated locally."
+          },
+          {
+            "term": "IAM",
+            "definition": "Identity and Access Management: processes and technologies for identities, authentication, authorization, and access lifecycle."
+          }
+        ],
+        "check_q": "Without looking back, explain Cloud-specific Vulnerabilities and describe at least two key ideas from this section.",
+        "check_a": "Cloud vulnerabilities often come from excessive IAM permissions, exposed storage, insecure APIs, weak secrets, poor logging, and misunderstanding the shared-responsibility model. Key ideas include: Inadequate Identity and Access Management (IAM); Data Breaches and Data Loss; Insecure APIs; Shared Technology Vulnerabilities.",
+        "points": [
+          "Inadequate Identity and Access Management (IAM)",
+          "Data Breaches and Data Loss",
+          "Insecure APIs",
+          "Shared Technology Vulnerabilities"
+        ]
+      }
+    },
+    {
+      "n": 10,
+      "title": "Cloud-specific Vulnerabilities",
+      "points": [
+        "Insufficient Data Encryption",
+        "Insufficient Configuration Management",
+        "Denial-of-Service (DoS) Attacks",
+        "Lack of Visibility and Control"
+      ],
+      "raw": "Cloud-specific Vulnerabilities\nInsufficient Data Encryption\nInsufficient Configuration Management\nDenial-of-Service (DoS) Attacks\nLack of Visibility and Control",
+      "instructional": true,
+      "teach": "A vulnerability is a weakness. For each item, connect the weakness to its likely impact and the best mitigation.",
+      "defs": [
+        [
+          "Encryption",
+          "Transforms readable plaintext into ciphertext using an algorithm and key so unauthorized parties cannot understand it."
+        ],
+        [
+          "Cloud",
+          "Computing resources delivered on demand from a provider rather than entirely owned and operated locally."
+        ]
+      ],
+      "course": {
+        "learn": "Cloud vulnerabilities often come from excessive IAM permissions, exposed storage, insecure APIs, weak secrets, poor logging, and misunderstanding the shared-responsibility model.",
+        "why": "Cloud resources can be Internet-accessible in seconds, so one configuration mistake can expose large amounts of data.",
+        "example": "A storage bucket containing customer exports is accidentally configured for public read access.",
+        "exam": "Public bucket, over-privileged role, leaked API key, or insecure cloud API usually points to cloud misconfiguration/IAM.",
+        "breakdown": [
+          {
+            "term": "Insufficient Data Encryption",
+            "explanation": "Protect readable data by converting it to ciphertext that requires an authorized key to recover."
+          },
+          {
+            "term": "Insufficient Configuration Management",
+            "explanation": "Within Cloud-specific Vulnerabilities, this is a specific factor you should be able to recognize and explain. Connect it to the purpose of Explain various types of vulnerabilities rather than memorizing the phrase by itself."
+          },
+          {
+            "term": "Denial-of-Service (DoS) Attacks",
+            "explanation": "Within Cloud-specific Vulnerabilities, this is a specific factor you should be able to recognize and explain. Connect it to the purpose of Explain various types of vulnerabilities rather than memorizing the phrase by itself."
+          },
+          {
+            "term": "Lack of Visibility and Control",
+            "explanation": "Within Cloud-specific Vulnerabilities, this is a specific factor you should be able to recognize and explain. Connect it to the purpose of Explain various types of vulnerabilities rather than memorizing the phrase by itself."
+          }
+        ],
+        "defs": [
+          {
+            "term": "Encryption",
+            "definition": "Transforms readable plaintext into ciphertext using an algorithm and key so unauthorized parties cannot understand it."
+          },
+          {
+            "term": "Cloud",
+            "definition": "Computing resources delivered on demand from a provider rather than entirely owned and operated locally."
+          }
+        ],
+        "check_q": "Without looking back, explain Cloud-specific Vulnerabilities and describe at least two key ideas from this section.",
+        "check_a": "Cloud vulnerabilities often come from excessive IAM permissions, exposed storage, insecure APIs, weak secrets, poor logging, and misunderstanding the shared-responsibility model. Key ideas include: Insufficient Data Encryption; Insufficient Configuration Management; Denial-of-Service (DoS) Attacks; Lack of Visibility and Control.",
+        "points": [
+          "Insufficient Data Encryption",
+          "Insufficient Configuration Management",
+          "Denial-of-Service (DoS) Attacks",
+          "Lack of Visibility and Control"
+        ]
+      }
+    },
+    {
+      "n": 11,
+      "title": "Supply Chain Vulnerabilities",
+      "points": [
+        "Service Provider",
+        "Hardware Provider",
+        "Software Provider"
+      ],
+      "raw": "Supply Chain Vulnerabilities\nService Provider\nHardware Provider\nSoftware Provider",
+      "instructional": true,
+      "teach": "A vulnerability is a weakness. For each item, connect the weakness to its likely impact and the best mitigation.",
+      "defs": [],
+      "course": {
+        "learn": "A supply-chain attack compromises a trusted supplier, software dependency, hardware component, update mechanism, or service provider so the attacker can reach downstream customers.",
+        "why": "Organizations inherit risk from technology they did not build themselves.",
+        "example": "Attackers compromise a vendor's build environment and malicious code is distributed through a signed software update.",
+        "exam": "Trusted vendor/update/dependency becomes the attack path = supply chain.",
+        "breakdown": [
+          {
+            "term": "Service Provider",
+            "explanation": "Within Supply Chain Vulnerabilities, this is a specific factor you should be able to recognize and explain. Connect it to the purpose of Explain various types of vulnerabilities rather than memorizing the phrase by itself."
+          },
+          {
+            "term": "Hardware Provider",
+            "explanation": "Hardware security risk includes vulnerable firmware, malicious peripherals, insecure interfaces, unsupported devices, and physical tampering."
+          },
+          {
+            "term": "Software Provider",
+            "explanation": "Within Supply Chain Vulnerabilities, this is a specific factor you should be able to recognize and explain. Connect it to the purpose of Explain various types of vulnerabilities rather than memorizing the phrase by itself."
+          }
+        ],
+        "defs": [],
+        "check_q": "Without looking back, explain Supply Chain Vulnerabilities and describe at least two key ideas from this section.",
+        "check_a": "A supply-chain attack compromises a trusted supplier, software dependency, hardware component, update mechanism, or service provider so the attacker can reach downstream customers. Key ideas include: Service Provider; Hardware Provider; Software Provider.",
+        "points": [
+          "Service Provider",
+          "Hardware Provider",
+          "Software Provider"
+        ]
+      }
+    },
+    {
+      "n": 12,
+      "title": "Cryptographic Vulnerabilities",
+      "points": [
+        "Weak Key Management",
+        "Outdated or Insecure Algorithms",
+        "Poor Random Number Generation",
+        "Side-Channel Attacks"
+      ],
+      "raw": "Cryptographic Vulnerabilities\nWeak Key Management\nOutdated or Insecure Algorithms\nPoor Random Number Generation\nSide-Channel Attacks",
+      "instructional": true,
+      "teach": "A vulnerability is a weakness. For each item, connect the weakness to its likely impact and the best mitigation.",
+      "defs": [],
+      "course": {
+        "learn": "Cryptographic vulnerabilities arise from weak algorithms, poor random-number generation, bad key management, implementation flaws, side channels, and insecure protocol choices.",
+        "why": "Even mathematically strong cryptography can fail when implemented or operated incorrectly.",
+        "example": "An application generates predictable session keys because its random-number source has very low entropy.",
+        "exam": "Look beyond the algorithm name: key storage, entropy, protocol downgrade, and implementation details matter.",
+        "breakdown": [
+          {
+            "term": "Weak Key Management",
+            "explanation": "Within Cryptographic Vulnerabilities, this is a specific factor you should be able to recognize and explain. Connect it to the purpose of Explain various types of vulnerabilities rather than memorizing the phrase by itself."
+          },
+          {
+            "term": "Outdated or Insecure Algorithms",
+            "explanation": "Cryptographic strength depends on using the correct key type, algorithm, key length, and exchange method. Keys must be generated, distributed, stored, rotated, and retired securely."
+          },
+          {
+            "term": "Poor Random Number Generation",
+            "explanation": "Within Cryptographic Vulnerabilities, this is a specific factor you should be able to recognize and explain. Connect it to the purpose of Explain various types of vulnerabilities rather than memorizing the phrase by itself."
+          },
+          {
+            "term": "Side-Channel Attacks",
+            "explanation": "Within Cryptographic Vulnerabilities, this is a specific factor you should be able to recognize and explain. Connect it to the purpose of Explain various types of vulnerabilities rather than memorizing the phrase by itself."
+          }
+        ],
+        "defs": [],
+        "check_q": "Without looking back, explain Cryptographic Vulnerabilities and describe at least two key ideas from this section.",
+        "check_a": "Cryptographic vulnerabilities arise from weak algorithms, poor random-number generation, bad key management, implementation flaws, side channels, and insecure protocol choices. Key ideas include: Weak Key Management; Outdated or Insecure Algorithms; Poor Random Number Generation; Side-Channel Attacks.",
+        "points": [
+          "Weak Key Management",
+          "Outdated or Insecure Algorithms",
+          "Poor Random Number Generation",
+          "Side-Channel Attacks"
+        ]
+      }
+    },
+    {
+      "n": 13,
+      "title": "Cryptographic Vulnerabilities",
+      "points": [
+        "Padding Oracle Attacks",
+        "Key Exchange Vulnerabilities",
+        "Insufficient Entropy",
+        "Quantum Computing Threats"
+      ],
+      "raw": "Cryptographic Vulnerabilities\nPadding Oracle Attacks\nKey Exchange Vulnerabilities\nInsufficient Entropy\nQuantum Computing Threats",
+      "instructional": true,
+      "teach": "A vulnerability is a weakness. For each item, connect the weakness to its likely impact and the best mitigation.",
+      "defs": [
+        [
+          "Entropy",
+          "A measure of unpredictability/randomness; strong cryptographic keys require sufficient entropy."
+        ]
+      ],
+      "course": {
+        "learn": "Cryptographic vulnerabilities arise from weak algorithms, poor random-number generation, bad key management, implementation flaws, side channels, and insecure protocol choices.",
+        "why": "Even mathematically strong cryptography can fail when implemented or operated incorrectly.",
+        "example": "An application generates predictable session keys because its random-number source has very low entropy.",
+        "exam": "Look beyond the algorithm name: key storage, entropy, protocol downgrade, and implementation details matter.",
+        "breakdown": [
+          {
+            "term": "Padding Oracle Attacks",
+            "explanation": "Within Cryptographic Vulnerabilities, this is a specific factor you should be able to recognize and explain. Connect it to the purpose of Explain various types of vulnerabilities rather than memorizing the phrase by itself."
+          },
+          {
+            "term": "Key Exchange Vulnerabilities",
+            "explanation": "Cryptographic strength depends on using the correct key type, algorithm, key length, and exchange method. Keys must be generated, distributed, stored, rotated, and retired securely."
+          },
+          {
+            "term": "Insufficient Entropy",
+            "explanation": "Unpredictability/randomness used when generating secure cryptographic values such as keys."
+          },
+          {
+            "term": "Quantum Computing Threats",
+            "explanation": "Within Cryptographic Vulnerabilities, this is a specific factor you should be able to recognize and explain. Connect it to the purpose of Explain various types of vulnerabilities rather than memorizing the phrase by itself."
+          }
+        ],
+        "defs": [
+          {
+            "term": "Entropy",
+            "definition": "A measure of unpredictability/randomness; strong cryptographic keys require sufficient entropy."
+          }
+        ],
+        "check_q": "Without looking back, explain Cryptographic Vulnerabilities and describe at least two key ideas from this section.",
+        "check_a": "Cryptographic vulnerabilities arise from weak algorithms, poor random-number generation, bad key management, implementation flaws, side channels, and insecure protocol choices. Key ideas include: Padding Oracle Attacks; Key Exchange Vulnerabilities; Insufficient Entropy; Quantum Computing Threats.",
+        "points": [
+          "Padding Oracle Attacks",
+          "Key Exchange Vulnerabilities",
+          "Insufficient Entropy",
+          "Quantum Computing Threats"
+        ]
+      }
+    },
+    {
+      "n": 14,
+      "title": "Misconfiguration",
+      "points": [
+        "Insecure Access",
+        "Controls",
+        "Default Settings",
+        "Unused Services and",
+        "Ports",
+        "Weak Passwords"
+      ],
+      "raw": "Misconfiguration\nInsecure Access\nControls\nDefault Settings\nUnused Services and\nPorts\nWeak Passwords",
+      "instructional": true,
+      "teach": "Read the source points, then explain the slide without looking. On Security+, recognition is not enough—you should be able to apply the concept to a scenario.",
+      "defs": [],
+      "course": {
+        "learn": "Misconfiguration means a system is deployed with unsafe settings such as default credentials, unnecessary services, open permissions, exposed management interfaces, or insecure cloud access.",
+        "why": "Configuration errors are common because systems are complex and defaults often prioritize convenience.",
+        "example": "An administrator leaves a database listening on the Internet with a default admin password.",
+        "exam": "Default credentials, public storage, overly broad permissions, open ports, and debug mode are classic misconfiguration clues.",
+        "breakdown": [
+          {
+            "term": "Insecure Access",
+            "explanation": "This concerns who or what can reach a resource and what actions are permitted once access is granted."
+          },
+          {
+            "term": "Controls",
+            "explanation": "Within Misconfiguration, this is a specific factor you should be able to recognize and explain. Connect it to the purpose of Explain various types of vulnerabilities rather than memorizing the phrase by itself."
+          },
+          {
+            "term": "Default Settings",
+            "explanation": "Within Misconfiguration, this is a specific factor you should be able to recognize and explain. Connect it to the purpose of Explain various types of vulnerabilities rather than memorizing the phrase by itself."
+          },
+          {
+            "term": "Unused Services and Ports",
+            "explanation": "Within Misconfiguration, this is a specific factor you should be able to recognize and explain. Connect it to the purpose of Explain various types of vulnerabilities rather than memorizing the phrase by itself."
+          },
+          {
+            "term": "Weak Passwords",
+            "explanation": "Within Misconfiguration, this is a specific factor you should be able to recognize and explain. Connect it to the purpose of Explain various types of vulnerabilities rather than memorizing the phrase by itself."
+          }
+        ],
+        "defs": [],
+        "check_q": "Without looking back, explain Misconfiguration and describe at least two key ideas from this section.",
+        "check_a": "Misconfiguration means a system is deployed with unsafe settings such as default credentials, unnecessary services, open permissions, exposed management interfaces, or insecure cloud access. Key ideas include: Insecure Access; Controls; Default Settings; Unused Services and Ports; Weak Passwords.",
+        "points": [
+          "Insecure Access",
+          "Controls",
+          "Default Settings",
+          "Unused Services and Ports",
+          "Weak Passwords"
+        ]
+      }
+    },
+    {
+      "n": 15,
+      "title": "Misconfiguration",
+      "points": [
+        "Exposed Debugging",
+        "Tools",
+        "Inadequate Logging and",
+        "Monitoring",
+        "Unsecured Cloud",
+        "Configurations",
+        "Outdated Software and",
+        "Patching"
+      ],
+      "raw": "Misconfiguration\nExposed Debugging\nTools\nInadequate Logging and\nMonitoring\nUnsecured Cloud\nConfigurations\nOutdated Software and\nPatching",
+      "instructional": true,
+      "teach": "Read the source points, then explain the slide without looking. On Security+, recognition is not enough—you should be able to apply the concept to a scenario.",
+      "defs": [
+        [
+          "Cloud",
+          "Computing resources delivered on demand from a provider rather than entirely owned and operated locally."
+        ]
+      ],
+      "course": {
+        "learn": "Misconfiguration means a system is deployed with unsafe settings such as default credentials, unnecessary services, open permissions, exposed management interfaces, or insecure cloud access.",
+        "why": "Configuration errors are common because systems are complex and defaults often prioritize convenience.",
+        "example": "An administrator leaves a database listening on the Internet with a default admin password.",
+        "exam": "Default credentials, public storage, overly broad permissions, open ports, and debug mode are classic misconfiguration clues.",
+        "breakdown": [
+          {
+            "term": "Exposed Debugging",
+            "explanation": "Within Misconfiguration, this is a specific factor you should be able to recognize and explain. Connect it to the purpose of Explain various types of vulnerabilities rather than memorizing the phrase by itself."
+          },
+          {
+            "term": "Tools",
+            "explanation": "Security monitoring and automation tools include SIEM for event correlation, SCAP for standardized security-content automation, DLP for controlling sensitive data movement, and SNMP for device monitoring and traps."
+          },
+          {
+            "term": "Inadequate Logging and Monitoring",
+            "explanation": "Security monitoring continuously observes systems, networks, applications, and logs for suspicious activity, failures, policy violations, and indicators of compromise."
+          },
+          {
+            "term": "Unsecured Cloud",
+            "explanation": "Within Misconfiguration, this is a specific factor you should be able to recognize and explain. Connect it to the purpose of Explain various types of vulnerabilities rather than memorizing the phrase by itself."
+          },
+          {
+            "term": "Configurations",
+            "explanation": "Within Misconfiguration, this is a specific factor you should be able to recognize and explain. Connect it to the purpose of Explain various types of vulnerabilities rather than memorizing the phrase by itself."
+          },
+          {
+            "term": "Outdated Software and Patching",
+            "explanation": "Patching applies vendor fixes that correct vulnerabilities, bugs, or insecure behavior. Effective patch management includes inventory, testing, prioritization, deployment, and verification."
+          }
+        ],
+        "defs": [
+          {
+            "term": "Cloud",
+            "definition": "Computing resources delivered on demand from a provider rather than entirely owned and operated locally."
+          }
+        ],
+        "check_q": "Without looking back, explain Misconfiguration and describe at least two key ideas from this section.",
+        "check_a": "Misconfiguration means a system is deployed with unsafe settings such as default credentials, unnecessary services, open permissions, exposed management interfaces, or insecure cloud access. Key ideas include: Exposed Debugging; Tools; Inadequate Logging and Monitoring; Unsecured Cloud; Configurations.",
+        "points": [
+          "Exposed Debugging",
+          "Tools",
+          "Inadequate Logging and Monitoring",
+          "Unsecured Cloud",
+          "Configurations",
+          "Outdated Software and Patching"
+        ]
+      }
+    },
+    {
+      "n": 16,
+      "title": "Mobile Device Vulnerabilities",
+      "points": [
+        "Outdated Operating Systems",
+        "Insecure App Permissions",
+        "Malicious Apps",
+        "Network-Based Attacks",
+        "Sideloading"
+      ],
+      "raw": "Mobile Device Vulnerabilities\nOutdated Operating Systems\nInsecure App Permissions\nMalicious Apps\nNetwork-Based Attacks\nSideloading",
+      "instructional": true,
+      "teach": "A vulnerability is a weakness. For each item, connect the weakness to its likely impact and the best mitigation.",
+      "defs": [],
+      "course": {
+        "learn": "Mobile-device risk comes from outdated operating systems, excessive app permissions, malicious or sideloaded apps, insecure wireless networks, device loss, rooting/jailbreaking, and weak data protection.",
+        "why": "Mobile devices combine sensitive data, identity tokens, cameras, radios, and physical portability in one easily lost endpoint.",
+        "example": "A user sideloads an untrusted app that requests access to contacts, SMS, microphone, and accessibility services.",
+        "exam": "Use MDM/UEM, encryption, screen lock, approved app stores, patching, remote wipe, least privilege, and network protections.",
+        "breakdown": [
+          {
+            "term": "Outdated Operating Systems",
+            "explanation": "System monitoring focuses on endpoints and hosts. Endpoint Protection Platforms (EPP) detect or prevent malicious endpoint activity, while SIEM platforms collect and correlate events from many systems."
+          },
+          {
+            "term": "Insecure App Permissions",
+            "explanation": "Permissions define the actions a subject may perform on a resource, such as read, write, execute, modify, or administer. They are one mechanism used to implement authorization."
+          },
+          {
+            "term": "Malicious Apps",
+            "explanation": "Within Mobile Device Vulnerabilities, this is a specific factor you should be able to recognize and explain. Connect it to the purpose of Explain various types of vulnerabilities rather than memorizing the phrase by itself."
+          },
+          {
+            "term": "Network-Based Attacks",
+            "explanation": "Within Mobile Device Vulnerabilities, this is a specific factor you should be able to recognize and explain. Connect it to the purpose of Explain various types of vulnerabilities rather than memorizing the phrase by itself."
+          },
+          {
+            "term": "Sideloading",
+            "explanation": "Within Mobile Device Vulnerabilities, this is a specific factor you should be able to recognize and explain. Connect it to the purpose of Explain various types of vulnerabilities rather than memorizing the phrase by itself."
+          }
+        ],
+        "defs": [],
+        "check_q": "Without looking back, explain Mobile Device Vulnerabilities and describe at least two key ideas from this section.",
+        "check_a": "Mobile-device risk comes from outdated operating systems, excessive app permissions, malicious or sideloaded apps, insecure wireless networks, device loss, rooting/jailbreaking, and weak data protection. Key ideas include: Outdated Operating Systems; Insecure App Permissions; Malicious Apps; Network-Based Attacks; Sideloading.",
+        "points": [
+          "Outdated Operating Systems",
+          "Insecure App Permissions",
+          "Malicious Apps",
+          "Network-Based Attacks",
+          "Sideloading"
+        ]
+      }
+    },
+    {
+      "n": 17,
+      "title": "Mobile Device Vulnerabilities",
+      "points": [
+        "Unsecured Wi-Fi Connections",
+        "Device Theft or Loss",
+        "Jailbreaking or Rooting",
+        "Inadequate Data Encryption"
+      ],
+      "raw": "Mobile Device Vulnerabilities\nUnsecured Wi-Fi Connections\nDevice Theft or Loss\nJailbreaking or Rooting\nInadequate Data Encryption",
+      "instructional": true,
+      "teach": "A vulnerability is a weakness. For each item, connect the weakness to its likely impact and the best mitigation.",
+      "defs": [
+        [
+          "Encryption",
+          "Transforms readable plaintext into ciphertext using an algorithm and key so unauthorized parties cannot understand it."
+        ]
+      ],
+      "course": {
+        "learn": "Mobile-device risk comes from outdated operating systems, excessive app permissions, malicious or sideloaded apps, insecure wireless networks, device loss, rooting/jailbreaking, and weak data protection.",
+        "why": "Mobile devices combine sensitive data, identity tokens, cameras, radios, and physical portability in one easily lost endpoint.",
+        "example": "A user sideloads an untrusted app that requests access to contacts, SMS, microphone, and accessibility services.",
+        "exam": "Use MDM/UEM, encryption, screen lock, approved app stores, patching, remote wipe, least privilege, and network protections.",
+        "breakdown": [
+          {
+            "term": "Unsecured Wi-Fi Connections",
+            "explanation": "Within Mobile Device Vulnerabilities, this is a specific factor you should be able to recognize and explain. Connect it to the purpose of Explain various types of vulnerabilities rather than memorizing the phrase by itself."
+          },
+          {
+            "term": "Device Theft or Loss",
+            "explanation": "Within Mobile Device Vulnerabilities, this is a specific factor you should be able to recognize and explain. Connect it to the purpose of Explain various types of vulnerabilities rather than memorizing the phrase by itself."
+          },
+          {
+            "term": "Jailbreaking or Rooting",
+            "explanation": "Within Mobile Device Vulnerabilities, this is a specific factor you should be able to recognize and explain. Connect it to the purpose of Explain various types of vulnerabilities rather than memorizing the phrase by itself."
+          },
+          {
+            "term": "Inadequate Data Encryption",
+            "explanation": "Protect readable data by converting it to ciphertext that requires an authorized key to recover."
+          }
+        ],
+        "defs": [
+          {
+            "term": "Encryption",
+            "definition": "Transforms readable plaintext into ciphertext using an algorithm and key so unauthorized parties cannot understand it."
+          }
+        ],
+        "check_q": "Without looking back, explain Mobile Device Vulnerabilities and describe at least two key ideas from this section.",
+        "check_a": "Mobile-device risk comes from outdated operating systems, excessive app permissions, malicious or sideloaded apps, insecure wireless networks, device loss, rooting/jailbreaking, and weak data protection. Key ideas include: Unsecured Wi-Fi Connections; Device Theft or Loss; Jailbreaking or Rooting; Inadequate Data Encryption.",
+        "points": [
+          "Unsecured Wi-Fi Connections",
+          "Device Theft or Loss",
+          "Jailbreaking or Rooting",
+          "Inadequate Data Encryption"
+        ]
+      }
+    },
+    {
+      "n": 18,
+      "title": "Zero Day",
+      "points": [
+        "No Prior Awareness",
+        "Rapid Exploitation",
+        "No Signatures"
+      ],
+      "raw": "Zero Day\nNo Prior Awareness\nRapid Exploitation\nNo Signatures",
+      "instructional": true,
+      "teach": "Read the source points, then explain the slide without looking. On Security+, recognition is not enough—you should be able to apply the concept to a scenario.",
+      "defs": [],
+      "course": {
+        "learn": "A zero-day is a vulnerability for which defenders do not yet have an effective fix available or widely deployed while attackers may already be able to exploit it.",
+        "why": "Organizations cannot rely on patching alone, so they must reduce exposure using segmentation, detection, isolation, allow listing, or other compensating controls.",
+        "example": "A critical browser flaw is exploited in the wild before the vendor releases a patch, so the company temporarily disables the affected feature and increases monitoring.",
+        "exam": "If no patch exists, choose risk-reduction controls rather than “install the patch.”",
+        "breakdown": [
+          {
+            "term": "No Prior Awareness",
+            "explanation": "Within Zero Day, this is a specific factor you should be able to recognize and explain. Connect it to the purpose of Explain various types of vulnerabilities rather than memorizing the phrase by itself."
+          },
+          {
+            "term": "Rapid Exploitation",
+            "explanation": "Within Zero Day, this is a specific factor you should be able to recognize and explain. Connect it to the purpose of Explain various types of vulnerabilities rather than memorizing the phrase by itself."
+          },
+          {
+            "term": "No Signatures",
+            "explanation": "Within Zero Day, this is a specific factor you should be able to recognize and explain. Connect it to the purpose of Explain various types of vulnerabilities rather than memorizing the phrase by itself."
+          }
+        ],
+        "defs": [],
+        "check_q": "Without looking back, explain Zero Day and describe at least two key ideas from this section.",
+        "check_a": "A zero-day is a vulnerability for which defenders do not yet have an effective fix available or widely deployed while attackers may already be able to exploit it. Key ideas include: No Prior Awareness; Rapid Exploitation; No Signatures.",
+        "points": [
+          "No Prior Awareness",
+          "Rapid Exploitation",
+          "No Signatures"
+        ]
+      }
+    },
+    {
+      "n": 19,
+      "title": "Malware Attacks",
+      "points": [],
+      "raw": "Malware Attacks",
+      "instructional": false,
+      "teach": "Learn the attacker behavior, the evidence it leaves behind, and the control that best detects or mitigates it.",
+      "defs": []
+    }
+  ],
+  "slide_count": 19,
+  "instructional_count": 17,
+  "concepts": [
+    "Application Vulnerabilities",
+    "Operating System Vulnerabilities",
+    "Web-based Vulnerabilities",
+    "Hardware",
+    "Virtualization Vulnerabilities",
+    "Cloud-specific Vulnerabilities",
+    "Supply Chain Vulnerabilities",
+    "Cryptographic Vulnerabilities",
+    "Misconfiguration",
+    "Mobile Device Vulnerabilities",
+    "Zero Day"
+  ],
+  "source_filename": "07.01_Explain_various_types_of_vulnerabilities.pdf"
+}

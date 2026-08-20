@@ -1,0 +1,189 @@
+{
+  "id": "10.11",
+  "chapter": 10,
+  "sub": 11,
+  "title": "Real-time operating system (RTOS)",
+  "chapter_name": "Security Architecture & Cloud",
+  "slides": [
+    {
+      "n": 1,
+      "title": "Real-time Operating System (RTOS)",
+      "points": [],
+      "raw": "Real-time Operating System\n(RTOS)",
+      "instructional": false,
+      "teach": "Read the source points, then explain the slide without looking. On Security+, recognition is not enough—you should be able to apply the concept to a scenario.",
+      "defs": [
+        [
+          "RTOS",
+          "Real-Time Operating System: an OS designed for predictable, time-bounded responses to events."
+        ]
+      ]
+    },
+    {
+      "n": 2,
+      "title": "RTOS",
+      "points": [
+        "Critical Events",
+        "Timely and deterministic",
+        "responses"
+      ],
+      "raw": "RTOS\nCritical Events\nTimely and deterministic\nresponses",
+      "instructional": true,
+      "teach": "Read the source points, then explain the slide without looking. On Security+, recognition is not enough—you should be able to apply the concept to a scenario.",
+      "defs": [
+        [
+          "RTOS",
+          "Real-Time Operating System: an OS designed for predictable, time-bounded responses to events."
+        ]
+      ],
+      "course": {
+        "learn": "A Real-Time Operating System (RTOS) is designed to perform tasks within predictable timing deadlines. It is common in embedded, industrial, automotive, and control systems.",
+        "why": "Security controls must not introduce unpredictable delay that breaks time-sensitive operations.",
+        "example": "A safety controller must process a sensor event within a fixed number of milliseconds, so patches and security agents require careful validation.",
+        "exam": "RTOS clues: deterministic timing, embedded/industrial use, limited resources, safety/availability constraints.",
+        "breakdown": [
+          {
+            "term": "Critical Events",
+            "explanation": "Within RTOS, this is a specific factor you should be able to recognize and explain. Connect it to the purpose of Real-time operating system (RTOS) rather than memorizing the phrase by itself."
+          },
+          {
+            "term": "Timely and deterministic responses",
+            "explanation": "Within RTOS, this is a specific factor you should be able to recognize and explain. Connect it to the purpose of Real-time operating system (RTOS) rather than memorizing the phrase by itself."
+          }
+        ],
+        "defs": [
+          {
+            "term": "RTOS",
+            "definition": "Real-Time Operating System: an OS designed for predictable, time-bounded responses to events."
+          }
+        ],
+        "check_q": "Without looking back, explain RTOS and describe at least two key ideas from this section.",
+        "check_a": "A Real-Time Operating System (RTOS) is designed to perform tasks within predictable timing deadlines. It is common in embedded, industrial, automotive, and control systems. Key ideas include: Critical Events; Timely and deterministic responses.",
+        "points": [
+          "Critical Events",
+          "Timely and deterministic responses"
+        ]
+      }
+    },
+    {
+      "n": 3,
+      "title": "Security Implications",
+      "points": [
+        "Limited Resources",
+        "Timing Constraints",
+        "Memory Protection",
+        "Device Connectivity"
+      ],
+      "raw": "Security Implications\nLimited Resources\nTiming Constraints\nMemory Protection\nDevice Connectivity",
+      "instructional": true,
+      "teach": "Focus on the new risk introduced by the technology or design, then connect that risk to an appropriate mitigation.",
+      "defs": [],
+      "course": {
+        "learn": "This section focuses on **Security Implications** within **Real-time operating system (RTOS)**. A Real-Time Operating System (RTOS) is designed to perform tasks within predictable timing deadlines. It is common in embedded, industrial, automotive, and control systems.",
+        "why": "Security controls must not introduce unpredictable delay that breaks time-sensitive operations.",
+        "example": "A safety controller must process a sensor event within a fixed number of milliseconds, so patches and security agents require careful validation.",
+        "exam": "RTOS clues: deterministic timing, embedded/industrial use, limited resources, safety/availability constraints.",
+        "breakdown": [
+          {
+            "term": "Limited Resources",
+            "explanation": "This is a factor that must be evaluated when using Real-time operating system (RTOS); ignoring it can create operational, security, cost, or compatibility risk."
+          },
+          {
+            "term": "Timing Constraints",
+            "explanation": "This is a factor that must be evaluated when using Real-time operating system (RTOS); ignoring it can create operational, security, cost, or compatibility risk."
+          },
+          {
+            "term": "Memory Protection",
+            "explanation": "This is a factor that must be evaluated when using Real-time operating system (RTOS); ignoring it can create operational, security, cost, or compatibility risk."
+          },
+          {
+            "term": "Device Connectivity",
+            "explanation": "Secure architecture depends on where devices are placed, which trust zones they belong to, how they connect, what attack surface they expose, and what happens when a component fails."
+          }
+        ],
+        "defs": [],
+        "check_q": "Without looking back, explain Security Implications and describe at least two key ideas from this section.",
+        "check_a": "This section focuses on **Security Implications** within **Real-time operating system (RTOS)**. A Real-Time Operating System (RTOS) is designed to perform tasks within predictable timing deadlines. It is common in embedded, industrial, automotive, and control systems. Key ideas include: Limited Resources; Timing Constraints; Memory Protection; Device Connectivity.",
+        "points": [
+          "Limited Resources",
+          "Timing Constraints",
+          "Memory Protection",
+          "Device Connectivity"
+        ]
+      }
+    },
+    {
+      "n": 4,
+      "title": "Security Implications",
+      "points": [
+        "Update Challenges",
+        "Authentication and Access Control",
+        "Dependency on Third-Party Components",
+        "Forensic Challenges"
+      ],
+      "raw": "Security Implications\nUpdate Challenges\nAuthentication and Access Control\nDependency on Third-Party Components\nForensic Challenges",
+      "instructional": true,
+      "teach": "Focus on the new risk introduced by the technology or design, then connect that risk to an appropriate mitigation.",
+      "defs": [
+        [
+          "Authentication",
+          "Proving an identity—answering “who are you?”"
+        ]
+      ],
+      "course": {
+        "learn": "This section focuses on **Security Implications** within **Real-time operating system (RTOS)**. A Real-Time Operating System (RTOS) is designed to perform tasks within predictable timing deadlines. It is common in embedded, industrial, automotive, and control systems.",
+        "why": "Security controls must not introduce unpredictable delay that breaks time-sensitive operations.",
+        "example": "A safety controller must process a sensor event within a fixed number of milliseconds, so patches and security agents require careful validation.",
+        "exam": "RTOS clues: deterministic timing, embedded/industrial use, limited resources, safety/availability constraints.",
+        "breakdown": [
+          {
+            "term": "Update Challenges",
+            "explanation": "This is a factor that must be evaluated when using Real-time operating system (RTOS); ignoring it can create operational, security, cost, or compatibility risk."
+          },
+          {
+            "term": "Authentication and Access Control",
+            "explanation": "Authentication is the process of proving an identity. Factors can be something you know, have, are, do, or somewhere you are; MFA requires factors from more than one category."
+          },
+          {
+            "term": "Dependency on Third-Party Components",
+            "explanation": "Third-party risk comes from vendors, service providers, contractors, and dependencies that connect to systems or handle data. Their weaknesses can become your weaknesses."
+          },
+          {
+            "term": "Forensic Challenges",
+            "explanation": "This is a factor that must be evaluated when using Real-time operating system (RTOS); ignoring it can create operational, security, cost, or compatibility risk."
+          }
+        ],
+        "defs": [
+          {
+            "term": "Authentication",
+            "definition": "Proving an identity—answering “who are you?”"
+          }
+        ],
+        "check_q": "Without looking back, explain Security Implications and describe at least two key ideas from this section.",
+        "check_a": "This section focuses on **Security Implications** within **Real-time operating system (RTOS)**. A Real-Time Operating System (RTOS) is designed to perform tasks within predictable timing deadlines. It is common in embedded, industrial, automotive, and control systems. Key ideas include: Update Challenges; Authentication and Access Control; Dependency on Third-Party Components; Forensic Challenges.",
+        "points": [
+          "Update Challenges",
+          "Authentication and Access Control",
+          "Dependency on Third-Party Components",
+          "Forensic Challenges"
+        ]
+      }
+    },
+    {
+      "n": 5,
+      "title": "Embedded Systems",
+      "points": [],
+      "raw": "Embedded Systems",
+      "instructional": false,
+      "teach": "Read the source points, then explain the slide without looking. On Security+, recognition is not enough—you should be able to apply the concept to a scenario.",
+      "defs": []
+    }
+  ],
+  "slide_count": 5,
+  "instructional_count": 3,
+  "concepts": [
+    "RTOS",
+    "Security Implications"
+  ],
+  "source_filename": "10.11_Real-time_operating_system_RTOS.pdf"
+}

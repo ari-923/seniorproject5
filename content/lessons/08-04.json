@@ -1,0 +1,603 @@
+{
+  "id": "08.04",
+  "chapter": 8,
+  "sub": 4,
+  "title": "Application attacks",
+  "chapter_name": "Attack Indicators",
+  "slides": [
+    {
+      "n": 1,
+      "title": "Application Attack Indicators",
+      "points": [],
+      "raw": "Application Attack Indicators",
+      "instructional": false,
+      "teach": "Treat these as observable clues. On the exam, be ready to infer the most likely attack from the pattern of indicators.",
+      "defs": []
+    },
+    {
+      "n": 2,
+      "title": "Injection Attacks",
+      "points": [
+        "SQL",
+        "Injection",
+        "Cross-Site",
+        "Scripting",
+        "(XSS)",
+        "Command",
+        "Injection",
+        "LDAP",
+        "Injection"
+      ],
+      "raw": "Injection Attacks\nSQL\nInjection\nCross-Site\nScripting\n(XSS)\nCommand\nInjection\nLDAP\nInjection",
+      "instructional": true,
+      "teach": "Learn the attacker behavior, the evidence it leaves behind, and the control that best detects or mitigates it.",
+      "defs": [
+        [
+          "XSS",
+          "Cross-Site Scripting: malicious client-side script executes in another user’s browser."
+        ]
+      ],
+      "course": {
+        "learn": "Injection occurs when untrusted input is interpreted as code, commands, or query syntax by another system. The underlying problem is mixing data with executable instructions.",
+        "why": "Injection can let an attacker make the application perform operations the developer never intended.",
+        "example": "A web form passes raw user input directly into a SQL statement, allowing the user to append database commands.",
+        "exam": "SQL, command, and LDAP injection all share the same idea: unsafe input changes the structure of an interpreter/query.",
+        "breakdown": [
+          {
+            "term": "SQL",
+            "explanation": "Application monitoring measures application behavior, performance, errors, and security events. APM focuses on health/performance, while a WAF inspects and protects web requests."
+          },
+          {
+            "term": "Injection",
+            "explanation": "Within Injection Attacks, this is a specific factor you should be able to recognize and explain. Connect it to the purpose of Application attacks rather than memorizing the phrase by itself."
+          },
+          {
+            "term": "Cross-Site",
+            "explanation": "Within Injection Attacks, this is a specific factor you should be able to recognize and explain. Connect it to the purpose of Application attacks rather than memorizing the phrase by itself."
+          },
+          {
+            "term": "Scripting",
+            "explanation": "Within Injection Attacks, this is a specific factor you should be able to recognize and explain. Connect it to the purpose of Application attacks rather than memorizing the phrase by itself."
+          },
+          {
+            "term": "(XSS)",
+            "explanation": "Cross-Site Scripting (XSS) lets attacker-controlled script execute in another user's browser in the context of a trusted site."
+          },
+          {
+            "term": "Command",
+            "explanation": "Within Injection Attacks, this is a specific factor you should be able to recognize and explain. Connect it to the purpose of Application attacks rather than memorizing the phrase by itself."
+          },
+          {
+            "term": "Injection",
+            "explanation": "Within Injection Attacks, this is a specific factor you should be able to recognize and explain. Connect it to the purpose of Application attacks rather than memorizing the phrase by itself."
+          },
+          {
+            "term": "LDAP",
+            "explanation": "Application monitoring measures application behavior, performance, errors, and security events. APM focuses on health/performance, while a WAF inspects and protects web requests."
+          },
+          {
+            "term": "Injection",
+            "explanation": "Within Injection Attacks, this is a specific factor you should be able to recognize and explain. Connect it to the purpose of Application attacks rather than memorizing the phrase by itself."
+          }
+        ],
+        "defs": [
+          {
+            "term": "XSS",
+            "definition": "Cross-Site Scripting: malicious client-side script executes in another user’s browser."
+          }
+        ],
+        "check_q": "Without looking back, explain Injection Attacks and describe at least two key ideas from this section.",
+        "check_a": "Injection occurs when untrusted input is interpreted as code, commands, or query syntax by another system. The underlying problem is mixing data with executable instructions. Key ideas include: SQL; Injection; Cross-Site; Scripting; (XSS).",
+        "points": [
+          "SQL",
+          "Injection",
+          "Cross-Site",
+          "Scripting",
+          "(XSS)",
+          "Command",
+          "Injection",
+          "LDAP",
+          "Injection"
+        ]
+      }
+    },
+    {
+      "n": 3,
+      "title": "SQL Injection",
+      "points": [
+        "Presence of unusual characters in user inputs",
+        "Unexpected behavior",
+        "Error messages revealing SQL syntax"
+      ],
+      "raw": "SQL Injection\nPresence of unusual characters in user inputs\nUnexpected behavior\nError messages revealing SQL syntax",
+      "instructional": true,
+      "teach": "Read the source points, then explain the slide without looking. On Security+, recognition is not enough—you should be able to apply the concept to a scenario.",
+      "defs": [],
+      "course": {
+        "learn": "SQL injection changes a database query by inserting malicious SQL through application input. Prepared/parameterized queries keep user data separate from SQL syntax.",
+        "why": "Database compromise can expose or modify large amounts of sensitive information.",
+        "example": "The input `' OR 1=1 --` changes an unsafe login query so its condition always evaluates true.",
+        "exam": "Best mitigation: parameterized/prepared queries. WAF can help, but secure coding fixes the root cause.",
+        "breakdown": [
+          {
+            "term": "Presence of unusual characters in user inputs",
+            "explanation": "Within SQL Injection, this is a specific factor you should be able to recognize and explain. Connect it to the purpose of Application attacks rather than memorizing the phrase by itself."
+          },
+          {
+            "term": "Unexpected behavior",
+            "explanation": "Within SQL Injection, this is a specific factor you should be able to recognize and explain. Connect it to the purpose of Application attacks rather than memorizing the phrase by itself."
+          },
+          {
+            "term": "Error messages revealing SQL syntax",
+            "explanation": "Within SQL Injection, this is a specific factor you should be able to recognize and explain. Connect it to the purpose of Application attacks rather than memorizing the phrase by itself."
+          }
+        ],
+        "defs": [],
+        "check_q": "Without looking back, explain SQL Injection and describe at least two key ideas from this section.",
+        "check_a": "SQL injection changes a database query by inserting malicious SQL through application input. Prepared/parameterized queries keep user data separate from SQL syntax. Key ideas include: Presence of unusual characters in user inputs; Unexpected behavior; Error messages revealing SQL syntax.",
+        "points": [
+          "Presence of unusual characters in user inputs",
+          "Unexpected behavior",
+          "Error messages revealing SQL syntax"
+        ]
+      }
+    },
+    {
+      "n": 4,
+      "title": "Cross-site Scripting (XSS)",
+      "points": [
+        "Inclusion of script tags etc. in user inputs",
+        "Unexpected changes in the Web pages",
+        "Unauthorized access to user session data"
+      ],
+      "raw": "Cross-site Scripting (XSS)\nInclusion of script tags etc. in user inputs\nUnexpected changes in the Web pages\nUnauthorized access to user session data",
+      "instructional": true,
+      "teach": "Read the source points, then explain the slide without looking. On Security+, recognition is not enough—you should be able to apply the concept to a scenario.",
+      "defs": [
+        [
+          "XSS",
+          "Cross-Site Scripting: malicious client-side script executes in another user’s browser."
+        ]
+      ],
+      "course": {
+        "learn": "Cross-Site Scripting (XSS) lets attacker-controlled script execute in another user's browser in the context of a trusted site.",
+        "why": "The browser may give that script access to session data or the ability to perform actions as the victim.",
+        "example": "A comment field stores unsanitized JavaScript, and every user who views the page runs the attacker's script.",
+        "exam": "XSS targets the browser/client. Output encoding and safe templating are core mitigations.",
+        "breakdown": [
+          {
+            "term": "Inclusion of script tags etc. in user inputs",
+            "explanation": "Within Cross-site Scripting (XSS), this is a specific factor you should be able to recognize and explain. Connect it to the purpose of Application attacks rather than memorizing the phrase by itself."
+          },
+          {
+            "term": "Unexpected changes in the Web pages",
+            "explanation": "Within Cross-site Scripting (XSS), this is a specific factor you should be able to recognize and explain. Connect it to the purpose of Application attacks rather than memorizing the phrase by itself."
+          },
+          {
+            "term": "Unauthorized access to user session data",
+            "explanation": "This concerns who or what can reach a resource and what actions are permitted once access is granted."
+          }
+        ],
+        "defs": [
+          {
+            "term": "XSS",
+            "definition": "Cross-Site Scripting: malicious client-side script executes in another user’s browser."
+          }
+        ],
+        "check_q": "Without looking back, explain Cross-site Scripting (XSS) and describe at least two key ideas from this section.",
+        "check_a": "Cross-Site Scripting (XSS) lets attacker-controlled script execute in another user's browser in the context of a trusted site. Key ideas include: Inclusion of script tags etc. in user inputs; Unexpected changes in the Web pages; Unauthorized access to user session data.",
+        "points": [
+          "Inclusion of script tags etc. in user inputs",
+          "Unexpected changes in the Web pages",
+          "Unauthorized access to user session data"
+        ]
+      }
+    },
+    {
+      "n": 5,
+      "title": "Command Injection",
+      "points": [
+        "Presence of special characters in user inputs",
+        "Unexpected system commands or operations being",
+        "executed",
+        "Error messages revealing command execution failures"
+      ],
+      "raw": "Command Injection\nPresence of special characters in user inputs\nUnexpected system commands or operations being\nexecuted\nError messages revealing command execution failures",
+      "instructional": true,
+      "teach": "Read the source points, then explain the slide without looking. On Security+, recognition is not enough—you should be able to apply the concept to a scenario.",
+      "defs": [],
+      "course": {
+        "learn": "Command injection occurs when untrusted input is passed to an operating-system shell or command interpreter and becomes part of an executable command.",
+        "why": "Successful command injection can give attackers direct system-level capabilities.",
+        "example": "A diagnostic web page runs `ping ` plus user input; the attacker appends shell syntax to run another command.",
+        "exam": "Shell/OS commands = command injection. Use safe APIs, input validation, and avoid invoking a shell with raw user data.",
+        "breakdown": [
+          {
+            "term": "Presence of special characters in user inputs",
+            "explanation": "Within Command Injection, this is a specific factor you should be able to recognize and explain. Connect it to the purpose of Application attacks rather than memorizing the phrase by itself."
+          },
+          {
+            "term": "Unexpected system commands or operations being",
+            "explanation": "Within Command Injection, this is a specific factor you should be able to recognize and explain. Connect it to the purpose of Application attacks rather than memorizing the phrase by itself."
+          },
+          {
+            "term": "executed",
+            "explanation": "Within Command Injection, this is a specific factor you should be able to recognize and explain. Connect it to the purpose of Application attacks rather than memorizing the phrase by itself."
+          },
+          {
+            "term": "Error messages revealing command execution failures",
+            "explanation": "Within Command Injection, this is a specific factor you should be able to recognize and explain. Connect it to the purpose of Application attacks rather than memorizing the phrase by itself."
+          }
+        ],
+        "defs": [],
+        "check_q": "Without looking back, explain Command Injection and describe at least two key ideas from this section.",
+        "check_a": "Command injection occurs when untrusted input is passed to an operating-system shell or command interpreter and becomes part of an executable command. Key ideas include: Presence of special characters in user inputs; Unexpected system commands or operations being; executed; Error messages revealing command execution failures.",
+        "points": [
+          "Presence of special characters in user inputs",
+          "Unexpected system commands or operations being",
+          "executed",
+          "Error messages revealing command execution failures"
+        ]
+      }
+    },
+    {
+      "n": 6,
+      "title": "LDAP Injection",
+      "points": [
+        "Injection of LDAP metacharacters or filters in user",
+        "inputs",
+        "Unexpected access to directory information",
+        "Authentication bypass or exposure of sensitive",
+        "directory contents"
+      ],
+      "raw": "LDAP Injection\nInjection of LDAP metacharacters or filters in user\ninputs\nUnexpected access to directory information\nAuthentication bypass or exposure of sensitive\ndirectory contents",
+      "instructional": true,
+      "teach": "Read the source points, then explain the slide without looking. On Security+, recognition is not enough—you should be able to apply the concept to a scenario.",
+      "defs": [
+        [
+          "Authentication",
+          "Proving an identity—answering “who are you?”"
+        ]
+      ],
+      "course": {
+        "learn": "LDAP injection alters an LDAP directory query by supplying input that changes the intended filter or command structure.",
+        "why": "It can bypass authentication or expose directory information when applications build LDAP queries unsafely.",
+        "example": "A login form concatenates untrusted input into an LDAP filter, allowing a crafted value to match unintended accounts.",
+        "exam": "Same root problem as SQL injection, but the target interpreter/query language is LDAP.",
+        "breakdown": [
+          {
+            "term": "Injection of LDAP metacharacters or filters in user",
+            "explanation": "Within LDAP Injection, this is a specific factor you should be able to recognize and explain. Connect it to the purpose of Application attacks rather than memorizing the phrase by itself."
+          },
+          {
+            "term": "inputs",
+            "explanation": "Within LDAP Injection, this is a specific factor you should be able to recognize and explain. Connect it to the purpose of Application attacks rather than memorizing the phrase by itself."
+          },
+          {
+            "term": "Unexpected access to directory information",
+            "explanation": "This concerns who or what can reach a resource and what actions are permitted once access is granted."
+          },
+          {
+            "term": "Authentication bypass or exposure of sensitive",
+            "explanation": "Authentication is the process of proving an identity. Factors can be something you know, have, are, do, or somewhere you are; MFA requires factors from more than one category."
+          },
+          {
+            "term": "directory contents",
+            "explanation": "Within LDAP Injection, this is a specific factor you should be able to recognize and explain. Connect it to the purpose of Application attacks rather than memorizing the phrase by itself."
+          }
+        ],
+        "defs": [
+          {
+            "term": "Authentication",
+            "definition": "Proving an identity—answering “who are you?”"
+          }
+        ],
+        "check_q": "Without looking back, explain LDAP Injection and describe at least two key ideas from this section.",
+        "check_a": "LDAP injection alters an LDAP directory query by supplying input that changes the intended filter or command structure. Key ideas include: Injection of LDAP metacharacters or filters in user; inputs; Unexpected access to directory information; Authentication bypass or exposure of sensitive; directory contents.",
+        "points": [
+          "Injection of LDAP metacharacters or filters in user",
+          "inputs",
+          "Unexpected access to directory information",
+          "Authentication bypass or exposure of sensitive",
+          "directory contents"
+        ]
+      }
+    },
+    {
+      "n": 7,
+      "title": "Buffer Overflow",
+      "points": [
+        "Unusual",
+        "program",
+        "crashes",
+        "Execution of",
+        "arbitrary code",
+        "Unusual",
+        "network traffic",
+        "patterns"
+      ],
+      "raw": "Buffer Overflow\nUnusual\nprogram\ncrashes\nExecution of\narbitrary code\nUnusual\nnetwork traffic\npatterns",
+      "instructional": true,
+      "teach": "Read the source points, then explain the slide without looking. On Security+, recognition is not enough—you should be able to apply the concept to a scenario.",
+      "defs": [
+        [
+          "Buffer overflow",
+          "A memory-safety flaw where more data is written into a buffer than it was designed to hold."
+        ]
+      ],
+      "course": {
+        "learn": "A buffer overflow happens when software writes more data into a memory region than it was designed to hold, potentially corrupting adjacent memory and control data.",
+        "why": "Memory corruption can crash programs or allow arbitrary code execution and privilege escalation.",
+        "example": "An application copies an oversized network field into a fixed-length stack buffer without bounds checking.",
+        "exam": "Memory-safety flaw + oversized input = buffer overflow. Modern mitigations include safe languages/APIs, bounds checks, ASLR, DEP/NX, and stack protections.",
+        "breakdown": [
+          {
+            "term": "Unusual program",
+            "explanation": "Within Buffer Overflow, this is a specific factor you should be able to recognize and explain. Connect it to the purpose of Application attacks rather than memorizing the phrase by itself."
+          },
+          {
+            "term": "crashes",
+            "explanation": "Within Buffer Overflow, this is a specific factor you should be able to recognize and explain. Connect it to the purpose of Application attacks rather than memorizing the phrase by itself."
+          },
+          {
+            "term": "Execution of arbitrary code",
+            "explanation": "Within Buffer Overflow, this is a specific factor you should be able to recognize and explain. Connect it to the purpose of Application attacks rather than memorizing the phrase by itself."
+          },
+          {
+            "term": "Unusual network traffic",
+            "explanation": "Within Buffer Overflow, this is a specific factor you should be able to recognize and explain. Connect it to the purpose of Application attacks rather than memorizing the phrase by itself."
+          },
+          {
+            "term": "patterns",
+            "explanation": "Within Buffer Overflow, this is a specific factor you should be able to recognize and explain. Connect it to the purpose of Application attacks rather than memorizing the phrase by itself."
+          }
+        ],
+        "defs": [
+          {
+            "term": "Buffer overflow",
+            "definition": "A memory-safety flaw where more data is written into a buffer than it was designed to hold."
+          }
+        ],
+        "check_q": "Without looking back, explain Buffer Overflow and describe at least two key ideas from this section.",
+        "check_a": "A buffer overflow happens when software writes more data into a memory region than it was designed to hold, potentially corrupting adjacent memory and control data. Key ideas include: Unusual program; crashes; Execution of arbitrary code; Unusual network traffic; patterns.",
+        "points": [
+          "Unusual program",
+          "crashes",
+          "Execution of arbitrary code",
+          "Unusual network traffic",
+          "patterns"
+        ]
+      }
+    },
+    {
+      "n": 8,
+      "title": "Replay",
+      "points": [
+        "Repeated or",
+        "duplicated",
+        "requests",
+        "Unexpected",
+        "reuse of",
+        "authentication",
+        "tokens",
+        "Unusual patterns",
+        "in data",
+        "transmission"
+      ],
+      "raw": "Replay\nRepeated or\nduplicated\nrequests\nUnexpected\nreuse of\nauthentication\ntokens\nUnusual patterns\nin data\ntransmission",
+      "instructional": true,
+      "teach": "Read the source points, then explain the slide without looking. On Security+, recognition is not enough—you should be able to apply the concept to a scenario.",
+      "defs": [
+        [
+          "Authentication",
+          "Proving an identity—answering “who are you?”"
+        ]
+      ],
+      "course": {
+        "learn": "Replay attacks capture valid data or authentication material and transmit it again later so the receiver accepts an old action as new.",
+        "why": "If a protocol does not prove freshness, an attacker may not need to know the underlying secret.",
+        "example": "A captured authentication request is resent later and accepted because the protocol uses no nonce or timestamp.",
+        "exam": "Freshness controls such as nonces, timestamps, sequence numbers, and short-lived tokens help stop replay.",
+        "breakdown": [
+          {
+            "term": "Repeated or duplicated",
+            "explanation": "Within Replay, this is a specific factor you should be able to recognize and explain. Connect it to the purpose of Application attacks rather than memorizing the phrase by itself."
+          },
+          {
+            "term": "requests",
+            "explanation": "Within Replay, this is a specific factor you should be able to recognize and explain. Connect it to the purpose of Application attacks rather than memorizing the phrase by itself."
+          },
+          {
+            "term": "Unexpected reuse of",
+            "explanation": "Within Replay, this is a specific factor you should be able to recognize and explain. Connect it to the purpose of Application attacks rather than memorizing the phrase by itself."
+          },
+          {
+            "term": "authentication tokens",
+            "explanation": "Authentication is the process of proving an identity. Factors can be something you know, have, are, do, or somewhere you are; MFA requires factors from more than one category."
+          },
+          {
+            "term": "Unusual patterns in data",
+            "explanation": "Within Replay, this is a specific factor you should be able to recognize and explain. Connect it to the purpose of Application attacks rather than memorizing the phrase by itself."
+          },
+          {
+            "term": "transmission",
+            "explanation": "Within Replay, this is a specific factor you should be able to recognize and explain. Connect it to the purpose of Application attacks rather than memorizing the phrase by itself."
+          }
+        ],
+        "defs": [
+          {
+            "term": "Authentication",
+            "definition": "Proving an identity—answering “who are you?”"
+          }
+        ],
+        "check_q": "Without looking back, explain Replay and describe at least two key ideas from this section.",
+        "check_a": "Replay attacks capture valid data or authentication material and transmit it again later so the receiver accepts an old action as new. Key ideas include: Repeated or duplicated; requests; Unexpected reuse of; authentication tokens; Unusual patterns in data.",
+        "points": [
+          "Repeated or duplicated",
+          "requests",
+          "Unexpected reuse of",
+          "authentication tokens",
+          "Unusual patterns in data",
+          "transmission"
+        ]
+      }
+    },
+    {
+      "n": 9,
+      "title": "Privilege Escalation",
+      "points": [
+        "Unusual account activities",
+        "Unauthorized access to privileged functions",
+        "Changes in user roles or permissions"
+      ],
+      "raw": "Privilege Escalation\nUnusual account activities\nUnauthorized access to privileged functions\nChanges in user roles or permissions",
+      "instructional": true,
+      "teach": "Read the source points, then explain the slide without looking. On Security+, recognition is not enough—you should be able to apply the concept to a scenario.",
+      "defs": [],
+      "course": {
+        "learn": "Privilege escalation occurs when an attacker moves from lower privileges to higher privileges, such as from a normal user to administrator/root.",
+        "why": "Higher privilege increases the attacker's ability to disable defenses, access sensitive data, and persist.",
+        "example": "A local vulnerability lets a standard user execute code as SYSTEM.",
+        "exam": "The key clue is gaining more permission than originally authorized.",
+        "breakdown": [
+          {
+            "term": "Unusual account activities",
+            "explanation": "Within Privilege Escalation, this is a specific factor you should be able to recognize and explain. Connect it to the purpose of Application attacks rather than memorizing the phrase by itself."
+          },
+          {
+            "term": "Unauthorized access to privileged functions",
+            "explanation": "This concerns who or what can reach a resource and what actions are permitted once access is granted."
+          },
+          {
+            "term": "Changes in user roles or permissions",
+            "explanation": "Permissions define the actions a subject may perform on a resource, such as read, write, execute, modify, or administer. They are one mechanism used to implement authorization."
+          }
+        ],
+        "defs": [],
+        "check_q": "Without looking back, explain Privilege Escalation and describe at least two key ideas from this section.",
+        "check_a": "Privilege escalation occurs when an attacker moves from lower privileges to higher privileges, such as from a normal user to administrator/root. Key ideas include: Unusual account activities; Unauthorized access to privileged functions; Changes in user roles or permissions.",
+        "points": [
+          "Unusual account activities",
+          "Unauthorized access to privileged functions",
+          "Changes in user roles or permissions"
+        ]
+      }
+    },
+    {
+      "n": 10,
+      "title": "Forgery",
+      "points": [
+        "Unexpected changes in data integrity",
+        "Use of fake or manipulated documents or tokens",
+        "Anomalies in transaction details"
+      ],
+      "raw": "Forgery\nUnexpected changes in data integrity\nUse of fake or manipulated documents or tokens\nAnomalies in transaction details",
+      "instructional": true,
+      "teach": "Read the source points, then explain the slide without looking. On Security+, recognition is not enough—you should be able to apply the concept to a scenario.",
+      "defs": [
+        [
+          "Integrity",
+          "Ensuring data stays accurate, complete, and protected from unauthorized modification."
+        ]
+      ],
+      "course": {
+        "learn": "Forgery creates or alters data, documents, messages, tokens, or transactions so they appear legitimate when they are not.",
+        "why": "Successful forgery undermines integrity and trust in the system's evidence.",
+        "example": "An attacker modifies a payment instruction and creates a fake approval token that appears to come from an authorized user.",
+        "exam": "Digital signatures, integrity checks, authenticated protocols, and protected audit trails help detect or prevent forgery.",
+        "breakdown": [
+          {
+            "term": "Unexpected changes in data integrity",
+            "explanation": "Within Forgery, this is a specific factor you should be able to recognize and explain. Connect it to the purpose of Application attacks rather than memorizing the phrase by itself."
+          },
+          {
+            "term": "Use of fake or manipulated documents or tokens",
+            "explanation": "Within Forgery, this is a specific factor you should be able to recognize and explain. Connect it to the purpose of Application attacks rather than memorizing the phrase by itself."
+          },
+          {
+            "term": "Anomalies in transaction details",
+            "explanation": "Within Forgery, this is a specific factor you should be able to recognize and explain. Connect it to the purpose of Application attacks rather than memorizing the phrase by itself."
+          }
+        ],
+        "defs": [
+          {
+            "term": "Integrity",
+            "definition": "Ensuring data stays accurate, complete, and protected from unauthorized modification."
+          }
+        ],
+        "check_q": "Without looking back, explain Forgery and describe at least two key ideas from this section.",
+        "check_a": "Forgery creates or alters data, documents, messages, tokens, or transactions so they appear legitimate when they are not. Key ideas include: Unexpected changes in data integrity; Use of fake or manipulated documents or tokens; Anomalies in transaction details.",
+        "points": [
+          "Unexpected changes in data integrity",
+          "Use of fake or manipulated documents or tokens",
+          "Anomalies in transaction details"
+        ]
+      }
+    },
+    {
+      "n": 11,
+      "title": "Directory Traversal",
+      "points": [
+        "Attempts to access files using \"../\"",
+        "Unusual file access patterns",
+        "Unauthorized access to sensitive files or directories"
+      ],
+      "raw": "Directory Traversal\nAttempts to access files using \"../\"\nUnusual file access patterns\nUnauthorized access to sensitive files or directories",
+      "instructional": true,
+      "teach": "Read the source points, then explain the slide without looking. On Security+, recognition is not enough—you should be able to apply the concept to a scenario.",
+      "defs": [],
+      "course": {
+        "learn": "Directory traversal manipulates file paths so an application accesses files outside the intended directory, often using sequences such as `../`.",
+        "why": "If path validation is weak, an attacker may read configuration files, credentials, or other sensitive content.",
+        "example": "A download parameter meant for report.pdf is changed to ../../etc/passwd.",
+        "exam": "File path escapes intended folder = directory traversal/path traversal.",
+        "breakdown": [
+          {
+            "term": "Attempts to access files using \"../\"",
+            "explanation": "This concerns who or what can reach a resource and what actions are permitted once access is granted."
+          },
+          {
+            "term": "Unusual file access patterns",
+            "explanation": "This concerns who or what can reach a resource and what actions are permitted once access is granted."
+          },
+          {
+            "term": "Unauthorized access to sensitive files or directories",
+            "explanation": "This concerns who or what can reach a resource and what actions are permitted once access is granted."
+          }
+        ],
+        "defs": [],
+        "check_q": "Without looking back, explain Directory Traversal and describe at least two key ideas from this section.",
+        "check_a": "Directory traversal manipulates file paths so an application accesses files outside the intended directory, often using sequences such as `../`. Key ideas include: Attempts to access files using \"../\"; Unusual file access patterns; Unauthorized access to sensitive files or directories.",
+        "points": [
+          "Attempts to access files using \"../\"",
+          "Unusual file access patterns",
+          "Unauthorized access to sensitive files or directories"
+        ]
+      }
+    },
+    {
+      "n": 12,
+      "title": "Cryptographic Attack Indicators",
+      "points": [],
+      "raw": "Cryptographic Attack\nIndicators",
+      "instructional": false,
+      "teach": "Treat these as observable clues. On the exam, be ready to infer the most likely attack from the pattern of indicators.",
+      "defs": []
+    }
+  ],
+  "slide_count": 12,
+  "instructional_count": 10,
+  "concepts": [
+    "Injection Attacks",
+    "SQL Injection",
+    "Cross-site Scripting (XSS)",
+    "Command Injection",
+    "LDAP Injection",
+    "Buffer Overflow",
+    "Replay",
+    "Privilege Escalation",
+    "Forgery",
+    "Directory Traversal"
+  ],
+  "source_filename": "08.04_Application_attacks.pdf"
+}

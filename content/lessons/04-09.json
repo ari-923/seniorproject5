@@ -1,0 +1,135 @@
+{
+  "id": "04.09",
+  "chapter": 4,
+  "sub": 9,
+  "title": "Open public ledger",
+  "chapter_name": "Cryptography & PKI",
+  "slides": [
+    {
+      "n": 1,
+      "title": "Open Public Ledger",
+      "points": [],
+      "raw": "Open Public Ledger",
+      "instructional": false,
+      "teach": "Read the source points, then explain the slide without looking. On Security+, recognition is not enough—you should be able to apply the concept to a scenario.",
+      "defs": []
+    },
+    {
+      "n": 2,
+      "title": "Open Public Ledger",
+      "points": [
+        "Decentralization",
+        "Transparency",
+        "Accessibility",
+        "Tamper-Resistance"
+      ],
+      "raw": "Open Public Ledger\nDecentralization\nTransparency\nAccessibility\nTamper-Resistance",
+      "instructional": true,
+      "teach": "Read the source points, then explain the slide without looking. On Security+, recognition is not enough—you should be able to apply the concept to a scenario.",
+      "defs": [],
+      "course": {
+        "learn": "An open public ledger allows participants to view and usually verify ledger records without relying on a private central database. Public visibility improves transparency but creates privacy considerations.",
+        "why": "The design can make independent verification possible across many participants.",
+        "example": "A public blockchain lets anyone inspect transaction history while ownership may be represented by addresses rather than real names.",
+        "exam": "Public ledger means visibility and shared verification; it does not mean every record is confidential or anonymous.",
+        "breakdown": [
+          {
+            "term": "Decentralization",
+            "explanation": "Within Open Public Ledger, this is a specific factor you should be able to recognize and explain. Connect it to the purpose of Open public ledger rather than memorizing the phrase by itself."
+          },
+          {
+            "term": "Transparency",
+            "explanation": "Within Open Public Ledger, this is a specific factor you should be able to recognize and explain. Connect it to the purpose of Open public ledger rather than memorizing the phrase by itself."
+          },
+          {
+            "term": "Accessibility",
+            "explanation": "This concerns who or what can reach a resource and what actions are permitted once access is granted."
+          },
+          {
+            "term": "Tamper-Resistance",
+            "explanation": "Within Open Public Ledger, this is a specific factor you should be able to recognize and explain. Connect it to the purpose of Open public ledger rather than memorizing the phrase by itself."
+          }
+        ],
+        "defs": [],
+        "check_q": "Without looking back, explain Open Public Ledger and describe at least two key ideas from this section.",
+        "check_a": "An open public ledger allows participants to view and usually verify ledger records without relying on a private central database. Public visibility improves transparency but creates privacy considerations. Key ideas include: Decentralization; Transparency; Accessibility; Tamper-Resistance.",
+        "points": [
+          "Decentralization",
+          "Transparency",
+          "Accessibility",
+          "Tamper-Resistance"
+        ]
+      }
+    },
+    {
+      "n": 3,
+      "title": "Open Public Ledger",
+      "points": [
+        "Immutable Record",
+        "Blockchain Technology",
+        "Cryptocurrencies",
+        "Smart Contracts"
+      ],
+      "raw": "Open Public Ledger\nImmutable Record\nBlockchain Technology\nCryptocurrencies\nSmart Contracts",
+      "instructional": true,
+      "teach": "Read the source points, then explain the slide without looking. On Security+, recognition is not enough—you should be able to apply the concept to a scenario.",
+      "defs": [
+        [
+          "Blockchain",
+          "A distributed, append-oriented ledger where blocks of records are cryptographically linked, making unauthorized alteration difficult."
+        ]
+      ],
+      "course": {
+        "learn": "An open public ledger allows participants to view and usually verify ledger records without relying on a private central database. Public visibility improves transparency but creates privacy considerations.",
+        "why": "The design can make independent verification possible across many participants.",
+        "example": "A public blockchain lets anyone inspect transaction history while ownership may be represented by addresses rather than real names.",
+        "exam": "Public ledger means visibility and shared verification; it does not mean every record is confidential or anonymous.",
+        "breakdown": [
+          {
+            "term": "Immutable Record",
+            "explanation": "Within Open Public Ledger, this is a specific factor you should be able to recognize and explain. Connect it to the purpose of Open public ledger rather than memorizing the phrase by itself."
+          },
+          {
+            "term": "Blockchain Technology",
+            "explanation": "A blockchain is an append-oriented distributed ledger in which records are grouped into blocks and cryptographically linked. Changing an earlier record can invalidate later links, making tampering easier to detect."
+          },
+          {
+            "term": "Cryptocurrencies",
+            "explanation": "Within Open Public Ledger, this is a specific factor you should be able to recognize and explain. Connect it to the purpose of Open public ledger rather than memorizing the phrase by itself."
+          },
+          {
+            "term": "Smart Contracts",
+            "explanation": "Within Open Public Ledger, this is a specific factor you should be able to recognize and explain. Connect it to the purpose of Open public ledger rather than memorizing the phrase by itself."
+          }
+        ],
+        "defs": [
+          {
+            "term": "Blockchain",
+            "definition": "A distributed, append-oriented ledger where blocks of records are cryptographically linked, making unauthorized alteration difficult."
+          }
+        ],
+        "check_q": "Without looking back, explain Open Public Ledger and describe at least two key ideas from this section.",
+        "check_a": "An open public ledger allows participants to view and usually verify ledger records without relying on a private central database. Public visibility improves transparency but creates privacy considerations. Key ideas include: Immutable Record; Blockchain Technology; Cryptocurrencies; Smart Contracts.",
+        "points": [
+          "Immutable Record",
+          "Blockchain Technology",
+          "Cryptocurrencies",
+          "Smart Contracts"
+        ]
+      }
+    },
+    {
+      "n": 4,
+      "title": "Certificates",
+      "points": [],
+      "raw": "Certificates",
+      "instructional": false,
+      "teach": "Read the source points, then explain the slide without looking. On Security+, recognition is not enough—you should be able to apply the concept to a scenario.",
+      "defs": []
+    }
+  ],
+  "slide_count": 4,
+  "instructional_count": 2,
+  "concepts": [],
+  "source_filename": "04.09_Open_public_ledger.pdf"
+}

@@ -1,0 +1,78 @@
+{
+  "id": "03.03",
+  "chapter": 3,
+  "sub": 3,
+  "title": "Documentation",
+  "chapter_name": "Change Management & Security Operations",
+  "slides": [
+    {
+      "n": 1,
+      "title": "Documentation",
+      "points": [],
+      "raw": "Documentation",
+      "instructional": false,
+      "teach": "Read the source points, then explain the slide without looking. On Security+, recognition is not enough—you should be able to apply the concept to a scenario.",
+      "defs": []
+    },
+    {
+      "n": 2,
+      "title": "Documentation",
+      "points": [
+        "Updating Diagrams",
+        "Updating Policies and",
+        "Procedures",
+        "Version Control"
+      ],
+      "raw": "Documentation\nUpdating Diagrams\nUpdating Policies and\nProcedures\nVersion Control",
+      "instructional": true,
+      "teach": "Read the source points, then explain the slide without looking. On Security+, recognition is not enough—you should be able to apply the concept to a scenario.",
+      "defs": [],
+      "course": {
+        "learn": "Security documentation keeps diagrams, policies, procedures, configurations, and versions synchronized with the real environment.",
+        "why": "Outdated documentation creates operational mistakes and slows incident response because staff make decisions using incorrect assumptions.",
+        "example": "After segmenting a network, the team updates the architecture diagram, firewall procedure, and configuration repository.",
+        "exam": "Version control answers who changed what and when; documentation should be updated as part of the change process, not months later.",
+        "breakdown": [
+          {
+            "term": "Updating Diagrams",
+            "explanation": "Within Documentation, this is a specific factor you should be able to recognize and explain. Connect it to the purpose of Documentation rather than memorizing the phrase by itself."
+          },
+          {
+            "term": "Updating Policies and Procedures",
+            "explanation": "Within Documentation, this is a specific factor you should be able to recognize and explain. Connect it to the purpose of Documentation rather than memorizing the phrase by itself."
+          },
+          {
+            "term": "Version Control",
+            "explanation": "Tracks revisions so teams know what changed, who changed it, and can recover earlier versions."
+          }
+        ],
+        "defs": [],
+        "check_q": "Without looking back, explain Documentation and describe at least two key ideas from this section.",
+        "check_a": "Security documentation keeps diagrams, policies, procedures, configurations, and versions synchronized with the real environment. Key ideas include: Updating Diagrams; Updating Policies and Procedures; Version Control.",
+        "points": [
+          "Updating Diagrams",
+          "Updating Policies and Procedures",
+          "Version Control"
+        ]
+      }
+    },
+    {
+      "n": 3,
+      "title": "Public Key Infrastructure (PKI)",
+      "points": [],
+      "raw": "Public Key Infrastructure (PKI)",
+      "instructional": false,
+      "teach": "Read the source points, then explain the slide without looking. On Security+, recognition is not enough—you should be able to apply the concept to a scenario.",
+      "defs": [
+        [
+          "PKI",
+          "Public Key Infrastructure: the ecosystem of certificates, public/private keys, certificate authorities, revocation, and trust relationships."
+        ]
+      ]
+    }
+  ],
+  "slide_count": 3,
+  "instructional_count": 1,
+  "concepts": [],
+  "source_filename": "03.03_Documentation.pdf"
+}

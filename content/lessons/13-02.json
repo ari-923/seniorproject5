@@ -1,0 +1,200 @@
+{
+  "id": "13.02",
+  "chapter": 13,
+  "sub": 2,
+  "title": "Site considerations",
+  "chapter_name": "Resilience & Recovery",
+  "slides": [
+    {
+      "n": 1,
+      "title": "Site Considerations",
+      "points": [],
+      "raw": "Site Considerations",
+      "instructional": false,
+      "teach": "These are design tradeoffs. Learn why each factor matters rather than memorizing the words alone.",
+      "defs": []
+    },
+    {
+      "n": 2,
+      "title": "Hot Site",
+      "points": [
+        "Fully equipped",
+        "Up-to-date infrastructure",
+        "Ready-to-move"
+      ],
+      "raw": "Hot Site\nFully equipped\nUp-to-date infrastructure\nReady-to-move",
+      "instructional": true,
+      "teach": "Read the source points, then explain the slide without looking. On Security+, recognition is not enough—you should be able to apply the concept to a scenario.",
+      "defs": [],
+      "course": {
+        "learn": "A hot site is a disaster-recovery location that is fully equipped and ready to take over operations quickly, often with current systems and replicated data.",
+        "why": "Fast recovery reduces downtime but costs more because duplicate capacity must be maintained.",
+        "example": "A financial company maintains a second data center with active infrastructure and near-current data so critical services can fail over quickly.",
+        "exam": "Hot = fastest/most ready/most expensive.",
+        "breakdown": [
+          {
+            "term": "Fully equipped",
+            "explanation": "Within Hot Site, this is a specific factor you should be able to recognize and explain. Connect it to the purpose of Site considerations rather than memorizing the phrase by itself."
+          },
+          {
+            "term": "Up-to-date infrastructure",
+            "explanation": "Infrastructure monitoring observes networks, cloud configuration, appliances, links, and supporting resources. NSM analyzes network behavior, while CSPM evaluates cloud security posture and misconfiguration."
+          },
+          {
+            "term": "Ready-to-move",
+            "explanation": "Within Hot Site, this is a specific factor you should be able to recognize and explain. Connect it to the purpose of Site considerations rather than memorizing the phrase by itself."
+          }
+        ],
+        "defs": [],
+        "check_q": "Without looking back, explain Hot Site and describe at least two key ideas from this section.",
+        "check_a": "A hot site is a disaster-recovery location that is fully equipped and ready to take over operations quickly, often with current systems and replicated data. Key ideas include: Fully equipped; Up-to-date infrastructure; Ready-to-move.",
+        "points": [
+          "Fully equipped",
+          "Up-to-date infrastructure",
+          "Ready-to-move"
+        ]
+      }
+    },
+    {
+      "n": 3,
+      "title": "Cold Site",
+      "points": [
+        "Basic infrastructure",
+        "Lacks operational components",
+        "Take time to be ready"
+      ],
+      "raw": "Cold Site\nBasic infrastructure\nLacks operational components\nTake time to be ready",
+      "instructional": true,
+      "teach": "Read the source points, then explain the slide without looking. On Security+, recognition is not enough—you should be able to apply the concept to a scenario.",
+      "defs": [],
+      "course": {
+        "learn": "A cold site provides basic facility space, power, and connectivity but little or no ready computing equipment or current data.",
+        "why": "It is inexpensive to maintain but takes the longest to become operational after a disaster.",
+        "example": "A company contracts for an alternate building with power and network access but would need equipment delivered and backups restored.",
+        "exam": "Cold = cheapest/slowest/basic facility.",
+        "breakdown": [
+          {
+            "term": "Basic infrastructure",
+            "explanation": "Infrastructure monitoring observes networks, cloud configuration, appliances, links, and supporting resources. NSM analyzes network behavior, while CSPM evaluates cloud security posture and misconfiguration."
+          },
+          {
+            "term": "Lacks operational components",
+            "explanation": "Within Cold Site, this is a specific factor you should be able to recognize and explain. Connect it to the purpose of Site considerations rather than memorizing the phrase by itself."
+          },
+          {
+            "term": "Take time to be ready",
+            "explanation": "Within Cold Site, this is a specific factor you should be able to recognize and explain. Connect it to the purpose of Site considerations rather than memorizing the phrase by itself."
+          }
+        ],
+        "defs": [],
+        "check_q": "Without looking back, explain Cold Site and describe at least two key ideas from this section.",
+        "check_a": "A cold site provides basic facility space, power, and connectivity but little or no ready computing equipment or current data. Key ideas include: Basic infrastructure; Lacks operational components; Take time to be ready.",
+        "points": [
+          "Basic infrastructure",
+          "Lacks operational components",
+          "Take time to be ready"
+        ]
+      }
+    },
+    {
+      "n": 4,
+      "title": "Warm Site",
+      "points": [
+        "Middle ground between hot and cold sites",
+        "Partial infrastructure",
+        "Faster activation than cold site"
+      ],
+      "raw": "Warm Site\nMiddle ground between hot and cold sites\nPartial infrastructure\nFaster activation than cold site",
+      "instructional": true,
+      "teach": "Read the source points, then explain the slide without looking. On Security+, recognition is not enough—you should be able to apply the concept to a scenario.",
+      "defs": [],
+      "course": {
+        "learn": "A warm site has some infrastructure and configuration in place but requires additional setup, data restoration, or equipment before full operation.",
+        "why": "It balances recovery speed and cost between hot and cold sites.",
+        "example": "A recovery facility has servers and network connectivity but requires current backups to be restored before applications can run.",
+        "exam": "Warm = partially ready, middle cost and recovery time.",
+        "breakdown": [
+          {
+            "term": "Middle ground between hot and cold sites",
+            "explanation": "A cold site provides basic facility space, power, and connectivity but little or no ready computing equipment or current data."
+          },
+          {
+            "term": "Partial infrastructure",
+            "explanation": "Infrastructure monitoring observes networks, cloud configuration, appliances, links, and supporting resources. NSM analyzes network behavior, while CSPM evaluates cloud security posture and misconfiguration."
+          },
+          {
+            "term": "Faster activation than cold site",
+            "explanation": "A cold site provides basic facility space, power, and connectivity but little or no ready computing equipment or current data."
+          }
+        ],
+        "defs": [],
+        "check_q": "Without looking back, explain Warm Site and describe at least two key ideas from this section.",
+        "check_a": "A warm site has some infrastructure and configuration in place but requires additional setup, data restoration, or equipment before full operation. Key ideas include: Middle ground between hot and cold sites; Partial infrastructure; Faster activation than cold site.",
+        "points": [
+          "Middle ground between hot and cold sites",
+          "Partial infrastructure",
+          "Faster activation than cold site"
+        ]
+      }
+    },
+    {
+      "n": 5,
+      "title": "Geographic Dispersion",
+      "points": [
+        "Multiple geographic location",
+        "Risk mitigation",
+        "Complexity"
+      ],
+      "raw": "Geographic Dispersion\nMultiple geographic location\nRisk mitigation\nComplexity",
+      "instructional": true,
+      "teach": "Read the source points, then explain the slide without looking. On Security+, recognition is not enough—you should be able to apply the concept to a scenario.",
+      "defs": [],
+      "course": {
+        "learn": "Geographic dispersion places redundant resources far enough apart that one local or regional event is unlikely to affect all of them.",
+        "why": "Redundancy inside one building does not help if the entire building loses power or is destroyed.",
+        "example": "Production runs in two cloud regions hundreds of miles apart rather than two racks in the same data center.",
+        "exam": "Regional disaster/outage protection = geographic dispersion.",
+        "breakdown": [
+          {
+            "term": "Multiple geographic location",
+            "explanation": "Within Geographic Dispersion, this is a specific factor you should be able to recognize and explain. Connect it to the purpose of Site considerations rather than memorizing the phrase by itself."
+          },
+          {
+            "term": "Risk mitigation",
+            "explanation": "This affects the likelihood or impact of harm and therefore changes how the organization should prioritize controls."
+          },
+          {
+            "term": "Complexity",
+            "explanation": "Within Geographic Dispersion, this is a specific factor you should be able to recognize and explain. Connect it to the purpose of Site considerations rather than memorizing the phrase by itself."
+          }
+        ],
+        "defs": [],
+        "check_q": "Without looking back, explain Geographic Dispersion and describe at least two key ideas from this section.",
+        "check_a": "Geographic dispersion places redundant resources far enough apart that one local or regional event is unlikely to affect all of them. Key ideas include: Multiple geographic location; Risk mitigation; Complexity.",
+        "points": [
+          "Multiple geographic location",
+          "Risk mitigation",
+          "Complexity"
+        ]
+      }
+    },
+    {
+      "n": 6,
+      "title": "Platform Diversity",
+      "points": [],
+      "raw": "Platform Diversity",
+      "instructional": false,
+      "teach": "Read the source points, then explain the slide without looking. On Security+, recognition is not enough—you should be able to apply the concept to a scenario.",
+      "defs": []
+    }
+  ],
+  "slide_count": 6,
+  "instructional_count": 4,
+  "concepts": [
+    "Hot Site",
+    "Cold Site",
+    "Warm Site",
+    "Geographic Dispersion"
+  ],
+  "source_filename": "13.02_Site_considerations.pdf"
+}

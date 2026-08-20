@@ -1,0 +1,246 @@
+{
+  "id": "08.05",
+  "chapter": 8,
+  "sub": 5,
+  "title": "Cryptographic attacks",
+  "chapter_name": "Attack Indicators",
+  "slides": [
+    {
+      "n": 1,
+      "title": "Cryptographic Attack Indicators",
+      "points": [],
+      "raw": "Cryptographic Attack\nIndicators",
+      "instructional": false,
+      "teach": "Treat these as observable clues. On the exam, be ready to infer the most likely attack from the pattern of indicators.",
+      "defs": []
+    },
+    {
+      "n": 2,
+      "title": "Cryptographic Attacks",
+      "points": [
+        "Are attempts to exploit weaknesses in cryptographic",
+        "systems",
+        "Aim to compromise the security properties",
+        "can target various components of a cryptographic",
+        "system"
+      ],
+      "raw": "Cryptographic Attacks\nAre attempts to exploit weaknesses in cryptographic\nsystems\nAim to compromise the security properties\ncan target various components of a cryptographic\nsystem",
+      "instructional": true,
+      "teach": "Learn the attacker behavior, the evidence it leaves behind, and the control that best detects or mitigates it.",
+      "defs": [],
+      "course": {
+        "learn": "Cryptographic attacks target weaknesses in algorithms, protocols, implementations, key handling, or negotiation rather than trying to “break encryption” in only one way. Examples include downgrade, collision, birthday, side-channel, and weak-key attacks.",
+        "why": "Cryptography can fail through implementation and protocol choices even when the underlying mathematics is strong.",
+        "example": "An attacker forces a connection to negotiate an obsolete cipher suite and then exploits a known weakness in that older mode.",
+        "exam": "Identify the attack by what is being manipulated: weaker protocol = downgrade; same hash = collision; probability-based collision search = birthday; leaked implementation behavior = side channel.",
+        "breakdown": [
+          {
+            "term": "Are attempts to exploit weaknesses in cryptographic",
+            "explanation": "Within Cryptographic Attacks, this is a specific factor you should be able to recognize and explain. Connect it to the purpose of Cryptographic attacks rather than memorizing the phrase by itself."
+          },
+          {
+            "term": "systems",
+            "explanation": "Products no longer receiving security updates or vendor support, leaving new vulnerabilities harder to fix."
+          },
+          {
+            "term": "Aim to compromise the security properties",
+            "explanation": "This contributes to reducing risk in the broader Cryptographic attacks design and should be evaluated as part of defense in depth."
+          },
+          {
+            "term": "can target various components of a cryptographic",
+            "explanation": "Within Cryptographic Attacks, this is a specific factor you should be able to recognize and explain. Connect it to the purpose of Cryptographic attacks rather than memorizing the phrase by itself."
+          },
+          {
+            "term": "system",
+            "explanation": "Products no longer receiving security updates or vendor support, leaving new vulnerabilities harder to fix."
+          }
+        ],
+        "defs": [],
+        "check_q": "Without looking back, explain Cryptographic Attacks and describe at least two key ideas from this section.",
+        "check_a": "Cryptographic attacks target weaknesses in algorithms, protocols, implementations, key handling, or negotiation rather than trying to “break encryption” in only one way. Examples include downgrade, collision, birthday, side-channel, and weak-key attacks. Key ideas include: Are attempts to exploit weaknesses in cryptographic; systems; Aim to compromise the security properties; can target various components of a cryptographic; system.",
+        "points": [
+          "Are attempts to exploit weaknesses in cryptographic",
+          "systems",
+          "Aim to compromise the security properties",
+          "can target various components of a cryptographic",
+          "system"
+        ]
+      }
+    },
+    {
+      "n": 3,
+      "title": "Brute-force",
+      "points": [
+        "Downgrade",
+        "Unusual changes in the negotiated cryptographic protocols",
+        "during communication",
+        "Anomalies in the supported cipher suites or key exchange",
+        "mechanisms"
+      ],
+      "raw": "Downgrade\nUnusual changes in the negotiated cryptographic protocols\nduring communication\nAnomalies in the supported cipher suites or key exchange\nmechanisms",
+      "instructional": true,
+      "teach": "Read the source points, then explain the slide without looking. On Security+, recognition is not enough—you should be able to apply the concept to a scenario.",
+      "defs": [],
+      "course": {
+        "learn": "A brute-force attack systematically tries many possible credentials, keys, or values until one works. It trades time and computing power for certainty.",
+        "why": "Weak or short secrets make exhaustive guessing practical.",
+        "example": "An attacker tries every four-digit PIN from 0000 through 9999.",
+        "exam": "Brute force = exhaustive guessing. Password spraying uses a small number of common passwords across many accounts; dictionary attacks use likely words/passwords.",
+        "breakdown": [
+          {
+            "term": "Downgrade",
+            "explanation": "A cryptographic downgrade attack forces two parties to use an older or weaker protocol, cipher, or security mode than they would normally select."
+          },
+          {
+            "term": "Unusual changes in the negotiated cryptographic protocols",
+            "explanation": "Within Brute-force, this is a specific factor you should be able to recognize and explain. Connect it to the purpose of Cryptographic attacks rather than memorizing the phrase by itself."
+          },
+          {
+            "term": "during communication",
+            "explanation": "Within Brute-force, this is a specific factor you should be able to recognize and explain. Connect it to the purpose of Cryptographic attacks rather than memorizing the phrase by itself."
+          },
+          {
+            "term": "Anomalies in the supported cipher suites or key exchange",
+            "explanation": "Cryptographic strength depends on using the correct key type, algorithm, key length, and exchange method. Keys must be generated, distributed, stored, rotated, and retired securely."
+          },
+          {
+            "term": "mechanisms",
+            "explanation": "Within Brute-force, this is a specific factor you should be able to recognize and explain. Connect it to the purpose of Cryptographic attacks rather than memorizing the phrase by itself."
+          }
+        ],
+        "defs": [],
+        "check_q": "Without looking back, explain Brute-force and describe at least two key ideas from this section.",
+        "check_a": "A brute-force attack systematically tries many possible credentials, keys, or values until one works. It trades time and computing power for certainty. Key ideas include: Downgrade; Unusual changes in the negotiated cryptographic protocols; during communication; Anomalies in the supported cipher suites or key exchange; mechanisms.",
+        "points": [
+          "Downgrade",
+          "Unusual changes in the negotiated cryptographic protocols",
+          "during communication",
+          "Anomalies in the supported cipher suites or key exchange",
+          "mechanisms"
+        ]
+      }
+    },
+    {
+      "n": 4,
+      "title": "Downgrade",
+      "points": [
+        "Birthday",
+        "Unusual patterns in hash collisions",
+        "Unexpected behavior in systems relying on hash function"
+      ],
+      "raw": "Birthday\nUnusual patterns in hash collisions\nUnexpected behavior in systems relying on hash function",
+      "instructional": true,
+      "teach": "Read the source points, then explain the slide without looking. On Security+, recognition is not enough—you should be able to apply the concept to a scenario.",
+      "defs": [],
+      "course": {
+        "learn": "A cryptographic downgrade attack forces two parties to use an older or weaker protocol, cipher, or security mode than they would normally select.",
+        "why": "Attackers target compatibility fallbacks because old options may have known weaknesses.",
+        "example": "A man-in-the-middle interferes with negotiation so a client falls back from a strong TLS configuration to a weaker supported mode.",
+        "exam": "If the attacker makes security weaker by forcing legacy crypto/protocols, think downgrade.",
+        "breakdown": [
+          {
+            "term": "Birthday",
+            "explanation": "A birthday attack exploits the mathematics of hash collisions: finding any two inputs with the same n-bit hash generally takes about 2^(n/2) work rather than 2^n."
+          },
+          {
+            "term": "Unusual patterns in hash collisions",
+            "explanation": "A hash collision occurs when two different inputs produce the same hash output. Secure cryptographic hashes are designed to make practical collisions extremely difficult."
+          },
+          {
+            "term": "Unexpected behavior in systems relying on hash function",
+            "explanation": "System monitoring focuses on endpoints and hosts. Endpoint Protection Platforms (EPP) detect or prevent malicious endpoint activity, while SIEM platforms collect and correlate events from many systems."
+          }
+        ],
+        "defs": [],
+        "check_q": "Without looking back, explain Downgrade and describe at least two key ideas from this section.",
+        "check_a": "A cryptographic downgrade attack forces two parties to use an older or weaker protocol, cipher, or security mode than they would normally select. Key ideas include: Birthday; Unusual patterns in hash collisions; Unexpected behavior in systems relying on hash function.",
+        "points": [
+          "Birthday",
+          "Unusual patterns in hash collisions",
+          "Unexpected behavior in systems relying on hash function"
+        ]
+      }
+    },
+    {
+      "n": 5,
+      "title": "Birthday",
+      "points": [
+        "Collision",
+        "Detection of hash collisions in",
+        "systems",
+        "Unexplained anomalies in the",
+        "consistency of hash"
+      ],
+      "raw": "Collision\nDetection of hash collisions in\nsystems\nUnexplained anomalies in the\nconsistency of hash",
+      "instructional": true,
+      "teach": "Read the source points, then explain the slide without looking. On Security+, recognition is not enough—you should be able to apply the concept to a scenario.",
+      "defs": [],
+      "course": {
+        "learn": "A birthday attack exploits the mathematics of hash collisions: finding any two inputs with the same n-bit hash generally takes about 2^(n/2) work rather than 2^n.",
+        "why": "It explains why collision resistance requires larger hash outputs than a simple preimage-strength estimate might suggest.",
+        "example": "An attacker searches for two different documents that produce the same weak hash so a signature on one can be abused for the other.",
+        "exam": "Birthday = collision probability, not password birthdays or dates.",
+        "breakdown": [
+          {
+            "term": "Collision",
+            "explanation": "A hash collision occurs when two different inputs produce the same hash output. Secure cryptographic hashes are designed to make practical collisions extremely difficult."
+          },
+          {
+            "term": "Detection of hash collisions in systems",
+            "explanation": "A hash collision occurs when two different inputs produce the same hash output. Secure cryptographic hashes are designed to make practical collisions extremely difficult."
+          },
+          {
+            "term": "Unexplained anomalies in the consistency of hash",
+            "explanation": "Within Birthday, this is a specific factor you should be able to recognize and explain. Connect it to the purpose of Cryptographic attacks rather than memorizing the phrase by itself."
+          }
+        ],
+        "defs": [],
+        "check_q": "Without looking back, explain Birthday and describe at least two key ideas from this section.",
+        "check_a": "A birthday attack exploits the mathematics of hash collisions: finding any two inputs with the same n-bit hash generally takes about 2^(n/2) work rather than 2^n. Key ideas include: Collision; Detection of hash collisions in systems; Unexplained anomalies in the consistency of hash.",
+        "points": [
+          "Collision",
+          "Detection of hash collisions in systems",
+          "Unexplained anomalies in the consistency of hash"
+        ]
+      }
+    },
+    {
+      "n": 6,
+      "title": "Collision",
+      "points": [
+        "Password Attack Indicators"
+      ],
+      "raw": "Password Attack Indicators",
+      "instructional": true,
+      "teach": "Read the source points, then explain the slide without looking. On Security+, recognition is not enough—you should be able to apply the concept to a scenario.",
+      "defs": [],
+      "course": {
+        "learn": "A hash collision occurs when two different inputs produce the same hash output. Secure cryptographic hashes are designed to make practical collisions extremely difficult.",
+        "why": "Collisions can undermine integrity checks and digital-signature schemes that rely on a hash.",
+        "example": "Two different files are deliberately crafted to have the same weak hash value.",
+        "exam": "Collision resistance is a hash property. Do not confuse it with encryption-key reuse.",
+        "breakdown": [
+          {
+            "term": "Password Attack Indicators",
+            "explanation": "Security indicators are observable signs that may reveal compromise, misuse, or abnormal conditions. Examples include account lockouts, concurrent sessions, impossible travel, blocked content, missing logs, unusual resource consumption, and resources becoming inaccessible."
+          }
+        ],
+        "defs": [],
+        "check_q": "Without looking back, explain Collision and describe at least two key ideas from this section.",
+        "check_a": "A hash collision occurs when two different inputs produce the same hash output. Secure cryptographic hashes are designed to make practical collisions extremely difficult. Key ideas include: Password Attack Indicators.",
+        "points": [
+          "Password Attack Indicators"
+        ]
+      }
+    }
+  ],
+  "slide_count": 6,
+  "instructional_count": 5,
+  "concepts": [
+    "Brute-force",
+    "Downgrade",
+    "Birthday",
+    "Collision"
+  ],
+  "source_filename": "08.05_Cryptographic_attacks.pdf"
+}

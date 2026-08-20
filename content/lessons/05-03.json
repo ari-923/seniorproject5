@@ -1,0 +1,131 @@
+{
+  "id": "05.03",
+  "chapter": 5,
+  "sub": 3,
+  "title": "Motivations",
+  "chapter_name": "Threat Actors",
+  "slides": [
+    {
+      "n": 1,
+      "title": "Motivations",
+      "points": [],
+      "raw": "Motivations",
+      "instructional": false,
+      "teach": "Read the source points, then explain the slide without looking. On Security+, recognition is not enough—you should be able to apply the concept to a scenario.",
+      "defs": []
+    },
+    {
+      "n": 2,
+      "title": "Motivations",
+      "points": [
+        "Data Exfiltration",
+        "Espionage",
+        "Service Disruption",
+        "Blackmail",
+        "Financial Gain"
+      ],
+      "raw": "Motivations\nData Exfiltration\nEspionage\nService Disruption\nBlackmail\nFinancial Gain",
+      "instructional": true,
+      "teach": "Read the source points, then explain the slide without looking. On Security+, recognition is not enough—you should be able to apply the concept to a scenario.",
+      "defs": [],
+      "course": {
+        "learn": "This section focuses on **Motivations** within **Motivations**. Motivation explains what the attacker wants: financial gain, espionage, ideology, disruption, revenge, blackmail, data theft, or strategic advantage.",
+        "why": "Motivation often predicts target selection and the behavior an organization should expect after compromise.",
+        "example": "An extortion group steals data before encrypting systems so it can threaten publication if the victim refuses to pay.",
+        "exam": "CompTIA frequently gives motive clues. Follow the goal to identify the actor or attack pattern.",
+        "breakdown": [
+          {
+            "term": "Data Exfiltration",
+            "explanation": "Within Motivations, this is a specific factor you should be able to recognize and explain. Connect it to the purpose of Motivations rather than memorizing the phrase by itself."
+          },
+          {
+            "term": "Espionage",
+            "explanation": "Within Motivations, this is a specific factor you should be able to recognize and explain. Connect it to the purpose of Motivations rather than memorizing the phrase by itself."
+          },
+          {
+            "term": "Service Disruption",
+            "explanation": "Within Motivations, this is a specific factor you should be able to recognize and explain. Connect it to the purpose of Motivations rather than memorizing the phrase by itself."
+          },
+          {
+            "term": "Blackmail",
+            "explanation": "Within Motivations, this is a specific factor you should be able to recognize and explain. Connect it to the purpose of Motivations rather than memorizing the phrase by itself."
+          },
+          {
+            "term": "Financial Gain",
+            "explanation": "Within Motivations, this is a specific factor you should be able to recognize and explain. Connect it to the purpose of Motivations rather than memorizing the phrase by itself."
+          }
+        ],
+        "defs": [],
+        "check_q": "Without looking back, explain Motivations and describe at least two key ideas from this section.",
+        "check_a": "This section focuses on **Motivations** within **Motivations**. Motivation explains what the attacker wants: financial gain, espionage, ideology, disruption, revenge, blackmail, data theft, or strategic advantage. Key ideas include: Data Exfiltration; Espionage; Service Disruption; Blackmail; Financial Gain.",
+        "points": [
+          "Data Exfiltration",
+          "Espionage",
+          "Service Disruption",
+          "Blackmail",
+          "Financial Gain"
+        ]
+      }
+    },
+    {
+      "n": 3,
+      "title": "Motivations",
+      "points": [
+        "Philosophical/Political Beliefs",
+        "Ethical - Revenge",
+        "Disruption/Chaos",
+        "War"
+      ],
+      "raw": "Motivations\nPhilosophical/Political Beliefs\nEthical - Revenge\nDisruption/Chaos\nWar",
+      "instructional": true,
+      "teach": "Read the source points, then explain the slide without looking. On Security+, recognition is not enough—you should be able to apply the concept to a scenario.",
+      "defs": [],
+      "course": {
+        "learn": "This section focuses on **Motivations** within **Motivations**. Motivation explains what the attacker wants: financial gain, espionage, ideology, disruption, revenge, blackmail, data theft, or strategic advantage.",
+        "why": "Motivation often predicts target selection and the behavior an organization should expect after compromise.",
+        "example": "An extortion group steals data before encrypting systems so it can threaten publication if the victim refuses to pay.",
+        "exam": "CompTIA frequently gives motive clues. Follow the goal to identify the actor or attack pattern.",
+        "breakdown": [
+          {
+            "term": "Philosophical/Political Beliefs",
+            "explanation": "Within Motivations, this is a specific factor you should be able to recognize and explain. Connect it to the purpose of Motivations rather than memorizing the phrase by itself."
+          },
+          {
+            "term": "Ethical - Revenge",
+            "explanation": "Within Motivations, this is a specific factor you should be able to recognize and explain. Connect it to the purpose of Motivations rather than memorizing the phrase by itself."
+          },
+          {
+            "term": "Disruption/Chaos",
+            "explanation": "Within Motivations, this is a specific factor you should be able to recognize and explain. Connect it to the purpose of Motivations rather than memorizing the phrase by itself."
+          },
+          {
+            "term": "War",
+            "explanation": "Detect, block, quarantine, or remove malicious software on endpoints."
+          }
+        ],
+        "defs": [],
+        "check_q": "Without looking back, explain Motivations and describe at least two key ideas from this section.",
+        "check_a": "This section focuses on **Motivations** within **Motivations**. Motivation explains what the attacker wants: financial gain, espionage, ideology, disruption, revenge, blackmail, data theft, or strategic advantage. Key ideas include: Philosophical/Political Beliefs; Ethical - Revenge; Disruption/Chaos; War.",
+        "points": [
+          "Philosophical/Political Beliefs",
+          "Ethical - Revenge",
+          "Disruption/Chaos",
+          "War"
+        ]
+      }
+    },
+    {
+      "n": 4,
+      "title": "Common Threat Vectors and Attack Surfaces",
+      "points": [],
+      "raw": "Common Threat Vectors and\nAttack Surfaces",
+      "instructional": false,
+      "teach": "Learn the attacker behavior, the evidence it leaves behind, and the control that best detects or mitigates it.",
+      "defs": []
+    }
+  ],
+  "slide_count": 4,
+  "instructional_count": 2,
+  "concepts": [],
+  "source_filename": "05.03_Motivations.pdf"
+}

@@ -1,0 +1,490 @@
+{
+  "id": "10.07",
+  "chapter": 10,
+  "sub": 7,
+  "title": "Network infrastructure",
+  "chapter_name": "Security Architecture & Cloud",
+  "slides": [
+    {
+      "n": 1,
+      "title": "Network Infrastructure",
+      "points": [],
+      "raw": "Network Infrastructure",
+      "instructional": false,
+      "teach": "Read the source points, then explain the slide without looking. On Security+, recognition is not enough—you should be able to apply the concept to a scenario.",
+      "defs": []
+    },
+    {
+      "n": 2,
+      "title": "Physical Isolation",
+      "points": [
+        "• Entails the physical separation of",
+        "various components",
+        "• Enhances the overall security",
+        "posture of the network",
+        "•",
+        "• Prevents unauthorized access"
+      ],
+      "raw": "Physical Isolation\n• Entails the physical separation of\nvarious components\n• Enhances the overall security\nposture of the network\n•\n• Prevents unauthorized access",
+      "instructional": true,
+      "teach": "Read the source points, then explain the slide without looking. On Security+, recognition is not enough—you should be able to apply the concept to a scenario.",
+      "defs": [],
+      "course": {
+        "learn": "Isolation separates a risky or sensitive system from other resources so compromise cannot easily spread. Physical isolation and air gaps provide stronger separation than ordinary logical controls.",
+        "why": "Reducing connectivity reduces attack paths and lateral movement.",
+        "example": "A malware-analysis workstation is placed on an isolated network with no route to production systems.",
+        "exam": "Air-gapped means no normal network connection. Quarantine is often temporary isolation during an incident.",
+        "breakdown": [
+          {
+            "term": "Entails the physical separation of various components",
+            "explanation": "Within Physical Isolation, this is a specific factor you should be able to recognize and explain. Connect it to the purpose of Network infrastructure rather than memorizing the phrase by itself."
+          },
+          {
+            "term": "Enhances the overall security posture of the network",
+            "explanation": "This contributes to reducing risk in the broader Network infrastructure design and should be evaluated as part of defense in depth."
+          },
+          {
+            "term": "Prevents unauthorized access",
+            "explanation": "This concerns who or what can reach a resource and what actions are permitted once access is granted."
+          }
+        ],
+        "defs": [],
+        "check_q": "Without looking back, explain Physical Isolation and describe at least two key ideas from this section.",
+        "check_a": "Isolation separates a risky or sensitive system from other resources so compromise cannot easily spread. Physical isolation and air gaps provide stronger separation than ordinary logical controls. Key ideas include: Entails the physical separation of various components; Enhances the overall security posture of the network; Prevents unauthorized access.",
+        "points": [
+          "Entails the physical separation of various components",
+          "Enhances the overall security posture of the network",
+          "Prevents unauthorized access"
+        ]
+      }
+    },
+    {
+      "n": 3,
+      "title": "Air-gapped",
+      "points": [
+        "Involves complete isolation from other networks",
+        "Minimizes the risk of external cyber threats",
+        "Provides a robust defense against cyber attacks"
+      ],
+      "raw": "Air-gapped\nInvolves complete isolation from other networks\nMinimizes the risk of external cyber threats\nProvides a robust defense against cyber attacks",
+      "instructional": true,
+      "teach": "Read the source points, then explain the slide without looking. On Security+, recognition is not enough—you should be able to apply the concept to a scenario.",
+      "defs": [],
+      "course": {
+        "learn": "Isolation separates a risky or sensitive system from other resources so compromise cannot easily spread. Physical isolation and air gaps provide stronger separation than ordinary logical controls.",
+        "why": "Reducing connectivity reduces attack paths and lateral movement.",
+        "example": "A malware-analysis workstation is placed on an isolated network with no route to production systems.",
+        "exam": "Air-gapped means no normal network connection. Quarantine is often temporary isolation during an incident.",
+        "breakdown": [
+          {
+            "term": "Involves complete isolation from other networks",
+            "explanation": "Isolation separates a risky or sensitive system from other resources so compromise cannot easily spread. Physical isolation and air gaps provide stronger separation than ordinary logical controls."
+          },
+          {
+            "term": "Minimizes the risk of external cyber threats",
+            "explanation": "This affects the likelihood or impact of harm and therefore changes how the organization should prioritize controls."
+          },
+          {
+            "term": "Provides a robust defense against cyber attacks",
+            "explanation": "Within Air-gapped, this is a specific factor you should be able to recognize and explain. Connect it to the purpose of Network infrastructure rather than memorizing the phrase by itself."
+          }
+        ],
+        "defs": [],
+        "check_q": "Without looking back, explain Air-gapped and describe at least two key ideas from this section.",
+        "check_a": "Isolation separates a risky or sensitive system from other resources so compromise cannot easily spread. Physical isolation and air gaps provide stronger separation than ordinary logical controls. Key ideas include: Involves complete isolation from other networks; Minimizes the risk of external cyber threats; Provides a robust defense against cyber attacks.",
+        "points": [
+          "Involves complete isolation from other networks",
+          "Minimizes the risk of external cyber threats",
+          "Provides a robust defense against cyber attacks"
+        ]
+      }
+    },
+    {
+      "n": 4,
+      "title": "Logical Segmentation",
+      "points": [
+        "Divides a network into distinct segments based on logical criteria",
+        "Is typically implemented through logical means, such as VLANs",
+        "Enhance network efficiency",
+        "Enhances security by controlling access"
+      ],
+      "raw": "Logical Segmentation\nDivides a network into distinct segments based on logical criteria\nIs typically implemented through logical means, such as VLANs\nEnhance network efficiency\nEnhances security by controlling access",
+      "instructional": true,
+      "teach": "Read the source points, then explain the slide without looking. On Security+, recognition is not enough—you should be able to apply the concept to a scenario.",
+      "defs": [
+        [
+          "Segmentation",
+          "Dividing a network into controlled zones to limit access and lateral movement."
+        ]
+      ],
+      "course": {
+        "learn": "Network segmentation separates systems into different trust zones so traffic must cross controlled boundaries. VLANs, subnets, ACLs, and firewalls are common mechanisms.",
+        "why": "Segmentation limits lateral movement and reduces the blast radius of a compromised host.",
+        "example": "Guest Wi-Fi is placed in a separate VLAN with firewall rules that block access to internal servers.",
+        "exam": "If the goal is containment or preventing one network from freely reaching another, segmentation is a strong answer.",
+        "breakdown": [
+          {
+            "term": "Divides a network into distinct segments based on logical criteria",
+            "explanation": "Within Logical Segmentation, this is a specific factor you should be able to recognize and explain. Connect it to the purpose of Network infrastructure rather than memorizing the phrase by itself."
+          },
+          {
+            "term": "Is typically implemented through logical means, such as VLANs",
+            "explanation": "Within Logical Segmentation, this is a specific factor you should be able to recognize and explain. Connect it to the purpose of Network infrastructure rather than memorizing the phrase by itself."
+          },
+          {
+            "term": "Enhance network efficiency",
+            "explanation": "Within Logical Segmentation, this is a specific factor you should be able to recognize and explain. Connect it to the purpose of Network infrastructure rather than memorizing the phrase by itself."
+          },
+          {
+            "term": "Enhances security by controlling access",
+            "explanation": "This concerns who or what can reach a resource and what actions are permitted once access is granted."
+          }
+        ],
+        "defs": [
+          {
+            "term": "Segmentation",
+            "definition": "Dividing a network into controlled zones to limit access and lateral movement."
+          }
+        ],
+        "check_q": "Without looking back, explain Logical Segmentation and describe at least two key ideas from this section.",
+        "check_a": "Network segmentation separates systems into different trust zones so traffic must cross controlled boundaries. VLANs, subnets, ACLs, and firewalls are common mechanisms. Key ideas include: Divides a network into distinct segments based on logical criteria; Is typically implemented through logical means, such as VLANs; Enhance network efficiency; Enhances security by controlling access.",
+        "points": [
+          "Divides a network into distinct segments based on logical criteria",
+          "Is typically implemented through logical means, such as VLANs",
+          "Enhance network efficiency",
+          "Enhances security by controlling access"
+        ]
+      }
+    },
+    {
+      "n": 5,
+      "title": "Software-defined Networking (SDN)",
+      "points": [
+        "Empowers administrators to control and manage network resources through",
+        "software",
+        "Centralizes the control plane, allowing for more dynamic and programmable",
+        "management.",
+        "Enhance network flexibility, scalability, and automation by centralizing",
+        "control",
+        "Separates the control plane from the data plane"
+      ],
+      "raw": "Software-defined Networking (SDN)\nEmpowers administrators to control and manage network resources through\nsoftware\nCentralizes the control plane, allowing for more dynamic and programmable\nmanagement.\nEnhance network flexibility, scalability, and automation by centralizing\ncontrol\nSeparates the control plane from the data plane",
+      "instructional": true,
+      "teach": "Read the source points, then explain the slide without looking. On Security+, recognition is not enough—you should be able to apply the concept to a scenario.",
+      "defs": [],
+      "course": {
+        "learn": "Software-Defined Networking (SDN) separates centralized control logic from the devices that forward traffic. Controllers program network behavior dynamically through software.",
+        "why": "Centralized programmability can improve automation and segmentation but makes the controller and management APIs high-value security targets.",
+        "example": "A controller automatically pushes segmentation rules to switches when a new workload is deployed.",
+        "exam": "Control plane is centralized/software-driven; protect controller access, APIs, backups, and policy integrity.",
+        "breakdown": [
+          {
+            "term": "Empowers administrators to control and manage network resources through",
+            "explanation": "Within Software-defined Networking (SDN), this is a specific factor you should be able to recognize and explain. Connect it to the purpose of Network infrastructure rather than memorizing the phrase by itself."
+          },
+          {
+            "term": "software",
+            "explanation": "Detect, block, quarantine, or remove malicious software on endpoints."
+          },
+          {
+            "term": "Centralizes the control plane, allowing for more dynamic and programmable",
+            "explanation": "In Zero Trust, the control plane makes access decisions. It evaluates identity, policy, context, and threat information to decide whether a request should be allowed."
+          },
+          {
+            "term": "management.",
+            "explanation": "Within Software-defined Networking (SDN), this is a specific factor you should be able to recognize and explain. Connect it to the purpose of Network infrastructure rather than memorizing the phrase by itself."
+          },
+          {
+            "term": "Enhance network flexibility, scalability, and automation by centralizing",
+            "explanation": "Within Software-defined Networking (SDN), this is a specific factor you should be able to recognize and explain. Connect it to the purpose of Network infrastructure rather than memorizing the phrase by itself."
+          },
+          {
+            "term": "control",
+            "explanation": "Use hard-to-guess credentials and limit what authenticated users can reach."
+          },
+          {
+            "term": "Separates the control plane from the data plane",
+            "explanation": "In Zero Trust, the control plane makes access decisions. It evaluates identity, policy, context, and threat information to decide whether a request should be allowed."
+          }
+        ],
+        "defs": [],
+        "check_q": "Without looking back, explain Software-defined Networking (SDN) and describe at least two key ideas from this section.",
+        "check_a": "Software-Defined Networking (SDN) separates centralized control logic from the devices that forward traffic. Controllers program network behavior dynamically through software. Key ideas include: Empowers administrators to control and manage network resources through; software; Centralizes the control plane, allowing for more dynamic and programmable; management.; Enhance network flexibility, scalability, and automation by centralizing.",
+        "points": [
+          "Empowers administrators to control and manage network resources through",
+          "software",
+          "Centralizes the control plane, allowing for more dynamic and programmable",
+          "management.",
+          "Enhance network flexibility, scalability, and automation by centralizing",
+          "control",
+          "Separates the control plane from the data plane"
+        ]
+      }
+    },
+    {
+      "n": 6,
+      "title": "On-premises",
+      "points": [
+        "Is the deployment of IT infrastructure within an organization's physical location",
+        "Provides direct control over IT resources",
+        "Provides greater control over data, security, and customization",
+        "Can tailor the systems to specific needs",
+        "Maintains direct control over sensitive data"
+      ],
+      "raw": "On-premises\nIs the deployment of IT infrastructure within an organization's physical location\nProvides direct control over IT resources\nProvides greater control over data, security, and customization\nCan tailor the systems to specific needs\nMaintains direct control over sensitive data",
+      "instructional": true,
+      "teach": "Read the source points, then explain the slide without looking. On Security+, recognition is not enough—you should be able to apply the concept to a scenario.",
+      "defs": [],
+      "course": {
+        "learn": "On-premises infrastructure is owned or operated within an organization's facilities rather than consumed as a public cloud service. The organization has more direct control but also carries more responsibility for physical systems, maintenance, and capacity.",
+        "why": "Architecture decisions trade control, cost, scalability, staffing, and recovery requirements.",
+        "example": "A company runs its own server room, network equipment, virtualization cluster, and storage rather than hosting those workloads in a public cloud.",
+        "exam": "On-prem usually means greater direct responsibility; cloud shifts some infrastructure responsibility to the provider.",
+        "breakdown": [
+          {
+            "term": "Is the deployment of IT infrastructure within an organization's physical location",
+            "explanation": "Infrastructure monitoring observes networks, cloud configuration, appliances, links, and supporting resources. NSM analyzes network behavior, while CSPM evaluates cloud security posture and misconfiguration."
+          },
+          {
+            "term": "Provides direct control over IT resources",
+            "explanation": "Within On-premises, this is a specific factor you should be able to recognize and explain. Connect it to the purpose of Network infrastructure rather than memorizing the phrase by itself."
+          },
+          {
+            "term": "Provides greater control over data, security, and customization",
+            "explanation": "This contributes to reducing risk in the broader Network infrastructure design and should be evaluated as part of defense in depth."
+          },
+          {
+            "term": "Can tailor the systems to specific needs",
+            "explanation": "System monitoring focuses on endpoints and hosts. Endpoint Protection Platforms (EPP) detect or prevent malicious endpoint activity, while SIEM platforms collect and correlate events from many systems."
+          },
+          {
+            "term": "Maintains direct control over sensitive data",
+            "explanation": "Within On-premises, this is a specific factor you should be able to recognize and explain. Connect it to the purpose of Network infrastructure rather than memorizing the phrase by itself."
+          }
+        ],
+        "defs": [],
+        "check_q": "Without looking back, explain On-premises and describe at least two key ideas from this section.",
+        "check_a": "On-premises infrastructure is owned or operated within an organization's facilities rather than consumed as a public cloud service. The organization has more direct control but also carries more responsibility for physical systems, maintenance, and capacity. Key ideas include: Is the deployment of IT infrastructure within an organization's physical location; Provides direct control over IT resources; Provides greater control over data, security, and customization; Can tailor the systems to specific needs; Maintains direct control over sensitive data.",
+        "points": [
+          "Is the deployment of IT infrastructure within an organization's physical location",
+          "Provides direct control over IT resources",
+          "Provides greater control over data, security, and customization",
+          "Can tailor the systems to specific needs",
+          "Maintains direct control over sensitive data"
+        ]
+      }
+    },
+    {
+      "n": 7,
+      "title": "Centralized and De-centralized",
+      "points": [
+        "Aspect",
+        "Definition",
+        "Purpose",
+        "Centralized Architecture",
+        "Decentralized Architecture",
+        "Consolidates network resources in a central",
+        "Distributes resources across multiple locations.",
+        "location.",
+        "Enhances control and efficiency.",
+        "Improves fault tolerance and reduces latency.",
+        "Control and Efficiency",
+        "Allows streamlined management and",
+        "implementation of uniform policies.",
+        "Has a degree of autonomy",
+        "Resource Utilization",
+        "Optimizes resource utilization by",
+        "consolidating resources.",
+        "Distributes resources",
+        "Fault Tolerance",
+        "Has a single point of failure",
+        "Has higher fault tolerance",
+        "Latency",
+        "Potential for higher latency.",
+        "Reduced latency",
+        "Example",
+        "A single data center managing all network",
+        "resources.",
+        "Multiple regional data centers distributed",
+        "geographically"
+      ],
+      "raw": "Centralized and De-centralized\nAspect\nDefinition\nPurpose\nCentralized Architecture\nDecentralized Architecture\nConsolidates network resources in a central\nDistributes resources across multiple locations.\nlocation.\nEnhances control and efficiency.\nImproves fault tolerance and reduces latency.\nControl and Efficiency\nAllows streamlined management and\nimplementation of uniform policies.\nHas a degree of autonomy\nResource Utilization\nOptimizes resource utilization by\nconsolidating resources.\nDistributes resources\nFault Tolerance\nHas a single point of failure\nHas higher fault tolerance\nLatency\nPotential for higher latency.\nReduced latency\nExample\nA single data center managing all network\nresources.\nMultiple regional data centers distributed\ngeographically",
+      "instructional": true,
+      "teach": "Read the source points, then explain the slide without looking. On Security+, recognition is not enough—you should be able to apply the concept to a scenario.",
+      "defs": [],
+      "course": {
+        "learn": "Centralized architecture concentrates control or services in one main location, while decentralized architecture distributes them across multiple nodes or locations.",
+        "why": "Centralization simplifies governance but can create high-impact central dependencies; decentralization can improve resilience but complicate consistency and management.",
+        "example": "A central identity service manages access for the enterprise, while a peer-to-peer ledger distributes validation across many participants.",
+        "exam": "CompTIA may ask about single points of failure, management simplicity, resilience, and trust distribution.",
+        "breakdown": [
+          {
+            "term": "Aspect",
+            "explanation": "Within Centralized and De-centralized, this is a specific factor you should be able to recognize and explain. Connect it to the purpose of Network infrastructure rather than memorizing the phrase by itself."
+          },
+          {
+            "term": "Definition",
+            "explanation": "Within Centralized and De-centralized, this is a specific factor you should be able to recognize and explain. Connect it to the purpose of Network infrastructure rather than memorizing the phrase by itself."
+          },
+          {
+            "term": "Purpose",
+            "explanation": "Within Centralized and De-centralized, this is a specific factor you should be able to recognize and explain. Connect it to the purpose of Network infrastructure rather than memorizing the phrase by itself."
+          },
+          {
+            "term": "Centralized Architecture",
+            "explanation": "Within Centralized and De-centralized, this is a specific factor you should be able to recognize and explain. Connect it to the purpose of Network infrastructure rather than memorizing the phrase by itself."
+          },
+          {
+            "term": "Decentralized Architecture",
+            "explanation": "Within Centralized and De-centralized, this is a specific factor you should be able to recognize and explain. Connect it to the purpose of Network infrastructure rather than memorizing the phrase by itself."
+          },
+          {
+            "term": "Consolidates network resources in a central",
+            "explanation": "Within Centralized and De-centralized, this is a specific factor you should be able to recognize and explain. Connect it to the purpose of Network infrastructure rather than memorizing the phrase by itself."
+          },
+          {
+            "term": "Distributes resources across multiple locations.",
+            "explanation": "Within Centralized and De-centralized, this is a specific factor you should be able to recognize and explain. Connect it to the purpose of Network infrastructure rather than memorizing the phrase by itself."
+          },
+          {
+            "term": "location.",
+            "explanation": "Determine or use the physical/geographic location of a device, user, or data resource."
+          },
+          {
+            "term": "Enhances control and efficiency.",
+            "explanation": "Within Centralized and De-centralized, this is a specific factor you should be able to recognize and explain. Connect it to the purpose of Network infrastructure rather than memorizing the phrase by itself."
+          },
+          {
+            "term": "Improves fault tolerance and reduces latency.",
+            "explanation": "Within Centralized and De-centralized, this is a specific factor you should be able to recognize and explain. Connect it to the purpose of Network infrastructure rather than memorizing the phrase by itself."
+          },
+          {
+            "term": "Control and Efficiency",
+            "explanation": "Within Centralized and De-centralized, this is a specific factor you should be able to recognize and explain. Connect it to the purpose of Network infrastructure rather than memorizing the phrase by itself."
+          },
+          {
+            "term": "Allows streamlined management and implementation of uniform policies.",
+            "explanation": "Within Centralized and De-centralized, this is a specific factor you should be able to recognize and explain. Connect it to the purpose of Network infrastructure rather than memorizing the phrase by itself."
+          },
+          {
+            "term": "Has a degree of autonomy",
+            "explanation": "Within Centralized and De-centralized, this is a specific factor you should be able to recognize and explain. Connect it to the purpose of Network infrastructure rather than memorizing the phrase by itself."
+          },
+          {
+            "term": "Resource Utilization",
+            "explanation": "Within Centralized and De-centralized, this is a specific factor you should be able to recognize and explain. Connect it to the purpose of Network infrastructure rather than memorizing the phrase by itself."
+          },
+          {
+            "term": "Optimizes resource utilization by consolidating resources.",
+            "explanation": "Within Centralized and De-centralized, this is a specific factor you should be able to recognize and explain. Connect it to the purpose of Network infrastructure rather than memorizing the phrase by itself."
+          },
+          {
+            "term": "Distributes resources",
+            "explanation": "Within Centralized and De-centralized, this is a specific factor you should be able to recognize and explain. Connect it to the purpose of Network infrastructure rather than memorizing the phrase by itself."
+          },
+          {
+            "term": "Fault Tolerance",
+            "explanation": "Within Centralized and De-centralized, this is a specific factor you should be able to recognize and explain. Connect it to the purpose of Network infrastructure rather than memorizing the phrase by itself."
+          },
+          {
+            "term": "Has a single point of failure",
+            "explanation": "Within Centralized and De-centralized, this is a specific factor you should be able to recognize and explain. Connect it to the purpose of Network infrastructure rather than memorizing the phrase by itself."
+          },
+          {
+            "term": "Has higher fault tolerance",
+            "explanation": "Within Centralized and De-centralized, this is a specific factor you should be able to recognize and explain. Connect it to the purpose of Network infrastructure rather than memorizing the phrase by itself."
+          },
+          {
+            "term": "Latency",
+            "explanation": "Within Centralized and De-centralized, this is a specific factor you should be able to recognize and explain. Connect it to the purpose of Network infrastructure rather than memorizing the phrase by itself."
+          },
+          {
+            "term": "Potential for higher latency.",
+            "explanation": "Within Centralized and De-centralized, this is a specific factor you should be able to recognize and explain. Connect it to the purpose of Network infrastructure rather than memorizing the phrase by itself."
+          },
+          {
+            "term": "Reduced latency",
+            "explanation": "Within Centralized and De-centralized, this is a specific factor you should be able to recognize and explain. Connect it to the purpose of Network infrastructure rather than memorizing the phrase by itself."
+          },
+          {
+            "term": "Example",
+            "explanation": "Within Centralized and De-centralized, this is a specific factor you should be able to recognize and explain. Connect it to the purpose of Network infrastructure rather than memorizing the phrase by itself."
+          },
+          {
+            "term": "A single data center managing all network",
+            "explanation": "Within Centralized and De-centralized, this is a specific factor you should be able to recognize and explain. Connect it to the purpose of Network infrastructure rather than memorizing the phrase by itself."
+          },
+          {
+            "term": "resources.",
+            "explanation": "Within Centralized and De-centralized, this is a specific factor you should be able to recognize and explain. Connect it to the purpose of Network infrastructure rather than memorizing the phrase by itself."
+          },
+          {
+            "term": "Multiple regional data centers distributed",
+            "explanation": "Within Centralized and De-centralized, this is a specific factor you should be able to recognize and explain. Connect it to the purpose of Network infrastructure rather than memorizing the phrase by itself."
+          },
+          {
+            "term": "geographically",
+            "explanation": "Within Centralized and De-centralized, this is a specific factor you should be able to recognize and explain. Connect it to the purpose of Network infrastructure rather than memorizing the phrase by itself."
+          }
+        ],
+        "defs": [],
+        "check_q": "Without looking back, explain Centralized and De-centralized and describe at least two key ideas from this section.",
+        "check_a": "Centralized architecture concentrates control or services in one main location, while decentralized architecture distributes them across multiple nodes or locations. Key ideas include: Aspect; Definition; Purpose; Centralized Architecture; Decentralized Architecture.",
+        "points": [
+          "Aspect",
+          "Definition",
+          "Purpose",
+          "Centralized Architecture",
+          "Decentralized Architecture",
+          "Consolidates network resources in a central",
+          "Distributes resources across multiple locations.",
+          "location.",
+          "Enhances control and efficiency.",
+          "Improves fault tolerance and reduces latency.",
+          "Control and Efficiency",
+          "Allows streamlined management and implementation of uniform policies.",
+          "Has a degree of autonomy",
+          "Resource Utilization",
+          "Optimizes resource utilization by consolidating resources.",
+          "Distributes resources",
+          "Fault Tolerance",
+          "Has a single point of failure",
+          "Has higher fault tolerance",
+          "Latency",
+          "Potential for higher latency.",
+          "Reduced latency",
+          "Example",
+          "A single data center managing all network",
+          "resources.",
+          "Multiple regional data centers distributed",
+          "geographically"
+        ]
+      }
+    },
+    {
+      "n": 8,
+      "title": "Containerization vs. Virtualization",
+      "points": [],
+      "raw": "Containerization vs.\nVirtualization",
+      "instructional": false,
+      "teach": "Build a side-by-side distinction: purpose, strengths, weaknesses, and the scenario where each option fits best.",
+      "defs": [
+        [
+          "Virtualization",
+          "Using a hypervisor to run multiple virtual machines, usually with separate guest operating systems, on shared hardware."
+        ]
+      ]
+    }
+  ],
+  "slide_count": 8,
+  "instructional_count": 6,
+  "concepts": [
+    "Physical Isolation",
+    "Air-gapped",
+    "Logical Segmentation",
+    "Software-defined Networking (SDN)",
+    "On-premises",
+    "Centralized and De-centralized"
+  ],
+  "source_filename": "10.07_Network_infrastructure.pdf"
+}

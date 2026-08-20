@@ -1,0 +1,93 @@
+{
+  "id": "04.08",
+  "chapter": 4,
+  "sub": 8,
+  "title": "Blockchain",
+  "chapter_name": "Cryptography & PKI",
+  "slides": [
+    {
+      "n": 1,
+      "title": "Blockchain",
+      "points": [],
+      "raw": "Blockchain",
+      "instructional": false,
+      "teach": "Read the source points, then explain the slide without looking. On Security+, recognition is not enough—you should be able to apply the concept to a scenario.",
+      "defs": [
+        [
+          "Blockchain",
+          "A distributed, append-oriented ledger where blocks of records are cryptographically linked, making unauthorized alteration difficult."
+        ]
+      ]
+    },
+    {
+      "n": 2,
+      "title": "Blockchain",
+      "points": [
+        "Ensure identical information distribution",
+        "Encapsulate transactions in interconnected blocks",
+        "Detect unauthorized transactions",
+        "Utilize hashes for security"
+      ],
+      "raw": "Blockchain\nEnsure identical information distribution\nEncapsulate transactions in interconnected blocks\nDetect unauthorized transactions\nUtilize hashes for security",
+      "instructional": true,
+      "teach": "Read the source points, then explain the slide without looking. On Security+, recognition is not enough—you should be able to apply the concept to a scenario.",
+      "defs": [
+        [
+          "Blockchain",
+          "A distributed, append-oriented ledger where blocks of records are cryptographically linked, making unauthorized alteration difficult."
+        ]
+      ],
+      "course": {
+        "learn": "A blockchain is an append-oriented distributed ledger in which records are grouped into blocks and cryptographically linked. Changing an earlier record can invalidate later links, making tampering easier to detect.",
+        "why": "Blockchain can provide shared integrity and auditability when multiple parties need a consistent ledger without relying on one central database owner.",
+        "example": "Several organizations record transactions in a shared ledger. Each new block references the previous block's hash, creating a chain of evidence.",
+        "exam": "Do not assume blockchain automatically provides confidentiality or that all blockchains are public. Focus on distributed ledger, cryptographic linking, consensus, and integrity.",
+        "breakdown": [
+          {
+            "term": "Ensure identical information distribution",
+            "explanation": "Within Blockchain, this is a specific factor you should be able to recognize and explain. Connect it to the purpose of Blockchain rather than memorizing the phrase by itself."
+          },
+          {
+            "term": "Encapsulate transactions in interconnected blocks",
+            "explanation": "Within Blockchain, this is a specific factor you should be able to recognize and explain. Connect it to the purpose of Blockchain rather than memorizing the phrase by itself."
+          },
+          {
+            "term": "Detect unauthorized transactions",
+            "explanation": "Within Blockchain, this is a specific factor you should be able to recognize and explain. Connect it to the purpose of Blockchain rather than memorizing the phrase by itself."
+          },
+          {
+            "term": "Utilize hashes for security",
+            "explanation": "This contributes to reducing risk in the broader Blockchain design and should be evaluated as part of defense in depth."
+          }
+        ],
+        "defs": [
+          {
+            "term": "Blockchain",
+            "definition": "A distributed, append-oriented ledger where blocks of records are cryptographically linked, making unauthorized alteration difficult."
+          }
+        ],
+        "check_q": "Without looking back, explain Blockchain and describe at least two key ideas from this section.",
+        "check_a": "A blockchain is an append-oriented distributed ledger in which records are grouped into blocks and cryptographically linked. Changing an earlier record can invalidate later links, making tampering easier to detect. Key ideas include: Ensure identical information distribution; Encapsulate transactions in interconnected blocks; Detect unauthorized transactions; Utilize hashes for security.",
+        "points": [
+          "Ensure identical information distribution",
+          "Encapsulate transactions in interconnected blocks",
+          "Detect unauthorized transactions",
+          "Utilize hashes for security"
+        ]
+      }
+    },
+    {
+      "n": 3,
+      "title": "Open Public Ledger",
+      "points": [],
+      "raw": "Open Public Ledger",
+      "instructional": false,
+      "teach": "Read the source points, then explain the slide without looking. On Security+, recognition is not enough—you should be able to apply the concept to a scenario.",
+      "defs": []
+    }
+  ],
+  "slide_count": 3,
+  "instructional_count": 1,
+  "concepts": [],
+  "source_filename": "04.08_Blockchain.pdf"
+}

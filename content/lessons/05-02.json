@@ -1,0 +1,170 @@
+{
+  "id": "05.02",
+  "chapter": 5,
+  "sub": 2,
+  "title": "Attributes of actors",
+  "chapter_name": "Threat Actors",
+  "slides": [
+    {
+      "n": 1,
+      "title": "Attributes of Actors",
+      "points": [],
+      "raw": "Attributes of Actors",
+      "instructional": false,
+      "teach": "Read the source points, then explain the slide without looking. On Security+, recognition is not enough—you should be able to apply the concept to a scenario.",
+      "defs": []
+    },
+    {
+      "n": 2,
+      "title": "Attributes",
+      "points": [
+        "Internal/external",
+        "• Internal = insider threat",
+        "• External = black hat",
+        "hacker",
+        "Level of",
+        "sophistication/capability",
+        "• Depends on the tools",
+        "and capabilities of a",
+        "hacker"
+      ],
+      "raw": "Attributes\nInternal/external\n• Internal = insider threat\n• External = black hat\nhacker\nLevel of\nsophistication/capability\n• Depends on the tools\nand capabilities of a\nhacker",
+      "instructional": true,
+      "teach": "Read the source points, then explain the slide without looking. On Security+, recognition is not enough—you should be able to apply the concept to a scenario.",
+      "defs": [],
+      "course": {
+        "learn": "This section focuses on **Attributes** within **Attributes of actors**. Threat-actor attributes describe where an attacker is located, what access they already have, how skilled they are, and what resources they can use.",
+        "why": "Two actors can use the same attack but present very different risk depending on privilege and capability.",
+        "example": "A low-skill external attacker may rely on public tools, while a privileged insider may need little technical sophistication to steal sensitive files.",
+        "exam": "Internal/external, resources, sophistication, and access are common classification clues.",
+        "breakdown": [
+          {
+            "term": "Internal/external",
+            "explanation": "Within Attributes, this is a specific factor you should be able to recognize and explain. Connect it to the purpose of Attributes of actors rather than memorizing the phrase by itself."
+          },
+          {
+            "term": "Internal = insider threat",
+            "explanation": "Within Attributes, this is a specific factor you should be able to recognize and explain. Connect it to the purpose of Attributes of actors rather than memorizing the phrase by itself."
+          },
+          {
+            "term": "External = black hat hacker",
+            "explanation": "Within Attributes, this is a specific factor you should be able to recognize and explain. Connect it to the purpose of Attributes of actors rather than memorizing the phrase by itself."
+          },
+          {
+            "term": "Level of sophistication/capability",
+            "explanation": "Encryption can be applied at different levels of granularity: full disk, partition, volume, file, database, or individual record/field. The best level depends on what threats and workflows must be protected."
+          },
+          {
+            "term": "Depends on the tools and capabilities of a",
+            "explanation": "Security monitoring and automation tools include SIEM for event correlation, SCAP for standardized security-content automation, DLP for controlling sensitive data movement, and SNMP for device monitoring and traps."
+          },
+          {
+            "term": "hacker",
+            "explanation": "Within Attributes, this is a specific factor you should be able to recognize and explain. Connect it to the purpose of Attributes of actors rather than memorizing the phrase by itself."
+          }
+        ],
+        "defs": [],
+        "check_q": "Without looking back, explain Attributes and describe at least two key ideas from this section.",
+        "check_a": "This section focuses on **Attributes** within **Attributes of actors**. Threat-actor attributes describe where an attacker is located, what access they already have, how skilled they are, and what resources they can use. Key ideas include: Internal/external; Internal = insider threat; External = black hat hacker; Level of sophistication/capability; Depends on the tools and capabilities of a.",
+        "points": [
+          "Internal/external",
+          "Internal = insider threat",
+          "External = black hat hacker",
+          "Level of sophistication/capability",
+          "Depends on the tools and capabilities of a",
+          "hacker"
+        ]
+      }
+    },
+    {
+      "n": 3,
+      "title": "Attributes",
+      "points": [
+        "Resources/funding",
+        "Intent/motivation",
+        "• Can be funded or selfmotivated",
+        "• Can use their own or",
+        "borrowed tools",
+        "• Can now also hire tools –",
+        "as a service on the dark",
+        "web",
+        "• Can have a specific motive",
+        "or objective",
+        "• Can be doing it to test their",
+        "skills or to learn"
+      ],
+      "raw": "Attributes\nResources/funding\nIntent/motivation\n• Can be funded or selfmotivated\n• Can use their own or\nborrowed tools\n• Can now also hire tools –\nas a service on the dark\nweb\n• Can have a specific motive\nor objective\n• Can be doing it to test their\nskills or to learn",
+      "instructional": true,
+      "teach": "Read the source points, then explain the slide without looking. On Security+, recognition is not enough—you should be able to apply the concept to a scenario.",
+      "defs": [],
+      "course": {
+        "learn": "This section focuses on **Attributes** within **Attributes of actors**. Threat-actor attributes describe where an attacker is located, what access they already have, how skilled they are, and what resources they can use.",
+        "why": "Two actors can use the same attack but present very different risk depending on privilege and capability.",
+        "example": "A low-skill external attacker may rely on public tools, while a privileged insider may need little technical sophistication to steal sensitive files.",
+        "exam": "Internal/external, resources, sophistication, and access are common classification clues.",
+        "breakdown": [
+          {
+            "term": "Resources/funding",
+            "explanation": "Within Attributes, this is a specific factor you should be able to recognize and explain. Connect it to the purpose of Attributes of actors rather than memorizing the phrase by itself."
+          },
+          {
+            "term": "Intent/motivation",
+            "explanation": "Within Attributes, this is a specific factor you should be able to recognize and explain. Connect it to the purpose of Attributes of actors rather than memorizing the phrase by itself."
+          },
+          {
+            "term": "Can be funded or selfmotivated",
+            "explanation": "Within Attributes, this is a specific factor you should be able to recognize and explain. Connect it to the purpose of Attributes of actors rather than memorizing the phrase by itself."
+          },
+          {
+            "term": "Can use their own or borrowed tools",
+            "explanation": "Security monitoring and automation tools include SIEM for event correlation, SCAP for standardized security-content automation, DLP for controlling sensitive data movement, and SNMP for device monitoring and traps."
+          },
+          {
+            "term": "Can now also hire tools – as a service on the dark",
+            "explanation": "Security monitoring and automation tools include SIEM for event correlation, SCAP for standardized security-content automation, DLP for controlling sensitive data movement, and SNMP for device monitoring and traps."
+          },
+          {
+            "term": "web",
+            "explanation": "Threat-actor attributes describe where an attacker is located, what access they already have, how skilled they are, and what resources they can use."
+          },
+          {
+            "term": "Can have a specific motive or objective",
+            "explanation": "Within Attributes, this is a specific factor you should be able to recognize and explain. Connect it to the purpose of Attributes of actors rather than memorizing the phrase by itself."
+          },
+          {
+            "term": "Can be doing it to test their skills or to learn",
+            "explanation": "Within Attributes, this is a specific factor you should be able to recognize and explain. Connect it to the purpose of Attributes of actors rather than memorizing the phrase by itself."
+          }
+        ],
+        "defs": [],
+        "check_q": "Without looking back, explain Attributes and describe at least two key ideas from this section.",
+        "check_a": "This section focuses on **Attributes** within **Attributes of actors**. Threat-actor attributes describe where an attacker is located, what access they already have, how skilled they are, and what resources they can use. Key ideas include: Resources/funding; Intent/motivation; Can be funded or selfmotivated; Can use their own or borrowed tools; Can now also hire tools – as a service on the dark.",
+        "points": [
+          "Resources/funding",
+          "Intent/motivation",
+          "Can be funded or selfmotivated",
+          "Can use their own or borrowed tools",
+          "Can now also hire tools – as a service on the dark",
+          "web",
+          "Can have a specific motive or objective",
+          "Can be doing it to test their skills or to learn"
+        ]
+      }
+    },
+    {
+      "n": 4,
+      "title": "Motivations",
+      "points": [],
+      "raw": "Motivations",
+      "instructional": false,
+      "teach": "Read the source points, then explain the slide without looking. On Security+, recognition is not enough—you should be able to apply the concept to a scenario.",
+      "defs": []
+    }
+  ],
+  "slide_count": 4,
+  "instructional_count": 2,
+  "concepts": [
+    "Attributes"
+  ],
+  "source_filename": "05.02_Attributes_of_actors.pdf"
+}

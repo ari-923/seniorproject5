@@ -1,0 +1,154 @@
+{
+  "id": "10.03",
+  "chapter": 10,
+  "sub": 3,
+  "title": "Third-party vendors",
+  "chapter_name": "Security Architecture & Cloud",
+  "slides": [
+    {
+      "n": 1,
+      "title": "Third-Party Vendors",
+      "points": [],
+      "raw": "Third-Party Vendors",
+      "instructional": false,
+      "teach": "Read the source points, then explain the slide without looking. On Security+, recognition is not enough—you should be able to apply the concept to a scenario.",
+      "defs": []
+    },
+    {
+      "n": 2,
+      "title": "Third-Party",
+      "points": [
+        "Specialized Services",
+        "Enhanced Security Solutions",
+        "Data Management and Analytics",
+        "Backup and Disaster Recovery",
+        "Identity and Access Management (IAM)"
+      ],
+      "raw": "Third-Party\nSpecialized Services\nEnhanced Security Solutions\nData Management and Analytics\nBackup and Disaster Recovery\nIdentity and Access Management (IAM)",
+      "instructional": true,
+      "teach": "Read the source points, then explain the slide without looking. On Security+, recognition is not enough—you should be able to apply the concept to a scenario.",
+      "defs": [
+        [
+          "IAM",
+          "Identity and Access Management: processes and technologies for identities, authentication, authorization, and access lifecycle."
+        ]
+      ],
+      "course": {
+        "learn": "Third-party risk comes from vendors, service providers, contractors, and dependencies that connect to systems or handle data. Their weaknesses can become your weaknesses.",
+        "why": "Organizations remain responsible for managing risk even when another company performs the work.",
+        "example": "A payroll vendor stores employee data, so the company reviews contractual controls, security assessments, access, and breach-notification requirements.",
+        "exam": "Vendor due diligence, contracts, right-to-audit, supply-chain risk, least privilege, and continuous monitoring are common themes.",
+        "breakdown": [
+          {
+            "term": "Specialized Services",
+            "explanation": "Within Third-Party, this is a specific factor you should be able to recognize and explain. Connect it to the purpose of Third-party vendors rather than memorizing the phrase by itself."
+          },
+          {
+            "term": "Enhanced Security Solutions",
+            "explanation": "This contributes to reducing risk in the broader Third-party vendors design and should be evaluated as part of defense in depth."
+          },
+          {
+            "term": "Data Management and Analytics",
+            "explanation": "Within Third-Party, this is a specific factor you should be able to recognize and explain. Connect it to the purpose of Third-party vendors rather than memorizing the phrase by itself."
+          },
+          {
+            "term": "Backup and Disaster Recovery",
+            "explanation": "Restore technology and data after a major disruption."
+          },
+          {
+            "term": "Identity and Access Management (IAM)",
+            "explanation": "This concerns who or what can reach a resource and what actions are permitted once access is granted."
+          }
+        ],
+        "defs": [
+          {
+            "term": "IAM",
+            "definition": "Identity and Access Management: processes and technologies for identities, authentication, authorization, and access lifecycle."
+          }
+        ],
+        "check_q": "Without looking back, explain Third-Party and describe at least two key ideas from this section.",
+        "check_a": "Third-party risk comes from vendors, service providers, contractors, and dependencies that connect to systems or handle data. Their weaknesses can become your weaknesses. Key ideas include: Specialized Services; Enhanced Security Solutions; Data Management and Analytics; Backup and Disaster Recovery; Identity and Access Management (IAM).",
+        "points": [
+          "Specialized Services",
+          "Enhanced Security Solutions",
+          "Data Management and Analytics",
+          "Backup and Disaster Recovery",
+          "Identity and Access Management (IAM)"
+        ]
+      }
+    },
+    {
+      "n": 3,
+      "title": "Third-Party",
+      "points": [
+        "Monitoring and Performance Optimization",
+        "Collaboration and Productivity Tools",
+        "Compliance and Governance Solutions",
+        "Cost Management and Optimization",
+        "Custom Development and Integration Services"
+      ],
+      "raw": "Third-Party\nMonitoring and Performance Optimization\nCollaboration and Productivity Tools\nCompliance and Governance Solutions\nCost Management and Optimization\nCustom Development and Integration Services",
+      "instructional": true,
+      "teach": "Read the source points, then explain the slide without looking. On Security+, recognition is not enough—you should be able to apply the concept to a scenario.",
+      "defs": [],
+      "course": {
+        "learn": "Third-party risk comes from vendors, service providers, contractors, and dependencies that connect to systems or handle data. Their weaknesses can become your weaknesses.",
+        "why": "Organizations remain responsible for managing risk even when another company performs the work.",
+        "example": "A payroll vendor stores employee data, so the company reviews contractual controls, security assessments, access, and breach-notification requirements.",
+        "exam": "Vendor due diligence, contracts, right-to-audit, supply-chain risk, least privilege, and continuous monitoring are common themes.",
+        "breakdown": [
+          {
+            "term": "Monitoring and Performance Optimization",
+            "explanation": "Security monitoring continuously observes systems, networks, applications, and logs for suspicious activity, failures, policy violations, and indicators of compromise."
+          },
+          {
+            "term": "Collaboration and Productivity Tools",
+            "explanation": "Security monitoring and automation tools include SIEM for event correlation, SCAP for standardized security-content automation, DLP for controlling sensitive data movement, and SNMP for device monitoring and traps."
+          },
+          {
+            "term": "Compliance and Governance Solutions",
+            "explanation": "This relates to meeting and demonstrating required legal, regulatory, contractual, or policy obligations."
+          },
+          {
+            "term": "Cost Management and Optimization",
+            "explanation": "Within Third-Party, this is a specific factor you should be able to recognize and explain. Connect it to the purpose of Third-party vendors rather than memorizing the phrase by itself."
+          },
+          {
+            "term": "Custom Development and Integration Services",
+            "explanation": "Within Third-Party, this is a specific factor you should be able to recognize and explain. Connect it to the purpose of Third-party vendors rather than memorizing the phrase by itself."
+          }
+        ],
+        "defs": [],
+        "check_q": "Without looking back, explain Third-Party and describe at least two key ideas from this section.",
+        "check_a": "Third-party risk comes from vendors, service providers, contractors, and dependencies that connect to systems or handle data. Their weaknesses can become your weaknesses. Key ideas include: Monitoring and Performance Optimization; Collaboration and Productivity Tools; Compliance and Governance Solutions; Cost Management and Optimization; Custom Development and Integration Services.",
+        "points": [
+          "Monitoring and Performance Optimization",
+          "Collaboration and Productivity Tools",
+          "Compliance and Governance Solutions",
+          "Cost Management and Optimization",
+          "Custom Development and Integration Services"
+        ]
+      }
+    },
+    {
+      "n": 4,
+      "title": "Infrastructure as Code (IaC)",
+      "points": [],
+      "raw": "Infrastructure as Code (IaC)",
+      "instructional": false,
+      "teach": "Read the source points, then explain the slide without looking. On Security+, recognition is not enough—you should be able to apply the concept to a scenario.",
+      "defs": [
+        [
+          "IaC",
+          "Infrastructure as Code: defining and provisioning infrastructure through version-controlled code/templates."
+        ]
+      ]
+    }
+  ],
+  "slide_count": 4,
+  "instructional_count": 2,
+  "concepts": [
+    "Third-Party"
+  ],
+  "source_filename": "10.03_Third-party_vendors.pdf"
+}

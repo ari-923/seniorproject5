@@ -1,0 +1,330 @@
+{
+  "id": "04.01",
+  "chapter": 4,
+  "sub": 1,
+  "title": "Public key infrastructure (PKI)",
+  "chapter_name": "Cryptography & PKI",
+  "slides": [
+    {
+      "n": 1,
+      "title": "Public Key Infrastructure (PKI)",
+      "points": [],
+      "raw": "Public Key Infrastructure (PKI)",
+      "instructional": false,
+      "teach": "Read the source points, then explain the slide without looking. On Security+, recognition is not enough—you should be able to apply the concept to a scenario.",
+      "defs": [
+        [
+          "PKI",
+          "Public Key Infrastructure: the ecosystem of certificates, public/private keys, certificate authorities, revocation, and trust relationships."
+        ]
+      ]
+    },
+    {
+      "n": 2,
+      "title": "PKI",
+      "points": [
+        "Manages the lifecycle of digital keys and certificates",
+        "Facilitates secure communication",
+        "Operates on the principle of asymmetric cryptography"
+      ],
+      "raw": "PKI\nManages the lifecycle of digital keys and certificates\nFacilitates secure communication\nOperates on the principle of asymmetric cryptography",
+      "instructional": true,
+      "teach": "Read the source points, then explain the slide without looking. On Security+, recognition is not enough—you should be able to apply the concept to a scenario.",
+      "defs": [
+        [
+          "Asymmetric cryptography",
+          "Cryptography that uses a public/private key pair instead of one shared secret key."
+        ],
+        [
+          "PKI",
+          "Public Key Infrastructure: the ecosystem of certificates, public/private keys, certificate authorities, revocation, and trust relationships."
+        ]
+      ],
+      "course": {
+        "learn": "Public Key Infrastructure (PKI) is the system of certificates, keys, certificate authorities, policies, and validation mechanisms that creates scalable trust for public-key cryptography.",
+        "why": "PKI lets systems verify that a public key belongs to the identity named in a certificate instead of trusting keys blindly.",
+        "example": "A browser trusts a website certificate because it chains to a trusted CA and the certificate is valid for the site name and time period.",
+        "exam": "Know CA, certificate, CSR, root/intermediate trust, revocation, CRL, and OCSP. PKI is about trust management, not just encryption.",
+        "breakdown": [
+          {
+            "term": "Manages the lifecycle of digital keys and certificates",
+            "explanation": "Within PKI, this is a specific factor you should be able to recognize and explain. Connect it to the purpose of Public key infrastructure (PKI) rather than memorizing the phrase by itself."
+          },
+          {
+            "term": "Facilitates secure communication",
+            "explanation": "Within PKI, this is a specific factor you should be able to recognize and explain. Connect it to the purpose of Public key infrastructure (PKI) rather than memorizing the phrase by itself."
+          },
+          {
+            "term": "Operates on the principle of asymmetric cryptography",
+            "explanation": "Within PKI, this is a specific factor you should be able to recognize and explain. Connect it to the purpose of Public key infrastructure (PKI) rather than memorizing the phrase by itself."
+          }
+        ],
+        "defs": [
+          {
+            "term": "Asymmetric cryptography",
+            "definition": "Cryptography that uses a public/private key pair instead of one shared secret key."
+          },
+          {
+            "term": "PKI",
+            "definition": "Public Key Infrastructure: the ecosystem of certificates, public/private keys, certificate authorities, revocation, and trust relationships."
+          }
+        ],
+        "check_q": "Without looking back, explain PKI and describe at least two key ideas from this section.",
+        "check_a": "Public Key Infrastructure (PKI) is the system of certificates, keys, certificate authorities, policies, and validation mechanisms that creates scalable trust for public-key cryptography. Key ideas include: Manages the lifecycle of digital keys and certificates; Facilitates secure communication; Operates on the principle of asymmetric cryptography.",
+        "points": [
+          "Manages the lifecycle of digital keys and certificates",
+          "Facilitates secure communication",
+          "Operates on the principle of asymmetric cryptography"
+        ]
+      }
+    },
+    {
+      "n": 3,
+      "title": "Type of Keys",
+      "points": [
+        "Public",
+        "Private"
+      ],
+      "raw": "Type of Keys\nPublic\nPrivate",
+      "instructional": true,
+      "teach": "Focus on the differences between the listed types and the clue words that distinguish them in exam questions.",
+      "defs": [],
+      "course": {
+        "learn": "Cryptographic strength depends on using the correct key type, algorithm, key length, and exchange method. Keys must be generated, distributed, stored, rotated, and retired securely.",
+        "why": "A strong algorithm can still fail if keys are weak, exposed, reused too long, or exchanged insecurely.",
+        "example": "A server uses asymmetric cryptography to establish trust and exchange key material, then switches to fast symmetric encryption for the session.",
+        "exam": "Focus on purpose: symmetric = fast shared secret; asymmetric = public/private pair; longer keys generally increase brute-force difficulty but algorithm choice also matters.",
+        "breakdown": [
+          {
+            "term": "Public",
+            "explanation": "Within Type of Keys, this is a specific factor you should be able to recognize and explain. Connect it to the purpose of Public key infrastructure (PKI) rather than memorizing the phrase by itself."
+          },
+          {
+            "term": "Private",
+            "explanation": "Within Type of Keys, this is a specific factor you should be able to recognize and explain. Connect it to the purpose of Public key infrastructure (PKI) rather than memorizing the phrase by itself."
+          }
+        ],
+        "defs": [],
+        "check_q": "Without looking back, explain Type of Keys and describe at least two key ideas from this section.",
+        "check_a": "Cryptographic strength depends on using the correct key type, algorithm, key length, and exchange method. Keys must be generated, distributed, stored, rotated, and retired securely. Key ideas include: Public; Private.",
+        "points": [
+          "Public",
+          "Private"
+        ]
+      }
+    },
+    {
+      "n": 4,
+      "title": "Key Escrow",
+      "points": [
+        "One or more",
+        "Key Escrow",
+        "Agents",
+        "Backup",
+        "Mechanism"
+      ],
+      "raw": "Key Escrow\nOne or more\nKey Escrow\nAgents\nBackup\nMechanism",
+      "instructional": true,
+      "teach": "Read the source points, then explain the slide without looking. On Security+, recognition is not enough—you should be able to apply the concept to a scenario.",
+      "defs": [
+        [
+          "Key escrow",
+          "A controlled arrangement where a copy of a cryptographic key is held by an authorized escrow agent for approved recovery scenarios."
+        ]
+      ],
+      "course": {
+        "learn": "Key-management systems centralize the creation, storage, rotation, access, backup, and retirement of cryptographic keys. Key escrow stores a recoverable copy under controlled conditions.",
+        "why": "Losing an encryption key can make legitimate data permanently inaccessible, while leaking the key destroys confidentiality.",
+        "example": "A cloud KMS rotates database-encryption keys automatically and restricts key use to a specific application role.",
+        "exam": "CompTIA may test availability versus confidentiality tradeoffs. Escrow improves recoverability but creates a high-value secret that must be strongly protected.",
+        "breakdown": [
+          {
+            "term": "One or more",
+            "explanation": "Within Key Escrow, this is a specific factor you should be able to recognize and explain. Connect it to the purpose of Public key infrastructure (PKI) rather than memorizing the phrase by itself."
+          },
+          {
+            "term": "Key Escrow",
+            "explanation": "Key-management systems centralize the creation, storage, rotation, access, backup, and retirement of cryptographic keys. Key escrow stores a recoverable copy under controlled conditions."
+          },
+          {
+            "term": "Agents",
+            "explanation": "Within Key Escrow, this is a specific factor you should be able to recognize and explain. Connect it to the purpose of Public key infrastructure (PKI) rather than memorizing the phrase by itself."
+          },
+          {
+            "term": "Backup",
+            "explanation": "Keep recoverable copies and documented recovery procedures so operations can be restored after disruption."
+          },
+          {
+            "term": "Mechanism",
+            "explanation": "Within Key Escrow, this is a specific factor you should be able to recognize and explain. Connect it to the purpose of Public key infrastructure (PKI) rather than memorizing the phrase by itself."
+          }
+        ],
+        "defs": [
+          {
+            "term": "Key escrow",
+            "definition": "A controlled arrangement where a copy of a cryptographic key is held by an authorized escrow agent for approved recovery scenarios."
+          }
+        ],
+        "check_q": "Without looking back, explain Key Escrow and describe at least two key ideas from this section.",
+        "check_a": "Key-management systems centralize the creation, storage, rotation, access, backup, and retirement of cryptographic keys. Key escrow stores a recoverable copy under controlled conditions. Key ideas include: One or more; Key Escrow; Agents; Backup; Mechanism.",
+        "points": [
+          "One or more",
+          "Key Escrow",
+          "Agents",
+          "Backup",
+          "Mechanism"
+        ]
+      }
+    },
+    {
+      "n": 5,
+      "title": "Key Escrow",
+      "points": [
+        "Key Generation",
+        "Escrow Agent",
+        "Security and Access Controls",
+        "Key Retrieval Scenarios"
+      ],
+      "raw": "Key Escrow\nKey Generation\nEscrow Agent\nSecurity and Access Controls\nKey Retrieval Scenarios",
+      "instructional": true,
+      "teach": "Read the source points, then explain the slide without looking. On Security+, recognition is not enough—you should be able to apply the concept to a scenario.",
+      "defs": [
+        [
+          "Key escrow",
+          "A controlled arrangement where a copy of a cryptographic key is held by an authorized escrow agent for approved recovery scenarios."
+        ]
+      ],
+      "course": {
+        "learn": "Key-management systems centralize the creation, storage, rotation, access, backup, and retirement of cryptographic keys. Key escrow stores a recoverable copy under controlled conditions.",
+        "why": "Losing an encryption key can make legitimate data permanently inaccessible, while leaking the key destroys confidentiality.",
+        "example": "A cloud KMS rotates database-encryption keys automatically and restricts key use to a specific application role.",
+        "exam": "CompTIA may test availability versus confidentiality tradeoffs. Escrow improves recoverability but creates a high-value secret that must be strongly protected.",
+        "breakdown": [
+          {
+            "term": "Key Generation",
+            "explanation": "Within Key Escrow, this is a specific factor you should be able to recognize and explain. Connect it to the purpose of Public key infrastructure (PKI) rather than memorizing the phrase by itself."
+          },
+          {
+            "term": "Escrow Agent",
+            "explanation": "Within Key Escrow, this is a specific factor you should be able to recognize and explain. Connect it to the purpose of Public key infrastructure (PKI) rather than memorizing the phrase by itself."
+          },
+          {
+            "term": "Security and Access Controls",
+            "explanation": "Access control restricts which subjects can access which resources and what actions they may perform. ACLs express allow/deny rules on objects, interfaces, or network traffic."
+          },
+          {
+            "term": "Key Retrieval Scenarios",
+            "explanation": "Within Key Escrow, this is a specific factor you should be able to recognize and explain. Connect it to the purpose of Public key infrastructure (PKI) rather than memorizing the phrase by itself."
+          }
+        ],
+        "defs": [
+          {
+            "term": "Key escrow",
+            "definition": "A controlled arrangement where a copy of a cryptographic key is held by an authorized escrow agent for approved recovery scenarios."
+          }
+        ],
+        "check_q": "Without looking back, explain Key Escrow and describe at least two key ideas from this section.",
+        "check_a": "Key-management systems centralize the creation, storage, rotation, access, backup, and retirement of cryptographic keys. Key escrow stores a recoverable copy under controlled conditions. Key ideas include: Key Generation; Escrow Agent; Security and Access Controls; Key Retrieval Scenarios.",
+        "points": [
+          "Key Generation",
+          "Escrow Agent",
+          "Security and Access Controls",
+          "Key Retrieval Scenarios"
+        ]
+      }
+    },
+    {
+      "n": 6,
+      "title": "Key Escrow",
+      "points": [
+        "Legal and Regulatory",
+        "Compliance",
+        "Encryption Policy",
+        "Privacy and Trust",
+        "Considerations"
+      ],
+      "raw": "Key Escrow\nLegal and Regulatory\nCompliance\nEncryption Policy\nPrivacy and Trust\nConsiderations",
+      "instructional": true,
+      "teach": "Read the source points, then explain the slide without looking. On Security+, recognition is not enough—you should be able to apply the concept to a scenario.",
+      "defs": [
+        [
+          "Encryption",
+          "Transforms readable plaintext into ciphertext using an algorithm and key so unauthorized parties cannot understand it."
+        ],
+        [
+          "Key escrow",
+          "A controlled arrangement where a copy of a cryptographic key is held by an authorized escrow agent for approved recovery scenarios."
+        ]
+      ],
+      "course": {
+        "learn": "Key-management systems centralize the creation, storage, rotation, access, backup, and retirement of cryptographic keys. Key escrow stores a recoverable copy under controlled conditions.",
+        "why": "Losing an encryption key can make legitimate data permanently inaccessible, while leaking the key destroys confidentiality.",
+        "example": "A cloud KMS rotates database-encryption keys automatically and restricts key use to a specific application role.",
+        "exam": "CompTIA may test availability versus confidentiality tradeoffs. Escrow improves recoverability but creates a high-value secret that must be strongly protected.",
+        "breakdown": [
+          {
+            "term": "Legal and Regulatory",
+            "explanation": "Within Key Escrow, this is a specific factor you should be able to recognize and explain. Connect it to the purpose of Public key infrastructure (PKI) rather than memorizing the phrase by itself."
+          },
+          {
+            "term": "Compliance",
+            "explanation": "Evaluate risk and verify whether controls meet organizational, legal, or regulatory requirements."
+          },
+          {
+            "term": "Encryption Policy",
+            "explanation": "Protect confidentiality by transforming plaintext into ciphertext using cryptographic keys."
+          },
+          {
+            "term": "Privacy and Trust",
+            "explanation": "Within Key Escrow, this is a specific factor you should be able to recognize and explain. Connect it to the purpose of Public key infrastructure (PKI) rather than memorizing the phrase by itself."
+          },
+          {
+            "term": "Considerations",
+            "explanation": "Public Key Infrastructure (PKI) is the system of certificates, keys, certificate authorities, policies, and validation mechanisms that creates scalable trust for public-key cryptography."
+          }
+        ],
+        "defs": [
+          {
+            "term": "Encryption",
+            "definition": "Transforms readable plaintext into ciphertext using an algorithm and key so unauthorized parties cannot understand it."
+          },
+          {
+            "term": "Key escrow",
+            "definition": "A controlled arrangement where a copy of a cryptographic key is held by an authorized escrow agent for approved recovery scenarios."
+          }
+        ],
+        "check_q": "Without looking back, explain Key Escrow and describe at least two key ideas from this section.",
+        "check_a": "Key-management systems centralize the creation, storage, rotation, access, backup, and retirement of cryptographic keys. Key escrow stores a recoverable copy under controlled conditions. Key ideas include: Legal and Regulatory; Compliance; Encryption Policy; Privacy and Trust; Considerations.",
+        "points": [
+          "Legal and Regulatory",
+          "Compliance",
+          "Encryption Policy",
+          "Privacy and Trust",
+          "Considerations"
+        ]
+      }
+    },
+    {
+      "n": 7,
+      "title": "Encryption",
+      "points": [],
+      "raw": "Encryption",
+      "instructional": false,
+      "teach": "Read the source points, then explain the slide without looking. On Security+, recognition is not enough—you should be able to apply the concept to a scenario.",
+      "defs": [
+        [
+          "Encryption",
+          "Transforms readable plaintext into ciphertext using an algorithm and key so unauthorized parties cannot understand it."
+        ]
+      ]
+    }
+  ],
+  "slide_count": 7,
+  "instructional_count": 5,
+  "concepts": [
+    "PKI",
+    "Type of Keys",
+    "Key Escrow"
+  ],
+  "source_filename": "04.01_Public_key_infrastructure_PKI.pdf"
+}

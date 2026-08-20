@@ -1,0 +1,94 @@
+{
+  "id": "03.02",
+  "chapter": 3,
+  "sub": 2,
+  "title": "Technical implications",
+  "chapter_name": "Change Management & Security Operations",
+  "slides": [
+    {
+      "n": 1,
+      "title": "Technical Implications",
+      "points": [],
+      "raw": "Technical Implications",
+      "instructional": false,
+      "teach": "Read the source points, then explain the slide without looking. On Security+, recognition is not enough—you should be able to apply the concept to a scenario.",
+      "defs": []
+    },
+    {
+      "n": 2,
+      "title": "Technical Implications",
+      "points": [
+        "Allow lists/deny",
+        "lists",
+        "Legacy",
+        "applications",
+        "Restricted",
+        "activities",
+        "Downtime/Service",
+        "restart/Application",
+        "restart",
+        "Dependencies"
+      ],
+      "raw": "Technical Implications\nAllow lists/deny\nlists\nLegacy\napplications\nRestricted\nactivities\nDowntime/Service\nrestart/Application\nrestart\nDependencies",
+      "instructional": true,
+      "teach": "Read the source points, then explain the slide without looking. On Security+, recognition is not enough—you should be able to apply the concept to a scenario.",
+      "defs": [],
+      "course": {
+        "learn": "Technical implications are the downstream effects a change can have on systems, dependencies, compatibility, downtime, and security policy. A change that is safe in isolation may break another application or control.",
+        "why": "Understanding dependencies prevents a security improvement from accidentally causing an outage or bypass.",
+        "example": "Blocking a legacy protocol improves security but also breaks an old application that still depends on that port, so the change must be planned and tested.",
+        "exam": "When CompTIA asks what to consider before a change, think dependencies, legacy systems, restarts, downtime, allow/deny lists, and rollback.",
+        "breakdown": [
+          {
+            "term": "Allow lists/deny lists",
+            "explanation": "This is a factor that must be evaluated when using Technical implications; ignoring it can create operational, security, cost, or compatibility risk."
+          },
+          {
+            "term": "Legacy applications",
+            "explanation": "Application monitoring measures application behavior, performance, errors, and security events. APM focuses on health/performance, while a WAF inspects and protects web requests."
+          },
+          {
+            "term": "Restricted activities",
+            "explanation": "This is a factor that must be evaluated when using Technical implications; ignoring it can create operational, security, cost, or compatibility risk."
+          },
+          {
+            "term": "Downtime/Service restart/Application",
+            "explanation": "Application monitoring measures application behavior, performance, errors, and security events. APM focuses on health/performance, while a WAF inspects and protects web requests."
+          },
+          {
+            "term": "restart",
+            "explanation": "This is a factor that must be evaluated when using Technical implications; ignoring it can create operational, security, cost, or compatibility risk."
+          },
+          {
+            "term": "Dependencies",
+            "explanation": "This is a factor that must be evaluated when using Technical implications; ignoring it can create operational, security, cost, or compatibility risk."
+          }
+        ],
+        "defs": [],
+        "check_q": "Without looking back, explain Technical Implications and describe at least two key ideas from this section.",
+        "check_a": "Technical implications are the downstream effects a change can have on systems, dependencies, compatibility, downtime, and security policy. A change that is safe in isolation may break another application or control. Key ideas include: Allow lists/deny lists; Legacy applications; Restricted activities; Downtime/Service restart/Application; restart.",
+        "points": [
+          "Allow lists/deny lists",
+          "Legacy applications",
+          "Restricted activities",
+          "Downtime/Service restart/Application",
+          "restart",
+          "Dependencies"
+        ]
+      }
+    },
+    {
+      "n": 3,
+      "title": "Documentation",
+      "points": [],
+      "raw": "Documentation",
+      "instructional": false,
+      "teach": "Read the source points, then explain the slide without looking. On Security+, recognition is not enough—you should be able to apply the concept to a scenario.",
+      "defs": []
+    }
+  ],
+  "slide_count": 3,
+  "instructional_count": 1,
+  "concepts": [],
+  "source_filename": "03.02_Technical_implications.pdf"
+}

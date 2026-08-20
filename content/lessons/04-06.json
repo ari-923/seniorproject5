@@ -1,0 +1,114 @@
+{
+  "id": "04.06",
+  "chapter": 4,
+  "sub": 6,
+  "title": "Digital signatures",
+  "chapter_name": "Cryptography & PKI",
+  "slides": [
+    {
+      "n": 1,
+      "title": "Digital Signatures",
+      "points": [],
+      "raw": "Digital Signatures",
+      "instructional": false,
+      "teach": "Read the source points, then explain the slide without looking. On Security+, recognition is not enough—you should be able to apply the concept to a scenario.",
+      "defs": []
+    },
+    {
+      "n": 2,
+      "title": "Digital Signatures",
+      "points": [
+        "Authentication,",
+        "Integrity, and Nonrepudiation",
+        "Usage in Email and",
+        "Document Signing",
+        "Equivalent to a",
+        "Handwritten Signature",
+        "Signing Algorithms"
+      ],
+      "raw": "Digital Signatures\nAuthentication,\nIntegrity, and Nonrepudiation\nUsage in Email and\nDocument Signing\nEquivalent to a\nHandwritten Signature\nSigning Algorithms",
+      "instructional": true,
+      "teach": "Read the source points, then explain the slide without looking. On Security+, recognition is not enough—you should be able to apply the concept to a scenario.",
+      "defs": [
+        [
+          "Authentication",
+          "Proving an identity—answering “who are you?”"
+        ],
+        [
+          "Integrity",
+          "Ensuring data stays accurate, complete, and protected from unauthorized modification."
+        ]
+      ],
+      "course": {
+        "learn": "A digital signature uses asymmetric cryptography to prove that data came from the holder of a private key and that the signed data has not changed.",
+        "why": "Signatures support trust in software, documents, certificates, and messages without requiring secrecy.",
+        "example": "A vendor signs a software update with its private key. The client verifies the signature using the vendor's public key before installation.",
+        "exam": "Digital signature = integrity + authentication + non-repudiation. It does not automatically encrypt the message for confidentiality.",
+        "breakdown": [
+          {
+            "term": "Authentication,",
+            "explanation": "Authentication is the process of proving an identity. Factors can be something you know, have, are, do, or somewhere you are; MFA requires factors from more than one category."
+          },
+          {
+            "term": "Integrity, and Nonrepudiation",
+            "explanation": "Within Digital Signatures, this is a specific factor you should be able to recognize and explain. Connect it to the purpose of Digital signatures rather than memorizing the phrase by itself."
+          },
+          {
+            "term": "Usage in Email and Document Signing",
+            "explanation": "Within Digital Signatures, this is a specific factor you should be able to recognize and explain. Connect it to the purpose of Digital signatures rather than memorizing the phrase by itself."
+          },
+          {
+            "term": "Equivalent to a",
+            "explanation": "Within Digital Signatures, this is a specific factor you should be able to recognize and explain. Connect it to the purpose of Digital signatures rather than memorizing the phrase by itself."
+          },
+          {
+            "term": "Handwritten Signature",
+            "explanation": "Within Digital Signatures, this is a specific factor you should be able to recognize and explain. Connect it to the purpose of Digital signatures rather than memorizing the phrase by itself."
+          },
+          {
+            "term": "Signing Algorithms",
+            "explanation": "Cryptographic strength depends on using the correct key type, algorithm, key length, and exchange method. Keys must be generated, distributed, stored, rotated, and retired securely."
+          }
+        ],
+        "defs": [
+          {
+            "term": "Authentication",
+            "definition": "Proving an identity—answering “who are you?”"
+          },
+          {
+            "term": "Integrity",
+            "definition": "Ensuring data stays accurate, complete, and protected from unauthorized modification."
+          }
+        ],
+        "check_q": "Without looking back, explain Digital Signatures and describe at least two key ideas from this section.",
+        "check_a": "A digital signature uses asymmetric cryptography to prove that data came from the holder of a private key and that the signed data has not changed. Key ideas include: Authentication,; Integrity, and Nonrepudiation; Usage in Email and Document Signing; Equivalent to a; Handwritten Signature.",
+        "points": [
+          "Authentication,",
+          "Integrity, and Nonrepudiation",
+          "Usage in Email and Document Signing",
+          "Equivalent to a",
+          "Handwritten Signature",
+          "Signing Algorithms"
+        ]
+      }
+    },
+    {
+      "n": 3,
+      "title": "Key Stretching",
+      "points": [],
+      "raw": "Key Stretching",
+      "instructional": false,
+      "teach": "Read the source points, then explain the slide without looking. On Security+, recognition is not enough—you should be able to apply the concept to a scenario.",
+      "defs": [
+        [
+          "Key stretching",
+          "Intentionally making password/key derivation computationally expensive so guessing attacks take longer."
+        ]
+      ]
+    }
+  ],
+  "slide_count": 3,
+  "instructional_count": 1,
+  "concepts": [],
+  "source_filename": "04.06_Digital_signatures.pdf"
+}

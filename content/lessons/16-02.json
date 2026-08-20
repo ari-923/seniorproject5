@@ -1,0 +1,458 @@
+{
+  "id": "16.02",
+  "chapter": 16,
+  "sub": 2,
+  "title": "Analysis",
+  "chapter_name": "Vulnerability Management",
+  "slides": [
+    {
+      "n": 1,
+      "title": "Analysis",
+      "points": [],
+      "raw": "Analysis",
+      "instructional": false,
+      "teach": "Read the source points, then explain the slide without looking. On Security+, recognition is not enough—you should be able to apply the concept to a scenario.",
+      "defs": []
+    },
+    {
+      "n": 2,
+      "title": "False Positive",
+      "points": [
+        "Verification Process",
+        "Contextual Analysis",
+        "Validation of Findings"
+      ],
+      "raw": "False Positive\nVerification Process\nContextual Analysis\nValidation of Findings",
+      "instructional": true,
+      "teach": "Read the source points, then explain the slide without looking. On Security+, recognition is not enough—you should be able to apply the concept to a scenario.",
+      "defs": [],
+      "course": {
+        "learn": "A false positive occurs when a security tool reports a problem or malicious event that is not actually present.",
+        "why": "Too many false positives create analyst fatigue and waste investigation time.",
+        "example": "A vulnerability scanner flags a package as vulnerable even though the vendor backported the security fix without changing the version string.",
+        "exam": "False positive = false alarm.",
+        "breakdown": [
+          {
+            "term": "Verification Process",
+            "explanation": "Within False Positive, this is a specific factor you should be able to recognize and explain. Connect it to the purpose of Analysis rather than memorizing the phrase by itself."
+          },
+          {
+            "term": "Contextual Analysis",
+            "explanation": "Within False Positive, this is a specific factor you should be able to recognize and explain. Connect it to the purpose of Analysis rather than memorizing the phrase by itself."
+          },
+          {
+            "term": "Validation of Findings",
+            "explanation": "Within False Positive, this is a specific factor you should be able to recognize and explain. Connect it to the purpose of Analysis rather than memorizing the phrase by itself."
+          }
+        ],
+        "defs": [],
+        "check_q": "Without looking back, explain False Positive and describe at least two key ideas from this section.",
+        "check_a": "A false positive occurs when a security tool reports a problem or malicious event that is not actually present. Key ideas include: Verification Process; Contextual Analysis; Validation of Findings.",
+        "points": [
+          "Verification Process",
+          "Contextual Analysis",
+          "Validation of Findings"
+        ]
+      }
+    },
+    {
+      "n": 3,
+      "title": "False Negative",
+      "points": [
+        "Evaluation Process",
+        "Scanning Configurations",
+        "Signature Updates",
+        "Additional Testing Methods"
+      ],
+      "raw": "False Negative\nEvaluation Process\nScanning Configurations\nSignature Updates\nAdditional Testing Methods",
+      "instructional": true,
+      "teach": "Read the source points, then explain the slide without looking. On Security+, recognition is not enough—you should be able to apply the concept to a scenario.",
+      "defs": [],
+      "course": {
+        "learn": "A false negative occurs when a real security problem exists but the tool fails to detect or report it.",
+        "why": "False negatives are dangerous because defenders may believe the environment is safe while risk remains active.",
+        "example": "Malware runs on an endpoint but the detection tool classifies the behavior as normal and generates no alert.",
+        "exam": "False negative = missed threat; usually more dangerous than a false positive.",
+        "breakdown": [
+          {
+            "term": "Evaluation Process",
+            "explanation": "Within False Negative, this is a specific factor you should be able to recognize and explain. Connect it to the purpose of Analysis rather than memorizing the phrase by itself."
+          },
+          {
+            "term": "Scanning Configurations",
+            "explanation": "Security scanning automatically examines systems, networks, applications, or configurations for known weaknesses and risky conditions."
+          },
+          {
+            "term": "Signature Updates",
+            "explanation": "Within False Negative, this is a specific factor you should be able to recognize and explain. Connect it to the purpose of Analysis rather than memorizing the phrase by itself."
+          },
+          {
+            "term": "Additional Testing Methods",
+            "explanation": "Within False Negative, this is a specific factor you should be able to recognize and explain. Connect it to the purpose of Analysis rather than memorizing the phrase by itself."
+          }
+        ],
+        "defs": [],
+        "check_q": "Without looking back, explain False Negative and describe at least two key ideas from this section.",
+        "check_a": "A false negative occurs when a real security problem exists but the tool fails to detect or report it. Key ideas include: Evaluation Process; Scanning Configurations; Signature Updates; Additional Testing Methods.",
+        "points": [
+          "Evaluation Process",
+          "Scanning Configurations",
+          "Signature Updates",
+          "Additional Testing Methods"
+        ]
+      }
+    },
+    {
+      "n": 4,
+      "title": "Vulnerability Classification",
+      "points": [
+        "Severity Levels",
+        "Exploitation Vector",
+        "Affected Components",
+        "Common Vulnerabilities and Exposures (CVEs)",
+        "Vulnerability Type"
+      ],
+      "raw": "Vulnerability Classification\nSeverity Levels\nExploitation Vector\nAffected Components\nCommon Vulnerabilities and Exposures (CVEs)\nVulnerability Type",
+      "instructional": true,
+      "teach": "A vulnerability is a weakness. For each item, connect the weakness to its likely impact and the best mitigation.",
+      "defs": [],
+      "course": {
+        "learn": "Vulnerability classification and prioritization combine technical severity with exposure, exploitability, asset importance, business impact, compliance, available controls, and current threat activity.",
+        "why": "Fixing vulnerabilities in score order alone can waste resources or leave the most dangerous business risk exposed.",
+        "example": "An actively exploited medium-severity flaw on an Internet-facing domain controller is prioritized over a higher-scoring issue on an offline test machine.",
+        "exam": "CompTIA likes “BEST/NEXT” prioritization. Consider exploitability, exposure, criticality, and business context—not just CVSS.",
+        "breakdown": [
+          {
+            "term": "Severity Levels",
+            "explanation": "Encryption can be applied at different levels of granularity: full disk, partition, volume, file, database, or individual record/field. The best level depends on what threats and workflows must be protected."
+          },
+          {
+            "term": "Exploitation Vector",
+            "explanation": "Within Vulnerability Classification, this is a specific factor you should be able to recognize and explain. Connect it to the purpose of Analysis rather than memorizing the phrase by itself."
+          },
+          {
+            "term": "Affected Components",
+            "explanation": "Within Vulnerability Classification, this is a specific factor you should be able to recognize and explain. Connect it to the purpose of Analysis rather than memorizing the phrase by itself."
+          },
+          {
+            "term": "Common Vulnerabilities and Exposures (CVEs)",
+            "explanation": "A standardized identifier for a publicly known vulnerability."
+          },
+          {
+            "term": "Vulnerability Type",
+            "explanation": "Within Vulnerability Classification, this is a specific factor you should be able to recognize and explain. Connect it to the purpose of Analysis rather than memorizing the phrase by itself."
+          }
+        ],
+        "defs": [],
+        "check_q": "Without looking back, explain Vulnerability Classification and describe at least two key ideas from this section.",
+        "check_a": "Vulnerability classification and prioritization combine technical severity with exposure, exploitability, asset importance, business impact, compliance, available controls, and current threat activity. Key ideas include: Severity Levels; Exploitation Vector; Affected Components; Common Vulnerabilities and Exposures (CVEs); Vulnerability Type.",
+        "points": [
+          "Severity Levels",
+          "Exploitation Vector",
+          "Affected Components",
+          "Common Vulnerabilities and Exposures (CVEs)",
+          "Vulnerability Type"
+        ]
+      }
+    },
+    {
+      "n": 5,
+      "title": "Common Vulnerability Scoring System (CVSS)",
+      "points": [
+        "Base Score",
+        "Temporal Score",
+        "Environmental",
+        "Score",
+        "Severity Levels",
+        "Metrics",
+        "Vector String"
+      ],
+      "raw": "Common Vulnerability Scoring System\n(CVSS)\nBase Score\nTemporal Score\nEnvironmental\nScore\nSeverity Levels\nMetrics\nVector String",
+      "instructional": true,
+      "teach": "A vulnerability is a weakness. For each item, connect the weakness to its likely impact and the best mitigation.",
+      "defs": [
+        [
+          "CVSS",
+          "Common Vulnerability Scoring System: a framework used to score vulnerability severity."
+        ]
+      ],
+      "course": {
+        "learn": "CVSS is a standardized framework for rating the technical severity of vulnerabilities using factors such as attack requirements and impact.",
+        "why": "A severity score helps compare findings, but organizations still need business and environmental context to prioritize work.",
+        "example": "A CVSS 9.8 flaw on an isolated lab system may be lower priority than a 7.5 flaw on a critical Internet-facing payment server.",
+        "exam": "CVSS = severity score. Do not use score alone for risk priority.",
+        "breakdown": [
+          {
+            "term": "Base Score",
+            "explanation": "Within Common Vulnerability Scoring System (CVSS), this is a specific factor you should be able to recognize and explain. Connect it to the purpose of Analysis rather than memorizing the phrase by itself."
+          },
+          {
+            "term": "Temporal Score",
+            "explanation": "Within Common Vulnerability Scoring System (CVSS), this is a specific factor you should be able to recognize and explain. Connect it to the purpose of Analysis rather than memorizing the phrase by itself."
+          },
+          {
+            "term": "Environmental",
+            "explanation": "Environmental attacks or incidents affect the physical conditions supporting technology—power, temperature, water, fire, ventilation, and facility controls. Tampering with environmental systems can become a security incident."
+          },
+          {
+            "term": "Score",
+            "explanation": "Within Common Vulnerability Scoring System (CVSS), this is a specific factor you should be able to recognize and explain. Connect it to the purpose of Analysis rather than memorizing the phrase by itself."
+          },
+          {
+            "term": "Severity Levels",
+            "explanation": "Encryption can be applied at different levels of granularity: full disk, partition, volume, file, database, or individual record/field. The best level depends on what threats and workflows must be protected."
+          },
+          {
+            "term": "Metrics",
+            "explanation": "Within Common Vulnerability Scoring System (CVSS), this is a specific factor you should be able to recognize and explain. Connect it to the purpose of Analysis rather than memorizing the phrase by itself."
+          },
+          {
+            "term": "Vector String",
+            "explanation": "Within Common Vulnerability Scoring System (CVSS), this is a specific factor you should be able to recognize and explain. Connect it to the purpose of Analysis rather than memorizing the phrase by itself."
+          }
+        ],
+        "defs": [
+          {
+            "term": "CVSS",
+            "definition": "Common Vulnerability Scoring System: a framework used to score vulnerability severity."
+          }
+        ],
+        "check_q": "Without looking back, explain Common Vulnerability Scoring System (CVSS) and describe at least two key ideas from this section.",
+        "check_a": "CVSS is a standardized framework for rating the technical severity of vulnerabilities using factors such as attack requirements and impact. Key ideas include: Base Score; Temporal Score; Environmental; Score; Severity Levels.",
+        "points": [
+          "Base Score",
+          "Temporal Score",
+          "Environmental",
+          "Score",
+          "Severity Levels",
+          "Metrics",
+          "Vector String"
+        ]
+      }
+    },
+    {
+      "n": 6,
+      "title": "Common Vulnerability Enumeration (CVE)",
+      "points": [
+        "Unique",
+        "Identifiers",
+        "CrossReferencing",
+        "Community",
+        "Collaboration",
+        "Data",
+        "Standardization",
+        "Time Stamping",
+        "Integration with",
+        "Other",
+        "Standards"
+      ],
+      "raw": "Common Vulnerability Enumeration\n(CVE)\nUnique\nIdentifiers\nCrossReferencing\nCommunity\nCollaboration\nData\nStandardization\nTime Stamping\nIntegration with\nOther\nStandards",
+      "instructional": true,
+      "teach": "A vulnerability is a weakness. For each item, connect the weakness to its likely impact and the best mitigation.",
+      "defs": [
+        [
+          "CVE",
+          "Common Vulnerabilities and Exposures: the standardized identifier assigned to a publicly known vulnerability."
+        ]
+      ],
+      "course": {
+        "learn": "CVE provides standardized identifiers for publicly known vulnerabilities so vendors, scanners, researchers, and defenders can refer to the same issue consistently.",
+        "why": "A shared identifier makes it easier to correlate advisories, patches, and scanner findings.",
+        "example": "A scanner reports CVE-20XX-12345 and the administrator uses that identifier to find the vendor advisory and patch.",
+        "exam": "CVE = vulnerability ID/name. CVSS = score/severity.",
+        "breakdown": [
+          {
+            "term": "Unique",
+            "explanation": "Within Common Vulnerability Enumeration (CVE), this is a specific factor you should be able to recognize and explain. Connect it to the purpose of Analysis rather than memorizing the phrase by itself."
+          },
+          {
+            "term": "Identifiers",
+            "explanation": "Within Common Vulnerability Enumeration (CVE), this is a specific factor you should be able to recognize and explain. Connect it to the purpose of Analysis rather than memorizing the phrase by itself."
+          },
+          {
+            "term": "CrossReferencing",
+            "explanation": "Within Common Vulnerability Enumeration (CVE), this is a specific factor you should be able to recognize and explain. Connect it to the purpose of Analysis rather than memorizing the phrase by itself."
+          },
+          {
+            "term": "Community",
+            "explanation": "Within Common Vulnerability Enumeration (CVE), this is a specific factor you should be able to recognize and explain. Connect it to the purpose of Analysis rather than memorizing the phrase by itself."
+          },
+          {
+            "term": "Collaboration",
+            "explanation": "Within Common Vulnerability Enumeration (CVE), this is a specific factor you should be able to recognize and explain. Connect it to the purpose of Analysis rather than memorizing the phrase by itself."
+          },
+          {
+            "term": "Data",
+            "explanation": "Legal/jurisdictional requirements that apply because of where data is stored or processed."
+          },
+          {
+            "term": "Standardization",
+            "explanation": "Within Common Vulnerability Enumeration (CVE), this is a specific factor you should be able to recognize and explain. Connect it to the purpose of Analysis rather than memorizing the phrase by itself."
+          },
+          {
+            "term": "Time Stamping",
+            "explanation": "Within Common Vulnerability Enumeration (CVE), this is a specific factor you should be able to recognize and explain. Connect it to the purpose of Analysis rather than memorizing the phrase by itself."
+          },
+          {
+            "term": "Integration with Other",
+            "explanation": "Within Common Vulnerability Enumeration (CVE), this is a specific factor you should be able to recognize and explain. Connect it to the purpose of Analysis rather than memorizing the phrase by itself."
+          },
+          {
+            "term": "Standards",
+            "explanation": "Within Common Vulnerability Enumeration (CVE), this is a specific factor you should be able to recognize and explain. Connect it to the purpose of Analysis rather than memorizing the phrase by itself."
+          }
+        ],
+        "defs": [
+          {
+            "term": "CVE",
+            "definition": "Common Vulnerabilities and Exposures: the standardized identifier assigned to a publicly known vulnerability."
+          }
+        ],
+        "check_q": "Without looking back, explain Common Vulnerability Enumeration (CVE) and describe at least two key ideas from this section.",
+        "check_a": "CVE provides standardized identifiers for publicly known vulnerabilities so vendors, scanners, researchers, and defenders can refer to the same issue consistently. Key ideas include: Unique; Identifiers; CrossReferencing; Community; Collaboration.",
+        "points": [
+          "Unique",
+          "Identifiers",
+          "CrossReferencing",
+          "Community",
+          "Collaboration",
+          "Data",
+          "Standardization",
+          "Time Stamping",
+          "Integration with Other",
+          "Standards"
+        ]
+      }
+    },
+    {
+      "n": 7,
+      "title": "Vulnerability Classification",
+      "points": [
+        "Patch Availability",
+        "Compliance Impact",
+        "Historical Exploitation",
+        "User Interaction",
+        "Time Sensitivity"
+      ],
+      "raw": "Vulnerability Classification\nPatch Availability\nCompliance Impact\nHistorical Exploitation\nUser Interaction\nTime Sensitivity",
+      "instructional": true,
+      "teach": "A vulnerability is a weakness. For each item, connect the weakness to its likely impact and the best mitigation.",
+      "defs": [
+        [
+          "Availability",
+          "Ensuring authorized users can access systems and data when needed."
+        ]
+      ],
+      "course": {
+        "learn": "Vulnerability classification and prioritization combine technical severity with exposure, exploitability, asset importance, business impact, compliance, available controls, and current threat activity.",
+        "why": "Fixing vulnerabilities in score order alone can waste resources or leave the most dangerous business risk exposed.",
+        "example": "An actively exploited medium-severity flaw on an Internet-facing domain controller is prioritized over a higher-scoring issue on an offline test machine.",
+        "exam": "CompTIA likes “BEST/NEXT” prioritization. Consider exploitability, exposure, criticality, and business context—not just CVSS.",
+        "breakdown": [
+          {
+            "term": "Patch Availability",
+            "explanation": "Within Vulnerability Classification, this is a specific factor you should be able to recognize and explain. Connect it to the purpose of Analysis rather than memorizing the phrase by itself."
+          },
+          {
+            "term": "Compliance Impact",
+            "explanation": "This relates to meeting and demonstrating required legal, regulatory, contractual, or policy obligations."
+          },
+          {
+            "term": "Historical Exploitation",
+            "explanation": "Within Vulnerability Classification, this is a specific factor you should be able to recognize and explain. Connect it to the purpose of Analysis rather than memorizing the phrase by itself."
+          },
+          {
+            "term": "User Interaction",
+            "explanation": "Within Vulnerability Classification, this is a specific factor you should be able to recognize and explain. Connect it to the purpose of Analysis rather than memorizing the phrase by itself."
+          },
+          {
+            "term": "Time Sensitivity",
+            "explanation": "Within Vulnerability Classification, this is a specific factor you should be able to recognize and explain. Connect it to the purpose of Analysis rather than memorizing the phrase by itself."
+          }
+        ],
+        "defs": [
+          {
+            "term": "Availability",
+            "definition": "Ensuring authorized users can access systems and data when needed."
+          }
+        ],
+        "check_q": "Without looking back, explain Vulnerability Classification and describe at least two key ideas from this section.",
+        "check_a": "Vulnerability classification and prioritization combine technical severity with exposure, exploitability, asset importance, business impact, compliance, available controls, and current threat activity. Key ideas include: Patch Availability; Compliance Impact; Historical Exploitation; User Interaction; Time Sensitivity.",
+        "points": [
+          "Patch Availability",
+          "Compliance Impact",
+          "Historical Exploitation",
+          "User Interaction",
+          "Time Sensitivity"
+        ]
+      }
+    },
+    {
+      "n": 8,
+      "title": "Other Factors",
+      "points": [
+        "Exposure factor",
+        "Environmental variables",
+        "Industry/organizational impact",
+        "Risk tolerance"
+      ],
+      "raw": "Other Factors\nExposure factor\nEnvironmental variables\nIndustry/organizational impact\nRisk tolerance",
+      "instructional": true,
+      "teach": "Read the source points, then explain the slide without looking. On Security+, recognition is not enough—you should be able to apply the concept to a scenario.",
+      "defs": [],
+      "course": {
+        "learn": "This section focuses on **Other Factors** within **Analysis**. Vulnerability classification and prioritization combine technical severity with exposure, exploitability, asset importance, business impact, compliance, available controls, and current threat activity.",
+        "why": "Fixing vulnerabilities in score order alone can waste resources or leave the most dangerous business risk exposed.",
+        "example": "An actively exploited medium-severity flaw on an Internet-facing domain controller is prioritized over a higher-scoring issue on an offline test machine.",
+        "exam": "CompTIA likes “BEST/NEXT” prioritization. Consider exploitability, exposure, criticality, and business context—not just CVSS.",
+        "breakdown": [
+          {
+            "term": "Exposure factor",
+            "explanation": "Within Other Factors, this is a specific factor you should be able to recognize and explain. Connect it to the purpose of Analysis rather than memorizing the phrase by itself."
+          },
+          {
+            "term": "Environmental variables",
+            "explanation": "Environmental attacks or incidents affect the physical conditions supporting technology—power, temperature, water, fire, ventilation, and facility controls. Tampering with environmental systems can become a security incident."
+          },
+          {
+            "term": "Industry/organizational impact",
+            "explanation": "Within Other Factors, this is a specific factor you should be able to recognize and explain. Connect it to the purpose of Analysis rather than memorizing the phrase by itself."
+          },
+          {
+            "term": "Risk tolerance",
+            "explanation": "This affects the likelihood or impact of harm and therefore changes how the organization should prioritize controls."
+          }
+        ],
+        "defs": [],
+        "check_q": "Without looking back, explain Other Factors and describe at least two key ideas from this section.",
+        "check_a": "This section focuses on **Other Factors** within **Analysis**. Vulnerability classification and prioritization combine technical severity with exposure, exploitability, asset importance, business impact, compliance, available controls, and current threat activity. Key ideas include: Exposure factor; Environmental variables; Industry/organizational impact; Risk tolerance.",
+        "points": [
+          "Exposure factor",
+          "Environmental variables",
+          "Industry/organizational impact",
+          "Risk tolerance"
+        ]
+      }
+    },
+    {
+      "n": 9,
+      "title": "Vulnerability Response and Remediation",
+      "points": [],
+      "raw": "Vulnerability Response and\nRemediation",
+      "instructional": false,
+      "teach": "A vulnerability is a weakness. For each item, connect the weakness to its likely impact and the best mitigation.",
+      "defs": []
+    }
+  ],
+  "slide_count": 9,
+  "instructional_count": 7,
+  "concepts": [
+    "False Positive",
+    "False Negative",
+    "Vulnerability Classification",
+    "Common Vulnerability Scoring System (CVSS)",
+    "Common Vulnerability Enumeration (CVE)",
+    "Other Factors"
+  ],
+  "source_filename": "16.02_Analysis.pdf"
+}

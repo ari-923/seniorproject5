@@ -1,0 +1,146 @@
+{
+  "id": "10.06",
+  "chapter": 10,
+  "sub": 6,
+  "title": "Microservices",
+  "chapter_name": "Security Architecture & Cloud",
+  "slides": [
+    {
+      "n": 1,
+      "title": "Microservices",
+      "points": [],
+      "raw": "Microservices",
+      "instructional": false,
+      "teach": "Read the source points, then explain the slide without looking. On Security+, recognition is not enough—you should be able to apply the concept to a scenario.",
+      "defs": [
+        [
+          "Microservices",
+          "An architecture that divides an application into smaller independently deployable services communicating through interfaces/APIs."
+        ]
+      ]
+    },
+    {
+      "n": 2,
+      "title": "Key Concepts",
+      "points": [
+        "• Modularity",
+        "• Independence",
+        "• Decentralized Data Management",
+        "• Autonomous Development and",
+        "Deployment",
+        "• APIs for Communication"
+      ],
+      "raw": "Key Concepts\n• Modularity\n• Independence\n• Decentralized Data Management\n• Autonomous Development and\nDeployment\n• APIs for Communication",
+      "instructional": true,
+      "teach": "These points define the technology. Be able to explain each one in your own words and recognize it in a scenario.",
+      "defs": [],
+      "course": {
+        "learn": "This section focuses on **Key Concepts** within **Microservices**. Microservices divide an application into smaller independently deployable services that communicate through APIs or messaging.",
+        "why": "Smaller services can improve scalability and isolation, but they create many service-to-service identities, APIs, and network paths that must be secured.",
+        "example": "An e-commerce app has separate services for catalog, payment, orders, and shipping, each authenticated to the others.",
+        "exam": "Think API security, service identity, secrets, east-west traffic, observability, and segmentation.",
+        "breakdown": [
+          {
+            "term": "Modularity",
+            "explanation": "Within Key Concepts, this is a specific factor you should be able to recognize and explain. Connect it to the purpose of Microservices rather than memorizing the phrase by itself."
+          },
+          {
+            "term": "Independence",
+            "explanation": "Within Key Concepts, this is a specific factor you should be able to recognize and explain. Connect it to the purpose of Microservices rather than memorizing the phrase by itself."
+          },
+          {
+            "term": "Decentralized Data Management",
+            "explanation": "Within Key Concepts, this is a specific factor you should be able to recognize and explain. Connect it to the purpose of Microservices rather than memorizing the phrase by itself."
+          },
+          {
+            "term": "Autonomous Development and Deployment",
+            "explanation": "Within Key Concepts, this is a specific factor you should be able to recognize and explain. Connect it to the purpose of Microservices rather than memorizing the phrase by itself."
+          },
+          {
+            "term": "APIs for Communication",
+            "explanation": "Within Key Concepts, this is a specific factor you should be able to recognize and explain. Connect it to the purpose of Microservices rather than memorizing the phrase by itself."
+          }
+        ],
+        "defs": [],
+        "check_q": "Without looking back, explain Key Concepts and describe at least two key ideas from this section.",
+        "check_a": "This section focuses on **Key Concepts** within **Microservices**. Microservices divide an application into smaller independently deployable services that communicate through APIs or messaging. Key ideas include: Modularity; Independence; Decentralized Data Management; Autonomous Development and Deployment; APIs for Communication.",
+        "points": [
+          "Modularity",
+          "Independence",
+          "Decentralized Data Management",
+          "Autonomous Development and Deployment",
+          "APIs for Communication"
+        ]
+      }
+    },
+    {
+      "n": 3,
+      "title": "Key Concepts",
+      "points": [
+        "• Resilience and Fault Isolation",
+        "• Polyglot Programming",
+        "• Scalability",
+        "• Continuous Delivery and",
+        "DevOps",
+        "• Organizational Flexibility"
+      ],
+      "raw": "Key Concepts\n• Resilience and Fault Isolation\n• Polyglot Programming\n• Scalability\n• Continuous Delivery and\nDevOps\n• Organizational Flexibility",
+      "instructional": true,
+      "teach": "These points define the technology. Be able to explain each one in your own words and recognize it in a scenario.",
+      "defs": [],
+      "course": {
+        "learn": "This section focuses on **Key Concepts** within **Microservices**. Microservices divide an application into smaller independently deployable services that communicate through APIs or messaging.",
+        "why": "Smaller services can improve scalability and isolation, but they create many service-to-service identities, APIs, and network paths that must be secured.",
+        "example": "An e-commerce app has separate services for catalog, payment, orders, and shipping, each authenticated to the others.",
+        "exam": "Think API security, service identity, secrets, east-west traffic, observability, and segmentation.",
+        "breakdown": [
+          {
+            "term": "Resilience and Fault Isolation",
+            "explanation": "Isolation separates a risky or sensitive system from other resources so compromise cannot easily spread. Physical isolation and air gaps provide stronger separation than ordinary logical controls."
+          },
+          {
+            "term": "Polyglot Programming",
+            "explanation": "Within Key Concepts, this is a specific factor you should be able to recognize and explain. Connect it to the purpose of Microservices rather than memorizing the phrase by itself."
+          },
+          {
+            "term": "Scalability",
+            "explanation": "Within Key Concepts, this is a specific factor you should be able to recognize and explain. Connect it to the purpose of Microservices rather than memorizing the phrase by itself."
+          },
+          {
+            "term": "Continuous Delivery and DevOps",
+            "explanation": "Within Key Concepts, this is a specific factor you should be able to recognize and explain. Connect it to the purpose of Microservices rather than memorizing the phrase by itself."
+          },
+          {
+            "term": "Organizational Flexibility",
+            "explanation": "Within Key Concepts, this is a specific factor you should be able to recognize and explain. Connect it to the purpose of Microservices rather than memorizing the phrase by itself."
+          }
+        ],
+        "defs": [],
+        "check_q": "Without looking back, explain Key Concepts and describe at least two key ideas from this section.",
+        "check_a": "This section focuses on **Key Concepts** within **Microservices**. Microservices divide an application into smaller independently deployable services that communicate through APIs or messaging. Key ideas include: Resilience and Fault Isolation; Polyglot Programming; Scalability; Continuous Delivery and DevOps; Organizational Flexibility.",
+        "points": [
+          "Resilience and Fault Isolation",
+          "Polyglot Programming",
+          "Scalability",
+          "Continuous Delivery and DevOps",
+          "Organizational Flexibility"
+        ]
+      }
+    },
+    {
+      "n": 4,
+      "title": "Network Infrastructure",
+      "points": [],
+      "raw": "Network Infrastructure",
+      "instructional": false,
+      "teach": "Read the source points, then explain the slide without looking. On Security+, recognition is not enough—you should be able to apply the concept to a scenario.",
+      "defs": []
+    }
+  ],
+  "slide_count": 4,
+  "instructional_count": 2,
+  "concepts": [
+    "Key Concepts"
+  ],
+  "source_filename": "10.06_Microservices.pdf"
+}

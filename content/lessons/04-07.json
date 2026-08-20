@@ -1,0 +1,94 @@
+{
+  "id": "04.07",
+  "chapter": 4,
+  "sub": 7,
+  "title": "Key stretching",
+  "chapter_name": "Cryptography & PKI",
+  "slides": [
+    {
+      "n": 1,
+      "title": "Key Stretching",
+      "points": [],
+      "raw": "Key Stretching",
+      "instructional": false,
+      "teach": "Read the source points, then explain the slide without looking. On Security+, recognition is not enough—you should be able to apply the concept to a scenario.",
+      "defs": [
+        [
+          "Key stretching",
+          "Intentionally making password/key derivation computationally expensive so guessing attacks take longer."
+        ]
+      ]
+    },
+    {
+      "n": 2,
+      "title": "Key Stretching",
+      "points": [
+        "• Increases the strength of the",
+        "stored passwords",
+        "• Salts the password and then",
+        "stretches them",
+        "• Prevents password attacks"
+      ],
+      "raw": "Key Stretching\n• Increases the strength of the\nstored passwords\n• Salts the password and then\nstretches them\n• Prevents password attacks",
+      "instructional": true,
+      "teach": "Read the source points, then explain the slide without looking. On Security+, recognition is not enough—you should be able to apply the concept to a scenario.",
+      "defs": [
+        [
+          "Key stretching",
+          "Intentionally making password/key derivation computationally expensive so guessing attacks take longer."
+        ]
+      ],
+      "course": {
+        "learn": "Key stretching deliberately makes password hashing slower and more computationally expensive so each cracking attempt costs more time and resources.",
+        "why": "Humans choose passwords with limited entropy, so slowing each guess improves resistance to offline attacks.",
+        "example": "A system uses PBKDF2, bcrypt, scrypt, or Argon2 with many iterations/work factors instead of a single fast hash.",
+        "exam": "If the goal is “make password guesses expensive,” choose key stretching rather than ordinary hashing alone.",
+        "breakdown": [
+          {
+            "term": "Increases the strength of the stored passwords",
+            "explanation": "Within Key Stretching, this is a specific factor you should be able to recognize and explain. Connect it to the purpose of Key stretching rather than memorizing the phrase by itself."
+          },
+          {
+            "term": "Salts the password and then stretches them",
+            "explanation": "Within Key Stretching, this is a specific factor you should be able to recognize and explain. Connect it to the purpose of Key stretching rather than memorizing the phrase by itself."
+          },
+          {
+            "term": "Prevents password attacks",
+            "explanation": "Within Key Stretching, this is a specific factor you should be able to recognize and explain. Connect it to the purpose of Key stretching rather than memorizing the phrase by itself."
+          }
+        ],
+        "defs": [
+          {
+            "term": "Key stretching",
+            "definition": "Intentionally making password/key derivation computationally expensive so guessing attacks take longer."
+          }
+        ],
+        "check_q": "Without looking back, explain Key Stretching and describe at least two key ideas from this section.",
+        "check_a": "Key stretching deliberately makes password hashing slower and more computationally expensive so each cracking attempt costs more time and resources. Key ideas include: Increases the strength of the stored passwords; Salts the password and then stretches them; Prevents password attacks.",
+        "points": [
+          "Increases the strength of the stored passwords",
+          "Salts the password and then stretches them",
+          "Prevents password attacks"
+        ]
+      }
+    },
+    {
+      "n": 3,
+      "title": "Blockchain",
+      "points": [],
+      "raw": "Blockchain",
+      "instructional": false,
+      "teach": "Read the source points, then explain the slide without looking. On Security+, recognition is not enough—you should be able to apply the concept to a scenario.",
+      "defs": [
+        [
+          "Blockchain",
+          "A distributed, append-oriented ledger where blocks of records are cryptographically linked, making unauthorized alteration difficult."
+        ]
+      ]
+    }
+  ],
+  "slide_count": 3,
+  "instructional_count": 1,
+  "concepts": [],
+  "source_filename": "04.07_Key_stretching.pdf"
+}

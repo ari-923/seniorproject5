@@ -1,0 +1,114 @@
+[
+  {
+    "chapter": 1,
+    "name": "Security Controls",
+    "lesson_count": 1,
+    "slide_count": 9,
+    "instructional_count": 7
+  },
+  {
+    "chapter": 2,
+    "name": "Fundamental Security Concepts",
+    "lesson_count": 7,
+    "slide_count": 51,
+    "instructional_count": 37
+  },
+  {
+    "chapter": 3,
+    "name": "Change Management & Security Operations",
+    "lesson_count": 3,
+    "slide_count": 12,
+    "instructional_count": 6
+  },
+  {
+    "chapter": 4,
+    "name": "Cryptography & PKI",
+    "lesson_count": 10,
+    "slide_count": 55,
+    "instructional_count": 35
+  },
+  {
+    "chapter": 5,
+    "name": "Threat Actors",
+    "lesson_count": 3,
+    "slide_count": 13,
+    "instructional_count": 7
+  },
+  {
+    "chapter": 6,
+    "name": "Threat Vectors & Attack Surfaces",
+    "lesson_count": 1,
+    "slide_count": 22,
+    "instructional_count": 20
+  },
+  {
+    "chapter": 7,
+    "name": "Vulnerabilities",
+    "lesson_count": 1,
+    "slide_count": 19,
+    "instructional_count": 17
+  },
+  {
+    "chapter": 8,
+    "name": "Attack Indicators",
+    "lesson_count": 7,
+    "slide_count": 66,
+    "instructional_count": 53
+  },
+  {
+    "chapter": 9,
+    "name": "Mitigation & Hardening",
+    "lesson_count": 4,
+    "slide_count": 23,
+    "instructional_count": 15
+  },
+  {
+    "chapter": 10,
+    "name": "Security Architecture & Cloud",
+    "lesson_count": 14,
+    "slide_count": 69,
+    "instructional_count": 41
+  },
+  {
+    "chapter": 11,
+    "name": "Secure Infrastructure & Communications",
+    "lesson_count": 2,
+    "slide_count": 31,
+    "instructional_count": 27
+  },
+  {
+    "chapter": 12,
+    "name": "Data Security",
+    "lesson_count": 4,
+    "slide_count": 33,
+    "instructional_count": 25
+  },
+  {
+    "chapter": 13,
+    "name": "Resilience & Recovery",
+    "lesson_count": 7,
+    "slide_count": 41,
+    "instructional_count": 27
+  },
+  {
+    "chapter": 15,
+    "name": "Asset Management",
+    "lesson_count": 1,
+    "slide_count": 9,
+    "instructional_count": 7
+  },
+  {
+    "chapter": 16,
+    "name": "Vulnerability Management",
+    "lesson_count": 5,
+    "slide_count": 34,
+    "instructional_count": 24
+  },
+  {
+    "chapter": 17,
+    "name": "Security Monitoring",
+    "lesson_count": 3,
+    "slide_count": 17,
+    "instructional_count": 11
+  }
+]

@@ -1,0 +1,244 @@
+{
+  "id": "10.09",
+  "chapter": 10,
+  "sub": 9,
+  "title": "IoT",
+  "chapter_name": "Security Architecture & Cloud",
+  "slides": [
+    {
+      "n": 1,
+      "title": "Internet of Things (IoT)",
+      "points": [],
+      "raw": "Internet of Things (IoT)",
+      "instructional": false,
+      "teach": "Read the source points, then explain the slide without looking. On Security+, recognition is not enough—you should be able to apply the concept to a scenario.",
+      "defs": [
+        [
+          "IoT",
+          "Internet of Things: network-connected devices such as sensors, appliances, cameras, and embedded devices."
+        ]
+      ]
+    },
+    {
+      "n": 2,
+      "title": "IoT Components",
+      "points": [
+        "• Sensors and Actuators",
+        "• Connectivity",
+        "• Data Processing",
+        "• Cloud Computing",
+        "• User Interface"
+      ],
+      "raw": "IoT Components\n• Sensors and Actuators\n• Connectivity\n• Data Processing\n• Cloud Computing\n• User Interface",
+      "instructional": true,
+      "teach": "Know what each component does and how the components work together. CompTIA often asks which component best fits a scenario.",
+      "defs": [
+        [
+          "Cloud",
+          "Computing resources delivered on demand from a provider rather than entirely owned and operated locally."
+        ],
+        [
+          "IoT",
+          "Internet of Things: network-connected devices such as sensors, appliances, cameras, and embedded devices."
+        ]
+      ],
+      "course": {
+        "learn": "Internet of Things (IoT) devices are network-connected sensors, appliances, controllers, and embedded devices that often have limited resources, long lifecycles, weak defaults, or inconsistent update support.",
+        "why": "Poorly secured IoT can become an entry point or botnet participant.",
+        "example": "Security cameras ship with default passwords and are placed on a dedicated VLAN with outbound restrictions and monitoring.",
+        "exam": "Common mitigations: change defaults, patch, inventory, disable unused services, segment IoT, and monitor unusual behavior.",
+        "breakdown": [
+          {
+            "term": "Sensors and Actuators",
+            "explanation": "Physical sensors detect environmental or movement conditions that may indicate intrusion or danger. Different sensors detect heat, pressure, microwave reflection, sound, motion, moisture, or other changes."
+          },
+          {
+            "term": "Connectivity",
+            "explanation": "Secure architecture depends on where devices are placed, which trust zones they belong to, how they connect, what attack surface they expose, and what happens when a component fails."
+          },
+          {
+            "term": "Data Processing",
+            "explanation": "Within IoT Components, this is a specific factor you should be able to recognize and explain. Connect it to the purpose of IoT rather than memorizing the phrase by itself."
+          },
+          {
+            "term": "Cloud Computing",
+            "explanation": "Within IoT Components, this is a specific factor you should be able to recognize and explain. Connect it to the purpose of IoT rather than memorizing the phrase by itself."
+          },
+          {
+            "term": "User Interface",
+            "explanation": "Within IoT Components, this is a specific factor you should be able to recognize and explain. Connect it to the purpose of IoT rather than memorizing the phrase by itself."
+          }
+        ],
+        "defs": [
+          {
+            "term": "Cloud",
+            "definition": "Computing resources delivered on demand from a provider rather than entirely owned and operated locally."
+          },
+          {
+            "term": "IoT",
+            "definition": "Internet of Things: network-connected devices such as sensors, appliances, cameras, and embedded devices."
+          }
+        ],
+        "check_q": "Without looking back, explain IoT Components and describe at least two key ideas from this section.",
+        "check_a": "Internet of Things (IoT) devices are network-connected sensors, appliances, controllers, and embedded devices that often have limited resources, long lifecycles, weak defaults, or inconsistent update support. Key ideas include: Sensors and Actuators; Connectivity; Data Processing; Cloud Computing; User Interface.",
+        "points": [
+          "Sensors and Actuators",
+          "Connectivity",
+          "Data Processing",
+          "Cloud Computing",
+          "User Interface"
+        ]
+      }
+    },
+    {
+      "n": 3,
+      "title": "Security Implications",
+      "points": [
+        "Device Vulnerabilities",
+        "Data Privacy Concerns",
+        "Network Security Risks",
+        "Lack of Standardization"
+      ],
+      "raw": "Security Implications\nDevice Vulnerabilities\nData Privacy Concerns\nNetwork Security Risks\nLack of Standardization",
+      "instructional": true,
+      "teach": "Focus on the new risk introduced by the technology or design, then connect that risk to an appropriate mitigation.",
+      "defs": [],
+      "course": {
+        "learn": "This section focuses on **Security Implications** within **IoT**. Internet of Things (IoT) devices are network-connected sensors, appliances, controllers, and embedded devices that often have limited resources, long lifecycles, weak defaults, or inconsistent update support.",
+        "why": "Poorly secured IoT can become an entry point or botnet participant.",
+        "example": "Security cameras ship with default passwords and are placed on a dedicated VLAN with outbound restrictions and monitoring.",
+        "exam": "Common mitigations: change defaults, patch, inventory, disable unused services, segment IoT, and monitor unusual behavior.",
+        "breakdown": [
+          {
+            "term": "Device Vulnerabilities",
+            "explanation": "This is a factor that must be evaluated when using IoT; ignoring it can create operational, security, cost, or compatibility risk."
+          },
+          {
+            "term": "Data Privacy Concerns",
+            "explanation": "This is a factor that must be evaluated when using IoT; ignoring it can create operational, security, cost, or compatibility risk."
+          },
+          {
+            "term": "Network Security Risks",
+            "explanation": "This is a factor that must be evaluated when using IoT; ignoring it can create operational, security, cost, or compatibility risk."
+          },
+          {
+            "term": "Lack of Standardization",
+            "explanation": "This is a factor that must be evaluated when using IoT; ignoring it can create operational, security, cost, or compatibility risk."
+          }
+        ],
+        "defs": [],
+        "check_q": "Without looking back, explain Security Implications and describe at least two key ideas from this section.",
+        "check_a": "This section focuses on **Security Implications** within **IoT**. Internet of Things (IoT) devices are network-connected sensors, appliances, controllers, and embedded devices that often have limited resources, long lifecycles, weak defaults, or inconsistent update support. Key ideas include: Device Vulnerabilities; Data Privacy Concerns; Network Security Risks; Lack of Standardization.",
+        "points": [
+          "Device Vulnerabilities",
+          "Data Privacy Concerns",
+          "Network Security Risks",
+          "Lack of Standardization"
+        ]
+      }
+    },
+    {
+      "n": 4,
+      "title": "Security Implications",
+      "points": [
+        "Firmware and Software",
+        "Vulnerabilities",
+        "Authentication and",
+        "Authorization Issues",
+        "Supply Chain Security",
+        "Denial-of-Service (DoS)",
+        "Attacks"
+      ],
+      "raw": "Security Implications\nFirmware and Software\nVulnerabilities\nAuthentication and\nAuthorization Issues\nSupply Chain Security\nDenial-of-Service (DoS)\nAttacks",
+      "instructional": true,
+      "teach": "Focus on the new risk introduced by the technology or design, then connect that risk to an appropriate mitigation.",
+      "defs": [
+        [
+          "Authentication",
+          "Proving an identity—answering “who are you?”"
+        ],
+        [
+          "Authorization",
+          "Determining what an authenticated identity is allowed to access or do."
+        ]
+      ],
+      "course": {
+        "learn": "This section focuses on **Security Implications** within **IoT**. Internet of Things (IoT) devices are network-connected sensors, appliances, controllers, and embedded devices that often have limited resources, long lifecycles, weak defaults, or inconsistent update support.",
+        "why": "Poorly secured IoT can become an entry point or botnet participant.",
+        "example": "Security cameras ship with default passwords and are placed on a dedicated VLAN with outbound restrictions and monitoring.",
+        "exam": "Common mitigations: change defaults, patch, inventory, disable unused services, segment IoT, and monitor unusual behavior.",
+        "breakdown": [
+          {
+            "term": "Firmware and Software",
+            "explanation": "This is a factor that must be evaluated when using IoT; ignoring it can create operational, security, cost, or compatibility risk."
+          },
+          {
+            "term": "Vulnerabilities",
+            "explanation": "This is a factor that must be evaluated when using IoT; ignoring it can create operational, security, cost, or compatibility risk."
+          },
+          {
+            "term": "Authentication and Authorization Issues",
+            "explanation": "Authentication is the process of proving an identity. Factors can be something you know, have, are, do, or somewhere you are; MFA requires factors from more than one category."
+          },
+          {
+            "term": "Supply Chain Security",
+            "explanation": "A supply-chain attack compromises a trusted supplier, software dependency, hardware component, update mechanism, or service provider so the attacker can reach downstream customers."
+          },
+          {
+            "term": "Denial-of-Service (DoS)",
+            "explanation": "This is a factor that must be evaluated when using IoT; ignoring it can create operational, security, cost, or compatibility risk."
+          },
+          {
+            "term": "Attacks",
+            "explanation": "This is a factor that must be evaluated when using IoT; ignoring it can create operational, security, cost, or compatibility risk."
+          }
+        ],
+        "defs": [
+          {
+            "term": "Authentication",
+            "definition": "Proving an identity—answering “who are you?”"
+          },
+          {
+            "term": "Authorization",
+            "definition": "Determining what an authenticated identity is allowed to access or do."
+          }
+        ],
+        "check_q": "Without looking back, explain Security Implications and describe at least two key ideas from this section.",
+        "check_a": "This section focuses on **Security Implications** within **IoT**. Internet of Things (IoT) devices are network-connected sensors, appliances, controllers, and embedded devices that often have limited resources, long lifecycles, weak defaults, or inconsistent update support. Key ideas include: Firmware and Software; Vulnerabilities; Authentication and Authorization Issues; Supply Chain Security; Denial-of-Service (DoS).",
+        "points": [
+          "Firmware and Software",
+          "Vulnerabilities",
+          "Authentication and Authorization Issues",
+          "Supply Chain Security",
+          "Denial-of-Service (DoS)",
+          "Attacks"
+        ]
+      }
+    },
+    {
+      "n": 5,
+      "title": "Industrial Control Systems (ICS)/Supervisory Control and Data Acquisition (SCADA)",
+      "points": [],
+      "raw": "Industrial Control Systems\n(ICS)/Supervisory Control and\nData Acquisition (SCADA)",
+      "instructional": false,
+      "teach": "Read the source points, then explain the slide without looking. On Security+, recognition is not enough—you should be able to apply the concept to a scenario.",
+      "defs": [
+        [
+          "SCADA",
+          "Supervisory Control and Data Acquisition: systems used to monitor/control industrial processes, often distributed geographically."
+        ],
+        [
+          "ICS",
+          "Industrial Control System: systems that monitor or control industrial processes and physical equipment."
+        ]
+      ]
+    }
+  ],
+  "slide_count": 5,
+  "instructional_count": 3,
+  "concepts": [
+    "IoT Components",
+    "Security Implications"
+  ],
+  "source_filename": "10.09_IoT.pdf"
+}
